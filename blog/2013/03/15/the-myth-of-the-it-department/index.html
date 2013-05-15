@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The Myth of The "IT Department" - Practical Elegance</title>
+  <meta name="author" content="Jason Lewis">
+
+  
+  <meta name="description" content="So in the comments on my last post I mentioned my fandom for what is, in my opinion, the most insightful and important blog currently published, that &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Dosis|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" >
+
+if (window.top !== window.self) {
+
+document.write = "";
+
+window.top.location = window.self.location; setTimeout(function(){
+
+document.body.innerHTML='';
+
+},1);
+
+window.self.onload=function(evt){
+
+document.body.innerHTML='';
+
+};
+
+}
+
+</script>
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22978638-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Practical Elegance</a></h1>
+  
+    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
+  
+</hgroup>
+
+
+  <a href="https://github.com/canweriotnow">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+  </a>
+
+
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:decompelcting.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">The Myth of The "IT Department"</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-15T01:53:00-04:00" pubdate data-updated="true">2013-03-15</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So in the comments on my <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom for what is, in my opinion, the most insightful and important blog currently published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>. His recent series of posts have been reviewing and analyzing the MacLeod theory of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-convexity/">organizational structure</a> (link is to the latest post in the series, but if you haven&#8217;t been following it, therein are links to the previous eight).</p>
+
+<p>I want to focus on the differential between concave (in which the difference between failure and middling is greatest) and convex (in which the difference between middling and superior is greatest) work.</p>
+
+<h3>The &#8220;IT Department&#8221;</h3>
+
+<p>I have to start by saying &#8220;Information Technology&#8221; is a leaky abstraction. It covers everything from internal software development to the help desk call center. I&#8217;m not suggesting that either line of business is superior. Both are absolutely necessary, at least until developers start to become psychic or users stop being stupid, or (preferably) both.</p>
+
+<p>The real problem comes when the same management structure is imposed in the guise of an &#8220;IT Department&#8221; on such divergent areas as the help desk, desktop support, network engineers, developers, and hardware techs. Going beyond theories <a href="http://michaelochurch.wordpress.com/2013/03/12/gervais-macleod-8-human-nature-theories-x-y-z-and-a/">X, Y, Z, or A</a> of management, having a &#8220;Central IT&#8221; department is (without a revolutionary management strategy that will probably raise HR issues for most entrenched organizations) an attempt to shoehorn concave and convex work into the same tiny box, and is going to fail at appropriately managing one or the other (or perhaps more likely, both).</p>
+
+<!--more-->
+
+
+<h3>Concave Work</h3>
+
+<p>Let&#8217;s face it, help desk work is typically concave. I&#8217;ve done it (briefly), and it&#8217;s probably an acceptable use case for <a href="http://en.wikipedia.org/wiki/Theory_X_and_Theory_Y#Theory_X">Theory X</a>, since it&#8217;s (in this writer&#8217;s opinion) rote, unrewarding work that I would <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">automate out of existence</a> if I had the time and resources. But, it&#8217;s also necessary work, and a place where &#8220;managing to the middle&#8221; works because achieving the Socially Acceptable Middling Effort (SAME) is a decent departmental average.</p>
+
+<p>I&#8217;d place much of the responsibility of the average sub-division of IT in the scope of &#8220;concave work.&#8221;  Desktop support, Windows administration, etc., are really about uniformity of outcome, and SAME is an acceptable goal.</p>
+
+<p>When it comes to efforts like software development, or big data, or even &#8220;cloud services&#8221;, SAME is the same as failure. We&#8217;re now into the realm of convex work, and the standard has to be different.</p>
+
+<h3>Convex Work</h3>
+
+<p>I&#8217;ve <a href="/blog/2012/10/31/feedback-loops/">written before</a> about how programmers are just <em>weird</em> from a standard, organizational point of view. Or any standard point of view. Programming is the ultimate convex work; from Joel Spolsky&#8217;s warnings about <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">The Perils of Java Schools</a>, to Jeff Atwood&#8217;s plea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">not everyone learn to code</a>, it&#8217;s clear that not only is programming a highly specialized thing to excel at, but also that there are <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">certain factors that determine capability in advance</a>.</p>
+
+<p>It&#8217;s probably the epitome of convex work. The difference between the worst programmer and the middling programmer is a fraction of the difference between a middling programmer and (even) a 90th percentile-or-above programmer. And there are probably other areas in IT where this is true; from my experience I&#8217;d say they&#8217;re in software-heavy areas like managing large datasets properly, or providing true &#8220;cloud services&#8221;, i.e., computing and storage in a multi-tenancy environment with computation and storage as a metered service. I haven&#8217;t seen any of these done well in an &#8220;enterprise&#8221; environment.</p>
+
+<h3>The Enterprise</h3>
+
+<p>The &#8220;enterprise&#8221; only works by &#8220;managing to the middle.&#8221; Which explains the self-defeating attitutdes of vendor lock-in and risk aversion. When you&#8217;re not in a &#8220;tech company,&#8221; IT is invariably a &#8220;cost center,&#8221; which a) is why <a href="http://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/">you shouldn&#8217;t call yourself a programmer</a> (obligatory reference), and b) why it needs to maintain a low-risk profile. When you work for a large organization, &#8220;low-risk&#8221; means &#8220;the buck stops elsewhere than my desk.&#8221;  So there needs to be a vendor to blame. So much of the acknowledged efforts will be in contract negotiations for the purchase of almost-suitable software from an established vendor, that doesn&#8217;t really meet the needs of the organization, but can be marginally tweaked to fit by middling engineers.</p>
+
+<p>It also means that internal innovation can&#8217;t be acknowledged or rewarded too highly. When most of your &#8220;software teams&#8221; are doing maintenance on the last failed vendor purchase, how can you be seen to give accolades to the projects which have truly broken new ground?</p>
+
+<p>At the same time, do you <em>want</em> front line support innovating to that degree? Sure, if one of your help desk reps replaces some annoying customer interaction with a Perl script, they&#8217;ll either be promoted to convex work, or fired from concave work, right? I think this only reinforces the difference between the two categories.</p>
+
+<h3>Programmer, Wat Do?</h3>
+
+<p>That&#8217;s where the <a href="http://michaelochurch.wordpress.com/2013/02/19/gervais-principle-questioned-macleods-hierarchy-the-technocrat-and-vc-startups/">MacLeod Paradigm</a> really comes into play again&#8230; when most of your developers are 9-to-5ers who <a href="http://decomplecting.org/blog/2012/05/22/passion/">take no joy in their craft</a>, you have a team of MacLeod &#8220;losers,&#8221; which fits perfectly well into the &#8220;enterprise&#8221; IT paradigm. It&#8217;s hard to practice something sensible like <a href="http://michaelochurch.wordpress.com/2012/11/25/programmer-autonomy-is-a-1-trillion-issue/">open allocation</a> when you manage business analysts in the same manner as developers.</p>
+
+<p>If you really care about good, clean, beautiful, (even) elegant code, well&#8230; you might luck out. I&#8217;m on a small team which is probably considered &#8220;rogue&#8221; by most &#8220;enterprise&#8221; standards. I love my job, and it affords me significant autonomy and creative freedom, but I also know how bizarre and rare that is. I don&#8217;t see how &#8220;non-technical organizations&#8221; (a future post will debate whether such a thing exists anymore) can afford to treat developers&#8217; work the same as concave work without having the whole house of cards come tumbling down at some point.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-15T01:53:00-04:00" pubdate data-updated="true">2013-03-15</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/information-technology/'>information technology</a>, <a class='category' href='/blog/categories/management/'>management</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department/" data-via="canweriotnow" data-counturl="http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/11/confessions-of-a-job-destroyer/" title="Previous Post: Confessions of A Job Destroyer">&laquo; Confessions of A Job Destroyer</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/03/16/farewell/" title="Next Post: Farewell, Reader; Or, The Problem with "Free as in Beer"">Farewell, Reader; Or, The Problem with "Free as in Beer" &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <a href="http://internetdefenseleague.org">
+    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
+  </a>
+</section>
+
+<script src="//dihq71mhvy8o7.cloudfront.net/js/modal-embed.js" type="text/javascript" charset="utf-8"></script><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/05/14/im-an-estuarian/">I'm An Estuarian!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/05/be-willing-to-let-go/">Be Willing To Let Go; or, "The Big Rewrite"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">The Difficulty of Chaotic Good</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/23/donglegate/">Donglegate, Inclusionary Culture, Nerd Culture</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/16/farewell/">Farewell, Reader; Or, The Problem with "Free as in Beer"</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'canweriotnow',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("canweriotnow", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/canweriotnow" class="twitter-follow-button" data-show-count="false">Follow @canweriotnow</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
+  
+</section>
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/110736810583208350607?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Lewis -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>
+- Hosted by <a href="http://pages.github.com">Github Pages</a>
+</span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'canweriotnow';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department/';
+        var disqus_url = 'http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

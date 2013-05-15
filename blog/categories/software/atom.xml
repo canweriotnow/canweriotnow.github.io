@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: software | Practical Elegance]]></title>
+  <link href="http://decompelcting.org/blog/categories/software/atom.xml" rel="self"/>
+  <link href="http://decompelcting.org/"/>
+  <updated>2013-05-14T23:57:14-04:00</updated>
+  <id>http://decompelcting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Be Willing To Let Go; or, "The Big Rewrite"]]></title>
+    <link href="http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go/"/>
+    <updated>2013-04-05T02:10:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go</id>
+    <content type="html"><![CDATA[<p><blockquote><p></p></p><p><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p></p><p><p></p><footer><strong>Alan J. Perlis</strong></footer></blockquote></p>
+
+<p>One of the most nerve-wracking things you can tell a manager is that it's time to rewrite a major software component, system, or application. In fact, it's considered (in some circles) such a mortal sin that Joel Spolsky addresses "The Big Rewrite" in a post entitled <a href="http://www.joelonsoftware.com/articles/fog0000000069.html">Things You Should Never Do, Part I</a>.</p>
+
+<p>In many cases, he's absolutely right. If you have a working-ish production codebase, throwing it out the window can seem a bit like throwing out the baby with the bathwater. But from an engineering standpoint, software is weird. On the one hand, you have the engineering side: If a bridge is just working-ish, the assessment of a structural engineer might be that it must be torn down and a new bridge built in its place. Software is much more ethereal and abstract; of course, we can continue to patch the old application, and extend it, and patch it, and sacrifice virgins to Great Cthulhu, and keep it chugging along. For a while.</p>
+
+<p>Eventually, however, with a typical enormous, legacy codebase, you just end up mortgaging massive technical debt.</p>
+
+<!--more-->
+
+
+<h3>Refinancing and Bankruptcy</h3>
+
+<p>A large, enterprise-y system will usually be so entrenched in technical debt that we can (metaphorically) view it as being double- and triple-mortgaged. Test coverage is spotty (if it even exists), and more time is spent dealing with regressions than actually implementing new features in a sane manner.</p>
+
+<p>Eventually, technical debt piles to the point at which it's time to claim bankruptcy. And the problem is that the beancounters financing software projects (or IT managers who have no business managing software projects) see it as bankruptcy in the traditional sense.</p>
+
+<p>If the original project was poorly architected, rife with Demeter violations and cross-dependencies, coupled with lousy (or no) test coverage, this might be a somewhat accurate assessment. But sometimes a project with a sensible class hierarchy, composable elements, and a modular structure needs "The Big Rewrite", and it becomes difficult to explain what this really entails.</p>
+
+<h3>Reusable code</h3>
+
+<p>I'm thinking about this in terms of a Rails app that I built some time ago, which really should have been considered a "throwaway prototype", except that the business needs dictated it went into production right away. It works, but... lousy test coverage, bizarre performance issues, and regression issues make each new deploy a new headache.</p>
+
+<p>It took me some time, but I've finally made the argument for the "big rewrite."</p>
+
+<p>Now, in the mean time, I've created a REST API for the backend as part of an SOA for the systems involved. And I've demonstrated that much of the model layer from the "deprecated" application was reused (or improved) for the API that I'm using to abstract the intrface to the legacy system the inital application was designed to interface with.</p>
+
+<p>The "big rewrite" entails rebuilding the tools in the old application to work through the API instead of directly hitting the DB (an Oracle monstrosity with ~500 tables and an incomprehensible collection of package functions and stored procedures). But the code was reusable in a new context, and the "rewrite" is really a protracted refactoring and rebuilding of the data layer.</p>
+
+<h3>That Lisp Thing</h3>
+
+<p>The quote at the head of this article was taken from the preface to the second edition of <a href="http://mitpress.mit.edu/sicp/">The Structure and Interpretation of Computer Programs</a>, aka the "Wizard Book." SICP uses the Scheme dialect of Lisp for its examples, and Lisp is a beautiful language for writing composable code, as well as disposable code. It simply <em>makes sense</em> to write small, composable functions, and to use those functions to build abstractions for higher-level programming. This is what Paul Graham calls <a href="http://www.paulgraham.com/progbot.html">Programming Bottom-Up</a>.</p>
+
+<p>I think when Rails programming is done well, it has a similar bottom-up aspect, in that one starts with the data model, then deals with the controllers, and the views are the final consideration. Certainly not everyone approaches Rails development from this perspective, but I think the best Rails apps exhibit this approach. The Windows development model of "Visual Foo" and "Big Design Up Front" are the anithesis, and I think this is why most Windows programs are terrible, and why Windows programmers are (in my experience) more likely to be okay with terrible code.</p>
+
+<h3>Lewis's First Rule</h3>
+
+<p><span class='pullquote-right' data-pullquote='All application code must be either composable or disposable.'></p>
+
+<p>I've never even thought to come up with a "rule" of software design before, but this is the most important lesson I've learned in my 26 or so years of hobbyist, amateur, and professional software development. I think it's more important than any single design pattern (although many of the patterns in the Gang of Four book embody this rule), architectural principle, or other aphorism (excpet, of course, for <a href="http://en.wikipedia.org/wiki/Hanlon's_razor">Hanlon's Razor</a>, but that extends beyond software). Lewis's First Rule is simply this: All application code must be either composable or disposable. By composable, I inherently imply "reusable." This is at the heart of the Go4 directive to "favor composition over inheritance." But I also want to insist that getting rid of code is okay. It's not only okay, it's downright <em>desirable.</em> There's no greater feeling than a git commit that reads <code>2 files changed, 4 insertions(+), 232 deletions(-)</code>. It's even better when entire files have been deleted.</p>
+
+<p></span></p>
+
+<h3>Don't Fear The Rewrite</h3>
+
+<p>A rewrite is only a scary proposition when you're working with a codebase that never had a guiding architectural principle to begin with, has no test coverage, and has never seen a refactoring; it's just years (maybe decades) of cruft, layered like a forest floor, with fresh leaves falling upon detritus, duff, finally decomposing into the humus that forms the core of the system, where only earthworms dare to tread.</p>
+
+<p>Building long-lasting software is an admirable goal, but it's foolhardy to think we can do this at the application level, especially as the rate of technological progress continues to exponentiate. When you do something really good, rip it out of the application, build a library, and include that. Wash, rinse, repeat. Software should be composable, or disposable. There is no in-between.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Farewell, Reader; Or, The Problem with "Free as in Beer"]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/16/farewell/"/>
+    <updated>2013-03-16T00:45:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/16/farewell</id>
+    <content type="html"><![CDATA[<p>I'm <a href="http://support.google.com/reader/answer/3028851">going to miss Google Reader</a>. I know a lot of people are going to. Hell, in a crazy inversion of Godwin's Law, even <a href="http://www.youtube.com/watch?v=A25VgNZDQ08">Hitler is upset</a>. There's a <a href="https://www.change.org/en-GB/petitions/google-do-not-remove-google-reader-on-july-1-2013">petition on Change.org</a>, and Bender is pissed:</p>
+
+<p><img class="center" src="/images/post-img/bender-reader.png"></p>
+
+<p>I've been complaining, both online and in person, ever since I learned of this a couple of days ago. And it's not the first time I've <a href="/blog/2012/06/06/hackers-need-our-own-everything/">complained about changes at Google</a>.</p>
+
+<p>This isn't even <a href="http://en.wikipedia.org/wiki/Tragedy_of_the_commons">the tragedy fo the commons</a>; this is the tragedy of <a href="http://en.wikipedia.org/wiki/Gratis_versus_libre">gratis versus libre</a>, or "free as in beer" versus "free as in speech."</p>
+
+<p>Sure, Reader is one of Google's most popular products, at least among my (admittedly strange) peer group. But I'm going to assert something odd for a wacky leftist like me: Google is a for-profit corporation, beholden to its shareholders. It has a responsibility to monetize its products, and Google is (in simple terms) in the advertising business. Reader wasn't selling ads, as far as I can tell.</p>
+
+<p>We can drill a little deeper, and say that Google is really in the <em>data</em> business. But even at this level, I can guess the prediction of the highly complex and optimized machine learning algorithms Google has developed for all the data it harvests, when applied to Reader:</p>
+
+<h4>Nerds like reading one anothers' blogs.</h4>
+
+<p>Yeah, um... I don't know how they failed to monetize that highly proprietary and unexpected insight.</p>
+
+<!--more-->
+
+
+<p>I'm going to miss Google Reader. It was an extremely well-built, easy to use RSS/Atom feed aggregator that made my toilet reading much more manageable.</p>
+
+<p>But the lesson here is the one I missed (or ignored) last year when Google introduced the changes to Search that made it more difficult for me to find pertinent results to highly complex, technical queries, and I kvetched on this blog.</p>
+
+<p>I still stand by my position that <a href="/blog/2012/06/06/hackers-need-our-own-everything/">hackers need our own everything</a>, but my new conclusion is that it was a mistake to rely on a corporation like Google in the first place, if the tool in question really mattered.</p>
+
+<p>It would be like a carpenter relying on a hammer (and saw, plane, screwdriver, etc.) provided by some external entity who could swoop in and remove or alter any of those tools at any time. Such a carpenter would be a fool, at least if he didn't leverage those tools while he had them to build a set of replacements.</p>
+
+<p>I'm not saying building a replacement for Google Search is something within the reach of any one (or one hundred) of us disgruntled hackers. But the upside of the Reader debacle is that it showed me what I really do (and don't) want from a feed aggregator, and now <a href="https://github.com/canweriotnow/reajer">I'm building my own</a>. I've spent about 30 minutes on it so far, so how much is there when you click that link will likely be quite time dependent, but I'm learning more Clojure while scratching an itch (an itchy Google bite, to be exact), so I don't see a major downside to spending time on it.</p>
+
+<p>Fundamentally, it would be nice if we could rely on Google's stated policy of "Don't be evil" to keep us supplied with the tools to which we have become accustomed. But by the general standard of socially acceptable evil, Google isn't really being evil, just kinda douchey.</p>
+
+<p>Until there's a company that can remain profitable while adhering to a "don't be a douche" standard, hackers still need our own everything. Normal people will too, I guess.</p>
+
+<p>But Reader was always "free as in beer," not "free as in speech," so it was always the prerogative of the douche with the keg to call "last call," to kick everyone out, or at least to take his tap and go home.</p>
+
+<p>So go ahead and sign the petition on <a href="http://change.org">Change.org</a>, watch the "Hitler Finds Out" video (actually, please watch that one... it's both accurate and hilarious), but don't be surprised the next time Google takes your favorite toy away.</p>
+
+<p>P.S. I haven't added blackjack <em>or</em> hookers to <a href="https://github.com/canweriotnow/reajer">reajer</a>, but it does play Tetris. So there's that.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Confessions of A Job Destroyer]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer/"/>
+    <updated>2013-03-11T15:57:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer</id>
+    <content type="html"><![CDATA[<p>One of the most unfunny ironies of the rhetoric surrounding "job creators" in contemporary American politics is that most of the jobs being created (or at least, those with the greatest demand) are in the tech sector. Jobs like mine. Jobs that automate processes that used to be performed by people.</p>
+
+<p>So I'll come out and say it: I'm not a job creator (which is, I suppose, why the Republicans aren't too interested in cutting <em>my</em> taxes). I'm a job destroyer.</p>
+
+<p>We (programmers) all are, on some level or another; we're taking mundane repetitive tasks and automating them with code. In a perfect world, we would be hailed as heroes, freeing the toiling masses from their humdrum routines to engage in more ennobling pursuits... but there's that pesky issue of needing an income. I'll return to this momentarily, but I first want to confess to a darker truth.</p>
+
+<p>Marc Andreessen famously explained <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">'Why Software Is Eating The World'</a> in the WSJ a couple of years ago. What he failed to mention is that the snake of software is also quietly eating its own tail.</p>
+
+<!--more-->
+
+
+<p>I'm not just an old-fashioned Job Destroyer, replacing secretaries and mid-level bureaucracy with CRM and accounting suites. By using the most efficient possible languages (Ruby and Clojure, in my case, rather than Java or C#) and relying on free and open source software (Postgres rather than Oracle, for instance), I'm potentially destroying jobs <em>in my own sector!</em></p>
+
+<p>I really feel terrible about this... what one or two lone hackers can readily achieve today, once could only have been accomplished by a team of engineers, business analysts, project managers, and QA testers, with tools purchased from vendors that employed legions more engineers, analysts, project managers, and QA testers (actually, I'm not sure if Oracle has a QA process... the only 'quality' I've ever been 'assured' Oracle will possess is bugginess, but I digress)...</p>
+
+<p>With the exception of low-paying service jobs, most of the jobs we're going to create in the coming years will be Job Destroyer jobs. (The whole health care thing is a bubble, trust me. After all those aging Boomers die off, our age distribution will even out and we won't need so many people working to care for the dying and infirm). And as Amazon has shown, not only can we destroy retail jobs with software, we can also destroy jobs in system administration, datacenter operations, physical plant maintenance, etc.</p>
+
+<p>Sure, we can't destroy <em>all</em> the non-Job Destroyer jobs... <em>yet.</em> Burger King and Starbucks still need human <del>subjects</del> employees to make Whoppers and skinny lattes, but how long before these jobs are deskilled to the point they can be done by machines &mdash; i.e., by software?</p>
+
+<p>(Aside: If you don't believe Starbucks has radically de-skilled its workforce, you should have worked at one a decade or so ago. Some coffee shops still have manual espresso machines, which require training, skill and finesse to operate. At Starbucks, your double skinny half-caf mocha is, I assure you, prepared 90% by software, 10% by rote human activity that they haven't figured out how to automate yet)</p>
+
+<p>But wait, you ask, if all these jobs have been automated away by software, why are we still working so much (if employed), and what's more, why are we trying to <em>create</em> jobs? Isn't more work what we were trying to avoid with all this infernal software?</p>
+
+<p>This, gentle reader, is where I make the argument for a <a href="http://en.wikipedia.org/wiki/Basic_income">basic income</a>. It's just common sense as the amount of socially necessary labor decreases with each passing year. How could we fund such a sweeping change to economic policy? Well, first let's get back to basic principles: as programmers, we want to eliminate work. So let's penalize those damn pesky job creators with a progressive taxation scheme. Let's get back to America's halcyon days of progressive taxation, the 1950's that conservatives laud so dearly, and raise the top marginal tax rate back to 91%. Then we could afford a basic income, with single-payer health care for afters.</p>
+
+<p>I'm a job destroyer, and I love what I do. Now if only we had a <a href="http://michaelochurch.wordpress.com/2012/12/19/the-call-for-rational-economy/">rational economy</a>, I could stop having mixed feelings about the net effect of my work.</p>
+
+<h2>Update 2013-03-13</h2>
+
+<p>There's some pretty lively discussion of this post beyond the comments here, both on <a href="https://news.ycombinator.com/item?id=5359458">Hacker News</a> and on <a href="http://www.reddit.com/r/programming/comments/1a50zz/confessions_of_a_job_destroyer/">Reddit</a>. I recommend checking out those discussions as well.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hackers Need Our Own Everything]]></title>
+    <link href="http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything/"/>
+    <updated>2012-06-06T11:29:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything</id>
+    <content type="html"><![CDATA[<p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I'm more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
+
+<h3>The Tragedy of Google</h3>
+
+<p>For such a long time, Google did search better than many of us ever dreamt <em>possible</em> in the pre-Google days. But it wasn't just the intelligence of the search algorithms, or the massive cache and index behind Google search. Google made it possible to craft a finely-honed query from the front page, with excellent support for literal strings, boolean operators, required inclusion/exclusion, etc. And then came Google+.</p>
+
+<p>Google's commitment to search had been on the decline for a while, it seems... the only new features search had acquired in years were fairly useless things like page previews and, briefly, Twitter integration. Because that's integral to search.</p>
+
+<p>But when Google launched its abortion of a social network, usable search had to go. Not only did they kill one of the <a href="http://productforums.google.com/forum/#!topic/websearch/3oIWbew9xdE">most useful search operators</a> (Boolean +), but they also started filtering search results based on social connections in Google+. While this doesn't <em>always</em> end in having to re-search without "personal" results, I have a feeling that's only because I'm connected to so many developers on Google+. But if Google+ hadn't been such an abject failure, my mom might be on there, and we typically search about very different kinds of "cookies."  The situation with Google is so bad at this point, that I often get better results from <a href="http://duckduckgo.com/">Duck Duck Go</a>, which wraps a ton of different search engines and websites, and attempts to break the "filter bubble" by presenting hte same results to everyone. I like this in principle, but I miss Google's synchronized search history and habit of learning what results are relevant to me to (usually) provide better results.</p>
+
+<!--more-->
+
+
+<h3>Blogging for Hackers</h3>
+
+<p>So, let's face it: unless you wanted to host your own blog, and either write your own engine, or tweak one into submission, keeping an attractive, maintainable, and useful blog was either an expensive or losing proposition. Sadly, this isn't a recent change like the other phenomena addressed in this post, but it's still an issue.</p>
+
+<p>What's slightly alarming is the trend away from traditional blogging engines like Wordpress and Blogger, which, while not exactly hacker-friendly, were oriented toward content creation. The newer generation of blogging services are much more oriented toward the re-posting of content. While I'm okay in principle with re-posting (and I think "remix culture" is awesome), when your priority is saturation with "viral content" rather than the creation of OC, it makes it easy to ignore the creation of tools which lend themselves to the creation of content.</p>
+
+<p>Octopress is awesome because it doesn't try to be everything to everybody. Billed as "A blogging framework for hackers," Octopress is basically a set of <code>rake</code> tasks and plugins for <a href="https://github.com/Shopify/liquid">Liquid</a> and <a href="http://compass-style.org/">Compass</a>, all wrapped up with the tasty goodness of <a href="https://github.com/mojombo/jekyll">Jekyll</a>, the static site generator that powers <a href="http://pages.github.com">Github Pages</a>.</p>
+
+<p>In a nutshell, this means I can use my favorite text editor (lately, either <a href="http://www.vim.org/">Vim</a> or <a href="http://www.sublimetext.com/2">Sublime Text 2</a>, depending on my mood) to create my posts in Markdown, Textile, or Haml, and have Octopress generate pretty-styled HTML, CSS and JS, and deploy my blog to Github Pages (or Heroku) with a rake task. Even for non-programming power users, or anyone frustrated with Wordpress, really, Octopress is worth checking out.</p>
+
+<h3>Apple to Developers: "Go Fuck Yourselves"</h3>
+
+<p>Okay, slight hyperbole. But it feels that way sometimes. I've been using <a href="http://macromates.com/">TextMate</a> on OS X for Ruby (and Perl, and C, and Clojure, you get the picture...) for such a long time now, that I'm <em>really</em> loathe to change my workflow. Even though, conceptually, I prefer the idea of using Linux on all the things. But since Apple is now <em>blatantly</em> <a href="http://www.apple.com/macosx/mountain-lion/features.html">trying to turn my worsktation into a tablet</a>, I'm forcing myself to use the <a href="http://lubuntu.org/">Lubuntu</a> box sitting next to my iMac as much as possible.</p>
+
+<p><img class="float-right" src="/images/post-img/mtlion1.png" width="400"></p>
+
+<p>It's not just the "aesthetic" changes that chafe. I can deal with <a href="http://unity.ubuntu.com/">annoying UI crap</a>, especially when it's optional. But Apple is also changing the developer ecosystem, first with the Mac App Store, then with Gatekeeper, which will warn against installation of software not signed with an Apple developer account by default. It has been pointed out that this behavior is fairly straightforward to alter, but I still find the whole process dubious and, for me at least, it's another straw on the OS X camel's back. I'm not arguing that no one should use OS X, I'm just saying it's less and less attractive to me as a development platform.</p>
+
+<p>The whole allure of OS X was that it was a stable, supported, POSIX-compliant operating system that was enjoyable to use but afforded the user all of the power and flexibility of Unix. It looks like those days are over, and the days of creating powerful tools for developers and designers to create whatever they could imagine are over. The Mac is turning into an overpowered tablet, suited for content consumption rather than creation.</p>
+
+<p>Apple is not alone in its efforts to neuter the desktop. Not to be outdone in locking down the OS and polluting the developer ecosystem, Microsoft is scrambling to release Windows 8 so that Windows users can be as disoriented as possbile. Although there are <a href="http://mobileopportunity.blogspot.com/2012/05/fear-and-loathing-and-windows-8.html">good</a> <a href="http://pcunix.hubpages.com/hub/Why-Windows-8-might-Kill-Microsoft">arguments</a> that Windows 8 holds the threat of finally toppling the waning Microsoft hegemony, I'm actually jealous of Windows 8 in one way: Windows 8 includes an almost-workalike Windows 7 compatibility mode. I <em>wish</em> Lion had a "act like Snow Leopard" mode. Although one of the articles I just cited laments the loss of the Start menu in Win7 mode, I don't think it's that much of a loss, if PowerShell is still included (or better yet, Cygwin).</p>
+
+<p><img class="float-left" src="/images/post-img/win8-1.jpg" width="400"></p>
+
+<p>I use Windows as little as possible, so I'm less annoyed about Windows 8 than I am Lion. But the trend is disturbing, and is even being echoed to a degree (a greatly diminished degree) in <a href="http://www.gnome.org/gnome-3/">GNOME 3</a> and <a href="http://unity.ubuntu.com/">Ubuntu Unity</a>. But on Linux, at least, I have the option of using whatever window manager and desktop environment works best for me (or none at all).</p>
+
+<p>I realize that commercial operating system vendors need to target the widest possible user base. But the much-ballyhooed rise of the <a href="http://www.forbes.com/sites/venkateshrao/2011/12/05/the-rise-of-developeronomics/">developer-centric economy</a> would <em>seem</em> to suggest that pissing off developers is a <em>bad</em> idea. Apple and Microsoft spent the better part of the 1980's and 1990's competing not only for market-share, but for developer mind-share. The movement toward locking us into proprietary toolchains and ecosystems (XCode for Apple, VisualStudio for Microsoft) looks like little more than a cynical attempt to chain down developers in a walled garden. Hopefully, we don't fall for it.</p>
+
+<h3>For Us, By Us</h3>
+
+<p>It's been <a href="http://en.wikipedia.org/wiki/Desktop_Linux#Year_of_Desktop_Linux">The Year Of Linux On The Desktop</a> since at <em>least</em> 2000. I'm not going to be the next one to make grand proclamations (other than "total world domination <em>soon</em>"). But for me... right now, my primary development machines are a 27" iMac running Snow Leopard, and a 15" MacBook Pro, also running Snow Leopard. I won't be upgrading to Lion, and I'll miss the pretty Apple hardware. But when these are ready for replacement... let's just say I really hope <a href="http://www.theverge.com/2012/5/7/3006266/dell-project-sputnik-ubuntu-xps-13-developers">Project Sputnik</a> is a huge success for Dell.</p>
+
+<p>Although it's commercial software, targeted toward business users (and consumers) that pays the bills for most of us, I think it's important to remember that the people who make those tools are an important audience, too. I want to see more software of all kinds (web, desktop, and CLI) created by developers, for developers. Preferably open-source tools we can tweak and extend and continue to make better. I think that's my goal for this year, anyhow. I'm going to focus my efforts on projects that make it more fun to be a hacker, whether that's something like making blogging easier, creating build tools, or Linux desktop enhancements that are friendly to those of us who spend most of the day switching between an editor, a shell, and a web browser. I hope others have the same itch, and see the same need, and push back against the disturbing trend of hostility toward open systems and (by extension) the developers who use them.</p>
+
+<p><strong>Update:</strong> Thanks to the discussion on <a href="http://www.reddit.com/r/programming/comments/uo2sk/hackers_need_our_own_everything/">this reddit thread</a>, as well as the comments, I made a couple of corrections, particularly re: Duck Duck Go and Gatekeeper. Thanks to everyone who commented.</p>
+]]></content>
+  </entry>
+  
+</feed>

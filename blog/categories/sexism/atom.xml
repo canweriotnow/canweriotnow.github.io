@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: sexism | Practical Elegance]]></title>
+  <link href="http://decompelcting.org/blog/categories/sexism/atom.xml" rel="self"/>
+  <link href="http://decompelcting.org/"/>
+  <updated>2013-05-14T23:57:14-04:00</updated>
+  <id>http://decompelcting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Donglegate, Inclusionary Culture, Nerd Culture]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/23/donglegate/"/>
+    <updated>2013-03-23T21:33:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/23/donglegate</id>
+    <content type="html"><![CDATA[<p>I've taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace conversations with friends and coworkers. I have strong feelings about what happened at PyCon (re: the donglegate scenario), and many of them are conflicting. So I've waited to write about it until now.</p>
+
+<h3>Donglegate</h3>
+
+<p>Okay, for one thing, I really think the <a href="https://twitter.com/search?q=%23donglegate&amp;src=typd">#donglegate</a> hashtag/label is stupid, but that's not up to me, so whatever. I would like to address the way in which things were handled at PyCon, so here goes.</p>
+
+<p>First off, I have no personal investment in what happens at PyCon. I don't really code in Python, I don't particularly like Python, whatever. But when people are publicly humiliated, fired, whatever, over things that are basically stupid, it chafes.</p>
+
+<p>So, if you're unfamiliar (fat chance), you can get the original interpretation of events from the horse's mouth, at <a href="http://butyoureagirl.com/14015/forking-and-dongle-jokes-dont-belong-at-tech-conferences/">Adria Richards' blog</a> Hopefully that link works for you, I got yet another error trying to load it... maybe someone should tell her about <a href="http://decomplecting.org/blog/2012/07/04/static-is-beautiful/">static pages for blogs</a>. Anyhow, here's the short version: a 'developer relations rep' from <a href="http://sendgrid.com/">SendGrid</a> was offended by some off-color comments made by some guys sitting behind her that apparently referenced "big dongles." She also alleged some sexual references to "forking," which has since been <a href="http://pastebin.com/JaNh0w5F">called into question</a>. Instead of saying to the individuals in question, "Stop being jerks and shutup so I can listen to the speech," she tweeted pics of the guys who were making dongle jokes, and got the PyCon organizers involved.</p>
+
+<p>I'm not judging at this point.</p>
+
+<p>Anyhow, once the PyCon organizers got involved, the folks she accused were removed from the session. Apparently, at least one lost his job.</p>
+
+<p>Of course, it blew up on the Intertweets, with 4chan getting involved at some point and anons starting a <a href="https://www.change.org/petitions/sendgrid-please-fire-adria-richards">Change.org petition</a> to have her fired.</p>
+
+<p>Adria Richards tweeted that SendGrid supported her:</p>
+
+<blockquote class="twitter-tweet"><p>Hey @<a href="https://twitter.com/mundanematt">mundanematt</a>, it's clear from the last 24 hours you're a bully.@<a href="https://twitter.com/sendgrid">sendgrid</a> supports me.Stop trolling.</p>&mdash; Adria Richards (@adriarichards) <a href="https://twitter.com/adriarichards/status/314452708549603328">March 20, 2013</a></blockquote>
+
+
+<script async src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Apparently, she was mistaken, because she was fired shortly thereafter.</p>
+
+<h3>Constructive Intervention</h3>
+
+<p>I'm still replaying this in my head. Some dudes were making immature, inappropriate comments at a conference. Ms. Richards responded in a way that was also immature and inappropriate.</p>
+
+<p>I'm not going to go into the distasteful, violent, or threatening responses that occurred on Twitter or 4chan (although, regarding hte latter, it's <em>4chan.</em> What do you expact?).</p>
+
+<p>I would like to point out that the women from <a href="http://ladycoders.com">LadyCoders</a> proposed a system for dealing with this sort of occurence that <em>is</em> constructive. Expanding upon the <a href="http://singlevoice.net/redyellow-card-project/">Red/Yellow Card Project from Defcon</a>, they've developed <a href="http://thecowgirlcoder.com/2013/03/21/pycon-code-of-conduct-warning-cards/">PyCon CoC warning cards</a> for next year's PyCon. I think it's a great constructive way to give people a way to address behaviour which they find offensive without resorting to the Twitter equivalent of tar-and-feathering, as Richards took as a first resort.</p>
+
+<h3>And So...</h3>
+
+<p>If anything, there was more logical reason for Richards to lose her job than the developer from PlayHaven. He was a developer; developers have never been known for tact or maturity. Richards' title was "developer evangelist"; I'd like to know how she expected to carry out that role after alienating so many developers with her actions.</p>
+
+<p>But whatever. PyCon has amended its CoC to condemn "public shaming" as a mode of dealing with inappropriate conduct. For my part, I see the whole PyCon / #donglegate debacle as an example of public stupidity on multiple parts, not a call to action. Let's just all try to be smarter in future, mmkay?</p>
+]]></content>
+  </entry>
+  
+</feed>

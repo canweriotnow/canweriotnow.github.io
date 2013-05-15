@@ -1,0 +1,1552 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Practical Elegance]]></title>
+  <link href="http://decompelcting.org/atom.xml" rel="self"/>
+  <link href="http://decompelcting.org/"/>
+  <updated>2013-05-14T23:57:14-04:00</updated>
+  <id>http://decompelcting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[I'm An Estuarian!]]></title>
+    <link href="http://decompelcting.org/blog/2013/05/14/im-an-estuarian/"/>
+    <updated>2013-05-14T23:40:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/05/14/im-an-estuarian</id>
+    <content type="html"><![CDATA[<p>It&#8217;s been a while since my last post, because the last few weeks have been just a little crazy.</p>
+
+<p>I&#8217;ve left <a href="http://www.jhu.edu">JHU</a>, and accepted the role of Chief Technology Officer at <a href="http://anestuary.com">An Estuary</a>, an amazing EdTech startup spun out from Baltimore&#8217;s <a href="http://www.digitalharborfoundation.org/">Digital Harbor Foundation</a>.</p>
+
+<p>It&#8217;s kinda crazy going from a massive institution with about 40k employees, to a startup. But we&#8217;re building amazing things, iterating like crazy, and having an unbelievable amountof fun doing it.</p>
+
+<p>So stay on the lookout for An Estuary&#8230; the sky&#8217;s the limit, folks. I&#8217;d forgotten what it was like to wake up in the morning and being excited to get to work. Now I remember. It&#8217;s an amazing feel, and this is an amazing time. And I work with the <a href="http://anestuary.weebly.com/1/post/2013/05/a-great-team.html">best people I could hope to work with.</a></p>
+
+<p>Life is good.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Be Willing To Let Go; or, "The Big Rewrite"]]></title>
+    <link href="http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go/"/>
+    <updated>2013-04-05T02:10:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go</id>
+    <content type="html"><![CDATA[<blockquote><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p><footer><strong>Alan J. Perlis</strong></footer></blockquote>
+
+
+<p>One of the most nerve-wracking things you can tell a manager is that it&#8217;s time to rewrite a major software component, system, or application. In fact, it&#8217;s considered (in some circles) such a mortal sin that Joel Spolsky addresses &#8220;The Big Rewrite&#8221; in a post entitled <a href="http://www.joelonsoftware.com/articles/fog0000000069.html">Things You Should Never Do, Part I</a>.</p>
+
+<p>In many cases, he&#8217;s absolutely right. If you have a working-ish production codebase, throwing it out the window can seem a bit like throwing out the baby with the bathwater. But from an engineering standpoint, software is weird. On the one hand, you have the engineering side: If a bridge is just working-ish, the assessment of a structural engineer might be that it must be torn down and a new bridge built in its place. Software is much more ethereal and abstract; of course, we can continue to patch the old application, and extend it, and patch it, and sacrifice virgins to Great Cthulhu, and keep it chugging along. For a while.</p>
+
+<p>Eventually, however, with a typical enormous, legacy codebase, you just end up mortgaging massive technical debt.</p>
+
+<!--more-->
+
+
+<h3>Refinancing and Bankruptcy</h3>
+
+<p>A large, enterprise-y system will usually be so entrenched in technical debt that we can (metaphorically) view it as being double- and triple-mortgaged. Test coverage is spotty (if it even exists), and more time is spent dealing with regressions than actually implementing new features in a sane manner.</p>
+
+<p>Eventually, technical debt piles to the point at which it&#8217;s time to claim bankruptcy. And the problem is that the beancounters financing software projects (or IT managers who have no business managing software projects) see it as bankruptcy in the traditional sense.</p>
+
+<p>If the original project was poorly architected, rife with Demeter violations and cross-dependencies, coupled with lousy (or no) test coverage, this might be a somewhat accurate assessment. But sometimes a project with a sensible class hierarchy, composable elements, and a modular structure needs &#8220;The Big Rewrite&#8221;, and it becomes difficult to explain what this really entails.</p>
+
+<h3>Reusable code</h3>
+
+<p>I&#8217;m thinking about this in terms of a Rails app that I built some time ago, which really should have been considered a &#8220;throwaway prototype&#8221;, except that the business needs dictated it went into production right away. It works, but&#8230; lousy test coverage, bizarre performance issues, and regression issues make each new deploy a new headache.</p>
+
+<p>It took me some time, but I&#8217;ve finally made the argument for the &#8220;big rewrite.&#8221;</p>
+
+<p>Now, in the mean time, I&#8217;ve created a REST API for the backend as part of an SOA for the systems involved. And I&#8217;ve demonstrated that much of the model layer from the &#8220;deprecated&#8221; application was reused (or improved) for the API that I&#8217;m using to abstract the intrface to the legacy system the inital application was designed to interface with.</p>
+
+<p>The &#8220;big rewrite&#8221; entails rebuilding the tools in the old application to work through the API instead of directly hitting the DB (an Oracle monstrosity with ~500 tables and an incomprehensible collection of package functions and stored procedures). But the code was reusable in a new context, and the &#8220;rewrite&#8221; is really a protracted refactoring and rebuilding of the data layer.</p>
+
+<h3>That Lisp Thing</h3>
+
+<p>The quote at the head of this article was taken from the preface to the second edition of <a href="http://mitpress.mit.edu/sicp/">The Structure and Interpretation of Computer Programs</a>, aka the &#8220;Wizard Book.&#8221; SICP uses the Scheme dialect of Lisp for its examples, and Lisp is a beautiful language for writing composable code, as well as disposable code. It simply <em>makes sense</em> to write small, composable functions, and to use those functions to build abstractions for higher-level programming. This is what Paul Graham calls <a href="http://www.paulgraham.com/progbot.html">Programming Bottom-Up</a>.</p>
+
+<p>I think when Rails programming is done well, it has a similar bottom-up aspect, in that one starts with the data model, then deals with the controllers, and the views are the final consideration. Certainly not everyone approaches Rails development from this perspective, but I think the best Rails apps exhibit this approach. The Windows development model of &#8220;Visual Foo&#8221; and &#8220;Big Design Up Front&#8221; are the anithesis, and I think this is why most Windows programs are terrible, and why Windows programmers are (in my experience) more likely to be okay with terrible code.</p>
+
+<h3>Lewis&#8217;s First Rule</h3>
+
+<p><span class='pullquote-right' data-pullquote='All application code must be either composable or disposable.'></p>
+
+<p>I&#8217;ve never even thought to come up with a &#8220;rule&#8221; of software design before, but this is the most important lesson I&#8217;ve learned in my 26 or so years of hobbyist, amateur, and professional software development. I think it&#8217;s more important than any single design pattern (although many of the patterns in the Gang of Four book embody this rule), architectural principle, or other aphorism (excpet, of course, for <a href="http://en.wikipedia.org/wiki/Hanlon's_razor">Hanlon&#8217;s Razor</a>, but that extends beyond software). Lewis&#8217;s First Rule is simply this: All application code must be either composable or disposable. By composable, I inherently imply &#8220;reusable.&#8221; This is at the heart of the Go4 directive to &#8220;favor composition over inheritance.&#8221; But I also want to insist that getting rid of code is okay. It&#8217;s not only okay, it&#8217;s downright <em>desirable.</em> There&#8217;s no greater feeling than a git commit that reads <code>2 files changed, 4 insertions(+), 232 deletions(-)</code>. It&#8217;s even better when entire files have been deleted.</p>
+
+<p></span></p>
+
+<h3>Don&#8217;t Fear The Rewrite</h3>
+
+<p>A rewrite is only a scary proposition when you&#8217;re working with a codebase that never had a guiding architectural principle to begin with, has no test coverage, and has never seen a refactoring; it&#8217;s just years (maybe decades) of cruft, layered like a forest floor, with fresh leaves falling upon detritus, duff, finally decomposing into the humus that forms the core of the system, where only earthworms dare to tread.</p>
+
+<p>Building long-lasting software is an admirable goal, but it&#8217;s foolhardy to think we can do this at the application level, especially as the rate of technological progress continues to exponentiate. When you do something really good, rip it out of the application, build a library, and include that. Wash, rinse, repeat. Software should be composable, or disposable. There is no in-between.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Difficulty of Chaotic Good]]></title>
+    <link href="http://decompelcting.org/blog/2013/04/02/the-difficulty-of-chaotic-good/"/>
+    <updated>2013-04-02T22:29:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/04/02/the-difficulty-of-chaotic-good</id>
+    <content type="html"><![CDATA[<p>So in a delightful twist, Michael O. Church has brought in the concept of D&amp;D <a href="http://michaelochurch.wordpress.com/2013/03/18/gervais-macleod-11-alignment-and-careers/">ethical alignments</a> to the corporate hierarchy/career discussion.</p>
+
+<p>He quite correctly places the &#8220;Technocrat&#8221;, i.e., the &#8220;postive sociopath&#8221;, or the person who wants to accomplish something beneficial without regard to corporate politics or any other tangential concerns, in the &#8220;chaotic good&#8221; (or at least, &#8220;neutral good&#8221;) category.</p>
+
+<p>I&#8217;ve seen myself as &#8220;chaotic good&#8221; long before this series of posts, or before I ever thought of applying the D&amp;D alignment categories to roles at work. It fits with my politics (anarchist-communist), with my gneral M.O. of getting things done (open source is always bettter, and it&#8217;s always easier to ask for forgiveness than to get permission). It also fits with my general attitude toward work: if you want something brilliant, tell me what you want and get the fuck out of my way. If you want a mess, keep letting middle managers stick their fingers in the pie of my creative process.</p>
+
+<p>Church makes an excellent point, though, that the &#8220;technocrat&#8221; disposition, and the alignments it tends to entail (chaotic good to chaotic neutral) tend to be notoriously difficlut to manage. The only thing I think is missing from the series he&#8217;s been doing on this issue is that if you&#8217;re a programmer, <a href="http://www.paulgraham.com/boss.html">you weren&#8217;t meant to have a boss</a>.</p>
+
+<!--more-->
+
+
+<p>That being said, let me say something for the chaotic good among us. Our ethical alignment is to the good, and this is not negotiable. Compare this to most senior managers and executives, who tend to (and I would argue almost universally) have the diametrically opposed alignment of <a href="http://michaelochurch.wordpress.com/2013/03/17/gervais-macleod-10-the-pull-of-lawful-evil/">lawful evil</a>. But not only is our ethical alignment to the good (altruistic), but our civil alignment is chaotic - we distrust and generally want to destroy instutions, whereas our superiors/arch-nemeses derive their only claims to power (there&#8217;s certainly no there there when it comes to intelligence or any other &#8220;natural&#8221; claims to leadership) from their sociopathic rise through the entrenched hierarchy of rank culture institutions.</p>
+
+<p>So, as Mr. Church has astutely observed, in terms of ethical alignment, Technocrats and Psychopaths (the two types of &#8220;MacLeod Sociopaths&#8221;) are as opposite as opposite can be. The &#8220;Psychopaths&#8221; (most corporate executives, because of the nature of the corporation in this day and age) are Lawful Evil: Completely self-interested, but with a faith in institutions because of their ability to further that self interest; The Technocrats, tending toward Chaotic Good, are the precise opposite; we want to make the world better, and have a strong distrust, if not contempt for, institutions, because we view them as invariably corrupting and subverting the good to which we are committed.</p>
+
+<p>I&#8217;ll refer you to the above-cited post from Michael Church, or your local AD&amp;D manual for more detail on alignment.</p>
+
+<p>I&#8217;m remembering a quote from Battlestar Galactica (Reimagined). I can&#8217;t remember whether it&#8217;s Apollo or Bill Adama, but there&#8217;s a quote along the lines of, &#8220;In the military, we often refer to the &#8216;situation on the ground.&#8217;&#8221;</p>
+
+<p>The situation on the ground is that lawful evil is generally more evolutionarily fit an alignment within the typical rank organization than chaotic good. The typical organization is true neutral: neither moral nor civil axes factor into its actions or disposition; the goal of the organization is to further the goals of the organization. Applied to the individual, this disposition would probably lead to an alignment of lawful evil. But as we factor in the impersonal nature of the organization (leaving out the legal fiction of &#8220;corporate personhood&#8221;), we end with a truly neutral disposition.</p>
+
+<p>The true neutral is as willing to leverage the talents of the full span of the alignment spectrum; if a lawful evil individual serves its executive interests, and a chaotic good individual serves its creative interests, it will attempt to leverage both in the interest of organizational goals. The tragic flaw comes in not accepting that the two are incompatible. The lawful evil (who see the hierarchical organization as a pragmatic tool for personal gain) and the chaotic good (who see the hierarchical organization as an invariably corrupt obstacle to human progress) cannot, in the long term, successfully collaborate. In the short term, our goals may align, and we may achieve great things together. The lawful evil executive may be able to achieve accolades while the chaotic good programmer is allowed latitude to innovate; but the risk-aversion of the massive, neutral insitution prefers the disposition of the lawful evil position because it&#8217;s predictable.</p>
+
+<p>Chaotic good is harder to predict. It&#8217;s also harder to fit into an organization of &#8220;normals.&#8221; By &#8220;normals&#8221; I mean the people still doing concave work in a world where concave work is in economic hospice.</p>
+
+<p>So how can the chaotic-good aligned of us survive in a corporate environment? Maybe we shouldn&#8217;t.</p>
+
+<p>Perhaps doing so is a pathetic concession to necessity until a better opportunity presents itself.</p>
+
+<p>This is perhaps a set intersection of the MacLeod &#8220;Loser&#8221; and the Church/MacLeod &#8220;Technocrat&#8221; (Church&#8217;s &#8220;good&#8221; version of the MacLeod &#8220;sociopath&#8221;); Being strategic typically refusing Pyrrhic victories; sometimes it means staying a &#8220;Loser&#8221; until you can assess whether up or out is a more likely/possible/effective strategic move.</p>
+
+<p>The worst part is finding oneself in such an environment with a number of kindred spirits, with whom one works exceedingly well. It&#8217;s terrible to be forced to decide to leave something you love just because the chaotic good (us) can&#8217;t tolerate the lawful evil (them). But neither can they tolerate us, for long, once it becomes apparent that our alignments will neither allow us to become allies, nor even to use one another to achieve our divergent ends. But it happens, time and time again. I&#8217;ve seen D&amp;D parties split over the incompatibility of alignment in the player characters. Why should the modern corporation be any different?</p>
+
+<p>So what&#8217;s the solution? I really can&#8217;t say. When it comes down to it, I believe that good will win, chaotic or otherwise. And I really only have faith in the chaotic or neutral good; lawful good is too much of a compromise, and tends to degrade into neutrality due to its civil alignment.</p>
+
+<p>Who knows. I truly wish that every organization could be productive and effective. But there&#8217;s an old saying that a small organization is ruled by the creatives, a medium-sized one is ruled by the bankers, and a large one is ruled by the lawyers. When it reaches that point, we&#8217;re discussing an organization so averse to risk that innovation or any sort of worthwhile effort is out of the question. It&#8217;s a shame, but that&#8217;s the reality.</p>
+
+<p>So what to do? I don&#8217;t know. I don&#8217;t have answers. Yet. But I&#8217;m still thinking this through as well as working it through IRL. My hope is that there&#8217;s an answer for every organization, but there&#8217;s also that whole &#8220;building a new world from the ashes of the old&#8221; element that occasionally precludes evolutionary progress and demands revolutionary progress. Which are we facing here?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Donglegate, Inclusionary Culture, Nerd Culture]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/23/donglegate/"/>
+    <updated>2013-03-23T21:33:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/23/donglegate</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace conversations with friends and coworkers. I have strong feelings about what happened at PyCon (re: the donglegate scenario), and many of them are conflicting. So I&#8217;ve waited to write about it until now.</p>
+
+<h3>Donglegate</h3>
+
+<p>Okay, for one thing, I really think the <a href="https://twitter.com/search?q=%23donglegate&amp;src=typd">#donglegate</a> hashtag/label is stupid, but that&#8217;s not up to me, so whatever. I would like to address the way in which things were handled at PyCon, so here goes.</p>
+
+<p>First off, I have no personal investment in what happens at PyCon. I don&#8217;t really code in Python, I don&#8217;t particularly like Python, whatever. But when people are publicly humiliated, fired, whatever, over things that are basically stupid, it chafes.</p>
+
+<p>So, if you&#8217;re unfamiliar (fat chance), you can get the original interpretation of events from the horse&#8217;s mouth, at <a href="http://butyoureagirl.com/14015/forking-and-dongle-jokes-dont-belong-at-tech-conferences/">Adria Richards&#8217; blog</a> Hopefully that link works for you, I got yet another error trying to load it&#8230; maybe someone should tell her about <a href="http://decomplecting.org/blog/2012/07/04/static-is-beautiful/">static pages for blogs</a>. Anyhow, here&#8217;s the short version: a &#8216;developer relations rep&#8217; from <a href="http://sendgrid.com/">SendGrid</a> was offended by some off-color comments made by some guys sitting behind her that apparently referenced &#8220;big dongles.&#8221; She also alleged some sexual references to &#8220;forking,&#8221; which has since been <a href="http://pastebin.com/JaNh0w5F">called into question</a>. Instead of saying to the individuals in question, &#8220;Stop being jerks and shutup so I can listen to the speech,&#8221; she tweeted pics of the guys who were making dongle jokes, and got the PyCon organizers involved.</p>
+
+<p>I&#8217;m not judging at this point.</p>
+
+<p>Anyhow, once the PyCon organizers got involved, the folks she accused were removed from the session. Apparently, at least one lost his job.</p>
+
+<p>Of course, it blew up on the Intertweets, with 4chan getting involved at some point and anons starting a <a href="https://www.change.org/petitions/sendgrid-please-fire-adria-richards">Change.org petition</a> to have her fired.</p>
+
+<p>Adria Richards tweeted that SendGrid supported her:</p>
+
+<blockquote class="twitter-tweet"><p>Hey @<a href="https://twitter.com/mundanematt">mundanematt</a>, it&#8217;s clear from the last 24 hours you&#8217;re a bully.@<a href="https://twitter.com/sendgrid">sendgrid</a> supports me.Stop trolling.</p>&mdash; Adria Richards (@adriarichards) <a href="https://twitter.com/adriarichards/status/314452708549603328">March 20, 2013</a></blockquote>
+
+
+<script async src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Apparently, she was mistaken, because she was fired shortly thereafter.</p>
+
+<h3>Constructive Intervention</h3>
+
+<p>I&#8217;m still replaying this in my head. Some dudes were making immature, inappropriate comments at a conference. Ms. Richards responded in a way that was also immature and inappropriate.</p>
+
+<p>I&#8217;m not going to go into the distasteful, violent, or threatening responses that occurred on Twitter or 4chan (although, regarding hte latter, it&#8217;s <em>4chan.</em> What do you expact?).</p>
+
+<p>I would like to point out that the women from <a href="http://ladycoders.com">LadyCoders</a> proposed a system for dealing with this sort of occurence that <em>is</em> constructive. Expanding upon the <a href="http://singlevoice.net/redyellow-card-project/">Red/Yellow Card Project from Defcon</a>, they&#8217;ve developed <a href="http://thecowgirlcoder.com/2013/03/21/pycon-code-of-conduct-warning-cards/">PyCon CoC warning cards</a> for next year&#8217;s PyCon. I think it&#8217;s a great constructive way to give people a way to address behaviour which they find offensive without resorting to the Twitter equivalent of tar-and-feathering, as Richards took as a first resort.</p>
+
+<h3>And So&#8230;</h3>
+
+<p>If anything, there was more logical reason for Richards to lose her job than the developer from PlayHaven. He was a developer; developers have never been known for tact or maturity. Richards&#8217; title was &#8220;developer evangelist&#8221;; I&#8217;d like to know how she expected to carry out that role after alienating so many developers with her actions.</p>
+
+<p>But whatever. PyCon has amended its CoC to condemn &#8220;public shaming&#8221; as a mode of dealing with inappropriate conduct. For my part, I see the whole PyCon / #donglegate debacle as an example of public stupidity on multiple parts, not a call to action. Let&#8217;s just all try to be smarter in future, mmkay?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Farewell, Reader; Or, The Problem with "Free as in Beer"]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/16/farewell/"/>
+    <updated>2013-03-16T00:45:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/16/farewell</id>
+    <content type="html"><![CDATA[<p>I&#8217;m <a href="http://support.google.com/reader/answer/3028851">going to miss Google Reader</a>. I know a lot of people are going to. Hell, in a crazy inversion of Godwin&#8217;s Law, even <a href="http://www.youtube.com/watch?v=A25VgNZDQ08">Hitler is upset</a>. There&#8217;s a <a href="https://www.change.org/en-GB/petitions/google-do-not-remove-google-reader-on-july-1-2013">petition on Change.org</a>, and Bender is pissed:</p>
+
+<p><img class="center" src="http://decompelcting.org/images/post-img/bender-reader.png"></p>
+
+<p>I&#8217;ve been complaining, both online and in person, ever since I learned of this a couple of days ago. And it&#8217;s not the first time I&#8217;ve <a href="http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything/">complained about changes at Google</a>.</p>
+
+<p>This isn&#8217;t even <a href="http://en.wikipedia.org/wiki/Tragedy_of_the_commons">the tragedy fo the commons</a>; this is the tragedy of <a href="http://en.wikipedia.org/wiki/Gratis_versus_libre">gratis versus libre</a>, or &#8220;free as in beer&#8221; versus &#8220;free as in speech.&#8221;</p>
+
+<p>Sure, Reader is one of Google&#8217;s most popular products, at least among my (admittedly strange) peer group. But I&#8217;m going to assert something odd for a wacky leftist like me: Google is a for-profit corporation, beholden to its shareholders. It has a responsibility to monetize its products, and Google is (in simple terms) in the advertising business. Reader wasn&#8217;t selling ads, as far as I can tell.</p>
+
+<p>We can drill a little deeper, and say that Google is really in the <em>data</em> business. But even at this level, I can guess the prediction of the highly complex and optimized machine learning algorithms Google has developed for all the data it harvests, when applied to Reader:</p>
+
+<h4>Nerds like reading one anothers&#8217; blogs.</h4>
+
+<p>Yeah, um&#8230; I don&#8217;t know how they failed to monetize that highly proprietary and unexpected insight.</p>
+
+<!--more-->
+
+
+<p>I&#8217;m going to miss Google Reader. It was an extremely well-built, easy to use RSS/Atom feed aggregator that made my toilet reading much more manageable.</p>
+
+<p>But the lesson here is the one I missed (or ignored) last year when Google introduced the changes to Search that made it more difficult for me to find pertinent results to highly complex, technical queries, and I kvetched on this blog.</p>
+
+<p>I still stand by my position that <a href="http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything/">hackers need our own everything</a>, but my new conclusion is that it was a mistake to rely on a corporation like Google in the first place, if the tool in question really mattered.</p>
+
+<p>It would be like a carpenter relying on a hammer (and saw, plane, screwdriver, etc.) provided by some external entity who could swoop in and remove or alter any of those tools at any time. Such a carpenter would be a fool, at least if he didn&#8217;t leverage those tools while he had them to build a set of replacements.</p>
+
+<p>I&#8217;m not saying building a replacement for Google Search is something within the reach of any one (or one hundred) of us disgruntled hackers. But the upside of the Reader debacle is that it showed me what I really do (and don&#8217;t) want from a feed aggregator, and now <a href="https://github.com/canweriotnow/reajer">I&#8217;m building my own</a>. I&#8217;ve spent about 30 minutes on it so far, so how much is there when you click that link will likely be quite time dependent, but I&#8217;m learning more Clojure while scratching an itch (an itchy Google bite, to be exact), so I don&#8217;t see a major downside to spending time on it.</p>
+
+<p>Fundamentally, it would be nice if we could rely on Google&#8217;s stated policy of &#8220;Don&#8217;t be evil&#8221; to keep us supplied with the tools to which we have become accustomed. But by the general standard of socially acceptable evil, Google isn&#8217;t really being evil, just kinda douchey.</p>
+
+<p>Until there&#8217;s a company that can remain profitable while adhering to a &#8220;don&#8217;t be a douche&#8221; standard, hackers still need our own everything. Normal people will too, I guess.</p>
+
+<p>But Reader was always &#8220;free as in beer,&#8221; not &#8220;free as in speech,&#8221; so it was always the prerogative of the douche with the keg to call &#8220;last call,&#8221; to kick everyone out, or at least to take his tap and go home.</p>
+
+<p>So go ahead and sign the petition on <a href="http://change.org">Change.org</a>, watch the &#8220;Hitler Finds Out&#8221; video (actually, please watch that one&#8230; it&#8217;s both accurate and hilarious), but don&#8217;t be surprised the next time Google takes your favorite toy away.</p>
+
+<p>P.S. I haven&#8217;t added blackjack <em>or</em> hookers to <a href="https://github.com/canweriotnow/reajer">reajer</a>, but it does play Tetris. So there&#8217;s that.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Myth of The "IT Department"]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department/"/>
+    <updated>2013-03-15T01:53:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department</id>
+    <content type="html"><![CDATA[<p>So in the comments on my <a href="http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom for what is, in my opinion, the most insightful and important blog currently published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>. His recent series of posts have been reviewing and analyzing the MacLeod theory of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-convexity/">organizational structure</a> (link is to the latest post in the series, but if you haven&#8217;t been following it, therein are links to the previous eight).</p>
+
+<p>I want to focus on the differential between concave (in which the difference between failure and middling is greatest) and convex (in which the difference between middling and superior is greatest) work.</p>
+
+<h3>The &#8220;IT Department&#8221;</h3>
+
+<p>I have to start by saying &#8220;Information Technology&#8221; is a leaky abstraction. It covers everything from internal software development to the help desk call center. I&#8217;m not suggesting that either line of business is superior. Both are absolutely necessary, at least until developers start to become psychic or users stop being stupid, or (preferably) both.</p>
+
+<p>The real problem comes when the same management structure is imposed in the guise of an &#8220;IT Department&#8221; on such divergent areas as the help desk, desktop support, network engineers, developers, and hardware techs. Going beyond theories <a href="http://michaelochurch.wordpress.com/2013/03/12/gervais-macleod-8-human-nature-theories-x-y-z-and-a/">X, Y, Z, or A</a> of management, having a &#8220;Central IT&#8221; department is (without a revolutionary management strategy that will probably raise HR issues for most entrenched organizations) an attempt to shoehorn concave and convex work into the same tiny box, and is going to fail at appropriately managing one or the other (or perhaps more likely, both).</p>
+
+<!--more-->
+
+
+<h3>Concave Work</h3>
+
+<p>Let&#8217;s face it, help desk work is typically concave. I&#8217;ve done it (briefly), and it&#8217;s probably an acceptable use case for <a href="http://en.wikipedia.org/wiki/Theory_X_and_Theory_Y#Theory_X">Theory X</a>, since it&#8217;s (in this writer&#8217;s opinion) rote, unrewarding work that I would <a href="http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">automate out of existence</a> if I had the time and resources. But, it&#8217;s also necessary work, and a place where &#8220;managing to the middle&#8221; works because achieving the Socially Acceptable Middling Effort (SAME) is a decent departmental average.</p>
+
+<p>I&#8217;d place much of the responsibility of the average sub-division of IT in the scope of &#8220;concave work.&#8221;  Desktop support, Windows administration, etc., are really about uniformity of outcome, and SAME is an acceptable goal.</p>
+
+<p>When it comes to efforts like software development, or big data, or even &#8220;cloud services&#8221;, SAME is the same as failure. We&#8217;re now into the realm of convex work, and the standard has to be different.</p>
+
+<h3>Convex Work</h3>
+
+<p>I&#8217;ve <a href="http://decompelcting.org/blog/2012/10/31/feedback-loops/">written before</a> about how programmers are just <em>weird</em> from a standard, organizational point of view. Or any standard point of view. Programming is the ultimate convex work; from Joel Spolsky&#8217;s warnings about <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">The Perils of Java Schools</a>, to Jeff Atwood&#8217;s plea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">not everyone learn to code</a>, it&#8217;s clear that not only is programming a highly specialized thing to excel at, but also that there are <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">certain factors that determine capability in advance</a>.</p>
+
+<p>It&#8217;s probably the epitome of convex work. The difference between the worst programmer and the middling programmer is a fraction of the difference between a middling programmer and (even) a 90th percentile-or-above programmer. And there are probably other areas in IT where this is true; from my experience I&#8217;d say they&#8217;re in software-heavy areas like managing large datasets properly, or providing true &#8220;cloud services&#8221;, i.e., computing and storage in a multi-tenancy environment with computation and storage as a metered service. I haven&#8217;t seen any of these done well in an &#8220;enterprise&#8221; environment.</p>
+
+<h3>The Enterprise</h3>
+
+<p>The &#8220;enterprise&#8221; only works by &#8220;managing to the middle.&#8221; Which explains the self-defeating attitutdes of vendor lock-in and risk aversion. When you&#8217;re not in a &#8220;tech company,&#8221; IT is invariably a &#8220;cost center,&#8221; which a) is why <a href="http://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/">you shouldn&#8217;t call yourself a programmer</a> (obligatory reference), and b) why it needs to maintain a low-risk profile. When you work for a large organization, &#8220;low-risk&#8221; means &#8220;the buck stops elsewhere than my desk.&#8221;  So there needs to be a vendor to blame. So much of the acknowledged efforts will be in contract negotiations for the purchase of almost-suitable software from an established vendor, that doesn&#8217;t really meet the needs of the organization, but can be marginally tweaked to fit by middling engineers.</p>
+
+<p>It also means that internal innovation can&#8217;t be acknowledged or rewarded too highly. When most of your &#8220;software teams&#8221; are doing maintenance on the last failed vendor purchase, how can you be seen to give accolades to the projects which have truly broken new ground?</p>
+
+<p>At the same time, do you <em>want</em> front line support innovating to that degree? Sure, if one of your help desk reps replaces some annoying customer interaction with a Perl script, they&#8217;ll either be promoted to convex work, or fired from concave work, right? I think this only reinforces the difference between the two categories.</p>
+
+<h3>Programmer, Wat Do?</h3>
+
+<p>That&#8217;s where the <a href="http://michaelochurch.wordpress.com/2013/02/19/gervais-principle-questioned-macleods-hierarchy-the-technocrat-and-vc-startups/">MacLeod Paradigm</a> really comes into play again&#8230; when most of your developers are 9-to-5ers who <a href="http://decomplecting.org/blog/2012/05/22/passion/">take no joy in their craft</a>, you have a team of MacLeod &#8220;losers,&#8221; which fits perfectly well into the &#8220;enterprise&#8221; IT paradigm. It&#8217;s hard to practice something sensible like <a href="http://michaelochurch.wordpress.com/2012/11/25/programmer-autonomy-is-a-1-trillion-issue/">open allocation</a> when you manage business analysts in the same manner as developers.</p>
+
+<p>If you really care about good, clean, beautiful, (even) elegant code, well&#8230; you might luck out. I&#8217;m on a small team which is probably considered &#8220;rogue&#8221; by most &#8220;enterprise&#8221; standards. I love my job, and it affords me significant autonomy and creative freedom, but I also know how bizarre and rare that is. I don&#8217;t see how &#8220;non-technical organizations&#8221; (a future post will debate whether such a thing exists anymore) can afford to treat developers&#8217; work the same as concave work without having the whole house of cards come tumbling down at some point.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Confessions of A Job Destroyer]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer/"/>
+    <updated>2013-03-11T15:57:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer</id>
+    <content type="html"><![CDATA[<p>One of the most unfunny ironies of the rhetoric surrounding &#8220;job creators&#8221; in contemporary American politics is that most of the jobs being created (or at least, those with the greatest demand) are in the tech sector. Jobs like mine. Jobs that automate processes that used to be performed by people.</p>
+
+<p>So I&#8217;ll come out and say it: I&#8217;m not a job creator (which is, I suppose, why the Republicans aren&#8217;t too interested in cutting <em>my</em> taxes). I&#8217;m a job destroyer.</p>
+
+<p>We (programmers) all are, on some level or another; we&#8217;re taking mundane repetitive tasks and automating them with code. In a perfect world, we would be hailed as heroes, freeing the toiling masses from their humdrum routines to engage in more ennobling pursuits&#8230; but there&#8217;s that pesky issue of needing an income. I&#8217;ll return to this momentarily, but I first want to confess to a darker truth.</p>
+
+<p>Marc Andreessen famously explained <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">&#8216;Why Software Is Eating The World&#8217;</a> in the WSJ a couple of years ago. What he failed to mention is that the snake of software is also quietly eating its own tail.</p>
+
+<!--more-->
+
+
+<p>I&#8217;m not just an old-fashioned Job Destroyer, replacing secretaries and mid-level bureaucracy with CRM and accounting suites. By using the most efficient possible languages (Ruby and Clojure, in my case, rather than Java or C#) and relying on free and open source software (Postgres rather than Oracle, for instance), I&#8217;m potentially destroying jobs <em>in my own sector!</em></p>
+
+<p>I really feel terrible about this&#8230; what one or two lone hackers can readily achieve today, once could only have been accomplished by a team of engineers, business analysts, project managers, and QA testers, with tools purchased from vendors that employed legions more engineers, analysts, project managers, and QA testers (actually, I&#8217;m not sure if Oracle has a QA process&#8230; the only &#8216;quality&#8217; I&#8217;ve ever been &#8216;assured&#8217; Oracle will possess is bugginess, but I digress)&#8230;</p>
+
+<p>With the exception of low-paying service jobs, most of the jobs we&#8217;re going to create in the coming years will be Job Destroyer jobs. (The whole health care thing is a bubble, trust me. After all those aging Boomers die off, our age distribution will even out and we won&#8217;t need so many people working to care for the dying and infirm). And as Amazon has shown, not only can we destroy retail jobs with software, we can also destroy jobs in system administration, datacenter operations, physical plant maintenance, etc.</p>
+
+<p>Sure, we can&#8217;t destroy <em>all</em> the non-Job Destroyer jobs&#8230; <em>yet.</em> Burger King and Starbucks still need human <del>subjects</del> employees to make Whoppers and skinny lattes, but how long before these jobs are deskilled to the point they can be done by machines &mdash; i.e., by software?</p>
+
+<p>(Aside: If you don&#8217;t believe Starbucks has radically de-skilled its workforce, you should have worked at one a decade or so ago. Some coffee shops still have manual espresso machines, which require training, skill and finesse to operate. At Starbucks, your double skinny half-caf mocha is, I assure you, prepared 90% by software, 10% by rote human activity that they haven&#8217;t figured out how to automate yet)</p>
+
+<p>But wait, you ask, if all these jobs have been automated away by software, why are we still working so much (if employed), and what&#8217;s more, why are we trying to <em>create</em> jobs? Isn&#8217;t more work what we were trying to avoid with all this infernal software?</p>
+
+<p>This, gentle reader, is where I make the argument for a <a href="http://en.wikipedia.org/wiki/Basic_income">basic income</a>. It&#8217;s just common sense as the amount of socially necessary labor decreases with each passing year. How could we fund such a sweeping change to economic policy? Well, first let&#8217;s get back to basic principles: as programmers, we want to eliminate work. So let&#8217;s penalize those damn pesky job creators with a progressive taxation scheme. Let&#8217;s get back to America&#8217;s halcyon days of progressive taxation, the 1950&#8217;s that conservatives laud so dearly, and raise the top marginal tax rate back to 91%. Then we could afford a basic income, with single-payer health care for afters.</p>
+
+<p>I&#8217;m a job destroyer, and I love what I do. Now if only we had a <a href="http://michaelochurch.wordpress.com/2012/12/19/the-call-for-rational-economy/">rational economy</a>, I could stop having mixed feelings about the net effect of my work.</p>
+
+<h2>Update 2013-03-13</h2>
+
+<p>There&#8217;s some pretty lively discussion of this post beyond the comments here, both on <a href="https://news.ycombinator.com/item?id=5359458">Hacker News</a> and on <a href="http://www.reddit.com/r/programming/comments/1a50zz/confessions_of_a_job_destroyer/">Reddit</a>. I recommend checking out those discussions as well.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Social University That Could Have Been]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
+    <updated>2013-03-10T22:21:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
+    <content type="html"><![CDATA[<p>This is a post I&#8217;ve wanted to write for a while, but I&#8217;ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
+
+<h2>The Social University</h2>
+
+<p>Sometime in 2011, I was joking with my team lead about connecting <a href="http://www.blackboard.com/platforms/transact/overview.aspx">Blackboard Transact</a>, the OLTP product used for access control, stored value account transactions, and meal plans at my work, to Twitter, just for fun. The short answer was &#8220;that&#8217;s silly.&#8221; The longer answer was &#8220;that&#8217;s silly, but it would be pretty neat.&#8221;</p>
+
+<p>So on lunch breaks and when I was waiting on other things to move forward with my &#8220;official&#8221; projects, I played around with creating a system to connect our system to Twitter.</p>
+
+<p>Since I had already worked on a service layer for (really, a generalized SOA for systems connecting to) Transact, it was pretty easy to leverage APIs from not only Twitter, but also Foursquare and Facebook to tie into transactions from our internal system; door access could tweet your location, and check you in on Foursquare; buying a coffee could do the same.</p>
+
+<p>Eventually, the idea gained some traction, and we started building in a system of social gamification, that would award badges and achievements for usage of the system, ranging from customer loyalty rewards for particpating vendors, to seemingly &#8220;silly&#8221; things like a &#8220;Speed Demon&#8221; achivement for swiping two doors on opposite sides of campus within ten minutes.</p>
+
+<p>The system also allowed students (well, also faculty and staff) to connect to Facebook to share badges/achivements and compete in a university-wide leaderboard. This is just an overview of the social media integration and gamification elements, but you might very well ask, what&#8217;s the point?</p>
+
+<!--more-->
+
+
+<h2>The Univerity Lifecycle</h2>
+
+<p>There are three major phases in the lifecycle of the relationship between a university and its students: recruitment, retention, and alumni devleopment.</p>
+
+<p>What this comes down to is attracting students, making sure they stay long enough to graduate, and then soliciting donations from alumni. The brilliance (if I may be pardoned a lapse in humility) of our software was the long-term goal of uniting all three. Students would be able to opt-in to the social media components as soon as they were accepted; the core components (targeted toward current students) would be integrated with their day-to-day activities on cmapus; and participants would be able to remain &#8220;in the game&#8221; long after graduation, creating a lasting bond between the university and alumni (far beyond attendance at the occasional lacrosse game).</p>
+
+<p>Our eventual goal was to connect these three phases through social media to make the university experience tightly integrated with the lifetime online experience of students, faculty and staff.</p>
+
+<h2>It&#8217;s All About The Data</h2>
+
+<p>So, making college more fun and exciting across the three phases of invovlement is well and good, but where does it start to get interesting? In the data.</p>
+
+<p>Once you go beyond the immeidate day-to-day, and start harvesting data like tweets and facebook posts (for sentiment analysis), Foursquare and other location-based data (to track geographical patterns), and LinkedIn for career trajectory data, you can start to analyze interesting patterns and create predictive analyses based on the large volume of voluntarily supplied data.</p>
+
+<p>In the end, it&#8217;s a positive-sum game; students have a more engaging experience, the univeristy has a better dataset to analyze to make informed decisions about resource allocation, recruitment, and alumni giving, and it&#8217;s a damn fun project to work on.</p>
+
+<h2>Failure</h2>
+
+<p>Why do I consider this the greatest failure of my professional career?</p>
+
+<p>In some ways, it was a resounding success. Departments from athletics to applied math were clamoring for it; we were asked to present the project at the annual conference for Blackboard Transact, and then asked to do an encore (<a href="https://speakerdeck.com/canweriotnow/j-card-social">You can find the slides here, by the way</a>). Our student focus group thought it was one of the best things they&#8217;d ever seen.</p>
+
+<p>I consider it a failure because we never got to ship. (<a href="http://johndbarry.com/2012/07/if-it-doesnt-ship-it-doesnt-exist/">If it doesn&#8217;t ship, it doesn&#8217;t exist.</a>) Sure, it was functional, and even &#8220;live&#8221; on our production server for about a week before our official launch date. But in that last week, the project was &#8220;indefinitely shelved&#8221;.</p>
+
+<p><img class="center" src="http://decompelcting.org/images/post-img/remove-that-code.jpg"></p>
+
+<p>I never really got a clear reason for that (there were meetings between deans and lawyers and managers to which I was not privy), but the official, documented reason was that the project itself (which we worked on over the course of a year or more) was &#8220;never requested or approved&#8221;, which is why I&#8217;m blogging about it now. I may never be able to share the source code (work-for-hire is pretty explicit), but I think the idea, which originated with me, should be free to the world if my employer disavows any ownership of it.</p>
+
+<h2>That Vision Thing</h2>
+
+<p>Okay, this header is the title of an episode from Seson 3 of <em>Angel,</em> but I&#8217;m also referencing one of the Bible verses my mom likes to quote. It&#8217;s from Proverbs, not sure exactly where, but the line is, &#8220;My people perish for a lack of vision.&#8221;</p>
+
+<p>This could be the most relevant prophetic statement to higher education in our current economic and technological climate. Last year, Sebastian Thrun, Stanford prfessor, Google researcher, and founder of <a href="http://udacity.com/">Udacity</a> famously stated in a <a href="http://www.wired.com/wiredscience/2012/03/ff_aiclass/all/">Wired article</a> that &#8220;Fifty years from now&#8230;there will be only 10 institutions in the whole world that deliver higher education.&#8221; My argument is that those will be the insitutions with the vision to risk everything to remain at the forefront of the marketplace.</p>
+
+<p>Does allowing students to tweet their lunch purchases accomplish this goal? Certainly not. But the lack of vision that hedges its bets and plays it safe certainly does not bode well for the university that wishes to survive the next several decades.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PAM Authentication Beyond The Desktop]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
+    <updated>2013-03-08T20:11:00-05:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
+    <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&#8217;s useful for so much more.</p>
+
+<h3>Web Authentication</h3>
+
+<p>At work, we needed an authentication solution that allowed users to sign in with their ActiveDirectory credentials. Although the &#8220;official&#8221; solution was to use <a href="http://www.ca.com/us/secure-single-sign-on.aspx">SiteMinder</a> for web authentication against AD, we were working on a mobile application, and at the time the SiteMinder auth page was ugly, and had no mobile-optimized login page. The latter problem has since been rectified; now it has both an ugly desktop login and an ugly mobile login. In addition, we were using nginx, and SiteMinder was really only supported under IIS and Apache (and at the time, the latter was via Shibboleth. Ugh.), so without official SiteMinder support, or an nginx Shib plug-in, we were in a bit of a bind.</p>
+
+<p>Around the same time, I was playing with Likewise Open (now known as <a href="http://www.powerbrokeropen.org/">PowerBroker Identity Services - Open Edition</a>) to bind my Linux workstation into AD. So it occurred to me: if a normal Linux PAM login can be authenticated against ActiveDirectory, why not a PAM login from a web application?</p>
+
+<p>I know, I know, my first though should have been LDAP, right? For some unknown reason, LDAP was verboten at the time. The policy has since (apparently) been reversed, but such is the ebb and flow of corporate politics. And so, in the grand tradition of one of the mothers of modern computer science (and one of my daughter&#8217;s namesakes):</p>
+
+<blockquote><p>If it&#8217;s a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote>
+
+
+
+
+<!--more-->
+
+
+<p>My first obstacle was to figure out how to do this from Ruby. <a href="https://github.com/binarylogic/authlogic">Authlogic</a> is a decent authentication framework (Sure, Devise is newer, but there&#8217;s nothing wrong with Authlogic). There&#8217;s an <a href="https://github.com/jhu-idcs/authlogic_pam">authlogic_pam</a> plugin (link is to my updated version, original seems to be abandoned), so the main issue was updating the long-abandoned rpam gem to tie into PAM. So I created <a href="https://github.com/canweriotnow/rpam-ruby19">rpam-ruby19</a> to have a C extension compatible with Ruby ~>1.9.2. Once the server (all of our production servers are <a href="http://www.debian.org/releases/stable/">Debian 6 &#8220;Squeeze&#8221;</a>) was tied into AD, it was relatively trivial to create a login that used Authlogic to hit PAM (and thusly ActiveDirectory) for user authentication.</p>
+
+<h3>But now everyone has a server login?</h3>
+
+<p>No, not at all. Likewise/PBIS has a setting to change the login shell for <em>only</em> AD users; we simply changed their shell to <code>/bin/true</code>. Problem solved.</p>
+
+<h3>And that forgiveness/permission thing?</h3>
+
+<p>While we were in beta, we informally ran the auth scheme by the people directly responsible for such things. They actually thought it was pretty cool and innovative. Which just reinforces my dedication to the timeless wisdom of Dr. Hopper.</p>
+
+<h3>And so&#8230;</h3>
+
+<p>Since we implemented this auth scheme for our mobile app, we&#8217;ve continued to go with it; it&#8217;s simple, elegant, and shields us from capturing (even hashed) credentials. We have two(-ish) new products launching this year using the same auth scheme. And we&#8217;re still quite satisfied with the results.</p>
+
+<h3>Caveats</h3>
+
+<p>Over the past couple of months, I&#8217;ve been researching an <a href="https://github.com/canweriotnow/rpam-ruby19/issues/5">issue submitted on Github</a> documenting a problem authenticating local users other than the euid running the process. You can get the details from the link, but this is how PAM (or at least shadow passwords) are supposed to work. This isn&#8217;t for authenticating local system accounts (at least not if you&#8217;re using shadow passwords properly); you should only auth external accounts (LDAP, ActiveDirectory, maybe NIS+) through PAM for non-system-login applications.</p>
+
+<h3>Future</h3>
+
+<p>Since this has worked out so well with our Rails apps, I&#8217;m now working on a Clojure equivalent. There&#8217;s a PAM integration library for Java called JPam, which I&#8217;ve started wrapping in a library called <a href="https://clojars.org/clj-pam">clj-pam</a>, available from Clojars. If you&#8217;d like to help, the source repo is located <a href="https://github.com/canweriotnow/clj-pam">here on Github</a>.</p>
+
+<p>PAM is wonderfully extensible. It&#8217;s also very configurable, and is worth leveraging whenever possible. Dig deeper. Linux has so many great little pieces we tend to overlook.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Code Typos Got You Down? Stop Worrying with close_enough]]></title>
+    <link href="http://decompelcting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/"/>
+    <updated>2013-03-01T18:32:00-05:00</updated>
+    <id>http://decompelcting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough</id>
+    <content type="html"><![CDATA[<p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I&#8217;m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
+
+<p>The concept is very simple, and based on an algorithm used in most spell checkers and autocorrect systems currently in use. Calculating the <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau-Levenshtein distance</a> between two words can reliably (within a certain margin of error) indicate whether a known word was inteded when an unknown term was encountered in user input.</p>
+
+<p>In Ruby, we have a wonderful metaprogramming facility in <code>method_missing</code>. What we&#8217;ve done in close_enough is to monkey-patch <code>method_missing</code> on <code>Object</code> to calculate the Demerau-Levenshtein distance between existing methods and the non-existent called method, and invoke the nearest one if it&#8217;s &#8220;close enough&#8221; (close enough currently being an edit distance of &lt; 3).</p>
+
+<!-- more -->
+
+
+<h2>So how does it work?</h2>
+
+<p>It&#8217;s pretty straightforward. Let&#8217;s say you&#8217;re speed typing, maybe on an unfamiliar keyboard (I use a Sun Type 5 at home, but usually Dell QuietKeys at work&#8230; very different layout and key responsiveness). Sure, typos are going to happen, and it can be annoying and slow you down. But with close_enough&#8230;</p>
+
+<figure class='code'><figcaption><span>Close Enough Examples  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;close_enough&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">obj</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">obj</span><span class="o">.</span><span class="n">closs</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">=&gt;</span> <span class="no">Object</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">str</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">str</span><span class="o">.</span><span class="n">lentgh</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="mi">3</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">str</span><span class="o">.</span><span class="n">reserve</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="s2">&quot;oof&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">ary</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">mpa</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span><span class="p">}</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">reduck</span><span class="p">(</span><span class="ss">:+</span><span class="p">)</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="mi">15</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&#8217;s that easy. Quick, inaccurate typing becomes a non-issue. Or, at least, a minor issue. Okay, really, you should never use this in any kind of production environment.</p>
+
+<p>It&#8217;s available from <a href="https://rubygems.org/gems/close_enough">Rubygems</a>, and the source is on <a href="https://github.com/ruby-jokes/close_enough">Github</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DateTime Conversions in Clojure]]></title>
+    <link href="http://decompelcting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
+    <updated>2013-02-03T14:18:00-05:00</updated>
+    <id>http://decompelcting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
+    <content type="html"><![CDATA[<p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
+
+<p>A while ago, I <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">wrote a post about Bubba</a> (not its real name), a legacy/vendor-supplied system in which the original developers (may they suffer eternal torment) decided to store all datetimes as floating-point values using a bastardized form of the Julian Day system with fractional day part. In that post, I showed a solution used in a Ruby on Rails web app, but now I&#8217;m writing data integration services for multiple systems, and needed something a bit more robust, so I&#8217;m writing it in Clojure.</p>
+
+<p>I&#8217;ll start off with the dependencies:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">ns </span><span class="nv">project.util.date</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clj-time.core</span> <span class="ss">:as</span> <span class="nv">tm</span><span class="p">]</span>
+</span><span class='line'>            <span class="p">[</span><span class="nv">clj-time.local</span> <span class="ss">:as</span> <span class="nv">loc</span><span class="p">]</span>
+</span><span class='line'>            <span class="p">[</span><span class="nv">clj-time.format</span> <span class="ss">:as</span> <span class="nv">fmt</span><span class="p">]</span>
+</span><span class='line'>            <span class="p">[</span><span class="nv">clojure.math.numeric-tower</span> <span class="ss">:as</span> <span class="nv">math</span><span class="p">])</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:use</span> <span class="nv">clj-time.coerce</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:import</span> <span class="p">[</span><span class="nv">oracle.sql</span> <span class="nv">TIMESTAMP</span><span class="p">]</span>
+</span><span class='line'>           <span class="p">[</span><span class="nv">java.sql</span> <span class="nv">Timestamp</span><span class="p">]))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I&#8217;m using the fantastic <a href="https://github.com/seancorfield/clj-time">clj-time</a> library by Sean Corfield. It&#8217;s basically a wrapper around the <a href="http://joda-time.sourceforge.net/">Joda Time</a> Java library, allowing us to use its powerful datetime handling in idiomatic Clojure.</p>
+
+<p>So, for the actual code. First, the Bubba dates need to be converted to and from a floating point value to a normal Date object.</p>
+
+<!-- more -->
+
+
+
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="c1">;; Bubba DateTime conversions</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1">;; Set day of calendar reform for TS julian dates.</span>
+</span><span class='line'><span class="c1">;; And yes, it uses local time, not UTC. Because FML.</span>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">docr</span>
+</span><span class='line'>  <span class="s">&quot;It&#39;s the day of Calendar Reform for bubba&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">loc/to-local-date-time</span> <span class="p">(</span><span class="nf">tm/date-time</span> <span class="mi">1899</span> <span class="mi">12</span> <span class="mi">30</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">fractional-part</span>
+</span><span class='line'>  <span class="s">&quot;Get the fractional Julian day part from a DateTime&quot;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span>
+</span><span class='line'>    <span class="nv">hour-part</span> <span class="p">(</span><span class="nf">tm/hour</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'>    <span class="nv">min-part</span>  <span class="p">(</span><span class="nf">tm/minute</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'>    <span class="nv">sec-part</span>  <span class="p">(</span><span class="nf">tm/sec</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'>    <span class="nv">seconds</span> <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">hour-part</span> <span class="mi">60</span> <span class="mi">60</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">min-part</span> <span class="mi">60</span><span class="p">)</span> <span class="nv">sec-part</span><span class="p">)]</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">float </span><span class="p">(</span><span class="nb">/ </span><span class="nv">seconds</span> <span class="mi">86400</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">to-bubbadt</span>
+</span><span class='line'>  <span class="s">&quot;Converts a DateTime to a bubba Julian date&quot;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">offset</span> <span class="nv">docr</span><span class="p">]</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">+ </span>
+</span><span class='line'>      <span class="p">(</span><span class="nf">tm/in-days</span>
+</span><span class='line'>        <span class="p">(</span><span class="nf">tm/interval</span> <span class="nv">offset</span> <span class="nv">dt</span><span class="p">))</span>
+</span><span class='line'>      <span class="p">(</span><span class="nf">fractional-part</span> <span class="nv">dt</span><span class="p">))))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">current-bubbadt</span>
+</span><span class='line'>  <span class="s">&quot;Get the current local time as a bubba Julian date&quot;</span>
+</span><span class='line'>  <span class="p">[]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">to-bubbadt</span> <span class="p">(</span><span class="nf">loc/local-now</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">from-bubbadt</span> <span class="p">[</span><span class="nv">bubbadt</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">day-part</span> <span class="p">(</span><span class="nf">math/floor</span> <span class="nv">bubbadt</span><span class="p">)</span>
+</span><span class='line'>        <span class="nv">frac-part</span> <span class="p">(</span><span class="nb">- </span><span class="nv">bubbadt</span> <span class="nv">day-part</span><span class="p">)</span>
+</span><span class='line'>        <span class="nv">docr</span> <span class="nv">docr</span><span class="p">]</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">tm/plus</span> <span class="nv">docr</span> <span class="p">(</span><span class="nf">tm/days</span> <span class="nv">day-part</span><span class="p">)</span> <span class="p">(</span><span class="nf">tm/secs</span> <span class="p">(</span><span class="nf">math/round</span> <span class="p">(</span><span class="nb">* </span><span class="mi">86400</span> <span class="nv">frac-part</span><span class="p">))))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Okay, that&#8217;s probably a lot to take in, but basically it performs the calculations to convert the floating-point dates to Date objects and back again. But there&#8217;s still a catch. In some of the views I&#8217;ve built for reporting, I&#8217;m pre-converting those dates to Oracle SQL TIMESTAMP types, and depending on the context, sometimes those floats come back as Doubles, and sometimes as BigDecimals.</p>
+
+<p>Clojure&#8217;s got me covered, with multimethods.</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="c1">;; Use a multimethod for our date coercion b/c the input type might be variable.</span>
+</span><span class='line'><span class="p">(</span><span class="kd">defmulti </span><span class="nv">bubba-date-coerce</span> <span class="nv">class</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">Double</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">BigDecimal</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">oracle.sql.TIMESTAMP</span> <span class="p">[</span><span class="nv">ts</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-date</span> <span class="p">(</span><span class="nf">.toDate</span> <span class="nv">ts</span><span class="p">)))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="ss">:default</span> <span class="p">[</span><span class="nv">d</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">identity </span><span class="nv">d</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> Much like generics in Common Lisp (well, CLOS anyhow) <code>defmulti</code> takes a dispatch function as an argument, in this case <code>class</code>, which returns the class of the argument passed to the multimethod. Methods can then be defined to handle each type of possile argument, with a <code>:default</code> method for unmatched cases. Multimethods can be used with any dispatch function you like, but <code>class</code> is a common use case, and handy as hell here.</p>
+
+<p> As I mentioned, the point of this is to get data in and out of multiple systems, and they all have their own idiosyncracies.</p>
+
+<p> For instance, there&#8217;s, uhh, let&#8217;s call it Joe&#8217;s Directory, or JD, which stores all of its dates and datetimes as strings, with inconsistant formatting across the board.</p>
+
+<p> Luckily, clj-time has awesome parsers:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'> <span class="c1">;; General (jd DateTime conversions)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">jd-parser</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/formatter</span> <span class="p">(</span><span class="nf">tm/default-time-zone</span><span class="p">)</span> <span class="s">&quot;MM/dd/YYYY&quot;</span> <span class="s">&quot;YYYYMMddHHmmssZ&quot;</span> <span class="s">&quot;YYYY-MM-dd HH:mm:ss&quot;</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">jdparse</span> <span class="p">[</span><span class="nv">date-string</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/parse</span> <span class="nv">jd-parser</span> <span class="nv">date-string</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Easy as pie. Where it gets truly beautiful, however, is when mixed in with <a href="http://sqlkorma.com/">Korma</a> for SQL abstraction. Korma entities have two special macros for data conversion: <code>prepare</code>, which applies a function to data before storing it in the database, and <code>transform</code> which applies a function when reading from the database.</p>
+
+<p>Since Korma returns query results as a vector of hashmaps, it&#8217;s as simple as updating a hashmap:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">jd-date-transform</span> <span class="p">[</span><span class="nv">rec</span><span class="p">]</span>
+</span><span class='line'>  <span class="s">&quot;Converts date strings to DateTime instances&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">ent</span> <span class="nv">rec</span>
+</span><span class='line'>        <span class="nv">date-fields</span> <span class="p">[</span><span class="ss">:DOB</span> <span class="ss">:empstartdate</span> <span class="ss">:modifytimestamp</span> <span class="ss">:createtimestamp</span><span class="p">]]</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">jdparse</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">date-fields</span><span class="p">)))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That&#8217;s the first version of the transform fn I wrote for JD, but there&#8217;s two problems. First, the fields to apply are hard-coded in the <code>let</code> form. More importantly, however, is the condition where I do a <code>select</code> and don&#8217;t return those fields; <code>update-in</code> will add the field with a value of <code>nil</code>.</p>
+
+<p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">generic-transform</span>
+</span><span class='line'>  <span class="s">&quot;Transform function for queries. Arguments are a function to apply (f),</span>
+</span><span class='line'><span class="s">   the entity to be transformed, and the fields on which to apply the transformation.&quot;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">f</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">update-fn</span> <span class="nv">f</span>
+</span><span class='line'>        <span class="nv">ent</span> <span class="nv">ent</span>
+</span><span class='line'>        <span class="nv">fields</span> <span class="p">(</span><span class="nf">vec</span> <span class="p">(</span><span class="nf">st/intersection</span> <span class="p">(</span><span class="nb">set </span><span class="p">(</span><span class="nb">keys </span><span class="nv">ent</span><span class="p">))</span> <span class="p">(</span><span class="nb">set </span><span class="nv">fields</span><span class="p">)))]</span>
+</span><span class='line'>    <span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%1</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">update-fn</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">)))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finding the set intersection of the fields we normally want to transform, and the fields returned, ensures we don&#8217;t get extra fields with values of <code>nil</code>.</p>
+
+<p>And look, I resisted the temptation to use a macro where a function would suffice! Do I get points for good Lisp behavior?</p>
+
+<p>Then it&#8217;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">defentity</span> <span class="nv">customers</span>
+</span><span class='line'>  <span class="s">&quot;Korma entity for the CUSTOMER table. Transforms Bubba datetimes to DateTime objects.&quot;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">database</span> <span class="nv">envdb</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">table</span> <span class="ss">:customer</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">transform</span>
+</span><span class='line'>    <span class="o">#</span><span class="p">(</span><span class="nf">generic-transform</span> <span class="nv">dt/bubba-date-coerce</span> <span class="nv">%</span> <span class="p">[</span><span class="ss">:active_start_date</span>
+</span><span class='line'>                                                       <span class="ss">:active_end_date</span>
+</span><span class='line'>                                                       <span class="ss">:lastmod_datetime</span>
+</span><span class='line'>                                                       <span class="ss">:birthdate</span>
+</span><span class='line'>                                                       <span class="ss">:opendatetime</span><span class="p">])))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So that&#8217;s how I&#8217;m normalizing datetimes in this particular project. I&#8217;m really enjoying writing code like this: building short, composable functions and refactoring by decomplecting them into shorter, more composable functions.</p>
+
+<p>I find refactoring easier to reason about in Clojure than any other language I&#8217;ve worked in. Thinking in terms of simple, composable functions (particularly having the facility of higher-order functions and macros) also makes it very straightforward to decouple interface and implementation.</p>
+
+<p>I&#8217;ll state for the record I&#8217;m fairly new to Clojure, so it wouldn&#8217;t surprise me if this code looks pretty amateurish to more experienced Clojurians. If anyone has any suggestions for improving it, I&#8217;d welcome the advice.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ingress - Crowdsourcing Solutions to NP-Hard Problems?]]></title>
+    <link href="http://decompelcting.org/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems/"/>
+    <updated>2013-01-22T19:12:00-05:00</updated>
+    <id>http://decompelcting.org/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems</id>
+    <content type="html"><![CDATA[<p>So I don&#8217;t blog much about my gaming habit, but I recently got my invite to <a href="http://www.ingress.com">Ingress</a>, Google&#8217;s new location-based MMORPG. Much has been written about the extensive (one might even say brilliant) <a href="http://www.nianticproject.com">viral marketing campaign</a> that launched the game, and there has been some interesting speculation as to Google&#8217;s motivation in producing such a game, ranging from the <a href="http://www.reddit.com/r/Android/comments/138res/google_launches_ingress_a_worldwide_mobile/c71v7yv?context=2">begrudgingly admiring</a> to the <a href="http://pandodaily.com/2012/11/19/googles-ingress-is-more-than-a-game-its-a-potential-data-exploitation-disaster/">borderline paranoid</a>.</p>
+
+<p>True, a persistently location-aware app that collects GPS and accelerometer data the entire time it&#8217;s active has obvious implications for a data-ravenous company like Google. And I&#8217;ve seen a few reasonable theories so far as to the &#8220;real&#8221; motivation behind the game (and Google&#8217;s &#8220;real&#8221; motivation - always and everywhere - is surely data). A breakdown of what I&#8217;ve seen so far:</p>
+
+<ol>
+<li>Ingress is about tracking player &#8220;areas of operation&#8221; - the assumption being that you&#8217;ll be playing most in the areas you habituate anyway - harvesting data for better location-targeted ads. Google is essentially an advertising company, so this makes sense.</li>
+<li>Ingress is about improving Google Maps with pedestrian and footpath data - the Maps product is pretty great for driving, but as for routing pedestrian traffic, well&#8230; I&#8217;ve had it suggest a longer route because the shorter would involve <em>walking</em> the &#8220;wrong way&#8221; down a one-way street. Walking directions are improving, but they rarely suggest cutting through a park, for instance, even when it would save 20 min. traveling time. And that kind of data is hard to get in an automated fashion, and often involves undocumented local knowledge. Using Ingress not only gets players to collect footpath data, but leverages local knowledge of pedestrian routes.</li>
+</ol>
+
+
+<p>I think both of these theories are probably accurate, but they don&#8217;t go far enough.</p>
+
+<p>It was actually during an extended period of playing Ingress last week that it occurred to me&#8230; I was plotting a run around the college campus where I work and thought to myself, wouldn&#8217;t it be a neat feature if the game could help me plot the most efficient route between all these portals.</p>
+
+<h5>Yeah. See it yet?</h5>
+
+<!-- more -->
+
+
+<p>My first reaction: &#8220;LOL, Jason, you so crazy&#8230; you want an app to solve the Travelling Salesman Problem problem for you?&#8221;</p>
+
+<p><img class="center" src="http://imgs.xkcd.com/comics/travelling_salesman_problem.png" title="xkcd - Travelling Salesman" ></p>
+
+<h5>How about now?</h5>
+
+<p>My second reaction recalled something I&#8217;d read on Wikipedia a while back:</p>
+
+<blockquote><p>The TSP, in particular the Euclidean variant of the problem, has attracted the attention of researchers in cognitive psychology. It is observed that humans are able to produce good quality solutions quickly. The first issue of the Journal of Problem Solving is devoted to the topic of human performance on TSP.</p><footer><strong>Wikipedia</strong> <cite><a href='http://en.wikipedia.org/wiki/Travelling_salesman_problem#Human_performance_on_TSP'>Human Performance on TSP</a></cite></footer></blockquote>
+
+
+<p>Gah.</p>
+
+<p><a href="http://betabeat.com/2012/11/much-like-goog-411-googles-new-augmented-reality-game-ingress-is-a-genius-ploy-to-get-you-to-collect-data/">Comparisons have already been drawn</a> between Ingress and GOOG-411, but typically in the realm of &#8220;collecting data for an unrelated purpose.&#8221;</p>
+
+<p>My theory is that it&#8217;s much more similar than that; just as GOOG-411 was an attempt to crowdsource spoken phonemes to build an incredibly massive training set for voice-recognition machine learning algorithms, Ingress is an attempt to see how people heuristically solve the Travelling Salesman problem, create a training set based on all of the data collected, and tune new algorithms to compute the best routes (accelerometer and GPS-based rate-of-speed data can easily be used to account for both walking <em>and</em> driving solutions).</p>
+
+<p>So, yeah, it&#8217;s probably all of the above, but IMHO the most interesting is the theory (it&#8217;s just a theory, Google are being characteristically tight-lipped about their plans for all that Ingress data) that it&#8217;s a new (hitherto infeasible) approach to one of the classic hard problems of computability theory.</p>
+
+<h5>Okay, fine, but what about gameplay?</h5>
+
+<p>Yeah, the point of this post was speculation on the really cool stuff Google&#8217;s (potentially) doing with all that data, but a blag post about a video game wouldn&#8217;t be complete without at least a bit about the game itself.</p>
+
+<p>So, Ingress is fun. Like, incredibly fun. I&#8217;ve played other location-based MMORPGs, and some of them are decent, but none as immersive or addictive as Ingress. What started as a viral marketing campaign (the <a href="http://www.nianticproject.com/">Niantic Project</a> website) is now a big part of Ingress &#8220;intel&#8221;; it ties in to gameplay in other ways as well, publishing puzzles that lead to scanner activation codes (i.e., publically-available game invites for the first one to solve the problem) and to in-game passcodes that provide resources and AP (Ingress&#8217; version of experience points, used for levelling).</p>
+
+<p>The puzzles are complex and extensive. Some remind me of the recruitig billboards Google had a few years back&#8230; I wouldn&#8217;t be surprised if the codes at the end of the more difficult puzzles eventually resulted in recruiter emails from Google.</p>
+
+<p>As for the game itself&#8230; I think it&#8217;s one of the more positive and beneficial games I&#8217;ve seen&#8230; I used to walk about two kilometers a day, to work and back again. Now I walk at least twice that, and possibly up to 10km if I go out for an extensive &#8220;run&#8221; (my phone&#8217;s battery won&#8217;t last much beyond that, not with the Ingress &#8220;scanner&#8221; running).</p>
+
+<p>The social aspect is also pretty damn great&#8230; our local &#8216;Resistance&#8217; cell coordinates activities on a Google+ group, and thanks to that coordination, I was able to cover the campus where I work with beautiful, blue Resistance control fields - it was completely Enlightened-controlled just last week.</p>
+
+<p><img src="http://decompelcting.org/images/post-img/ingress-intel.png"></p>
+
+<p>The graphics are also incredibly stylish, abandoning the typical cartoonish mobile-game graphics for a style reminiscent of Tron, or the sort of data visualization I used to imagine reading William Gibson novels as a kid. Quite appropriate for a game with a heavy cyberpunk-dystopia vibe.</p>
+
+<p>So, it&#8217;s a fun game, that&#8217;s making me healthier and more social. As a rather sedentary, introverted hacker, that&#8217;s not a bad thing. If Google is managing to train some incredible new algorithms for routing pedestrian traffic as part of the bargain, I&#8217;m happy to help. The great thing about software is that when you get right down to it, when done well, it&#8217;s usually a postivie-sum game. I know we live in a reduced-privacy world, but the typical kneejerk reaction toward zero-sum analyses is a bit misguided, in my opinion. Then again, as Scott McNealy famously said, more than a decade ago:</p>
+
+<blockquote><p>You have zero privacy anyway. Get over it.</p><footer><strong>Scott McNealy</strong> <cite><a href='http://www.pcworld.com/article/16331/article.html'>Private Lives? Not Ours!</a></cite></footer></blockquote>
+
+
+<p>Oh, well. Guess I&#8217;ll just have to&#8230;</p>
+
+<p><img class="center" src="http://decompelcting.org/images/post-img/keep-calm-claim-portals-resistance.png" width="500"></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DCI: The Right Idea for The Wrong Paradigm]]></title>
+    <link href="http://decompelcting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
+    <updated>2013-01-03T01:10:00-05:00</updated>
+    <id>http://decompelcting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&#8217;ve seen, however, is Tony Arcieri&#8217;s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">&#8220;DCI&#8221; in Ruby Is Compeltely Broken</a>.</p>
+
+<p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it&#8217;s an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
+
+<p>Now, I was initially a big fan <em>conceptually</em> of DCI. It seemed intuitive, even familiar. And it helped that it was the brainchild of Trygve Reenskaug, the erstwhile inventor of MVC, possibly one of the most useful OOP patterns ever devised.</p>
+
+<p>But the more familiar it seemed, the more difficult it seemed to implement properly, much less efficiently, even in the purest of modern OO languages, i.e., Ruby.</p>
+
+<p>It wasn&#8217;t until I tried to forget everything I knew about OOP that its familiarity became clear: this novel appropach to object-oriented design is embedded in the most natural thing in the world in the oldest of functional programming languages, Lisp.</p>
+
+<p>Enter the macro. In Clojure, providing context to a function is straightforward using a macro, for instance, a database query (n.b., most of this is straight example code from <a href="http://en.wikibooks.org">wikibooks.org</a>).</p>
+
+<figure class='code'><figcaption><span>Set up JDBC connection</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;clojure.java.jdbc</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">db-host</span> <span class="s">&quot;localhost&quot;</span>
+</span><span class='line'>      <span class="nv">db-port</span> <span class="mi">5432</span>
+</span><span class='line'>      <span class="nv">db-name</span> <span class="s">&quot;a_database&quot;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">(</span><span class="k">def </span><span class="nv">db</span> <span class="p">{</span><span class="ss">:classname</span> <span class="s">&quot;org.postgresql.Driver&quot;</span> <span class="c1">; must be in classpath</span>
+</span><span class='line'>           <span class="ss">:subprotocol</span> <span class="s">&quot;postgresql&quot;</span>
+</span><span class='line'>           <span class="ss">:subname</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;//&quot;</span> <span class="nv">db-host</span> <span class="s">&quot;:&quot;</span> <span class="nv">db-port</span> <span class="s">&quot;/&quot;</span> <span class="nv">db-name</span><span class="p">)</span>
+</span><span class='line'>           <span class="c1">; Any additional keys are passed to the driver</span>
+</span><span class='line'>           <span class="c1">; as driver-specific properties.</span>
+</span><span class='line'>           <span class="ss">:user</span> <span class="s">&quot;a_user&quot;</span>
+</span><span class='line'>           <span class="ss">:password</span> <span class="s">&quot;secret&quot;</span><span class="p">}))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This provides the context for the <code>with-connection</code> macro:</p>
+
+<figure class='code'><figcaption><span>SELECT Statement</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">with-connection</span> <span class="nv">db</span>
+</span><span class='line'>   <span class="p">(</span><span class="nf">with-query-results</span> <span class="nv">rs</span> <span class="p">[</span><span class="s">&quot;select * from blogs&quot;</span><span class="p">]</span>
+</span><span class='line'>     <span class="c1">; rs will be a sequence of maps, </span>
+</span><span class='line'>     <span class="c1">; one for each record in the result set. </span>
+</span><span class='line'>     <span class="p">(</span><span class="nb">dorun </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:title</span> <span class="nv">%</span><span class="p">))</span> <span class="nv">rs</span><span class="p">))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I&#8217;m using the simplest of (admittedly cribbed) examples here for the sake of demonstration, but right away here, we&#8217;ve got the D and C of DCI - Data and Context. As for interaction&#8230; we could easily conceive of a <code>with-role</code> macro which determines the interaction of the database connection and the actual application of the <code>with-connection</code> macro, whether it invokes a SELECT, CREATE, UPDATE, or DELETE statement.</p>
+
+<p>In a Lisp, this level of composition is completely <em>natural,</em> is my point. In a language like Ruby (which despite having much of the Lisp nature, is OO to its core), and especially in a framework like Rails, with its cargo-cult Design Pattern-worshipping user base (I&#8217;m going to take some shit for that one, but accept that I&#8217;m exaggerating and flame with that in mind), is it any surprise that a pattern that makes <em>total sense</em> in an FP context is going to be a hot controversy in an OOP context?</p>
+
+<p>I agree with Tony&#8217;s post that &#8220;DCI&#8221; in Rails is totally broken. But that&#8217;s because, IMHO, DCI isn&#8217;t the best pattern for OOP. Yeah, Ruby has <em>lots</em> of functional features, but maybe we need to rethink how we&#8217;re doing this DCI stuff (or Concerns, or whatever), on the basis that messing with inheritance and the class hierarchy is the <em>wrong thing,</em> and perhaps we should be creatively exploring the use of blocks and lambdas and Ruby&#8217;s other functional constructs.</p>
+
+<p>I&#8217;m not offering any solutions here, but I&#8217;m hoping I can contribute to the conversation. Step away from the mixins, away from the class hierarchy, away from the object model. Maybe take another read of Design Patterns and see if DCI is another hot YAGNI thing. I don&#8217;t know yet. I just know it reminds me of how things are AWESOME in a whole other paradigm that doesn&#8217;t necessarily apply to your Rails app.</p>
+
+<p>As a caveat, I should say that I haven&#8217;t really tried to use this DCI mojo in a production application, although I have played with different ideas about it Just For Fun&copy;. If you think I&#8217;m wrong, or have the whole thing arse-about-face, I&#8217;d be happy to discuss it in the comments.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Legacy Systems on Rails (Part 3)]]></title>
+    <link href="http://decompelcting.org/blog/2012/11/02/legacy-systems-on-rails-part-3/"/>
+    <updated>2012-11-02T13:25:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/11/02/legacy-systems-on-rails-part-3</id>
+    <content type="html"><![CDATA[<p>It&#8217;s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
+
+<h3>Abstraction is your friend</h3>
+
+<p>I think if there&#8217;s a common theme in these posts, it&#8217;s abstraction. Primarily, using Ruby and Rails to abstract away the crazy implementation details of a system that&#8217;s been accumulating cruft for over twenty years. I&#8217;m going to start referring to this system as &#8220;Bubba&#8221; for the sake of convenience (and since I don&#8217;t have permission from the vendor to say what it actually is).</p>
+
+<p>I mentioned in Part One that most of the access to the backend system going forward is occurring via a REST API wrapping the Oracle database that serve&#8217;s as Bubba&#8217;s back-end. Today I wanted to look at how the user-facing portions are constructed.</p>
+
+<!-- more -->
+
+
+<p>The customer-facing applications that integrate with Bubba via the API just send JSON back and forth at the model level. But our in-house developed applications are somewhat freed from tight integration with Bubba in that they handle persistence for their own data independently. So in addition to the Oracle DB, we also maintain a Postgres database that handles things like user sessions, application preferences, etc. I once complained about the inability to add tables to Bubba, but now I&#8217;m glad we were &#8220;forced&#8221; to add a separate database, one which we control and can write proper unit tests for our models (I think Part 4 will probably be about testing against legacy systems. It won&#8217;t be pretty).</p>
+
+<p>Bubba is quickly becoming one component of <em>our</em> systems, rather than <em>the</em> system that we&#8217;re just extending in various ways.</p>
+
+<p>One thing you&#8217;ll find really quickly if you&#8217;re trying to use a JSON API as your persistence mechanism is that ActiveResource is pretty inadequate if you were expecting an ActiveRecord-like API to use. I highly recommend the <a href="https://github.com/justinweiss/reactive_resource">reactive_resource</a> gem by Justin Weiss as a substitute.</p>
+
+<p>Reactive Resource (among other things) adds read support for associations, including generating nested paths for child associations. So, for instance, the <code>Customer</code> object I described in Part 1 <code>has_many :cards</code>. ReactiveResource allows you to build models like this:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="ss">ReactiveResource</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:cards</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Reactive Resource will know to generate the URI <code>/customers/42/cards/123456</code> from <code>Customer.find(42).cards.first</code>.</p>
+
+<h3>Encapsulation matters, too</h3>
+
+<p>Before I went this route, I tried the old &#8220;Rails can handle multiple databases just fine&#8221; theory. And while that&#8217;s true in principle, in practice it often blows up in your face. First of all, you have to be very, very careful combining data from multiple sources - an ActiveRecord::Relation object when confronted with another object that quacks like a Relation will often try doing things like implicit joins - whcih obviously won&#8217;t work across separate databases.</p>
+
+<p>The other reason this approach was full of fail is Oracle. Oracle syntax is incredibly nitpicky about its non-standard quirks. I often found that attempting to do something as simple as an inner join on the Postgres DB, using a class that <em>knew</em> to use the postgres adapter, syntax from the oracle_enhanced adapter would leak in. This <em>may</em> be an implementation bug due to some hack in the oracle_enhanced adapter (maybe one day I&#8217;ll ask Raimonds about it), but just knowing that that was possible convinced me that was not the right path. Having an API for interaction with Bubba, whose sole responsibility is interaction with Bubba, is much cleaner and easier to maintain.</p>
+
+<h3>Don&#8217;t be Lando</h3>
+
+<p>There&#8217;s also one very, very good reason for quarantining vendor systems behind a REST interface. From time to time, the vendor is going to come along and <del>randomly change shit</del> release an upgrade.</p>
+
+<p><img src="http://i.imgur.com/qE6ko.png" alt="Imgur" /></p>
+
+<p>Maintaining a custom application dependent on a database schema beyond your control&#8230; let&#8217;s just say you&#8217;re gonna have a bad time. But wait, what&#8217;s that? Gang of Four to the rescue!</p>
+
+<blockquote><p>Program to an &#8216;interface&#8217;, not an &#8216;implementation&#8217;.</p><footer><strong>Gang of Four</strong> <cite>Design Patterns</cite></footer></blockquote>
+
+
+<p>Wrapping the system in an API for which <em>you</em> control the public interface means you can account for schema changes in one place, rather than in multiple dependent applications, while keeping the public interface consistent. This also goes a long way in keeping your code DRY. And with a bit of metaprogramming magic like I described in part one, you can often spare yourself from having to push a new version if the schema changes are minor.</p>
+
+<p>So, this post was a little light on code, but I did want to explain some of the reasoning behind this approach to legacy systems integration using Rails.</p>
+
+<h4>Note</h4>
+
+<p>I&#8217;d like to thank the folks at the <a href="http://ruby5.envylabs.com">Ruby5 podcast</a> for <a href="http://ruby5.envylabs.com/episodes/299-episode-295-august-7th-2012/stories/2616-legacy-systems-on-rails">covering this series in Episode #295</a>. If you missed that episode, please give it a listen&#8230; the commentary is pretty great, even if they did question my sanity a bit.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Feedback Loops]]></title>
+    <link href="http://decompelcting.org/blog/2012/10/31/feedback-loops/"/>
+    <updated>2012-10-31T14:12:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/10/31/feedback-loops</id>
+    <content type="html"><![CDATA[<p>Sadly, I haven&#8217;t added a blog post in roughly 2.5 months. I&#8217;ve had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven&#8217;t had it in me. I really enjoy writing this blog, too. I wasn&#8217;t quite sure what was going on, until I read one of the most insightful blog posts I&#8217;ve ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
+
+<p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>
+
+<blockquote><p>My workflow is something like this.</p><p>write some code<br/>run the code<br/>get an error message<br/>find the error and back to step 1<br/>Hour by hour, day after day, I do this. Always searching for what&#8217;s wrong with what I&#8217;m creating, rarely thinking about what&#8217;s good about it. It&#8217;s a negative reinforcement feedback loop.</p><footer><strong>[http://edu.mkrecny.com/thoughts/be-nice-to-programmers]</strong></footer></blockquote>
+
+
+<p><span class='pullquote-right' data-pullquote='The main reason to become a programmer is that the position of &#8216;God&#8217; is unavailable. Your _job_ is to create universes where the fundamental laws of nature, so to speak, are completely under your creative control.'>
+I definitely get the sentiment. But I think of this as the inner loop in the red-green-refactor cycle, so to speak. Yeah, coding (<em>especially</em> doing proper TDD) is going to make you hate the world (and possibly feel like an idiot) sometimes. But overall&#8230; I was in a job interview a few weeks ago, and was asked why I love being a programmer. I didn&#8217;t even have to think about my response: The main reason to become a programmer is that the position of &#8216;God&#8217; is unavailable. Your <em>job</em> is to create universes where the fundamental laws of nature, so to speak, are completely under your creative control. Ultimately, that&#8217;s the takeaway: programming is <em>awesome.</em> But a job is still a job, and I think that&#8217;s where some of the negative feedback loop comes in.
+</span></p>
+
+<p>My last post was just before a huge project I&#8217;d both originated and put a large amount of my time and effort into over the course of 15-18 months was shelved. It was ready to ship, but corporate politics being what it is (i.e., something I&#8217;d schedule a root canal to avoid, <em>especially</em> where I work), I tried to just move on and not lose sleep over it. Still, it rankled.</p>
+
+<!-- more -->
+
+
+<p>I haven&#8217;t pushed a single new commit to any of my projects on Github. I haven&#8217;t written a blog post. I have an engineering pad with a bunch of scribbled, inchoate notes for things I want to do, but can&#8217;t seem to move on anything.</p>
+
+<p>My own theory is that we (hackers) are especially sensitive to feedback loops. I could go <a href="http://decomplecting.org/blog/2012/05/22/passion/">on and on</a>, and even cite <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">more</a> <a href="http://www.bricklin.com/wontprogram.htm">notable</a> <a href="http://www.codinghorror.com/blog/2010/02/the-nonprogramming-programmer.html">bloggers</a> than myself, on my theory of what could be referred to as &#8220;programmer exceptionalism.&#8221; That&#8217;s not to say we (programmers who can actually build working (and hopefully, elegant) systems) are in any way <em>better</em> than non-programmers (or the <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">Java Schools</a> crowd); it&#8217;s just that the preponderance of anecdotal evidence (not to mention some <a href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/paper1.pdf">proper research</a>) suggests that <em>programmers are not normal.</em></p>
+
+<p>&#8220;Sensitivity to feedback loops&#8221; could also be a symptom of the intuition many of us experience when faced with an implementation that just <em>feels</em> wrong. We can, through due diligence, prove that this is the case eventually; but what is it that drives us to find exploits, or benchmark competing implementations? It&#8217;s that little voice in the back of your head whispering, &#8220;This is wrong. And also, stupid.&#8221;</p>
+
+<p>My main focus in my day-to-day programming life right now is dealing with interfaces for yet another vendor product that is very wrong, and very, very stupid. So when I come home, I just want to play <a href="http://guildwars2.com">Guild Wars 2</a> and not really think about coding. Which makes me even sadder, because I love hacking on side projects.</p>
+
+<p>And it&#8217;s not that I haven&#8217;t had some fun and some successes in the meantime. I wrote a pretty cool framework in Clojure for generating and emailing reports from various datasources. The core of it is going to be open source, as soon as I get around to that. But the grind&#8230; the grind, man. The grind.</p>
+
+<p>I don&#8217;t know what the solution is. We can&#8217;t all be working on innovative, game-changing products all the time. And sometimes things will get shelved the day you expect them to ship. I do know there needs to be a way to <em>love</em> this shit without going crazy or making oneself miserable.</p>
+
+<p>So, interwebs&#8230; suggestions?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LadyCoders, Twitroversy, and you]]></title>
+    <link href="http://decompelcting.org/blog/2012/08/13/ladycoders/"/>
+    <updated>2012-08-13T21:41:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/08/13/ladycoders</id>
+    <content type="html"><![CDATA[<p>So, I had intended my next post to address some of the (valid) criticism of Github that&#8217;s been making the rounds lately, but a much more disturbing Twitroversy has emerged today.</p>
+
+<p>A group of women called <a href="http://ladycoders.com">LadyCoders</a> started a <a href="http://www.kickstarter.com/projects/166494057/ladycoders-get-hired-seattle-2012">Kickstarter campaign</a> to fund a conference/seminar geared toward helping women to get programming and other tech jobs. Great idea, right? There are <a href="http://girldevelopit.com/">many</a> <a href="http://www.blackgirlscode.com/">projects</a> devoted to giving women the skills they need to write software, but as far as addressing the fundamental issue that the industry itself is pretty much a boys&#8217; club (not assigning blame, just acknowledging reality), much less has been done in that area.</p>
+
+<p>So the good folks at LadyCoders wanted to help get women <em>hired,</em> not just trained. Pretty cool.</p>
+
+<p>Well, a lot of people thought so. As I write this, they&#8217;re &lt; US$6k away from their US$23k funding goal. But&#8230; well, there was some dissent:</p>
+
+<blockquote class="twitter-tweet tw-align-center"><p>Sick and wrong: &#8220;it’s our job (for now) to be easily integrated into an all-male team, **nonthreatening,** and hyper-skilled&#8221;- <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a></p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235163013227880449" data-datetime="2012-08-13T23:56:46+00:00">August 13, 2012</a></blockquote>
+
+
+<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>I completely get where @shanley is coming from&#8230; but the amount of Twitroversy here seemed&#8230; disproportionate.</p>
+
+<!--more-->
+
+
+<p>Sorry for picking on @shanley so much, but&#8230; then there was this:</p>
+
+<blockquote class="twitter-tweet tw-align-center"><p>Legit response from <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>: &#8220;I know what works, whether or not it&#8217;s PC.&#8221; Please do not fund this shit on kickstarter.</p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235166808880074753" data-datetime="2012-08-14T00:11:51+00:00">August 14, 2012</a></blockquote>
+
+
+<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>You can go search for @ladycoders mentions on Twitter if you want to see more&#8230; but here&#8217;s the issue I take: fundamentally, the issue LadyCoders is trying to address is that the software industry is a male-dominated space which has been difficult for even the most highly-skilled women to penetrate.</p>
+
+<p>I can&#8217;t speculate as to the eventual success or failure of LadyCoders as far as increasing the number of women working in software development or IT in general. But I do see the pragmatic value of a quasi-entryist, realpolitik solution to this problem.</p>
+
+<p>Criticizing an organization trying to serve a real, valid feminist goal (material gains for women in a historically male-dominated sector), by all means necessary, just seems counter-productive. &#8220;Seem non-threatening&#8221; might be advice that highlights now fucked-up society is, but it isn&#8217;t fucked-up advice if your goal is material gains for an oppressed group. Once you&#8217;ve achieved your goals, shift the goalposts of &#8220;(non-)threatening&#8221; in the desired direction.</p>
+
+<p>Queer/trans folks have been doing this for years, right? Really, everyone has&#8230; You don&#8217;t go into your job interview in the clothes you wear to the club. If your subculture doesn&#8217;t match, you don&#8217;t interview in your bondage pants and Aus-Rotten t-shirt (old punk, here)&#8230; if who or what you are is out of the mainstream, you mute it depending on the culture of where you want a job.</p>
+
+<p>For many folks, &#8220;passing&#8221; is an option. I think what LadyCoders is trying to highlight or confront (I hope they correct me if I&#8217;m wrong) is that gender isn&#8217;t really the issue, it&#8217;s perception, stereotypes, and cultural bias; by ameliorating/sidestepping the (currently wrong and terrible) negative perception women sometimes have in techie circles, you have more opportunity to break down the perception.</p>
+
+<p>You cover tattoos, take out piercings&#8230; none of this is <strong>right,</strong> but it&#8217;s just how it is, and you need to get inside before you can try to change anything.</p>
+
+<h3>Partial Measures</h3>
+
+<p>While I appreciate the validity of realpolitik solutions, I also acknowledge that it&#8217;s <em>fucking frustrating.</em></p>
+
+<blockquote class="twitter-tweet"><p>Women, people of color, and other marginalized groups have been forced to work within the system forever. It&#8217;s time to burn the system down.</p>&mdash; Ashe Dryden (@ashedryden) <a href="https://twitter.com/ashedryden/status/235167798211534848" data-datetime="2012-08-14T00:15:46+00:00">August 14, 2012</a></blockquote>
+
+
+<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>There are few tweets I agree with more.</p>
+
+<p>But it&#8217;s this whole realpolitik thing.</p>
+
+<p>The same sentiment that comes down so hard on LadyCoders (and seems to be responsible for <a href="http://ladycoders.tumblr.com/day/2012/08/13">some DDOS attacks</a>), echoes the sentiment that some &#8220;anarchists&#8221; (scare quotes belie my own prejudice) have against labor unions and other &#8220;recuperative&#8221; examples of self-organization by the proletariat and other oppressed groups.</p>
+
+<p>Personally, I think it&#8217;s time for a new social order. But until that order is ready to self-organize and build a new society from the ashes of the old, we need every possible means of achieving material gains for every group that has been deprived by our current society. And if that means women helping women to get their foot in the door at a <em>(for now)</em> male-dominated workplace, that&#8217;s better than women <em>not</em> getting the opportunity to make incremental material gains.</p>
+
+<p>I get the frustration, I do. I don&#8217;t fault anyone (including those I embedded tweets from) for being frustrated. But attacking those who share your goals because they lack your ideological purity&#8230; that&#8217;s a recipe for burning out without accomplishing anything. Stop it.</p>
+
+<p>So I hope you will help LadyCoders reach their KickStarter goal; if it&#8217;s a flop, well, something else will come along. If it&#8217;s a success, hopefully more cynical, realpolitik, entryist projects will get more women into male-dominated fields and achieve positive change within those fields, and material gains for women.</p>
+
+<h4>Personal Note</h4>
+
+<p>This is my hacker blog, so I don&#8217;t usually post anything related to my personal politics here. Other than my free software zealotry, I really think the set intersection of my professional and personal/political life is a narrow band indeed.</p>
+
+<p>But this sort of goes to the heart of a number of overlapping conversations I&#8217;ve been having of late, and I think the same sort of demand for a certain ideological purity is at the heart of many of these&#8230; so once it started to attack something I see as having a potential net positive effect on the software industry, and on the economic situation of women in general&#8230; I had to comment.</p>
+
+<p>I don&#8217;t fundamentally disagree with most of the criticism leveled toward LadyCoders on Twitter, either&#8230; I just think the caremad arguments are counterproductive, like most infighting.</p>
+
+<p>Also&#8230; I don&#8217;t necessarily think everything in their seminar is necessarily the best idea&#8230; but just because I <a href="https://rubygems.org/gems/job_interview">wrote a gem to help with job interviews</a> doesn&#8217;t mean I really know what women encounter in the hiring process. So I&#8217;m willing to assume the ladies at LadyCoders know what they&#8217;re doing better than I do.</p>
+
+<p>Back to apolitical coding tips next post, I promise. Unless you&#8217;re into that whole Steve Yegge liberal/conservative software engineering idea. In which case&#8230; you&#8217;re on your own.</p>
+
+<h4>UPDATE</h4>
+
+<p>After I first posted this, the awesome @chriseppstein suggested all might not be legit:</p>
+
+<blockquote class="twitter-tweet"><p>Pretty sure you guys are getting trolled pretty hard by <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>.</p>&mdash; Chris Eppstein (@chriseppstein) <a href="https://twitter.com/chriseppstein/status/235210422477799424" data-datetime="2012-08-14T03:05:09+00:00">August 14, 2012</a></blockquote>
+
+
+<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>I don&#8217;t think LadyCoders is a troll, but if it is, pretty damn epic, and I&#8217;ll admit to be taken in. Either way, though, I think the analysis above holds true&#8230; feel free to disagree in the comments, however, as always.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Generational Impedance Mismatch]]></title>
+    <link href="http://decompelcting.org/blog/2012/08/03/generational-impedance-mismatch/"/>
+    <updated>2012-08-03T15:48:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/08/03/generational-impedance-mismatch</id>
+    <content type="html"><![CDATA[<p>One thing I&#8217;ve come to observe working in higher ed is that you can run into a lot of issues with what I want to term &#8220;generational impedance mismatch.&#8221; It&#8217;s what happens when your ostensible customers are about 40 years older than your target demographic.</p>
+
+<p>When I started on an internal administrative application about two years ago, I threw in some error pages with lolcats on them because&#8230; well, error pages are boring. Those got yanked because the customer thought they were &#8220;unprofessional.&#8221; Okay, sure. It&#8217;s an administrative app, so maybe this isn&#8217;t the best thing to throw up after a catastrophic failure:</p>
+
+<p><img class="center" src="http://decompelcting.org/images/post-img/im-in-ur-serverz.jpeg"></p>
+
+<p>But the new crop of apps I&#8217;m writing don&#8217;t target middle-aged administrators; they target students. Specifically, in addition to doing mundane things like reporting your a lost ID card or checking balances, there&#8217;s a whole social gaming component. So far, I&#8217;ve been pretty successful at keeping things amusing (between the student focus group we assembled and the <a href="http://reddit.com/r/jhu">JHU subreddit</a>, my sense of humor is quickly vindicated), but the text is&#8230; kinda stodgy.</p>
+
+<p>I was discussing this with a co-worker, and we hit on what I think is a brilliant way of balancing conflicting stakeholder needs. The customer wants rather formal, business-like text that drily describes various functions of the application. On the other hand, students are going to be bored, and love easter eggs and humor. But we know how to deal with target demographics who speak different languages, don&#8217;t we? Localization to the rescue!</p>
+
+<!--more-->
+
+
+<p>We can go from a default:</p>
+
+<figure class='code'><figcaption><span>en.yml  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">en</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span> <span class="s">&quot;Hi</span><span class="nv"> </span><span class="s">there!&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>to a specialized locale for old people:</p>
+
+<figure class='code'><figcaption><span>en-old.yml  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">en-old</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span> <span class="s">&quot;Why,</span><span class="nv"> </span><span class="s">good</span><span class="nv"> </span><span class="s">morrow,</span><span class="nv"> </span><span class="s">sir</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">madam.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Since we track birthdates, it makes it really easy:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">before_filter</span> <span class="ss">:localize_for_the_aged</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">localize_for_the_aged</span>
+</span><span class='line'>    <span class="no">I18n</span><span class="o">.</span><span class="n">default_locale</span> <span class="o">=</span> <span class="ss">:en</span>
+</span><span class='line'>    <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">try</span><span class="p">(</span><span class="ss">:old?</span><span class="p">)</span>
+</span><span class='line'>      <span class="no">I18n</span><span class="o">.</span><span class="n">locale</span> <span class="o">=</span> <span class="ss">:&quot;en-old&quot;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">old?</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">nil?</span> <span class="o">||</span> <span class="nb">self</span><span class="o">.</span><span class="n">birthdate</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="o">.</span><span class="n">years</span><span class="o">.</span><span class="n">ago</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Simple! Now our middle-aged customer will see a formal greeting, while our teenage/twentysomething users won&#8217;t think they&#8217;ve stumbled into Downton Abbey.</p>
+
+<h3>Don&#8217;t try this at work</h3>
+
+<p>Seriously, I hope you realize this was satire. Learn to talk to your customers, as painful as that might be, and convince them. Do A/B testing or have a focus group. Win over your users, and your customer will probably see the light of day. If not, you can always <a href="http://clientsfromhell.net">whinge about it here</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Legacy Systems on Rails (Part 2)]]></title>
+    <link href="http://decompelcting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/"/>
+    <updated>2012-08-03T11:38:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
+    <content type="html"><![CDATA[<p>This will be a quick one. I just wanted to give an example of how Ruby&#8217;s open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
+
+<h3>Into the mouth of madness</h3>
+
+<p>So let&#8217;s imagine you&#8217;re a software engineer (actually, to make a decision this crazy, you&#8217;d probably have to have a title like Señor Software Architect, or possibly VP of Development). You need to store precise date values for an OLTP system in the database. Although you know that Oracle&#8217;s TIMESTAMP datatype will store a time right down to sub-millisecond precision, that&#8217;s just too easy. Or, at least, too sane.</p>
+
+<p>Then you remember the <a href="http://en.wikipedia.org/wiki/Julian_day">Julian day</a> system. Perfect! You can just use floats to reperesent the time, with the Julian day number as the integral part, and the time of day represented as the fractional part! Even better, you decide to make up your own offset instead of using a standard Day of Calendar Reform, <em>and</em> to store the local time instead of UTC.</p>
+
+<p>If you have ever considered something like this, step away from the computer. I&#8217;m revoking your programmer license. Leaving aside the general inaccuracy of floats (you wouldn&#8217;t use a float to represent money, why the hell would it be a good idea for time?), there are <em>existing datatypes</em> for this! Moving on&#8230;</p>
+
+<!--more-->
+
+
+<h3>Monkey-patching to the rescue!</h3>
+
+<p>Since datetimes are represented as floating-point values internally, we&#8217;ll need to have a way of converting between those and normal datetime types. So I&#8217;ll start by introducing a few monkey-patches in an intializer, so they get loaded before anything else.</p>
+
+<figure class='code'><figcaption><span>date_fixes.rb  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># We need two values because the offset is from midnight instead of noon, </span>
+</span><span class='line'><span class="c1"># so the standard methods for handling Julian day values get confused.</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">SG1</span> <span class="o">=</span> <span class="mi">2415019</span>
+</span><span class='line'><span class="no">SG2</span> <span class="o">=</span> <span class="mi">2415018</span><span class="o">.</span><span class="mi">5</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="nb">Float</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">vendor_to_dt</span>
+</span><span class='line'>    <span class="n">date</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">jd</span><span class="p">(</span><span class="nb">self</span> <span class="o">+</span> <span class="no">SG1</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_date</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">to_date</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_time</span>
+</span><span class='line'>    <span class="n">t</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">in_time_zone</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="no">DateTime</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_vendor</span>
+</span><span class='line'>    <span class="c1"># This next one looks stupid but it&#39;s necessary</span>
+</span><span class='line'>    <span class="n">time</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="p">))</span>
+</span><span class='line'>    <span class="n">time</span><span class="o">.</span><span class="n">ajd</span><span class="o">.</span><span class="n">to_f</span> <span class="o">-</span> <span class="no">SG2</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="no">Time</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_vendor</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="no">Date</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_vendor</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So now Float, Date, DateTime and Time can all convert happily (well, mayby not happily) back and forth and we can deal with something reasonable in our classes, like so:</p>
+
+<figure class='code'><figcaption><span>Customer  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">opendatetime</span>
+</span><span class='line'>    <span class="n">read_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">)</span><span class="o">.</span><span class="n">to_time</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">opendatetime</span><span class="o">=</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">write_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">to_vendor</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I specifically didn&#8217;t use <code>to_f</code> as the method on Time, Date, etc. because I wanted to be clear this wasn&#8217;t just a Float, it was a vendor-specific implementation.</p>
+
+<p>Anyhow, that&#8217;s it for this one. As usual, comments, etc.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Legacy Systems on Rails (Part 1)]]></title>
+    <link href="http://decompelcting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/"/>
+    <updated>2012-08-02T14:48:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
+    <content type="html"><![CDATA[<p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
+
+<p>Since I spend a lot of time on this, I figured it would be a good topic for a series of posts, hence the &#8220;Part 1&#8221; in the title. Hopefully I&#8217;ll actually follow through on it.</p>
+
+<p>The first thing I did was to replace a few aging Perl CGI scripts with a Rails app, which was interesting. The notion that Rails is far easier to use for greenfield projects than for legacy systems is probably accurate, but it&#8217;s not universally true.</p>
+
+<p>This back-end is an Oracle database with over 450 tables and a hodgepodge of different strategies for how relationships should be modeled. I&#8217;m pretty sure it was my second or third day on the job that I was asked to implement a feature (in the old Perl codebase) that should have been straightforward given the relationships between two particular entities, but ended up requiring six inner joins and two left outer joins, IIRC. Just to give you an idea of what I&#8217;m dealing with.</p>
+
+<p>Anyhow, the first time around, I wrote an ActiveRecord model for each table, did my <code>has_many</code>&#8217;s and <code>belongs_to</code>&#8217;s, et cetera. Some were easier than others. There were a <em>lot</em> of conditions hashes in some of those associations.</p>
+
+<p>When the project scope started to grow beyond a single web app, and I started designing a REST API for the system, I had the opportunity to scratch some of the itches that had been bugging me about the original implementation from the very beginning.</p>
+
+<!--more-->
+
+
+<h3>When Good Patterns Go Bad</h3>
+
+<p>The first thing I needed to do was to solve an issue with the EAV tables. EAV (Entity-Attribute-Value) is an okay model for sparse data. Somehow, the designers of this system decided to use it for custom fields where <strong>every</strong> entity has <strong>every</strong> attribute. When a custom field is added, a row is inserted in the definition table for the attribute. Then a row is inserted in the value table for <strong>every single customer.</strong> It&#8217;s slow, to say the least. In the original (naive) implementation, this meant every time a new attribute definition was added, I added an association to the Customer class. And there are a <em>lot</em> of attributes.</p>
+
+<p>I wan&#8217;t about to make that mistake again.</p>
+
+<h3>Metaprogramming to the rescue</h3>
+
+<p>First I started with the definition table:</p>
+
+<figure class='code'><figcaption><span>FieldDef  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldDef</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">set_table_name</span> <span class="s1">&#39;custom_field_def&#39;</span>
+</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:custom_field_def_id</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:field_values</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">symbol</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">parameterize</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_sym</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Pretty straightforward. The only extra thing is that <code>symbol</code> method, which returns a snake cased version of the &#8216;title&#8217; attribute, suitable for using as a method name.</p>
+
+<p>Next comes the field value table:</p>
+
+<figure class='code'><figcaption><span>FieldValue  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldValue</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">set_table_name</span> <span class="s1">&#39;custom_field_value&#39;</span>
+</span><span class='line'>  <span class="n">set_primary_keys</span> <span class="ss">:cust_id</span><span class="p">,</span> <span class="ss">:custom_field_def_id</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:customer</span><span class="p">,</span> <span class="ss">:foreign_kay</span> <span class="o">=&gt;</span> <span class="ss">:cust_id</span>
+</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:field_def</span><span class="p">,</span> <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="ss">:custom_field_def_id</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Nothing out of the ordinary here (although I&#8217;d like to thank Dr. Nic and Charlie Savage for their work on <a href="https://github.com/drnic/composite_primary_keys">composite_primary_keys</a>, it&#8217;s a lifesaver).</p>
+
+<p>Of course, the goal here is eliminating the 40-odd lines of has_many and accepts_nested_attributes_for in the Customer class. This is where Ruby really shines:</p>
+
+<figure class='code'><figcaption><span>Customer  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">set_table_name</span> <span class="s1">&#39;customer&#39;</span>
+</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:cust_id</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Here&#39;s where we dynamically generate associations at runtime</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="no">FieldDef</span><span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">field</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">has_one</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;FieldValue&#39;</span><span class="p">,</span>
+</span><span class='line'>                          <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="ss">:cust_id</span><span class="p">,</span>
+</span><span class='line'>                          <span class="ss">:conditions</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span><span class="s2">&quot;customer_def_field_def_id = </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">accepts_nested_attributes_for</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span>
+</span><span class='line'>    <span class="n">delegate</span> <span class="ss">:field_value</span><span class="p">,</span>  <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</span><span class='line'>    <span class="n">delegate</span> <span class="ss">:field_value</span><span class="o">=</span><span class="p">,</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># snip</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This iterates over the rows of <code>custom_field_def</code>, generates an association for each entry, adds the <code>accepts_nested_attributes_for</code> declaration, and even delegates the getter and setters for the column we&#8217;re really interested in (<code>"CUSTOM_FIELD_VALUE"."FIELD_VALUE"</code>).</p>
+
+<p>I don&#8217;t claim it&#8217;s <em>the</em> most elegant solution, but it&#8217;s a lot better than in the previous iteration. It&#8217;s important to remember that although Rails&#8217; opinionated nature makes it a little more awkward to deal with a legacy sytem than with a brand new project, Ruby gives you all the tools you could want to overcome whatever hurdles you might encounter.</p>
+
+<p> If you have any questions or suggestions for improvement, please let me know in the comments!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Higher Education Needs a Revolution]]></title>
+    <link href="http://decompelcting.org/blog/2012/07/18/higher-education-needs-a-revolution/"/>
+    <updated>2012-07-18T19:59:00-04:00</updated>
+    <id>http://decompelcting.org/blog/2012/07/18/higher-education-needs-a-revolution</id>
+    <content type="html"><![CDATA[<p>Yesterday, <a href="http://coursera.com">Coursera</a> announced that 12 more universities had joined their program of creating massive open online courses, or MOOCs (one of them was <a href="http://www.jhu.edu">Johns Hopkins University</a>, where I work, so I was especially excited&#8230; we&#8217;re not always &#8220;early adopters&#8221;).</p>
+
+<p>Coursera is extremely cool. I&#8217;m currently taking UC Berkely&#8217;s <a href="https://www.coursera.org/course/saas">Software Engineering for SaaS</a> class (nothing new for me so far, but it&#8217;s enjoyable), and I took the <a href="https://www.coursera.org/course/ml">Machine Learning</a> class earlier this year. Well, most of it&#8230; I got a little too busy with work and family and didn&#8217;t quite finish. But I still learned a lot, and used math I thought I&#8217;d forgotten. So all in all, a win.</p>
+
+<p>Not quite finishing is a common thread in my life. I&#8217;m just a few credits away from a Bachelor&#8217;s in philosophy. Also, graphic design. Probably computer science as well. My Achilles&#8217; heel was always General Education courses. I want to learn almost everything I possibly can, but generally I either want to learn something so I can do something with it, or learn something because I have a compelling fascination with the topic. Most Gen Ed courses did neither for me, and when I&#8217;m not interested, I&#8217;m not motivated. This might be a character flaw. Two universities so far seemed to think so.</p>
+
+<p>It seems like the whole obsession with &#8220;general education&#8221; is dying. Johns Hopkins, for instance, has no general requirements, only departmental requirements for majors (and minors, natch). That&#8217;s extremely cool. It also costs over US$50k a year to attend. That&#8217;s not so cool.</p>
+
+<!--more-->
+
+
+<p>Last year, Peter Norvig and Sebastian Thrun decided to offer their Stanford AI class online, for free. They didn&#8217;t tell Stanford before they announced this, so there was a bit of a kerfuffle, but it happened. Another reminder of that all-important maxim:</p>
+
+<blockquote><p>It&#8217;s easier to ask forgiveness than it is to get permission.</p><footer><strong>Rear Adm. Dr. Grace Murray Hopper</strong> <cite>Chips Ahoy (July 1986)</cite></footer></blockquote>
+
+
+<p>Anyhow, they had hoped for maybe 2,000 students. After a couple of weeks, they were at 58,000. After the New York Times covered the experiment, enrollment had soared to over 100,000.</p>
+
+<p>Probably most didn&#8217;t finish the class. But it was enough of a phenomenon that Thrun quit Stanford to found <a href="http://www.udacity.com/">Udacity</a>, another startup engaged in producing and distributing MOOCs (Coursera was founded by fellow Stanford computer scientists Deborah Koller and Andrew Ng). Add to this <a href="http://www.edxonline.org/">edX</a>, a MOOC-producing partnership of MIT and Harvard, and you have a significant trend in the world of Higher Ed.</p>
+
+<h3>The End of Higher Ed?</h3>
+
+<p>In Forbes, Susan Adams penned the alarmist-sounding <a href="http://www.forbes.com/sites/susanadams/2012/07/17/is-coursera-the-beginning-of-the-end-for-traditional-higher-education/">Is Coursera the Beginning of the End for Traditional Higher Education?</a>. But it&#8217;s not nearly as alarming (if you&#8217;re a higher ed institution) as the prediction by Sebastian Thrun from <a href="http://www.wired.com/wiredscience/2012/03/ff_aiclass">an article in Wired last March</a>:</p>
+
+<blockquote><p>Fifty years from now, according to Thrun, there will be only 10 institutions in the whole world that deliver higher education.</p><footer><strong>Sebastian Thrun, Wired 20.03</strong> <cite><a href='http://www.wired.com/wiredscience/2012/03/ff_aiclass/'>&#8220;The Stanford Education Experiment Could Change Higher Learning Forever&#8221;</a></cite></footer></blockquote>
+
+
+<p>Remember, this <em>is</em> the guy who built Google&#8217;s self-driving car, so when he makes predictions about the future&#8230; I think it&#8217;s wise to pay attention.</p>
+
+<h3>Veritas vos liberabit</h3>
+
+<p>Something to remember about our institutions of higher education: they&#8217;re based on a model that emerged in the Middle Ages; Oxford and Cambridge were established for the teaching of Scholastic philosophy, primary to the clergy. This was long before Gutenberg&#8217;s innovation of movable type, so books were rare and expensive, so it made sense to create centers where the books could be read to students, and discussed.</p>
+
+<p>The Enlightenment shifted the focus to the natural sciences, and later the concept of a <a href="http://en.wikipedia.org/wiki/Liberal_education">liberal education</a> came to the fore. The system of general education requirements is based in this ideology. I won&#8217;t debate the value of a liberal education, but it is worth analyzing its position as an anachronism.</p>
+
+<p>Up until the 20th century, the idea that a university education was for anyone but the children of the aristocracy (or, at least, the bourgeoisie) would have seemed preposterous. But after the second World War, and the G.I. Bill, colleges were flooded with applicants newly able to afford the luxury of a liberal education. As business began to demand an influx of college graduates, public higher education expanded exponentially, to fill the demand of the children of the middle class for degrees needed to pursue lucrative careers.</p>
+
+<p>Somewhere in this process, the focus of higher education shifted from liberal education to career preparation. It was the open secret of the entire higher ed system, but as long as general education nodded in the direction of a traditional liberal arts curriculum, it could remain an open secret.</p>
+
+<blockquote><p>And the people in the houses<br/>All went to the university,<br/>Where they were put in boxes<br/>And they came out all the same,<br/>And there&#8217;s doctors and lawyers,<br/>And business executives,<br/>And they&#8217;re all made out of ticky tacky<br/>And they all look just the same.</p><footer><strong>Malvina Reynolds</strong> <cite>Little Boxes</cite></footer></blockquote>
+
+
+<p>In this process, however, the value of degrees was diluted. It&#8217;s basic economics; in a system based on scarcity, the more of something there is, the less valuable it is. And so, the Bachelor&#8217;s degree became the new high school diploma. And business discovered that a B.A. or B.S. didn&#8217;t guarantee much, especially in technical fields.</p>
+
+<p><img class="center" src="http://decompelcting.org/images/post-img/thinks-college-degree.png" title="&#34;College Freshman Meme: Thinks College Degree Will Provide Him With Career&#34;" alt="&#34;College Freshman Meme: Thinks College Degree Will Provide Him With Career&#34;"></p>
+
+<h3>Coding a Revolution</h3>
+
+<p>Coursera, Udacity, and edX have the potential to create the first disruptive technology in the higher ed domain. Sure, the notion of online, collaborative courseware is nothing new. <a href="http://www.blackboard.com">Blackboard</a> has been milking this space for years, with a product reviled by students and faculty alike. But this is different. Blackboard is internal to higher ed institutions; these companies are taking learning out of the university, and making it available to anyone with an interest. Through software and course content sourced from experts in various fields, combined with certification programs, they have the potential to change the social meaning of higher education.</p>
+
+<p>For centuries, the social value of a university education has been tied to the degrees conferred by an accredited institution. Accreditation is granted by organizations such as the <a href="http://www.msche.org/">Middle States Commission on Higher Education</a>, a unit of the <a href="http://www.middlestates.org/">Middle States Association of Colelges and Schools</a>, whose members are the schools themselves. Self-regulation works so well for the finance industry&#8230;</p>
+
+<p>Coursera says they have no plan to offer degrees, only certificates from instructors (as opposed to institutions), so far. Although, the University of Washington is planning to offer credits in conjunction with their Coursera courses. So we&#8217;ll see.</p>
+
+<p>Udacity, on the other hand, while not offering degrees, offers a (possibly) more rigorous certification process; rather than just passing the course, a student must take a certification exam in a testing center or online. This carries a fee, unlike Coursera&#8217;s instructor certs. Probably not a bad business model (Coursera, for its part, doesn&#8217;t seem to have a monetization strategy).</p>
+
+<p>In either case, I think there&#8217;s an element of shrewdness here. There&#8217;s a principle that <a href="http://academia.stackexchange.com/a/2339">&#8220;specific coursework&#8230;does not belong in a CV.&#8221;</a>. Of course, <em>certifications</em> are fair game. My intuition is that (particularly given the background of the principles) there&#8217;s a push here away from degrees and toward domain-specific information on résumés and curricula vitae. For technical fields, I think it&#8217;s not only brilliant, but past due.</p>
+
+<p>For liberal arts and humanities&#8230; I&#8217;m not sure. Coursera and Udacity started off with computer science and engineering courses because it&#8217;s easy to find a technical solution to grading programming exercises; basically, it&#8217;s <a href="http://travis-ci.org/">Travis CI</a>. If it builds and the tests pass, you&#8217;ve passed the test. Fuzzy subjects are a little more difficult. But this is an early iteration, so anything is possible.</p>
+
+<h3>The Value of College</h3>
+
+<p>Many of the articles about Coursera over the past couple of days have followed a similar pattern. They discuss the disruptive (and democratizing) potential of Coursera, Udacity, and edX; they cover the significance of the buy-in from world-class research universities; and then they get kind of nostalgic, wondering if we won&#8217;t lose something valuable if brick-and-mortar institutions fall by the wayside.</p>
+
+<p>I think the college experience is something wonderful; I didn&#8217;t even graduate, and I wouldn&#8217;t trade my years at uni for anything&#8230; well, maybe a <a href="http://www.cray.com/Products/XK6/KX6.aspx">Cray XK6</a> all to myself. Not much I wouldn&#8217;t do for that. But, I digress. The value of a brick-and-mortar institution isn&#8217;t in the lectures; it&#8217;s in the collaboration of like-minded individuals in the rarified environment of limited responsibility, educational opportunity, and funded research. Sort of like this:</p>
+
+<iframe width="560" height="315" src="http://www.youtube.com/embed/qYx7YG0RsFY" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Okay, maybe not like that. But there is something special about the college experience. Honestly, though, is it exclusive to college?</p>
+
+<p>I lived in collective anarcho-punk houses for years after I dropped out of college&#8230; they&#8217;re a lot like frat houses, but co-ed and without all the date rape. And actually, more studying.</p>
+
+<p>I could imagine graduating from high school a few years from now, and deciding that I cared more about computer science than a B.S. in computer science. Taking CS 101 from Stanford on Coursera. Forming a local study group, with a few like-minded individuals. Then renting a big house, and continuing to take CS courses together. Hell, maybe saying &#8220;screw these old guys who are into degrees, let&#8217;s do a startup and make a billion dollars.&#8221;</p>
+
+<p>Just an idea. But hacker houses aren&#8217;t that new an idea&#8230; <a href="http://farmhouse.la/">Farmhouse</a> in LA has been around for a while&#8230; it&#8217;s apparently a big Silicon Valley trend, as well. Why not do that as students?</p>
+
+<h3>What is to be done?</h3>
+
+<p>Much of this is speculation. But ultimately, the effect of these startups is to democratize higher learning, to wrest it from the grasp of an elite and to provide it to anyone with internet access. And that&#8217;s a good thing, whatever the consequences. I think we&#8217;re in the midst of a transitional period in education, higher and otherwise.</p>
+
+<p>My mother taught elementary school for thirty-odd years. I dragged her into the world of computers when I was a tiny kid, and she in turn dragged her school district (with some kicking and screaming). Institutional education is often change-averse, and a little coercion is usually required.</p>
+
+<p>I don&#8217;t know if the participating institutions are even cognizant of the potential of this technology to revolutionize how higher ed functions. But ultimately, for the majority of the population, it is dysfunctional. Providing education to all, free of charge, is a social good, and a necessary progression. We&#8217;ve needed this for a long time. We&#8217;ve just been waiting on the technology. Now that it&#8217;s here, there is no turning back. And that&#8217;s good, too.</p>
+]]></content>
+  </entry>
+  
+</feed>
