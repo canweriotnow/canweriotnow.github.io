@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Practical Elegance]]></title>
-  <link href="http://decompelcting.org/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[I'm An Estuarian!]]></title>
-    <link href="http://decompelcting.org/blog/2013/05/14/im-an-estuarian/"/>
+    <link href="http://decomplecting.org/blog/2013/05/14/im-an-estuarian/"/>
     <updated>2013-05-14T23:40:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/05/14/im-an-estuarian</id>
+    <id>http://decomplecting.org/blog/2013/05/14/im-an-estuarian</id>
     <content type="html"><![CDATA[<p>It&#8217;s been a while since my last post, because the last few weeks have been just a little crazy.</p>
 
 <p>I&#8217;ve left <a href="http://www.jhu.edu">JHU</a>, and accepted the role of Chief Technology Officer at <a href="http://anestuary.com">An Estuary</a>, an amazing EdTech startup spun out from Baltimore&#8217;s <a href="http://www.digitalharborfoundation.org/">Digital Harbor Foundation</a>.</p>
@@ -32,9 +32,9 @@
   
   <entry>
     <title type="html"><![CDATA[Be Willing To Let Go; or, "The Big Rewrite"]]></title>
-    <link href="http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go/"/>
+    <link href="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/"/>
     <updated>2013-04-05T02:10:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go</id>
+    <id>http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go</id>
     <content type="html"><![CDATA[<blockquote><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p><footer><strong>Alan J. Perlis</strong></footer></blockquote>
 
 
@@ -89,9 +89,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Difficulty of Chaotic Good]]></title>
-    <link href="http://decompelcting.org/blog/2013/04/02/the-difficulty-of-chaotic-good/"/>
+    <link href="http://decomplecting.org/blog/2013/04/02/the-difficulty-of-chaotic-good/"/>
     <updated>2013-04-02T22:29:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/04/02/the-difficulty-of-chaotic-good</id>
+    <id>http://decomplecting.org/blog/2013/04/02/the-difficulty-of-chaotic-good</id>
     <content type="html"><![CDATA[<p>So in a delightful twist, Michael O. Church has brought in the concept of D&amp;D <a href="http://michaelochurch.wordpress.com/2013/03/18/gervais-macleod-11-alignment-and-careers/">ethical alignments</a> to the corporate hierarchy/career discussion.</p>
 
 <p>He quite correctly places the &#8220;Technocrat&#8221;, i.e., the &#8220;postive sociopath&#8221;, or the person who wants to accomplish something beneficial without regard to corporate politics or any other tangential concerns, in the &#8220;chaotic good&#8221; (or at least, &#8220;neutral good&#8221;) category.</p>
@@ -135,9 +135,9 @@
   
   <entry>
     <title type="html"><![CDATA[Donglegate, Inclusionary Culture, Nerd Culture]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/23/donglegate/"/>
+    <link href="http://decomplecting.org/blog/2013/03/23/donglegate/"/>
     <updated>2013-03-23T21:33:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/23/donglegate</id>
+    <id>http://decomplecting.org/blog/2013/03/23/donglegate</id>
     <content type="html"><![CDATA[<p>I&#8217;ve taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace conversations with friends and coworkers. I have strong feelings about what happened at PyCon (re: the donglegate scenario), and many of them are conflicting. So I&#8217;ve waited to write about it until now.</p>
 
 <h3>Donglegate</h3>
@@ -159,7 +159,7 @@
 <blockquote class="twitter-tweet"><p>Hey @<a href="https://twitter.com/mundanematt">mundanematt</a>, it&#8217;s clear from the last 24 hours you&#8217;re a bully.@<a href="https://twitter.com/sendgrid">sendgrid</a> supports me.Stop trolling.</p>&mdash; Adria Richards (@adriarichards) <a href="https://twitter.com/adriarichards/status/314452708549603328">March 20, 2013</a></blockquote>
 
 
-<script async src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>Apparently, she was mistaken, because she was fired shortly thereafter.</p>
@@ -182,14 +182,14 @@
   
   <entry>
     <title type="html"><![CDATA[Farewell, Reader; Or, The Problem with "Free as in Beer"]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/16/farewell/"/>
+    <link href="http://decomplecting.org/blog/2013/03/16/farewell/"/>
     <updated>2013-03-16T00:45:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/16/farewell</id>
+    <id>http://decomplecting.org/blog/2013/03/16/farewell</id>
     <content type="html"><![CDATA[<p>I&#8217;m <a href="http://support.google.com/reader/answer/3028851">going to miss Google Reader</a>. I know a lot of people are going to. Hell, in a crazy inversion of Godwin&#8217;s Law, even <a href="http://www.youtube.com/watch?v=A25VgNZDQ08">Hitler is upset</a>. There&#8217;s a <a href="https://www.change.org/en-GB/petitions/google-do-not-remove-google-reader-on-july-1-2013">petition on Change.org</a>, and Bender is pissed:</p>
 
-<p><img class="center" src="http://decompelcting.org/images/post-img/bender-reader.png"></p>
+<p><img class="center" src="http://decomplecting.org/images/post-img/bender-reader.png"></p>
 
-<p>I&#8217;ve been complaining, both online and in person, ever since I learned of this a couple of days ago. And it&#8217;s not the first time I&#8217;ve <a href="http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything/">complained about changes at Google</a>.</p>
+<p>I&#8217;ve been complaining, both online and in person, ever since I learned of this a couple of days ago. And it&#8217;s not the first time I&#8217;ve <a href="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/">complained about changes at Google</a>.</p>
 
 <p>This isn&#8217;t even <a href="http://en.wikipedia.org/wiki/Tragedy_of_the_commons">the tragedy fo the commons</a>; this is the tragedy of <a href="http://en.wikipedia.org/wiki/Gratis_versus_libre">gratis versus libre</a>, or &#8220;free as in beer&#8221; versus &#8220;free as in speech.&#8221;</p>
 
@@ -208,7 +208,7 @@
 
 <p>But the lesson here is the one I missed (or ignored) last year when Google introduced the changes to Search that made it more difficult for me to find pertinent results to highly complex, technical queries, and I kvetched on this blog.</p>
 
-<p>I still stand by my position that <a href="http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything/">hackers need our own everything</a>, but my new conclusion is that it was a mistake to rely on a corporation like Google in the first place, if the tool in question really mattered.</p>
+<p>I still stand by my position that <a href="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/">hackers need our own everything</a>, but my new conclusion is that it was a mistake to rely on a corporation like Google in the first place, if the tool in question really mattered.</p>
 
 <p>It would be like a carpenter relying on a hammer (and saw, plane, screwdriver, etc.) provided by some external entity who could swoop in and remove or alter any of those tools at any time. Such a carpenter would be a fool, at least if he didn&#8217;t leverage those tools while he had them to build a set of replacements.</p>
 
@@ -228,10 +228,10 @@
   
   <entry>
     <title type="html"><![CDATA[The Myth of The "IT Department"]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department/"/>
+    <link href="http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department/"/>
     <updated>2013-03-15T01:53:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department</id>
-    <content type="html"><![CDATA[<p>So in the comments on my <a href="http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom for what is, in my opinion, the most insightful and important blog currently published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>. His recent series of posts have been reviewing and analyzing the MacLeod theory of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-convexity/">organizational structure</a> (link is to the latest post in the series, but if you haven&#8217;t been following it, therein are links to the previous eight).</p>
+    <id>http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department</id>
+    <content type="html"><![CDATA[<p>So in the comments on my <a href="http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom for what is, in my opinion, the most insightful and important blog currently published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>. His recent series of posts have been reviewing and analyzing the MacLeod theory of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-convexity/">organizational structure</a> (link is to the latest post in the series, but if you haven&#8217;t been following it, therein are links to the previous eight).</p>
 
 <p>I want to focus on the differential between concave (in which the difference between failure and middling is greatest) and convex (in which the difference between middling and superior is greatest) work.</p>
 
@@ -246,7 +246,7 @@
 
 <h3>Concave Work</h3>
 
-<p>Let&#8217;s face it, help desk work is typically concave. I&#8217;ve done it (briefly), and it&#8217;s probably an acceptable use case for <a href="http://en.wikipedia.org/wiki/Theory_X_and_Theory_Y#Theory_X">Theory X</a>, since it&#8217;s (in this writer&#8217;s opinion) rote, unrewarding work that I would <a href="http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">automate out of existence</a> if I had the time and resources. But, it&#8217;s also necessary work, and a place where &#8220;managing to the middle&#8221; works because achieving the Socially Acceptable Middling Effort (SAME) is a decent departmental average.</p>
+<p>Let&#8217;s face it, help desk work is typically concave. I&#8217;ve done it (briefly), and it&#8217;s probably an acceptable use case for <a href="http://en.wikipedia.org/wiki/Theory_X_and_Theory_Y#Theory_X">Theory X</a>, since it&#8217;s (in this writer&#8217;s opinion) rote, unrewarding work that I would <a href="http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">automate out of existence</a> if I had the time and resources. But, it&#8217;s also necessary work, and a place where &#8220;managing to the middle&#8221; works because achieving the Socially Acceptable Middling Effort (SAME) is a decent departmental average.</p>
 
 <p>I&#8217;d place much of the responsibility of the average sub-division of IT in the scope of &#8220;concave work.&#8221;  Desktop support, Windows administration, etc., are really about uniformity of outcome, and SAME is an acceptable goal.</p>
 
@@ -254,7 +254,7 @@
 
 <h3>Convex Work</h3>
 
-<p>I&#8217;ve <a href="http://decompelcting.org/blog/2012/10/31/feedback-loops/">written before</a> about how programmers are just <em>weird</em> from a standard, organizational point of view. Or any standard point of view. Programming is the ultimate convex work; from Joel Spolsky&#8217;s warnings about <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">The Perils of Java Schools</a>, to Jeff Atwood&#8217;s plea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">not everyone learn to code</a>, it&#8217;s clear that not only is programming a highly specialized thing to excel at, but also that there are <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">certain factors that determine capability in advance</a>.</p>
+<p>I&#8217;ve <a href="http://decomplecting.org/blog/2012/10/31/feedback-loops/">written before</a> about how programmers are just <em>weird</em> from a standard, organizational point of view. Or any standard point of view. Programming is the ultimate convex work; from Joel Spolsky&#8217;s warnings about <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">The Perils of Java Schools</a>, to Jeff Atwood&#8217;s plea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">not everyone learn to code</a>, it&#8217;s clear that not only is programming a highly specialized thing to excel at, but also that there are <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">certain factors that determine capability in advance</a>.</p>
 
 <p>It&#8217;s probably the epitome of convex work. The difference between the worst programmer and the middling programmer is a fraction of the difference between a middling programmer and (even) a 90th percentile-or-above programmer. And there are probably other areas in IT where this is true; from my experience I&#8217;d say they&#8217;re in software-heavy areas like managing large datasets properly, or providing true &#8220;cloud services&#8221;, i.e., computing and storage in a multi-tenancy environment with computation and storage as a metered service. I haven&#8217;t seen any of these done well in an &#8220;enterprise&#8221; environment.</p>
 
@@ -276,9 +276,9 @@
   
   <entry>
     <title type="html"><![CDATA[Confessions of A Job Destroyer]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer/"/>
+    <link href="http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer/"/>
     <updated>2013-03-11T15:57:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/11/confessions-of-a-job-destroyer</id>
+    <id>http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer</id>
     <content type="html"><![CDATA[<p>One of the most unfunny ironies of the rhetoric surrounding &#8220;job creators&#8221; in contemporary American politics is that most of the jobs being created (or at least, those with the greatest demand) are in the tech sector. Jobs like mine. Jobs that automate processes that used to be performed by people.</p>
 
 <p>So I&#8217;ll come out and say it: I&#8217;m not a job creator (which is, I suppose, why the Republicans aren&#8217;t too interested in cutting <em>my</em> taxes). I&#8217;m a job destroyer.</p>
@@ -314,9 +314,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Social University That Could Have Been]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
+    <link href="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
     <updated>2013-03-10T22:21:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
+    <id>http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
     <content type="html"><![CDATA[<p>This is a post I&#8217;ve wanted to write for a while, but I&#8217;ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
 
 <h2>The Social University</h2>
@@ -358,7 +358,7 @@
 
 <p>I consider it a failure because we never got to ship. (<a href="http://johndbarry.com/2012/07/if-it-doesnt-ship-it-doesnt-exist/">If it doesn&#8217;t ship, it doesn&#8217;t exist.</a>) Sure, it was functional, and even &#8220;live&#8221; on our production server for about a week before our official launch date. But in that last week, the project was &#8220;indefinitely shelved&#8221;.</p>
 
-<p><img class="center" src="http://decompelcting.org/images/post-img/remove-that-code.jpg"></p>
+<p><img class="center" src="http://decomplecting.org/images/post-img/remove-that-code.jpg"></p>
 
 <p>I never really got a clear reason for that (there were meetings between deans and lawyers and managers to which I was not privy), but the official, documented reason was that the project itself (which we worked on over the course of a year or more) was &#8220;never requested or approved&#8221;, which is why I&#8217;m blogging about it now. I may never be able to share the source code (work-for-hire is pretty explicit), but I think the idea, which originated with me, should be free to the world if my employer disavows any ownership of it.</p>
 
@@ -374,9 +374,9 @@
   
   <entry>
     <title type="html"><![CDATA[PAM Authentication Beyond The Desktop]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
+    <link href="http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
     <updated>2013-03-08T20:11:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
+    <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
     <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&#8217;s useful for so much more.</p>
 
 <h3>Web Authentication</h3>
@@ -423,9 +423,9 @@
   
   <entry>
     <title type="html"><![CDATA[Code Typos Got You Down? Stop Worrying with close_enough]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/"/>
+    <link href="http://decomplecting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/"/>
     <updated>2013-03-01T18:32:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough</id>
+    <id>http://decomplecting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough</id>
     <content type="html"><![CDATA[<p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I&#8217;m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
 
 <p>The concept is very simple, and based on an algorithm used in most spell checkers and autocorrect systems currently in use. Calculating the <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau-Levenshtein distance</a> between two words can reliably (within a certain margin of error) indicate whether a known word was inteded when an unknown term was encountered in user input.</p>
@@ -495,9 +495,9 @@
   
   <entry>
     <title type="html"><![CDATA[DateTime Conversions in Clojure]]></title>
-    <link href="http://decompelcting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
+    <link href="http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
     <updated>2013-02-03T14:18:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
+    <id>http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
     <content type="html"><![CDATA[<p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
 
 <p>A while ago, I <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">wrote a post about Bubba</a> (not its real name), a legacy/vendor-supplied system in which the original developers (may they suffer eternal torment) decided to store all datetimes as floating-point values using a bastardized form of the Julian Day system with fractional day part. In that post, I showed a solution used in a Ruby on Rails web app, but now I&#8217;m writing data integration services for multiple systems, and needed something a bit more robust, so I&#8217;m writing it in Clojure.</p>
@@ -754,9 +754,9 @@
   
   <entry>
     <title type="html"><![CDATA[Ingress - Crowdsourcing Solutions to NP-Hard Problems?]]></title>
-    <link href="http://decompelcting.org/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems/"/>
+    <link href="http://decomplecting.org/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems/"/>
     <updated>2013-01-22T19:12:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems</id>
+    <id>http://decomplecting.org/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems</id>
     <content type="html"><![CDATA[<p>So I don&#8217;t blog much about my gaming habit, but I recently got my invite to <a href="http://www.ingress.com">Ingress</a>, Google&#8217;s new location-based MMORPG. Much has been written about the extensive (one might even say brilliant) <a href="http://www.nianticproject.com">viral marketing campaign</a> that launched the game, and there has been some interesting speculation as to Google&#8217;s motivation in producing such a game, ranging from the <a href="http://www.reddit.com/r/Android/comments/138res/google_launches_ingress_a_worldwide_mobile/c71v7yv?context=2">begrudgingly admiring</a> to the <a href="http://pandodaily.com/2012/11/19/googles-ingress-is-more-than-a-game-its-a-potential-data-exploitation-disaster/">borderline paranoid</a>.</p>
 
 <p>True, a persistently location-aware app that collects GPS and accelerometer data the entire time it&#8217;s active has obvious implications for a data-ravenous company like Google. And I&#8217;ve seen a few reasonable theories so far as to the &#8220;real&#8221; motivation behind the game (and Google&#8217;s &#8220;real&#8221; motivation - always and everywhere - is surely data). A breakdown of what I&#8217;ve seen so far:</p>
@@ -807,7 +807,7 @@
 
 <p>The social aspect is also pretty damn great&#8230; our local &#8216;Resistance&#8217; cell coordinates activities on a Google+ group, and thanks to that coordination, I was able to cover the campus where I work with beautiful, blue Resistance control fields - it was completely Enlightened-controlled just last week.</p>
 
-<p><img src="http://decompelcting.org/images/post-img/ingress-intel.png"></p>
+<p><img src="http://decomplecting.org/images/post-img/ingress-intel.png"></p>
 
 <p>The graphics are also incredibly stylish, abandoning the typical cartoonish mobile-game graphics for a style reminiscent of Tron, or the sort of data visualization I used to imagine reading William Gibson novels as a kid. Quite appropriate for a game with a heavy cyberpunk-dystopia vibe.</p>
 
@@ -818,15 +818,15 @@
 
 <p>Oh, well. Guess I&#8217;ll just have to&#8230;</p>
 
-<p><img class="center" src="http://decompelcting.org/images/post-img/keep-calm-claim-portals-resistance.png" width="500"></p>
+<p><img class="center" src="http://decomplecting.org/images/post-img/keep-calm-claim-portals-resistance.png" width="500"></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[DCI: The Right Idea for The Wrong Paradigm]]></title>
-    <link href="http://decompelcting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
+    <link href="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
     <updated>2013-01-03T01:10:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
+    <id>http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&#8217;ve seen, however, is Tony Arcieri&#8217;s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">&#8220;DCI&#8221; in Ruby Is Compeltely Broken</a>.</p>
 
 <p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it&#8217;s an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
@@ -897,9 +897,9 @@
   
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 3)]]></title>
-    <link href="http://decompelcting.org/blog/2012/11/02/legacy-systems-on-rails-part-3/"/>
+    <link href="http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3/"/>
     <updated>2012-11-02T13:25:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/11/02/legacy-systems-on-rails-part-3</id>
+    <id>http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3</id>
     <content type="html"><![CDATA[<p>It&#8217;s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
 
 <h3>Abstraction is your friend</h3>
@@ -963,9 +963,9 @@
   
   <entry>
     <title type="html"><![CDATA[Feedback Loops]]></title>
-    <link href="http://decompelcting.org/blog/2012/10/31/feedback-loops/"/>
+    <link href="http://decomplecting.org/blog/2012/10/31/feedback-loops/"/>
     <updated>2012-10-31T14:12:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/10/31/feedback-loops</id>
+    <id>http://decomplecting.org/blog/2012/10/31/feedback-loops</id>
     <content type="html"><![CDATA[<p>Sadly, I haven&#8217;t added a blog post in roughly 2.5 months. I&#8217;ve had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven&#8217;t had it in me. I really enjoy writing this blog, too. I wasn&#8217;t quite sure what was going on, until I read one of the most insightful blog posts I&#8217;ve ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
 
 <p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>
@@ -1000,9 +1000,9 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[LadyCoders, Twitroversy, and you]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/13/ladycoders/"/>
+    <link href="http://decomplecting.org/blog/2012/08/13/ladycoders/"/>
     <updated>2012-08-13T21:41:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/13/ladycoders</id>
+    <id>http://decomplecting.org/blog/2012/08/13/ladycoders</id>
     <content type="html"><![CDATA[<p>So, I had intended my next post to address some of the (valid) criticism of Github that&#8217;s been making the rounds lately, but a much more disturbing Twitroversy has emerged today.</p>
 
 <p>A group of women called <a href="http://ladycoders.com">LadyCoders</a> started a <a href="http://www.kickstarter.com/projects/166494057/ladycoders-get-hired-seattle-2012">Kickstarter campaign</a> to fund a conference/seminar geared toward helping women to get programming and other tech jobs. Great idea, right? There are <a href="http://girldevelopit.com/">many</a> <a href="http://www.blackgirlscode.com/">projects</a> devoted to giving women the skills they need to write software, but as far as addressing the fundamental issue that the industry itself is pretty much a boys&#8217; club (not assigning blame, just acknowledging reality), much less has been done in that area.</p>
@@ -1014,7 +1014,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet tw-align-center"><p>Sick and wrong: &#8220;it’s our job (for now) to be easily integrated into an all-male team, **nonthreatening,** and hyper-skilled&#8221;- <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a></p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235163013227880449" data-datetime="2012-08-13T23:56:46+00:00">August 13, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>I completely get where @shanley is coming from&#8230; but the amount of Twitroversy here seemed&#8230; disproportionate.</p>
@@ -1027,7 +1027,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet tw-align-center"><p>Legit response from <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>: &#8220;I know what works, whether or not it&#8217;s PC.&#8221; Please do not fund this shit on kickstarter.</p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235166808880074753" data-datetime="2012-08-14T00:11:51+00:00">August 14, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>You can go search for @ladycoders mentions on Twitter if you want to see more&#8230; but here&#8217;s the issue I take: fundamentally, the issue LadyCoders is trying to address is that the software industry is a male-dominated space which has been difficult for even the most highly-skilled women to penetrate.</p>
@@ -1049,7 +1049,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet"><p>Women, people of color, and other marginalized groups have been forced to work within the system forever. It&#8217;s time to burn the system down.</p>&mdash; Ashe Dryden (@ashedryden) <a href="https://twitter.com/ashedryden/status/235167798211534848" data-datetime="2012-08-14T00:15:46+00:00">August 14, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>There are few tweets I agree with more.</p>
@@ -1083,7 +1083,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet"><p>Pretty sure you guys are getting trolled pretty hard by <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>.</p>&mdash; Chris Eppstein (@chriseppstein) <a href="https://twitter.com/chriseppstein/status/235210422477799424" data-datetime="2012-08-14T03:05:09+00:00">August 14, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>I don&#8217;t think LadyCoders is a troll, but if it is, pretty damn epic, and I&#8217;ll admit to be taken in. Either way, though, I think the analysis above holds true&#8230; feel free to disagree in the comments, however, as always.</p>
@@ -1092,14 +1092,14 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[Generational Impedance Mismatch]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/03/generational-impedance-mismatch/"/>
+    <link href="http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch/"/>
     <updated>2012-08-03T15:48:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/03/generational-impedance-mismatch</id>
+    <id>http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch</id>
     <content type="html"><![CDATA[<p>One thing I&#8217;ve come to observe working in higher ed is that you can run into a lot of issues with what I want to term &#8220;generational impedance mismatch.&#8221; It&#8217;s what happens when your ostensible customers are about 40 years older than your target demographic.</p>
 
 <p>When I started on an internal administrative application about two years ago, I threw in some error pages with lolcats on them because&#8230; well, error pages are boring. Those got yanked because the customer thought they were &#8220;unprofessional.&#8221; Okay, sure. It&#8217;s an administrative app, so maybe this isn&#8217;t the best thing to throw up after a catastrophic failure:</p>
 
-<p><img class="center" src="http://decompelcting.org/images/post-img/im-in-ur-serverz.jpeg"></p>
+<p><img class="center" src="http://decomplecting.org/images/post-img/im-in-ur-serverz.jpeg"></p>
 
 <p>But the new crop of apps I&#8217;m writing don&#8217;t target middle-aged administrators; they target students. Specifically, in addition to doing mundane things like reporting your a lost ID card or checking balances, there&#8217;s a whole social gaming component. So far, I&#8217;ve been pretty successful at keeping things amusing (between the student focus group we assembled and the <a href="http://reddit.com/r/jhu">JHU subreddit</a>, my sense of humor is quickly vindicated), but the text is&#8230; kinda stodgy.</p>
 
@@ -1185,9 +1185,9 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 2)]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/"/>
+    <link href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/"/>
     <updated>2012-08-03T11:38:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
+    <id>http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
     <content type="html"><![CDATA[<p>This will be a quick one. I just wanted to give an example of how Ruby&#8217;s open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
 
 <h3>Into the mouth of madness</h3>
@@ -1327,9 +1327,9 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 1)]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/"/>
+    <link href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/"/>
     <updated>2012-08-02T14:48:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
+    <id>http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
     <content type="html"><![CDATA[<p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
 
 <p>Since I spend a lot of time on this, I figured it would be a good topic for a series of posts, hence the &#8220;Part 1&#8221; in the title. Hopefully I&#8217;ll actually follow through on it.</p>
@@ -1459,9 +1459,9 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[Higher Education Needs a Revolution]]></title>
-    <link href="http://decompelcting.org/blog/2012/07/18/higher-education-needs-a-revolution/"/>
+    <link href="http://decomplecting.org/blog/2012/07/18/higher-education-needs-a-revolution/"/>
     <updated>2012-07-18T19:59:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/07/18/higher-education-needs-a-revolution</id>
+    <id>http://decomplecting.org/blog/2012/07/18/higher-education-needs-a-revolution</id>
     <content type="html"><![CDATA[<p>Yesterday, <a href="http://coursera.com">Coursera</a> announced that 12 more universities had joined their program of creating massive open online courses, or MOOCs (one of them was <a href="http://www.jhu.edu">Johns Hopkins University</a>, where I work, so I was especially excited&#8230; we&#8217;re not always &#8220;early adopters&#8221;).</p>
 
 <p>Coursera is extremely cool. I&#8217;m currently taking UC Berkely&#8217;s <a href="https://www.coursera.org/course/saas">Software Engineering for SaaS</a> class (nothing new for me so far, but it&#8217;s enjoyable), and I took the <a href="https://www.coursera.org/course/ml">Machine Learning</a> class earlier this year. Well, most of it&#8230; I got a little too busy with work and family and didn&#8217;t quite finish. But I still learned a lot, and used math I thought I&#8217;d forgotten. So all in all, a win.</p>
@@ -1506,7 +1506,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 
 <p>In this process, however, the value of degrees was diluted. It&#8217;s basic economics; in a system based on scarcity, the more of something there is, the less valuable it is. And so, the Bachelor&#8217;s degree became the new high school diploma. And business discovered that a B.A. or B.S. didn&#8217;t guarantee much, especially in technical fields.</p>
 
-<p><img class="center" src="http://decompelcting.org/images/post-img/thinks-college-degree.png" title="&#34;College Freshman Meme: Thinks College Degree Will Provide Him With Career&#34;" alt="&#34;College Freshman Meme: Thinks College Degree Will Provide Him With Career&#34;"></p>
+<p><img class="center" src="http://decomplecting.org/images/post-img/thinks-college-degree.png" title="&#34;College Freshman Meme: Thinks College Degree Will Provide Him With Career&#34;" alt="&#34;College Freshman Meme: Thinks College Degree Will Provide Him With Career&#34;"></p>
 
 <h3>Coding a Revolution</h3>
 

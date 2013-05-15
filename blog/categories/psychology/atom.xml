@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: psychology | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/psychology/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/psychology/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Feedback Loops]]></title>
-    <link href="http://decompelcting.org/blog/2012/10/31/feedback-loops/"/>
+    <link href="http://decomplecting.org/blog/2012/10/31/feedback-loops/"/>
     <updated>2012-10-31T14:12:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/10/31/feedback-loops</id>
+    <id>http://decomplecting.org/blog/2012/10/31/feedback-loops</id>
     <content type="html"><![CDATA[<p>Sadly, I haven't added a blog post in roughly 2.5 months. I've had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven't had it in me. I really enjoy writing this blog, too. I wasn't quite sure what was going on, until I read one of the most insightful blog posts I've ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
 
 <p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>

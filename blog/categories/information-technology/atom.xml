@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: information technology | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/information-technology/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/information-technology/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Myth of The "IT Department"]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department/"/>
+    <link href="http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department/"/>
     <updated>2013-03-15T01:53:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/15/the-myth-of-the-it-department</id>
+    <id>http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department</id>
     <content type="html"><![CDATA[<p>So in the comments on my <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom for what is, in my opinion, the most insightful and important blog currently published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>. His recent series of posts have been reviewing and analyzing the MacLeod theory of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-convexity/">organizational structure</a> (link is to the latest post in the series, but if you haven't been following it, therein are links to the previous eight).</p>
 
 <p>I want to focus on the differential between concave (in which the difference between failure and middling is greatest) and convex (in which the difference between middling and superior is greatest) work.</p>

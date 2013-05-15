@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: coding culture | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/coding-culture/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/coding-culture/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Be Willing To Let Go; or, "The Big Rewrite"]]></title>
-    <link href="http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go/"/>
+    <link href="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/"/>
     <updated>2013-04-05T02:10:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/04/05/be-willing-to-let-go</id>
+    <id>http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go</id>
     <content type="html"><![CDATA[<p><blockquote><p></p></p><p><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p></p><p><p></p><footer><strong>Alan J. Perlis</strong></footer></blockquote></p>
 
 <p>One of the most nerve-wracking things you can tell a manager is that it's time to rewrite a major software component, system, or application. In fact, it's considered (in some circles) such a mortal sin that Joel Spolsky addresses "The Big Rewrite" in a post entitled <a href="http://www.joelonsoftware.com/articles/fog0000000069.html">Things You Should Never Do, Part I</a>.</p>

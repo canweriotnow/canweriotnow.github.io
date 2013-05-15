@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ruby | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Social University That Could Have Been]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
+    <link href="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
     <updated>2013-03-10T22:21:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
+    <id>http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
     <content type="html"><![CDATA[<p>This is a post I've wanted to write for a while, but I've needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
 
 <h2>The Social University</h2>
@@ -75,9 +75,9 @@
   
   <entry>
     <title type="html"><![CDATA[PAM Authentication Beyond The Desktop]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
+    <link href="http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
     <updated>2013-03-08T20:11:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
+    <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
     <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it's useful for so much more.</p>
 
 <h3>Web Authentication</h3>
@@ -121,9 +121,9 @@
   
   <entry>
     <title type="html"><![CDATA[DCI: The Right Idea for The Wrong Paradigm]]></title>
-    <link href="http://decompelcting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
+    <link href="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
     <updated>2013-01-03T01:10:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
+    <id>http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
     <content type="html"><![CDATA[<p>I've been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I've seen, however, is Tony Arcieri's recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">"DCI" in Ruby Is Compeltely Broken</a>.</p>
 
 <p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it's an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
@@ -184,9 +184,9 @@ This provides the context for the</code>with-connection` macro:</p>
   
   <entry>
     <title type="html"><![CDATA[Try Ruby... Seriously.]]></title>
-    <link href="http://decompelcting.org/blog/2012/06/01/try-ruby-seriously/"/>
+    <link href="http://decomplecting.org/blog/2012/06/01/try-ruby-seriously/"/>
     <updated>2012-06-01T20:05:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/06/01/try-ruby-seriously</id>
+    <id>http://decomplecting.org/blog/2012/06/01/try-ruby-seriously</id>
     <content type="html"><![CDATA[<p>Every now and then someone comes to me for advice because they (or someone they know) wants to learn to code and has no idea where to start. Usually, the first thing I do is send them to <a href="http://tryruby.org">tryruby.org</a>, the awesome web-based REPL and tutorial the <a href="http://codeschool.com">Code School</a> folks put together, based on <a href="http://mislav.uniqpath.com/poignant-guide/">_why's (poignant) guide to ruby</a>.</p>
 
 <p>Lately, I've been wondering if that's the best advice. Only because I constantly re-evaluate <em>everything</em> on the chance that it might be sub-optimal. Ruby is pretty easy to learn, but it's also easy to learn terrible, terrible habits. Maybe a more constraining language would be more suitable?</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: business | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/business/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/business/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Elegant Organizations]]></title>
-    <link href="http://decompelcting.org/blog/2012/05/29/elegant-organizations/"/>
+    <link href="http://decomplecting.org/blog/2012/05/29/elegant-organizations/"/>
     <updated>2012-05-29T20:56:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/05/29/elegant-organizations</id>
+    <id>http://decomplecting.org/blog/2012/05/29/elegant-organizations</id>
     <content type="html"><![CDATA[<p>For a long time, Jason Fried's article <a href="http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html">Why I Run a Flat Company</a> has seemed like an unrealistic dream that only works in rarified pockets of hacker utopia.</p>
 
 <p>You have to understand, I work for an institution which, between the university, hospital(s), and various other divisions, employs over 40k people, enrolls over 20k students, treats countless patients, and who knows how many vendors and contractors add complexity to the mix.</p>

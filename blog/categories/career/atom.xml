@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: career | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/career/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/career/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Passion, The Ultimate Virtue]]></title>
-    <link href="http://decompelcting.org/blog/2012/05/22/passion/"/>
+    <link href="http://decomplecting.org/blog/2012/05/22/passion/"/>
     <updated>2012-05-22T20:04:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/05/22/passion</id>
+    <id>http://decomplecting.org/blog/2012/05/22/passion</id>
     <content type="html"><![CDATA[<p>I'm finally reading <a href="http://www.chadfowler.com">Chad Fowler</a>'s excellent book, <a href="http://pragprog.com/book/cfcar2/the-passionate-programmer">The Passionate Programmer</a>, and in it he recounts an experience that was chillingly familiar.</p>
 
 <p>A music major, Chad fell into working at his university's IT department as if by accident. Initially, he was worried that his lack of professional experience or training would prove an embarrassment; after all, here he was working alongside people with advanced degrees in computer science.</p>

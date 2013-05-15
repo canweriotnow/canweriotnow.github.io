@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: databases | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/databases/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/databases/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 2)]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/"/>
+    <link href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/"/>
     <updated>2012-08-03T11:38:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
+    <id>http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
     <content type="html"><![CDATA[<p>This will be a quick one. I just wanted to give an example of how Ruby's open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
 
 <h3>Into the mouth of madness</h3>
@@ -215,9 +215,9 @@
   
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 1)]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/"/>
+    <link href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/"/>
     <updated>2012-08-02T14:48:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
+    <id>http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
     <content type="html"><![CDATA[<p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
 
 <p>Since I spend a lot of time on this, I figured it would be a good topic for a series of posts, hence the "Part 1" in the title. Hopefully I'll actually follow through on it.</p>

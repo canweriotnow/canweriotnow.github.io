@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/coding/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[DateTime Conversions in Clojure]]></title>
-    <link href="http://decompelcting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
+    <link href="http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
     <updated>2013-02-03T14:18:00-05:00</updated>
-    <id>http://decompelcting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
+    <id>http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
     <content type="html"><![CDATA[<p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
 
 <p>A while ago, I <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">wrote a post about Bubba</a> (not its real name), a legacy/vendor-supplied system in which the original developers (may they suffer eternal torment) decided to store all datetimes as floating-point values using a bastardized form of the Julian Day system with fractional day part. In that post, I showed a solution used in a Ruby on Rails web app, but now I'm writing data integration services for multiple systems, and needed something a bit more robust, so I'm writing it in Clojure.</p>
@@ -349,9 +349,9 @@
   
   <entry>
     <title type="html"><![CDATA[Feedback Loops]]></title>
-    <link href="http://decompelcting.org/blog/2012/10/31/feedback-loops/"/>
+    <link href="http://decomplecting.org/blog/2012/10/31/feedback-loops/"/>
     <updated>2012-10-31T14:12:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/10/31/feedback-loops</id>
+    <id>http://decomplecting.org/blog/2012/10/31/feedback-loops</id>
     <content type="html"><![CDATA[<p>Sadly, I haven't added a blog post in roughly 2.5 months. I've had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven't had it in me. I really enjoy writing this blog, too. I wasn't quite sure what was going on, until I read one of the most insightful blog posts I've ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
 
 <p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>
@@ -385,9 +385,9 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[LadyCoders, Twitroversy, and you]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/13/ladycoders/"/>
+    <link href="http://decomplecting.org/blog/2012/08/13/ladycoders/"/>
     <updated>2012-08-13T21:41:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/13/ladycoders</id>
+    <id>http://decomplecting.org/blog/2012/08/13/ladycoders</id>
     <content type="html"><![CDATA[<p>So, I had intended my next post to address some of the (valid) criticism of Github that's been making the rounds lately, but a much more disturbing Twitroversy has emerged today.</p>
 
 <p>A group of women called <a href="http://ladycoders.com">LadyCoders</a> started a <a href="http://www.kickstarter.com/projects/166494057/ladycoders-get-hired-seattle-2012">Kickstarter campaign</a> to fund a conference/seminar geared toward helping women to get programming and other tech jobs. Great idea, right? There are <a href="http://girldevelopit.com/">many</a> <a href="http://www.blackgirlscode.com/">projects</a> devoted to giving women the skills they need to write software, but as far as addressing the fundamental issue that the industry itself is pretty much a boys' club (not assigning blame, just acknowledging reality), much less has been done in that area.</p>
@@ -399,7 +399,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet tw-align-center"><p>Sick and wrong: "it’s our job (for now) to be easily integrated into an all-male team, **nonthreatening,** and hyper-skilled"- <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a></p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235163013227880449" data-datetime="2012-08-13T23:56:46+00:00">August 13, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>I completely get where @shanley is coming from... but the amount of Twitroversy here seemed... disproportionate.</p>
@@ -412,7 +412,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet tw-align-center"><p>Legit response from <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>: "I know what works, whether or not it's PC." Please do not fund this shit on kickstarter.</p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235166808880074753" data-datetime="2012-08-14T00:11:51+00:00">August 14, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>You can go search for @ladycoders mentions on Twitter if you want to see more... but here's the issue I take: fundamentally, the issue LadyCoders is trying to address is that the software industry is a male-dominated space which has been difficult for even the most highly-skilled women to penetrate.</p>
@@ -434,7 +434,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet"><p>Women, people of color, and other marginalized groups have been forced to work within the system forever. It's time to burn the system down.</p>&mdash; Ashe Dryden (@ashedryden) <a href="https://twitter.com/ashedryden/status/235167798211534848" data-datetime="2012-08-14T00:15:46+00:00">August 14, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>There are few tweets I agree with more.</p>
@@ -468,7 +468,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <blockquote class="twitter-tweet"><p>Pretty sure you guys are getting trolled pretty hard by <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>.</p>&mdash; Chris Eppstein (@chriseppstein) <a href="https://twitter.com/chriseppstein/status/235210422477799424" data-datetime="2012-08-14T03:05:09+00:00">August 14, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>I don't think LadyCoders is a troll, but if it is, pretty damn epic, and I'll admit to be taken in. Either way, though, I think the analysis above holds true... feel free to disagree in the comments, however, as always.</p>
@@ -477,9 +477,9 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[Generational Impedance Mismatch]]></title>
-    <link href="http://decompelcting.org/blog/2012/08/03/generational-impedance-mismatch/"/>
+    <link href="http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch/"/>
     <updated>2012-08-03T15:48:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/08/03/generational-impedance-mismatch</id>
+    <id>http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch</id>
     <content type="html"><![CDATA[<p>One thing I've come to observe working in higher ed is that you can run into a lot of issues with what I want to term "generational impedance mismatch." It's what happens when your ostensible customers are about 40 years older than your target demographic.</p>
 
 <p>When I started on an internal administrative application about two years ago, I threw in some error pages with lolcats on them because... well, error pages are boring. Those got yanked because the customer thought they were "unprofessional." Okay, sure. It's an administrative app, so maybe this isn't the best thing to throw up after a catastrophic failure:</p>
@@ -603,9 +603,9 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   
   <entry>
     <title type="html"><![CDATA[Try Ruby... Seriously.]]></title>
-    <link href="http://decompelcting.org/blog/2012/06/01/try-ruby-seriously/"/>
+    <link href="http://decomplecting.org/blog/2012/06/01/try-ruby-seriously/"/>
     <updated>2012-06-01T20:05:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/06/01/try-ruby-seriously</id>
+    <id>http://decomplecting.org/blog/2012/06/01/try-ruby-seriously</id>
     <content type="html"><![CDATA[<p>Every now and then someone comes to me for advice because they (or someone they know) wants to learn to code and has no idea where to start. Usually, the first thing I do is send them to <a href="http://tryruby.org">tryruby.org</a>, the awesome web-based REPL and tutorial the <a href="http://codeschool.com">Code School</a> folks put together, based on <a href="http://mislav.uniqpath.com/poignant-guide/">_why's (poignant) guide to ruby</a>.</p>
 
 <p>Lately, I've been wondering if that's the best advice. Only because I constantly re-evaluate <em>everything</em> on the chance that it might be sub-optimal. Ruby is pretty easy to learn, but it's also easy to learn terrible, terrible habits. Maybe a more constraining language would be more suitable?</p>

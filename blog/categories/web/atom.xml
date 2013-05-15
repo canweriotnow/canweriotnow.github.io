@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: web | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/web/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Static Is Beautiful]]></title>
-    <link href="http://decompelcting.org/blog/2012/07/04/static-is-beautiful/"/>
+    <link href="http://decomplecting.org/blog/2012/07/04/static-is-beautiful/"/>
     <updated>2012-07-04T23:21:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/07/04/static-is-beautiful</id>
+    <id>http://decomplecting.org/blog/2012/07/04/static-is-beautiful</id>
     <content type="html"><![CDATA[<p>I want to return to the core sfocus of this blog, elegance and simplicity in technology, but in kind of a meta way.</p>
 
 <p>One trend that seems to be popping up again and again is the move away from over-featured and unmanageable content management systems (I'm looking at you, <a href="http://wordpress.org/">Wordpress</a>), and toward static site generators.</p>
@@ -64,7 +64,7 @@
 <blockquote class="twitter-tweet tw-align-center"><p>And there's only one thing worse in my eyes than PHP, and that's Wordpress PHP <a href="http://t.co/C40EfvOD" title="http://buff.ly/LkQIWH">buff.ly/LkQIWH</a></p>&mdash; Michael Robinson (@pagesofinterest) <a href="https://twitter.com/pagesofinterest/status/220254607849426946" data-datetime="2012-07-03T20:36:05+00:00">July 3, 2012</a></blockquote>
 
 
-<script src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>We all <em>know</em> PHP is <a href="http://me.veekun.com/blog/2012/04/09/php-a-fractal-of-bad-design/">a terrible excuse for a programming language</a>, and also that the blogging platform wars, until recently, came down to only WordPress vs. <a href="http://www.blogger.com">Blogger</a>. Of course, <a href="http://tumblr.com">Tumblr</a> and <a href="http://postero.us">Postero.us</a> have breathed new life into a limited set of choices. But unless you wanted only the most basic features a hosted platform (everything but WordPress, honestly) provided, you'd need to settle on WordPress, because as an open-source platform, it had this <del>great</del> almost usable ecosystems of custom plugins. And somehow, the blogging community convinced ourselves we <em>needed</em> this plugin marketplace.</p>
@@ -91,9 +91,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hypermedia APIs: The New Wild West?]]></title>
-    <link href="http://decompelcting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/"/>
+    <link href="http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/"/>
     <updated>2012-05-30T13:26:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west</id>
+    <id>http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west</id>
     <content type="html"><![CDATA[<p>Two of the best presentations at RailsConf this year, <strong>Designing Hypermedia APIs</strong> by <a href="http://steveklabnik.com/">Steve Klabnik</a> and <strong>Rails: The Next Five Years</strong> by <a href="http://yehudakatz.com/">Yehuda Katz</a> were related to the topic of hypermedia APIs. The video of Steve's talk isn't up on Confreaks yet, but the slides are <a href="http://steveklabnik.github.com/hypermedia-presentation/#1">here</a>. I'll embed Yehuda's talk right here:</p>
 
 <iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/UlMpIHH1K5s" frameborder="0" allowfullscreen></iframe>

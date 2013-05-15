@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: API | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/api/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/api/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hypermedia APIs: The New Wild West?]]></title>
-    <link href="http://decompelcting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/"/>
+    <link href="http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/"/>
     <updated>2012-05-30T13:26:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west</id>
+    <id>http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west</id>
     <content type="html"><![CDATA[<p>Two of the best presentations at RailsConf this year, <strong>Designing Hypermedia APIs</strong> by <a href="http://steveklabnik.com/">Steve Klabnik</a> and <strong>Rails: The Next Five Years</strong> by <a href="http://yehudakatz.com/">Yehuda Katz</a> were related to the topic of hypermedia APIs. The video of Steve's talk isn't up on Confreaks yet, but the slides are <a href="http://steveklabnik.github.com/hypermedia-presentation/#1">here</a>. I'll embed Yehuda's talk right here:</p>
 
 <iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/UlMpIHH1K5s" frameborder="0" allowfullscreen></iframe>

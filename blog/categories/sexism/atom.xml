@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sexism | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/sexism/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/sexism/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Donglegate, Inclusionary Culture, Nerd Culture]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/23/donglegate/"/>
+    <link href="http://decomplecting.org/blog/2013/03/23/donglegate/"/>
     <updated>2013-03-23T21:33:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/23/donglegate</id>
+    <id>http://decomplecting.org/blog/2013/03/23/donglegate</id>
     <content type="html"><![CDATA[<p>I've taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace conversations with friends and coworkers. I have strong feelings about what happened at PyCon (re: the donglegate scenario), and many of them are conflicting. So I've waited to write about it until now.</p>
 
 <h3>Donglegate</h3>
@@ -39,7 +39,7 @@
 <blockquote class="twitter-tweet"><p>Hey @<a href="https://twitter.com/mundanematt">mundanematt</a>, it's clear from the last 24 hours you're a bully.@<a href="https://twitter.com/sendgrid">sendgrid</a> supports me.Stop trolling.</p>&mdash; Adria Richards (@adriarichards) <a href="https://twitter.com/adriarichards/status/314452708549603328">March 20, 2013</a></blockquote>
 
 
-<script async src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>Apparently, she was mistaken, because she was fired shortly thereafter.</p>

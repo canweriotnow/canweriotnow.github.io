@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: SaaS | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/saas/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/saas/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Higher Education Needs a Revolution]]></title>
-    <link href="http://decompelcting.org/blog/2012/07/18/higher-education-needs-a-revolution/"/>
+    <link href="http://decomplecting.org/blog/2012/07/18/higher-education-needs-a-revolution/"/>
     <updated>2012-07-18T19:59:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/07/18/higher-education-needs-a-revolution</id>
+    <id>http://decomplecting.org/blog/2012/07/18/higher-education-needs-a-revolution</id>
     <content type="html"><![CDATA[<p>Yesterday, <a href="http://coursera.com">Coursera</a> announced that 12 more universities had joined their program of creating massive open online courses, or MOOCs (one of them was <a href="http://www.jhu.edu">Johns Hopkins University</a>, where I work, so I was especially excited... we're not always "early adopters").</p>
 
 <p>Coursera is extremely cool. I'm currently taking UC Berkely's <a href="https://www.coursera.org/course/saas">Software Engineering for SaaS</a> class (nothing new for me so far, but it's enjoyable), and I took the <a href="https://www.coursera.org/course/ml">Machine Learning</a> class earlier this year. Well, most of it... I got a little too busy with work and family and didn't quite finish. But I still learned a lot, and used math I thought I'd forgotten. So all in all, a win.</p>

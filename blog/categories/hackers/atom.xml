@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: hackers | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/hackers/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/hackers/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Donglegate, Inclusionary Culture, Nerd Culture]]></title>
-    <link href="http://decompelcting.org/blog/2013/03/23/donglegate/"/>
+    <link href="http://decomplecting.org/blog/2013/03/23/donglegate/"/>
     <updated>2013-03-23T21:33:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2013/03/23/donglegate</id>
+    <id>http://decomplecting.org/blog/2013/03/23/donglegate</id>
     <content type="html"><![CDATA[<p>I've taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace conversations with friends and coworkers. I have strong feelings about what happened at PyCon (re: the donglegate scenario), and many of them are conflicting. So I've waited to write about it until now.</p>
 
 <h3>Donglegate</h3>
@@ -39,7 +39,7 @@
 <blockquote class="twitter-tweet"><p>Hey @<a href="https://twitter.com/mundanematt">mundanematt</a>, it's clear from the last 24 hours you're a bully.@<a href="https://twitter.com/sendgrid">sendgrid</a> supports me.Stop trolling.</p>&mdash; Adria Richards (@adriarichards) <a href="https://twitter.com/adriarichards/status/314452708549603328">March 20, 2013</a></blockquote>
 
 
-<script async src="http://decompelcting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 <p>Apparently, she was mistaken, because she was fired shortly thereafter.</p>
@@ -62,9 +62,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hackers Need Our Own Everything]]></title>
-    <link href="http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything/"/>
+    <link href="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/"/>
     <updated>2012-06-06T11:29:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything</id>
+    <id>http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything</id>
     <content type="html"><![CDATA[<p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I'm more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
 
 <h3>The Tragedy of Google</h3>
@@ -118,9 +118,9 @@
   
   <entry>
     <title type="html"><![CDATA[Elegant Organizations]]></title>
-    <link href="http://decompelcting.org/blog/2012/05/29/elegant-organizations/"/>
+    <link href="http://decomplecting.org/blog/2012/05/29/elegant-organizations/"/>
     <updated>2012-05-29T20:56:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/05/29/elegant-organizations</id>
+    <id>http://decomplecting.org/blog/2012/05/29/elegant-organizations</id>
     <content type="html"><![CDATA[<p>For a long time, Jason Fried's article <a href="http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html">Why I Run a Flat Company</a> has seemed like an unrealistic dream that only works in rarified pockets of hacker utopia.</p>
 
 <p>You have to understand, I work for an institution which, between the university, hospital(s), and various other divisions, employs over 40k people, enrolls over 20k students, treats countless patients, and who knows how many vendors and contractors add complexity to the mix.</p>

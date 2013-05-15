@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: apps | Practical Elegance]]></title>
-  <link href="http://decompelcting.org/blog/categories/apps/atom.xml" rel="self"/>
-  <link href="http://decompelcting.org/"/>
-  <updated>2013-05-14T23:57:14-04:00</updated>
-  <id>http://decompelcting.org/</id>
+  <link href="http://decomplecting.org/blog/categories/apps/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-05-15T00:07:18-04:00</updated>
+  <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hackers Need Our Own Everything]]></title>
-    <link href="http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything/"/>
+    <link href="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/"/>
     <updated>2012-06-06T11:29:00-04:00</updated>
-    <id>http://decompelcting.org/blog/2012/06/06/hackers-need-our-own-everything</id>
+    <id>http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything</id>
     <content type="html"><![CDATA[<p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I'm more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
 
 <h3>The Tragedy of Google</h3>
