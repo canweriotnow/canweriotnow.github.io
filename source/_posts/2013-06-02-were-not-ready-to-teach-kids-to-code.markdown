@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "We're Not Ready To Teach Kids To Code"
-date: 2013-05-21 21:22
+date: 2013-06-02 23:22
 comments: true
 categories: [coding, edtech, pedagogy, education]
 ---
@@ -18,7 +18,7 @@ When I was a kid, I loved math... or, at least, I loved figuring out the algorit
 
 Alas, my youthful optimism was to be dashed on the rocks of pedagogical ignorance and stupidity. First, I was told that I wouldn't receive credit for my __correct__ answers because I didn't "show my work". 
 
-On the next exam, I wrote out the source listing of each program I had used with a reference to the problems to which it had been applied (I'm pretty sure the number of GOTOs I used in those days would have mande Dijkstra cry). 
+On the next exam, I wrote out the source listing of each program I had used with a reference to the problems to which it had been applied (I'm pretty sure the number of GOTOs I used in those days would have made Dijkstra cry). 
 
 That's when they usually called my mom in for a conference.
 

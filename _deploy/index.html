@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="It&#8217;s been a while since my last post, because the last few weeks have been just a little crazy. I&#8217;ve left JHU, and accepted the role of &hellip;">
+  <meta name="description" content="Think Kids Should Learn To Code? Teach The Teachers First I&#8217;m really excited about the heavy emphasis I&#8217;m seeing on teaching kids to code &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -108,6 +108,61 @@ document.body.innerHTML='';
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We&#8217;re Not Ready To Teach Kids To Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-02T23:22:00-04:00" pubdate data-updated="true">2013-06-02</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
+
+<p>I&#8217;m really excited about the heavy emphasis I&#8217;m seeing on <a href="http://gettingsmart.com/2013/05/teaching-kids-to-code-an-economic-social-justice-issue/">teaching kids to code</a>. Although I agree with just about everything <a href="http://codinghorror.com">Jeff Atwood</a> wrote in his controversial post, <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">&#8220;Please Don&#8217;t Learn to Code&#8221;</a>, I also believe that in an age in which <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">software is eating the world</a>, understanding code is a basic literacy issue. This goes beyond the concept of digital literacy: as applied, this boils down to knowing how to use Google. What we&#8217;re seeing in the movement to bring coding into the core curriculum is a new emphasis on what I&#8217;d like to call <em>computational literacy.</em></p>
+
+<h3>Computational Literacy</h3>
+
+<p>Computational literacy is a concept that I wish had been &#8220;a thing&#8221; when I was in school. I&#8217;ll start with an anecdote, and then delve into the gritty challenges that the &#8220;teaching kids to code&#8221; movement is failing to recognize.</p>
+
+<p>When I was a kid, I loved math&#8230; or, at least, I loved figuring out the algorithms behind the calculation. I learned BASIC when I was 5 or 6, so when got to middle school, and discovered that the Texas Instruments graphing calculators we were required to buy for class spoke just about the same dialect of BASIC I had learned as a kid (I first learned to code on a <a href="http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A">TI 99/4A</a>), I was so excited. Once I could derive the algorithm from a new concept we were being taught, I could express it in code and skip the boring parts. I&#8217;ve never done well when bored.</p>
+
+<p>Alas, my youthful optimism was to be dashed on the rocks of pedagogical ignorance and stupidity. First, I was told that I wouldn&#8217;t receive credit for my <strong>correct</strong> answers because I didn&#8217;t &#8220;show my work&#8221;.</p>
+
+<p>On the next exam, I wrote out the source listing of each program I had used with a reference to the problems to which it had been applied (I&#8217;m pretty sure the number of GOTOs I used in those days would have made Dijkstra cry).</p>
+
+<p>That&#8217;s when they usually called my mom in for a conference.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -580,51 +635,6 @@ document.body.innerHTML='';
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/">Code Typos Got You Down? Stop Worrying with close_enough</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-01T18:32:00-05:00" pubdate data-updated="true">2013-03-01</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I&#8217;m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
-
-<p>The concept is very simple, and based on an algorithm used in most spell checkers and autocorrect systems currently in use. Calculating the <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau-Levenshtein distance</a> between two words can reliably (within a certain margin of error) indicate whether a known word was inteded when an unknown term was encountered in user input.</p>
-
-<p>In Ruby, we have a wonderful metaprogramming facility in <code>method_missing</code>. What we&#8217;ve done in close_enough is to monkey-patch <code>method_missing</code> on <code>Object</code> to calculate the Demerau-Levenshtein distance between existing methods and the non-existent called method, and invoke the nearest one if it&#8217;s &#8220;close enough&#8221; (close enough currently being an edit distance of &lt; 3).</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -646,6 +656,10 @@ document.body.innerHTML='';
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We&#8217;re Not Ready To Teach Kids To Code</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/14/im-an-estuarian/">I&#8217;m An Estuarian!</a>
       </li>
     
@@ -659,10 +673,6 @@ document.body.innerHTML='';
     
       <li class="post">
         <a href="/blog/2013/03/23/donglegate/">Donglegate, Inclusionary Culture, Nerd Culture</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/03/16/farewell/">Farewell, Reader; Or, The Problem with &#8220;Free as in Beer&#8221;</a>
       </li>
     
   </ul>
