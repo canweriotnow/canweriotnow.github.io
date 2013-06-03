@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-06-02T23:08:38-04:00</updated>
+  <updated>2013-06-02T23:24:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[We're Not Ready To Teach Kids To Code]]></title>
-    <link href="http://decomplecting.org/blog/2013/05/21/were-not-ready-to-teach-kids-to-code/"/>
-    <updated>2013-05-21T21:22:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2013/05/21/were-not-ready-to-teach-kids-to-code</id>
+    <link href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/"/>
+    <updated>2013-06-02T23:22:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code</id>
     <content type="html"><![CDATA[<h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
 
 <p>I'm really excited about the heavy emphasis I'm seeing on <a href="http://gettingsmart.com/2013/05/teaching-kids-to-code-an-economic-social-justice-issue/">teaching kids to code</a>. Although I agree with just about everything <a href="http://codinghorror.com">Jeff Atwood</a> wrote in his controversial post, <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">"Please Don't Learn to Code"</a>, I also believe that in an age in which <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">software is eating the world</a>, understanding code is a basic literacy issue. This goes beyond the concept of digital literacy: as applied, this boils down to knowing how to use Google. What we're seeing in the movement to bring coding into the core curriculum is a new emphasis on what I'd like to call <em>computational literacy.</em></p>
@@ -26,7 +26,7 @@
 
 <p>Computational literacy is a concept that I wish had been "a thing" when I was in school. I'll start with an anecdote, and then delve into the gritty challenges that the "teaching kids to code" movement is failing to recognize.</p>
 
-<p>When I was a kid, I loved math... or, at least, I loved algorithms. I learned BASIC when I was 5 or 6, so when got to middle school, and discovered that the Texas Instruments graphing calculators we were required to buy for class spoke just about the same dialect of BASIC I had learned as a kid (I first learned to code on a TI 99/4A), I was so excited. Once I could derive the algorithm from a new concept we were being taught, I could express it in code and skip the boring parts. I've never done well when bored.</p>
+<p>When I was a kid, I loved math... or, at least, I loved figuring out the algorithms behind the calculation. I learned BASIC when I was 5 or 6, so when got to middle school, and discovered that the Texas Instruments graphing calculators we were required to buy for class spoke just about the same dialect of BASIC I had learned as a kid (I first learned to code on a <a href="http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A">TI 99/4A</a>), I was so excited. Once I could derive the algorithm from a new concept we were being taught, I could express it in code and skip the boring parts. I've never done well when bored.</p>
 
 <p>Alas, my youthful optimism was to be dashed on the rocks of pedagogical ignorance and stupidity. First, I was told that I wouldn't receive credit for my <strong>correct</strong> answers because I didn't "show my work".</p>
 
@@ -54,7 +54,7 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/60OVlfAUPJg" frameborder="0" allowfullscreen></iframe>
 
 
-<p>If our math curricula (the subject best suited to a programming solution!) are based around chidren doing rote, repetitive calculation, what's the point in teaching them to code? I had hoped that maybe "it gets better" applied to the attitude toward programming in schools, but a quick Google search showed that not much has changed, e.g. <a href="http://www.k12.wa.us/mathematics/CalculatorPolicy.aspx">Washington's state K-12 math calculator policy</a>.</p>
+<p>If our math curricula (the subject best suited to a programming solution!) are based around chidren doing rote, repetitive calculation, what's the point in teaching them to code? I had hoped that maybe the attitude toward programming in schools had changed in the nearly 15 years since I graduated high school, but a quick Google search showed that not much has changed, e.g. <a href="http://www.k12.wa.us/mathematics/CalculatorPolicy.aspx">Washington's state K-12 math calculator policy</a>.</p>
 
 <p>No programs. No code, dogs, or Irish need apply.</p>
 
@@ -102,7 +102,7 @@
 
 <h3>Postscript</h3>
 
-<p>This post has been long in the making; shortly after I completed the first draft, <a href="https://www.edsurge.com">EdSurge</a> posted an opinion piece, <a href="https://www.edsurge.com/n/2013-05-28-opinion-learning-to-code-isn-t-enough">"Learning To Code Isn't Enough"</a>, which looked at this issue a little differently. It cited a wonderful article on <a href="http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf">"Computational Thinking"</a> (essentiallly what I describe as "computational literacy") byt Jeanette Wing, arguing for the equal status of CS fundamentals with reading, writing, and arithmetic in core curriculum standards.</p>
+<p>This post has been long in the making; shortly after I completed the first draft, <a href="https://www.edsurge.com">EdSurge</a> posted an opinion piece, <a href="https://www.edsurge.com/n/2013-05-28-opinion-learning-to-code-isn-t-enough">"Learning To Code Isn't Enough"</a>, which looked at this issue a little differently. It cited a wonderful article on <a href="http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf">"Computational Thinking"</a> (essentially what I describe as "computational literacy") by Jeanette Wing, arguing for the equal status of CS fundamentals with reading, writing, and arithmetic in curriculum standards.</p>
 
 <p>The article also highlights a problem with the "teach kids to code" movement, which I see as complementary to my own objections; while I was arguing that it's pointless to teach kids to code when they won't be <em>allowed</em> to apply that skill, the EdSurge piece points out the absurdity of teaching kids to code without giving concrete opportunities to apply the ability.</p>
 
