@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-06-21T12:52:12-04:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Social University That Could Have Been]]></title>
+    <link href="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
+    <updated>2013-03-10T22:21:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
+    <content type="html"><![CDATA[<p>This is a post I've wanted to write for a while, but I've needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
+
+<h2>The Social University</h2>
+
+<p>Sometime in 2011, I was joking with my team lead about connecting <a href="http://www.blackboard.com/platforms/transact/overview.aspx">Blackboard Transact</a>, the OLTP product used for access control, stored value account transactions, and meal plans at my work, to Twitter, just for fun. The short answer was "that's silly." The longer answer was "that's silly, but it would be pretty neat."</p>
+
+<p>So on lunch breaks and when I was waiting on other things to move forward with my "official" projects, I played around with creating a system to connect our system to Twitter.</p>
+
+<p>Since I had already worked on a service layer for (really, a generalized SOA for systems connecting to) Transact, it was pretty easy to leverage APIs from not only Twitter, but also Foursquare and Facebook to tie into transactions from our internal system; door access could tweet your location, and check you in on Foursquare; buying a coffee could do the same.</p>
+
+<p>Eventually, the idea gained some traction, and we started building in a system of social gamification, that would award badges and achievements for usage of the system, ranging from customer loyalty rewards for particpating vendors, to seemingly "silly" things like a "Speed Demon" achivement for swiping two doors on opposite sides of campus within ten minutes.</p>
+
+<p>The system also allowed students (well, also faculty and staff) to connect to Facebook to share badges/achivements and compete in a university-wide leaderboard. This is just an overview of the social media integration and gamification elements, but you might very well ask, what's the point?</p>
+
+<!--more-->
+
+
+<h2>The Univerity Lifecycle</h2>
+
+<p>There are three major phases in the lifecycle of the relationship between a university and its students: recruitment, retention, and alumni devleopment.</p>
+
+<p>What this comes down to is attracting students, making sure they stay long enough to graduate, and then soliciting donations from alumni. The brilliance (if I may be pardoned a lapse in humility) of our software was the long-term goal of uniting all three. Students would be able to opt-in to the social media components as soon as they were accepted; the core components (targeted toward current students) would be integrated with their day-to-day activities on cmapus; and participants would be able to remain "in the game" long after graduation, creating a lasting bond between the university and alumni (far beyond attendance at the occasional lacrosse game).</p>
+
+<p>Our eventual goal was to connect these three phases through social media to make the university experience tightly integrated with the lifetime online experience of students, faculty and staff.</p>
+
+<h2>It's All About The Data</h2>
+
+<p>So, making college more fun and exciting across the three phases of invovlement is well and good, but where does it start to get interesting? In the data.</p>
+
+<p>Once you go beyond the immeidate day-to-day, and start harvesting data like tweets and facebook posts (for sentiment analysis), Foursquare and other location-based data (to track geographical patterns), and LinkedIn for career trajectory data, you can start to analyze interesting patterns and create predictive analyses based on the large volume of voluntarily supplied data.</p>
+
+<p>In the end, it's a positive-sum game; students have a more engaging experience, the univeristy has a better dataset to analyze to make informed decisions about resource allocation, recruitment, and alumni giving, and it's a damn fun project to work on.</p>
+
+<h2>Failure</h2>
+
+<p>Why do I consider this the greatest failure of my professional career?</p>
+
+<p>In some ways, it was a resounding success. Departments from athletics to applied math were clamoring for it; we were asked to present the project at the annual conference for Blackboard Transact, and then asked to do an encore (<a href="https://speakerdeck.com/canweriotnow/j-card-social">You can find the slides here, by the way</a>). Our student focus group thought it was one of the best things they'd ever seen.</p>
+
+<p>I consider it a failure because we never got to ship. (<a href="http://johndbarry.com/2012/07/if-it-doesnt-ship-it-doesnt-exist/">If it doesn't ship, it doesn't exist.</a>) Sure, it was functional, and even "live" on our production server for about a week before our official launch date. But in that last week, the project was "indefinitely shelved".</p>
+
+<p><img class="center" src="/images/post-img/remove-that-code.jpg"></p>
+
+<p>I never really got a clear reason for that (there were meetings between deans and lawyers and managers to which I was not privy), but the official, documented reason was that the project itself (which we worked on over the course of a year or more) was "never requested or approved", which is why I'm blogging about it now. I may never be able to share the source code (work-for-hire is pretty explicit), but I think the idea, which originated with me, should be free to the world if my employer disavows any ownership of it.</p>
+
+<h2>That Vision Thing</h2>
+
+<p>Okay, this header is the title of an episode from Seson 3 of <em>Angel,</em> but I'm also referencing one of the Bible verses my mom likes to quote. It's from Proverbs, not sure exactly where, but the line is, "My people perish for a lack of vision."</p>
+
+<p>This could be the most relevant prophetic statement to higher education in our current economic and technological climate. Last year, Sebastian Thrun, Stanford prfessor, Google researcher, and founder of <a href="http://udacity.com/">Udacity</a> famously stated in a <a href="http://www.wired.com/wiredscience/2012/03/ff_aiclass/all/">Wired article</a> that "Fifty years from now...there will be only 10 institutions in the whole world that deliver higher education." My argument is that those will be the insitutions with the vision to risk everything to remain at the forefront of the marketplace.</p>
+
+<p>Does allowing students to tweet their lunch purchases accomplish this goal? Certainly not. But the lack of vision that hedges its bets and plays it safe certainly does not bode well for the university that wishes to survive the next several decades.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PAM Authentication Beyond The Desktop]]></title>
+    <link href="http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
+    <updated>2013-03-08T20:11:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
+    <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it's useful for so much more.</p>
+
+<h3>Web Authentication</h3>
+
+<p>At work, we needed an authentication solution that allowed users to sign in with their ActiveDirectory credentials. Although the "official" solution was to use <a href="http://www.ca.com/us/secure-single-sign-on.aspx">SiteMinder</a> for web authentication against AD, we were working on a mobile application, and at the time the SiteMinder auth page was ugly, and had no mobile-optimized login page. The latter problem has since been rectified; now it has both an ugly desktop login and an ugly mobile login. In addition, we were using nginx, and SiteMinder was really only supported under IIS and Apache (and at the time, the latter was via Shibboleth. Ugh.), so without official SiteMinder support, or an nginx Shib plug-in, we were in a bit of a bind.</p>
+
+<p>Around the same time, I was playing with Likewise Open (now known as <a href="http://www.powerbrokeropen.org/">PowerBroker Identity Services - Open Edition</a>) to bind my Linux workstation into AD. So it occurred to me: if a normal Linux PAM login can be authenticated against ActiveDirectory, why not a PAM login from a web application?</p>
+
+<p>I know, I know, my first though should have been LDAP, right? For some unknown reason, LDAP was verboten at the time. The policy has since (apparently) been reversed, but such is the ebb and flow of corporate politics. And so, in the grand tradition of one of the mothers of modern computer science (and one of my daughter's namesakes):</p>
+
+<p><blockquote><p>If it's a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote></p>
+
+<!--more-->
+
+
+<p>My first obstacle was to figure out how to do this from Ruby. <a href="https://github.com/binarylogic/authlogic">Authlogic</a> is a decent authentication framework (Sure, Devise is newer, but there's nothing wrong with Authlogic). There's an <a href="https://github.com/jhu-idcs/authlogic_pam">authlogic_pam</a> plugin (link is to my updated version, original seems to be abandoned), so the main issue was updating the long-abandoned rpam gem to tie into PAM. So I created <a href="https://github.com/canweriotnow/rpam-ruby19">rpam-ruby19</a> to have a C extension compatible with Ruby ~>1.9.2. Once the server (all of our production servers are <a href="http://www.debian.org/releases/stable/">Debian 6 "Squeeze"</a>) was tied into AD, it was relatively trivial to create a login that used Authlogic to hit PAM (and thusly ActiveDirectory) for user authentication.</p>
+
+<h3>But now everyone has a server login?</h3>
+
+<p>No, not at all. Likewise/PBIS has a setting to change the login shell for <em>only</em> AD users; we simply changed their shell to <code>/bin/true</code>. Problem solved.</p>
+
+<h3>And that forgiveness/permission thing?</h3>
+
+<p>While we were in beta, we informally ran the auth scheme by the people directly responsible for such things. They actually thought it was pretty cool and innovative. Which just reinforces my dedication to the timeless wisdom of Dr. Hopper.</p>
+
+<h3>And so...</h3>
+
+<p>Since we implemented this auth scheme for our mobile app, we've continued to go with it; it's simple, elegant, and shields us from capturing (even hashed) credentials. We have two(-ish) new products launching this year using the same auth scheme. And we're still quite satisfied with the results.</p>
+
+<h3>Caveats</h3>
+
+<p>Over the past couple of months, I've been researching an <a href="https://github.com/canweriotnow/rpam-ruby19/issues/5">issue submitted on Github</a> documenting a problem authenticating local users other than the euid running the process. You can get the details from the link, but this is how PAM (or at least shadow passwords) are supposed to work. This isn't for authenticating local system accounts (at least not if you're using shadow passwords properly); you should only auth external accounts (LDAP, ActiveDirectory, maybe NIS+) through PAM for non-system-login applications.</p>
+
+<h3>Future</h3>
+
+<p>Since this has worked out so well with our Rails apps, I'm now working on a Clojure equivalent. There's a PAM integration library for Java called JPam, which I've started wrapping in a library called <a href="https://clojars.org/clj-pam">clj-pam</a>, available from Clojars. If you'd like to help, the source repo is located <a href="https://github.com/canweriotnow/clj-pam">here on Github</a>.</p>
+
+<p>PAM is wonderfully extensible. It's also very configurable, and is worth leveraging whenever possible. Dig deeper. Linux has so many great little pieces we tend to overlook.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DCI: The Right Idea for The Wrong Paradigm]]></title>
+    <link href="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
+    <updated>2013-01-03T01:10:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
+    <content type="html"><![CDATA[<p>I've been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I've seen, however, is Tony Arcieri's recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">"DCI" in Ruby Is Compeltely Broken</a>.</p>
+
+<p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it's an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
+
+<p>Now, I was initially a big fan <em>conceptually</em> of DCI. It seemed intuitive, even familiar. And it helped that it was the brainchild of Trygve Reenskaug, the erstwhile inventor of MVC, possibly one of the most useful OOP patterns ever devised.</p>
+
+<p>But the more familiar it seemed, the more difficult it seemed to implement properly, much less efficiently, even in the purest of modern OO languages, i.e., Ruby.</p>
+
+<p>It wasn't until I tried to forget everything I knew about OOP that its familiarity became clear: this novel appropach to object-oriented design is embedded in the most natural thing in the world in the oldest of functional programming languages, Lisp.</p>
+
+<p>Enter the macro. In Clojure, providing context to a function is straightforward using a macro, for instance, a database query (n.b., most of this is straight example code from <a href="http://en.wikibooks.org">wikibooks.org</a>).</p>
+
+<p>```clojure Set up JDBC connection http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL
+(use 'clojure.java.jdbc)</p>
+
+<p>(let [db-host "localhost"</p>
+
+<pre><code>  db-port 5432
+  db-name "a_database"]
+</code></pre>
+
+<p>  (def db {:classname "org.postgresql.Driver" ; must be in classpath</p>
+
+<pre><code>       :subprotocol "postgresql"
+       :subname (str "//" db-host ":" db-port "/" db-name)
+       ; Any additional keys are passed to the driver
+       ; as driver-specific properties.
+       :user "a_user"
+       :password "secret"}))
+</code></pre>
+
+<p><code>``
+This provides the context for the</code>with-connection` macro:</p>
+
+<p>```clojure SELECT Statement http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT</p>
+
+<p>(with-connection db
+   (with-query-results rs ["select * from blogs"]</p>
+
+<pre><code> ; rs will be a sequence of maps, 
+ ; one for each record in the result set. 
+ (dorun (map #(println (:title %)) rs))))
+</code></pre>
+
+<p>```</p>
+
+<p>I'm using the simplest of (admittedly cribbed) examples here for the sake of demonstration, but right away here, we've got the D and C of DCI - Data and Context. As for interaction... we could easily conceive of a <code>with-role</code> macro which determines the interaction of the database connection and the actual application of the <code>with-connection</code> macro, whether it invokes a SELECT, CREATE, UPDATE, or DELETE statement.</p>
+
+<p>In a Lisp, this level of composition is completely <em>natural,</em> is my point. In a language like Ruby (which despite having much of the Lisp nature, is OO to its core), and especially in a framework like Rails, with its cargo-cult Design Pattern-worshipping user base (I'm going to take some shit for that one, but accept that I'm exaggerating and flame with that in mind), is it any surprise that a pattern that makes <em>total sense</em> in an FP context is going to be a hot controversy in an OOP context?</p>
+
+<p>I agree with Tony's post that "DCI" in Rails is totally broken. But that's because, IMHO, DCI isn't the best pattern for OOP. Yeah, Ruby has <em>lots</em> of functional features, but maybe we need to rethink how we're doing this DCI stuff (or Concerns, or whatever), on the basis that messing with inheritance and the class hierarchy is the <em>wrong thing,</em> and perhaps we should be creatively exploring the use of blocks and lambdas and Ruby's other functional constructs.</p>
+
+<p>I'm not offering any solutions here, but I'm hoping I can contribute to the conversation. Step away from the mixins, away from the class hierarchy, away from the object model. Maybe take another read of Design Patterns and see if DCI is another hot YAGNI thing. I don't know yet. I just know it reminds me of how things are AWESOME in a whole other paradigm that doesn't necessarily apply to your Rails app.</p>
+
+<p>As a caveat, I should say that I haven't really tried to use this DCI mojo in a production application, although I have played with different ideas about it Just For Fun&copy;. If you think I'm wrong, or have the whole thing arse-about-face, I'd be happy to discuss it in the comments.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Try Ruby... Seriously.]]></title>
+    <link href="http://decomplecting.org/blog/2012/06/01/try-ruby-seriously/"/>
+    <updated>2012-06-01T20:05:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2012/06/01/try-ruby-seriously</id>
+    <content type="html"><![CDATA[<p>Every now and then someone comes to me for advice because they (or someone they know) wants to learn to code and has no idea where to start. Usually, the first thing I do is send them to <a href="http://tryruby.org">tryruby.org</a>, the awesome web-based REPL and tutorial the <a href="http://codeschool.com">Code School</a> folks put together, based on <a href="http://mislav.uniqpath.com/poignant-guide/">_why's (poignant) guide to ruby</a>.</p>
+
+<p>Lately, I've been wondering if that's the best advice. Only because I constantly re-evaluate <em>everything</em> on the chance that it might be sub-optimal. Ruby is pretty easy to learn, but it's also easy to learn terrible, terrible habits. Maybe a more constraining language would be more suitable?</p>
+
+<p>I have to admit, as much as I generally <a href="http://decomplecting.org/blog/2012/05/18/un-pythonic-for-fun-and-profit/">dislike Python</a>, it probably <em>is</em> the easiest language to learn, and it rarely gives you enough rope to hang yourself. So am I just letting my own prejudices guide my recommendations to other people?</p>
+
+<!-- more -->
+
+
+<p>Upon reflection, the language matters a lot less than the person. My egalitarian sensibilities make the idea that any reasonably intelligent person can learn to code, given the desire and determination, quite attractive. But alas, we must be wary of cognitive bias. It's become increasingly clear that <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">programming isn't for everyone</a>. So as much as I like the idea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">everyone should know how to code</a>, I have to admit that whatever innate ability it is that makes for a Real Programmer, not everyone has it. <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">Not even all of us working as software developers</a>.</p>
+
+<p>I recently came across <a href="http://cs.stackexchange.com/questions/1954/criteria-for-selecting-language-for-first-programming-course">this question</a> asking for "Criteria for selecting language for first programming course" on the <a href="http://cs.stackexchange.com/">CS StackExchange forum</a>. Answering that question (<a href="http://cs.stackexchange.com/questions/1954/criteria-for-selecting-language-for-first-programming-course/1967#1967">here</a>) helped me to clarify some of the reasons I usually recommend Ruby.</p>
+
+<h4>Simplicity</h4>
+
+<p>Ruby is incredibly simple to pick up. Now, like anything, Ruby is hard to do <em>well</em>, but it is fairly straightforward to learn. My first language was BASIC on a <a href="http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A">Texas Instruments 99/4A</a>. It was hard, but rewarding. I wrote stupid little games, and it was entertaining. Of course, I was 5 or 6 at the time...</p>
+
+<p>The point here is that you want two things for people who have never coded before: immediate positive reinforcement (it's fairly straightforward to make <em>something</em> that runs successfully), and a syntax that's easy get your mind around. Ruby fulfills those goals quite nicely.</p>
+
+<h4>Richness</h4>
+
+<p>Once you get past "Hello, World!" there's an almost infinite range of possibilities. Ruby does a very, very good job of providing a massive <a href="http://rubygems.org">collection of libraries</a>, and a flexible language that makes creating damn near anything not only possible, but at some point intuitive.</p>
+
+<h4>Multi-paradigm</h4>
+
+<p>Pretty much everyone starts with procedural code. That's okay, it's a start. But object-oriented and functional paradigms have many, many advantages. Ruby's pure-OO nature makes it very easy to transition into writing object-oriented code. It borrows enough concepts from Lisp that you can get a feel for functional styles as well. Contrast this to C++ or Python, where the object-orientation is tacked-on, and the bolts are definitely showing.</p>
+
+<h4>Se habla Ruby</h4>
+
+<p>When it's a friend asking for advice, I'm fully expecting to be answering questions when they can't find an answer on <a href="http://stackoverflow.com">StackOverflow</a>. If they're learning Ruby, there's the advantage that I will probably be able to help with > 99% of their problems without Googling. Granted, this is true of a number of languages, but I probably wouldn't suggest that someone completley new to programming start out with C, Java, Scheme, Javascript, Clojure, or Perl just because I happen to know my way around them.</p>
+
+<p>Finally, I like introducing people to Ruby because it's a language optimized for programmer happiness.</p>
+
+<p><blockquote><p>For me the purpose of life is partly to have joy. Programmers often feel joy when they can concentrate on the creative side of programming, So Ruby is designed to make programmers happy.</p><footer><strong>Yukihiro Matsumoto,</strong> <cite><a href='http://www.artima.com/intv/rubyP.html'>www.artima.com/intv/rubyP.html/&hellip;</a></cite></footer></blockquote></p>
+
+<p>My hope, when someone shows an interest in creating software (or at least, learning what goes in to creating software), is that they'll fall in love with it like I did. I was bitten by the software bug when I was a little kid; it's been a hobby ever since. But it really wasn't until Ruby came along that I was certain I wanted to spend damn near every waking hour on this stuff.</p>
+
+<p>Why should I subject others to something less wonderful and joy-inducing than what I use every day?</p>
+]]></content>
+  </entry>
+  
+</feed>

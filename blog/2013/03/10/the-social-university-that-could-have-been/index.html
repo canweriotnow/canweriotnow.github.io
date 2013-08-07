@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The Social University That Could Have Been - Practical Elegance</title>
+  <meta name="author" content="Jason Lewis">
+
+  
+  <meta name="description" content="This is a post I&#8217;ve wanted to write for a while, but I&#8217;ve needed time and distance to do it justice. This is a post about (from my &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Dosis|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" >
+
+if (window.top !== window.self) {
+
+document.write = "";
+
+window.top.location = window.self.location; setTimeout(function(){
+
+document.body.innerHTML='';
+
+},1);
+
+window.self.onload=function(evt){
+
+document.body.innerHTML='';
+
+};
+
+}
+
+</script>
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22978638-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Practical Elegance</a></h1>
+  
+    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
+  
+</hgroup>
+
+
+  <a href="https://github.com/canweriotnow">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+  </a>
+
+
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:decomplecting.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">The Social University That Could Have Been</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-10T22:21:00-04:00" pubdate data-updated="true">2013-03-10</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>This is a post I&#8217;ve wanted to write for a while, but I&#8217;ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
+
+<h2>The Social University</h2>
+
+<p>Sometime in 2011, I was joking with my team lead about connecting <a href="http://www.blackboard.com/platforms/transact/overview.aspx">Blackboard Transact</a>, the OLTP product used for access control, stored value account transactions, and meal plans at my work, to Twitter, just for fun. The short answer was &#8220;that&#8217;s silly.&#8221; The longer answer was &#8220;that&#8217;s silly, but it would be pretty neat.&#8221;</p>
+
+<p>So on lunch breaks and when I was waiting on other things to move forward with my &#8220;official&#8221; projects, I played around with creating a system to connect our system to Twitter.</p>
+
+<p>Since I had already worked on a service layer for (really, a generalized SOA for systems connecting to) Transact, it was pretty easy to leverage APIs from not only Twitter, but also Foursquare and Facebook to tie into transactions from our internal system; door access could tweet your location, and check you in on Foursquare; buying a coffee could do the same.</p>
+
+<p>Eventually, the idea gained some traction, and we started building in a system of social gamification, that would award badges and achievements for usage of the system, ranging from customer loyalty rewards for particpating vendors, to seemingly &#8220;silly&#8221; things like a &#8220;Speed Demon&#8221; achivement for swiping two doors on opposite sides of campus within ten minutes.</p>
+
+<p>The system also allowed students (well, also faculty and staff) to connect to Facebook to share badges/achivements and compete in a university-wide leaderboard. This is just an overview of the social media integration and gamification elements, but you might very well ask, what&#8217;s the point?</p>
+
+<!--more-->
+
+
+<h2>The Univerity Lifecycle</h2>
+
+<p>There are three major phases in the lifecycle of the relationship between a university and its students: recruitment, retention, and alumni devleopment.</p>
+
+<p>What this comes down to is attracting students, making sure they stay long enough to graduate, and then soliciting donations from alumni. The brilliance (if I may be pardoned a lapse in humility) of our software was the long-term goal of uniting all three. Students would be able to opt-in to the social media components as soon as they were accepted; the core components (targeted toward current students) would be integrated with their day-to-day activities on cmapus; and participants would be able to remain &#8220;in the game&#8221; long after graduation, creating a lasting bond between the university and alumni (far beyond attendance at the occasional lacrosse game).</p>
+
+<p>Our eventual goal was to connect these three phases through social media to make the university experience tightly integrated with the lifetime online experience of students, faculty and staff.</p>
+
+<h2>It&#8217;s All About The Data</h2>
+
+<p>So, making college more fun and exciting across the three phases of invovlement is well and good, but where does it start to get interesting? In the data.</p>
+
+<p>Once you go beyond the immeidate day-to-day, and start harvesting data like tweets and facebook posts (for sentiment analysis), Foursquare and other location-based data (to track geographical patterns), and LinkedIn for career trajectory data, you can start to analyze interesting patterns and create predictive analyses based on the large volume of voluntarily supplied data.</p>
+
+<p>In the end, it&#8217;s a positive-sum game; students have a more engaging experience, the univeristy has a better dataset to analyze to make informed decisions about resource allocation, recruitment, and alumni giving, and it&#8217;s a damn fun project to work on.</p>
+
+<h2>Failure</h2>
+
+<p>Why do I consider this the greatest failure of my professional career?</p>
+
+<p>In some ways, it was a resounding success. Departments from athletics to applied math were clamoring for it; we were asked to present the project at the annual conference for Blackboard Transact, and then asked to do an encore (<a href="https://speakerdeck.com/canweriotnow/j-card-social">You can find the slides here, by the way</a>). Our student focus group thought it was one of the best things they&#8217;d ever seen.</p>
+
+<p>I consider it a failure because we never got to ship. (<a href="http://johndbarry.com/2012/07/if-it-doesnt-ship-it-doesnt-exist/">If it doesn&#8217;t ship, it doesn&#8217;t exist.</a>) Sure, it was functional, and even &#8220;live&#8221; on our production server for about a week before our official launch date. But in that last week, the project was &#8220;indefinitely shelved&#8221;.</p>
+
+<p><img class="center" src="/images/post-img/remove-that-code.jpg"></p>
+
+<p>I never really got a clear reason for that (there were meetings between deans and lawyers and managers to which I was not privy), but the official, documented reason was that the project itself (which we worked on over the course of a year or more) was &#8220;never requested or approved&#8221;, which is why I&#8217;m blogging about it now. I may never be able to share the source code (work-for-hire is pretty explicit), but I think the idea, which originated with me, should be free to the world if my employer disavows any ownership of it.</p>
+
+<h2>That Vision Thing</h2>
+
+<p>Okay, this header is the title of an episode from Seson 3 of <em>Angel,</em> but I&#8217;m also referencing one of the Bible verses my mom likes to quote. It&#8217;s from Proverbs, not sure exactly where, but the line is, &#8220;My people perish for a lack of vision.&#8221;</p>
+
+<p>This could be the most relevant prophetic statement to higher education in our current economic and technological climate. Last year, Sebastian Thrun, Stanford prfessor, Google researcher, and founder of <a href="http://udacity.com/">Udacity</a> famously stated in a <a href="http://www.wired.com/wiredscience/2012/03/ff_aiclass/all/">Wired article</a> that &#8220;Fifty years from now&#8230;there will be only 10 institutions in the whole world that deliver higher education.&#8221; My argument is that those will be the insitutions with the vision to risk everything to remain at the forefront of the marketplace.</p>
+
+<p>Does allowing students to tweet their lunch purchases accomplish this goal? Certainly not. But the lack of vision that hedges its bets and plays it safe certainly does not bode well for the university that wishes to survive the next several decades.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-10T22:21:00-04:00" pubdate data-updated="true">2013-03-10</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/higher-ed/'>Higher Ed</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/social-media/'>Social Media</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/" data-via="canweriotnow" data-counturl="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/08/pam-authentication-beyond-the-desktop/" title="Previous Post: PAM Authentication Beyond The Desktop">&laquo; PAM Authentication Beyond The Desktop</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/03/11/confessions-of-a-job-destroyer/" title="Next Post: Confessions of A Job Destroyer">Confessions of A Job Destroyer &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <a href="http://internetdefenseleague.org">
+    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
+  </a>
+</section>
+
+<script src="//dihq71mhvy8o7.cloudfront.net/js/modal-embed.js" type="text/javascript" charset="utf-8"></script><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/21/the-importance-of-aarons-law/">The Importance of "Aaron's Law"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We're Not Ready To Teach Kids To Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/14/im-an-estuarian/">I'm An Estuarian!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/05/be-willing-to-let-go/">Be Willing To Let Go; or, "The Big Rewrite"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">The Difficulty of Chaotic Good</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'canweriotnow',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("canweriotnow", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/canweriotnow" class="twitter-follow-button" data-show-count="false">Follow @canweriotnow</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
+  
+</section>
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/110736810583208350607?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Lewis -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>
+- Hosted by <a href="http://pages.github.com">Github Pages</a>
+</span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'canweriotnow';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/';
+        var disqus_url = 'http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

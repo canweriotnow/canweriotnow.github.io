@@ -1,0 +1,464 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>DCI: The Right Idea for The Wrong Paradigm - Practical Elegance</title>
+  <meta name="author" content="Jason Lewis">
+
+  
+  <meta name="description" content="I&#8217;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&#8217;ve seen, however, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Dosis|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" >
+
+if (window.top !== window.self) {
+
+document.write = "";
+
+window.top.location = window.self.location; setTimeout(function(){
+
+document.body.innerHTML='';
+
+},1);
+
+window.self.onload=function(evt){
+
+document.body.innerHTML='';
+
+};
+
+}
+
+</script>
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22978638-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Practical Elegance</a></h1>
+  
+    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
+  
+</hgroup>
+
+
+  <a href="https://github.com/canweriotnow">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+  </a>
+
+
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:decomplecting.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">DCI: The Right Idea for The Wrong Paradigm</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-03T01:10:00-05:00" pubdate data-updated="true">2013-01-03</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&#8217;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&#8217;ve seen, however, is Tony Arcieri&#8217;s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">&#8220;DCI&#8221; in Ruby Is Compeltely Broken</a>.</p>
+
+<p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it&#8217;s an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
+
+<p>Now, I was initially a big fan <em>conceptually</em> of DCI. It seemed intuitive, even familiar. And it helped that it was the brainchild of Trygve Reenskaug, the erstwhile inventor of MVC, possibly one of the most useful OOP patterns ever devised.</p>
+
+<p>But the more familiar it seemed, the more difficult it seemed to implement properly, much less efficiently, even in the purest of modern OO languages, i.e., Ruby.</p>
+
+<p>It wasn&#8217;t until I tried to forget everything I knew about OOP that its familiarity became clear: this novel appropach to object-oriented design is embedded in the most natural thing in the world in the oldest of functional programming languages, Lisp.</p>
+
+<p>Enter the macro. In Clojure, providing context to a function is straightforward using a macro, for instance, a database query (n.b., most of this is straight example code from <a href="http://en.wikibooks.org">wikibooks.org</a>).</p>
+
+<figure class='code'><figcaption><span>Set up JDBC connection</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;clojure.java.jdbc</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">db-host</span> <span class="s">&quot;localhost&quot;</span>
+</span><span class='line'>      <span class="nv">db-port</span> <span class="mi">5432</span>
+</span><span class='line'>      <span class="nv">db-name</span> <span class="s">&quot;a_database&quot;</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">(</span><span class="k">def </span><span class="nv">db</span> <span class="p">{</span><span class="ss">:classname</span> <span class="s">&quot;org.postgresql.Driver&quot;</span> <span class="c1">; must be in classpath</span>
+</span><span class='line'>           <span class="ss">:subprotocol</span> <span class="s">&quot;postgresql&quot;</span>
+</span><span class='line'>           <span class="ss">:subname</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;//&quot;</span> <span class="nv">db-host</span> <span class="s">&quot;:&quot;</span> <span class="nv">db-port</span> <span class="s">&quot;/&quot;</span> <span class="nv">db-name</span><span class="p">)</span>
+</span><span class='line'>           <span class="c1">; Any additional keys are passed to the driver</span>
+</span><span class='line'>           <span class="c1">; as driver-specific properties.</span>
+</span><span class='line'>           <span class="ss">:user</span> <span class="s">&quot;a_user&quot;</span>
+</span><span class='line'>           <span class="ss">:password</span> <span class="s">&quot;secret&quot;</span><span class="p">}))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This provides the context for the <code>with-connection</code> macro:</p>
+
+<figure class='code'><figcaption><span>SELECT Statement</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">with-connection</span> <span class="nv">db</span>
+</span><span class='line'>   <span class="p">(</span><span class="nf">with-query-results</span> <span class="nv">rs</span> <span class="p">[</span><span class="s">&quot;select * from blogs&quot;</span><span class="p">]</span>
+</span><span class='line'>     <span class="c1">; rs will be a sequence of maps, </span>
+</span><span class='line'>     <span class="c1">; one for each record in the result set. </span>
+</span><span class='line'>     <span class="p">(</span><span class="nb">dorun </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:title</span> <span class="nv">%</span><span class="p">))</span> <span class="nv">rs</span><span class="p">))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I&#8217;m using the simplest of (admittedly cribbed) examples here for the sake of demonstration, but right away here, we&#8217;ve got the D and C of DCI - Data and Context. As for interaction&#8230; we could easily conceive of a <code>with-role</code> macro which determines the interaction of the database connection and the actual application of the <code>with-connection</code> macro, whether it invokes a SELECT, CREATE, UPDATE, or DELETE statement.</p>
+
+<p>In a Lisp, this level of composition is completely <em>natural,</em> is my point. In a language like Ruby (which despite having much of the Lisp nature, is OO to its core), and especially in a framework like Rails, with its cargo-cult Design Pattern-worshipping user base (I&#8217;m going to take some shit for that one, but accept that I&#8217;m exaggerating and flame with that in mind), is it any surprise that a pattern that makes <em>total sense</em> in an FP context is going to be a hot controversy in an OOP context?</p>
+
+<p>I agree with Tony&#8217;s post that &#8220;DCI&#8221; in Rails is totally broken. But that&#8217;s because, IMHO, DCI isn&#8217;t the best pattern for OOP. Yeah, Ruby has <em>lots</em> of functional features, but maybe we need to rethink how we&#8217;re doing this DCI stuff (or Concerns, or whatever), on the basis that messing with inheritance and the class hierarchy is the <em>wrong thing,</em> and perhaps we should be creatively exploring the use of blocks and lambdas and Ruby&#8217;s other functional constructs.</p>
+
+<p>I&#8217;m not offering any solutions here, but I&#8217;m hoping I can contribute to the conversation. Step away from the mixins, away from the class hierarchy, away from the object model. Maybe take another read of Design Patterns and see if DCI is another hot YAGNI thing. I don&#8217;t know yet. I just know it reminds me of how things are AWESOME in a whole other paradigm that doesn&#8217;t necessarily apply to your Rails app.</p>
+
+<p>As a caveat, I should say that I haven&#8217;t really tried to use this DCI mojo in a production application, although I have played with different ideas about it Just For Fun&copy;. If you think I&#8217;m wrong, or have the whole thing arse-about-face, I&#8217;d be happy to discuss it in the comments.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-03T01:10:00-05:00" pubdate data-updated="true">2013-01-03</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/clojure/'>Clojure</a>, <a class='category' href='/blog/categories/dci/'>DCI</a>, <a class='category' href='/blog/categories/design-patterns/'>Design Patterns</a>, <a class='category' href='/blog/categories/fp/'>FP</a>, <a class='category' href='/blog/categories/lisp/'>Lisp</a>, <a class='category' href='/blog/categories/oop/'>OOP</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/" data-via="canweriotnow" data-counturl="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/11/02/legacy-systems-on-rails-part-3/" title="Previous Post: Legacy Systems on Rails (Part 3)">&laquo; Legacy Systems on Rails (Part 3)</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems/" title="Next Post: Ingress - Crowdsourcing Solutions to NP-Hard Problems?">Ingress - Crowdsourcing Solutions to NP-Hard Problems? &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <a href="http://internetdefenseleague.org">
+    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
+  </a>
+</section>
+
+<script src="//dihq71mhvy8o7.cloudfront.net/js/modal-embed.js" type="text/javascript" charset="utf-8"></script><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/21/the-importance-of-aarons-law/">The Importance of "Aaron's Law"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We're Not Ready To Teach Kids To Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/14/im-an-estuarian/">I'm An Estuarian!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/05/be-willing-to-let-go/">Be Willing To Let Go; or, "The Big Rewrite"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">The Difficulty of Chaotic Good</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'canweriotnow',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("canweriotnow", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/canweriotnow" class="twitter-follow-button" data-show-count="false">Follow @canweriotnow</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
+  
+</section>
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/110736810583208350607?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Lewis -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>
+- Hosted by <a href="http://pages.github.com">Github Pages</a>
+</span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'canweriotnow';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/';
+        var disqus_url = 'http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

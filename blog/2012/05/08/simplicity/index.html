@@ -18,16 +18,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://canweriotnow.github.com/blog/2012/05/08/simplicity">
+
+  <link rel="canonical" href="http://decomplecting.org/blog/2012/05/08/simplicity">
+
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Practical Elegance" type="application/atom+xml">
+
+  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Dosis|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" >
+
+if (window.top !== window.self) {
+
+document.write = "";
+
+window.top.location = window.self.location; setTimeout(function(){
+
+document.body.innerHTML='';
+
+},1);
+
+window.self.onload=function(evt){
+
+document.body.innerHTML='';
+
+};
+
+}
+
+</script>
+
+
 
   
   <script type="text/javascript">
@@ -53,15 +80,26 @@
   
 </hgroup>
 
+
+
+  <a href="https://github.com/canweriotnow">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+  </a>
+
+
+
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+
   
 </ul>
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:canweriotnow.github.com" />
+
+    <input type="hidden" name="q" value="site:decomplecting.org" />
+
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -69,6 +107,9 @@
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+
+  <li><a href="/about">About</a></li>
+
 </ul>
 
 </nav>
@@ -104,9 +145,11 @@
 
 <div class="entry-content"><h3>Machine Beauty</h3>
 
+
+<p><img class="float-left" src="http://photo.goodreads.com/books/1171573120l/107615.jpg" width="250"></p>
+
 <p>In his essay <a href="http://www.goodreads.com/book/show/107615.Machine_Beauty">Machine Beauty</a>, David Gelernter defines &#8220;machine beauty&#8221; as an inspired mating of simplicity and power. In software, I think this is also what we mean when we talk about &#8220;elegance.&#8221;</p>
 
-<p><img src="http://photo.goodreads.com/books/1171573120l/107615.jpg" width="250"></p>
 
 <p>The Dijkstra quote that serves as a tagline for this blog is actually truncated; the full quote reads:</p>
 
@@ -115,6 +158,13 @@
 <p>This is not (necessarily) an economic truth; few people would describe any product from Microsoft as elegant, but they have been economically successful. However, the painful experience of using Microsoft software, the unreliability of both systems and applications, the general clunkiness of Windows applications, indicates that the software here is indeed a failure.</p>
 
 <p>Software is a failure when it becomes an obstacle to productivity rather than an aid to it; when you must serve the compiler (or interpreter) rather than the compiler serving you (think Java boilerplate). From an end-user standpoint, the failure comes when the interface imposes unnatural workflows and ceremony that interrupts the natural flow of completing a task.</p>
+
+
+<p>Software is successful when you hardly notice it&#8217;s there; when it becomes a natural extension of the self, an augmentation to human ability. In terms of systems, think of the Macintosh when it was introduced; nothing before had been so intuitive, and enabling. In terms of programming languages, Ruby leaps immediately to mind. It is so expressive that it no longer feels like &#8220;coding&#8221;; you are just expressing your thoughts in a syntax that feels almost immediately as natural as a spoken language.</p>
+
+<!-- more -->
+
+
 
 <h3>Simplicity Matters</h3>
 
@@ -131,7 +181,9 @@
 
 <p>For instance, consider the following accumulator generator in C++:</p>
 
-<figure class='code'><figcaption><span>Accumulator Generator </span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+<figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -171,7 +223,9 @@
 <p>Hardly. But maybe it&#8217;s not fair to pick on C++, simplicity was (sadly) never a design goal.
 Python is a more modern programming language, it&#8217;s designed to be easy for new programmers to learn.</p>
 
-<figure class='code'><figcaption><span>Accumulator Generator </span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+<figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -190,7 +244,9 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
 
 <p>Now let&#8217;s look at Ruby:</p>
 
-<figure class='code'><figcaption><span>Accumulator Generator </span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+<figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">foo</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
@@ -207,28 +263,20 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
 
 <h3>Clojure</h3>
 
-<p>The other language that has me in awe of its marriage of power and simplicity is <a href="http://clojure.org">Clojure</a>. Clojure is a Lisp dialect targeting the JVM, and I encourage anyone out there to explore it. I&#8217;m just getting my feet wet with Clojure, so I haven&#8217;t attempted an example like above just yet (the emphasis on mutable state being the exception rather than the rule makes it a little less straightforward).</p>
 
-<p>But here&#8217;s my answer to <a href="https://4clojure.com/problem/26">Problem 26</a> on <a href="https://4clojure.com">4clojure</a>, which involves creating a Fibonacci sequence generator using only lambdas.</p>
+<p>The other language that has me in awe of its marriage of power and simplicity is <a href="http://clojure.org">Clojure</a>. Clojure is a Lisp dialect targeting the JVM, and I encourage anyone out there to explore it. Here&#8217;s the above construct in Clojure:</p>
 
-<figure class='code'><figcaption><span>Fibonacci Generator</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Accumulator Generator</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">n</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nb">take </span><span class="nv">n</span>
-</span><span class='line'>    <span class="p">(</span><span class="nb">map </span><span class="nv">first</span>
-</span><span class='line'>      <span class="p">(</span><span class="nb">iterate </span>
-</span><span class='line'>        <span class="p">(</span><span class="k">fn </span><span class="p">[[</span><span class="nv">a</span> <span class="nv">b</span><span class="p">]]</span>
-</span><span class='line'>          <span class="p">(</span><span class="nb">vector </span><span class="nv">b</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">a</span> <span class="nv">b</span><span class="p">)))</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">1</span><span class="p">])))))</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">accum</span> <span class="p">[</span><span class="nv">n</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">acc</span> <span class="p">(</span><span class="nf">atom</span> <span class="nv">n</span><span class="p">)]</span>
+</span><span class='line'>    <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="p">(</span><span class="nf">swap!</span> <span class="nv">acc</span> <span class="nb">+ </span><span class="nv">m</span><span class="p">))))</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Okay, maybe not as &#8220;pretty&#8221; as Ruby, but Clojure has its own amazing properties I can&#8217;t even begin to go into&#8230; but I will be posting more on Clojure in the future.</p>
+<p>Anyhow, it&#8217;s a little less immediately obvious than in a language like Python or Ruby (or, for that matter, Lisps like Scheme or Common Lisp). Why is this? As I mentioned previously, Clojure, while technically an &#8220;impure&#8221; functional language (as in, side-effects are allowed), tries to treat side-effects as a special case; so, for instance, most data structures in Clojure are immutable. The <code>atom</code> construct in Clojure creates a reference type that can access shared, independent, mutable state. The <code>swap!</code> function allows the value of the atom to be updated.</p>
 
-<p>Anyhow, I just mentioned that implementing an accumulator generator in Clojure is &#8220;less straightforward&#8221; than in a language like Python or Ruby (or, for that matter, Lisps like Scheme or Common Lisp). Why is this? As I mentioned previously, Clojure, while technically an &#8220;impure&#8221; functional language (as in, side-effects are allowed), tries to keep side-effects to the side as a special case; so, for instance, most data structures in Clojure are immutable.</p>
 
 <p>&#8220;Wait,&#8221; you might exclaim, &#8220;that seems harder to work with! Aren&#8217;t immutable data structures introducing complexity!?!?&#8221;</p>
 
@@ -262,17 +310,30 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
 <time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true">2012-05-08</time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/beauty/'>beauty</a>, <a class='category' href='/blog/categories/coding-/'>coding,</a>, <a class='category' href='/blog/categories/simplicity-/'>simplicity,</a>
+  
+</span>
+
+
 
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://canweriotnow.github.com/blog/2012/05/08/simplicity/" data-via="canweriotnow" data-counturl="http://canweriotnow.github.com/blog/2012/05/08/simplicity/" >Tweet</a>
+
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2012/05/08/simplicity/" data-via="canweriotnow" data-counturl="http://decomplecting.org/blog/2012/05/08/simplicity/" >Tweet</a>
+
   
   
   <div class="g-plusone" data-size="medium"></div>
   
   
+
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+
 </div>
 
     
@@ -281,6 +342,10 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
         <a class="basic-alignment left" href="/blog/2012/05/08/starting-over/" title="Previous Post: Starting Over">&laquo; Starting Over</a>
       
       
+
+        <a class="basic-alignment right" href="/blog/2012/05/09/job-interview/" title="Next Post: job_interview">job_interview &raquo;</a>
+      
+
     </p>
   </footer>
 </article>
@@ -296,15 +361,37 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
 <aside class="sidebar">
   
     <section>
+
+  <a href="http://internetdefenseleague.org">
+    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
+  </a>
+</section>
+
+<script src="//dihq71mhvy8o7.cloudfront.net/js/modal-embed.js" type="text/javascript" charset="utf-8"></script><section>
+
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2012/05/08/simplicity/">Simplicity</a>
+
+        <a href="/blog/2013/06/21/the-importance-of-aarons-law/">The Importance of "Aaron's Law"</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2012/05/08/starting-over/">Starting Over</a>
+        <a href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We're Not Ready To Teach Kids To Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/14/im-an-estuarian/">I'm An Estuarian!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/05/be-willing-to-let-go/">Be Willing To Let Go; or, "The Big Rewrite"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">The Difficulty of Chaotic Good</a>
+
       </li>
     
   </ul>
@@ -330,7 +417,9 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
 
         github.showRepos({
             user: 'canweriotnow',
-            count: 0,
+
+            count: 5,
+
             skip_forks: true,
             target: '#gh_repos'
         });
@@ -365,6 +454,33 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
 </section>
 
 
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
+  
+</section>
+
+
 <section class="googleplus">
   <h1>
     <a href="https://plus.google.com/110736810583208350607?rel=author">
@@ -383,8 +499,12 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2012 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+
+  Copyright &copy; 2013 - Jason Lewis -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>
+- Hosted by <a href="http://pages.github.com">Github Pages</a>
+</span>
+
 </p>
 
 </footer>
@@ -395,8 +515,9 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://canweriotnow.github.com/blog/2012/05/08/simplicity/';
-        var disqus_url = 'http://canweriotnow.github.com/blog/2012/05/08/simplicity/';
+
+        var disqus_identifier = 'http://decomplecting.org/blog/2012/05/08/simplicity/';
+        var disqus_url = 'http://decomplecting.org/blog/2012/05/08/simplicity/';
         var disqus_script = 'embed.js';
       
     (function () {
@@ -406,6 +527,17 @@ Python is a more modern programming language, it&#8217;s designed to be easy for
     }());
 </script>
 
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 

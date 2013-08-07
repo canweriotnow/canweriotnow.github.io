@@ -1,0 +1,448 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Be Willing To Let Go; or, "The Big Rewrite" - Practical Elegance</title>
+  <meta name="author" content="Jason Lewis">
+
+  
+  <meta name="description" content="Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble? &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Dosis|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" >
+
+if (window.top !== window.self) {
+
+document.write = "";
+
+window.top.location = window.self.location; setTimeout(function(){
+
+document.body.innerHTML='';
+
+},1);
+
+window.self.onload=function(evt){
+
+document.body.innerHTML='';
+
+};
+
+}
+
+</script>
+
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22978638-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Practical Elegance</a></h1>
+  
+    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
+  
+</hgroup>
+
+
+  <a href="https://github.com/canweriotnow">
+    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+  </a>
+
+
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:decomplecting.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Be Willing To Let Go; or, "The Big Rewrite"</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-05T02:10:00-04:00" pubdate data-updated="true">2013-04-05</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><blockquote><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p><footer><strong>Alan J. Perlis</strong></footer></blockquote>
+
+
+<p>One of the most nerve-wracking things you can tell a manager is that it&#8217;s time to rewrite a major software component, system, or application. In fact, it&#8217;s considered (in some circles) such a mortal sin that Joel Spolsky addresses &#8220;The Big Rewrite&#8221; in a post entitled <a href="http://www.joelonsoftware.com/articles/fog0000000069.html">Things You Should Never Do, Part I</a>.</p>
+
+<p>In many cases, he&#8217;s absolutely right. If you have a working-ish production codebase, throwing it out the window can seem a bit like throwing out the baby with the bathwater. But from an engineering standpoint, software is weird. On the one hand, you have the engineering side: If a bridge is just working-ish, the assessment of a structural engineer might be that it must be torn down and a new bridge built in its place. Software is much more ethereal and abstract; of course, we can continue to patch the old application, and extend it, and patch it, and sacrifice virgins to Great Cthulhu, and keep it chugging along. For a while.</p>
+
+<p>Eventually, however, with a typical enormous, legacy codebase, you just end up mortgaging massive technical debt.</p>
+
+<!--more-->
+
+
+<h3>Refinancing and Bankruptcy</h3>
+
+<p>A large, enterprise-y system will usually be so entrenched in technical debt that we can (metaphorically) view it as being double- and triple-mortgaged. Test coverage is spotty (if it even exists), and more time is spent dealing with regressions than actually implementing new features in a sane manner.</p>
+
+<p>Eventually, technical debt piles to the point at which it&#8217;s time to claim bankruptcy. And the problem is that the beancounters financing software projects (or IT managers who have no business managing software projects) see it as bankruptcy in the traditional sense.</p>
+
+<p>If the original project was poorly architected, rife with Demeter violations and cross-dependencies, coupled with lousy (or no) test coverage, this might be a somewhat accurate assessment. But sometimes a project with a sensible class hierarchy, composable elements, and a modular structure needs &#8220;The Big Rewrite&#8221;, and it becomes difficult to explain what this really entails.</p>
+
+<h3>Reusable code</h3>
+
+<p>I&#8217;m thinking about this in terms of a Rails app that I built some time ago, which really should have been considered a &#8220;throwaway prototype&#8221;, except that the business needs dictated it went into production right away. It works, but&#8230; lousy test coverage, bizarre performance issues, and regression issues make each new deploy a new headache.</p>
+
+<p>It took me some time, but I&#8217;ve finally made the argument for the &#8220;big rewrite.&#8221;</p>
+
+<p>Now, in the mean time, I&#8217;ve created a REST API for the backend as part of an SOA for the systems involved. And I&#8217;ve demonstrated that much of the model layer from the &#8220;deprecated&#8221; application was reused (or improved) for the API that I&#8217;m using to abstract the intrface to the legacy system the inital application was designed to interface with.</p>
+
+<p>The &#8220;big rewrite&#8221; entails rebuilding the tools in the old application to work through the API instead of directly hitting the DB (an Oracle monstrosity with ~500 tables and an incomprehensible collection of package functions and stored procedures). But the code was reusable in a new context, and the &#8220;rewrite&#8221; is really a protracted refactoring and rebuilding of the data layer.</p>
+
+<h3>That Lisp Thing</h3>
+
+<p>The quote at the head of this article was taken from the preface to the second edition of <a href="http://mitpress.mit.edu/sicp/">The Structure and Interpretation of Computer Programs</a>, aka the &#8220;Wizard Book.&#8221; SICP uses the Scheme dialect of Lisp for its examples, and Lisp is a beautiful language for writing composable code, as well as disposable code. It simply <em>makes sense</em> to write small, composable functions, and to use those functions to build abstractions for higher-level programming. This is what Paul Graham calls <a href="http://www.paulgraham.com/progbot.html">Programming Bottom-Up</a>.</p>
+
+<p>I think when Rails programming is done well, it has a similar bottom-up aspect, in that one starts with the data model, then deals with the controllers, and the views are the final consideration. Certainly not everyone approaches Rails development from this perspective, but I think the best Rails apps exhibit this approach. The Windows development model of &#8220;Visual Foo&#8221; and &#8220;Big Design Up Front&#8221; are the anithesis, and I think this is why most Windows programs are terrible, and why Windows programmers are (in my experience) more likely to be okay with terrible code.</p>
+
+<h3>Lewis&#8217;s First Rule</h3>
+
+<p><span class='pullquote-right' data-pullquote='All application code must be either composable or disposable.'></p>
+
+<p>I&#8217;ve never even thought to come up with a &#8220;rule&#8221; of software design before, but this is the most important lesson I&#8217;ve learned in my 26 or so years of hobbyist, amateur, and professional software development. I think it&#8217;s more important than any single design pattern (although many of the patterns in the Gang of Four book embody this rule), architectural principle, or other aphorism (excpet, of course, for <a href="http://en.wikipedia.org/wiki/Hanlon's_razor">Hanlon&#8217;s Razor</a>, but that extends beyond software). Lewis&#8217;s First Rule is simply this: All application code must be either composable or disposable. By composable, I inherently imply &#8220;reusable.&#8221; This is at the heart of the Go4 directive to &#8220;favor composition over inheritance.&#8221; But I also want to insist that getting rid of code is okay. It&#8217;s not only okay, it&#8217;s downright <em>desirable.</em> There&#8217;s no greater feeling than a git commit that reads <code>2 files changed, 4 insertions(+), 232 deletions(-)</code>. It&#8217;s even better when entire files have been deleted.</p>
+
+<p></span></p>
+
+<h3>Don&#8217;t Fear The Rewrite</h3>
+
+<p>A rewrite is only a scary proposition when you&#8217;re working with a codebase that never had a guiding architectural principle to begin with, has no test coverage, and has never seen a refactoring; it&#8217;s just years (maybe decades) of cruft, layered like a forest floor, with fresh leaves falling upon detritus, duff, finally decomposing into the humus that forms the core of the system, where only earthworms dare to tread.</p>
+
+<p>Building long-lasting software is an admirable goal, but it&#8217;s foolhardy to think we can do this at the application level, especially as the rate of technological progress continues to exponentiate. When you do something really good, rip it out of the application, build a library, and include that. Wash, rinse, repeat. Software should be composable, or disposable. There is no in-between.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-05T02:10:00-04:00" pubdate data-updated="true">2013-04-05</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/coding-culture/'>coding culture</a>, <a class='category' href='/blog/categories/elegance/'>elegance</a>, <a class='category' href='/blog/categories/engineering/'>engineering</a>, <a class='category' href='/blog/categories/software/'>software</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/" data-via="canweriotnow" data-counturl="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/04/02/the-difficulty-of-chaotic-good/" title="Previous Post: The Difficulty of Chaotic Good">&laquo; The Difficulty of Chaotic Good</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/05/14/im-an-estuarian/" title="Next Post: I'm An Estuarian!">I'm An Estuarian! &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <a href="http://internetdefenseleague.org">
+    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
+  </a>
+</section>
+
+<script src="//dihq71mhvy8o7.cloudfront.net/js/modal-embed.js" type="text/javascript" charset="utf-8"></script><section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/06/21/the-importance-of-aarons-law/">The Importance of "Aaron's Law"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We're Not Ready To Teach Kids To Code</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/05/14/im-an-estuarian/">I'm An Estuarian!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/05/be-willing-to-let-go/">Be Willing To Let Go; or, "The Big Rewrite"</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">The Difficulty of Chaotic Good</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'canweriotnow',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("canweriotnow", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/canweriotnow" class="twitter-follow-button" data-show-count="false">Follow @canweriotnow</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
+  
+</section>
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/110736810583208350607?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Lewis -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>
+- Hosted by <a href="http://pages.github.com">Github Pages</a>
+</span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'canweriotnow';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/';
+        var disqus_url = 'http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
