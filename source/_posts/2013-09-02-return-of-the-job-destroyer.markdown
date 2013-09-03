@@ -3,7 +3,7 @@ layout: post
 title: "Return of the Job Destroyer"
 date: 2013-09-02 21:57
 comments: true
-categories: [software, technoclogy, economics, labor]
+categories: [software, technology, economics, labor]
 ---
 
 ### _Or, "Human Contact as a Premium Service"_
@@ -118,7 +118,7 @@ We need professions, with codes of ethics, basic standards of professional devel
 
 ## The Basic Income Guarantee (BIG)
 
-I was astonished to learn recently that Milton Friedman, of all people, was on the presidential commission that recommended a BIG in 1969. If someone that far to the right could advocate something so seemingly "socialist..." wow. Then again, the right has swung so much further to the right since then that the GOP mainstream is somewhere between Pat Robertson and Adolf Hitler, making Friedman look like a damn hippie. 
+I was astonished to learn recently that Milton Friedman, of all people, was on the presidential commission that recommended a BIG in 1969. If someone that far to the right could advocate something so seemingly "socialist"... wow. Then again, the right has swung so much further to the right since then that the GOP mainstream is somewhere between Pat Robertson and Adolf Hitler, making Friedman look like a damn hippie. 
 
 But the BIG solves many problems posed both by right-libertarian laissez-faire capitalism, and by the traditional welfare state. It doesn't penalize working (unlike TANF, SSDI, and SSI in the U.S.); it doesn't require endless bureaucracy just to apply (let's get rid of those social services jobs too, while we're replacing the MVA with robots), and it's egalitarian.
 
