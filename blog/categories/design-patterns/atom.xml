@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Design Patterns | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/design-patterns/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-09-03T01:29:49-04:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[DCI: The Right Idea for The Wrong Paradigm]]></title>
+    <link href="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
+    <updated>2013-01-03T01:10:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&rsquo;ve seen, however, is Tony Arcieri&rsquo;s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">&ldquo;DCI&rdquo; in Ruby Is Compeltely Broken</a>.</p>
+
+<p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it&rsquo;s an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
+
+<p>Now, I was initially a big fan <em>conceptually</em> of DCI. It seemed intuitive, even familiar. And it helped that it was the brainchild of Trygve Reenskaug, the erstwhile inventor of MVC, possibly one of the most useful OOP patterns ever devised.</p>
+
+<p>But the more familiar it seemed, the more difficult it seemed to implement properly, much less efficiently, even in the purest of modern OO languages, i.e., Ruby.</p>
+
+<p>It wasn&rsquo;t until I tried to forget everything I knew about OOP that its familiarity became clear: this novel appropach to object-oriented design is embedded in the most natural thing in the world in the oldest of functional programming languages, Lisp.</p>
+
+<p>Enter the macro. In Clojure, providing context to a function is straightforward using a macro, for instance, a database query (n.b., most of this is straight example code from <a href="http://en.wikibooks.org">wikibooks.org</a>).</p>
+
+<p>```clojure Set up JDBC connection <a href="http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL">http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL</a>
+(use &lsquo;clojure.java.jdbc)</p>
+
+<p>(let [db-host &ldquo;localhost&rdquo;</p>
+
+<pre><code>  db-port 5432
+  db-name "a_database"]
+</code></pre>
+
+<p>  (def db {:classname &ldquo;org.postgresql.Driver&rdquo; ; must be in classpath</p>
+
+<pre><code>       :subprotocol "postgresql"
+       :subname (str "//" db-host ":" db-port "/" db-name)
+       ; Any additional keys are passed to the driver
+       ; as driver-specific properties.
+       :user "a_user"
+       :password "secret"}))
+</code></pre>
+
+<p><code>``
+This provides the context for the</code>with-connection` macro:</p>
+
+<p>```clojure SELECT Statement <a href="http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT">http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT</a></p>
+
+<p>(with-connection db
+   (with-query-results rs [&ldquo;select * from blogs&rdquo;]</p>
+
+<pre><code> ; rs will be a sequence of maps, 
+ ; one for each record in the result set. 
+ (dorun (map #(println (:title %)) rs))))
+</code></pre>
+
+<p>```</p>
+
+<p>I&rsquo;m using the simplest of (admittedly cribbed) examples here for the sake of demonstration, but right away here, we&rsquo;ve got the D and C of DCI &ndash; Data and Context. As for interaction&hellip; we could easily conceive of a <code>with-role</code> macro which determines the interaction of the database connection and the actual application of the <code>with-connection</code> macro, whether it invokes a SELECT, CREATE, UPDATE, or DELETE statement.</p>
+
+<p>In a Lisp, this level of composition is completely <em>natural,</em> is my point. In a language like Ruby (which despite having much of the Lisp nature, is OO to its core), and especially in a framework like Rails, with its cargo-cult Design Pattern-worshipping user base (I&rsquo;m going to take some shit for that one, but accept that I&rsquo;m exaggerating and flame with that in mind), is it any surprise that a pattern that makes <em>total sense</em> in an FP context is going to be a hot controversy in an OOP context?</p>
+
+<p>I agree with Tony&rsquo;s post that &ldquo;DCI&rdquo; in Rails is totally broken. But that&rsquo;s because, IMHO, DCI isn&rsquo;t the best pattern for OOP. Yeah, Ruby has <em>lots</em> of functional features, but maybe we need to rethink how we&rsquo;re doing this DCI stuff (or Concerns, or whatever), on the basis that messing with inheritance and the class hierarchy is the <em>wrong thing,</em> and perhaps we should be creatively exploring the use of blocks and lambdas and Ruby&rsquo;s other functional constructs.</p>
+
+<p>I&rsquo;m not offering any solutions here, but I&rsquo;m hoping I can contribute to the conversation. Step away from the mixins, away from the class hierarchy, away from the object model. Maybe take another read of Design Patterns and see if DCI is another hot YAGNI thing. I don&rsquo;t know yet. I just know it reminds me of how things are AWESOME in a whole other paradigm that doesn&rsquo;t necessarily apply to your Rails app.</p>
+
+<p>As a caveat, I should say that I haven&rsquo;t really tried to use this DCI mojo in a production application, although I have played with different ideas about it Just For Fun&copy;. If you think I&rsquo;m wrong, or have the whole thing arse-about-face, I&rsquo;d be happy to discuss it in the comments.</p>
+]]></content>
+  </entry>
+  
+</feed>

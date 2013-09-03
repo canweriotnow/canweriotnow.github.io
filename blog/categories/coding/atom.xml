@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: coding | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-09-03T01:29:49-04:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[We're Not Ready To Teach Kids To Code]]></title>
+    <link href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/"/>
+    <updated>2013-06-02T23:22:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code</id>
+    <content type="html"><![CDATA[<h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
+
+<p>I&rsquo;m really excited about the heavy emphasis I&rsquo;m seeing on <a href="http://gettingsmart.com/2013/05/teaching-kids-to-code-an-economic-social-justice-issue/">teaching kids to code</a>. Although I agree with just about everything <a href="http://codinghorror.com">Jeff Atwood</a> wrote in his controversial post, <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">&ldquo;Please Don&rsquo;t Learn to Code&rdquo;</a>, I also believe that in an age in which <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">software is eating the world</a>, understanding code is a basic literacy issue. This goes beyond the concept of digital literacy: as applied, this boils down to knowing how to use Google. What we&rsquo;re seeing in the movement to bring coding into the core curriculum is a new emphasis on what I&rsquo;d like to call <em>computational literacy.</em></p>
+
+<h3>Computational Literacy</h3>
+
+<p>Computational literacy is a concept that I wish had been &ldquo;a thing&rdquo; when I was in school. I&rsquo;ll start with an anecdote, and then delve into the gritty challenges that the &ldquo;teaching kids to code&rdquo; movement is failing to recognize.</p>
+
+<p>When I was a kid, I loved math&hellip; or, at least, I loved figuring out the algorithms behind the calculation. I learned BASIC when I was 5 or 6, so when got to middle school, and discovered that the Texas Instruments graphing calculators we were required to buy for class spoke just about the same dialect of BASIC I had learned as a kid (I first learned to code on a <a href="http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A">TI 99/4A</a>), I was so excited. Once I could derive the algorithm from a new concept we were being taught, I could express it in code and skip the boring parts. I&rsquo;ve never done well when bored.</p>
+
+<p>Alas, my youthful optimism was to be dashed on the rocks of pedagogical ignorance and stupidity. First, I was told that I wouldn&rsquo;t receive credit for my <strong>correct</strong> answers because I didn&rsquo;t &ldquo;show my work&rdquo;.</p>
+
+<p>On the next exam, I wrote out the source listing of each program I had used with a reference to the problems to which it had been applied (I&rsquo;m pretty sure the number of GOTOs I used in those days would have made Dijkstra cry).</p>
+
+<p>That&rsquo;s when they usually called my mom in for a conference.</p>
+
+<!-- more -->
+
+
+<h3>WTF Technophobes</h3>
+
+<p>I have to give my mother credit here. We went into those meetings facing an irate math teacher discussing how I was being insolent and writing a program instead of learning the math concepts I was supposed to learn in the class. My mother&rsquo;s response was a deadpan &ldquo;If he didn&rsquo;t understand the concepts, how could he write the program?&rdquo;</p>
+
+<p>Did I mention my mom is awesome?</p>
+
+<p>There was never a real resolution to this. I stopped taking math when I&rsquo;d gotten enough credits to graduate (thanks, all my math teachers, for teaching me to hate a subject I once loved because it was taught by ignorant technophobes). I tried again in college, but was greeted by the same attitude, so combined with that and a required CS 101 class on Visual Basic (as if I would even run Windows, much less write VB), I majored in Philosophy. Okay, that&rsquo;s enough spleen for this post (and I have no regrets majoring in Philosophy; you&rsquo;ll learn more critical thinking skills in a good philosophy program than in any Applied Math or CS program).</p>
+
+<h3>Teaching Kids to Code? Why?</h3>
+
+<p>We need a paradigm shift in education before we even <em>dream</em> of making coding part of the curriculum. Until we challenge our basic attitudes and assumptions, teaching kids to code in school will be an abject failure, for a number of reasons.</p>
+
+<p>The first is that abstract learning without application is meaningless. I&rsquo;m not the most emotive viewer, but Conrad Wolfram did a TED talk a while back that had me jumping out of my chair, clapping, and shouting &ldquo;#{expletives.sample} yeah!&rdquo; repeatedly at my computer. Here&rsquo;s the video (If you haven&rsquo;t watched &ldquo;Teaching kids real math with computers&rdquo;, do so NOW):</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/60OVlfAUPJg" frameborder="0" allowfullscreen></iframe>
+
+
+<p>If our math curricula (the subject best suited to a programming solution!) are based around chidren doing rote, repetitive calculation, what&rsquo;s the point in teaching them to code? I had hoped that maybe the attitude toward programming in schools had changed in the nearly 15 years since I graduated high school, but a quick Google search showed that not much has changed, e.g. <a href="http://www.k12.wa.us/mathematics/CalculatorPolicy.aspx">Washington&rsquo;s state K-12 math calculator policy</a>.</p>
+
+<p>No programs. No code, dogs, or Irish need apply.</p>
+
+<p>How can we even <em>think</em> of teaching kids to code while code is a &ldquo;cheat,&rdquo; &ldquo;not showing your work&rdquo; (where&rsquo;s the harm in automating work that <em>should</em> be considered beneath human dignity?), et cetera.</p>
+
+<p>Most of the proposals I&rsquo;ve seen around the &ldquo;teaching kids to code&rdquo; thing center on getting practicing software engineeers to volunteer their time with kids to teach them basic (and more advanced, if they&rsquo;re into it) programming skills.</p>
+
+<p>We&rsquo;re totally into this idea! Particularly in the Ruby community, there&rsquo;s <a href="http://www.kidsruby.com/">KidsRuby</a> and <a href="http://hackety.com/">Hackety Hack!</a>, awesome projects centered around teaching kids basic programming skills in a fun and easy-to-learn dynamic language.</p>
+
+<p>But until teachers understand the tech enough to embrace (rather than fear) it, what&rsquo;s the point?</p>
+
+<p>If I wasn&rsquo;t already at least a hobbyist hacker, and I was taking my first programming course, and arrived in math class only to be told I couldn&rsquo;t apply my exciting and newly-learned skills to the problem at hand, because it was like cheating, how would I react? I&rsquo;d most likely lose interest in a subject I couldn&rsquo;t apply to anything.</p>
+
+<p>Okay, well, <em>I</em> would likely lose interest in my math class (or at least my math teacher) because code is <em>so frakking cool.</em> But I&rsquo;m trying to imagine myself as the student who isn&rsquo;t a huge nerd.</p>
+
+<h3>Quis docet ipsos doctores?</h3>
+
+<p>It might sound like I&rsquo;ve been a bit harsh toward the teachers here. Nothing could be further from my intent. As I&rsquo;ve gained time and distance, I&rsquo;ve realized that it&rsquo;s merely ignorance that built a wall between us; not stupidity, and certainly not malice. And it was an ignorance for which they were not responsible; it was the fault of the system that trained them, and the system that was later responsible for their professional development.</p>
+
+<p>No one ever taught my teachers about software; what went into building it, using it, etc.</p>
+
+<p>If (most of) the teachers are computational illiterates, how can we expect the kids to become computationally literate in any meaningful way?</p>
+
+<p>Technology has penetrated pedagogy to a significant degree but hasn&rsquo;t really changed the practice in a fundamental way; if your use of technology isn&rsquo;t transformative, it&rsquo;s a misuse, possibly an abuse.</p>
+
+<p>Where technology hasn&rsquo;t penetrated in a meaningful way is in professional development. Teachers are still &ldquo;improving&rdquo; their skills in more or less the same way they were decades ago. This has to change. If you&rsquo;re teaching in a STEM-related area and you cannot or will not understand variable assignment, iteration, recursion, and other basic concepts &mdash; the very basics of coding &mdash; you should find a new career. I&rsquo;m not saying you need to delve into pointers, concurrency, etc. Just the basics. If I were going into high school all over again (and this is what I intend for my daughter (if she&rsquo;s into it), so Math Teachers Beware!), I would go in with a mastery of <a href="http://mitpress.mit.edu/sicp/">SICP</a>, and a willingness to get myself expelled for refusing to do rote calculation when I could solve the problem with a 3-line recursive function in Scheme.</p>
+
+<h3>What&rsquo;s The Answer?</h3>
+
+<p>Good question. I think the reason we don&rsquo;t have a good answer yet is that we&rsquo;ve been asking the wrong question. Getting developers to mentor students is a fantastic idea; if my time wasn&rsquo;t 120% consumed between a startup and a six month old, I&rsquo;d be spending my free time (that&rsquo;s a thing?) volunteering to teach kids to program. But we run into a roadblock when the general population of educators need a class just to use Twitter. Which is why I ask, &ldquo;Quis docet ipsos doctores?&rdquo; &mdash; &ldquo;Who teaches the teachers themselves?&rdquo;</p>
+
+<p>This is also why I&rsquo;m so excited about working at <a href="http://anestuary.com">An Estuary</a>. The opportunity to bring technological solutions not just to education, but to professional development within education, is the opportunity to bridge the gap between what students need to learn and what teachers are capable of allowing them to learn in a meaningful way. Of bringing education into the 21st century (after dragging it kicking and screaming through the 20th, because it&rsquo;s currently stuck in the 19th, albeit with some toys from the future).</p>
+
+<p>I never want another child to look at her teacher and think (as I did) &ldquo;are you from the past?&rdquo; I never want another nerd to hate math because his teacher didn&rsquo;t understand that <em>the code is the work.</em> I never want another hacker to give up on education because her teachers, professors, peers, etc. appeared to be stupid or malicious when they were merely ignorant.</p>
+
+<p>I want to change the system. I want to make &ldquo;it gets better&rdquo; real for hackers and nerds.</p>
+
+<p>I want to make the subjugation of billions of children to the subhuman task of rote calculation a thing of the past.</p>
+
+<p>How far am I willing to go?</p>
+
+<p>Doctores docebo, si necesse est.</p>
+
+<p>We must teach the teachers, or teaching the children is so much tilting at windmills. There are no easy solutions, but I&rsquo;m proud to be part of a company that&rsquo;s addressing the hard problems.</p>
+
+<h3>Postscript</h3>
+
+<p>This post has been long in the making; shortly after I completed the first draft, <a href="https://www.edsurge.com">EdSurge</a> posted an opinion piece, <a href="https://www.edsurge.com/n/2013-05-28-opinion-learning-to-code-isn-t-enough">&ldquo;Learning To Code Isn&rsquo;t Enough&rdquo;</a>, which looked at this issue a little differently. It cited a wonderful article on <a href="http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf">&ldquo;Computational Thinking&rdquo;</a> (essentially what I describe as &ldquo;computational literacy&rdquo;) by Jeanette Wing, arguing for the equal status of CS fundamentals with reading, writing, and arithmetic in curriculum standards.</p>
+
+<p>The article also highlights a problem with the &ldquo;teach kids to code&rdquo; movement, which I see as complementary to my own objections; while I was arguing that it&rsquo;s pointless to teach kids to code when they won&rsquo;t be <em>allowed</em> to apply that skill, the EdSurge piece points out the absurdity of teaching kids to code without giving concrete opportunities to apply the ability.</p>
+
+<p>Essentially, it comes down to the same thing: coding is wonderful, but if it&rsquo;s not applied to a real-world problem, it&rsquo;s a waste of resources.</p>
+
+<p>I learned BASIC so I could make my screen draw pictures. That&rsquo;s great for a five year old. But I learned C so I could make my printer work with Linux; I learned Perl so I could type fewer commands into the shell; I learned PHP and SQL to build websites, and I learned Ruby because PHP sucks. I learned Scheme because I wanted to hack my way through SICP, and I learned Clojure because I wanted to do concurrent programming without mutexes. There was always a reason, a purpose, an application.</p>
+
+<p>If we want kids to code, we must not only allow them to apply that knowledge whenever and wherever the opportunity arises, we must also train teachers to always and everywhere encourage the application of computational thinking (as well as programming) to whatever problem set presents itself as a viable candidate.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DateTime Conversions in Clojure]]></title>
+    <link href="http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
+    <updated>2013-02-03T14:18:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
+    <content type="html"><![CDATA[<p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
+
+<p>A while ago, I <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">wrote a post about Bubba</a> (not its real name), a legacy/vendor-supplied system in which the original developers (may they suffer eternal torment) decided to store all datetimes as floating-point values using a bastardized form of the Julian Day system with fractional day part. In that post, I showed a solution used in a Ruby on Rails web app, but now I&rsquo;m writing data integration services for multiple systems, and needed something a bit more robust, so I&rsquo;m writing it in Clojure.</p>
+
+<p>I&rsquo;ll start off with the dependencies:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">ns </span><span class="nv">project.util.date</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clj-time.core</span> <span class="ss">:as</span> <span class="nv">tm</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="p">[</span><span class="nv">clj-time.local</span> <span class="ss">:as</span> <span class="nv">loc</span><span class="p">]</span>
+</span><span class='line'>        <span class="p">[</span><span class="nv">clj-time.format</span> <span class="ss">:as</span> <span class="nv">fmt</span><span class="p">]</span>
+</span><span class='line'>        <span class="p">[</span><span class="nv">clojure.math.numeric-tower</span> <span class="ss">:as</span> <span class="nv">math</span><span class="p">])</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="ss">:use</span> <span class="nv">clj-time.coerce</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:import</span> <span class="p">[</span><span class="nv">oracle.sql</span> <span class="nv">TIMESTAMP</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>       <span class="p">[</span><span class="nv">java.sql</span> <span class="nv">Timestamp</span><span class="p">]))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>I&rsquo;m using the fantastic <a href="https://github.com/seancorfield/clj-time">clj-time</a> library by Sean Corfield. It&rsquo;s basically a wrapper around the <a href="http://joda-time.sourceforge.net/">Joda Time</a> Java library, allowing us to use its powerful datetime handling in idiomatic Clojure.</p>
+
+<p>So, for the actual code. First, the Bubba dates need to be converted to and from a floating point value to a normal Date object.</p>
+
+<!-- more -->
+
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Bubba DateTime conversions&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Set day of calendar reform for TS julian dates.</span>
+</span><span class='line'><span class="c1">;; And yes, it uses local time, not UTC. Because FML.</span>
+</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">docr</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;It&amp;rsquo;s the day of Calendar Reform for bubba&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">loc/to-local-date-time</span> <span class="p">(</span><span class="nf">tm/date-time</span> <span class="mi">1899</span> <span class="mi">12</span> <span class="mi">30</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">fractional-part</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Get the fractional Julian day part from a DateTime&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;hour-part</span> <span class="p">(</span><span class="nf">tm/hour</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'><span class="nv">min-part</span>  <span class="p">(</span><span class="nf">tm/minute</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'><span class="nv">sec-part</span>  <span class="p">(</span><span class="nf">tm/sec</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'><span class="nv">seconds</span> <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">hour-part</span> <span class="mi">60</span> <span class="mi">60</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">min-part</span> <span class="mi">60</span><span class="p">)</span> <span class="nv">sec-part</span><span class="p">)]</span>
+</span><span class='line'><span class="p">(</span><span class="nb">float </span><span class="p">(</span><span class="nb">/ </span><span class="nv">seconds</span> <span class="mi">86400</span><span class="p">))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">to-bubbadt</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Converts a DateTime to a bubba Julian date&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">offset</span> <span class="nv">docr</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="nb">+ </span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">tm/in-days</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">tm/interval</span> <span class="nv">offset</span> <span class="nv">dt</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fractional-part</span> <span class="nv">dt</span><span class="p">))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">current-bubbadt</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Get the current local time as a bubba Julian date&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">[]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">to-bubbadt</span> <span class="p">(</span><span class="nf">loc/local-now</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">from-bubbadt</span> <span class="p">[</span><span class="nv">bubbadt</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">day-part</span> <span class="p">(</span><span class="nf">math/floor</span> <span class="nv">bubbadt</span><span class="p">)</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">frac-part</span> <span class="p">(</span><span class="nb">- </span><span class="nv">bubbadt</span> <span class="nv">day-part</span><span class="p">)</span>
+</span><span class='line'>    <span class="nv">docr</span> <span class="nv">docr</span><span class="p">]</span>
+</span><span class='line'><span class="p">(</span><span class="nf">tm/plus</span> <span class="nv">docr</span> <span class="p">(</span><span class="nf">tm/days</span> <span class="nv">day-part</span><span class="p">)</span> <span class="p">(</span><span class="nf">tm/secs</span> <span class="p">(</span><span class="nf">math/round</span> <span class="p">(</span><span class="nb">* </span><span class="mi">86400</span> <span class="nv">frac-part</span><span class="p">))))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Okay, that&rsquo;s probably a lot to take in, but basically it performs the calculations to convert the floating-point dates to Date objects and back again. But there&rsquo;s still a catch. In some of the views I&rsquo;ve built for reporting, I&rsquo;m pre-converting those dates to Oracle SQL TIMESTAMP types, and depending on the context, sometimes those floats come back as Doubles, and sometimes as BigDecimals.</p>
+
+<p>Clojure&rsquo;s got me covered, with multimethods.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Use a multimethod for our date coercion b/c the input type might be variable.</span>
+</span><span class='line'><span class="p">(</span><span class="kd">defmulti </span><span class="nv">bubba-date-coerce</span> <span class="nv">class</span><span class="p">)</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">Double</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">BigDecimal</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">oracle.sql.TIMESTAMP</span> <span class="p">[</span><span class="nv">ts</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-date</span> <span class="p">(</span><span class="nf">.toDate</span> <span class="nv">ts</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="ss">:default</span> <span class="p">[</span><span class="nv">d</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">identity </span><span class="nv">d</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p> Much like generics in Common Lisp (well, CLOS anyhow) <code>defmulti</code> takes a dispatch function as an argument, in this case <code>class</code>, which returns the class of the argument passed to the multimethod. Methods can then be defined to handle each type of possile argument, with a <code>:default</code> method for unmatched cases. Multimethods can be used with any dispatch function you like, but <code>class</code> is a common use case, and handy as hell here.</p>
+
+<p> As I mentioned, the point of this is to get data in and out of multiple systems, and they all have their own idiosyncracies.</p>
+
+<p> For instance, there&rsquo;s, uhh, let&rsquo;s call it Joe&rsquo;s Directory, or JD, which stores all of its dates and datetimes as strings, with inconsistant formatting across the board.</p>
+
+<p> Luckily, clj-time has awesome parsers:</p>
+
+<p> <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span> <span class="c1">;; General (jd DateTime conversions)&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="k">def </span><span class="nv">jd-parser</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/formatter</span> <span class="p">(</span><span class="nf">tm/default-time-zone</span><span class="p">)</span> <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;MM/dd/YYYY&amp;rdquo; &amp;ldquo;YYYYMMddHHmmssZ&amp;rdquo; &amp;ldquo;YYYY-MM-dd HH:mm:ss&amp;rdquo;))&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">jdparse</span> <span class="p">[</span><span class="nv">date-string</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/parse</span> <span class="nv">jd-parser</span> <span class="nv">date-string</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Easy as pie. Where it gets truly beautiful, however, is when mixed in with <a href="http://sqlkorma.com/">Korma</a> for SQL abstraction. Korma entities have two special macros for data conversion: <code>prepare</code>, which applies a function to data before storing it in the database, and <code>transform</code> which applies a function when reading from the database.</p>
+
+<p>Since Korma returns query results as a vector of hashmaps, it&rsquo;s as simple as updating a hashmap:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">jd-date-transform</span> <span class="p">[</span><span class="nv">rec</span><span class="p">]</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Converts date strings to DateTime instances&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">ent</span> <span class="nv">rec&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">date-fields</span> <span class="p">[</span><span class="ss">:DOB</span> <span class="ss">:empstartdate</span> <span class="ss">:modifytimestamp</span> <span class="ss">:createtimestamp</span><span class="p">]]</span>
+</span><span class='line'><span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">jdparse</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">date-fields</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>That&rsquo;s the first version of the transform fn I wrote for JD, but there&rsquo;s two problems. First, the fields to apply are hard-coded in the <code>let</code> form. More importantly, however, is the condition where I do a <code>select</code> and don&rsquo;t return those fields; <code>update-in</code> will add the field with a value of <code>nil</code>.</p>
+
+<p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">generic-transform</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Transform function for queries. Arguments are a function to apply (f),</span>
+</span><span class='line'>   <span class="nv">the</span> <span class="nv">entity</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">transformed</span>, <span class="nb">and </span><span class="nv">the</span> <span class="nv">fields</span> <span class="nv">on</span> <span class="nv">which</span> <span class="nv">to</span> <span class="nb">apply </span><span class="nv">the</span> <span class="nv">transformation.</span><span class="o">&amp;</span><span class="nv">rdquo</span><span class="c1">;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">f</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">update-fn</span> <span class="nv">f&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">ent</span> <span class="nv">ent</span>
+</span><span class='line'>    <span class="nv">fields</span> <span class="p">(</span><span class="nf">vec</span> <span class="p">(</span><span class="nf">st/intersection</span> <span class="p">(</span><span class="nb">set </span><span class="p">(</span><span class="nb">keys </span><span class="nv">ent</span><span class="p">))</span> <span class="p">(</span><span class="nb">set </span><span class="nv">fields</span><span class="p">)))]</span>
+</span><span class='line'><span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%1</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">update-fn</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Finding the set intersection of the fields we normally want to transform, and the fields returned, ensures we don&rsquo;t get extra fields with values of <code>nil</code>.</p>
+
+<p>And look, I resisted the temptation to use a macro where a function would suffice! Do I get points for good Lisp behavior?</p>
+
+<p>Then it&rsquo;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">defentity</span> <span class="nv">customers</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Korma entity for the CUSTOMER table. Transforms Bubba datetimes to DateTime objects.&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">database</span> <span class="nv">envdb</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">table</span> <span class="ss">:customer</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">transform&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;#</span><span class="p">(</span><span class="nf">generic-transform</span> <span class="nv">dt/bubba-date-coerce</span> <span class="nv">%</span> <span class="p">[</span><span class="ss">:active_start_date</span>
+</span><span class='line'>                                                   <span class="ss">:active_end_date</span>
+</span><span class='line'>                                                   <span class="ss">:lastmod_datetime</span>
+</span><span class='line'>                                                   <span class="ss">:birthdate</span>
+</span><span class='line'>                                                   <span class="ss">:opendatetime</span><span class="p">])))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>So that&rsquo;s how I&rsquo;m normalizing datetimes in this particular project. I&rsquo;m really enjoying writing code like this: building short, composable functions and refactoring by decomplecting them into shorter, more composable functions.</p>
+
+<p>I find refactoring easier to reason about in Clojure than any other language I&rsquo;ve worked in. Thinking in terms of simple, composable functions (particularly having the facility of higher-order functions and macros) also makes it very straightforward to decouple interface and implementation.</p>
+
+<p>I&rsquo;ll state for the record I&rsquo;m fairly new to Clojure, so it wouldn&rsquo;t surprise me if this code looks pretty amateurish to more experienced Clojurians. If anyone has any suggestions for improving it, I&rsquo;d welcome the advice.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Feedback Loops]]></title>
+    <link href="http://decomplecting.org/blog/2012/10/31/feedback-loops/"/>
+    <updated>2012-10-31T14:12:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2012/10/31/feedback-loops</id>
+    <content type="html"><![CDATA[<p>Sadly, I haven&rsquo;t added a blog post in roughly 2.5 months. I&rsquo;ve had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven&rsquo;t had it in me. I really enjoy writing this blog, too. I wasn&rsquo;t quite sure what was going on, until I read one of the most insightful blog posts I&rsquo;ve ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
+
+<p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>
+
+<p><blockquote><p>My workflow is something like this.</p></p><p><p>write some code<br/>run the code<br/>get an error message<br/>find the error and back to step 1<br/>Hour by hour, day after day, I do this. Always searching for what&rsquo;s wrong with what I&rsquo;m creating, rarely thinking about what&rsquo;s good about it. It&rsquo;s a negative reinforcement feedback loop.</p><footer><strong>[<a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">http://edu.mkrecny.com/thoughts/be-nice-to-programmers</a>]</strong></footer></blockquote></p>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>My last post was just before a huge project I&rsquo;d both originated and put a large amount of my time and effort into over the course of 15-18 months was shelved. It was ready to ship, but corporate politics being what it is (i.e., something I&rsquo;d schedule a root canal to avoid, <em>especially</em> where I work), I tried to just move on and not lose sleep over it. Still, it rankled.</p>
+
+<!-- more -->
+
+
+<p>I haven&rsquo;t pushed a single new commit to any of my projects on Github. I haven&rsquo;t written a blog post. I have an engineering pad with a bunch of scribbled, inchoate notes for things I want to do, but can&rsquo;t seem to move on anything.</p>
+
+<p>My own theory is that we (hackers) are especially sensitive to feedback loops. I could go <a href="http://decomplecting.org/blog/2012/05/22/passion/">on and on</a>, and even cite <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">more</a> <a href="http://www.bricklin.com/wontprogram.htm">notable</a> <a href="http://www.codinghorror.com/blog/2010/02/the-nonprogramming-programmer.html">bloggers</a> than myself, on my theory of what could be referred to as &ldquo;programmer exceptionalism.&rdquo; That&rsquo;s not to say we (programmers who can actually build working (and hopefully, elegant) systems) are in any way <em>better</em> than non-programmers (or the <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">Java Schools</a> crowd); it&rsquo;s just that the preponderance of anecdotal evidence (not to mention some <a href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/paper1.pdf">proper research</a>) suggests that <em>programmers are not normal.</em></p>
+
+<p>&ldquo;Sensitivity to feedback loops&rdquo; could also be a symptom of the intuition many of us experience when faced with an implementation that just <em>feels</em> wrong. We can, through due diligence, prove that this is the case eventually; but what is it that drives us to find exploits, or benchmark competing implementations? It&rsquo;s that little voice in the back of your head whispering, &ldquo;This is wrong. And also, stupid.&rdquo;</p>
+
+<p>My main focus in my day-to-day programming life right now is dealing with interfaces for yet another vendor product that is very wrong, and very, very stupid. So when I come home, I just want to play <a href="http://guildwars2.com">Guild Wars 2</a> and not really think about coding. Which makes me even sadder, because I love hacking on side projects.</p>
+
+<p>And it&rsquo;s not that I haven&rsquo;t had some fun and some successes in the meantime. I wrote a pretty cool framework in Clojure for generating and emailing reports from various datasources. The core of it is going to be open source, as soon as I get around to that. But the grind&hellip; the grind, man. The grind.</p>
+
+<p>I don&rsquo;t know what the solution is. We can&rsquo;t all be working on innovative, game-changing products all the time. And sometimes things will get shelved the day you expect them to ship. I do know there needs to be a way to <em>love</em> this shit without going crazy or making oneself miserable.</p>
+
+<p>So, interwebs&hellip; suggestions?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[LadyCoders, Twitroversy, and you]]></title>
+    <link href="http://decomplecting.org/blog/2012/08/13/ladycoders/"/>
+    <updated>2012-08-13T21:41:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2012/08/13/ladycoders</id>
+    <content type="html"><![CDATA[<p>So, I had intended my next post to address some of the (valid) criticism of Github that&rsquo;s been making the rounds lately, but a much more disturbing Twitroversy has emerged today.</p>
+
+<p>A group of women called <a href="http://ladycoders.com">LadyCoders</a> started a <a href="http://www.kickstarter.com/projects/166494057/ladycoders-get-hired-seattle-2012">Kickstarter campaign</a> to fund a conference/seminar geared toward helping women to get programming and other tech jobs. Great idea, right? There are <a href="http://girldevelopit.com/">many</a> <a href="http://www.blackgirlscode.com/">projects</a> devoted to giving women the skills they need to write software, but as far as addressing the fundamental issue that the industry itself is pretty much a boys' club (not assigning blame, just acknowledging reality), much less has been done in that area.</p>
+
+<p>So the good folks at LadyCoders wanted to help get women <em>hired,</em> not just trained. Pretty cool.</p>
+
+<p>Well, a lot of people thought so. As I write this, they&rsquo;re &lt; US$6k away from their US$23k funding goal. But&hellip; well, there was some dissent:</p>
+
+<blockquote class="twitter-tweet tw-align-center"><p>Sick and wrong: "it’s our job (for now) to be easily integrated into an all-male team, **nonthreatening,** and hyper-skilled"- <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a></p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235163013227880449" data-datetime="2012-08-13T23:56:46+00:00">August 13, 2012</a></blockquote>
+
+
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>I completely get where @shanley is coming from&hellip; but the amount of Twitroversy here seemed&hellip; disproportionate.</p>
+
+<!--more-->
+
+
+<p>Sorry for picking on @shanley so much, but&hellip; then there was this:</p>
+
+<blockquote class="twitter-tweet tw-align-center"><p>Legit response from <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>: "I know what works, whether or not it's PC." Please do not fund this shit on kickstarter.</p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235166808880074753" data-datetime="2012-08-14T00:11:51+00:00">August 14, 2012</a></blockquote>
+
+
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>You can go search for @ladycoders mentions on Twitter if you want to see more&hellip; but here&rsquo;s the issue I take: fundamentally, the issue LadyCoders is trying to address is that the software industry is a male-dominated space which has been difficult for even the most highly-skilled women to penetrate.</p>
+
+<p>I can&rsquo;t speculate as to the eventual success or failure of LadyCoders as far as increasing the number of women working in software development or IT in general. But I do see the pragmatic value of a quasi-entryist, realpolitik solution to this problem.</p>
+
+<p>Criticizing an organization trying to serve a real, valid feminist goal (material gains for women in a historically male-dominated sector), by all means necessary, just seems counter-productive. &ldquo;Seem non-threatening&rdquo; might be advice that highlights now fucked-up society is, but it isn&rsquo;t fucked-up advice if your goal is material gains for an oppressed group. Once you&rsquo;ve achieved your goals, shift the goalposts of &ldquo;(non-)threatening&rdquo; in the desired direction.</p>
+
+<p>Queer/trans folks have been doing this for years, right? Really, everyone has&hellip; You don&rsquo;t go into your job interview in the clothes you wear to the club. If your subculture doesn&rsquo;t match, you don&rsquo;t interview in your bondage pants and Aus-Rotten t-shirt (old punk, here)&hellip; if who or what you are is out of the mainstream, you mute it depending on the culture of where you want a job.</p>
+
+<p>For many folks, &ldquo;passing&rdquo; is an option. I think what LadyCoders is trying to highlight or confront (I hope they correct me if I&rsquo;m wrong) is that gender isn&rsquo;t really the issue, it&rsquo;s perception, stereotypes, and cultural bias; by ameliorating/sidestepping the (currently wrong and terrible) negative perception women sometimes have in techie circles, you have more opportunity to break down the perception.</p>
+
+<p>You cover tattoos, take out piercings&hellip; none of this is <strong>right,</strong> but it&rsquo;s just how it is, and you need to get inside before you can try to change anything.</p>
+
+<h3>Partial Measures</h3>
+
+<p>While I appreciate the validity of realpolitik solutions, I also acknowledge that it&rsquo;s <em>fucking frustrating.</em></p>
+
+<blockquote class="twitter-tweet"><p>Women, people of color, and other marginalized groups have been forced to work within the system forever. It's time to burn the system down.</p>&mdash; Ashe Dryden (@ashedryden) <a href="https://twitter.com/ashedryden/status/235167798211534848" data-datetime="2012-08-14T00:15:46+00:00">August 14, 2012</a></blockquote>
+
+
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>There are few tweets I agree with more.</p>
+
+<p>But it&rsquo;s this whole realpolitik thing.</p>
+
+<p>The same sentiment that comes down so hard on LadyCoders (and seems to be responsible for <a href="http://ladycoders.tumblr.com/day/2012/08/13">some DDOS attacks</a>), echoes the sentiment that some &ldquo;anarchists&rdquo; (scare quotes belie my own prejudice) have against labor unions and other &ldquo;recuperative&rdquo; examples of self-organization by the proletariat and other oppressed groups.</p>
+
+<p>Personally, I think it&rsquo;s time for a new social order. But until that order is ready to self-organize and build a new society from the ashes of the old, we need every possible means of achieving material gains for every group that has been deprived by our current society. And if that means women helping women to get their foot in the door at a <em>(for now)</em> male-dominated workplace, that&rsquo;s better than women <em>not</em> getting the opportunity to make incremental material gains.</p>
+
+<p>I get the frustration, I do. I don&rsquo;t fault anyone (including those I embedded tweets from) for being frustrated. But attacking those who share your goals because they lack your ideological purity&hellip; that&rsquo;s a recipe for burning out without accomplishing anything. Stop it.</p>
+
+<p>So I hope you will help LadyCoders reach their KickStarter goal; if it&rsquo;s a flop, well, something else will come along. If it&rsquo;s a success, hopefully more cynical, realpolitik, entryist projects will get more women into male-dominated fields and achieve positive change within those fields, and material gains for women.</p>
+
+<h4>Personal Note</h4>
+
+<p>This is my hacker blog, so I don&rsquo;t usually post anything related to my personal politics here. Other than my free software zealotry, I really think the set intersection of my professional and personal/political life is a narrow band indeed.</p>
+
+<p>But this sort of goes to the heart of a number of overlapping conversations I&rsquo;ve been having of late, and I think the same sort of demand for a certain ideological purity is at the heart of many of these&hellip; so once it started to attack something I see as having a potential net positive effect on the software industry, and on the economic situation of women in general&hellip; I had to comment.</p>
+
+<p>I don&rsquo;t fundamentally disagree with most of the criticism leveled toward LadyCoders on Twitter, either&hellip; I just think the caremad arguments are counterproductive, like most infighting.</p>
+
+<p>Also&hellip; I don&rsquo;t necessarily think everything in their seminar is necessarily the best idea&hellip; but just because I <a href="https://rubygems.org/gems/job_interview">wrote a gem to help with job interviews</a> doesn&rsquo;t mean I really know what women encounter in the hiring process. So I&rsquo;m willing to assume the ladies at LadyCoders know what they&rsquo;re doing better than I do.</p>
+
+<p>Back to apolitical coding tips next post, I promise. Unless you&rsquo;re into that whole Steve Yegge liberal/conservative software engineering idea. In which case&hellip; you&rsquo;re on your own.</p>
+
+<h4>UPDATE</h4>
+
+<p>After I first posted this, the awesome @chriseppstein suggested all might not be legit:</p>
+
+<blockquote class="twitter-tweet"><p>Pretty sure you guys are getting trolled pretty hard by <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>.</p>&mdash; Chris Eppstein (@chriseppstein) <a href="https://twitter.com/chriseppstein/status/235210422477799424" data-datetime="2012-08-14T03:05:09+00:00">August 14, 2012</a></blockquote>
+
+
+<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>I don&rsquo;t think LadyCoders is a troll, but if it is, pretty damn epic, and I&rsquo;ll admit to be taken in. Either way, though, I think the analysis above holds true&hellip; feel free to disagree in the comments, however, as always.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Generational Impedance Mismatch]]></title>
+    <link href="http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch/"/>
+    <updated>2012-08-03T15:48:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch</id>
+    <content type="html"><![CDATA[<p>One thing I&rsquo;ve come to observe working in higher ed is that you can run into a lot of issues with what I want to term &ldquo;generational impedance mismatch.&rdquo; It&rsquo;s what happens when your ostensible customers are about 40 years older than your target demographic.</p>
+
+<p>When I started on an internal administrative application about two years ago, I threw in some error pages with lolcats on them because&hellip; well, error pages are boring. Those got yanked because the customer thought they were &ldquo;unprofessional.&rdquo; Okay, sure. It&rsquo;s an administrative app, so maybe this isn&rsquo;t the best thing to throw up after a catastrophic failure:</p>
+
+<p><img class="center" src="/images/post-img/im-in-ur-serverz.jpeg"></p>
+
+<p>But the new crop of apps I&rsquo;m writing don&rsquo;t target middle-aged administrators; they target students. Specifically, in addition to doing mundane things like reporting your a lost ID card or checking balances, there&rsquo;s a whole social gaming component. So far, I&rsquo;ve been pretty successful at keeping things amusing (between the student focus group we assembled and the <a href="http://reddit.com/r/jhu">JHU subreddit</a>, my sense of humor is quickly vindicated), but the text is&hellip; kinda stodgy.</p>
+
+<p>I was discussing this with a co-worker, and we hit on what I think is a brilliant way of balancing conflicting stakeholder needs. The customer wants rather formal, business-like text that drily describes various functions of the application. On the other hand, students are going to be bored, and love easter eggs and humor. But we know how to deal with target demographics who speak different languages, don&rsquo;t we? Localization to the rescue!</p>
+
+<!--more-->
+
+
+<p>We can go from a default:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>en.yml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">&lt;p&gt;en</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span> <span class="nl">&amp;ldquo</span><span class="l-Scalar-Plain">;Hi there!&amp;rdquo;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>to a specialized locale for old people:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>en-old.yml </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">&lt;p&gt;en-old</span><span class="p-Indicator">:</span>
+</span><span class='line'>  <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span> <span class="nl">&amp;ldquo</span><span class="l-Scalar-Plain">;Why, good morrow, sir or madam.&amp;rdquo;&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="l-Scalar-Plain">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Since we track birthdates, it makes it really easy:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;class ApplicationController &amp;lt; ActionController::Base&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="n">before_filter</span> <span class="ss">:localize_for_the_aged</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  private&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">def</span> <span class="nf">localize_for_the_aged</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;I18n.default_locale = :en</span>
+</span><span class='line'><span class="sr">if current_user.try(:old?)</span>
+</span><span class='line'><span class="sr">  I18n.locale = :&quot;en-old&quot;</span>
+</span><span class='line'><span class="sr">end</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">User</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def old?&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nb">self</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">nil?</span> <span class="o">||</span> <span class="nb">self</span><span class="o">.</span><span class="n">birthdate</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="mi">40</span><span class="o">.</span><span class="n">years</span><span class="o">.</span><span class="n">ago</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Simple! Now our middle-aged customer will see a formal greeting, while our teenage/twentysomething users won&rsquo;t think they&rsquo;ve stumbled into Downton Abbey.</p>
+
+<h3>Don&rsquo;t try this at work</h3>
+
+<p>Seriously, I hope you realize this was satire. Learn to talk to your customers, as painful as that might be, and convince them. Do A/B testing or have a focus group. Win over your users, and your customer will probably see the light of day. If not, you can always <a href="http://clientsfromhell.net">whinge about it here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Social Media | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/social-media/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-09-03T01:29:49-04:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Social University That Could Have Been]]></title>
+    <link href="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
+    <updated>2013-03-10T22:21:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
+    <content type="html"><![CDATA[<p>This is a post I&rsquo;ve wanted to write for a while, but I&rsquo;ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
+
+<h2>The Social University</h2>
+
+<p>Sometime in 2011, I was joking with my team lead about connecting <a href="http://www.blackboard.com/platforms/transact/overview.aspx">Blackboard Transact</a>, the OLTP product used for access control, stored value account transactions, and meal plans at my work, to Twitter, just for fun. The short answer was &ldquo;that&rsquo;s silly.&rdquo; The longer answer was &ldquo;that&rsquo;s silly, but it would be pretty neat.&rdquo;</p>
+
+<p>So on lunch breaks and when I was waiting on other things to move forward with my &ldquo;official&rdquo; projects, I played around with creating a system to connect our system to Twitter.</p>
+
+<p>Since I had already worked on a service layer for (really, a generalized SOA for systems connecting to) Transact, it was pretty easy to leverage APIs from not only Twitter, but also Foursquare and Facebook to tie into transactions from our internal system; door access could tweet your location, and check you in on Foursquare; buying a coffee could do the same.</p>
+
+<p>Eventually, the idea gained some traction, and we started building in a system of social gamification, that would award badges and achievements for usage of the system, ranging from customer loyalty rewards for particpating vendors, to seemingly &ldquo;silly&rdquo; things like a &ldquo;Speed Demon&rdquo; achivement for swiping two doors on opposite sides of campus within ten minutes.</p>
+
+<p>The system also allowed students (well, also faculty and staff) to connect to Facebook to share badges/achivements and compete in a university-wide leaderboard. This is just an overview of the social media integration and gamification elements, but you might very well ask, what&rsquo;s the point?</p>
+
+<!--more-->
+
+
+<h2>The Univerity Lifecycle</h2>
+
+<p>There are three major phases in the lifecycle of the relationship between a university and its students: recruitment, retention, and alumni devleopment.</p>
+
+<p>What this comes down to is attracting students, making sure they stay long enough to graduate, and then soliciting donations from alumni. The brilliance (if I may be pardoned a lapse in humility) of our software was the long-term goal of uniting all three. Students would be able to opt-in to the social media components as soon as they were accepted; the core components (targeted toward current students) would be integrated with their day-to-day activities on cmapus; and participants would be able to remain &ldquo;in the game&rdquo; long after graduation, creating a lasting bond between the university and alumni (far beyond attendance at the occasional lacrosse game).</p>
+
+<p>Our eventual goal was to connect these three phases through social media to make the university experience tightly integrated with the lifetime online experience of students, faculty and staff.</p>
+
+<h2>It&rsquo;s All About The Data</h2>
+
+<p>So, making college more fun and exciting across the three phases of invovlement is well and good, but where does it start to get interesting? In the data.</p>
+
+<p>Once you go beyond the immeidate day-to-day, and start harvesting data like tweets and facebook posts (for sentiment analysis), Foursquare and other location-based data (to track geographical patterns), and LinkedIn for career trajectory data, you can start to analyze interesting patterns and create predictive analyses based on the large volume of voluntarily supplied data.</p>
+
+<p>In the end, it&rsquo;s a positive-sum game; students have a more engaging experience, the univeristy has a better dataset to analyze to make informed decisions about resource allocation, recruitment, and alumni giving, and it&rsquo;s a damn fun project to work on.</p>
+
+<h2>Failure</h2>
+
+<p>Why do I consider this the greatest failure of my professional career?</p>
+
+<p>In some ways, it was a resounding success. Departments from athletics to applied math were clamoring for it; we were asked to present the project at the annual conference for Blackboard Transact, and then asked to do an encore (<a href="https://speakerdeck.com/canweriotnow/j-card-social">You can find the slides here, by the way</a>). Our student focus group thought it was one of the best things they&rsquo;d ever seen.</p>
+
+<p>I consider it a failure because we never got to ship. (<a href="http://johndbarry.com/2012/07/if-it-doesnt-ship-it-doesnt-exist/">If it doesn&rsquo;t ship, it doesn&rsquo;t exist.</a>) Sure, it was functional, and even &ldquo;live&rdquo; on our production server for about a week before our official launch date. But in that last week, the project was &ldquo;indefinitely shelved&rdquo;.</p>
+
+<p><img class="center" src="/images/post-img/remove-that-code.jpg"></p>
+
+<p>I never really got a clear reason for that (there were meetings between deans and lawyers and managers to which I was not privy), but the official, documented reason was that the project itself (which we worked on over the course of a year or more) was &ldquo;never requested or approved&rdquo;, which is why I&rsquo;m blogging about it now. I may never be able to share the source code (work-for-hire is pretty explicit), but I think the idea, which originated with me, should be free to the world if my employer disavows any ownership of it.</p>
+
+<h2>That Vision Thing</h2>
+
+<p>Okay, this header is the title of an episode from Seson 3 of <em>Angel,</em> but I&rsquo;m also referencing one of the Bible verses my mom likes to quote. It&rsquo;s from Proverbs, not sure exactly where, but the line is, &ldquo;My people perish for a lack of vision.&rdquo;</p>
+
+<p>This could be the most relevant prophetic statement to higher education in our current economic and technological climate. Last year, Sebastian Thrun, Stanford prfessor, Google researcher, and founder of <a href="http://udacity.com/">Udacity</a> famously stated in a <a href="http://www.wired.com/wiredscience/2012/03/ff_aiclass/all/">Wired article</a> that &ldquo;Fifty years from now&hellip;there will be only 10 institutions in the whole world that deliver higher education.&rdquo; My argument is that those will be the insitutions with the vision to risk everything to remain at the forefront of the marketplace.</p>
+
+<p>Does allowing students to tweet their lunch purchases accomplish this goal? Certainly not. But the lack of vision that hedges its bets and plays it safe certainly does not bode well for the university that wishes to survive the next several decades.</p>
+]]></content>
+  </entry>
+  
+</feed>

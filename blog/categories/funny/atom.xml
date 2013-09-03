@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: funny | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/funny/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-09-03T01:29:49-04:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[job_interview]]></title>
+    <link href="http://decomplecting.org/blog/2012/05/09/job-interview/"/>
+    <updated>2012-05-09T13:14:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2012/05/09/job-interview</id>
+    <content type="html"><![CDATA[<p>So, I wanted to plug a little project that <a href="https://twitter.com/#!/micahjgates">Micah Gates</a> and I hacked together at <a href="http://railsconf.austinonrails.org/bohconf">BohConf</a>, the awesome un-conference and hackfest that runs parallel to <a href="http://railsconf2012.com">RailsConf</a> each year.</p>
+
+<p>It&rsquo;s called <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, and it&rsquo;s a Ruby gem to automate some of the tedium of programmer job interviews.</p>
+
+<p>As an example, let&rsquo;s take <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">FizzBuzz</a>, a typical interview screening question intended to weed out the applicants who can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuzz like this:</p>
+
+<p>``` ruby FizzBuzz <a href="https://github.com/ruby-jokes/job_interview/blob/master/lib/job_interview/fizz_buzz.rb">https://github.com/ruby-jokes/job_interview/blob/master/lib/job_interview/fizz_buzz.rb</a></p>
+
+<p>def fizz_buzz(max)
+  Array.new(max) do |i|</p>
+
+<pre><code>j = i + 1
+val  = (j % 3 == 0 ? "Fizz" : "") +
+(j % 5 == 0 ? "Buzz" : "")
+val.empty? ?  j.to_s  : val
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>```</p>
+
+<p>But that&rsquo;s just tedious. With job_interview, it&rsquo;s dead simple:</p>
+
+<p>``` ruby job_interview FizzBuzz</p>
+
+<p>require &lsquo;job_interview&rsquo;
+@answer = JobInterview::Answer.new
+@answer.fizz_buzz(5)</p>
+
+<p> => [1, 2, &ldquo;Fizz&rdquo;, 4, &ldquo;Buzz&rdquo;]</p>
+
+<p>```</p>
+
+<p>It also does Fibonacci sequences (recursive, iterative, and matrix strategies), a quine, the first <em>n</em> primes, and, of course, &ldquo;Hello, World!&rdquo;</p>
+
+<p>That wasn&rsquo;t enough, though.</p>
+
+<p>It will also answer the bullshit personal questions that everyone lies about anyway!</p>
+
+<p>``` ruby</p>
+
+<p>include JobInterview::Questions</p>
+
+<p>```</p>
+
+<ol type="a">
+<li>Where do you see yourself in 5 years?</li>
+</ol>
+
+
+<p>``` ruby</p>
+
+<p>in_5_years</p>
+
+<p> => &ldquo;I&rsquo;d like to have made someone else rich with my re-contextualized non-volatile open architecture.&rdquo;</p>
+
+<p>```</p>
+
+<ol type="a">
+<li>Why do you want to work here?</li>
+</ol>
+
+
+<p>``` ruby</p>
+
+<p>why_here</p>
+
+<p> => &ldquo;Your company has revolutionized seamless next generation interface.&rdquo;</p>
+
+<p>```</p>
+
+<ol type="a">
+<li>Does P = NP?</li>
+</ol>
+
+
+<p>``` ruby</p>
+
+<p>p_equals_np</p>
+
+<p> => &ldquo;I doubt it, but it would make life easier for traveling salesmen.&rdquo;</p>
+
+<p>```</p>
+
+<p>&hellip;and many more.</p>
+
+<p>We aim for 100% test coverage with RSpec, so we&rsquo;re confident that this is a robust solution for a range of job interview scenarios.</p>
+
+<p>We did a lightning talk at RailsConf 2012, and you can <a href="http://ruby-jokes.github.com/job_interview/pres.html">see the slides here</a>.</p>
+
+<p>Next time you face an interview for a programming job, work smarter, not harder.</p>
+
+<p><code>gem install job_interview</code></p>
+]]></content>
+  </entry>
+  
+</feed>

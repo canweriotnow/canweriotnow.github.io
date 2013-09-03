@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: elegance | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/elegance/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-09-03T01:29:49-04:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Be Willing To Let Go; or, "The Big Rewrite"]]></title>
+    <link href="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/"/>
+    <updated>2013-04-05T02:10:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go</id>
+    <content type="html"><![CDATA[<p><blockquote><p></p></p><p><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p></p><p><p></p><footer><strong>Alan J. Perlis</strong></footer></blockquote></p>
+
+<p>One of the most nerve-wracking things you can tell a manager is that it&rsquo;s time to rewrite a major software component, system, or application. In fact, it&rsquo;s considered (in some circles) such a mortal sin that Joel Spolsky addresses &ldquo;The Big Rewrite&rdquo; in a post entitled <a href="http://www.joelonsoftware.com/articles/fog0000000069.html">Things You Should Never Do, Part I</a>.</p>
+
+<p>In many cases, he&rsquo;s absolutely right. If you have a working-ish production codebase, throwing it out the window can seem a bit like throwing out the baby with the bathwater. But from an engineering standpoint, software is weird. On the one hand, you have the engineering side: If a bridge is just working-ish, the assessment of a structural engineer might be that it must be torn down and a new bridge built in its place. Software is much more ethereal and abstract; of course, we can continue to patch the old application, and extend it, and patch it, and sacrifice virgins to Great Cthulhu, and keep it chugging along. For a while.</p>
+
+<p>Eventually, however, with a typical enormous, legacy codebase, you just end up mortgaging massive technical debt.</p>
+
+<!--more-->
+
+
+<h3>Refinancing and Bankruptcy</h3>
+
+<p>A large, enterprise-y system will usually be so entrenched in technical debt that we can (metaphorically) view it as being double- and triple-mortgaged. Test coverage is spotty (if it even exists), and more time is spent dealing with regressions than actually implementing new features in a sane manner.</p>
+
+<p>Eventually, technical debt piles to the point at which it&rsquo;s time to claim bankruptcy. And the problem is that the beancounters financing software projects (or IT managers who have no business managing software projects) see it as bankruptcy in the traditional sense.</p>
+
+<p>If the original project was poorly architected, rife with Demeter violations and cross-dependencies, coupled with lousy (or no) test coverage, this might be a somewhat accurate assessment. But sometimes a project with a sensible class hierarchy, composable elements, and a modular structure needs &ldquo;The Big Rewrite&rdquo;, and it becomes difficult to explain what this really entails.</p>
+
+<h3>Reusable code</h3>
+
+<p>I&rsquo;m thinking about this in terms of a Rails app that I built some time ago, which really should have been considered a &ldquo;throwaway prototype&rdquo;, except that the business needs dictated it went into production right away. It works, but&hellip; lousy test coverage, bizarre performance issues, and regression issues make each new deploy a new headache.</p>
+
+<p>It took me some time, but I&rsquo;ve finally made the argument for the &ldquo;big rewrite.&rdquo;</p>
+
+<p>Now, in the mean time, I&rsquo;ve created a REST API for the backend as part of an SOA for the systems involved. And I&rsquo;ve demonstrated that much of the model layer from the &ldquo;deprecated&rdquo; application was reused (or improved) for the API that I&rsquo;m using to abstract the intrface to the legacy system the inital application was designed to interface with.</p>
+
+<p>The &ldquo;big rewrite&rdquo; entails rebuilding the tools in the old application to work through the API instead of directly hitting the DB (an Oracle monstrosity with ~500 tables and an incomprehensible collection of package functions and stored procedures). But the code was reusable in a new context, and the &ldquo;rewrite&rdquo; is really a protracted refactoring and rebuilding of the data layer.</p>
+
+<h3>That Lisp Thing</h3>
+
+<p>The quote at the head of this article was taken from the preface to the second edition of <a href="http://mitpress.mit.edu/sicp/">The Structure and Interpretation of Computer Programs</a>, aka the &ldquo;Wizard Book.&rdquo; SICP uses the Scheme dialect of Lisp for its examples, and Lisp is a beautiful language for writing composable code, as well as disposable code. It simply <em>makes sense</em> to write small, composable functions, and to use those functions to build abstractions for higher-level programming. This is what Paul Graham calls <a href="http://www.paulgraham.com/progbot.html">Programming Bottom-Up</a>.</p>
+
+<p>I think when Rails programming is done well, it has a similar bottom-up aspect, in that one starts with the data model, then deals with the controllers, and the views are the final consideration. Certainly not everyone approaches Rails development from this perspective, but I think the best Rails apps exhibit this approach. The Windows development model of &ldquo;Visual Foo&rdquo; and &ldquo;Big Design Up Front&rdquo; are the anithesis, and I think this is why most Windows programs are terrible, and why Windows programmers are (in my experience) more likely to be okay with terrible code.</p>
+
+<h3>Lewis&rsquo;s First Rule</h3>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<h3>Don&rsquo;t Fear The Rewrite</h3>
+
+<p>A rewrite is only a scary proposition when you&rsquo;re working with a codebase that never had a guiding architectural principle to begin with, has no test coverage, and has never seen a refactoring; it&rsquo;s just years (maybe decades) of cruft, layered like a forest floor, with fresh leaves falling upon detritus, duff, finally decomposing into the humus that forms the core of the system, where only earthworms dare to tread.</p>
+
+<p>Building long-lasting software is an admirable goal, but it&rsquo;s foolhardy to think we can do this at the application level, especially as the rate of technological progress continues to exponentiate. When you do something really good, rip it out of the application, build a library, and include that. Wash, rinse, repeat. Software should be composable, or disposable. There is no in-between.</p>
+]]></content>
+  </entry>
+  
+</feed>
