@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-09-03T01:44:51-04:00</updated>
+  <updated>2013-09-29T01:10:20-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Letter to a Young (Or New) Programmer]]></title>
+    <link href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/"/>
+    <updated>2013-09-29T00:15:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer</id>
+    <content type="html"><![CDATA[<p>I get it. You went to college, graduated, got a job, and it&rsquo;s not what you wanted, hoped for, or whatever. Or maybe you&rsquo;ve been in the same job for years, and it&rsquo;s just no fun anymore. And you look at your friends who are hackers. Yeah, we&rsquo;re anti-social, maybe kinda jerks, but we have <em>so much fun</em> at work, and get pretty well compensated for <em>playing.</em></p>
+
+<p>And maybe you think, &ldquo;I&rsquo;ll go back to school and get a second B.S. in Computer Science!&rdquo;</p>
+
+<p>Chill out.</p>
+
+<p>Maybe you&rsquo;re just guessing this whole software thing is for you and you can&rsquo;t wait to get started!</p>
+
+<p>Chill out.</p>
+
+<p>I&rsquo;m going to encourage you, don&rsquo;t get me wrong. But I&rsquo;m also going to encourage you to be realistic. Because I want you to be successful, not just to sprint down a blind alley. We&rsquo;ll get through this, together.</p>
+
+<h3>Lower your expectations</h3>
+
+<p>Look, it&rsquo;s not all rainbows, lollipops and gumdrops. It&rsquo;s not. For me, coding is a pleasure and a privilege, but it&rsquo;s not for everyone. There are <em>extremely shitty jobs</em> out there, doing what I do, and just because I&rsquo;m on cloud nine, doesn&rsquo;t mean you will be.</p>
+
+<p>Furthermore, even though it&rsquo;s a demand-side market (there are far more job openings than talented developers), the really great jobs are still competitive as hell.</p>
+
+<h3>Still here?</h3>
+
+<p>I haven&rsquo;t dissuaded you? Good. Good, young padawan.</p>
+
+<!-- more -->
+
+
+<p>Since (for the couple of people toward whom this post is targeted directly) I haven taken it upon myself to train you as your Jedi master, I&rsquo;m going to point you toward <a href="http://ruby-lang.org" title="Ruby">Ruby</a> as your first language. It&rsquo;s not a perfect language, but it is beautiful, and presents a useful paradigm (object-oriented programming) in the purest form possible. So let&rsquo;s start with some Ruby resources.</p>
+
+<p>Here&rsquo;s your pre-frosh curriculum:</p>
+
+<ul>
+<li><a href="http://tryruby.org" title="Try Ruby">Try Ruby</a> &ndash; Learn the basics, in your browser!</li>
+<li><a href="http://ruby.learncodethehardway.org/" title="Learn Ruby The Hard Way">Learn Ruby The Hard Way</a> &ndash; Zed Shaw is (maybe) a jerk, but his books are good. This is a good (free) place to start.</li>
+<li><a href="http://rubykoans.com/" title="Ruby Koans">Ruby Koans</a> &ndash; Once you&rsquo;ve got a little under your belt, <a href="http://rubykoans.com/" title="Ruby Koans">Ruby Koans</a> is your next step to make sure you&rsquo;ve got the basics under your belt.</li>
+</ul>
+
+
+<h3>Really? <em>Still</em> Interested?</h3>
+
+<p>That&rsquo;s fuckin&#8217; awesome. I&rsquo;m really happy you&rsquo;re still into this.</p>
+
+<p>Now I get to knock you on your ass, grasshopper. Hopefully you&rsquo;ve read my blog (or know me) enough to know how I feel about learning to build &ldquo;apps&rdquo; without a firm grounding in the fundamentals of computer science. So we&rsquo;re going address this right the hell now.</p>
+
+<p>See, you didn&rsquo;t major in Computer Science. That&rsquo;s okay, niether did I. But that doesn&rsquo;t mean you get a pass on it. We&rsquo;re going to look at some resources to get you the grounding you need to really get up to snuff on the shit you&rsquo;d better know if you want to be a Real Programmer™.</p>
+
+<p>Let&rsquo;s get started.</p>
+
+<p>The first thing you need is math. I&rsquo;m not talking your standard college Calculus or Algebra stuff, but the Real Math you need as a real programmer. So here&rsquo;s the deal: read <a href="http://en.wikipedia.org/wiki/Concrete_Mathematics" title="Concrete Mathematics">Concrete Mathematics</a>.</p>
+
+<p><img class="[float-right]" src="http://ecx.images-amazon.com/images/I/518GBVWEBYL.jpg" title="Concrete Mathematics" ></p>
+
+<p>This book, let me tell you, it was co-written by <a href="http://en.wikipedia.org/wiki/Donald_Knuth" title="Donald Knuth">Knuth</a>, because, let me tell you, Knuth weighed all the extant math texts in the balance and found them lacking. And if Knuth finds you lacking&hellip; jsut go home. This book tricks you into learning both algorithmic estimation and recursion in chapter one and never looks back. It is indispensible.</p>
+
+<p>Next, you need to grok a few things: computability theory, Turing machines, syntax and semantics, etc. Once upon a time, I would have shoved a copy of <a href="http://mitpress.mit.edu/sicp/" title="SICP">The Structure and Interpretation of Computer Programs</a> in your face so fast, it would have made your head spin.</p>
+
+<p><img class="[float-right]" src="http://upload.wikimedia.org/wikipedia/en/9/9d/SICP_cover.jpg" title="SICP" ></p>
+
+<p>But, young padawan, I&rsquo;ve decided to ease you into your Jedi training, and we&rsquo;ve settled on Ruby as your focus of practice before you graduate to the full Lisp light saber, so let&rsquo;s consider an alternative.</p>
+
+<p><a href="http://oreilly.com/" title="O'Reilly">O&#8217;reilly</a> recently published an excellent intro to CS book called <a href="http://shop.oreilly.com/product/0636920025481.do" title="Understanding Computation">Understanding Computation</a>, which covers about half the material in SICP, but in Ruby, and probably more acessibly than SICP (aka The Wizard Book), especially since you (by now) have a passing familiarity with Ruby.</p>
+
+<p>So let&rsquo;s see&hellip; we&rsquo;ve got you started on Ruby, given you some good resources on the basics of CS, and you&rsquo;re on your way&hellip; what next?</p>
+
+<h3>Resources</h3>
+
+<p>Now we get into the areas where you&rsquo;re exploring on your own, and just coming back to me for help and guidance. Congratualtions! You&rsquo;re nearly ready to graduate to a full Jedi.</p>
+
+<p>Let&rsquo;s see what&rsquo;s available.</p>
+
+<ul>
+<li><a href="http://codeschool.com/" title="Code School">Code School</a> is really great, and completely worth the US$25 a month they charge for their entire course catalog.</li>
+<li><a href="http://coursera.com/" title="Coursera">Coursera</a> has great CS classes, not typically Ruby based, but you&rsquo;ll learn some core concepts that will be extensively useful.</li>
+<li><a href="http://codecademy.com/" title="Codecademy">Codecademy</a> has free courses, of varying quality.</li>
+<li><a href="http://betamore.com/academy/" title="Betamore Academy">Betamore Academy</a> has 10-week courses here in Baltimore that will bootstrap you pretty well as a developer, as well as providing networking opportunities to find internships and jobs.</li>
+</ul>
+
+
+<p>I&rsquo;ll try to update this in the future. And you know you can always get in touch and I&rsquo;m more than happy to give you a hand. There&rsquo;s nothin more exciting to me than smart folks falling in love with coding. Happy trails, bro, and remember to keep it fun.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Return of the Job Destroyer]]></title>
@@ -129,7 +214,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 <h2>The Basic Income Guarantee (BIG)</h2>
 
-<p>I was astonished to learn recently that Milton Friedman, of all people, was on the presidential commission that recommended a BIG in 1969. If someone that far to the right could advocate something so seemingly &ldquo;socialist&hellip;&rdquo; wow. Then again, the right has swung so much further to the right since then that the GOP mainstream is somewhere between Pat Robertson and Adolf Hitler, making Friedman look like a damn hippie.</p>
+<p>I was astonished to learn recently that Milton Friedman, of all people, was on the presidential commission that recommended a BIG in 1969. If someone that far to the right could advocate something so seemingly &ldquo;socialist&rdquo;&hellip; wow. Then again, the right has swung so much further to the right since then that the GOP mainstream is somewhere between Pat Robertson and Adolf Hitler, making Friedman look like a damn hippie.</p>
 
 <p>But the BIG solves many problems posed both by right-libertarian laissez-faire capitalism, and by the traditional welfare state. It doesn&rsquo;t penalize working (unlike TANF, SSDI, and SSI in the U.S.); it doesn&rsquo;t require endless bureaucracy just to apply (let&rsquo;s get rid of those social services jobs too, while we&rsquo;re replacing the MVA with robots), and it&rsquo;s egalitarian.</p>
 
@@ -1375,99 +1460,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 
 
 <p>I don&rsquo;t think LadyCoders is a troll, but if it is, pretty damn epic, and I&rsquo;ll admit to be taken in. Either way, though, I think the analysis above holds true&hellip; feel free to disagree in the comments, however, as always.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Generational Impedance Mismatch]]></title>
-    <link href="http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch/"/>
-    <updated>2012-08-03T15:48:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch</id>
-    <content type="html"><![CDATA[<p>One thing I&rsquo;ve come to observe working in higher ed is that you can run into a lot of issues with what I want to term &ldquo;generational impedance mismatch.&rdquo; It&rsquo;s what happens when your ostensible customers are about 40 years older than your target demographic.</p>
-
-<p>When I started on an internal administrative application about two years ago, I threw in some error pages with lolcats on them because&hellip; well, error pages are boring. Those got yanked because the customer thought they were &ldquo;unprofessional.&rdquo; Okay, sure. It&rsquo;s an administrative app, so maybe this isn&rsquo;t the best thing to throw up after a catastrophic failure:</p>
-
-<p><img class="center" src="http://decomplecting.org/images/post-img/im-in-ur-serverz.jpeg"></p>
-
-<p>But the new crop of apps I&rsquo;m writing don&rsquo;t target middle-aged administrators; they target students. Specifically, in addition to doing mundane things like reporting your a lost ID card or checking balances, there&rsquo;s a whole social gaming component. So far, I&rsquo;ve been pretty successful at keeping things amusing (between the student focus group we assembled and the <a href="http://reddit.com/r/jhu">JHU subreddit</a>, my sense of humor is quickly vindicated), but the text is&hellip; kinda stodgy.</p>
-
-<p>I was discussing this with a co-worker, and we hit on what I think is a brilliant way of balancing conflicting stakeholder needs. The customer wants rather formal, business-like text that drily describes various functions of the application. On the other hand, students are going to be bored, and love easter eggs and humor. But we know how to deal with target demographics who speak different languages, don&rsquo;t we? Localization to the rescue!</p>
-
-<!--more-->
-
-
-<p>We can go from a default:</p>
-
-<figure class='code'><figcaption><span>en.yml </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">en</span><span class="p-Indicator">:</span>
-</span><span class='line'>  <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span> <span class="s">&quot;Hi</span><span class="nv"> </span><span class="s">there!&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>to a specialized locale for old people:</p>
-
-<figure class='code'><figcaption><span>en-old.yml </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='yaml'><span class='line'><span class="l-Scalar-Plain">en-old</span><span class="p-Indicator">:</span>
-</span><span class='line'>  <span class="l-Scalar-Plain">hello</span><span class="p-Indicator">:</span> <span class="s">&quot;Why,</span><span class="nv"> </span><span class="s">good</span><span class="nv"> </span><span class="s">morrow,</span><span class="nv"> </span><span class="s">sir</span><span class="nv"> </span><span class="s">or</span><span class="nv"> </span><span class="s">madam.&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Since we track birthdates, it makes it really easy:</p>
-
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">before_filter</span> <span class="ss">:localize_for_the_aged</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kp">private</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">localize_for_the_aged</span>
-</span><span class='line'>    <span class="no">I18n</span><span class="o">.</span><span class="n">default_locale</span> <span class="o">=</span> <span class="ss">:en</span>
-</span><span class='line'>    <span class="k">if</span> <span class="n">current_user</span><span class="o">.</span><span class="n">try</span><span class="p">(</span><span class="ss">:old?</span><span class="p">)</span>
-</span><span class='line'>      <span class="no">I18n</span><span class="o">.</span><span class="n">locale</span> <span class="o">=</span> <span class="ss">:&quot;en-old&quot;</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">User</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">old?</span>
-</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">birthdate</span><span class="o">.</span><span class="n">nil?</span> <span class="o">||</span> <span class="nb">self</span><span class="o">.</span><span class="n">birthdate</span> <span class="o">&lt;</span> <span class="mi">40</span><span class="o">.</span><span class="n">years</span><span class="o">.</span><span class="n">ago</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Simple! Now our middle-aged customer will see a formal greeting, while our teenage/twentysomething users won&rsquo;t think they&rsquo;ve stumbled into Downton Abbey.</p>
-
-<h3>Don&rsquo;t try this at work</h3>
-
-<p>Seriously, I hope you realize this was satire. Learn to talk to your customers, as painful as that might be, and convince them. Do A/B testing or have a focus group. Win over your users, and your customer will probably see the light of day. If not, you can always <a href="http://clientsfromhell.net">whinge about it here</a>.</p>
 ]]></content>
   </entry>
   

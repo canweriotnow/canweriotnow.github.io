@@ -18,41 +18,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://decomplecting.orgblog/categories/datetime">
+  <link rel="canonical" href="http://decomplecting.orgblog/categories/datetime/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Dosis|Ubuntu+Mono:400,700' rel='stylesheet' type='text/css'>
-<script type="text/javascript" >
-
-if (window.top !== window.self) {
-
-document.write = "";
-
-window.top.location = window.self.location; setTimeout(function(){
-
-document.body.innerHTML='';
-
-},1);
-
-window.self.onload=function(evt){
-
-document.body.innerHTML='';
-
-};
-
-}
-
-</script>
-
-
 
   
   <script type="text/javascript">
@@ -72,18 +48,18 @@ document.body.innerHTML='';
 
 <body   >
   <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">{</div>
+  	<div id="logoText">mob</div>
+  	<div id="logoRight">}</div>
+  	<div class="clear"></div>
+  </div>
   <h1><a href="/">Practical Elegance</a></h1>
   
     <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
   
+  <div class="clear"></div>
 </hgroup>
-
-
-  <a href="https://github.com/canweriotnow">
-    <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
-  </a>
-
-
 
 </header>
   <nav role="navigation"><ul class="subscription" data-subscription="rss">
@@ -149,9 +125,13 @@ document.body.innerHTML='';
   </a>
 </section>
 
-<script src="//dihq71mhvy8o7.cloudfront.net/js/modal-embed.js" type="text/javascript" charset="utf-8"></script><section>
+<section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">Letter to a Young (Or New) Programmer</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/02/return-of-the-job-destroyer/">Return of the Job Destroyer</a>
@@ -169,10 +149,6 @@ document.body.innerHTML='';
         <a href="/blog/2013/05/14/im-an-estuarian/">I'm An Estuarian!</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/05/be-willing-to-let-go/">Be Willing To Let Go; or, "The Big Rewrite"</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -185,7 +161,7 @@ document.body.innerHTML='';
   <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
   
   <script type="text/javascript">
-    $(document).ready(function(){
+    $.domReady(function(){
         if (!window.jXHR){
             var jxhr = document.createElement('script');
             jxhr.type = 'text/javascript';
@@ -260,9 +236,7 @@ document.body.innerHTML='';
   </div>
   <footer role="contentinfo"><p>
   Copyright &copy; 2013 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a>
-- Hosted by <a href="http://pages.github.com">Github Pages</a>
-</span>
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
@@ -287,7 +261,7 @@ document.body.innerHTML='';
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
+  js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
@@ -309,7 +283,7 @@ document.body.innerHTML='';
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
