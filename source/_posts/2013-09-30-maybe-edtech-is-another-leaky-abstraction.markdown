@@ -44,13 +44,18 @@ I'm not playing down the role of technology in education. Quite the opposite, in
 ### What Is To Be Done?
 
 {% pullquote %}
-For me, it's fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. {" Basically, if your use of technology in the classroom isn't transformative, you're Doing It Wrong™. "} If the tech you use doesn't fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessariy or misutilized.
+For me, it's fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. {" Basically, if your use of technology in the classroom isn't transformative, you're Doing It Wrong™. "} If the tech you use doesn't fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessary or misutilized.
 {% endpullquote %}
 
-Back to the philosophy lesson: technology is not there to be the handmaiden of your tired pedagogy. Technology is there to ,in its very essence, provide an _explicit critique_ of pedagogy in general.
+In the title, I suggested that "EdTech" is a "leaky abstraction." The term comes from an article by [Joel Spolsky][spolsky] entitled ["The Law Of Leaky Abstractions"][leaky]. The tl;dr is: all (non-trivial) abstractions are, to some degree, leaky; that is, they build on top of something concrete and messy while removing the messy details from the public interface. At least, that's how we'd describe it in the software world. Grasping to define something like "EdTech", I think the parallel I'd like to draw is that the very term "EdTech" contains what it cannot possibly contain (bonus points if you catch that reference). "Educational Technology" refers to technology _designed for_ education, technology _used in the serivce of_ education, and also technology tangentially related to education. Unfortunately, this is a boolean `and`, leaving us with the union of >= 3 overlapping sets, wherein the intersections and complements are probably more interesting. The union of the sets contains many subsets that really aren't all that useful or interesting. But we don't seem to be doing much winnowing.
+
+Back to the philosophy lesson: technology is not there to be the handmaiden of tried and tired pedagogy. Technology is there to, in its very essence, provide an _explicit critique_ of pedagogy in general.
 
 So how do we fix this?
 
-We need better ways of evaluating technology in education. We need proffessional development solutions to ensure that educators have the skills to properly exploit the tech they have available. We need to ditch our preconceptions about what it means to teach any given subject and look at how technology has changed that domain in the real world (technophobic math teachers, I'm looking at you!).
+We need better ways of evaluating technology in education. We need professional development solutions to ensure that educators have the skills to properly exploit the tech they have available. We need to ditch our preconceptions about what it means to teach any given subject and look at how technology has changed that domain in the real world (technophobic math teachers, I'm looking at you!).
 
 We need to forget everything we know about education, and reinvent everything with the new tools at hand.
+
+[spolsky]: http://www.joelonsoftware.com/AboutMe.html "Joel Spolsky"
+[leaky]: http://www.joelonsoftware.com/articles/LeakyAbstractions.html "Leaky Abstractions"
