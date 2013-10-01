@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-09-29T01:10:20-04:00</updated>
+  <updated>2013-09-30T21:10:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Maybe EdTech Is Another Leaky Abstraction]]></title>
+    <link href="http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/"/>
+    <updated>2013-09-30T20:26:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction</id>
+    <content type="html"><![CDATA[<p>Working in the EdTech sector, I&rsquo;m perpetually vexed as I try to determine what exactly &ldquo;EdTech&rdquo; is and, <em>a fortiori,</em> what <em>effective</em> EdTech should look like. Perhaps a little background might be in order.</p>
+
+<p>As I&rsquo;ve mentioned before, my academic training is in philosophy. Computer Science was more of an avocational intellectual pursuit because I enjoyed math and symbolic logic. Life is full of surprises, eh?</p>
+
+<p>One of the fundamental divisions in philosophy is between &ldquo;analytic&rdquo; and &ldquo;continental&rdquo; philosophy. These are vague and overlapping spheres, but the reduction comes down to whether philosophy is the handmaiden of science (analyitc school), or whether philosophy is something larger with a complex (sometimes supportive, sometimes critical) relationship with science.</p>
+
+<p>I fell firmly on the &ldquo;continental&rdquo; side, for the most part. It was always the critical power of philosophy that fascinated me. So, what does this have to do with EdTech?</p>
+
+<!--more-->
+
+
+<h3>Technology as the Handmaiden of Education</h3>
+
+<p>This is the problem. Our typical view of &ldquo;educational technology&rdquo; is that we can produce technological tools to support the same tried, tired pedagogical techniques that have (sort of) worked (for a minority of the population) for decades.</p>
+
+<p>This is wasteful. This is stupid, and also wrong.</p>
+
+<p>In business, where technology has succeeded it has done so because it has revolutionized practices, made redundant unnecessary labor, and increased efficiency by many orders of magnitude. I&rsquo;ll (graciously) bracket off my opinions about the unfair distribution of the gains in productivity, for the sake of brevity and focus.</p>
+
+<p>Likewise in science, our rate of accumulation of knowledge about the physical world has increased exponentially, not because we have expected technology to serve the same processes that we accepted as &ldquo;best practices&rdquo; back when we had only stone knives and bear skins to work with, but because the rate of technological progress has disrupted (improved) the very processes by which scientific discovery occurs.</p>
+
+<p>Now, as (to borrow from both Marcuse and Heidegger) technology is very specifically the <em>science</em> of <em>technics,</em>
+it might be argues that the sciences are the least &ldquo;disrupted&rdquo; by technological advancement; for the most part, they are themselves advanced. But paradigm shifts in technology have played a role in the Kuhnian paradigm shifts in scientific understanding as well.</p>
+
+<h3>And Education?</h3>
+
+<p>First, let us agree that education is no science, not even a &ldquo;soft science&rdquo; like sociology or psychology. to be sure, at its best it is informed heavily both by those soft sciences as well as slightly harder sciences like cognitive science, for example. But education itself is no science.</p>
+
+<p>In this regard, scientific and technolological advances should in and of themselves present a material critique of the process of pedagogy as it is practiced; technology is the ultimate tool for cultural transformation, if not (ultimately) the transformation of the meaning of what it is to be human.</p>
+
+<p>Fundamentally, when correctly utilized, technology is transformative. And that&rsquo;s not what we&rsquo;re seeing with EdTech.</p>
+
+<p>Smartboards, blended learning, flipped classrooms, Blackboard, Moodle, an iPad for every student, I would go on but you can get better buzzwords from the <a href="http://www.teacheripsum.com/">Teacher Ipsum</a> generator. It&rsquo;s pretty much all a bunch of overpriced junk that supports the Same Old Shit in the classroom, with the added benefit of shiny tech press for the school, the district, whatever.</p>
+
+<p>I&rsquo;m not playing down the role of technology in education. Quite the opposite, in fact. I&rsquo;m lamenting that billions of dollars are being spent on &ldquo;EdTech&rdquo; that isn&rsquo;t impactful, that isn&rsquo;t transformative, that simply lends the sheen of shiny tech to tired pedagogy that should have been retired decades ago.</p>
+
+<h3>What Is To Be Done?</h3>
+
+<p><span class='pullquote-right' data-pullquote='Basically, if your use of technology in the classroom isn&#8217;t transformative, you&#8217;re Doing It Wrong™.'>
+For me, it&rsquo;s fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. Basically, if your use of technology in the classroom isn&rsquo;t transformative, you&rsquo;re Doing It Wrong™. If the tech you use doesn&rsquo;t fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessariy or misutilized.
+</span></p>
+
+<p>So how do we fix this?</p>
+
+<p>We need better ways of evaluating technology in education. We need proffessional development solutions to ensure that educators have the skills to properly exploit the tech they have available. We need to ditch our preconceptions about what it means to teach any given subject and look at how technology has changed that domain in the real world (technophobic math teachers, I&rsquo;m looking at you!).</p>
+
+<p>We need to forget everything we know about education, and reinvent everything with the new tools at hand.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Letter to a Young (Or New) Programmer]]></title>
@@ -1368,98 +1423,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 <p>I don&rsquo;t know what the solution is. We can&rsquo;t all be working on innovative, game-changing products all the time. And sometimes things will get shelved the day you expect them to ship. I do know there needs to be a way to <em>love</em> this shit without going crazy or making oneself miserable.</p>
 
 <p>So, interwebs&hellip; suggestions?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[LadyCoders, Twitroversy, and you]]></title>
-    <link href="http://decomplecting.org/blog/2012/08/13/ladycoders/"/>
-    <updated>2012-08-13T21:41:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/08/13/ladycoders</id>
-    <content type="html"><![CDATA[<p>So, I had intended my next post to address some of the (valid) criticism of Github that&rsquo;s been making the rounds lately, but a much more disturbing Twitroversy has emerged today.</p>
-
-<p>A group of women called <a href="http://ladycoders.com">LadyCoders</a> started a <a href="http://www.kickstarter.com/projects/166494057/ladycoders-get-hired-seattle-2012">Kickstarter campaign</a> to fund a conference/seminar geared toward helping women to get programming and other tech jobs. Great idea, right? There are <a href="http://girldevelopit.com/">many</a> <a href="http://www.blackgirlscode.com/">projects</a> devoted to giving women the skills they need to write software, but as far as addressing the fundamental issue that the industry itself is pretty much a boys&#8217; club (not assigning blame, just acknowledging reality), much less has been done in that area.</p>
-
-<p>So the good folks at LadyCoders wanted to help get women <em>hired,</em> not just trained. Pretty cool.</p>
-
-<p>Well, a lot of people thought so. As I write this, they&rsquo;re &lt; US$6k away from their US$23k funding goal. But&hellip; well, there was some dissent:</p>
-
-<blockquote class="twitter-tweet tw-align-center"><p>Sick and wrong: &#8220;it’s our job (for now) to be easily integrated into an all-male team, **nonthreatening,** and hyper-skilled&#8221;- <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a></p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235163013227880449" data-datetime="2012-08-13T23:56:46+00:00">August 13, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>I completely get where @shanley is coming from&hellip; but the amount of Twitroversy here seemed&hellip; disproportionate.</p>
-
-<!--more-->
-
-
-<p>Sorry for picking on @shanley so much, but&hellip; then there was this:</p>
-
-<blockquote class="twitter-tweet tw-align-center"><p>Legit response from <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>: &#8220;I know what works, whether or not it&#8217;s PC.&#8221; Please do not fund this shit on kickstarter.</p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235166808880074753" data-datetime="2012-08-14T00:11:51+00:00">August 14, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>You can go search for @ladycoders mentions on Twitter if you want to see more&hellip; but here&rsquo;s the issue I take: fundamentally, the issue LadyCoders is trying to address is that the software industry is a male-dominated space which has been difficult for even the most highly-skilled women to penetrate.</p>
-
-<p>I can&rsquo;t speculate as to the eventual success or failure of LadyCoders as far as increasing the number of women working in software development or IT in general. But I do see the pragmatic value of a quasi-entryist, realpolitik solution to this problem.</p>
-
-<p>Criticizing an organization trying to serve a real, valid feminist goal (material gains for women in a historically male-dominated sector), by all means necessary, just seems counter-productive. &ldquo;Seem non-threatening&rdquo; might be advice that highlights now fucked-up society is, but it isn&rsquo;t fucked-up advice if your goal is material gains for an oppressed group. Once you&rsquo;ve achieved your goals, shift the goalposts of &ldquo;(non-)threatening&rdquo; in the desired direction.</p>
-
-<p>Queer/trans folks have been doing this for years, right? Really, everyone has&hellip; You don&rsquo;t go into your job interview in the clothes you wear to the club. If your subculture doesn&rsquo;t match, you don&rsquo;t interview in your bondage pants and Aus-Rotten t-shirt (old punk, here)&hellip; if who or what you are is out of the mainstream, you mute it depending on the culture of where you want a job.</p>
-
-<p>For many folks, &ldquo;passing&rdquo; is an option. I think what LadyCoders is trying to highlight or confront (I hope they correct me if I&rsquo;m wrong) is that gender isn&rsquo;t really the issue, it&rsquo;s perception, stereotypes, and cultural bias; by ameliorating/sidestepping the (currently wrong and terrible) negative perception women sometimes have in techie circles, you have more opportunity to break down the perception.</p>
-
-<p>You cover tattoos, take out piercings&hellip; none of this is <strong>right,</strong> but it&rsquo;s just how it is, and you need to get inside before you can try to change anything.</p>
-
-<h3>Partial Measures</h3>
-
-<p>While I appreciate the validity of realpolitik solutions, I also acknowledge that it&rsquo;s <em>fucking frustrating.</em></p>
-
-<blockquote class="twitter-tweet"><p>Women, people of color, and other marginalized groups have been forced to work within the system forever. It&#8217;s time to burn the system down.</p>&mdash; Ashe Dryden (@ashedryden) <a href="https://twitter.com/ashedryden/status/235167798211534848" data-datetime="2012-08-14T00:15:46+00:00">August 14, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>There are few tweets I agree with more.</p>
-
-<p>But it&rsquo;s this whole realpolitik thing.</p>
-
-<p>The same sentiment that comes down so hard on LadyCoders (and seems to be responsible for <a href="http://ladycoders.tumblr.com/day/2012/08/13">some DDOS attacks</a>), echoes the sentiment that some &ldquo;anarchists&rdquo; (scare quotes belie my own prejudice) have against labor unions and other &ldquo;recuperative&rdquo; examples of self-organization by the proletariat and other oppressed groups.</p>
-
-<p>Personally, I think it&rsquo;s time for a new social order. But until that order is ready to self-organize and build a new society from the ashes of the old, we need every possible means of achieving material gains for every group that has been deprived by our current society. And if that means women helping women to get their foot in the door at a <em>(for now)</em> male-dominated workplace, that&rsquo;s better than women <em>not</em> getting the opportunity to make incremental material gains.</p>
-
-<p>I get the frustration, I do. I don&rsquo;t fault anyone (including those I embedded tweets from) for being frustrated. But attacking those who share your goals because they lack your ideological purity&hellip; that&rsquo;s a recipe for burning out without accomplishing anything. Stop it.</p>
-
-<p>So I hope you will help LadyCoders reach their KickStarter goal; if it&rsquo;s a flop, well, something else will come along. If it&rsquo;s a success, hopefully more cynical, realpolitik, entryist projects will get more women into male-dominated fields and achieve positive change within those fields, and material gains for women.</p>
-
-<h4>Personal Note</h4>
-
-<p>This is my hacker blog, so I don&rsquo;t usually post anything related to my personal politics here. Other than my free software zealotry, I really think the set intersection of my professional and personal/political life is a narrow band indeed.</p>
-
-<p>But this sort of goes to the heart of a number of overlapping conversations I&rsquo;ve been having of late, and I think the same sort of demand for a certain ideological purity is at the heart of many of these&hellip; so once it started to attack something I see as having a potential net positive effect on the software industry, and on the economic situation of women in general&hellip; I had to comment.</p>
-
-<p>I don&rsquo;t fundamentally disagree with most of the criticism leveled toward LadyCoders on Twitter, either&hellip; I just think the caremad arguments are counterproductive, like most infighting.</p>
-
-<p>Also&hellip; I don&rsquo;t necessarily think everything in their seminar is necessarily the best idea&hellip; but just because I <a href="https://rubygems.org/gems/job_interview">wrote a gem to help with job interviews</a> doesn&rsquo;t mean I really know what women encounter in the hiring process. So I&rsquo;m willing to assume the ladies at LadyCoders know what they&rsquo;re doing better than I do.</p>
-
-<p>Back to apolitical coding tips next post, I promise. Unless you&rsquo;re into that whole Steve Yegge liberal/conservative software engineering idea. In which case&hellip; you&rsquo;re on your own.</p>
-
-<h4>UPDATE</h4>
-
-<p>After I first posted this, the awesome @chriseppstein suggested all might not be legit:</p>
-
-<blockquote class="twitter-tweet"><p>Pretty sure you guys are getting trolled pretty hard by <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>.</p>&mdash; Chris Eppstein (@chriseppstein) <a href="https://twitter.com/chriseppstein/status/235210422477799424" data-datetime="2012-08-14T03:05:09+00:00">August 14, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>I don&rsquo;t think LadyCoders is a troll, but if it is, pretty damn epic, and I&rsquo;ll admit to be taken in. Either way, though, I think the analysis above holds true&hellip; feel free to disagree in the comments, however, as always.</p>
 ]]></content>
   </entry>
   

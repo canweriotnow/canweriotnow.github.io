@@ -145,16 +145,22 @@
         <lastmod>2013-09-29T01:09:46-04:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/
+        </loc>
+        <lastmod>2013-09-30T21:09:47-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://decomplecting.org/about/</loc>
         <lastmod>2013-09-29T00:10:16-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/archives/</loc>
-        <lastmod>2013-09-29T01:09:46-04:00</lastmod>
+        <lastmod>2013-09-30T21:09:47-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/</loc>
-        <lastmod>2013-09-29T01:09:46-04:00</lastmod>
+        <lastmod>2013-09-30T21:09:47-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/robots.txt</loc>
