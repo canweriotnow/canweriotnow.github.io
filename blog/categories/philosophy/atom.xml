@@ -4,7 +4,7 @@
   <title><![CDATA[Category: philosophy | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/philosophy/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-09-30T21:15:14-04:00</updated>
+  <updated>2013-10-01T04:33:25-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -58,7 +58,9 @@ it might be argues that the sciences are the least &ldquo;disrupted&rdquo; by te
 
 <p>Surround your pullquote like this {" text to be quoted "}</p>
 
-<p>Back to the philosophy lesson: technology is not there to be the handmaiden of your tired pedagogy. Technology is there to, in its very essence, provide an <em>explicit critique</em> of pedagogy in general.</p>
+<p>In the title, I suggested that &ldquo;EdTech&rdquo; is a &ldquo;leaky abstraction.&rdquo; The term comes from an article by [Joel Spolsky][spolsky] entitled [&ldquo;The Law Of Leaky Abstractions&rdquo;][leaky]. The tl;dr is: all (non-trivial) abstractions are, to some degree, leaky; that is, they build on top of something concrete and messy while removing the messy details from the public interface. At least, that&rsquo;s how we&rsquo;d describe it in the software world. Grasping to define something like &ldquo;EdTech&rdquo;, I think the parallel I&rsquo;d like to draw is that the very term &ldquo;EdTech&rdquo; contains what it cannot possibly contain (bonus points if you catch that reference). &ldquo;Educational Technology&rdquo; refers to technology <em>designed for</em> education, technology <em>used in the serivce of</em> education, and also technology tangentially related to education. Unfortunately, this is a boolean <code>and</code>, leaving us with the union of >= 3 overlapping sets, wherein the intersections and complements are probably more interesting. The union of the sets contains many subsets that really aren&rsquo;t all that useful or interesting. But we don&rsquo;t seem to be doing much winnowing.</p>
+
+<p>Back to the philosophy lesson: technology is not there to be the handmaiden of tried and tired pedagogy. Technology is there to, in its very essence, provide an <em>explicit critique</em> of pedagogy in general.</p>
 
 <p>So how do we fix this?</p>
 

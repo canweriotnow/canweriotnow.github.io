@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-09-30T21:15:14-04:00</updated>
+  <updated>2013-10-01T04:33:25-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -57,10 +57,12 @@ it might be argues that the sciences are the least &ldquo;disrupted&rdquo; by te
 <h3>What Is To Be Done?</h3>
 
 <p><span class='pullquote-right' data-pullquote='Basically, if your use of technology in the classroom isn&#8217;t transformative, you&#8217;re Doing It Wrong™.'>
-For me, it&rsquo;s fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. Basically, if your use of technology in the classroom isn&rsquo;t transformative, you&rsquo;re Doing It Wrong™. If the tech you use doesn&rsquo;t fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessariy or misutilized.
+For me, it&rsquo;s fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. Basically, if your use of technology in the classroom isn&rsquo;t transformative, you&rsquo;re Doing It Wrong™. If the tech you use doesn&rsquo;t fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessary or misutilized.
 </span></p>
 
-<p>Back to the philosophy lesson: technology is not there to be the handmaiden of your tired pedagogy. Technology is there to, in its very essence, provide an <em>explicit critique</em> of pedagogy in general.</p>
+<p>In the title, I suggested that &ldquo;EdTech&rdquo; is a &ldquo;leaky abstraction.&rdquo; The term comes from an article by [Joel Spolsky][spolsky] entitled [&ldquo;The Law Of Leaky Abstractions&rdquo;][leaky]. The tl;dr is: all (non-trivial) abstractions are, to some degree, leaky; that is, they build on top of something concrete and messy while removing the messy details from the public interface. At least, that&rsquo;s how we&rsquo;d describe it in the software world. Grasping to define something like &ldquo;EdTech&rdquo;, I think the parallel I&rsquo;d like to draw is that the very term &ldquo;EdTech&rdquo; contains what it cannot possibly contain (bonus points if you catch that reference). &ldquo;Educational Technology&rdquo; refers to technology <em>designed for</em> education, technology <em>used in the serivce of</em> education, and also technology tangentially related to education. Unfortunately, this is a boolean <code>and</code>, leaving us with the union of >= 3 overlapping sets, wherein the intersections and complements are probably more interesting. The union of the sets contains many subsets that really aren&rsquo;t all that useful or interesting. But we don&rsquo;t seem to be doing much winnowing.</p>
+
+<p>Back to the philosophy lesson: technology is not there to be the handmaiden of tried and tired pedagogy. Technology is there to, in its very essence, provide an <em>explicit critique</em> of pedagogy in general.</p>
 
 <p>So how do we fix this?</p>
 
