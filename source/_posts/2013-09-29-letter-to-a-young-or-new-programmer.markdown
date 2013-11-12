@@ -75,7 +75,9 @@ Let's see what's available.
 * [Codecademy][codecademy] has free courses, of varying quality.
 * [Betamore Academy][betamore] has 10-week courses here in Baltimore that will bootstrap you pretty well as a developer, as well as providing networking opportunities to find internships and jobs.
 
-I'll try to update this in the future. And you know you can always get in touch and I'm more than happy to give you a hand. There's nothin more exciting to me than smart folks falling in love with coding. Happy trails, bro, and remember to keep it fun.
+I'll try to update this in the future. And you know you can always get in touch and I'm more than happy to give you a hand. There's nothing more exciting to me than smart folks falling in love with coding. Happy trails, bro, and remember to keep it fun.
+
+*Update: I've posted a follow-up at ["Just Get Hacking"](/blog/2013/11/12/just-get-hacking/)*
 
 
 [betamore]: http://betamore.com/academy/ "Betamore Academy"
