@@ -4,7 +4,7 @@
   <title><![CDATA[Category: rails | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-10-01T04:37:02-04:00</updated>
+  <updated>2013-11-12T01:08:12-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -97,7 +97,7 @@ class Customer &lt; ReactiveResource::Base</p>
 <p>Since datetimes are represented as floating-point values internally, we&rsquo;ll need to have a way of converting between those and normal datetime types. So I&rsquo;ll start by introducing a few monkey-patches in an intializer, so they get loaded before anything else.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>date_fixes.rb </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -228,7 +228,7 @@ class Customer &lt; ReactiveResource::Base</p>
 <p>So now Float, Date, DateTime and Time can all convert happily (well, mayby not happily) back and forth and we can deal with something reasonable in our classes, like so:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Customer </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -305,7 +305,7 @@ class Customer &lt; ReactiveResource::Base</p>
 <p>First I started with the definition table:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>FieldDef </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -338,7 +338,7 @@ class Customer &lt; ReactiveResource::Base</p>
 <p>Next comes the field value table:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>FieldValue </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -359,7 +359,7 @@ class Customer &lt; ReactiveResource::Base</p>
 <p>Of course, the goal here is eliminating the 40-odd lines of has_many and accepts_nested_attributes_for in the Customer class. This is where Ruby really shines:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Customer </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>

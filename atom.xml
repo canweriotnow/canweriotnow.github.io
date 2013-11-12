@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-10-01T04:37:02-04:00</updated>
+  <updated>2013-11-12T01:08:12-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Just Get Hacking]]></title>
+    <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
+    <updated>2013-11-12T00:27:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
+    <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
+
+<p>So you&rsquo;ve been working through some of those excellent online resources, like <a href="http://learncodethehardway.org/">Learn Code The Hard Way</a>, or <a href="http://codeschool.com">Code School</a>, or whatever. You think you can build something now, and you want to get out there in the world and hack things better, but there&rsquo;s this one little problem&hellip; you have a degree in Philosophy or Psychology or no degree at all, and no résumé-worthy coding experience.</p>
+
+<h4>Not. A. Problem.</h4>
+
+<p>Well, not necessarily a problem. There&rsquo;s an easy solution. Just. Get. Hacking.</p>
+
+<p>So you don&rsquo;t know about XP, Agile, Scrum, Kanban, Waterfall&hellip; there&rsquo;s always <a href="http://programming-motherfucker.com/">Programming, Motherfucker</a>.</p>
+
+<p>So you haven&rsquo;t built an Enterprise Expert System with the AbstractVisitorFactoryAntiPatternCringeGenerator pattern&hellip; I told you to make an account on <a href="https://github.com">Github</a>, didn&rsquo;t I? And I know you take my advice because you&rsquo;re building actual goddamn software.</p>
+
+<p>Put your stuff on Github. Ask for help on IRC.</p>
+
+<p>Find projects that interest you, fork &lsquo;em, submit pull requests. Lots of projects even have issues labeled as &ldquo;suitable for n00bs&rdquo;.</p>
+
+<!-- more -->
+
+
+<h4>The Enterprise Dilemma</h4>
+
+<p><span class='pullquote-right' data-pullquote='I can tell you something about those places. You don&#8217;t want to work there.'>
+Okay, sure. There are places out there that care more about your résumé and pedigree than your coding chops. I can tell you something about those places. You don&rsquo;t want to work there. I mean, getting your foot in the door is a good thing and all, but in the long run, you&rsquo;ll hate your life and maybe even learn to hate coding, and I don&rsquo;t want to see you go down that road. There are so many of us who narrowly escaped that kind of enviroment that we could form our own support group. Don&rsquo;t even worry about it.
+</span></p>
+
+<p>Any shop worth working at cares so much more about your coding chops, your potential, your intelligence than bullshit like résumés and academic credentials that if you can demonstrate your ability and still don&rsquo;t get the job, it&rsquo;s a blessing.</p>
+
+<p>On the other hand, you <em>do</em> need a first coding job. And if you&rsquo;re not getting it based on your Github activity, you&rsquo;re probably getting it based on nepotism.</p>
+
+<p>How does this happen? Still goes back to Github, IRC, meetups, etc. So go to some meetups. Talk to people, go to the pub nights, go to the open hack nights. Hack on open source projects, submit pull requests, get in on some projects that will get you recognized. Eventually, you&rsquo;ll have hacker friends who will hire you or recommend you to take over their shitty Enterprise jobs that you can use to build your résumé should you go down that route. It&rsquo;s not that hard. Hang out with nerds, learn the craft, make connections. Programming is one of the few fields where it really is <em>what you know,</em> but who you know can help too. But those connections are best made by being a badass hacker.</p>
+
+<h4>Open Source is the Key</h4>
+
+<p>At the end of the day, though, even if you do all sorts of networking at confs and meetups and the like, you need a strong presence in the Open Source community. I can&rsquo;t emphasize this enough: <strong>PUT YOUR CODE ON GITHUB.</strong></p>
+
+<p>Or Bitbucket or whatever if you prefer, but open source that shit, get other people involved, and get involved in other people&rsquo;s projects.</p>
+
+<p>I&rsquo;m in the position of having to evaluate and hire developers at <a href="http://anestuary.com">An Estuary</a>, and since I want to run the dev shop I wish existed, I&rsquo;m trying to hire that way. When we list positions, we require a Github URL because I want to see what you do, not what your former employers think of you. I assume they&rsquo;re &ldquo;former&rdquo; (or soon-to-be &ldquo;former&rdquo;) for good reason. When we interview you, I want to talk about your code, not your former supervisor&rsquo;s probable inferiority complex.</p>
+
+<p>In summary, just get hacking. Just keep hacking. Build cool shit. Show it to the world. Talk to other nerds. Maybe try some remote pairing (Tweeting with the hashtag #pairwithme is often productive). But just make stuff. Then show me what you can do when you want a job. If you start off with a great company, that should be all you need.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Maybe EdTech Is Another Leaky Abstraction]]></title>
@@ -872,7 +920,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 <p>It&rsquo;s pretty straightforward. Let&rsquo;s say you&rsquo;re speed typing, maybe on an unfamiliar keyboard (I use a Sun Type 5 at home, but usually Dell QuietKeys at work&hellip; very different layout and key responsiveness). Sure, typos are going to happen, and it can be annoying and slow you down. But with close_enough&hellip;</p>
 
 <figure class='code'><figcaption><span>Close Enough Examples </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -936,7 +984,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 <p>I&rsquo;ll start off with the dependencies:</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -964,7 +1012,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1047,7 +1095,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 <p>Clojure&rsquo;s got me covered, with multimethods.</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1090,7 +1138,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 <p> Luckily, clj-time has awesome parsers:</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1111,7 +1159,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 <p>Since Korma returns query results as a vector of hashmaps, it&rsquo;s as simple as updating a hashmap:</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1128,7 +1176,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 <p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1153,7 +1201,7 @@ And herein lies my central argument: If there can be described a finite-state ma
 
 <p>Then it&rsquo;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1390,43 +1438,6 @@ And herein lies my central argument: If there can be described a finite-state ma
 <h4>Note</h4>
 
 <p>I&rsquo;d like to thank the folks at the <a href="http://ruby5.envylabs.com">Ruby5 podcast</a> for <a href="http://ruby5.envylabs.com/episodes/299-episode-295-august-7th-2012/stories/2616-legacy-systems-on-rails">covering this series in Episode #295</a>. If you missed that episode, please give it a listen&hellip; the commentary is pretty great, even if they did question my sanity a bit.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Feedback Loops]]></title>
-    <link href="http://decomplecting.org/blog/2012/10/31/feedback-loops/"/>
-    <updated>2012-10-31T14:12:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/10/31/feedback-loops</id>
-    <content type="html"><![CDATA[<p>Sadly, I haven&rsquo;t added a blog post in roughly 2.5 months. I&rsquo;ve had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven&rsquo;t had it in me. I really enjoy writing this blog, too. I wasn&rsquo;t quite sure what was going on, until I read one of the most insightful blog posts I&rsquo;ve ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
-
-<p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>
-
-<blockquote><p>My workflow is something like this.</p><p>write some code<br/>run the code<br/>get an error message<br/>find the error and back to step 1<br/>Hour by hour, day after day, I do this. Always searching for what&#8217;s wrong with what I&#8217;m creating, rarely thinking about what&#8217;s good about it. It&#8217;s a negative reinforcement feedback loop.</p><footer><strong>[http://edu.mkrecny.com/thoughts/be-nice-to-programmers]</strong></footer></blockquote>
-
-
-<p><span class='pullquote-right' data-pullquote='The main reason to become a programmer is that the position of &#8216;God&#8217; is unavailable. Your _job_ is to create universes where the fundamental laws of nature, so to speak, are completely under your creative control.'>
-I definitely get the sentiment. But I think of this as the inner loop in the red-green-refactor cycle, so to speak. Yeah, coding (<em>especially</em> doing proper TDD) is going to make you hate the world (and possibly feel like an idiot) sometimes. But overall&hellip; I was in a job interview a few weeks ago, and was asked why I love being a programmer. I didn&rsquo;t even have to think about my response: The main reason to become a programmer is that the position of &lsquo;God&rsquo; is unavailable. Your <em>job</em> is to create universes where the fundamental laws of nature, so to speak, are completely under your creative control. Ultimately, that&rsquo;s the takeaway: programming is <em>awesome.</em> But a job is still a job, and I think that&rsquo;s where some of the negative feedback loop comes in.
-</span></p>
-
-<p>My last post was just before a huge project I&rsquo;d both originated and put a large amount of my time and effort into over the course of 15-18 months was shelved. It was ready to ship, but corporate politics being what it is (i.e., something I&rsquo;d schedule a root canal to avoid, <em>especially</em> where I work), I tried to just move on and not lose sleep over it. Still, it rankled.</p>
-
-<!-- more -->
-
-
-<p>I haven&rsquo;t pushed a single new commit to any of my projects on Github. I haven&rsquo;t written a blog post. I have an engineering pad with a bunch of scribbled, inchoate notes for things I want to do, but can&rsquo;t seem to move on anything.</p>
-
-<p>My own theory is that we (hackers) are especially sensitive to feedback loops. I could go <a href="http://decomplecting.org/blog/2012/05/22/passion/">on and on</a>, and even cite <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">more</a> <a href="http://www.bricklin.com/wontprogram.htm">notable</a> <a href="http://www.codinghorror.com/blog/2010/02/the-nonprogramming-programmer.html">bloggers</a> than myself, on my theory of what could be referred to as &ldquo;programmer exceptionalism.&rdquo; That&rsquo;s not to say we (programmers who can actually build working (and hopefully, elegant) systems) are in any way <em>better</em> than non-programmers (or the <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">Java Schools</a> crowd); it&rsquo;s just that the preponderance of anecdotal evidence (not to mention some <a href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/paper1.pdf">proper research</a>) suggests that <em>programmers are not normal.</em></p>
-
-<p>&ldquo;Sensitivity to feedback loops&rdquo; could also be a symptom of the intuition many of us experience when faced with an implementation that just <em>feels</em> wrong. We can, through due diligence, prove that this is the case eventually; but what is it that drives us to find exploits, or benchmark competing implementations? It&rsquo;s that little voice in the back of your head whispering, &ldquo;This is wrong. And also, stupid.&rdquo;</p>
-
-<p>My main focus in my day-to-day programming life right now is dealing with interfaces for yet another vendor product that is very wrong, and very, very stupid. So when I come home, I just want to play <a href="http://guildwars2.com">Guild Wars 2</a> and not really think about coding. Which makes me even sadder, because I love hacking on side projects.</p>
-
-<p>And it&rsquo;s not that I haven&rsquo;t had some fun and some successes in the meantime. I wrote a pretty cool framework in Clojure for generating and emailing reports from various datasources. The core of it is going to be open source, as soon as I get around to that. But the grind&hellip; the grind, man. The grind.</p>
-
-<p>I don&rsquo;t know what the solution is. We can&rsquo;t all be working on innovative, game-changing products all the time. And sometimes things will get shelved the day you expect them to ship. I do know there needs to be a way to <em>love</em> this shit without going crazy or making oneself miserable.</p>
-
-<p>So, interwebs&hellip; suggestions?</p>
 ]]></content>
   </entry>
   

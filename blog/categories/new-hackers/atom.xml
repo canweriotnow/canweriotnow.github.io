@@ -4,7 +4,7 @@
   <title><![CDATA[Category: new hackers | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/new-hackers/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-10-01T04:37:02-04:00</updated>
+  <updated>2013-11-12T01:08:12-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Just Get Hacking]]></title>
+    <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
+    <updated>2013-11-12T00:27:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
+    <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
+
+<p>So you&rsquo;ve been working through some of those excellent online resources, like <a href="http://learncodethehardway.org/">Learn Code The Hard Way</a>, or <a href="http://codeschool.com">Code School</a>, or whatever. You think you can build something now, and you want to get out there in the world and hack things better, but there&rsquo;s this one little problem&hellip; you have a degree in Philosophy or Psychology or no degree at all, and no résumé-worthy coding experience.</p>
+
+<h4>Not. A. Problem.</h4>
+
+<p>Well, not necessarily a problem. There&rsquo;s an easy solution. Just. Get. Hacking.</p>
+
+<p>So you don&rsquo;t know about XP, Agile, Scrum, Kanban, Waterfall&hellip; there&rsquo;s always <a href="http://programming-motherfucker.com/">Programming, Motherfucker</a>.</p>
+
+<p>So you haven&rsquo;t built an Enterprise Expert System with the AbstractVisitorFactoryAntiPatternCringeGenerator pattern&hellip; I told you to make an account on <a href="https://github.com">Github</a>, didn&rsquo;t I? And I know you take my advice because you&rsquo;re building actual goddamn software.</p>
+
+<p>Put your stuff on Github. Ask for help on IRC.</p>
+
+<p>Find projects that interest you, fork &lsquo;em, submit pull requests. Lots of projects even have issues labeled as &ldquo;suitable for n00bs&rdquo;.</p>
+
+<!-- more -->
+
+
+<h4>The Enterprise Dilemma</h4>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>Any shop worth working at cares so much more about your coding chops, your potential, your intelligence than bullshit like résumés and academic credentials that if you can demonstrate your ability and still don&rsquo;t get the job, it&rsquo;s a blessing.</p>
+
+<p>On the other hand, you <em>do</em> need a first coding job. And if you&rsquo;re not getting it based on your Github activity, you&rsquo;re probably getting it based on nepotism.</p>
+
+<p>How does this happen? Still goes back to Github, IRC, meetups, etc. So go to some meetups. Talk to people, go to the pub nights, go to the open hack nights. Hack on open source projects, submit pull requests, get in on some projects that will get you recognized. Eventually, you&rsquo;ll have hacker friends who will hire you or recommend you to take over their shitty Enterprise jobs that you can use to build your résumé should you go down that route. It&rsquo;s not that hard. Hang out with nerds, learn the craft, make connections. Programming is one of the few fields where it really is <em>what you know,</em> but who you know can help too. But those connections are best made by being a badass hacker.</p>
+
+<h4>Open Source is the Key</h4>
+
+<p>At the end of the day, though, even if you do all sorts of networking at confs and meetups and the like, you need a strong presence in the Open Source community. I can&rsquo;t emphasize this enough: <strong>PUT YOUR CODE ON GITHUB.</strong></p>
+
+<p>Or Bitbucket or whatever if you prefer, but open source that shit, get other people involved, and get involved in other people&rsquo;s projects.</p>
+
+<p>I&rsquo;m in the position of having to evaluate and hire developers at <a href="http://anestuary.com">An Estuary</a>, and since I want to run the dev shop I wish existed, I&rsquo;m trying to hire that way. When we list positions, we require a Github URL because I want to see what you do, not what your former employers think of you. I assume they&rsquo;re &ldquo;former&rdquo; (or soon-to-be &ldquo;former&rdquo;) for good reason. When we interview you, I want to talk about your code, not your former supervisor&rsquo;s probable inferiority complex.</p>
+
+<p>In summary, just get hacking. Just keep hacking. Build cool shit. Show it to the world. Talk to other nerds. Maybe try some remote pairing (Tweeting with the hashtag #pairwithme is often productive). But just make stuff. Then show me what you can do when you want a job. If you start off with a great company, that should be all you need.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Letter to a Young (Or New) Programmer]]></title>

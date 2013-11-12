@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-10-01T04:37:02-04:00</updated>
+  <updated>2013-11-12T01:08:12-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,52 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Just Get Hacking]]></title>
+    <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
+    <updated>2013-11-12T00:27:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
+    <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
+
+<p>So you&rsquo;ve been working through some of those excellent online resources, like <a href="http://learncodethehardway.org/">Learn Code The Hard Way</a>, or <a href="http://codeschool.com">Code School</a>, or whatever. You think you can build something now, and you want to get out there in the world and hack things better, but there&rsquo;s this one little problem&hellip; you have a degree in Philosophy or Psychology or no degree at all, and no résumé-worthy coding experience.</p>
+
+<h4>Not. A. Problem.</h4>
+
+<p>Well, not necessarily a problem. There&rsquo;s an easy solution. Just. Get. Hacking.</p>
+
+<p>So you don&rsquo;t know about XP, Agile, Scrum, Kanban, Waterfall&hellip; there&rsquo;s always <a href="http://programming-motherfucker.com/">Programming, Motherfucker</a>.</p>
+
+<p>So you haven&rsquo;t built an Enterprise Expert System with the AbstractVisitorFactoryAntiPatternCringeGenerator pattern&hellip; I told you to make an account on <a href="https://github.com">Github</a>, didn&rsquo;t I? And I know you take my advice because you&rsquo;re building actual goddamn software.</p>
+
+<p>Put your stuff on Github. Ask for help on IRC.</p>
+
+<p>Find projects that interest you, fork &lsquo;em, submit pull requests. Lots of projects even have issues labeled as &ldquo;suitable for n00bs&rdquo;.</p>
+
+<!-- more -->
+
+
+<h4>The Enterprise Dilemma</h4>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>Any shop worth working at cares so much more about your coding chops, your potential, your intelligence than bullshit like résumés and academic credentials that if you can demonstrate your ability and still don&rsquo;t get the job, it&rsquo;s a blessing.</p>
+
+<p>On the other hand, you <em>do</em> need a first coding job. And if you&rsquo;re not getting it based on your Github activity, you&rsquo;re probably getting it based on nepotism.</p>
+
+<p>How does this happen? Still goes back to Github, IRC, meetups, etc. So go to some meetups. Talk to people, go to the pub nights, go to the open hack nights. Hack on open source projects, submit pull requests, get in on some projects that will get you recognized. Eventually, you&rsquo;ll have hacker friends who will hire you or recommend you to take over their shitty Enterprise jobs that you can use to build your résumé should you go down that route. It&rsquo;s not that hard. Hang out with nerds, learn the craft, make connections. Programming is one of the few fields where it really is <em>what you know,</em> but who you know can help too. But those connections are best made by being a badass hacker.</p>
+
+<h4>Open Source is the Key</h4>
+
+<p>At the end of the day, though, even if you do all sorts of networking at confs and meetups and the like, you need a strong presence in the Open Source community. I can&rsquo;t emphasize this enough: <strong>PUT YOUR CODE ON GITHUB.</strong></p>
+
+<p>Or Bitbucket or whatever if you prefer, but open source that shit, get other people involved, and get involved in other people&rsquo;s projects.</p>
+
+<p>I&rsquo;m in the position of having to evaluate and hire developers at <a href="http://anestuary.com">An Estuary</a>, and since I want to run the dev shop I wish existed, I&rsquo;m trying to hire that way. When we list positions, we require a Github URL because I want to see what you do, not what your former employers think of you. I assume they&rsquo;re &ldquo;former&rdquo; (or soon-to-be &ldquo;former&rdquo;) for good reason. When we interview you, I want to talk about your code, not your former supervisor&rsquo;s probable inferiority complex.</p>
+
+<p>In summary, just get hacking. Just keep hacking. Build cool shit. Show it to the world. Talk to other nerds. Maybe try some remote pairing (Tweeting with the hashtag #pairwithme is often productive). But just make stuff. Then show me what you can do when you want a job. If you start off with a great company, that should be all you need.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Letter to a Young (Or New) Programmer]]></title>
@@ -210,7 +256,7 @@
 
 <p>I&rsquo;ll start off with the dependencies:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -253,7 +299,7 @@
 <!-- more -->
 
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -353,7 +399,7 @@
 
 <p>Clojure&rsquo;s got me covered, with multimethods.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -399,7 +445,7 @@
 
 <p> Luckily, clj-time has awesome parsers:</p>
 
-<p> <div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p> <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -427,7 +473,7 @@
 
 <p>Since Korma returns query results as a vector of hashmaps, it&rsquo;s as simple as updating a hashmap:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -455,7 +501,7 @@
 
 <p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -491,7 +537,7 @@
 
 <p>Then it&rsquo;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -564,98 +610,6 @@
 <p>I don&rsquo;t know what the solution is. We can&rsquo;t all be working on innovative, game-changing products all the time. And sometimes things will get shelved the day you expect them to ship. I do know there needs to be a way to <em>love</em> this shit without going crazy or making oneself miserable.</p>
 
 <p>So, interwebs&hellip; suggestions?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[LadyCoders, Twitroversy, and you]]></title>
-    <link href="http://decomplecting.org/blog/2012/08/13/ladycoders/"/>
-    <updated>2012-08-13T21:41:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/08/13/ladycoders</id>
-    <content type="html"><![CDATA[<p>So, I had intended my next post to address some of the (valid) criticism of Github that&rsquo;s been making the rounds lately, but a much more disturbing Twitroversy has emerged today.</p>
-
-<p>A group of women called <a href="http://ladycoders.com">LadyCoders</a> started a <a href="http://www.kickstarter.com/projects/166494057/ladycoders-get-hired-seattle-2012">Kickstarter campaign</a> to fund a conference/seminar geared toward helping women to get programming and other tech jobs. Great idea, right? There are <a href="http://girldevelopit.com/">many</a> <a href="http://www.blackgirlscode.com/">projects</a> devoted to giving women the skills they need to write software, but as far as addressing the fundamental issue that the industry itself is pretty much a boys' club (not assigning blame, just acknowledging reality), much less has been done in that area.</p>
-
-<p>So the good folks at LadyCoders wanted to help get women <em>hired,</em> not just trained. Pretty cool.</p>
-
-<p>Well, a lot of people thought so. As I write this, they&rsquo;re &lt; US$6k away from their US$23k funding goal. But&hellip; well, there was some dissent:</p>
-
-<blockquote class="twitter-tweet tw-align-center"><p>Sick and wrong: "it’s our job (for now) to be easily integrated into an all-male team, **nonthreatening,** and hyper-skilled"- <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a></p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235163013227880449" data-datetime="2012-08-13T23:56:46+00:00">August 13, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>I completely get where @shanley is coming from&hellip; but the amount of Twitroversy here seemed&hellip; disproportionate.</p>
-
-<!--more-->
-
-
-<p>Sorry for picking on @shanley so much, but&hellip; then there was this:</p>
-
-<blockquote class="twitter-tweet tw-align-center"><p>Legit response from <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>: "I know what works, whether or not it's PC." Please do not fund this shit on kickstarter.</p>&mdash; Shanley Kane (@shanley) <a href="https://twitter.com/shanley/status/235166808880074753" data-datetime="2012-08-14T00:11:51+00:00">August 14, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>You can go search for @ladycoders mentions on Twitter if you want to see more&hellip; but here&rsquo;s the issue I take: fundamentally, the issue LadyCoders is trying to address is that the software industry is a male-dominated space which has been difficult for even the most highly-skilled women to penetrate.</p>
-
-<p>I can&rsquo;t speculate as to the eventual success or failure of LadyCoders as far as increasing the number of women working in software development or IT in general. But I do see the pragmatic value of a quasi-entryist, realpolitik solution to this problem.</p>
-
-<p>Criticizing an organization trying to serve a real, valid feminist goal (material gains for women in a historically male-dominated sector), by all means necessary, just seems counter-productive. &ldquo;Seem non-threatening&rdquo; might be advice that highlights now fucked-up society is, but it isn&rsquo;t fucked-up advice if your goal is material gains for an oppressed group. Once you&rsquo;ve achieved your goals, shift the goalposts of &ldquo;(non-)threatening&rdquo; in the desired direction.</p>
-
-<p>Queer/trans folks have been doing this for years, right? Really, everyone has&hellip; You don&rsquo;t go into your job interview in the clothes you wear to the club. If your subculture doesn&rsquo;t match, you don&rsquo;t interview in your bondage pants and Aus-Rotten t-shirt (old punk, here)&hellip; if who or what you are is out of the mainstream, you mute it depending on the culture of where you want a job.</p>
-
-<p>For many folks, &ldquo;passing&rdquo; is an option. I think what LadyCoders is trying to highlight or confront (I hope they correct me if I&rsquo;m wrong) is that gender isn&rsquo;t really the issue, it&rsquo;s perception, stereotypes, and cultural bias; by ameliorating/sidestepping the (currently wrong and terrible) negative perception women sometimes have in techie circles, you have more opportunity to break down the perception.</p>
-
-<p>You cover tattoos, take out piercings&hellip; none of this is <strong>right,</strong> but it&rsquo;s just how it is, and you need to get inside before you can try to change anything.</p>
-
-<h3>Partial Measures</h3>
-
-<p>While I appreciate the validity of realpolitik solutions, I also acknowledge that it&rsquo;s <em>fucking frustrating.</em></p>
-
-<blockquote class="twitter-tweet"><p>Women, people of color, and other marginalized groups have been forced to work within the system forever. It's time to burn the system down.</p>&mdash; Ashe Dryden (@ashedryden) <a href="https://twitter.com/ashedryden/status/235167798211534848" data-datetime="2012-08-14T00:15:46+00:00">August 14, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>There are few tweets I agree with more.</p>
-
-<p>But it&rsquo;s this whole realpolitik thing.</p>
-
-<p>The same sentiment that comes down so hard on LadyCoders (and seems to be responsible for <a href="http://ladycoders.tumblr.com/day/2012/08/13">some DDOS attacks</a>), echoes the sentiment that some &ldquo;anarchists&rdquo; (scare quotes belie my own prejudice) have against labor unions and other &ldquo;recuperative&rdquo; examples of self-organization by the proletariat and other oppressed groups.</p>
-
-<p>Personally, I think it&rsquo;s time for a new social order. But until that order is ready to self-organize and build a new society from the ashes of the old, we need every possible means of achieving material gains for every group that has been deprived by our current society. And if that means women helping women to get their foot in the door at a <em>(for now)</em> male-dominated workplace, that&rsquo;s better than women <em>not</em> getting the opportunity to make incremental material gains.</p>
-
-<p>I get the frustration, I do. I don&rsquo;t fault anyone (including those I embedded tweets from) for being frustrated. But attacking those who share your goals because they lack your ideological purity&hellip; that&rsquo;s a recipe for burning out without accomplishing anything. Stop it.</p>
-
-<p>So I hope you will help LadyCoders reach their KickStarter goal; if it&rsquo;s a flop, well, something else will come along. If it&rsquo;s a success, hopefully more cynical, realpolitik, entryist projects will get more women into male-dominated fields and achieve positive change within those fields, and material gains for women.</p>
-
-<h4>Personal Note</h4>
-
-<p>This is my hacker blog, so I don&rsquo;t usually post anything related to my personal politics here. Other than my free software zealotry, I really think the set intersection of my professional and personal/political life is a narrow band indeed.</p>
-
-<p>But this sort of goes to the heart of a number of overlapping conversations I&rsquo;ve been having of late, and I think the same sort of demand for a certain ideological purity is at the heart of many of these&hellip; so once it started to attack something I see as having a potential net positive effect on the software industry, and on the economic situation of women in general&hellip; I had to comment.</p>
-
-<p>I don&rsquo;t fundamentally disagree with most of the criticism leveled toward LadyCoders on Twitter, either&hellip; I just think the caremad arguments are counterproductive, like most infighting.</p>
-
-<p>Also&hellip; I don&rsquo;t necessarily think everything in their seminar is necessarily the best idea&hellip; but just because I <a href="https://rubygems.org/gems/job_interview">wrote a gem to help with job interviews</a> doesn&rsquo;t mean I really know what women encounter in the hiring process. So I&rsquo;m willing to assume the ladies at LadyCoders know what they&rsquo;re doing better than I do.</p>
-
-<p>Back to apolitical coding tips next post, I promise. Unless you&rsquo;re into that whole Steve Yegge liberal/conservative software engineering idea. In which case&hellip; you&rsquo;re on your own.</p>
-
-<h4>UPDATE</h4>
-
-<p>After I first posted this, the awesome @chriseppstein suggested all might not be legit:</p>
-
-<blockquote class="twitter-tweet"><p>Pretty sure you guys are getting trolled pretty hard by <a href="https://twitter.com/ladycoders"><s>@</s><b>ladycoders</b></a>.</p>&mdash; Chris Eppstein (@chriseppstein) <a href="https://twitter.com/chriseppstein/status/235210422477799424" data-datetime="2012-08-14T03:05:09+00:00">August 14, 2012</a></blockquote>
-
-
-<script src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>I don&rsquo;t think LadyCoders is a troll, but if it is, pretty damn epic, and I&rsquo;ll admit to be taken in. Either way, though, I think the analysis above holds true&hellip; feel free to disagree in the comments, however, as always.</p>
 ]]></content>
   </entry>
   
