@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="Sadly, I haven&rsquo;t added a blog post in roughly 2.5 months. I&rsquo;ve had ideas for posts, but when it came time to set pen to page (or fingers &hellip;">
+  <meta name="description" content="It&rsquo;s been a while since my last post in this series (if you missed them, here are parts one and two) but I wanted to return to the topic of &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/11/02/legacy-systems-on-rails-part-3/">Legacy Systems on Rails (Part 3)</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-11-02T13:25:00-04:00" pubdate data-updated="true">2012-11-02</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
+
+<h3>Abstraction is your friend</h3>
+
+<p>I think if there&rsquo;s a common theme in these posts, it&rsquo;s abstraction. Primarily, using Ruby and Rails to abstract away the crazy implementation details of a system that&rsquo;s been accumulating cruft for over twenty years. I&rsquo;m going to start referring to this system as &ldquo;Bubba&rdquo; for the sake of convenience (and since I don&rsquo;t have permission from the vendor to say what it actually is).</p>
+
+<p>I mentioned in Part One that most of the access to the backend system going forward is occurring via a REST API wrapping the Oracle database that serve&rsquo;s as Bubba&rsquo;s back-end. Today I wanted to look at how the user-facing portions are constructed.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/11/02/legacy-systems-on-rails-part-3/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -548,68 +597,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/05/30/hypermedia-apis-the-new-wild-west/">Hypermedia APIs: The New Wild West?</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true">2012-05-30</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Two of the best presentations at RailsConf this year, <strong>Designing Hypermedia APIs</strong> by <a href="http://steveklabnik.com/">Steve Klabnik</a> and <strong>Rails: The Next Five Years</strong> by <a href="http://yehudakatz.com/">Yehuda Katz</a> were related to the topic of hypermedia APIs. The video of Steve&rsquo;s talk isn&rsquo;t up on Confreaks yet, but the slides are <a href="http://steveklabnik.github.com/hypermedia-presentation/#1">here</a>. I&rsquo;ll embed Yehuda&rsquo;s talk right here:</p>
-
-<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/UlMpIHH1K5s" frameborder="0" allowfullscreen></iframe>
-
-
-<p>The two big takeaways from these talks (for me, at least):</p>
-
-<ol>
-<li>We&rsquo;ve come a long way in designing in implementing APIs. But now we&rsquo;re to the &ldquo;hard part&rdquo;: Going from REST to true hypermedia.</li>
-<li>Rails is really, really good at creating de facto standards via &ldquo;convention over configuration.&rdquo; But we don&rsquo;t go far enough, and that&rsquo;s where we shoot ourselves in the foot (think ActiveResource).</li>
-</ol>
-
-
-<h3>Why don&rsquo;t you REST for a while?</h3>
-
-<p>I know, it&rsquo;s stressful figuring this stuff out.  Rails going all RESTful was a big help when it came to creating uniform interfaces for our applications. HTML, XML, JSON&hellip; you could have it your way, right away. But going from RESTful resources to true hypermedia APIs is an even bigger leap forward than the move to REST, and that transition also needs to be planned and implemented carefully and correctly.</p>
-
-<p><code>as_json</code> will only get you so far. Yes, it will represent the resource in a way that is eminently consumable by a client application, whether that&rsquo;s Javascript in the browser, a mobile app, or curl. But your client still needs to know <em>far</em> too much about the structure of the resources on your server. That&rsquo;s tight coupling, which we all know is evil. It&rsquo;s even evilly-tight from a REST standpoint; if the client has to know <em>anything</em> about server-side resources, you&rsquo;re breaking the encapsulation layer between resources and the representation of those resources, which is what REST is all about, right?</p>
-
-<p>So what is to be done?</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/30/hypermedia-apis-the-new-wild-west/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -633,6 +620,10 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/12/just-get-hacking/">Just Get Hacking</a>
       </li>
     
@@ -646,10 +637,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
     
       <li class="post">
         <a href="/blog/2013/09/02/return-of-the-job-destroyer/">Return of the Job Destroyer</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/21/the-importance-of-aarons-law/">The Importance of &#8220;Aaron&#8217;s Law&#8221;</a>
       </li>
     
   </ul>

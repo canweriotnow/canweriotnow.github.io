@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-11-12T13:09:04-05:00</updated>
+  <updated>2013-11-12T23:42:51-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
+    <link href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/"/>
+    <updated>2013-11-13T00:09:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
+    <content type="html"><![CDATA[<h3>The Important Stuff</h3>
+
+<p>So <a href="/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
+
+<p>In this post, I want to look a little more closely at the skills that matter, and the specific areas that the &ldquo;best&rdquo; (IMHO) companies will focus on. I may be biased, but this is the stuff I care about when I&rsquo;m interviewing developers (beyond basic coding chops), and I think I&rsquo;m pretty smart.</p>
+
+<h3>Testing, Testing, Testing</h3>
+
+<p>So you&rsquo;re writing code that runs, runs correctly, and runs consistently. That&rsquo;s awesome. But when it comes to writing production code for a real company, you need to <em>know</em> it&rsquo;s correct, in advance. Especially with dynamic languages, when there&rsquo;s no compiler to refuse to build faulty code, testing is paramount.</p>
+
+<p>So when you&rsquo;re working on these little personal projects, and throwing them on <a href="https://github.com">Github</a>, do a few things:</p>
+
+<!-- more -->
+
+
+<ul>
+<li>Write tests. If you&rsquo;re using Ruby, I recommend <a href="http://rspec.info/">RSpec</a>.</li>
+<li>Use <a href="https://travis-ci.org/">Travis CI</a>. You&rsquo;ll learn about <a href="http://martinfowler.com/articles/continuousIntegration.html">continuous integration</a>, and it&rsquo;s free for open source.</li>
+<li>Use <a href="https://codeclimate.com/">Code Climate</a>. It&rsquo;s like automated code review, and also free.</li>
+<li>Try <a href="https://coveralls.io/">Coveralls</a>. It&rsquo;ll help you make sure you actually are testing everything.</li>
+</ul>
+
+
+<p>Plus Travis, Code Climate, and Coveralls will give you little badges for your README.md on Github so you can see how your project is doing at any time.</p>
+
+<p>Read up on practices for <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a>, because it matters to the people you really want to work for, and as an aspiring software craftsman, it needs to matter to you.</p>
+
+<h3>Collaboration</h3>
+
+<p>I mentioned the importance of coding with others last post, but I can&rsquo;t emphasize it enough. Look for opportunities for pair programming, even if it&rsquo;s remote. There are cool apps you can use for that now, like <a href="https://koding.com/">Koding</a> (and others), but in a pinch there&rsquo;s always <a href="http://www.vim.org/">vim</a> and <a href="http://tmux.sourceforge.net/">tmux</a>&hellip; which are tools you&rsquo;ll want to know anyhow.</p>
+
+<p>And which brings me to my next point&hellip;</p>
+
+<h3>Unix or GTFO</h3>
+
+<p>Yeah, code is more portable than it has ever been. You can develop Ruby or Clojure or Node.js on Linux, Solaris, OS X, Windows, probably even Haiku&hellip; but you need to understand your deployment environment, which is going to be some kind of *nix unless you&rsquo;re doing .NET (which you&rsquo;re clearly not, if you came to me for advice).</p>
+
+<p>In addition, the closer your dev environment is to your production environment, the less risk there is of weird heisenbug inconsistencies.</p>
+
+<p>So learn <em>some</em> kind of *nix, whether it&rsquo;s OS X, Linux, or Solaris, or whatever. And dig down; use the command line. Learn your tools, learn the <code>git</code> command line, don&rsquo;t just rely on the Github GUI apps etc. Learn <code>bash</code> or <code>zsh</code>. Learn how a combination of <code>find</code>, <code>grep</code>, and <code>xargs</code> can save your ass. It&rsquo;ll make your life easier as a developer, and it&rsquo;s vital when it comes to&hellip;</p>
+
+<h3>DevOps</h3>
+
+<p>Long ago, in a galaxy far, far, away, developers simply wrote application code and the systems that hosted and served that code were managed by a cabal of wizened neckbeards of the Sysadmin clan. Now, in our more enlightened (or is it benighted?) age, development and operations have blurred their lines and DevOps was born.</p>
+
+<p>In many cases, this is just an excuse for developers to be burdened with sysadmin duties; sometimes, it&rsquo;s perfectly sensible as many of the best deployment options are SaaS (Something-as-a-Service) thingamabobs. But it&rsquo;s important to get at least the basics.</p>
+
+<p>So when you&rsquo;re looking for someplace to put your pet project web apps, put them on <a href="http://heroku.com">Heroku</a>. It&rsquo;s free for a single web dyno and no workers, and many of the &ldquo;add-ons&rdquo; (like Postgres, Redis, ElasticSearch, etc.) that are technologies you might want to play with have free tiers as well.</p>
+
+<p><a href="http://aws.amazon.com/">Amazon Web Services</a> is Level 80 territory as far as I&rsquo;m concerned, but if you get into the DevOps thing, and want to experiment with tools like <a href="http://www.opscode.com/chef/">Chef</a>, they&rsquo;ll also give you some free time with EC2 instances to play around.</p>
+
+<h3>Summary</h3>
+
+<p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Just Get Hacking]]></title>
@@ -578,40 +640,6 @@
 <p>I find refactoring easier to reason about in Clojure than any other language I&rsquo;ve worked in. Thinking in terms of simple, composable functions (particularly having the facility of higher-order functions and macros) also makes it very straightforward to decouple interface and implementation.</p>
 
 <p>I&rsquo;ll state for the record I&rsquo;m fairly new to Clojure, so it wouldn&rsquo;t surprise me if this code looks pretty amateurish to more experienced Clojurians. If anyone has any suggestions for improving it, I&rsquo;d welcome the advice.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Feedback Loops]]></title>
-    <link href="http://decomplecting.org/blog/2012/10/31/feedback-loops/"/>
-    <updated>2012-10-31T14:12:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/10/31/feedback-loops</id>
-    <content type="html"><![CDATA[<p>Sadly, I haven&rsquo;t added a blog post in roughly 2.5 months. I&rsquo;ve had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven&rsquo;t had it in me. I really enjoy writing this blog, too. I wasn&rsquo;t quite sure what was going on, until I read one of the most insightful blog posts I&rsquo;ve ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
-
-<p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>
-
-<p><blockquote><p>My workflow is something like this.</p></p><p><p>write some code<br/>run the code<br/>get an error message<br/>find the error and back to step 1<br/>Hour by hour, day after day, I do this. Always searching for what&rsquo;s wrong with what I&rsquo;m creating, rarely thinking about what&rsquo;s good about it. It&rsquo;s a negative reinforcement feedback loop.</p><footer><strong>[<a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">http://edu.mkrecny.com/thoughts/be-nice-to-programmers</a>]</strong></footer></blockquote></p>
-
-<p>Surround your pullquote like this {" text to be quoted "}</p>
-
-<p>My last post was just before a huge project I&rsquo;d both originated and put a large amount of my time and effort into over the course of 15-18 months was shelved. It was ready to ship, but corporate politics being what it is (i.e., something I&rsquo;d schedule a root canal to avoid, <em>especially</em> where I work), I tried to just move on and not lose sleep over it. Still, it rankled.</p>
-
-<!-- more -->
-
-
-<p>I haven&rsquo;t pushed a single new commit to any of my projects on Github. I haven&rsquo;t written a blog post. I have an engineering pad with a bunch of scribbled, inchoate notes for things I want to do, but can&rsquo;t seem to move on anything.</p>
-
-<p>My own theory is that we (hackers) are especially sensitive to feedback loops. I could go <a href="http://decomplecting.org/blog/2012/05/22/passion/">on and on</a>, and even cite <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">more</a> <a href="http://www.bricklin.com/wontprogram.htm">notable</a> <a href="http://www.codinghorror.com/blog/2010/02/the-nonprogramming-programmer.html">bloggers</a> than myself, on my theory of what could be referred to as &ldquo;programmer exceptionalism.&rdquo; That&rsquo;s not to say we (programmers who can actually build working (and hopefully, elegant) systems) are in any way <em>better</em> than non-programmers (or the <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">Java Schools</a> crowd); it&rsquo;s just that the preponderance of anecdotal evidence (not to mention some <a href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/paper1.pdf">proper research</a>) suggests that <em>programmers are not normal.</em></p>
-
-<p>&ldquo;Sensitivity to feedback loops&rdquo; could also be a symptom of the intuition many of us experience when faced with an implementation that just <em>feels</em> wrong. We can, through due diligence, prove that this is the case eventually; but what is it that drives us to find exploits, or benchmark competing implementations? It&rsquo;s that little voice in the back of your head whispering, &ldquo;This is wrong. And also, stupid.&rdquo;</p>
-
-<p>My main focus in my day-to-day programming life right now is dealing with interfaces for yet another vendor product that is very wrong, and very, very stupid. So when I come home, I just want to play <a href="http://guildwars2.com">Guild Wars 2</a> and not really think about coding. Which makes me even sadder, because I love hacking on side projects.</p>
-
-<p>And it&rsquo;s not that I haven&rsquo;t had some fun and some successes in the meantime. I wrote a pretty cool framework in Clojure for generating and emailing reports from various datasources. The core of it is going to be open source, as soon as I get around to that. But the grind&hellip; the grind, man. The grind.</p>
-
-<p>I don&rsquo;t know what the solution is. We can&rsquo;t all be working on innovative, game-changing products all the time. And sometimes things will get shelved the day you expect them to ship. I do know there needs to be a way to <em>love</em> this shit without going crazy or making oneself miserable.</p>
-
-<p>So, interwebs&hellip; suggestions?</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: getting started | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/getting-started/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-11-12T13:09:04-05:00</updated>
+  <updated>2013-11-12T23:42:51-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
+    <link href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/"/>
+    <updated>2013-11-13T00:09:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
+    <content type="html"><![CDATA[<h3>The Important Stuff</h3>
+
+<p>So <a href="/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
+
+<p>In this post, I want to look a little more closely at the skills that matter, and the specific areas that the &ldquo;best&rdquo; (IMHO) companies will focus on. I may be biased, but this is the stuff I care about when I&rsquo;m interviewing developers (beyond basic coding chops), and I think I&rsquo;m pretty smart.</p>
+
+<h3>Testing, Testing, Testing</h3>
+
+<p>So you&rsquo;re writing code that runs, runs correctly, and runs consistently. That&rsquo;s awesome. But when it comes to writing production code for a real company, you need to <em>know</em> it&rsquo;s correct, in advance. Especially with dynamic languages, when there&rsquo;s no compiler to refuse to build faulty code, testing is paramount.</p>
+
+<p>So when you&rsquo;re working on these little personal projects, and throwing them on <a href="https://github.com">Github</a>, do a few things:</p>
+
+<!-- more -->
+
+
+<ul>
+<li>Write tests. If you&rsquo;re using Ruby, I recommend <a href="http://rspec.info/">RSpec</a>.</li>
+<li>Use <a href="https://travis-ci.org/">Travis CI</a>. You&rsquo;ll learn about <a href="http://martinfowler.com/articles/continuousIntegration.html">continuous integration</a>, and it&rsquo;s free for open source.</li>
+<li>Use <a href="https://codeclimate.com/">Code Climate</a>. It&rsquo;s like automated code review, and also free.</li>
+<li>Try <a href="https://coveralls.io/">Coveralls</a>. It&rsquo;ll help you make sure you actually are testing everything.</li>
+</ul>
+
+
+<p>Plus Travis, Code Climate, and Coveralls will give you little badges for your README.md on Github so you can see how your project is doing at any time.</p>
+
+<p>Read up on practices for <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a>, because it matters to the people you really want to work for, and as an aspiring software craftsman, it needs to matter to you.</p>
+
+<h3>Collaboration</h3>
+
+<p>I mentioned the importance of coding with others last post, but I can&rsquo;t emphasize it enough. Look for opportunities for pair programming, even if it&rsquo;s remote. There are cool apps you can use for that now, like <a href="https://koding.com/">Koding</a> (and others), but in a pinch there&rsquo;s always <a href="http://www.vim.org/">vim</a> and <a href="http://tmux.sourceforge.net/">tmux</a>&hellip; which are tools you&rsquo;ll want to know anyhow.</p>
+
+<p>And which brings me to my next point&hellip;</p>
+
+<h3>Unix or GTFO</h3>
+
+<p>Yeah, code is more portable than it has ever been. You can develop Ruby or Clojure or Node.js on Linux, Solaris, OS X, Windows, probably even Haiku&hellip; but you need to understand your deployment environment, which is going to be some kind of *nix unless you&rsquo;re doing .NET (which you&rsquo;re clearly not, if you came to me for advice).</p>
+
+<p>In addition, the closer your dev environment is to your production environment, the less risk there is of weird heisenbug inconsistencies.</p>
+
+<p>So learn <em>some</em> kind of *nix, whether it&rsquo;s OS X, Linux, or Solaris, or whatever. And dig down; use the command line. Learn your tools, learn the <code>git</code> command line, don&rsquo;t just rely on the Github GUI apps etc. Learn <code>bash</code> or <code>zsh</code>. Learn how a combination of <code>find</code>, <code>grep</code>, and <code>xargs</code> can save your ass. It&rsquo;ll make your life easier as a developer, and it&rsquo;s vital when it comes to&hellip;</p>
+
+<h3>DevOps</h3>
+
+<p>Long ago, in a galaxy far, far, away, developers simply wrote application code and the systems that hosted and served that code were managed by a cabal of wizened neckbeards of the Sysadmin clan. Now, in our more enlightened (or is it benighted?) age, development and operations have blurred their lines and DevOps was born.</p>
+
+<p>In many cases, this is just an excuse for developers to be burdened with sysadmin duties; sometimes, it&rsquo;s perfectly sensible as many of the best deployment options are SaaS (Something-as-a-Service) thingamabobs. But it&rsquo;s important to get at least the basics.</p>
+
+<p>So when you&rsquo;re looking for someplace to put your pet project web apps, put them on <a href="http://heroku.com">Heroku</a>. It&rsquo;s free for a single web dyno and no workers, and many of the &ldquo;add-ons&rdquo; (like Postgres, Redis, ElasticSearch, etc.) that are technologies you might want to play with have free tiers as well.</p>
+
+<p><a href="http://aws.amazon.com/">Amazon Web Services</a> is Level 80 territory as far as I&rsquo;m concerned, but if you get into the DevOps thing, and want to experiment with tools like <a href="http://www.opscode.com/chef/">Chef</a>, they&rsquo;ll also give you some free time with EC2 instances to play around.</p>
+
+<h3>Summary</h3>
+
+<p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Just Get Hacking]]></title>

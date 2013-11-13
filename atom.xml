@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-11-12T13:09:04-05:00</updated>
+  <updated>2013-11-12T23:42:51-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,68 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
+    <link href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/"/>
+    <updated>2013-11-13T00:09:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
+    <content type="html"><![CDATA[<h3>The Important Stuff</h3>
+
+<p>So <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
+
+<p>In this post, I want to look a little more closely at the skills that matter, and the specific areas that the &ldquo;best&rdquo; (IMHO) companies will focus on. I may be biased, but this is the stuff I care about when I&rsquo;m interviewing developers (beyond basic coding chops), and I think I&rsquo;m pretty smart.</p>
+
+<h3>Testing, Testing, Testing</h3>
+
+<p>So you&rsquo;re writing code that runs, runs correctly, and runs consistently. That&rsquo;s awesome. But when it comes to writing production code for a real company, you need to <em>know</em> it&rsquo;s correct, in advance. Especially with dynamic languages, when there&rsquo;s no compiler to refuse to build faulty code, testing is paramount.</p>
+
+<p>So when you&rsquo;re working on these little personal projects, and throwing them on <a href="https://github.com">Github</a>, do a few things:</p>
+
+<!-- more -->
+
+
+<ul>
+<li>Write tests. If you&rsquo;re using Ruby, I recommend <a href="http://rspec.info/">RSpec</a>.</li>
+<li>Use <a href="https://travis-ci.org/">Travis CI</a>. You&rsquo;ll learn about <a href="http://martinfowler.com/articles/continuousIntegration.html">continuous integration</a>, and it&rsquo;s free for open source.</li>
+<li>Use <a href="https://codeclimate.com/">Code Climate</a>. It&rsquo;s like automated code review, and also free.</li>
+<li>Try <a href="https://coveralls.io/">Coveralls</a>. It&rsquo;ll help you make sure you actually are testing everything.</li>
+</ul>
+
+
+<p>Plus Travis, Code Climate, and Coveralls will give you little badges for your README.md on Github so you can see how your project is doing at any time.</p>
+
+<p>Read up on practices for <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a>, because it matters to the people you really want to work for, and as an aspiring software craftsman, it needs to matter to you.</p>
+
+<h3>Collaboration</h3>
+
+<p>I mentioned the importance of coding with others last post, but I can&rsquo;t emphasize it enough. Look for opportunities for pair programming, even if it&rsquo;s remote. There are cool apps you can use for that now, like <a href="https://koding.com/">Koding</a> (and others), but in a pinch there&rsquo;s always <a href="http://www.vim.org/">vim</a> and <a href="http://tmux.sourceforge.net/">tmux</a>&hellip; which are tools you&rsquo;ll want to know anyhow.</p>
+
+<p>And which brings me to my next point&hellip;</p>
+
+<h3>Unix or GTFO</h3>
+
+<p>Yeah, code is more portable than it has ever been. You can develop Ruby or Clojure or Node.js on Linux, Solaris, OS X, Windows, probably even Haiku&hellip; but you need to understand your deployment environment, which is going to be some kind of *nix unless you&rsquo;re doing .NET (which you&rsquo;re clearly not, if you came to me for advice).</p>
+
+<p>In addition, the closer your dev environment is to your production environment, the less risk there is of weird heisenbug inconsistencies.</p>
+
+<p>So learn <em>some</em> kind of *nix, whether it&rsquo;s OS X, Linux, or Solaris, or whatever. And dig down; use the command line. Learn your tools, learn the <code>git</code> command line, don&rsquo;t just rely on the Github GUI apps etc. Learn <code>bash</code> or <code>zsh</code>. Learn how a combination of <code>find</code>, <code>grep</code>, and <code>xargs</code> can save your ass. It&rsquo;ll make your life easier as a developer, and it&rsquo;s vital when it comes to&hellip;</p>
+
+<h3>DevOps</h3>
+
+<p>Long ago, in a galaxy far, far, away, developers simply wrote application code and the systems that hosted and served that code were managed by a cabal of wizened neckbeards of the Sysadmin clan. Now, in our more enlightened (or is it benighted?) age, development and operations have blurred their lines and DevOps was born.</p>
+
+<p>In many cases, this is just an excuse for developers to be burdened with sysadmin duties; sometimes, it&rsquo;s perfectly sensible as many of the best deployment options are SaaS (Something-as-a-Service) thingamabobs. But it&rsquo;s important to get at least the basics.</p>
+
+<p>So when you&rsquo;re looking for someplace to put your pet project web apps, put them on <a href="http://heroku.com">Heroku</a>. It&rsquo;s free for a single web dyno and no workers, and many of the &ldquo;add-ons&rdquo; (like Postgres, Redis, ElasticSearch, etc.) that are technologies you might want to play with have free tiers as well.</p>
+
+<p><a href="http://aws.amazon.com/">Amazon Web Services</a> is Level 80 territory as far as I&rsquo;m concerned, but if you get into the DevOps thing, and want to experiment with tools like <a href="http://www.opscode.com/chef/">Chef</a>, they&rsquo;ll also give you some free time with EC2 instances to play around.</p>
+
+<h3>Summary</h3>
+
+<p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Just Get Hacking]]></title>
@@ -1374,72 +1436,6 @@ And herein lies my central argument: If there can be described a finite-state ma
 <p>I&rsquo;m not offering any solutions here, but I&rsquo;m hoping I can contribute to the conversation. Step away from the mixins, away from the class hierarchy, away from the object model. Maybe take another read of Design Patterns and see if DCI is another hot YAGNI thing. I don&rsquo;t know yet. I just know it reminds me of how things are AWESOME in a whole other paradigm that doesn&rsquo;t necessarily apply to your Rails app.</p>
 
 <p>As a caveat, I should say that I haven&rsquo;t really tried to use this DCI mojo in a production application, although I have played with different ideas about it Just For Fun&copy;. If you think I&rsquo;m wrong, or have the whole thing arse-about-face, I&rsquo;d be happy to discuss it in the comments.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Legacy Systems on Rails (Part 3)]]></title>
-    <link href="http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3/"/>
-    <updated>2012-11-02T13:25:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
-
-<h3>Abstraction is your friend</h3>
-
-<p>I think if there&rsquo;s a common theme in these posts, it&rsquo;s abstraction. Primarily, using Ruby and Rails to abstract away the crazy implementation details of a system that&rsquo;s been accumulating cruft for over twenty years. I&rsquo;m going to start referring to this system as &ldquo;Bubba&rdquo; for the sake of convenience (and since I don&rsquo;t have permission from the vendor to say what it actually is).</p>
-
-<p>I mentioned in Part One that most of the access to the backend system going forward is occurring via a REST API wrapping the Oracle database that serve&rsquo;s as Bubba&rsquo;s back-end. Today I wanted to look at how the user-facing portions are constructed.</p>
-
-<!-- more -->
-
-
-<p>The customer-facing applications that integrate with Bubba via the API just send JSON back and forth at the model level. But our in-house developed applications are somewhat freed from tight integration with Bubba in that they handle persistence for their own data independently. So in addition to the Oracle DB, we also maintain a Postgres database that handles things like user sessions, application preferences, etc. I once complained about the inability to add tables to Bubba, but now I&rsquo;m glad we were &ldquo;forced&rdquo; to add a separate database, one which we control and can write proper unit tests for our models (I think Part 4 will probably be about testing against legacy systems. It won&rsquo;t be pretty).</p>
-
-<p>Bubba is quickly becoming one component of <em>our</em> systems, rather than <em>the</em> system that we&rsquo;re just extending in various ways.</p>
-
-<p>One thing you&rsquo;ll find really quickly if you&rsquo;re trying to use a JSON API as your persistence mechanism is that ActiveResource is pretty inadequate if you were expecting an ActiveRecord-like API to use. I highly recommend the <a href="https://github.com/justinweiss/reactive_resource">reactive_resource</a> gem by Justin Weiss as a substitute.</p>
-
-<p>Reactive Resource (among other things) adds read support for associations, including generating nested paths for child associations. So, for instance, the <code>Customer</code> object I described in Part 1 <code>has_many :cards</code>. ReactiveResource allows you to build models like this:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="ss">ReactiveResource</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:cards</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Reactive Resource will know to generate the URI <code>/customers/42/cards/123456</code> from <code>Customer.find(42).cards.first</code>.</p>
-
-<h3>Encapsulation matters, too</h3>
-
-<p>Before I went this route, I tried the old &ldquo;Rails can handle multiple databases just fine&rdquo; theory. And while that&rsquo;s true in principle, in practice it often blows up in your face. First of all, you have to be very, very careful combining data from multiple sources &ndash; an ActiveRecord::Relation object when confronted with another object that quacks like a Relation will often try doing things like implicit joins &ndash; whcih obviously won&rsquo;t work across separate databases.</p>
-
-<p>The other reason this approach was full of fail is Oracle. Oracle syntax is incredibly nitpicky about its non-standard quirks. I often found that attempting to do something as simple as an inner join on the Postgres DB, using a class that <em>knew</em> to use the postgres adapter, syntax from the oracle_enhanced adapter would leak in. This <em>may</em> be an implementation bug due to some hack in the oracle_enhanced adapter (maybe one day I&rsquo;ll ask Raimonds about it), but just knowing that that was possible convinced me that was not the right path. Having an API for interaction with Bubba, whose sole responsibility is interaction with Bubba, is much cleaner and easier to maintain.</p>
-
-<h3>Don&rsquo;t be Lando</h3>
-
-<p>There&rsquo;s also one very, very good reason for quarantining vendor systems behind a REST interface. From time to time, the vendor is going to come along and <del>randomly change shit</del> release an upgrade.</p>
-
-<p><img src="http://i.imgur.com/qE6ko.png" alt="Imgur" /></p>
-
-<p>Maintaining a custom application dependent on a database schema beyond your control&hellip; let&rsquo;s just say you&rsquo;re gonna have a bad time. But wait, what&rsquo;s that? Gang of Four to the rescue!</p>
-
-<blockquote><p>Program to an &#8216;interface&#8217;, not an &#8216;implementation&#8217;.</p><footer><strong>Gang of Four</strong> <cite>Design Patterns</cite></footer></blockquote>
-
-
-<p>Wrapping the system in an API for which <em>you</em> control the public interface means you can account for schema changes in one place, rather than in multiple dependent applications, while keeping the public interface consistent. This also goes a long way in keeping your code DRY. And with a bit of metaprogramming magic like I described in part one, you can often spare yourself from having to push a new version if the schema changes are minor.</p>
-
-<p>So, this post was a little light on code, but I did want to explain some of the reasoning behind this approach to legacy systems integration using Rails.</p>
-
-<h4>Note</h4>
-
-<p>I&rsquo;d like to thank the folks at the <a href="http://ruby5.envylabs.com">Ruby5 podcast</a> for <a href="http://ruby5.envylabs.com/episodes/299-episode-295-august-7th-2012/stories/2616-legacy-systems-on-rails">covering this series in Episode #295</a>. If you missed that episode, please give it a listen&hellip; the commentary is pretty great, even if they did question my sanity a bit.</p>
 ]]></content>
   </entry>
   
