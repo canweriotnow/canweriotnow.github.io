@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="I&rsquo;ve taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace &hellip;">
+  <meta name="description" content="So in a delightful twist, Michael O. Church has brought in the concept of D&amp;D ethical alignments to the corporate hierarchy/career discussion. He &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">The Difficulty of Chaotic Good</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-02T22:29:00-04:00" pubdate data-updated="true">2013-04-02</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So in a delightful twist, Michael O. Church has brought in the concept of D&amp;D <a href="http://michaelochurch.wordpress.com/2013/03/18/gervais-macleod-11-alignment-and-careers/">ethical alignments</a> to the corporate hierarchy/career discussion.</p>
+
+<p>He quite correctly places the &ldquo;Technocrat&rdquo;, i.e., the &ldquo;postive sociopath&rdquo;, or the person who wants to accomplish something beneficial without regard to corporate politics or any other tangential concerns, in the &ldquo;chaotic good&rdquo; (or at least, &ldquo;neutral good&rdquo;) category.</p>
+
+<p>I&rsquo;ve seen myself as &ldquo;chaotic good&rdquo; long before this series of posts, or before I ever thought of applying the D&amp;D alignment categories to roles at work. It fits with my politics (anarchist-communist), with my gneral M.O. of getting things done (open source is always bettter, and it&rsquo;s always easier to ask for forgiveness than to get permission). It also fits with my general attitude toward work: if you want something brilliant, tell me what you want and get the fuck out of my way. If you want a mess, keep letting middle managers stick their fingers in the pie of my creative process.</p>
+
+<p>Church makes an excellent point, though, that the &ldquo;technocrat&rdquo; disposition, and the alignments it tends to entail (chaotic good to chaotic neutral) tend to be notoriously difficlut to manage. The only thing I think is missing from the series he&rsquo;s been doing on this issue is that if you&rsquo;re a programmer, <a href="http://www.paulgraham.com/boss.html">you weren&rsquo;t meant to have a boss</a>.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -604,108 +653,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/">DCI: The Right Idea for The Wrong Paradigm</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-03T01:10:00-05:00" pubdate data-updated="true">2013-01-03</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&rsquo;ve seen, however, is Tony Arcieri&rsquo;s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">&ldquo;DCI&rdquo; in Ruby Is Compeltely Broken</a>.</p>
-
-<p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it&rsquo;s an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
-
-<p>Now, I was initially a big fan <em>conceptually</em> of DCI. It seemed intuitive, even familiar. And it helped that it was the brainchild of Trygve Reenskaug, the erstwhile inventor of MVC, possibly one of the most useful OOP patterns ever devised.</p>
-
-<p>But the more familiar it seemed, the more difficult it seemed to implement properly, much less efficiently, even in the purest of modern OO languages, i.e., Ruby.</p>
-
-<p>It wasn&rsquo;t until I tried to forget everything I knew about OOP that its familiarity became clear: this novel appropach to object-oriented design is embedded in the most natural thing in the world in the oldest of functional programming languages, Lisp.</p>
-
-<p>Enter the macro. In Clojure, providing context to a function is straightforward using a macro, for instance, a database query (n.b., most of this is straight example code from <a href="http://en.wikibooks.org">wikibooks.org</a>).</p>
-
-<figure class='code'><figcaption><span>Set up JDBC connection</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;clojure.java.jdbc</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">db-host</span> <span class="s">&quot;localhost&quot;</span>
-</span><span class='line'>      <span class="nv">db-port</span> <span class="mi">5432</span>
-</span><span class='line'>      <span class="nv">db-name</span> <span class="s">&quot;a_database&quot;</span><span class="p">]</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="p">(</span><span class="k">def </span><span class="nv">db</span> <span class="p">{</span><span class="ss">:classname</span> <span class="s">&quot;org.postgresql.Driver&quot;</span> <span class="c1">; must be in classpath</span>
-</span><span class='line'>           <span class="ss">:subprotocol</span> <span class="s">&quot;postgresql&quot;</span>
-</span><span class='line'>           <span class="ss">:subname</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;//&quot;</span> <span class="nv">db-host</span> <span class="s">&quot;:&quot;</span> <span class="nv">db-port</span> <span class="s">&quot;/&quot;</span> <span class="nv">db-name</span><span class="p">)</span>
-</span><span class='line'>           <span class="c1">; Any additional keys are passed to the driver</span>
-</span><span class='line'>           <span class="c1">; as driver-specific properties.</span>
-</span><span class='line'>           <span class="ss">:user</span> <span class="s">&quot;a_user&quot;</span>
-</span><span class='line'>           <span class="ss">:password</span> <span class="s">&quot;secret&quot;</span><span class="p">}))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This provides the context for the <code>with-connection</code> macro:</p>
-
-<figure class='code'><figcaption><span>SELECT Statement</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">with-connection</span> <span class="nv">db</span>
-</span><span class='line'>   <span class="p">(</span><span class="nf">with-query-results</span> <span class="nv">rs</span> <span class="p">[</span><span class="s">&quot;select * from blogs&quot;</span><span class="p">]</span>
-</span><span class='line'>     <span class="c1">; rs will be a sequence of maps, </span>
-</span><span class='line'>     <span class="c1">; one for each record in the result set. </span>
-</span><span class='line'>     <span class="p">(</span><span class="nb">dorun </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:title</span> <span class="nv">%</span><span class="p">))</span> <span class="nv">rs</span><span class="p">))))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I&rsquo;m using the simplest of (admittedly cribbed) examples here for the sake of demonstration, but right away here, we&rsquo;ve got the D and C of DCI &ndash; Data and Context. As for interaction&hellip; we could easily conceive of a <code>with-role</code> macro which determines the interaction of the database connection and the actual application of the <code>with-connection</code> macro, whether it invokes a SELECT, CREATE, UPDATE, or DELETE statement.</p>
-
-<p>In a Lisp, this level of composition is completely <em>natural,</em> is my point. In a language like Ruby (which despite having much of the Lisp nature, is OO to its core), and especially in a framework like Rails, with its cargo-cult Design Pattern-worshipping user base (I&rsquo;m going to take some shit for that one, but accept that I&rsquo;m exaggerating and flame with that in mind), is it any surprise that a pattern that makes <em>total sense</em> in an FP context is going to be a hot controversy in an OOP context?</p>
-
-<p>I agree with Tony&rsquo;s post that &ldquo;DCI&rdquo; in Rails is totally broken. But that&rsquo;s because, IMHO, DCI isn&rsquo;t the best pattern for OOP. Yeah, Ruby has <em>lots</em> of functional features, but maybe we need to rethink how we&rsquo;re doing this DCI stuff (or Concerns, or whatever), on the basis that messing with inheritance and the class hierarchy is the <em>wrong thing,</em> and perhaps we should be creatively exploring the use of blocks and lambdas and Ruby&rsquo;s other functional constructs.</p>
-
-<p>I&rsquo;m not offering any solutions here, but I&rsquo;m hoping I can contribute to the conversation. Step away from the mixins, away from the class hierarchy, away from the object model. Maybe take another read of Design Patterns and see if DCI is another hot YAGNI thing. I don&rsquo;t know yet. I just know it reminds me of how things are AWESOME in a whole other paradigm that doesn&rsquo;t necessarily apply to your Rails app.</p>
-
-<p>As a caveat, I should say that I haven&rsquo;t really tried to use this DCI mojo in a production application, although I have played with different ideas about it Just For Fun&copy;. If you think I&rsquo;m wrong, or have the whole thing arse-about-face, I&rsquo;d be happy to discuss it in the comments.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -729,6 +676,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/">So Github Is Not Your CV.  It Still Matters</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>
       </li>
     
@@ -742,10 +693,6 @@
     
       <li class="post">
         <a href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">Letter to a Young (Or New) Programmer</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/02/return-of-the-job-destroyer/">Return of the Job Destroyer</a>
       </li>
     
   </ul>

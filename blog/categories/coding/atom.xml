@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-11-12T23:42:51-05:00</updated>
+  <updated>2013-11-19T22:32:00-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,79 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[So Github Is Not Your CV.  It Still Matters]]></title>
+    <link href="http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/"/>
+    <updated>2013-11-19T21:22:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
+
+<p>There are good counterarguments to this. Github is not a portfolio, it&rsquo;s where your public code lives. <a href="https://github.com/canweriotnow">My Github</a> has a bunch of projects I should maybe delete; stalled or abandoned projects, one-off projects with poor test coverage, etc. It&rsquo;s not really a representative sample of my <em>production</em> code. But that&rsquo;s not why I think it matters.</p>
+
+<p>In her post, Ashe provides several excellent alternatives to OSS contributions as evaluation criteria; these include:</p>
+
+<ul>
+<li>Pair with the prospective hire</li>
+<li>Contract the prospective hire for a week or two</li>
+<li>Ask for samples</li>
+</ul>
+
+
+<p>When considering potential hires, Github is not everything. At <a href="http://anestuary.com">An Estuary</a>, we definitely request (and prefer) a Github profile with applicant CVs; but it&rsquo;s not about contributions to OSS projects (i.e., the &ldquo;unpaid labor&rdquo; critiqued in Ms. Dryden&rsquo;s post).</p>
+
+<p>The focus of our company is on professional development. We not only dogfood technically (i.e., using our own software), but also culturally. We want to hire people who are focused on their own professional development, and Github is a good place to document that.</p>
+
+<p>(Also&hellip; code samples? If you wrote something worth showing me, why isn&rsquo;t it on Github, in a gist, on JSFiddle, etc.?)</p>
+
+<p>Our main product is designed to help educators document their professional development. Hackers like us have Github, so if we&rsquo;re not using it&hellip; something might be amiss.</p>
+
+<p>So when I&rsquo;m looking at a Github profile evaluating a potential hire, I&rsquo;m not looking for accepted pull requests to <a href="https://github.com/rails/rails">Rails</a>. I mean, that would be a plus, but&hellip;</p>
+
+<!--more-->
+
+
+<h3>A Commitment to Professional Development</h3>
+
+<p>That&rsquo;s what I want to see. Not a portfolio, as <a href="http://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/">James Coglan suggests</a>. He&rsquo;s not wrong, but as a hiring hacker, at least from my perspective, he misjudges the value of Github profiles.</p>
+
+<p>For me, evaluating Github profiles for potential hires is about a commitment to a <em>profession.</em> And that&rsquo;s not something that&rsquo;s real in software at the moment, but it&rsquo;s something we need to develop.</p>
+
+<p>If building software is <em>just a paycheck,</em> I don&rsquo;t really want to work with you. No offense, I&rsquo;m sure there are plenty of organizations out there that are fine with that. You should work for them. I have, and I hated it, but find your own bliss. I don&rsquo;t want you to miss out on family and kids and friends; I don&rsquo;t want to miss out on those either. But in those couple of hours between the kids going to bed and sleep closing in&hellip; well, I&rsquo;m hacking away on some odd side project, and that&rsquo;s who I want by my side while we&rsquo;re trying to hack things better.</p>
+
+<p>There&rsquo;s a conflation of OSS contributions (i.e., unpaid labor contributing to free software your company or prospective company uses to make a profit) and having a Github (or Bitbucket or whatever) account that demonstrates a commitment to honing your craft over time. Both are admirable, but I want to hire smart people who are committed to always be learning. Github is a good way to demonstrate that quality, even if yours (like mine) is full of projects that went nowhere.</p>
+
+<p>Sorry, I need evidence of commitment. If you have patches in or Rails or clojure.core that&rsquo;s bonus points. But your commitment is what matters to me:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>Timeframes in which you cannot become a good programmer: 2 weeks; 2 months; 2 years. Sorry. 10,000 hours. Not my fault. Sorry.</p>&mdash; Gary Bernhardt (@garybernhardt) <a href="https://twitter.com/garybernhardt/statuses/397833212019232769">November 5, 2013</a></blockquote>
+
+
+<script async src="http://decomplecting.org//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>10,000 hours. That&rsquo;s what it takes. Not that you&rsquo;ve put that time in already, but I need to believe you&rsquo;re committed to putting the time in. Sorry if that&rsquo;s a hardship. There are other jobs.</p>
+
+<p>Now I&rsquo;m close to sounding like a jerk, but it&rsquo;s just the reality. If I was a flight instructor who certified a pilot who hadn&rsquo;t put in their hours, I&rsquo;d be criminally negligent. Software matters too. Just look at <a href="http://healthcare.gov">healthcare.gov</a></p>
+
+<h3>Privilege isn&rsquo;t just about OSS</h3>
+
+<p>One of the main points of Ms. Dryden&rsquo;s article is that OSS is dispropotionally authored by privileged groups, i.e. young white males. While this is clearly backed by the data, the reasons for this are not limited to the software industry; most professions (and yes, I am considering software engineering a profession) have similarly disproportionate distributions. <a href="http://www.nalp.org/minoritieswomen">Lawyers</a> and <a href="http://nces.ed.gov/fastfacts/display.asp?id=72">doctorates in general</a> skew in the same direction. Why? For the same reasons addressed in the argument against OSS as hiring criteria: young white males disproportionately have the free time and resources available to pursue advanced degrees, attend professional school, etc.</p>
+
+<p>Now, in software, we have an edge case in which a degree isn&rsquo;t necessarily required in the first place. But something has to stand in for that, doesn&rsquo;t it? Some demonstration of competency?</p>
+
+<p>I think this was one of the more salient points made in <a href="https://news.ycombinator.com/item?id=6728417">the Hacker News thread</a> on Ms. Dryden&rsquo;s post — all hiring criteria are discriminatory in one way or another, e.g. requiring a Master&rsquo;s degree discriminates against people with only a Bachelor&rsquo;s — and surprise, surprise, individuals privileged by race or gender are more likely to secure the higher degree.</p>
+
+<p>So I think the &ldquo;Github hiring criterion&rdquo; is a bit of a red herring. Privilege is an issue across the board, and it really has nothing to do with OSS or Github profiles. I&rsquo;m in my first hiring role as a developer, but I find reviewing applicants' Github profiles incredibly useful; not as in &ldquo;we will talk to this person but not this other one,&rdquo; but guiding what questions to ask and what paths to explore in the interview.</p>
+
+<p>tl;dr Hiring people is hard. Github provides <em>limited</em> data to drive those decisions. It&rsquo;s easier to make confident decisions with more data.</p>
+
+<h5><em>Postscript</em></h5>
+
+<p>If Github is privilegey, than what is <a href="http://careers.stackoverflow.com/">Careers 2.0</a>? You either need an awesome Github rep or <a href="http://stackoverflow.com">StackOverflow</a> karma <em>just to get a profile.</em> And answering James Coglan&rsquo;s critique — Careers 2.0 actually <em>is</em> a portfolio; you feature your best Github repos, best blog posts, etc.</p>
+
+<p>Maybe another time I&rsquo;ll go into <a href="http://coderwall.com">Coderwall</a> or <a href="http://coderbits.com">Coderbits</a> as alternatives.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
@@ -306,340 +379,6 @@
 <p>I learned BASIC so I could make my screen draw pictures. That&rsquo;s great for a five year old. But I learned C so I could make my printer work with Linux; I learned Perl so I could type fewer commands into the shell; I learned PHP and SQL to build websites, and I learned Ruby because PHP sucks. I learned Scheme because I wanted to hack my way through SICP, and I learned Clojure because I wanted to do concurrent programming without mutexes. There was always a reason, a purpose, an application.</p>
 
 <p>If we want kids to code, we must not only allow them to apply that knowledge whenever and wherever the opportunity arises, we must also train teachers to always and everywhere encourage the application of computational thinking (as well as programming) to whatever problem set presents itself as a viable candidate.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DateTime Conversions in Clojure]]></title>
-    <link href="http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
-    <updated>2013-02-03T14:18:00-05:00</updated>
-    <id>http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
-    <content type="html"><![CDATA[<p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
-
-<p>A while ago, I <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">wrote a post about Bubba</a> (not its real name), a legacy/vendor-supplied system in which the original developers (may they suffer eternal torment) decided to store all datetimes as floating-point values using a bastardized form of the Julian Day system with fractional day part. In that post, I showed a solution used in a Ruby on Rails web app, but now I&rsquo;m writing data integration services for multiple systems, and needed something a bit more robust, so I&rsquo;m writing it in Clojure.</p>
-
-<p>I&rsquo;ll start off with the dependencies:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">ns </span><span class="nv">project.util.date</span>
-</span><span class='line'>  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clj-time.core</span> <span class="ss">:as</span> <span class="nv">tm</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="p">[</span><span class="nv">clj-time.local</span> <span class="ss">:as</span> <span class="nv">loc</span><span class="p">]</span>
-</span><span class='line'>        <span class="p">[</span><span class="nv">clj-time.format</span> <span class="ss">:as</span> <span class="nv">fmt</span><span class="p">]</span>
-</span><span class='line'>        <span class="p">[</span><span class="nv">clojure.math.numeric-tower</span> <span class="ss">:as</span> <span class="nv">math</span><span class="p">])</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="ss">:use</span> <span class="nv">clj-time.coerce</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">(</span><span class="ss">:import</span> <span class="p">[</span><span class="nv">oracle.sql</span> <span class="nv">TIMESTAMP</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>       <span class="p">[</span><span class="nv">java.sql</span> <span class="nv">Timestamp</span><span class="p">]))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>I&rsquo;m using the fantastic <a href="https://github.com/seancorfield/clj-time">clj-time</a> library by Sean Corfield. It&rsquo;s basically a wrapper around the <a href="http://joda-time.sourceforge.net/">Joda Time</a> Java library, allowing us to use its powerful datetime handling in idiomatic Clojure.</p>
-
-<p>So, for the actual code. First, the Bubba dates need to be converted to and from a floating point value to a normal Date object.</p>
-
-<!-- more -->
-
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Bubba DateTime conversions&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Set day of calendar reform for TS julian dates.</span>
-</span><span class='line'><span class="c1">;; And yes, it uses local time, not UTC. Because FML.</span>
-</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">docr</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;It&amp;rsquo;s the day of Calendar Reform for bubba&amp;rdquo;</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">loc/to-local-date-time</span> <span class="p">(</span><span class="nf">tm/date-time</span> <span class="mi">1899</span> <span class="mi">12</span> <span class="mi">30</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">fractional-part</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Get the fractional Julian day part from a DateTime&amp;rdquo;</span>
-</span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;hour-part</span> <span class="p">(</span><span class="nf">tm/hour</span> <span class="nv">dt</span><span class="p">)</span>
-</span><span class='line'><span class="nv">min-part</span>  <span class="p">(</span><span class="nf">tm/minute</span> <span class="nv">dt</span><span class="p">)</span>
-</span><span class='line'><span class="nv">sec-part</span>  <span class="p">(</span><span class="nf">tm/sec</span> <span class="nv">dt</span><span class="p">)</span>
-</span><span class='line'><span class="nv">seconds</span> <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">hour-part</span> <span class="mi">60</span> <span class="mi">60</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">min-part</span> <span class="mi">60</span><span class="p">)</span> <span class="nv">sec-part</span><span class="p">)]</span>
-</span><span class='line'><span class="p">(</span><span class="nb">float </span><span class="p">(</span><span class="nb">/ </span><span class="nv">seconds</span> <span class="mi">86400</span><span class="p">))))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">to-bubbadt</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Converts a DateTime to a bubba Julian date&amp;rdquo;</span>
-</span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">offset</span> <span class="nv">docr</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="nb">+ </span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">tm/in-days</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">tm/interval</span> <span class="nv">offset</span> <span class="nv">dt</span><span class="p">))</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">fractional-part</span> <span class="nv">dt</span><span class="p">))))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">current-bubbadt</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Get the current local time as a bubba Julian date&amp;rdquo;</span>
-</span><span class='line'>  <span class="p">[]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">to-bubbadt</span> <span class="p">(</span><span class="nf">loc/local-now</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">from-bubbadt</span> <span class="p">[</span><span class="nv">bubbadt</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">day-part</span> <span class="p">(</span><span class="nf">math/floor</span> <span class="nv">bubbadt</span><span class="p">)</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">frac-part</span> <span class="p">(</span><span class="nb">- </span><span class="nv">bubbadt</span> <span class="nv">day-part</span><span class="p">)</span>
-</span><span class='line'>    <span class="nv">docr</span> <span class="nv">docr</span><span class="p">]</span>
-</span><span class='line'><span class="p">(</span><span class="nf">tm/plus</span> <span class="nv">docr</span> <span class="p">(</span><span class="nf">tm/days</span> <span class="nv">day-part</span><span class="p">)</span> <span class="p">(</span><span class="nf">tm/secs</span> <span class="p">(</span><span class="nf">math/round</span> <span class="p">(</span><span class="nb">* </span><span class="mi">86400</span> <span class="nv">frac-part</span><span class="p">))))))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Okay, that&rsquo;s probably a lot to take in, but basically it performs the calculations to convert the floating-point dates to Date objects and back again. But there&rsquo;s still a catch. In some of the views I&rsquo;ve built for reporting, I&rsquo;m pre-converting those dates to Oracle SQL TIMESTAMP types, and depending on the context, sometimes those floats come back as Doubles, and sometimes as BigDecimals.</p>
-
-<p>Clojure&rsquo;s got me covered, with multimethods.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Use a multimethod for our date coercion b/c the input type might be variable.</span>
-</span><span class='line'><span class="p">(</span><span class="kd">defmulti </span><span class="nv">bubba-date-coerce</span> <span class="nv">class</span><span class="p">)</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">Double</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">BigDecimal</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">oracle.sql.TIMESTAMP</span> <span class="p">[</span><span class="nv">ts</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">from-date</span> <span class="p">(</span><span class="nf">.toDate</span> <span class="nv">ts</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="ss">:default</span> <span class="p">[</span><span class="nv">d</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nb">identity </span><span class="nv">d</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p> Much like generics in Common Lisp (well, CLOS anyhow) <code>defmulti</code> takes a dispatch function as an argument, in this case <code>class</code>, which returns the class of the argument passed to the multimethod. Methods can then be defined to handle each type of possile argument, with a <code>:default</code> method for unmatched cases. Multimethods can be used with any dispatch function you like, but <code>class</code> is a common use case, and handy as hell here.</p>
-
-<p> As I mentioned, the point of this is to get data in and out of multiple systems, and they all have their own idiosyncracies.</p>
-
-<p> For instance, there&rsquo;s, uhh, let&rsquo;s call it Joe&rsquo;s Directory, or JD, which stores all of its dates and datetimes as strings, with inconsistant formatting across the board.</p>
-
-<p> Luckily, clj-time has awesome parsers:</p>
-
-<p> <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span> <span class="c1">;; General (jd DateTime conversions)&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="k">def </span><span class="nv">jd-parser</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/formatter</span> <span class="p">(</span><span class="nf">tm/default-time-zone</span><span class="p">)</span> <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;MM/dd/YYYY&amp;rdquo; &amp;ldquo;YYYYMMddHHmmssZ&amp;rdquo; &amp;ldquo;YYYY-MM-dd HH:mm:ss&amp;rdquo;))&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">jdparse</span> <span class="p">[</span><span class="nv">date-string</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/parse</span> <span class="nv">jd-parser</span> <span class="nv">date-string</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Easy as pie. Where it gets truly beautiful, however, is when mixed in with <a href="http://sqlkorma.com/">Korma</a> for SQL abstraction. Korma entities have two special macros for data conversion: <code>prepare</code>, which applies a function to data before storing it in the database, and <code>transform</code> which applies a function when reading from the database.</p>
-
-<p>Since Korma returns query results as a vector of hashmaps, it&rsquo;s as simple as updating a hashmap:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">jd-date-transform</span> <span class="p">[</span><span class="nv">rec</span><span class="p">]</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Converts date strings to DateTime instances&amp;rdquo;</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">ent</span> <span class="nv">rec&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">date-fields</span> <span class="p">[</span><span class="ss">:DOB</span> <span class="ss">:empstartdate</span> <span class="ss">:modifytimestamp</span> <span class="ss">:createtimestamp</span><span class="p">]]</span>
-</span><span class='line'><span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">jdparse</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">date-fields</span><span class="p">)))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>That&rsquo;s the first version of the transform fn I wrote for JD, but there&rsquo;s two problems. First, the fields to apply are hard-coded in the <code>let</code> form. More importantly, however, is the condition where I do a <code>select</code> and don&rsquo;t return those fields; <code>update-in</code> will add the field with a value of <code>nil</code>.</p>
-
-<p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">generic-transform</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Transform function for queries. Arguments are a function to apply (f),</span>
-</span><span class='line'>   <span class="nv">the</span> <span class="nv">entity</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">transformed</span>, <span class="nb">and </span><span class="nv">the</span> <span class="nv">fields</span> <span class="nv">on</span> <span class="nv">which</span> <span class="nv">to</span> <span class="nb">apply </span><span class="nv">the</span> <span class="nv">transformation.</span><span class="o">&amp;</span><span class="nv">rdquo</span><span class="c1">;</span>
-</span><span class='line'>  <span class="p">[</span><span class="nv">f</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">update-fn</span> <span class="nv">f&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">ent</span> <span class="nv">ent</span>
-</span><span class='line'>    <span class="nv">fields</span> <span class="p">(</span><span class="nf">vec</span> <span class="p">(</span><span class="nf">st/intersection</span> <span class="p">(</span><span class="nb">set </span><span class="p">(</span><span class="nb">keys </span><span class="nv">ent</span><span class="p">))</span> <span class="p">(</span><span class="nb">set </span><span class="nv">fields</span><span class="p">)))]</span>
-</span><span class='line'><span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%1</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">update-fn</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">)))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Finding the set intersection of the fields we normally want to transform, and the fields returned, ensures we don&rsquo;t get extra fields with values of <code>nil</code>.</p>
-
-<p>And look, I resisted the temptation to use a macro where a function would suffice! Do I get points for good Lisp behavior?</p>
-
-<p>Then it&rsquo;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">defentity</span> <span class="nv">customers</span>
-</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Korma entity for the CUSTOMER table. Transforms Bubba datetimes to DateTime objects.&amp;rdquo;</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">database</span> <span class="nv">envdb</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">table</span> <span class="ss">:customer</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">transform&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;#</span><span class="p">(</span><span class="nf">generic-transform</span> <span class="nv">dt/bubba-date-coerce</span> <span class="nv">%</span> <span class="p">[</span><span class="ss">:active_start_date</span>
-</span><span class='line'>                                                   <span class="ss">:active_end_date</span>
-</span><span class='line'>                                                   <span class="ss">:lastmod_datetime</span>
-</span><span class='line'>                                                   <span class="ss">:birthdate</span>
-</span><span class='line'>                                                   <span class="ss">:opendatetime</span><span class="p">])))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>So that&rsquo;s how I&rsquo;m normalizing datetimes in this particular project. I&rsquo;m really enjoying writing code like this: building short, composable functions and refactoring by decomplecting them into shorter, more composable functions.</p>
-
-<p>I find refactoring easier to reason about in Clojure than any other language I&rsquo;ve worked in. Thinking in terms of simple, composable functions (particularly having the facility of higher-order functions and macros) also makes it very straightforward to decouple interface and implementation.</p>
-
-<p>I&rsquo;ll state for the record I&rsquo;m fairly new to Clojure, so it wouldn&rsquo;t surprise me if this code looks pretty amateurish to more experienced Clojurians. If anyone has any suggestions for improving it, I&rsquo;d welcome the advice.</p>
 ]]></content>
   </entry>
   
