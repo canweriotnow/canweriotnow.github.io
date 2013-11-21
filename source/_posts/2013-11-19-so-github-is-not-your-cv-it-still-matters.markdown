@@ -16,7 +16,7 @@ In her post, Ashe provides several excellent alternatives to OSS contributions a
 * Contract the prospective hire for a week or two
 * Ask for samples
 
-When considering potential hires, Github is not everything. At [An Estuary](http://anestuary.com), we definitely request (and prefer) a Github profile with applicant CVs; but it's not about contributions to OSS projects (i.e., the "unpaid labor" critiqued in Ms. Dryden's post).
+When considering potential hires, Github is not everything. At [An Estuary](http://anestuary.com), we definitely request (and prefer) a Github profile with applicant CVs; but it's not about contributions to OSS projects (i.e., the "unpaid labor" critiqued in Ashe Dryden's post).
 
 The focus of our company is on professional development. We not only dogfood technically (i.e., using our own software), but also culturally. We want to hire people who are focused on their own professional development, and Github is a good place to document that. 
 
@@ -49,11 +49,11 @@ Now I'm close to sounding like a jerk, but it's just the reality. If I was a fli
 
 ### Privilege isn't just about OSS
 
-One of the main points of Ms. Dryden's article is that OSS is dispropotionally authored by privileged groups, i.e. young white males. While this is clearly backed by the data, the reasons for this are not limited to the software industry; most professions (and yes, I am considering software engineering a profession) have similarly disproportionate distributions. [Lawyers](http://www.nalp.org/minoritieswomen) and [doctorates in general](http://nces.ed.gov/fastfacts/display.asp?id=72) skew in the same direction. Why? For the same reasons addressed in the argument against OSS as hiring criteria: young white males disproportionately have the free time and resources available to pursue advanced degrees, attend professional school, etc.
+One of the main points of Ashe Dryden's article is that OSS is dispropotionally authored by privileged groups, i.e. young white males. While this is clearly backed by the data, the reasons for this are not limited to the software industry; most professions (and yes, I am considering software engineering a profession) have similarly disproportionate distributions. [Lawyers](http://www.nalp.org/minoritieswomen) and [doctorates in general](http://nces.ed.gov/fastfacts/display.asp?id=72) skew in the same direction. Why? For the same reasons addressed in the argument against OSS as hiring criteria: young white males disproportionately have the free time and resources available to pursue advanced degrees, attend professional school, etc.
 
 Now, in software, we have an edge case in which a degree isn't necessarily required in the first place. But something has to stand in for that, doesn't it? Some demonstration of competency?
 
-I think this was one of the more salient points made in [the Hacker News thread](https://news.ycombinator.com/item?id=6728417) on Ms. Dryden's post — all hiring criteria are discriminatory in one way or another, e.g. requiring a Master's degree discriminates against people with only a Bachelor's — and surprise, surprise, individuals privileged by race or gender are more likely to secure the higher degree.
+I think this was one of the more salient points made in [the Hacker News thread](https://news.ycombinator.com/item?id=6728417) on Ashe Dryden's post — all hiring criteria are discriminatory in one way or another, e.g. requiring a Master's degree discriminates against people with only a Bachelor's — and surprise, surprise, individuals privileged by race or gender are more likely to secure the higher degree.
 
 So I think the "Github hiring criterion" is a bit of a red herring. Privilege is an issue across the board, and it really has nothing to do with OSS or Github profiles. I'm in my first hiring role as a developer, but I find reviewing applicants' Github profiles incredibly useful; not as in "we will talk to this person but not this other one," but guiding what questions to ask and what paths to explore in the interview. 
 
