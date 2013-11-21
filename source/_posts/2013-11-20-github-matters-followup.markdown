@@ -10,7 +10,7 @@ categories: [hiring, coding, jobs, github, careers]
 
 I made some mistakes in my last post. First off, I'd like to apologize to [Ashe Dryden](http://ashedryden.com/) for referring to her as Ms. Dryden while I referred to [James Coglan](http://jcoglan.com/) by his full name. I had no intention of explicitly implying Ashe's gender; my usual writing style is to refer to people by their full name initially and to use an approrpiate title thereafter. But upon review I realized I referred to Ashe as "Ms. Dryden" in subsequent references, while I referred to James Coglan as "James Coglan" both times I mentioned him. 
 
-I'm sorry about that. It was an oversight, and if I had been paying better attention, the second reference to Mr.s Coglan would have been "Mr. Coglan" for parity. But as I failed to achieve parity, and Ashe expressed that she preferred "Ashe Dryden" to "Ms. Dryden" in general, I decided to `s/Ms./Ashe/g` the post. It is now corrected.
+I'm sorry about that. It was an oversight, and if I had been paying better attention, the second reference to Mr. Coglan would have been "Mr. Coglan" for parity. But as I failed to achieve parity, and Ashe expressed that she preferred "Ashe Dryden" to "Ms. Dryden" in general, I decided to `s/Ms./Ashe/g` the post. It is now corrected.
 
 <!-- more -->
 
