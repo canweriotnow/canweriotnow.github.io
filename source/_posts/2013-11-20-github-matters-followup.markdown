@@ -14,7 +14,7 @@ I'm sorry about that. It was an oversight, and if I had been paying better atten
 
 #### I missed some things
 
-My post was mostly in response to the [Github Is Not Your CV](https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/) sentiment, as well as the [Hacker News comments](https://news.ycombinator.com/item?id=6728417) related to Ashe's post, rather than the diversity/privelege statistics offered by Ashe's [original article](http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community). I had no intention of discounting the privilege issues involved in having the time and resources to contribute to OSS or produce original experiments/libraries/applications on [Github](https://github.com).
+My post was mostly in response to the [Github Is Not Your CV](https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/) sentiment, as well as the [Hacker News comments](https://news.ycombinator.com/item?id=6728417) related to Ashe's post, rather than the diversity/privilege statistics offered by Ashe's [original article](http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community). I had no intention of discounting the privilege issues involved in having the time and resources to contribute to OSS or produce original experiments/libraries/applications on [Github](https://github.com).
 
 I didn't disagree with any of that. I still think it's a good idea to make projects public and make that part of your portfolio. I never suggested that hiring managers should use Github as the only criterion... but I do think it demonstrates a commitment to professional development, to honing your craft. 
 
