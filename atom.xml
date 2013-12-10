@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-12-09T23:03:39-05:00</updated>
+  <updated>2013-12-10T13:15:46-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -28,8 +28,8 @@
 <!-- more -->
 
 
-<p><span class='pullquote-right' data-pullquote='Don&#8217;t just download the latest app, help design it.'>
-The president&rsquo;s exhortation was especially interesting in one very specific regard: the spot at 0:32 where he encourages, Don&rsquo;t just download the latest app, help design it. Well&hellip; I like where this is going, but&hellip; it&rsquo;s not that easy, Mr. President. I&rsquo;m all for anyone ,with the slightest interest, screwing around with code and learning new things. And if you&rsquo;ve got an Android phone (among others, but I&rsquo;m trying to keep this simple), that&rsquo;s great. You can download <a href="http://developer.android.com/sdk/installing/studio.html">Android Studio</a> from <a href="https://google.com">Google</a>, for free. You can put your phone in developer mode, and install whatever you want. Easy peasy. And hey, want to distribute that to your friends? Pay $25, one time, you&rsquo;re set.
+<p><span class='pullquote-right' data-pullquote='Don&#8217;t just download the latest app. Help design it. Don&#8217;t just play on your phone. Program it.'>
+The president&rsquo;s exhortation was especially interesting in one very specific regard: the spot at 0:32 where he encourages, Don&rsquo;t just download the latest app. Help design it. Don&rsquo;t just play on your phone. Program it. Well&hellip; I like where this is going, but&hellip; it&rsquo;s not that easy, Mr. President. I&rsquo;m all for anyone ,with the slightest interest, screwing around with code and learning new things. And if you&rsquo;ve got an Android phone (among others, but I&rsquo;m trying to keep this simple), that&rsquo;s great. You can download <a href="http://developer.android.com/sdk/installing/studio.html">Android Studio</a> from <a href="https://google.com">Google</a>, for free. You can put your phone in developer mode, and install whatever you want. Easy peasy. And hey, want to distribute that to your friends? Pay $25, one time, you&rsquo;re set.
 </span></p>
 
 <p>If you&rsquo;re locked into Apple&rsquo;s totalitarian ecosystem, alas, it&rsquo;s not that easy. You&rsquo;ll need to pay US$99 per year for the privelege of running your own code on your own device. And should you want to publish that? Well, Apple&rsquo;s going to review and nitpick and make sure <em>they</em> want it in their store. And charge <em>you</em> for the privilege of having the opportunity to add value to their platform. And hell, if your friends are at all savvy and have Android phones, just send them the APK or (even better), open source your project and let them build it themselves. This all works great on Android. On iOS&hellip; not so much.</p>
