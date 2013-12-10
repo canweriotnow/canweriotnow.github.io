@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CSEDWeek | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/csedweek/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2013-12-09T23:03:39-05:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Apple: The Obstacle to America's Future?]]></title>
+    <link href="http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future/"/>
+    <updated>2013-12-09T22:32:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
+    <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
+
+<iframe width="560" height="315" src="http://decomplecting.org//www.youtube.com/embed/6XvmhE1J9PY" frameborder="0" allowfullscreen></iframe>
+
+
+<p>It&rsquo;s an understandable, if questionable, sentiment. I&rsquo;ve previously addressed the <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">questionable wisdom, and pitfalls</a>, of the &ldquo;teach every kid to code&rdquo; movement. At the same time, computational literacy is so paramount thate ven learning enough about coding to know whay you <em>don&rsquo;t</em> want to do it seems valuable. But I am a champion of CS education in K-12, so I like the overall tenor of that brief address. But it got me thinking about one of the most egregious roadblocks to progress in software within our economy: Apple.</p>
+
+<!-- more -->
+
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>If you&rsquo;re locked into Apple&rsquo;s totalitarian ecosystem, alas, it&rsquo;s not that easy. You&rsquo;ll need to pay US$99 per year for the privelege of running your own code on your own device. And should you want to publish that? Well, Apple&rsquo;s going to review and nitpick and make sure <em>they</em> want it in their store. And charge <em>you</em> for the privilege of having the opportunity to add value to their platform. And hell, if your friends are at all savvy and have Android phones, just send them the APK or (even better), open source your project and let them build it themselves. This all works great on Android. On iOS&hellip; not so much.</p>
+
+<p>I sometimes go overboard giving my friends with iOS devices a hard time. It&rsquo;s almost as bad as when Windows was still relevant and I was pushing Linux on everyone. It&rsquo;s about <em>freedom.</em> Just like with Windows back in the day, the constant reply is one of:</p>
+
+<ol>
+<li>I don&rsquo;t need to code for/have control over my device, this works fine for me.</li>
+<li>But I&rsquo;ve waaaasted so much money on aaaaaps!!!!</li>
+</ol>
+
+
+<p>Welcome to vendor lock-in. It&rsquo;s no excuse, and if we <em>really</em> care about the next generation becoming hackers and makers, not just consumers, we need to reject Apple&rsquo;s bullshit, reject Micorsoft&rsquo;s (decreasingly relevant) bullshit, and focus on open systems. This doesn&rsquo;t have to be Android. <a href="http://www.ubuntu.com/phone">Ubuntu Phone</a> looks promising, <a href="http://www.mozilla.org/en-US/firefox/os/">Firefox OS</a> <em>might</em> not be more Mozilla vaporware, and <a href="http://jolla.com/">Jolla</a> looks incredibly promising.</p>
+
+<p>But what Apple lacks in marketshare, it maintains in mindshare. You want irony?</p>
+
+<iframe width="420" height="315" src="http://decomplecting.org//www.youtube.com/embed/VtvjbmoDx-I" frameborder="0" allowfullscreen></iframe>
+
+
+<p>In 1984, Big Brother was IBM. Now when I watch this, I see a WWDC keynote.</p>
+
+<p>I don&rsquo;t think iOS is compeltely ill-conceived. Almost, but not completely. But if Apple will not open their platform, and their ecosystem, they are not helping to encourage the next generation of makers, and they are encouraging precisely the opposite attitude toward software that <a href="http://code.org">Code.org</a> and <a href="http://csedweek.org/">Computer Science Education Week</a> were founded to promote.</p>
+
+<p>If I may be permitted to pay tribute to Marcus Cato, I will simply conclude by stating:</p>
+
+<h3>POMUM DELENDA EST</h3>
+]]></content>
+  </entry>
+  
+</feed>

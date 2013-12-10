@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-11-21T02:39:53-05:00</updated>
+  <updated>2013-12-09T23:03:39-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -22,7 +22,7 @@
 
 <p>I made some mistakes in my last post. First off, I&rsquo;d like to apologize to <a href="http://ashedryden.com/">Ashe Dryden</a> for referring to her as Ms. Dryden while I referred to <a href="http://jcoglan.com/">James Coglan</a> by his full name. I had no intention of explicitly implying Ashe&rsquo;s gender; my usual writing style is to refer to people by their full name initially and to use an approrpiate title thereafter. But upon review I realized I referred to Ashe as &ldquo;Ms. Dryden&rdquo; in subsequent references, while I referred to James Coglan as &ldquo;James Coglan&rdquo; both times I mentioned him.</p>
 
-<p>I&rsquo;m sorry about that. It was an oversight, and if I had been paying better attention, the second reference to Mr.s Coglan would have been &ldquo;Mr. Coglan&rdquo; for parity. But as I failed to achieve parity, and Ashe expressed that she preferred &ldquo;Ashe Dryden&rdquo; to &ldquo;Ms. Dryden&rdquo; in general, I decided to <code>s/Ms./Ashe/g</code> the post. It is now corrected.</p>
+<p>I&rsquo;m sorry about that. It was an oversight, and if I had been paying better attention, the second reference to Mr. Coglan would have been &ldquo;Mr. Coglan&rdquo; for parity. But as I failed to achieve parity, and Ashe expressed that she preferred &ldquo;Ashe Dryden&rdquo; to &ldquo;Ms. Dryden&rdquo; in general, I decided to <code>s/Ms./Ashe/g</code> the post. It is now corrected.</p>
 
 <!-- more -->
 
