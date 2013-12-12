@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hour of Code: Voight-Kampff for Hackers? - Practical Elegance</title>
+  <meta name="author" content="Jason Lewis">
+
+  
+  <meta name="description" content="So, Gizmodo has a great post on the new series of Code.org PSAs, &ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;. I &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-22978638-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <div id="logo">
+  	<div id="logoLeft">(</div>
+  	<div id="logoText">&#955;</div>
+  	<div id="logoRight">)</div>
+  	<div class="clear"></div>
+  </div>
+  <h1><a href="/">Practical Elegance</a></h1>
+  
+    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
+  
+  <div class="clear"></div>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:decomplecting.org" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      
+        <h1 class="entry-title">Hour of Code: Voight-Kampff for Hackers?</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-11T20:20:00-05:00" pubdate data-updated="true">2013-12-11</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
+
+<p>Okay, the PSAs keep it silly. Every time someone in those videos says &ldquo;I just did <em>n</em> lines of code&rdquo;, the following script runs through my head:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;I just did </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> lines of code&quot;</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/code/</span><span class="p">,</span> <span class="s1">&#39;coke&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, and I can&#39;t feel my face!&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Yeah, I&rsquo;m a terrible person. Also hilarious. Moving on&hellip;</p>
+
+<!-- more -->
+
+
+<h3>Hacker Exceptionalism</h3>
+
+<p>Usually, the term <a href="http://en.wikipedia.org/wiki/Exceptionalism">Exceptionalism</a> is used in a context of superiority, e.g., <a href="http://en.wikipedia.org/wiki/American_exceptionalism">American exceptionalism</a>. I do believe there is something like &ldquo;hacker exceptionalism&rdquo;, except the &ldquo;exception&rdquo; has nothing to do with superiority, but literally an exceptional case — a corner case for life, if you will.</p>
+
+<p>There&rsquo;s something weird about hackers. I&rsquo;m not lumping everyone who writes code for their day job into this category (frankly, that would be offensive to my sensibilities). I&rsquo;ve written <a href="http://decomplecting.org/blog/2012/05/22/passion/">before</a> about my encounters with people who just code 9 to 5 and then don&rsquo;t think about it and all I can say now is that I wish they would stop (actually, I&rsquo;m not sure many of them think about it at all).</p>
+
+<p>People who grok code have weird brains. That&rsquo;s the theory. It&rsquo;s not new; in <a href="http://www.nealstephenson.com/snowcrash/"><em>Snow Crash</em></a>, Neal Stephenson describes a neurolinguistic virus that can infect the brains of hackers via digital images because of the pathways coding has created in their brains.</p>
+
+<p>There&rsquo;s a chicken-and-egg problem here: are our brains weird because we&rsquo;re hackers, or are we hackers because our brains are weird?</p>
+
+<p>I&rsquo;m not sure there&rsquo;s any way to answer that scientifically until we have longitudinal studies complete with periodic fMRI scans of children as they develop into programmers (or not). So we&rsquo;ll leave the origin story aside for now.</p>
+
+<h3>Voight-Kampff</h3>
+
+<p>In the movie <a href="http://en.wikipedia.org/wiki/Blade_Runner"><em>Blade Runner</em></a> (apologies to Philip K. Dick fans for heading down this particular rabbit-hole), a test called <a href="http://bladerunner.wikia.com/wiki/Voight-Kampff_machine">Voight-Kampff</a> is administered to distinguish humans from replicants.</p>
+
+<p>The idea of a Voight-Kampff test to distinguish humans from hackers isn&rsquo;t new either; in 2006, researchers proposed an (apparently) effective test to separate <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">programming sheep from non-programming goats</a>.</p>
+
+<p><span class='pullquote-right' data-pullquote='Then I realized: this is like a Voight-Kampff test for hackers.'>
+So this &ldquo;Hour of Code&rdquo; thing. I thought it was a cute idea at first, became dubious, got annoyed at the marketing, and stopped paying attention until the new batch of PSAs were covered on Gizmodo (full confession: I was reading <a href="http://valleywag.gawker.com/">Valleywag</a> when I saw it. I can&rsquo;t help myself). Then I realized: this is like a Voight-Kampff test for hackers. My first &ldquo;hour of code&rdquo; was when I was five. that hour stretched into three. Then countless hours followed. For the rest of my life.
+</span></p>
+
+<p>The whole &ldquo;everyone should learn to code&rdquo; meme is great; I think everyone should understand the fundamentals of computer science. Not that &ldquo;learning to code&rdquo; is equivalent to &ldquo;understanding CS fundamentals,&rdquo; but it&rsquo;s a step in the right direction. But it&rsquo;s important to distinguish between &ldquo;learning to code&rdquo; and &ldquo;entering a career in software engineering.&rdquo;</p>
+
+<p>I wish the latter were left to true hackers. The ones who are outed by the &ldquo;hour of code&rdquo; when the hour turns into 10,000 hours; the ones who go from &ldquo;I did 5 lines of code!&rdquo; to &ldquo;I did 5k LOCs&rdquo; in about two weeks. That&rsquo;s not going to be everyone. It&rsquo;s going to be a distinct minority. We&rsquo;re corner cases.</p>
+
+<p>Code.org has some great goals, even if the motives seem questionable at times (does it feel to anyone else like &ldquo;everyone should learn to code&rdquo; is in some cases an attempt to rekindle the failed 1990&rsquo;s experiment of &ldquo;commodity programmers&rdquo;?). More than anything else, though, &ldquo;hour of code&rdquo; seems to intorduce a <code>catch</code> block for those of us who throw <code>HackerBrainException</code>. And that&rsquo;s great. Uncaught exceptions aren&rsquo;t good for anyone. This is why we need <a href="http://www.computinginthecore.org/">computing in the core</a> — it&rsquo;s like checked exceptions in the API for public education.</p>
+
+<h3>Computer Science in K-12</h3>
+
+<p>This is the real issue, isn&rsquo;t it? Getting computer science into the standards for K-12 education? Making an &ldquo;hour of code&rdquo; redundant?</p>
+
+<p>Sadly, things don&rsquo;t seem to have changed much since my own <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">negative experiences with coding at school</a>&hellip; but that was in the late 1990&rsquo;s. I would have expected progress since then&hellip; if I were a lot more naïve.</p>
+
+<p>So a message to current students: <strong>Fortuna audaces iuvat</strong> — Fortune favors the bold. Hack everything. Code your math homework. Shit, code your math homework, put hte source on <a href="https://github.com">Github</a>, and let your friends <em>copy</em> that shit. Refuse to do anything without a computer, whether that computer is your phone or a <a href="http://www.cray.com/Products/Computing/XE.aspx">Cray XE6</a>.</p>
+
+<p>If your school doesn&rsquo;t offer CS classes, start your own. <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">Just get hacking</a>. If you throw <code>HackerBrainException</code>, you&rsquo;ll never stop.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-11T20:20:00-05:00" pubdate data-updated="true">2013-12-11</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/code-dot-org/'>code.org</a>, <a class='category' href='/blog/categories/coding/'>coding</a>, <a class='category' href='/blog/categories/csedweek/'>csedweek</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/" data-via="" data-counturl="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2013/12/09/apple-the-obstacle-to-americas-future/" title="Previous Post: Apple: The Obstacle to America's Future?">&laquo; Apple: The Obstacle to America's Future?</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <a href="http://internetdefenseleague.org">
+    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
+  </a>
+</section>
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/">Hour of Code: Voight-Kampff for Hackers?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/12/09/apple-the-obstacle-to-americas-future/">Apple: The Obstacle to America's Future?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/20/github-matters-followup/">Github Matters - Followup</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/">So Github Is Not Your CV.  It Still Matters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'canweriotnow',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<a class="twitter-timeline" height="300" data-dnt="true" href="https://twitter.com/canweriotnow" data-widget-id="365195555808358401">Tweets by @canweriotnow</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
+  
+</section>
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/110736810583208350607?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Jason Lewis -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'canweriotnow';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/';
+        var disqus_url = 'http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-12-10T13:15:46-05:00</updated>
+  <updated>2013-12-11T22:01:57-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,63 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hour of Code: Voight-Kampff for Hackers?]]></title>
+    <link href="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/"/>
+    <updated>2013-12-11T20:20:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
+    <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
+
+<p>Okay, the PSAs keep it silly. Every time someone in those videos says &ldquo;I just did <em>n</em> lines of code&rdquo;, the following script runs through my head:</p>
+
+<p>```ruby
+&ldquo;I just did #{n} lines of code&rdquo;.gsub!(/code/, &lsquo;coke&rsquo;) &lt;&lt; &ldquo;, and I can&rsquo;t feel my face!&rdquo;</p>
+
+<p>```</p>
+
+<p>Yeah, I&rsquo;m a terrible person. Also hilarious. Moving on&hellip;</p>
+
+<!-- more -->
+
+
+<h3>Hacker Exceptionalism</h3>
+
+<p>Usually, the term <a href="http://en.wikipedia.org/wiki/Exceptionalism">Exceptionalism</a> is used in a context of superiority, e.g., <a href="http://en.wikipedia.org/wiki/American_exceptionalism">American exceptionalism</a>. I do believe there is something like &ldquo;hacker exceptionalism&rdquo;, except the &ldquo;exception&rdquo; has nothing to do with superiority, but literally an exceptional case — a corner case for life, if you will.</p>
+
+<p>There&rsquo;s something weird about hackers. I&rsquo;m not lumping everyone who writes code for their day job into this category (frankly, that would be offensive to my sensibilities). I&rsquo;ve written <a href="http://decomplecting.org/blog/2012/05/22/passion/">before</a> about my encounters with people who just code 9 to 5 and then don&rsquo;t think about it and all I can say now is that I wish they would stop (actually, I&rsquo;m not sure many of them think about it at all).</p>
+
+<p>People who grok code have weird brains. That&rsquo;s the theory. It&rsquo;s not new; in <a href="http://www.nealstephenson.com/snowcrash/"><em>Snow Crash</em></a>, Neal Stephenson describes a neurolinguistic virus that can infect the brains of hackers via digital images because of the pathways coding has created in their brains.</p>
+
+<p>There&rsquo;s a chicken-and-egg problem here: are our brains weird because we&rsquo;re hackers, or are we hackers because our brains are weird?</p>
+
+<p>I&rsquo;m not sure there&rsquo;s any way to answer that scientifically until we have longitudinal studies complete with periodic fMRI scans of children as they develop into programmers (or not). So we&rsquo;ll leave the origin story aside for now.</p>
+
+<h3>Voight-Kampff</h3>
+
+<p>In the movie <a href="http://en.wikipedia.org/wiki/Blade_Runner"><em>Blade Runner</em></a> (apologies to Philip K. Dick fans for heading down this particular rabbit-hole), a test called <a href="http://bladerunner.wikia.com/wiki/Voight-Kampff_machine">Voight-Kampff</a> is administered to distinguish humans from replicants.</p>
+
+<p>The idea of a Voight-Kampff test to distinguish humans from hackers isn&rsquo;t new either; in 2006, researchers proposed an (apparently) effective test to separate <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">programming sheep from non-programming goats</a>.</p>
+
+<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+<p>The whole &ldquo;everyone should learn to code&rdquo; meme is great; I think everyone should understand the fundamentals of computer science. Not that &ldquo;learning to code&rdquo; is equivalent to &ldquo;understanding CS fundamentals,&rdquo; but it&rsquo;s a step in the right direction. But it&rsquo;s important to distinguish between &ldquo;learning to code&rdquo; and &ldquo;entering a career in software engineering.&rdquo;</p>
+
+<p>I wish the latter were left to true hackers. The ones who are outed by the &ldquo;hour of code&rdquo; when the hour turns into 10,000 hours; the ones who go from &ldquo;I did 5 lines of code!&rdquo; to &ldquo;I did 5k LOCs&rdquo; in about two weeks. That&rsquo;s not going to be everyone. It&rsquo;s going to be a distinct minority. We&rsquo;re corner cases.</p>
+
+<p>Code.org has some great goals, even if the motives seem questionable at times (does it feel to anyone else like &ldquo;everyone should learn to code&rdquo; is in some cases an attempt to rekindle the failed 1990&rsquo;s experiment of &ldquo;commodity programmers&rdquo;?). More than anything else, though, &ldquo;hour of code&rdquo; seems to intorduce a <code>catch</code> block for those of us who throw <code>HackerBrainException</code>. And that&rsquo;s great. Uncaught exceptions aren&rsquo;t good for anyone. This is why we need <a href="http://www.computinginthecore.org/">computing in the core</a> — it&rsquo;s like checked exceptions in the API for public education.</p>
+
+<h3>Computer Science in K-12</h3>
+
+<p>This is the real issue, isn&rsquo;t it? Getting computer science into the standards for K-12 education? Making an &ldquo;hour of code&rdquo; redundant?</p>
+
+<p>Sadly, things don&rsquo;t seem to have changed much since my own <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">negative experiences with coding at school</a>&hellip; but that was in the late 1990&rsquo;s. I would have expected progress since then&hellip; if I were a lot more naïve.</p>
+
+<p>So a message to current students: <strong>Fortuna audaces iuvat</strong> — Fortune favors the bold. Hack everything. Code your math homework. Shit, code your math homework, put hte source on <a href="https://github.com">Github</a>, and let your friends <em>copy</em> that shit. Refuse to do anything without a computer, whether that computer is your phone or a <a href="http://www.cray.com/Products/Computing/XE.aspx">Cray XE6</a>.</p>
+
+<p>If your school doesn&rsquo;t offer CS classes, start your own. <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">Just get hacking</a>. If you throw <code>HackerBrainException</code>, you&rsquo;ll never stop.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Apple: The Obstacle to America's Future?]]></title>
@@ -54,6 +111,8 @@
 <p>If I may be permitted to pay tribute to Marcus Cato, I will simply conclude by stating:</p>
 
 <h3>POMUM DELENDA EST</h3>
+
+<p><strong>Update:</strong> There&rsquo;s some lively discussion on <a href="https://news.ycombinator.com/item?id=6878922">Hacker News</a></p>
 ]]></content>
   </entry>
   
@@ -249,52 +308,6 @@
 <h3>Summary</h3>
 
 <p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Just Get Hacking]]></title>
-    <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
-    <updated>2013-11-12T00:27:00-05:00</updated>
-    <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
-    <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
-
-<p>So you&rsquo;ve been working through some of those excellent online resources, like <a href="http://learncodethehardway.org/">Learn Code The Hard Way</a>, or <a href="http://codeschool.com">Code School</a>, or whatever. You think you can build something now, and you want to get out there in the world and hack things better, but there&rsquo;s this one little problem&hellip; you have a degree in Philosophy or Psychology or no degree at all, and no résumé-worthy coding experience.</p>
-
-<h4>Not. A. Problem.</h4>
-
-<p>Well, not necessarily a problem. There&rsquo;s an easy solution. Just. Get. Hacking.</p>
-
-<p>So you don&rsquo;t know about XP, Agile, Scrum, Kanban, Waterfall&hellip; there&rsquo;s always <a href="http://programming-motherfucker.com/">Programming, Motherfucker</a>.</p>
-
-<p>So you haven&rsquo;t built an Enterprise Expert System with the AbstractVisitorFactoryAntiPatternCringeGenerator pattern&hellip; I told you to make an account on <a href="https://github.com">Github</a>, didn&rsquo;t I? And I know you take my advice because you&rsquo;re building actual goddamn software.</p>
-
-<p>Put your stuff on Github. Ask for help on IRC.</p>
-
-<p>Find projects that interest you, fork &lsquo;em, submit pull requests. Lots of projects even have issues labeled as &ldquo;suitable for n00bs&rdquo;.</p>
-
-<!-- more -->
-
-
-<h4>The Enterprise Dilemma</h4>
-
-<p>Surround your pullquote like this {" text to be quoted "}</p>
-
-<p>Any shop worth working at cares so much more about your coding chops, your potential, your intelligence than bullshit like résumés and academic credentials that if you can demonstrate your ability and still don&rsquo;t get the job, it&rsquo;s a blessing.</p>
-
-<p>On the other hand, you <em>do</em> need a first coding job. And if you&rsquo;re not getting it based on your Github activity, you&rsquo;re probably getting it based on nepotism.</p>
-
-<p>How does this happen? Still goes back to Github, IRC, meetups, etc. So go to some meetups. Talk to people, go to the pub nights, go to the open hack nights. Hack on open source projects, submit pull requests, get in on some projects that will get you recognized. Eventually, you&rsquo;ll have hacker friends who will hire you or recommend you to take over their shitty Enterprise jobs that you can use to build your résumé should you go down that route. It&rsquo;s not that hard. Hang out with nerds, learn the craft, make connections. Programming is one of the few fields where it really is <em>what you know,</em> but who you know can help too. But those connections are best made by being a badass hacker.</p>
-
-<h4>Open Source is the Key</h4>
-
-<p>At the end of the day, though, even if you do all sorts of networking at confs and meetups and the like, you need a strong presence in the Open Source community. I can&rsquo;t emphasize this enough: <strong>PUT YOUR CODE ON GITHUB.</strong></p>
-
-<p>Or Bitbucket or whatever if you prefer, but open source that shit, get other people involved, and get involved in other people&rsquo;s projects.</p>
-
-<p>I&rsquo;m in the position of having to evaluate and hire developers at <a href="http://anestuary.com">An Estuary</a>, and since I want to run the dev shop I wish existed, I&rsquo;m trying to hire that way. When we list positions, we require a Github URL because I want to see what you do, not what your former employers think of you. I assume they&rsquo;re &ldquo;former&rdquo; (or soon-to-be &ldquo;former&rdquo;) for good reason. When we interview you, I want to talk about your code, not your former supervisor&rsquo;s probable inferiority complex.</p>
-
-<p>In summary, just get hacking. Just keep hacking. Build cool shit. Show it to the world. Talk to other nerds. Maybe try some remote pairing (Tweeting with the hashtag #pairwithme is often productive). But just make stuff. Then show me what you can do when you want a job. If you start off with a great company, that should be all you need.</p>
 ]]></content>
   </entry>
   

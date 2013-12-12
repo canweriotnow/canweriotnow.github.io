@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="It&rsquo;s been a while since my last post, because the last few weeks have been just a little crazy. I&rsquo;ve left JHU, and accepted the role of &hellip;">
+  <meta name="description" content="Think Kids Should Learn To Code? Teach The Teachers First I&rsquo;m really excited about the heavy emphasis I&rsquo;m seeing on teaching kids to code &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,63 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We&#8217;re Not Ready To Teach Kids To Code</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-02T23:22:00-04:00" pubdate data-updated="true">2013-06-02</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
+
+<p>I&rsquo;m really excited about the heavy emphasis I&rsquo;m seeing on <a href="http://gettingsmart.com/2013/05/teaching-kids-to-code-an-economic-social-justice-issue/">teaching kids to code</a>. Although I agree with just about everything <a href="http://codinghorror.com">Jeff Atwood</a> wrote in his controversial post, <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">&ldquo;Please Don&rsquo;t Learn to Code&rdquo;</a>, I also believe that in an age in which <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">software is eating the world</a>, understanding code is a basic literacy issue. This goes beyond the concept of digital literacy: as applied, this boils down to knowing how to use Google. What we&rsquo;re seeing in the movement to bring coding into the core curriculum is a new emphasis on what I&rsquo;d like to call <em>computational literacy.</em></p>
+
+<h3>Computational Literacy</h3>
+
+<p>Computational literacy is a concept that I wish had been &ldquo;a thing&rdquo; when I was in school. I&rsquo;ll start with an anecdote, and then delve into the gritty challenges that the &ldquo;teaching kids to code&rdquo; movement is failing to recognize.</p>
+
+<p>When I was a kid, I loved math&hellip; or, at least, I loved figuring out the algorithms behind the calculation. I learned BASIC when I was 5 or 6, so when got to middle school, and discovered that the Texas Instruments graphing calculators we were required to buy for class spoke just about the same dialect of BASIC I had learned as a kid (I first learned to code on a <a href="http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A">TI 99/4A</a>), I was so excited. Once I could derive the algorithm from a new concept we were being taught, I could express it in code and skip the boring parts. I&rsquo;ve never done well when bored.</p>
+
+<p>Alas, my youthful optimism was to be dashed on the rocks of pedagogical ignorance and stupidity. First, I was told that I wouldn&rsquo;t receive credit for my <strong>correct</strong> answers because I didn&rsquo;t &ldquo;show my work&rdquo;.</p>
+
+<p>On the next exam, I wrote out the source listing of each program I had used with a reference to the problems to which it had been applied (I&rsquo;m pretty sure the number of GOTOs I used in those days would have made Dijkstra cry).</p>
+
+<p>That&rsquo;s when they usually called my mom in for a conference.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -575,53 +632,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/">Code Typos Got You Down? Stop Worrying with close_enough</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-01T18:32:00-05:00" pubdate data-updated="true">2013-03-01</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I&rsquo;m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
-
-<p>The concept is very simple, and based on an algorithm used in most spell checkers and autocorrect systems currently in use. Calculating the <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau-Levenshtein distance</a> between two words can reliably (within a certain margin of error) indicate whether a known word was inteded when an unknown term was encountered in user input.</p>
-
-<p>In Ruby, we have a wonderful metaprogramming facility in <code>method_missing</code>. What we&rsquo;ve done in close_enough is to monkey-patch <code>method_missing</code> on <code>Object</code> to calculate the Demerau-Levenshtein distance between existing methods and the non-existent called method, and invoke the nearest one if it&rsquo;s &ldquo;close enough&rdquo; (close enough currently being an edit distance of &lt; 3).</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -645,6 +655,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/">Hour of Code: Voight-Kampff for Hackers?</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/09/apple-the-obstacle-to-americas-future/">Apple: The Obstacle to America&#8217;s Future?</a>
       </li>
     
@@ -658,10 +672,6 @@
     
       <li class="post">
         <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/12/just-get-hacking/">Just Get Hacking</a>
       </li>
     
   </ul>
