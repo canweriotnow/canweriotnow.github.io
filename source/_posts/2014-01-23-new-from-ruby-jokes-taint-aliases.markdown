@@ -48,3 +48,7 @@ We're currently at version 0.0.3 of [the gem](https://rubygems.org/gems/taint_al
 Pull requests are welcome, and... you're welcome.
 
 P.S. Props to [Micah Gates](https://github.com/mgates) for work on the codebase and to [Milt Reder](https://github.com/milt) for the conception of this gem while we were taking a break at work.
+
+### Update
+
+Thanks to a well-timed pull request from [threeifbywhiskey](https://github.com/threeifbywhiskey), the milestone listed above has been met, and I just pushed v1.0.0 of the gem. w00t!
