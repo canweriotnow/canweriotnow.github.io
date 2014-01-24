@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby-jokes | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/ruby-jokes/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-01-23T20:32:04-05:00</updated>
+  <updated>2014-01-24T13:07:15-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -84,6 +84,10 @@
 <p>Pull requests are welcome, and&hellip; you&rsquo;re welcome.</p>
 
 <p>P.S. Props to <a href="https://github.com/mgates">Micah Gates</a> for work on the codebase and to <a href="https://github.com/milt">Milt Reder</a> for the conception of this gem while we were taking a break at work.</p>
+
+<h3>Update</h3>
+
+<p>Thanks to a well-timed pull request from <a href="https://github.com/threeifbywhiskey">threeifbywhiskey</a>, the milestone listed above has been met, and I just pushed v1.0.0 of the gem. w00t!</p>
 ]]></content>
   </entry>
   
