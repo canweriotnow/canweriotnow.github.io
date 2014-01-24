@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby-jokes | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/ruby-jokes/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2013-12-23T21:25:05-05:00</updated>
+  <updated>2014-01-23T20:32:04-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,80 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New from Ruby Jokes: taint_aliases]]></title>
+    <link href="http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/"/>
+    <updated>2014-01-23T20:08:13-05:00</updated>
+    <id>http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases</id>
+    <content type="html"><![CDATA[<p>The <a href="https://github.com/ruby-jokes">Ruby Jokes</a> team has a new gem for you that was designed, tested, and released in about an hour this afternoon: <a href="http://ruby-jokes.github.io/taint_aliases">taint_aliases</a>. You can get the full details <a href="https://github.com/ruby-jokes/taint_aliases">on GitHub</a>, but I thought a friendly introduction might make for an enlightening blog post.</p>
+
+<h3>Grundle Your Objects</h3>
+
+<p>You see, not everyone prefers the word &ldquo;taint&rdquo;. Some people are very clinical, and say &lsquo;perineum&rsquo;. Others prefer &lsquo;grundle&rsquo; or &lsquo;fleshy fun bridge&rsquo;. We wanted to give you options, so <code>taint_aliases</code> makes a variety of synonyms available to you.</p>
+
+<p><img class="center <a" src="href="http://i.imgur.com/7r7Ml5q.png">http://i.imgur.com/7r7Ml5q.png</a>" title="The Most Interesting Taint In The World" ></p>
+
+<!--more-->
+
+
+<p>With <code>taint_aliases</code>, you can do things like this:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;require &amp;lsquo;taint_aliases&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">obj</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;obj.grundle&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">obj</span><span class="o">.</span><span class="n">tainted?</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;=&gt; true&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">str</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Foo</span> <span class="no">Bar</span> <span class="no">Baz</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;str.fleshy_fun_bridge&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">str</span><span class="o">.</span><span class="n">tainted?</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;=&gt; true&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Of course, there are other options, but you can find them in the documentation.</p>
+
+<h3>Roadmap</h3>
+
+<p>We&rsquo;re currently at version 0.0.3 of <a href="https://rubygems.org/gems/taint_aliases">the gem</a>, but we plan on adding methods like <code>Object#ungrundle</code> and <code>Object#grundled?</code> before the 1.0 release.</p>
+
+<p>Pull requests are welcome, and&hellip; you&rsquo;re welcome.</p>
+
+<p>P.S. Props to <a href="https://github.com/mgates">Micah Gates</a> for work on the codebase and to <a href="https://github.com/milt">Milt Reder</a> for the conception of this gem while we were taking a break at work.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Code Typos Got You Down? Stop Worrying with close_enough]]></title>

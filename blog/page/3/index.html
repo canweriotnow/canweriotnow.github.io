@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="The Linux PAM (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we &hellip;">
+  <meta name="description" content="This is a post I&rsquo;ve wanted to write for a while, but I&rsquo;ve needed time and distance to do it justice. This is a post about (from my &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,61 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/03/10/the-social-university-that-could-have-been/">The Social University That Could Have Been</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-10T22:21:00-04:00" pubdate data-updated="true">2013-03-10</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>This is a post I&rsquo;ve wanted to write for a while, but I&rsquo;ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
+
+<h2>The Social University</h2>
+
+<p>Sometime in 2011, I was joking with my team lead about connecting <a href="http://www.blackboard.com/platforms/transact/overview.aspx">Blackboard Transact</a>, the OLTP product used for access control, stored value account transactions, and meal plans at my work, to Twitter, just for fun. The short answer was &ldquo;that&rsquo;s silly.&rdquo; The longer answer was &ldquo;that&rsquo;s silly, but it would be pretty neat.&rdquo;</p>
+
+<p>So on lunch breaks and when I was waiting on other things to move forward with my &ldquo;official&rdquo; projects, I played around with creating a system to connect our system to Twitter.</p>
+
+<p>Since I had already worked on a service layer for (really, a generalized SOA for systems connecting to) Transact, it was pretty easy to leverage APIs from not only Twitter, but also Foursquare and Facebook to tie into transactions from our internal system; door access could tweet your location, and check you in on Foursquare; buying a coffee could do the same.</p>
+
+<p>Eventually, the idea gained some traction, and we started building in a system of social gamification, that would award badges and achievements for usage of the system, ranging from customer loyalty rewards for particpating vendors, to seemingly &ldquo;silly&rdquo; things like a &ldquo;Speed Demon&rdquo; achivement for swiping two doors on opposite sides of campus within ten minutes.</p>
+
+<p>The system also allowed students (well, also faculty and staff) to connect to Facebook to share badges/achivements and compete in a university-wide leaderboard. This is just an overview of the social media integration and gamification elements, but you might very well ask, what&rsquo;s the point?</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/10/the-social-university-that-could-have-been/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -629,57 +684,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/08/03/legacy-systems-on-rails-part-2/">Legacy Systems on Rails (Part 2)</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-03T11:38:00-04:00" pubdate data-updated="true">2012-08-03</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This will be a quick one. I just wanted to give an example of how Ruby&rsquo;s open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
-
-<h3>Into the mouth of madness</h3>
-
-<p>So let&rsquo;s imagine you&rsquo;re a software engineer (actually, to make a decision this crazy, you&rsquo;d probably have to have a title like Señor Software Architect, or possibly VP of Development). You need to store precise date values for an OLTP system in the database. Although you know that Oracle&rsquo;s TIMESTAMP datatype will store a time right down to sub-millisecond precision, that&rsquo;s just too easy. Or, at least, too sane.</p>
-
-<p>Then you remember the <a href="http://en.wikipedia.org/wiki/Julian_day">Julian day</a> system. Perfect! You can just use floats to reperesent the time, with the Julian day number as the integral part, and the time of day represented as the fractional part! Even better, you decide to make up your own offset instead of using a standard Day of Calendar Reform, <em>and</em> to store the local time instead of UTC.</p>
-
-<p>If you have ever considered something like this, step away from the computer. I&rsquo;m revoking your programmer license. Leaving aside the general inaccuracy of floats (you wouldn&rsquo;t use a float to represent money, why the hell would it be a good idea for time?), there are <em>existing datatypes</em> for this! Moving on&hellip;</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/08/03/legacy-systems-on-rails-part-2/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -703,6 +707,10 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/23/goodbye-at-and-t/">Goodbye AT&amp;T, Hello T-Mobile?</a>
       </li>
     
@@ -716,10 +724,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
     
       <li class="post">
         <a href="/blog/2013/11/20/github-matters-followup/">Github Matters - Followup</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/">So Github Is Not Your CV.  It Still Matters</a>
       </li>
     
   </ul>
@@ -807,7 +811,7 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - Jason Lewis -
+  Copyright &copy; 2014 - Jason Lewis -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
