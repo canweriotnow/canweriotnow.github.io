@@ -36,7 +36,7 @@ I unwittingly made a comment, that without context, was interpretable as a criti
 
 My increasing disdain for Twitter for any kind of serious discussion is really about context. Twitter is, by design, a global cocktail party. You hear a comment that intrigues, enrages, or otherwise engages you, and you hop to another conversation, and then to another. That's the intent. I won't go to the detail I did in my comment, but I'm glad educators find #edchat useful. That's fantastic. I still believe there are better tools for the use case, but knowing about other, perhaps less accessible, tools, is part of my privilege derived from living in software. So I'm not criticizing there.
 
-I do believe that topics like privilege cut to the core of our existence as being-with-others (forgive my Heideggerian moment) to a degree that the stripping away of context that Twitter facilitates makes addressing Hard Topics that much harder. I'm going to offer some observations and alternatives at the end of this post.
+I do believe that topics like privilege cut to the core of our existence as being-with-others (forgive my Heideggerian moment) to a degree that the stripping away of context that Twitter facilitates makes addressing Hard Topics that much harder.
 
 ### Mea Culpa (Secunda Parte)
 
@@ -46,7 +46,7 @@ I'm fairly antisocial by nature, and I tend to deflect with (often inappropriate
 
 I don't play well with others, at least until I know them well. Even then, my default response is the humor-deflection coping mechanism. I've definitely fucked up in the past in these Twitter discussions, from referencing [The Rules Of The Internet](http://rulesoftheinternet.com/index.php?title=Main_Page) to addressing Daniel Tosh's terrible riposte to an audience member's response to his joke about [rape jokes](http://www.thedailybeast.com/articles/2012/07/11/why-daniel-tosh-s-rape-joke-at-the-laugh-factory-wasn-t-funny.html) within the frame of reference of "comedy club culture" and "heckling" instead of prioritizing the impact on the woman who initiated the critique.
 
-There are ups and downs to doing a major in Philosophy and a minor in Women's Studies. For the first part, and maybe this is endemic to post-structuralists, it gives you the leeway to critique anything, at any time, on any basis. The critique may be correct, but cannot subsume the human, emotional factor in the response it will (often predictably) invoke.
+There are ups and downs to doing a major in Philosophy and a minor in Women's Studies. For the first part, and maybe this is endemic to post-structuralists, it gives you the leeway to critique anything, at any time, on any basis. The critique may be correct (within a narrow frame of reference), but cannot subsume the human, emotional factor in the response it will (often predictably) invoke.
 
 I have also denigrated [Radical Feminism](http://en.wikipedia.org/wiki/Radical_feminism) as a degenerate, self-destructive current within feminism (as opposed to [Third-wave Feminism](http://en.wikipedia.org/wiki/Third-wave_feminism), [Marxist Feminism](http://en.wikipedia.org/wiki/Marxist_feminism), [Postfeminsim](http://en.wikipedia.org/wiki/Post-feminism), etc.), not intending to offend RadFem advocates, but simply as an extrapolation of my work (supported by my professors), on the theoretical insufficiency/incoherence of RadFem (and most second-wave feminism). I've had these conversations in person (and in symposia), and it was most productive; on blogs and Twitter, they become a perceived threat; whether to received dogma or social positioning I do not know. I don't want reiterations of my undergrad theses to become a perceived micro-aggression. I don't hate people who consider RadFem a constructive analysis of their social situation, and perhaps it _is_ a privileged position to consider philosophy _qua_ philosophy; but I do not see a possibility of constructive dialogue without the possibility of objective reasoning about basic concepts.
 
@@ -70,17 +70,17 @@ Privilege checking is hard. My first (emotional) response to Tom's post was to t
 That was when it occurred to me that he might be speaking from a position of privilege as an educator who is exposed to education discourse. He certainly is an educator who was afforded an opportunity to attend a $200 conference in Philadelphia. His experience is not that of educators in other regions of America and even further from those of educators outside America.
 {% endblockquote %}
 
-My initial reaction was: _doesn't that apply to everyone in this room?_
+My initial reaction was: _doesn't that exact analysis apply to everyone in this room?_
 
-You can read my comment (linked above) which (among other things) explicates the the false assumptions (i.e., that I'm an educator) in the post; but that isn't the issue. I'm trying _really hard_ to check my privilege in these kinds of conversations. Clearly, though, it's hard for everyone, not just me. We need people to call us out. We need people to help us check our privilege. That's what community is about. What I saw in the session, however, that was different from my typical experience was this: I'm going to check my own privilege, then explain how you can do the same. What I tend to see on the interwebs is more along the lines of "You need to check your privilege or GTFO."
+You can read my comment (linked above) which (among other things) explicates the the false assumptions (i.e., that I'm an educator) in the post; but that isn't the issue. I'm trying _really hard_ to check my privilege in these kinds of conversations. Clearly, though, it's hard for everyone, not just me. We need people to call us out. We need people to help us check our privilege. That's what community is about. What I saw in the session, however, that was different from my typical experience was this: I'm going to check my own privilege, then explain how you can do the same. Often, what I've seen on the interwebs is more along the lines of "You need to check your privilege or GTFO."
 
-Sadly, this seems to be about as constructive (albeit far less sexist) than the [4chan](http://4chan.org) response of "tits or GTFO."
+Sadly, this seems to be about as constructive (albeit far less sexist) as the [4chan](http://4chan.org) response of "Tits or GTFO."
 
 ### Concluding Unscientific Postscript
 
 Whatever else happened, I think this was one of the most illuminating sessions at EduCon. As I mentioned in my reply to Tom's blog post, I think we in the hacker community can learn things from the way this conversation unfolded in the 90 minutes allotted.
 
-To that end, I'd like to suggest to my new friends in the education community, that they might like to engage with some of the folks in the hacker community who are working on this very issue, for better or worse. The following list will include people I've come to respect and appreciate, and people I've disagreed with both vehemently and disagreeably. N.B. the two sets have a wide intersection, and names might be either IRL or nom de web.
+To that end, I'd like to suggest to my new friends in the education community, that they might like to engage with some of the folks in the hacker community who are working on this very issue. The following list will include people I've come to respect and appreciate, and people I've disagreed with both vehemently and disagreeably. N.B. the two sets pretty much have a 100% intersection, and names might be either IRL or nom de web.
 
 * [Steve Klabnik](https://twitter.com/steveklabnik)
 * [Ashe Dryden](https://twitter.com/ashedryden)
