@@ -72,7 +72,7 @@ That was when it occurred to me that he might be speaking from a position of pri
 
 My initial reaction was: _doesn't that apply to everyone in this room?_
 
-You can read my comment (linked above) which (among other things) explicates the the false assumptions (i.e., that I'm an educator) in the post; but that isn't the issue. I'm trying _really hard_ to check my privilege in these kinds of conversations. Clearly, though, it's hard for everyone, not just me. We need people to call us out. We need people to help us check our privilege. That's what community is about. What I saw in the session, hwoever, that was different from my typical experience was this: I'm going to check my own privilege, then explain how you can do the same. What I tend to see on the interwebs is more along the lines of "You need to check your privilege or GTFO."
+You can read my comment (linked above) which (among other things) explicates the the false assumptions (i.e., that I'm an educator) in the post; but that isn't the issue. I'm trying _really hard_ to check my privilege in these kinds of conversations. Clearly, though, it's hard for everyone, not just me. We need people to call us out. We need people to help us check our privilege. That's what community is about. What I saw in the session, however, that was different from my typical experience was this: I'm going to check my own privilege, then explain how you can do the same. What I tend to see on the interwebs is more along the lines of "You need to check your privilege or GTFO."
 
 Sadly, this seems to be about as constructive (albeit far less sexist) than the [4chan](http://4chan.org) response of "tits or GTFO."
 
