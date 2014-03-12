@@ -6,7 +6,7 @@ comments: true
 categories: [education, technology, edtech, fiction]
 ---
 
-*Apoloogies to Charles Bukowski*
+*Apologies to Charles Bukowski*
 
 #### 1.
 
