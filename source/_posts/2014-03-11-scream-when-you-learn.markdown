@@ -18,13 +18,13 @@ Had a test today. Fucking Mr. Blum walked over to my desk and watched me solve q
 
 <!-- more -->
 
-Writing that goddamn program while I was halfway into the Ballmer Peak was how I learned to *understand* this irrelevant cocksucking formula, how can he not get that? I don't get these ancient tencho-illiterate cunts they put in charge of managing the prison sentence of our youths.
+Writing that goddamn program while I was halfway into the Ballmer Peak was how I learned to *understand* this irrelevant cocksucking formula, how can he not get that? I don't get these ancient techno-illiterate cunts they put in charge of managing the prison sentence of our youths.
 
 #### 2.
 
 They gave us all iPads today. It was exciting until we realized they locked the fuckers down so they could only access Pearson-supplied, school-board-blessed, castrated useless pointless fucking content that isn't going to help me get in Molly's pants, much less learn anything better than I could from an ancient goddamn textbook. Fuck this place. I need a drink.
 
-At least it's Friday. I can get drunk at Pete's place tonight and maybe cop a feel off Molly. At least I can look back on that since this shit school is never going to do a thing to get *me* into Harvard. Not that that degree will be worth wiping my ass with by the time I would graduate.
+At least it's Friday. I can get drunk at Pete's place tonight and maybe cop a feel off Molly. At least I can look back on that since this shit school is never going to do a thing to get *me* into Harvard. Not that that degree would be worth wiping my ass with by the time I would graduate.
 
 Fuck, I might as well devote my time to whiskey and women and poetry, it worked out well enough for that old misogynist bastard Bukowski I read last semester.
 
