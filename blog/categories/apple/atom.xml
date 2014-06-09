@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Apple | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/apple/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-03-11T23:26:24-04:00</updated>
+  <updated>2014-06-09T14:13:15-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,7 +20,7 @@
     <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
     <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
-<iframe width="560" height="315" src="http://decomplecting.org//www.youtube.com/embed/6XvmhE1J9PY" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="//www.youtube.com/embed/6XvmhE1J9PY" frameborder="0" allowfullscreen></iframe>
 
 
 <p>It&rsquo;s an understandable, if questionable, sentiment. I&rsquo;ve previously addressed the <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">questionable wisdom, and pitfalls</a>, of the &ldquo;teach every kid to code&rdquo; movement. At the same time, computational literacy is so paramount thate ven learning enough about coding to know whay you <em>don&rsquo;t</em> want to do it seems valuable. But I am a champion of CS education in K-12, so I like the overall tenor of that brief address. But it got me thinking about one of the most egregious roadblocks to progress in software within our economy: Apple.</p>
@@ -44,7 +44,7 @@
 
 <p>But what Apple lacks in marketshare, it maintains in mindshare. You want irony?</p>
 
-<iframe width="420" height="315" src="http://decomplecting.org//www.youtube.com/embed/VtvjbmoDx-I" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="//www.youtube.com/embed/VtvjbmoDx-I" frameborder="0" allowfullscreen></iframe>
 
 
 <p>In 1984, Big Brother was IBM. Now when I watch this, I see a WWDC keynote.</p>

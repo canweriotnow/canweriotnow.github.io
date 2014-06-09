@@ -2,199 +2,203 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://decomplecting.org/blog/2012/05/08/starting-over/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/05/08/simplicity/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/05/09/job-interview/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/05/18/un-pythonic-for-fun-and-profit/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/05/22/passion/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/05/29/elegant-organizations/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/06/01/try-ruby-seriously/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/07/04/static-is-beautiful/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/07/18/higher-education-needs-a-revolution/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/08/03/generational-impedance-mismatch/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/08/13/ladycoders/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/10/31/feedback-loops/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/
         </loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems/
         </loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/
         </loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/
         </loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/03/16/farewell/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/03/23/donglegate/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/04/02/the-difficulty-of-chaotic-good/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/05/14/im-an-estuarian/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/06/21/the-importance-of-aarons-law/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/09/02/return-of-the-job-destroyer/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/
         </loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/11/12/just-get-hacking/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/
         </loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/11/20/github-matters-followup/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/
         </loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2013/12/23/goodbye-at-and-t/</loc>
-        <lastmod>2014-01-22T19:26:44-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/</loc>
-        <lastmod>2014-01-24T13:07:01-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>
             http://decomplecting.org/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/
         </loc>
-        <lastmod>2014-01-28T00:22:59-05:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/blog/2014/03/11/scream-when-you-learn/</loc>
-        <lastmod>2014-03-11T23:26:14-04:00</lastmod>
+        <lastmod>2014-06-09T09:15:36-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://decomplecting.org/blog/2014/06/09/im-telling/</loc>
+        <lastmod>2014-06-09T14:10:46-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/about/</loc>
@@ -202,11 +206,11 @@
     </url>
     <url>
         <loc>http://decomplecting.org/blog/archives/</loc>
-        <lastmod>2014-03-11T23:26:14-04:00</lastmod>
+        <lastmod>2014-06-09T14:10:46-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/</loc>
-        <lastmod>2014-03-11T23:26:14-04:00</lastmod>
+        <lastmod>2014-06-09T14:10:46-04:00</lastmod>
     </url>
     <url>
         <loc>http://decomplecting.org/robots.txt</loc>
