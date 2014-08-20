@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-06-10T15:18:00-04:00</updated>
+  <updated>2014-08-19T21:54:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -14,24 +14,130 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Have A Happy #Whyday with whynot]]></title>
+    <link href="http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/"/>
+    <updated>2014-08-19T21:26:36-04:00</updated>
+    <id>http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot</id>
+    <content type="html"><![CDATA[<p>It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
+from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
+part with the Whyday tradition of hacking on something just for fun and releasing
+it into the wild.</p>
+
+
+
+
+<p>So it&rsquo;s with great ambivalence we announce <a href="https://github.com/ruby-jokes/whynot">whynot</a>,
+a gem that does irresponsible things because&hellip; why not?</p>
+
+
+
+
+<p>whynot is for when you really just don&rsquo;t care. It started as a single monkey-patch
+to <code>Kernel</code>, called <code>maybe</code>. <code>maybe</code> takes a block, and may or may not yield the
+result. So for instance:</p>
+
+
+
+
+<figure class='code'><figcaption><span>maybe </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">maybe</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+</span><span class='line'>  <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p>About half the time, this will return <code>6</code>. The other half, <code>nil</code>.</p>
+
+
+
+
+<p>About three minutes after I pushed whynot to Github, <a href="https://twitter.com/mi_c_ah">Micah Gates</a>
+added some kernel methods that allowed for a little more specificity: <code>usually</code>,
+which will execute your code about 2/3 of the time, and <code>occasionally</code>, which
+has about a 1 in 5 chance of actually executing your code.</p>
+
+
+
+
+<h4>But wait, there&rsquo;s more!</h4>
+
+
+
+
+<p>Just in time for the 0.0.4 release this afternoon, I decided sometimes, the truth
+doesn&rsquo;t matter. Or, at least, you just don&rsquo;t care. So I added <code>meh</code>. Sometimes
+true, sometimes false, whatever. When you really don&rsquo;t care, just do this:</p>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">meh</span> <span class="p">?</span> <span class="s2">&quot;I guess&quot;</span> <span class="p">:</span> <span class="s2">&quot;Nah.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<p>I really wanted to create a global value like <code>true</code> or <code>false</code> that was neither
+truthy nor falsey, but I&rsquo;m not sure whether that&rsquo;s possible, and I have a feeling
+it would require some C-extension hackery if it is.</p>
+
+
+
+
+<p>Perhaps for a future release?</p>
+
+
+
+
+<p>As always, pull requests are welcome, and use at your own risk.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[New from Ruby Jokes: taint_aliases]]></title>
     <link href="http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/"/>
     <updated>2014-01-23T20:08:13-05:00</updated>
     <id>http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases</id>
     <content type="html"><![CDATA[<p>The <a href="https://github.com/ruby-jokes">Ruby Jokes</a> team has a new gem for you that was designed, tested, and released in about an hour this afternoon: <a href="http://ruby-jokes.github.io/taint_aliases">taint_aliases</a>. You can get the full details <a href="https://github.com/ruby-jokes/taint_aliases">on GitHub</a>, but I thought a friendly introduction might make for an enlightening blog post.</p>
 
+
+
+
 <h3>Grundle Your Objects</h3>
+
+
+
 
 <p>You see, not everyone prefers the word &ldquo;taint&rdquo;. Some people are very clinical, and say &lsquo;perineum&rsquo;. Others prefer &lsquo;grundle&rsquo; or &lsquo;fleshy fun bridge&rsquo;. We wanted to give you options, so <code>taint_aliases</code> makes a variety of synonyms available to you.</p>
 
-<p><img class="center <a" src="href="http://i.imgur.com/7r7Ml5q.png">http://i.imgur.com/7r7Ml5q.png</a>" title="The Most Interesting Taint In The World" ></p>
+
+
+
+<p><img class="center" src="http://i.imgur.com/7r7Ml5q.png" title="The Most Interesting Taint In The World" ></p>
+
+
+
 
 <!--more-->
 
 
+
+
 <p>With <code>taint_aliases</code>, you can do things like this:</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -48,46 +154,333 @@
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
 <span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;taint_aliases&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;require &amp;lsquo;taint_aliases&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">obj</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">obj</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="n">obj</span><span class="o">.</span><span class="n">grundle</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;obj.grundle&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">obj</span><span class="o">.</span><span class="n">tainted?</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">obj</span><span class="o">.</span><span class="n">tainted?</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="kp">true</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;=&gt; true&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">str</span> <span class="o">=</span> <span class="s2">&quot;Foo Bar Baz&quot;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">str</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Foo</span> <span class="no">Bar</span> <span class="no">Baz</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="n">str</span><span class="o">.</span><span class="n">fleshy_fun_bridge</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;str.fleshy_fun_bridge&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">str</span><span class="o">.</span><span class="n">tainted?</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">str</span><span class="o">.</span><span class="n">tainted?</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;=&gt; true&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'><span class="o">=&gt;</span> <span class="kp">true</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>Of course, there are other options, but you can find them in the documentation.</p>
 
+
+
+
 <h3>Roadmap</h3>
+
+
+
 
 <p>We&rsquo;re currently at version 0.0.3 of <a href="https://rubygems.org/gems/taint_aliases">the gem</a>, but we plan on adding methods like <code>Object#ungrundle</code> and <code>Object#grundled?</code> before the 1.0 release.</p>
 
+
+
+
 <p>Pull requests are welcome, and&hellip; you&rsquo;re welcome.</p>
+
+
+
 
 <p>P.S. Props to <a href="https://github.com/mgates">Micah Gates</a> for work on the codebase and to <a href="https://github.com/milt">Milt Reder</a> for the conception of this gem while we were taking a break at work.</p>
 
+
+
+
 <h3>Update</h3>
 
+
+
+
 <p>Thanks to a well-timed pull request from <a href="https://github.com/threeifbywhiskey">threeifbywhiskey</a>, the milestone listed above has been met, and I just pushed v1.0.0 of the gem. w00t!</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Social University That Could Have Been]]></title>
+    <link href="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
+    <updated>2013-03-10T22:21:00-04:00</updated>
+    <id>http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
+    <content type="html"><![CDATA[<p>This is a post I&rsquo;ve wanted to write for a while, but I&rsquo;ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
+
+
+
+
+<h2>The Social University</h2>
+
+
+
+
+<p>Sometime in 2011, I was joking with my team lead about connecting <a href="http://www.blackboard.com/platforms/transact/overview.aspx">Blackboard Transact</a>, the OLTP product used for access control, stored value account transactions, and meal plans at my work, to Twitter, just for fun. The short answer was &ldquo;that&rsquo;s silly.&rdquo; The longer answer was &ldquo;that&rsquo;s silly, but it would be pretty neat.&rdquo;</p>
+
+
+
+
+<p>So on lunch breaks and when I was waiting on other things to move forward with my &ldquo;official&rdquo; projects, I played around with creating a system to connect our system to Twitter.</p>
+
+
+
+
+<p>Since I had already worked on a service layer for (really, a generalized SOA for systems connecting to) Transact, it was pretty easy to leverage APIs from not only Twitter, but also Foursquare and Facebook to tie into transactions from our internal system; door access could tweet your location, and check you in on Foursquare; buying a coffee could do the same.</p>
+
+
+
+
+<p>Eventually, the idea gained some traction, and we started building in a system of social gamification, that would award badges and achievements for usage of the system, ranging from customer loyalty rewards for particpating vendors, to seemingly &ldquo;silly&rdquo; things like a &ldquo;Speed Demon&rdquo; achivement for swiping two doors on opposite sides of campus within ten minutes.</p>
+
+
+
+
+<p>The system also allowed students (well, also faculty and staff) to connect to Facebook to share badges/achivements and compete in a university-wide leaderboard. This is just an overview of the social media integration and gamification elements, but you might very well ask, what&rsquo;s the point?</p>
+
+
+
+
+<!--more-->
+
+
+
+
+<h2>The University Lifecycle</h2>
+
+
+
+
+<p>There are three major phases in the lifecycle of the relationship between a university and its students: recruitment, retention, and alumni devleopment.</p>
+
+
+
+
+<p>What this comes down to is attracting students, making sure they stay long enough to graduate, and then soliciting donations from alumni. The brilliance (if I may be pardoned a lapse in humility) of our software was the long-term goal of uniting all three. Students would be able to opt-in to the social media components as soon as they were accepted; the core components (targeted toward current students) would be integrated with their day-to-day activities on cmapus; and participants would be able to remain &ldquo;in the game&rdquo; long after graduation, creating a lasting bond between the university and alumni (far beyond attendance at the occasional lacrosse game).</p>
+
+
+
+
+<p>Our eventual goal was to connect these three phases through social media to make the university experience tightly integrated with the lifetime online experience of students, faculty and staff.</p>
+
+
+
+
+<h2>It&rsquo;s All About The Data</h2>
+
+
+
+
+<p>So, making college more fun and exciting across the three phases of involvement
+is well and good, but where does it start to get interesting? In the data.</p>
+
+
+
+
+<p>Once you go beyond the immediate day-to-day, and start harvesting data like
+tweets and facebook posts (for sentiment analysis), Foursquare and other
+location-based data (to track geographical patterns), and LinkedIn for career
+trajectory data, you can start to analyze interesting patterns and create
+predictive analyses based on the large volume of voluntarily supplied data.</p>
+
+
+
+
+<p>In the end, it&rsquo;s a positive-sum game; students have a more engaging experience,
+the univeristy has a better dataset to analyze to make informed decisions about
+resource allocation, recruitment, and alumni giving, and it&rsquo;s a damn fun project
+to work on.</p>
+
+
+
+
+<h2>Failure</h2>
+
+
+
+
+<p>Why do I consider this the greatest failure of my professional career?</p>
+
+
+
+
+<p>In some ways, it was a resounding success. Departments from athletics to applied
+math were clamoring for it; we were asked to present the project at the annual
+conference for Blackboard Transact, and then asked to do an encore (<a href="https://speakerdeck.com/canweriotnow/j-card-social">You can
+find the slides here, by the
+way</a>). Our student focus
+group thought it was one of the best things they&rsquo;d ever seen.</p>
+
+
+
+
+<p>I consider it a failure because we never got to ship. (<a href="http://johndbarry.com/2012/07/if-it-doesnt-ship-it-doesnt-exist/">If it doesn&rsquo;t ship, it
+doesn&rsquo;t
+exist.</a>) Sure,
+it was functional, and even &ldquo;live&rdquo; on our production server for about a week
+before our official launch date. But in that last week, the project was
+&ldquo;indefinitely shelved&rdquo;.</p>
+
+
+
+
+<p><img class="center" src="http://decomplecting.org/images/post-img/remove-that-code.jpg"></p>
+
+
+
+
+<p>I never really got a clear reason for that (there were meetings between deans
+and lawyers and managers to which I was not privy), but the official, documented
+reason was that the project itself (which we worked on over the course of a year
+or more) was &ldquo;never requested or approved&rdquo;, which is why I&rsquo;m blogging about it
+now. I may never be able to share the source code (work-for-hire is pretty
+explicit), but I think the idea, which originated with me, should be free to the
+world if my employer disavows any ownership of it.</p>
+
+
+
+
+<h2>That Vision Thing</h2>
+
+
+
+
+<p>Okay, this header is the title of an episode from Season 3 of <em>Angel,</em> but I&rsquo;m
+also referencing one of the Bible verses my mom likes to quote. It&rsquo;s from
+Proverbs, not sure exactly where, but the line is, &ldquo;My people perish for a lack
+of vision.&rdquo;</p>
+
+
+
+
+<p>This could be the most relevant prophetic statement to higher education in our
+current economic and technological climate. Last year, Sebastian Thrun, Stanford
+professor, Google researcher, and founder of <a href="http://udacity.com/">Udacity</a>
+famously stated in a <a href="http://www.wired.com/wiredscience/2012/03/ff_aiclass/all/">Wired
+article</a> that &ldquo;Fifty
+years from now&hellip;there will be only 10 institutions in the whole world that
+deliver higher education.&rdquo; My argument is that those will be the insitutions
+with the vision to risk everything to remain at the forefront of the
+marketplace.</p>
+
+
+
+
+<p>Does allowing students to tweet their lunch purchases accomplish this goal?
+Certainly not. But the lack of vision that hedges its bets and plays it safe
+certainly does not bode well for the university that wishes to survive the next
+several decades.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[PAM Authentication Beyond The Desktop]]></title>
+    <link href="http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
+    <updated>2013-03-08T20:11:00-05:00</updated>
+    <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
+    <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&rsquo;s useful for so much more.</p>
+
+
+
+
+<h3>Web Authentication</h3>
+
+
+
+
+<p>At work, we needed an authentication solution that allowed users to sign in with their ActiveDirectory credentials. Although the &ldquo;official&rdquo; solution was to use <a href="http://www.ca.com/us/secure-single-sign-on.aspx">SiteMinder</a> for web authentication against AD, we were working on a mobile application, and at the time the SiteMinder auth page was ugly, and had no mobile-optimized login page. The latter problem has since been rectified; now it has both an ugly desktop login and an ugly mobile login. In addition, we were using nginx, and SiteMinder was really only supported under IIS and Apache (and at the time, the latter was via Shibboleth. Ugh.), so without official SiteMinder support, or an nginx Shib plug-in, we were in a bit of a bind.</p>
+
+
+
+
+<p>Around the same time, I was playing with Likewise Open (now known as <a href="http://www.powerbrokeropen.org/">PowerBroker Identity Services &ndash; Open Edition</a>) to bind my Linux workstation into AD. So it occurred to me: if a normal Linux PAM login can be authenticated against ActiveDirectory, why not a PAM login from a web application?</p>
+
+
+
+
+<p>I know, I know, my first though should have been LDAP, right? For some unknown reason, LDAP was verboten at the time. The policy has since (apparently) been reversed, but such is the ebb and flow of corporate politics. And so, in the grand tradition of one of the mothers of modern computer science (and one of my daughter&rsquo;s namesakes):</p>
+
+
+
+
+<blockquote><p>If it&#8217;s a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote>
+
+
+
+
+<!--more-->
+
+
+
+
+<p>My first obstacle was to figure out how to do this from Ruby. <a href="https://github.com/binarylogic/authlogic">Authlogic</a> is a decent authentication framework (Sure, Devise is newer, but there&rsquo;s nothing wrong with Authlogic). There&rsquo;s an <a href="https://github.com/jhu-idcs/authlogic_pam">authlogic_pam</a> plugin (link is to my updated version, original seems to be abandoned), so the main issue was updating the long-abandoned rpam gem to tie into PAM. So I created <a href="https://github.com/canweriotnow/rpam-ruby19">rpam-ruby19</a> to have a C extension compatible with Ruby ~>1.9.2. Once the server (all of our production servers are <a href="http://www.debian.org/releases/stable/">Debian 6 &ldquo;Squeeze&rdquo;</a>) was tied into AD, it was relatively trivial to create a login that used Authlogic to hit PAM (and thusly ActiveDirectory) for user authentication.</p>
+
+
+
+
+<h3>But now everyone has a server login?</h3>
+
+
+
+
+<p>No, not at all. Likewise/PBIS has a setting to change the login shell for <em>only</em> AD users; we simply changed their shell to <code>/bin/true</code>. Problem solved.</p>
+
+
+
+
+<h3>And that forgiveness/permission thing?</h3>
+
+
+
+
+<p>While we were in beta, we informally ran the auth scheme by the people directly responsible for such things. They actually thought it was pretty cool and innovative. Which just reinforces my dedication to the timeless wisdom of Dr. Hopper.</p>
+
+
+
+
+<h3>And so&hellip;</h3>
+
+
+
+
+<p>Since we implemented this auth scheme for our mobile app, we&rsquo;ve continued to go with it; it&rsquo;s simple, elegant, and shields us from capturing (even hashed) credentials. We have two(-ish) new products launching this year using the same auth scheme. And we&rsquo;re still quite satisfied with the results.</p>
+
+
+
+
+<h3>Caveats</h3>
+
+
+
+
+<p>Over the past couple of months, I&rsquo;ve been researching an <a href="https://github.com/canweriotnow/rpam-ruby19/issues/5">issue submitted on Github</a> documenting a problem authenticating local users other than the euid running the process. You can get the details from the link, but this is how PAM (or at least shadow passwords) are supposed to work. This isn&rsquo;t for authenticating local system accounts (at least not if you&rsquo;re using shadow passwords properly); you should only auth external accounts (LDAP, ActiveDirectory, maybe NIS+) through PAM for non-system-login applications.</p>
+
+
+
+
+<h3>Future</h3>
+
+
+
+
+<p>Since this has worked out so well with our Rails apps, I&rsquo;m now working on a Clojure equivalent. There&rsquo;s a PAM integration library for Java called JPam, which I&rsquo;ve started wrapping in a library called <a href="https://clojars.org/clj-pam">clj-pam</a>, available from Clojars. If you&rsquo;d like to help, the source repo is located <a href="https://github.com/canweriotnow/clj-pam">here on Github</a>.</p>
+
+
+
+
+<p>PAM is wonderfully extensible. It&rsquo;s also very configurable, and is worth leveraging whenever possible. Dig deeper. Linux has so many great little pieces we tend to overlook.</p>
+
 ]]></content>
   </entry>
   
@@ -98,18 +491,35 @@
     <id>http://decomplecting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough</id>
     <content type="html"><![CDATA[<p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I&rsquo;m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
 
+
+
+
 <p>The concept is very simple, and based on an algorithm used in most spell checkers and autocorrect systems currently in use. Calculating the <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau-Levenshtein distance</a> between two words can reliably (within a certain margin of error) indicate whether a known word was inteded when an unknown term was encountered in user input.</p>
+
+
+
 
 <p>In Ruby, we have a wonderful metaprogramming facility in <code>method_missing</code>. What we&rsquo;ve done in close_enough is to monkey-patch <code>method_missing</code> on <code>Object</code> to calculate the Demerau-Levenshtein distance between existing methods and the non-existent called method, and invoke the nearest one if it&rsquo;s &ldquo;close enough&rdquo; (close enough currently being an edit distance of &lt; 3).</p>
 
+
+
+
 <!-- more -->
+
+
 
 
 <h2>So how does it work?</h2>
 
+
+
+
 <p>It&rsquo;s pretty straightforward. Let&rsquo;s say you&rsquo;re speed typing, maybe on an unfamiliar keyboard (I use a Sun Type 5 at home, but usually Dell QuietKeys at work&hellip; very different layout and key responsiveness). Sure, typos are going to happen, and it can be annoying and slow you down. But with close_enough&hellip;</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Close Enough Examples </span></figcaption>
+
+
+
+<figure class='code'><figcaption><span>Close Enough Examples </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -132,441 +542,40 @@
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 <span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;close_enough&#39;</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;require &amp;lsquo;close_enough&amp;rsquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">obj</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">obj</span><span class="o">.</span><span class="n">closs</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">obj</span> <span class="o">=</span> <span class="no">Object</span><span class="o">.</span><span class="n">new</span>
-</span><span class='line'><span class="n">obj</span><span class="o">.</span><span class="n">closs</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="no">Object</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;=&gt; Object&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">str</span> <span class="o">=</span> <span class="s2">&quot;foo&quot;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">str</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">foo</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="n">str</span><span class="o">.</span><span class="n">lentgh</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="mi">3</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;str.lentgh</span>
-</span><span class='line'><span class="sr">=&gt; 3&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">str</span><span class="o">.</span><span class="n">reserve</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="s2">&quot;oof&quot;</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">str</span><span class="o">.</span><span class="n">reserve</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">oof</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'><span class="n">ary</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;ary = [1,2,3,4,5]&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">mpa</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span><span class="p">}</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="o">]</span>
 </span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="n">ary</span><span class="o">.</span><span class="n">mpa</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="o">|</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">2</span><span class="p">}</span>
-</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="o">]&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;ary.reduck(:+)</span>
-</span><span class='line'><span class="sr">=&gt; 15&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">reduck</span><span class="p">(</span><span class="ss">:+</span><span class="p">)</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="mi">15</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>It&rsquo;s that easy. Quick, inaccurate typing becomes a non-issue. Or, at least, a minor issue. Okay, really, you should never use this in any kind of production environment.</p>
 
+
+
+
 <p>It&rsquo;s available from <a href="https://rubygems.org/gems/close_enough">Rubygems</a>, and the source is on <a href="https://github.com/ruby-jokes/close_enough">Github</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Legacy Systems on Rails (Part 3)]]></title>
-    <link href="http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3/"/>
-    <updated>2012-11-02T13:25:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
 
-<h3>Abstraction is your friend</h3>
-
-<p>I think if there&rsquo;s a common theme in these posts, it&rsquo;s abstraction. Primarily, using Ruby and Rails to abstract away the crazy implementation details of a system that&rsquo;s been accumulating cruft for over twenty years. I&rsquo;m going to start referring to this system as &ldquo;Bubba&rdquo; for the sake of convenience (and since I don&rsquo;t have permission from the vendor to say what it actually is).</p>
-
-<p>I mentioned in Part One that most of the access to the backend system going forward is occurring via a REST API wrapping the Oracle database that serve&rsquo;s as Bubba&rsquo;s back-end. Today I wanted to look at how the user-facing portions are constructed.</p>
-
-<!-- more -->
-
-
-<p>The customer-facing applications that integrate with Bubba via the API just send JSON back and forth at the model level. But our in-house developed applications are somewhat freed from tight integration with Bubba in that they handle persistence for their own data independently. So in addition to the Oracle DB, we also maintain a Postgres database that handles things like user sessions, application preferences, etc. I once complained about the inability to add tables to Bubba, but now I&rsquo;m glad we were &ldquo;forced&rdquo; to add a separate database, one which we control and can write proper unit tests for our models (I think Part 4 will probably be about testing against legacy systems. It won&rsquo;t be pretty).</p>
-
-<p>Bubba is quickly becoming one component of <em>our</em> systems, rather than <em>the</em> system that we&rsquo;re just extending in various ways.</p>
-
-<p>One thing you&rsquo;ll find really quickly if you&rsquo;re trying to use a JSON API as your persistence mechanism is that ActiveResource is pretty inadequate if you were expecting an ActiveRecord-like API to use. I highly recommend the <a href="https://github.com/justinweiss/reactive_resource">reactive_resource</a> gem by Justin Weiss as a substitute.</p>
-
-<p>Reactive Resource (among other things) adds read support for associations, including generating nested paths for child associations. So, for instance, the <code>Customer</code> object I described in Part 1 <code>has_many :cards</code>. ReactiveResource allows you to build models like this:</p>
-
-<p>``` ruby
-class Customer &lt; ReactiveResource::Base</p>
-
-<p>  has_many :cards</p>
-
-<p>end</p>
-
-<p>```</p>
-
-<p>Reactive Resource will know to generate the URI <code>/customers/42/cards/123456</code> from <code>Customer.find(42).cards.first</code>.</p>
-
-<h3>Encapsulation matters, too</h3>
-
-<p>Before I went this route, I tried the old &ldquo;Rails can handle multiple databases just fine&rdquo; theory. And while that&rsquo;s true in principle, in practice it often blows up in your face. First of all, you have to be very, very careful combining data from multiple sources &ndash; an ActiveRecord::Relation object when confronted with another object that quacks like a Relation will often try doing things like implicit joins &ndash; whcih obviously won&rsquo;t work across separate databases.</p>
-
-<p>The other reason this approach was full of fail is Oracle. Oracle syntax is incredibly nitpicky about its non-standard quirks. I often found that attempting to do something as simple as an inner join on the Postgres DB, using a class that <em>knew</em> to use the postgres adapter, syntax from the oracle_enhanced adapter would leak in. This <em>may</em> be an implementation bug due to some hack in the oracle_enhanced adapter (maybe one day I&rsquo;ll ask Raimonds about it), but just knowing that that was possible convinced me that was not the right path. Having an API for interaction with Bubba, whose sole responsibility is interaction with Bubba, is much cleaner and easier to maintain.</p>
-
-<h3>Don&rsquo;t be Lando</h3>
-
-<p>There&rsquo;s also one very, very good reason for quarantining vendor systems behind a REST interface. From time to time, the vendor is going to come along and <del>randomly change shit</del> release an upgrade.</p>
-
-<p><img src="http://i.imgur.com/qE6ko.png" alt="Imgur" /></p>
-
-<p>Maintaining a custom application dependent on a database schema beyond your control&hellip; let&rsquo;s just say you&rsquo;re gonna have a bad time. But wait, what&rsquo;s that? Gang of Four to the rescue!</p>
-
-<p><blockquote><p>Program to an &lsquo;interface&rsquo;, not an &lsquo;implementation&rsquo;.</p><footer><strong>Gang of Four</strong> <cite>Design Patterns</cite></footer></blockquote></p>
-
-<p>Wrapping the system in an API for which <em>you</em> control the public interface means you can account for schema changes in one place, rather than in multiple dependent applications, while keeping the public interface consistent. This also goes a long way in keeping your code DRY. And with a bit of metaprogramming magic like I described in part one, you can often spare yourself from having to push a new version if the schema changes are minor.</p>
-
-<p>So, this post was a little light on code, but I did want to explain some of the reasoning behind this approach to legacy systems integration using Rails.</p>
-
-<h4>Note</h4>
-
-<p>I&rsquo;d like to thank the folks at the <a href="http://ruby5.envylabs.com">Ruby5 podcast</a> for <a href="http://ruby5.envylabs.com/episodes/299-episode-295-august-7th-2012/stories/2616-legacy-systems-on-rails">covering this series in Episode #295</a>. If you missed that episode, please give it a listen&hellip; the commentary is pretty great, even if they did question my sanity a bit.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Legacy Systems on Rails (Part 2)]]></title>
-    <link href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/"/>
-    <updated>2012-08-03T11:38:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
-    <content type="html"><![CDATA[<p>This will be a quick one. I just wanted to give an example of how Ruby&rsquo;s open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
-
-<h3>Into the mouth of madness</h3>
-
-<p>So let&rsquo;s imagine you&rsquo;re a software engineer (actually, to make a decision this crazy, you&rsquo;d probably have to have a title like Señor Software Architect, or possibly VP of Development). You need to store precise date values for an OLTP system in the database. Although you know that Oracle&rsquo;s TIMESTAMP datatype will store a time right down to sub-millisecond precision, that&rsquo;s just too easy. Or, at least, too sane.</p>
-
-<p>Then you remember the <a href="http://en.wikipedia.org/wiki/Julian_day">Julian day</a> system. Perfect! You can just use floats to reperesent the time, with the Julian day number as the integral part, and the time of day represented as the fractional part! Even better, you decide to make up your own offset instead of using a standard Day of Calendar Reform, <em>and</em> to store the local time instead of UTC.</p>
-
-<p>If you have ever considered something like this, step away from the computer. I&rsquo;m revoking your programmer license. Leaving aside the general inaccuracy of floats (you wouldn&rsquo;t use a float to represent money, why the hell would it be a good idea for time?), there are <em>existing datatypes</em> for this! Moving on&hellip;</p>
-
-<!--more-->
-
-
-<h3>Monkey-patching to the rescue!</h3>
-
-<p>Since datetimes are represented as floating-point values internally, we&rsquo;ll need to have a way of converting between those and normal datetime types. So I&rsquo;ll start by introducing a few monkey-patches in an intializer, so they get loaded before anything else.</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>date_fixes.rb </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;h1&gt;We need two values because the offset is from midnight instead of noon,&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">so</span> <span class="n">the</span> <span class="n">standard</span> <span class="nb">methods</span> <span class="k">for</span> <span class="n">handling</span> <span class="no">Julian</span> <span class="n">day</span> <span class="n">values</span> <span class="n">get</span> <span class="n">confused</span><span class="o">.</span><span class="n">&lt;</span><span class="sr">/h1&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;SG1 = 2415019</span>
-</span><span class='line'><span class="sr">SG2 = 2415018.5&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="o">::</span><span class="nb">Float</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  def vendor_to_dt&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">date</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">jd</span><span class="p">(</span><span class="nb">self</span> <span class="o">+</span> <span class="no">SG1</span><span class="p">)</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  def to_date&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">to_date</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  def to_time&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">t</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">in_time_zone</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;class ::DateTime</span>
-</span><span class='line'><span class="sr">  def to_vendor&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c1"># This next one looks stupid but it&#39;s necessary</span>
-</span><span class='line'><span class="n">time</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="p">))</span>
-</span><span class='line'><span class="n">time</span><span class="o">.</span><span class="n">ajd</span><span class="o">.</span><span class="n">to_f</span> <span class="o">-</span> <span class="no">SG2</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;class ::Time</span>
-</span><span class='line'><span class="sr">  def to_vendor&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;class ::Date</span>
-</span><span class='line'><span class="sr">  def to_vendor&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>So now Float, Date, DateTime and Time can all convert happily (well, mayby not happily) back and forth and we can deal with something reasonable in our classes, like so:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Customer </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  def opendatetime&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">read_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">)</span><span class="o">.</span><span class="n">to_time</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  def opendatetime=(time)&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">write_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">to_vendor</span><span class="p">)</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>I specifically didn&rsquo;t use <code>to_f</code> as the method on Time, Date, etc. because I wanted to be clear this wasn&rsquo;t just a Float, it was a vendor-specific implementation.</p>
-
-<p>Anyhow, that&rsquo;s it for this one. As usual, comments, etc.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Legacy Systems on Rails (Part 1)]]></title>
-    <link href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/"/>
-    <updated>2012-08-02T14:48:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
-    <content type="html"><![CDATA[<p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
-
-<p>Since I spend a lot of time on this, I figured it would be a good topic for a series of posts, hence the &ldquo;Part 1&rdquo; in the title. Hopefully I&rsquo;ll actually follow through on it.</p>
-
-<p>The first thing I did was to replace a few aging Perl CGI scripts with a Rails app, which was interesting. The notion that Rails is far easier to use for greenfield projects than for legacy systems is probably accurate, but it&rsquo;s not universally true.</p>
-
-<p>This back-end is an Oracle database with over 450 tables and a hodgepodge of different strategies for how relationships should be modeled. I&rsquo;m pretty sure it was my second or third day on the job that I was asked to implement a feature (in the old Perl codebase) that should have been straightforward given the relationships between two particular entities, but ended up requiring six inner joins and two left outer joins, IIRC. Just to give you an idea of what I&rsquo;m dealing with.</p>
-
-<p>Anyhow, the first time around, I wrote an ActiveRecord model for each table, did my <code>has_many</code>&rsquo;s and <code>belongs_to</code>&rsquo;s, et cetera. Some were easier than others. There were a <em>lot</em> of conditions hashes in some of those associations.</p>
-
-<p>When the project scope started to grow beyond a single web app, and I started designing a REST API for the system, I had the opportunity to scratch some of the itches that had been bugging me about the original implementation from the very beginning.</p>
-
-<!--more-->
-
-
-<h3>When Good Patterns Go Bad</h3>
-
-<p>The first thing I needed to do was to solve an issue with the EAV tables. EAV (Entity-Attribute-Value) is an okay model for sparse data. Somehow, the designers of this system decided to use it for custom fields where <strong>every</strong> entity has <strong>every</strong> attribute. When a custom field is added, a row is inserted in the definition table for the attribute. Then a row is inserted in the value table for <strong>every single customer.</strong> It&rsquo;s slow, to say the least. In the original (naive) implementation, this meant every time a new attribute definition was added, I added an association to the Customer class. And there are a <em>lot</em> of attributes.</p>
-
-<p>I wan&rsquo;t about to make that mistake again.</p>
-
-<h3>Metaprogramming to the rescue</h3>
-
-<p>First I started with the definition table:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>FieldDef </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldDef</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="n">set_table_name</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">custom_field_def</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:custom_field_def_id</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  has_many :field_values&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">def</span> <span class="nf">symbol</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;self.title.parameterize(&#39;_&#39;).to_sym</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
-</span><span class='line'><span class="sr">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Pretty straightforward. The only extra thing is that <code>symbol</code> method, which returns a snake cased version of the &lsquo;title&rsquo; attribute, suitable for using as a method name.</p>
-
-<p>Next comes the field value table:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>FieldValue </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldValue</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="n">set_table_name</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">custom_field_value</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">set_primary_keys</span> <span class="ss">:cust_id</span><span class="p">,</span> <span class="ss">:custom_field_def_id</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  belongs_to :customer, :foreign_kay =&gt; :cust_id</span>
-</span><span class='line'><span class="sr">  belongs_to :field_def, :foreign_key =&gt; :custom_field_def_id</span>
-</span><span class='line'><span class="sr">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>Nothing out of the ordinary here (although I&rsquo;d like to thank Dr. Nic and Charlie Savage for their work on <a href="https://github.com/drnic/composite_primary_keys">composite_primary_keys</a>, it&rsquo;s a lifesaver).</p>
-
-<p>Of course, the goal here is eliminating the 40-odd lines of has_many and accepts_nested_attributes_for in the Customer class. This is where Ruby really shines:</p>
-
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Customer </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="n">set_table_name</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">customer</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
-</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:cust_id</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  # Here&amp;rsquo;s where we dynamically generate associations at runtime&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="no">FieldDef</span><span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">field</span><span class="o">|&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;has_one field.symbol, :class_name =&amp;gt; &#39;FieldValue&#39;, </span>
-</span><span class='line'><span class="sr">                      :foreign_key =&amp;gt; :cust_id,</span>
-</span><span class='line'><span class="sr">                      :conditions =&amp;gt; proc {&quot;customer_def_field_def_id = </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="sr">&quot;}</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">accepts_nested_attributes_for field.symbol</span>
-</span><span class='line'><span class="sr">delegate :field_value,  :to =&amp;gt; field.symbol, :prefix =&amp;gt; true</span>
-</span><span class='line'><span class="sr">delegate :field_value=, :to =&amp;gt; field.symbol, :prefix =&amp;gt; true</span>
-</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="c1"># snip&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-
-<p>This iterates over the rows of <code>custom_field_def</code>, generates an association for each entry, adds the <code>accepts_nested_attributes_for</code> declaration, and even delegates the getter and setters for the column we&rsquo;re really interested in (<code>"CUSTOM_FIELD_VALUE"."FIELD_VALUE"</code>).</p>
-
-<p>I don&rsquo;t claim it&rsquo;s <em>the</em> most elegant solution, but it&rsquo;s a lot better than in the previous iteration. It&rsquo;s important to remember that although Rails' opinionated nature makes it a little more awkward to deal with a legacy sytem than with a brand new project, Ruby gives you all the tools you could want to overcome whatever hurdles you might encounter.</p>
-
-<p> If you have any questions or suggestions for improvement, please let me know in the comments!</p>
 ]]></content>
   </entry>
   

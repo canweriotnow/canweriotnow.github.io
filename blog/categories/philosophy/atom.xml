@@ -4,7 +4,7 @@
   <title><![CDATA[Category: philosophy | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/philosophy/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-06-10T15:18:00-04:00</updated>
+  <updated>2014-08-19T21:54:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,53 +20,124 @@
     <id>http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction</id>
     <content type="html"><![CDATA[<p>Working in the EdTech sector, I&rsquo;m perpetually vexed as I try to determine what exactly &ldquo;EdTech&rdquo; is and, <em>a fortiori,</em> what <em>effective</em> EdTech should look like. Perhaps a little background might be in order.</p>
 
+
+
+
 <p>As I&rsquo;ve mentioned before, my academic training is in philosophy. Computer Science was more of an avocational intellectual pursuit because I enjoyed math and symbolic logic. Life is full of surprises, eh?</p>
+
+
+
 
 <p>One of the fundamental divisions in philosophy is between &ldquo;analytic&rdquo; and &ldquo;continental&rdquo; philosophy. These are vague and overlapping spheres, but the reduction comes down to whether philosophy is the handmaiden of science (analyitc school), or whether philosophy is something larger with a complex (sometimes supportive, sometimes critical) relationship with science.</p>
 
+
+
+
 <p>I fell firmly on the &ldquo;continental&rdquo; side, for the most part. It was always the critical power of philosophy that fascinated me. So, what does this have to do with EdTech?</p>
+
+
+
 
 <!--more-->
 
 
+
+
 <h3>Technology as the Handmaiden of Education</h3>
+
+
+
 
 <p>This is the problem. Our typical view of &ldquo;educational technology&rdquo; is that we can produce technological tools to support the same tried, tired pedagogical techniques that have (sort of) worked (for a minority of the population) for decades.</p>
 
+
+
+
 <p>This is wasteful. This is stupid, and also wrong.</p>
+
+
+
 
 <p>In business, where technology has succeeded it has done so because it has revolutionized practices, made redundant unnecessary labor, and increased efficiency by many orders of magnitude. I&rsquo;ll (graciously) bracket off my opinions about the unfair distribution of the gains in productivity, for the sake of brevity and focus.</p>
 
+
+
+
 <p>Likewise in science, our rate of accumulation of knowledge about the physical world has increased exponentially, not because we have expected technology to serve the same processes that we accepted as &ldquo;best practices&rdquo; back when we had only stone knives and bear skins to work with, but because the rate of technological progress has disrupted (improved) the very processes by which scientific discovery occurs.</p>
+
+
+
 
 <p>Now, as (to borrow from both Marcuse and Heidegger) technology is very specifically the <em>science</em> of <em>technics,</em>
 it might be argues that the sciences are the least &ldquo;disrupted&rdquo; by technological advancement; for the most part, they are themselves advanced. But paradigm shifts in technology have played a role in the Kuhnian paradigm shifts in scientific understanding as well.</p>
 
+
+
+
 <h3>And Education?</h3>
+
+
+
 
 <p>First, let us agree that education is no science, not even a &ldquo;soft science&rdquo; like sociology or psychology. to be sure, at its best it is informed heavily both by those soft sciences as well as slightly harder sciences like cognitive science, for example. But education itself is no science.</p>
 
+
+
+
 <p>In this regard, scientific and technolological advances should in and of themselves present a material critique of the process of pedagogy as it is practiced; technology is the ultimate tool for cultural transformation, if not (ultimately) the transformation of the meaning of what it is to be human.</p>
+
+
+
 
 <p>Fundamentally, when correctly utilized, technology is transformative. And that&rsquo;s not what we&rsquo;re seeing with EdTech.</p>
 
+
+
+
 <p>Smartboards, blended learning, flipped classrooms, Blackboard, Moodle, an iPad for every student, I would go on but you can get better buzzwords from the <a href="http://www.teacheripsum.com/">Teacher Ipsum</a> generator. It&rsquo;s pretty much all a bunch of overpriced junk that supports the Same Old Shit in the classroom, with the added benefit of shiny tech press for the school, the district, whatever.</p>
+
+
+
 
 <p>I&rsquo;m not playing down the role of technology in education. Quite the opposite, in fact. I&rsquo;m lamenting that billions of dollars are being spent on &ldquo;EdTech&rdquo; that isn&rsquo;t impactful, that isn&rsquo;t transformative, that simply lends the sheen of shiny tech to tired pedagogy that should have been retired decades ago.</p>
 
+
+
+
 <h3>What Is To Be Done?</h3>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+
+
+<p><span class='pullquote-right' data-pullquote='Basically, if your use of technology in the classroom isn&#8217;t transformative, you&#8217;re Doing It Wrong™.'>
+For me, it&rsquo;s fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. Basically, if your use of technology in the classroom isn&rsquo;t transformative, you&rsquo;re Doing It Wrong™. If the tech you use doesn&rsquo;t fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessary or misutilized.
+</span></p>
+
+
+
 
 <p>In the title, I suggested that &ldquo;EdTech&rdquo; is a &ldquo;leaky abstraction.&rdquo; The term comes from an article by <a href="http://www.joelonsoftware.com/AboutMe.html" title="Joel Spolsky">Joel Spolsky</a> entitled <a href="http://www.joelonsoftware.com/articles/LeakyAbstractions.html" title="Leaky Abstractions">&ldquo;The Law Of Leaky Abstractions&rdquo;</a>. The tl;dr is: all (non-trivial) abstractions are, to some degree, leaky; that is, they build on top of something concrete and messy while removing the messy details from the public interface. At least, that&rsquo;s how we&rsquo;d describe it in the software world. Grasping to define something like &ldquo;EdTech&rdquo;, I think the parallel I&rsquo;d like to draw is that the very term &ldquo;EdTech&rdquo; contains what it cannot possibly contain (bonus points if you catch that reference). &ldquo;Educational Technology&rdquo; refers to technology <em>designed for</em> education, technology <em>used in the serivce of</em> education, and also technology tangentially related to education. Unfortunately, this is a boolean <code>and</code>, leaving us with the union of >= 3 overlapping sets, wherein the intersections and complements are probably more interesting. The union of the sets contains many subsets that really aren&rsquo;t all that useful or interesting. But we don&rsquo;t seem to be doing much winnowing.</p>
 
+
+
+
 <p>Back to the philosophy lesson: technology is not there to be the handmaiden of tried and tired pedagogy. Technology is there to, in its very essence, provide an <em>explicit critique</em> of pedagogy in general.</p>
+
+
+
 
 <p>So how do we fix this?</p>
 
+
+
+
 <p>We need better ways of evaluating technology in education. We need professional development solutions to ensure that educators have the skills to properly exploit the tech they have available. We need to ditch our preconceptions about what it means to teach any given subject and look at how technology has changed that domain in the real world (technophobic math teachers, I&rsquo;m looking at you!).</p>
 
+
+
+
 <p>We need to forget everything we know about education, and reinvent everything with the new tools at hand.</p>
+
 ]]></content>
   </entry>
   

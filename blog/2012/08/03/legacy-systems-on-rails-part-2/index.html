@@ -106,7 +106,7 @@
   
 
 
-<time datetime="2012-08-03T11:38:00-04:00" pubdate data-updated="true">2012-08-03</time>
+<time datetime="2012-08-03T11:38:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -130,7 +130,7 @@
 
 <p>Since datetimes are represented as floating-point values internally, we&rsquo;ll need to have a way of converting between those and normal datetime types. So I&rsquo;ll start by introducing a few monkey-patches in an intializer, so they get loaded before anything else.</p>
 
-<figure class='code'><figcaption><span>date_fixes.rb </span></figcaption>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>date_fixes.rb </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -213,12 +213,12 @@
 </span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>So now Float, Date, DateTime and Time can all convert happily (well, mayby not happily) back and forth and we can deal with something reasonable in our classes, like so:</p>
 
-<figure class='code'><figcaption><span>Customer </span></figcaption>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Customer </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -241,7 +241,7 @@
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>I specifically didn&rsquo;t use <code>to_f</code> as the method on Time, Date, etc. because I wanted to be clear this wasn&rsquo;t just a Float, it was a vendor-specific implementation.</p>
@@ -269,7 +269,7 @@
   
 
 
-<time datetime="2012-08-03T11:38:00-04:00" pubdate data-updated="true">2012-08-03</time>
+<time datetime="2012-08-03T11:38:00-04:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
@@ -326,6 +326,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -339,10 +343,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

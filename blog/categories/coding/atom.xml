@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-06-10T15:18:00-04:00</updated>
+  <updated>2014-08-19T21:54:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,53 +20,121 @@
     <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
     <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
 
+
+
+
 <p>Okay, the PSAs keep it silly. Every time someone in those videos says &ldquo;I just did <em>n</em> lines of code&rdquo;, the following script runs through my head:</p>
 
-<p>```ruby
-&ldquo;I just did #{n} lines of code&rdquo;.gsub!(/code/, &lsquo;coke&rsquo;) &lt;&lt; &ldquo;, and I can&rsquo;t feel my face!&rdquo;</p>
 
-<p>```</p>
+
+
+<figure class='code'><figcaption><span>&#8220;Yeah, this&#8230;&#8221; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;I just did </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> lines of code&quot;</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/code/</span><span class="p">,</span> <span class="s1">&#39;coke&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, and I can&#39;t feel my face!&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>Yeah, I&rsquo;m a terrible person. Also hilarious. Moving on&hellip;</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <h3>Hacker Exceptionalism</h3>
+
+
+
 
 <p>Usually, the term <a href="http://en.wikipedia.org/wiki/Exceptionalism">Exceptionalism</a> is used in a context of superiority, e.g., <a href="http://en.wikipedia.org/wiki/American_exceptionalism">American exceptionalism</a>. I do believe there is something like &ldquo;hacker exceptionalism&rdquo;, except the &ldquo;exception&rdquo; has nothing to do with superiority, but literally an exceptional case — a corner case for life, if you will.</p>
 
+
+
+
 <p>There&rsquo;s something weird about hackers. I&rsquo;m not lumping everyone who writes code for their day job into this category (frankly, that would be offensive to my sensibilities). I&rsquo;ve written <a href="http://decomplecting.org/blog/2012/05/22/passion/">before</a> about my encounters with people who just code 9 to 5 and then don&rsquo;t think about it and all I can say now is that I wish they would stop (actually, I&rsquo;m not sure many of them think about it at all).</p>
+
+
+
 
 <p>People who grok code have weird brains. That&rsquo;s the theory. It&rsquo;s not new; in <a href="http://www.nealstephenson.com/snowcrash/"><em>Snow Crash</em></a>, Neal Stephenson describes a neurolinguistic virus that can infect the brains of hackers via digital images because of the pathways coding has created in their brains.</p>
 
+
+
+
 <p>There&rsquo;s a chicken-and-egg problem here: are our brains weird because we&rsquo;re hackers, or are we hackers because our brains are weird?</p>
+
+
+
 
 <p>I&rsquo;m not sure there&rsquo;s any way to answer that scientifically until we have longitudinal studies complete with periodic fMRI scans of children as they develop into programmers (or not). So we&rsquo;ll leave the origin story aside for now.</p>
 
+
+
+
 <h3>Voight-Kampff</h3>
+
+
+
 
 <p>In the movie <a href="http://en.wikipedia.org/wiki/Blade_Runner"><em>Blade Runner</em></a> (apologies to Philip K. Dick fans for heading down this particular rabbit-hole), a test called <a href="http://bladerunner.wikia.com/wiki/Voight-Kampff_machine">Voight-Kampff</a> is administered to distinguish humans from replicants.</p>
 
+
+
+
 <p>The idea of a Voight-Kampff test to distinguish humans from hackers isn&rsquo;t new either; in 2006, researchers proposed an (apparently) effective test to separate <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">programming sheep from non-programming goats</a>.</p>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+
+
+<p><span class='pullquote-right' data-pullquote='Then I realized: this is like a Voight-Kampff test for hackers.'>
+So this &ldquo;Hour of Code&rdquo; thing. I thought it was a cute idea at first, became dubious, got annoyed at the marketing, and stopped paying attention until the new batch of PSAs were covered on Gizmodo (full confession: I was reading <a href="http://valleywag.gawker.com/">Valleywag</a> when I saw it. I can&rsquo;t help myself). Then I realized: this is like a Voight-Kampff test for hackers. My first &ldquo;hour of code&rdquo; was when I was five. that hour stretched into three. Then countless hours followed. For the rest of my life.
+</span></p>
+
+
+
 
 <p>The whole &ldquo;everyone should learn to code&rdquo; meme is great; I think everyone should understand the fundamentals of computer science. Not that &ldquo;learning to code&rdquo; is equivalent to &ldquo;understanding CS fundamentals,&rdquo; but it&rsquo;s a step in the right direction. But it&rsquo;s important to distinguish between &ldquo;learning to code&rdquo; and &ldquo;entering a career in software engineering.&rdquo;</p>
 
+
+
+
 <p>I wish the latter were left to true hackers. The ones who are outed by the &ldquo;hour of code&rdquo; when the hour turns into 10,000 hours; the ones who go from &ldquo;I did 5 lines of code!&rdquo; to &ldquo;I did 5k LOCs&rdquo; in about two weeks. That&rsquo;s not going to be everyone. It&rsquo;s going to be a distinct minority. We&rsquo;re corner cases.</p>
+
+
+
 
 <p>Code.org has some great goals, even if the motives seem questionable at times (does it feel to anyone else like &ldquo;everyone should learn to code&rdquo; is in some cases an attempt to rekindle the failed 1990&rsquo;s experiment of &ldquo;commodity programmers&rdquo;?). More than anything else, though, &ldquo;hour of code&rdquo; seems to intorduce a <code>catch</code> block for those of us who throw <code>HackerBrainException</code>. And that&rsquo;s great. Uncaught exceptions aren&rsquo;t good for anyone. This is why we need <a href="http://www.computinginthecore.org/">computing in the core</a> — it&rsquo;s like checked exceptions in the API for public education.</p>
 
+
+
+
 <h3>Computer Science in K-12</h3>
+
+
+
 
 <p>This is the real issue, isn&rsquo;t it? Getting computer science into the standards for K-12 education? Making an &ldquo;hour of code&rdquo; redundant?</p>
 
+
+
+
 <p>Sadly, things don&rsquo;t seem to have changed much since my own <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">negative experiences with coding at school</a>&hellip; but that was in the late 1990&rsquo;s. I would have expected progress since then&hellip; if I were a lot more naïve.</p>
+
+
+
 
 <p>So a message to current students: <strong>Fortuna audaces iuvat</strong> — Fortune favors the bold. Hack everything. Code your math homework. Shit, code your math homework, put hte source on <a href="https://github.com">Github</a>, and let your friends <em>copy</em> that shit. Refuse to do anything without a computer, whether that computer is your phone or a <a href="http://www.cray.com/Products/Computing/XE.aspx">Cray XE6</a>.</p>
 
+
+
+
 <p>If your school doesn&rsquo;t offer CS classes, start your own. <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">Just get hacking</a>. If you throw <code>HackerBrainException</code>, you&rsquo;ll never stop.</p>
+
 ]]></content>
   </entry>
   
@@ -77,19 +145,40 @@
     <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
     <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
+
+
+
 <iframe width="560" height="315" src="//www.youtube.com/embed/6XvmhE1J9PY" frameborder="0" allowfullscreen></iframe>
+
+
 
 
 <p>It&rsquo;s an understandable, if questionable, sentiment. I&rsquo;ve previously addressed the <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">questionable wisdom, and pitfalls</a>, of the &ldquo;teach every kid to code&rdquo; movement. At the same time, computational literacy is so paramount thate ven learning enough about coding to know whay you <em>don&rsquo;t</em> want to do it seems valuable. But I am a champion of CS education in K-12, so I like the overall tenor of that brief address. But it got me thinking about one of the most egregious roadblocks to progress in software within our economy: Apple.</p>
 
+
+
+
 <!-- more -->
 
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+
+<p><span class='pullquote-right' data-pullquote='Don&#8217;t just download the latest app. Help design it. Don&#8217;t just play on your phone. Program it.'>
+The president&rsquo;s exhortation was especially interesting in one very specific regard: the spot at 0:32 where he encourages, Don&rsquo;t just download the latest app. Help design it. Don&rsquo;t just play on your phone. Program it. Well&hellip; I like where this is going, but&hellip; it&rsquo;s not that easy, Mr. President. I&rsquo;m all for anyone ,with the slightest interest, screwing around with code and learning new things. And if you&rsquo;ve got an Android phone (among others, but I&rsquo;m trying to keep this simple), that&rsquo;s great. You can download <a href="http://developer.android.com/sdk/installing/studio.html">Android Studio</a> from <a href="https://google.com">Google</a>, for free. You can put your phone in developer mode, and install whatever you want. Easy peasy. And hey, want to distribute that to your friends? Pay $25, one time, you&rsquo;re set.
+</span></p>
+
+
+
 
 <p>If you&rsquo;re locked into Apple&rsquo;s totalitarian ecosystem, alas, it&rsquo;s not that easy. You&rsquo;ll need to pay US$99 per year for the privelege of running your own code on your own device. And should you want to publish that? Well, Apple&rsquo;s going to review and nitpick and make sure <em>they</em> want it in their store. And charge <em>you</em> for the privilege of having the opportunity to add value to their platform. And hell, if your friends are at all savvy and have Android phones, just send them the APK or (even better), open source your project and let them build it themselves. This all works great on Android. On iOS&hellip; not so much.</p>
 
+
+
+
 <p>I sometimes go overboard giving my friends with iOS devices a hard time. It&rsquo;s almost as bad as when Windows was still relevant and I was pushing Linux on everyone. It&rsquo;s about <em>freedom.</em> Just like with Windows back in the day, the constant reply is one of:</p>
+
+
+
 
 <ol>
 <li>I don&rsquo;t need to code for/have control over my device, this works fine for me.</li>
@@ -97,22 +186,45 @@
 </ol>
 
 
+
+
 <p>Welcome to vendor lock-in. It&rsquo;s no excuse, and if we <em>really</em> care about the next generation becoming hackers and makers, not just consumers, we need to reject Apple&rsquo;s bullshit, reject Micorsoft&rsquo;s (decreasingly relevant) bullshit, and focus on open systems. This doesn&rsquo;t have to be Android. <a href="http://www.ubuntu.com/phone">Ubuntu Phone</a> looks promising, <a href="http://www.mozilla.org/en-US/firefox/os/">Firefox OS</a> <em>might</em> not be more Mozilla vaporware, and <a href="http://jolla.com/">Jolla</a> looks incredibly promising.</p>
 
+
+
+
 <p>But what Apple lacks in marketshare, it maintains in mindshare. You want irony?</p>
+
+
+
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/VtvjbmoDx-I" frameborder="0" allowfullscreen></iframe>
 
 
+
+
 <p>In 1984, Big Brother was IBM. Now when I watch this, I see a WWDC keynote.</p>
+
+
+
 
 <p>I don&rsquo;t think iOS is compeltely ill-conceived. Almost, but not completely. But if Apple will not open their platform, and their ecosystem, they are not helping to encourage the next generation of makers, and they are encouraging precisely the opposite attitude toward software that <a href="http://code.org">Code.org</a> and <a href="http://csedweek.org/">Computer Science Education Week</a> were founded to promote.</p>
 
+
+
+
 <p>If I may be permitted to pay tribute to Marcus Cato, I will simply conclude by stating:</p>
+
+
+
 
 <h3>POMUM DELENDA EST</h3>
 
+
+
+
 <p><strong>Update:</strong> There&rsquo;s some lively discussion on <a href="https://news.ycombinator.com/item?id=6878922">Hacker News</a></p>
+
 ]]></content>
   </entry>
   
@@ -123,42 +235,98 @@
     <id>http://decomplecting.org/blog/2013/11/20/github-matters-followup</id>
     <content type="html"><![CDATA[<h4>Mea Culpa</h4>
 
+
+
+
 <p>I made some mistakes in my last post. First off, I&rsquo;d like to apologize to <a href="http://ashedryden.com/">Ashe Dryden</a> for referring to her as Ms. Dryden while I referred to <a href="http://jcoglan.com/">James Coglan</a> by his full name. I had no intention of explicitly implying Ashe&rsquo;s gender; my usual writing style is to refer to people by their full name initially and to use an approrpiate title thereafter. But upon review I realized I referred to Ashe as &ldquo;Ms. Dryden&rdquo; in subsequent references, while I referred to James Coglan as &ldquo;James Coglan&rdquo; both times I mentioned him.</p>
 
+
+
+
 <p>I&rsquo;m sorry about that. It was an oversight, and if I had been paying better attention, the second reference to Mr. Coglan would have been &ldquo;Mr. Coglan&rdquo; for parity. But as I failed to achieve parity, and Ashe expressed that she preferred &ldquo;Ashe Dryden&rdquo; to &ldquo;Ms. Dryden&rdquo; in general, I decided to <code>s/Ms./Ashe/g</code> the post. It is now corrected.</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <h4>I missed some things</h4>
+
+
+
 
 <p>My post was mostly in response to the <a href="https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/">Github Is Not Your CV</a> sentiment, as well as the <a href="https://news.ycombinator.com/item?id=6728417">Hacker News comments</a> related to Ashe&rsquo;s post, rather than the diversity/privilege statistics offered by Ashe&rsquo;s <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">original article</a>. I had no intention of discounting the privilege issues involved in having the time and resources to contribute to OSS or produce original experiments/libraries/applications on <a href="https://github.com">Github</a>.</p>
 
+
+
+
 <p>I didn&rsquo;t disagree with any of that. I still think it&rsquo;s a good idea to make projects public and make that part of your portfolio. I never suggested that hiring managers should use Github as the only criterion&hellip; but I do think it demonstrates a commitment to professional development, to honing your craft.</p>
+
+
+
 
 <p>I&rsquo;m curious if the cited statistics on OSS contributions refer to &ldquo;have commits to major OSS projects&rdquo; or &ldquo;have code samples online.&rdquo;</p>
 
+
+
+
 <p>My reference was to the latter. Not that I wouldn&rsquo;t love to hire people with commits to Rails or core.async; but for the most part, I want to see what you build in your spare time. Your production code is probably proprietary and covered by an NDA. So I want to see what I <em>can</em> see.</p>
+
+
+
 
 <p>If you don&rsquo;t have a Github profile, that&rsquo;s okay. We can still talk. Either way, I&rsquo;m probably going to want to pair with you or give you a take-home assignment before the next interview round. Those are great ideas that both Ashe and James proposed as alteratives to Github reviews.</p>
 
+
+
+
 <p>I see them more as complements than alternatives, but ideally seeing both would be wonderful.</p>
+
+
+
 
 <p>I still love Github as part of the screening process. Especially if your Github is messy. I can see the crappy Rails CMS you wrote two years ago as practice, and the Clojure OAuth library you comitted to last week, and see the growth you&rsquo;ve made in that time. That&rsquo;s the value of Github to me.</p>
 
+
+
+
 <p>I want to see professional development, not unpaid labor. I want to know you <em>don&rsquo;t consider hacking labor, but play.</em> Not because I want you to work 80 hours a week; I don&rsquo;t, because that&rsquo;s the road to burnout. But I want to know you love this shit and, in a socialist utopia, would do it for free.</p>
+
+
+
 
 <h4>Damn reality</h4>
 
+
+
+
 <p>Yeah, I know hacking on OSS is a privilege we don&rsquo;t all enjoy. Neither is going to college or learning to code. These are all things we need to improve access to as a community, but the nice thing about Github, pairing, and code challenges, is that they can balance out hte privilege issues of college and other factors. For me, as a hiring hacker, I care more about work than degrees. Github is one way to show that, but pairing etc. are equally valid.</p>
+
+
+
 
 <h4>Conclusion</h4>
 
+
+
+
 <p>OSS hacking is a privilege: I&rsquo;ve done a fuckton less since I had a kid; mostly work-related stuff. But it still matters, and it&rsquo;s accessible to anyone with a computer and an internet connection. That in and of itself is discriminatory, but I can&rsquo;t see how you&rsquo;re going to be a hacker to begin with sans those things.</p>
+
+
+
 
 <p>I think my main objection is the Harrison Bergeron argument: we&rsquo;re using statistics about privilege to say &ldquo;let&rsquo;s not use this (IMHO) valid metric because the privileged have access to this resource&rdquo; instead of &ldquo;how can we change society to improve access to this resource.&rdquo;</p>
 
+
+
+
 <p>Yeah, the second proposition is harder. And you can discount the utility of the metric like James Coglan, or reject the premise like Ashe Dryden, but in either case there is a realpolitik question:</p>
+
+
+
 
 <ol>
 <li>Hiring managers see value in this metric.</li>
@@ -168,11 +336,20 @@
 </ol>
 
 
+
+
 <p>The typical response is 4(a), for whatever reason. I&rsquo;d like to see 4(b), but I don&rsquo;t know how to make it happen. I&rsquo;d rather see theories on how this can be achieved than see strategies and arguments for 4(a).</p>
+
+
+
 
 <p>Anyhow, like I said&hellip; the statistics are damning, but I&rsquo;d rather see the statistics change. How do we get more women into open source? I think OSS contributions have value as one factor among many, but I also think it&rsquo;s a value for <em>the individual developer,</em> not just as a hiring criterion. The low contribution ratio of women and minorities to OSS is the problem, not the fact that it&rsquo;s a metric used for candidate evaluation. But that&rsquo;s a whole different issue, and I don&rsquo;t have an answer for fixing that&hellip; yet.</p>
 
+
+
+
 <p><strong>tl;dr apologies to Ashe; inequality and privilege are real; fix society, don&rsquo;t discount the value of OSS/Github contributions</strong></p>
+
 ]]></content>
   </entry>
   
@@ -181,11 +358,20 @@
     <link href="http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/"/>
     <updated>2013-11-19T21:22:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
+    <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
+
+
+
 
 <p>There are good counterarguments to this. Github is not a portfolio, it&rsquo;s where your public code lives. <a href="https://github.com/canweriotnow">My Github</a> has a bunch of projects I should maybe delete; stalled or abandoned projects, one-off projects with poor test coverage, etc. It&rsquo;s not really a representative sample of my <em>production</em> code. But that&rsquo;s not why I think it matters.</p>
 
+
+
+
 <p>In her post, Ashe provides several excellent alternatives to OSS contributions as evaluation criteria; these include:</p>
+
+
+
 
 <ul>
 <li>Pair with the prospective hire</li>
@@ -194,58 +380,130 @@
 </ul>
 
 
+
+
 <p>When considering potential hires, Github is not everything. At <a href="http://anestuary.com">An Estuary</a>, we definitely request (and prefer) a Github profile with applicant CVs; but it&rsquo;s not about contributions to OSS projects (i.e., the &ldquo;unpaid labor&rdquo; critiqued in Ashe Dryden&rsquo;s post).</p>
+
+
+
 
 <p>The focus of our company is on professional development. We not only dogfood technically (i.e., using our own software), but also culturally. We want to hire people who are focused on their own professional development, and Github is a good place to document that.</p>
 
+
+
+
 <p>(Also&hellip; code samples? If you wrote something worth showing me, why isn&rsquo;t it on Github, in a gist, on JSFiddle, etc.?)</p>
+
+
+
 
 <p>Our main product is designed to help educators document their professional development. Hackers like us have Github, so if we&rsquo;re not using it&hellip; something might be amiss.</p>
 
+
+
+
 <p>So when I&rsquo;m looking at a Github profile evaluating a potential hire, I&rsquo;m not looking for accepted pull requests to <a href="https://github.com/rails/rails">Rails</a>. I mean, that would be a plus, but&hellip;</p>
+
+
+
 
 <!--more-->
 
 
+
+
 <h3>A Commitment to Professional Development</h3>
+
+
+
 
 <p>That&rsquo;s what I want to see. Not a portfolio, as <a href="http://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/">James Coglan suggests</a>. He&rsquo;s not wrong, but as a hiring hacker, at least from my perspective, he misjudges the value of Github profiles.</p>
 
+
+
+
 <p>For me, evaluating Github profiles for potential hires is about a commitment to a <em>profession.</em> And that&rsquo;s not something that&rsquo;s real in software at the moment, but it&rsquo;s something we need to develop.</p>
+
+
+
 
 <p>If building software is <em>just a paycheck,</em> I don&rsquo;t really want to work with you. No offense, I&rsquo;m sure there are plenty of organizations out there that are fine with that. You should work for them. I have, and I hated it, but find your own bliss. I don&rsquo;t want you to miss out on family and kids and friends; I don&rsquo;t want to miss out on those either. But in those couple of hours between the kids going to bed and sleep closing in&hellip; well, I&rsquo;m hacking away on some odd side project, and that&rsquo;s who I want by my side while we&rsquo;re trying to hack things better.</p>
 
+
+
+
 <p>There&rsquo;s a conflation of OSS contributions (i.e., unpaid labor contributing to free software your company or prospective company uses to make a profit) and having a Github (or Bitbucket or whatever) account that demonstrates a commitment to honing your craft over time. Both are admirable, but I want to hire smart people who are committed to always be learning. Github is a good way to demonstrate that quality, even if yours (like mine) is full of projects that went nowhere.</p>
+
+
+
 
 <p>Sorry, I need evidence of commitment. If you have patches in or Rails or clojure.core that&rsquo;s bonus points. But your commitment is what matters to me:</p>
 
+
+
+
 <blockquote class="twitter-tweet" lang="en"><p>Timeframes in which you cannot become a good programmer: 2 weeks; 2 months; 2 years. Sorry. 10,000 hours. Not my fault. Sorry.</p>&mdash; Gary Bernhardt (@garybernhardt) <a href="https://twitter.com/garybernhardt/statuses/397833212019232769">November 5, 2013</a></blockquote>
+
+
 
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
+
+
 <p>10,000 hours. That&rsquo;s what it takes. Not that you&rsquo;ve put that time in already, but I need to believe you&rsquo;re committed to putting the time in. Sorry if that&rsquo;s a hardship. There are other jobs.</p>
+
+
+
 
 <p>Now I&rsquo;m close to sounding like a jerk, but it&rsquo;s just the reality. If I was a flight instructor who certified a pilot who hadn&rsquo;t put in their hours, I&rsquo;d be criminally negligent. Software matters too. Just look at <a href="http://healthcare.gov">healthcare.gov</a></p>
 
+
+
+
 <h3>Privilege isn&rsquo;t just about OSS</h3>
+
+
+
 
 <p>One of the main points of Ashe Dryden&rsquo;s article is that OSS is dispropotionally authored by privileged groups, i.e. young white males. While this is clearly backed by the data, the reasons for this are not limited to the software industry; most professions (and yes, I am considering software engineering a profession) have similarly disproportionate distributions. <a href="http://www.nalp.org/minoritieswomen">Lawyers</a> and <a href="http://nces.ed.gov/fastfacts/display.asp?id=72">doctorates in general</a> skew in the same direction. Why? For the same reasons addressed in the argument against OSS as hiring criteria: young white males disproportionately have the free time and resources available to pursue advanced degrees, attend professional school, etc.</p>
 
+
+
+
 <p>Now, in software, we have an edge case in which a degree isn&rsquo;t necessarily required in the first place. But something has to stand in for that, doesn&rsquo;t it? Some demonstration of competency?</p>
+
+
+
 
 <p>I think this was one of the more salient points made in <a href="https://news.ycombinator.com/item?id=6728417">the Hacker News thread</a> on Ashe Dryden&rsquo;s post — all hiring criteria are discriminatory in one way or another, e.g. requiring a Master&rsquo;s degree discriminates against people with only a Bachelor&rsquo;s — and surprise, surprise, individuals privileged by race or gender are more likely to secure the higher degree.</p>
 
-<p>So I think the &ldquo;Github hiring criterion&rdquo; is a bit of a red herring. Privilege is an issue across the board, and it really has nothing to do with OSS or Github profiles. I&rsquo;m in my first hiring role as a developer, but I find reviewing applicants' Github profiles incredibly useful; not as in &ldquo;we will talk to this person but not this other one,&rdquo; but guiding what questions to ask and what paths to explore in the interview.</p>
+
+
+
+<p>So I think the &ldquo;Github hiring criterion&rdquo; is a bit of a red herring. Privilege is an issue across the board, and it really has nothing to do with OSS or Github profiles. I&rsquo;m in my first hiring role as a developer, but I find reviewing applicants&#8217; Github profiles incredibly useful; not as in &ldquo;we will talk to this person but not this other one,&rdquo; but guiding what questions to ask and what paths to explore in the interview.</p>
+
+
+
 
 <p>tl;dr Hiring people is hard. Github provides <em>limited</em> data to drive those decisions. It&rsquo;s easier to make confident decisions with more data.</p>
 
+
+
+
 <h5><em>Postscript</em></h5>
+
+
+
 
 <p>If Github is privilegey, than what is <a href="http://careers.stackoverflow.com/">Careers 2.0</a>? You either need an awesome Github rep or <a href="http://stackoverflow.com">StackOverflow</a> karma <em>just to get a profile.</em> And answering James Coglan&rsquo;s critique — Careers 2.0 actually <em>is</em> a portfolio; you feature your best Github repos, best blog posts, etc.</p>
 
+
+
+
 <p>Maybe another time I&rsquo;ll go into <a href="http://coderwall.com">Coderwall</a> or <a href="http://coderbits.com">Coderbits</a> as alternatives.</p>
+
 ]]></content>
   </entry>
   
@@ -256,17 +514,37 @@
     <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
     <content type="html"><![CDATA[<h3>The Important Stuff</h3>
 
-<p>So <a href="/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
+
+
+
+<p>So <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
+
+
+
 
 <p>In this post, I want to look a little more closely at the skills that matter, and the specific areas that the &ldquo;best&rdquo; (IMHO) companies will focus on. I may be biased, but this is the stuff I care about when I&rsquo;m interviewing developers (beyond basic coding chops), and I think I&rsquo;m pretty smart.</p>
 
+
+
+
 <h3>Testing, Testing, Testing</h3>
+
+
+
 
 <p>So you&rsquo;re writing code that runs, runs correctly, and runs consistently. That&rsquo;s awesome. But when it comes to writing production code for a real company, you need to <em>know</em> it&rsquo;s correct, in advance. Especially with dynamic languages, when there&rsquo;s no compiler to refuse to build faulty code, testing is paramount.</p>
 
+
+
+
 <p>So when you&rsquo;re working on these little personal projects, and throwing them on <a href="https://github.com">Github</a>, do a few things:</p>
 
+
+
+
 <!-- more -->
+
+
 
 
 <ul>
@@ -277,37 +555,85 @@
 </ul>
 
 
+
+
 <p>Plus Travis, Code Climate, and Coveralls will give you little badges for your README.md on Github so you can see how your project is doing at any time.</p>
+
+
+
 
 <p>Read up on practices for <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a>, because it matters to the people you really want to work for, and as an aspiring software craftsman, it needs to matter to you.</p>
 
+
+
+
 <h3>Collaboration</h3>
+
+
+
 
 <p>I mentioned the importance of coding with others last post, but I can&rsquo;t emphasize it enough. Look for opportunities for pair programming, even if it&rsquo;s remote. There are cool apps you can use for that now, like <a href="https://koding.com/">Koding</a> (and others), but in a pinch there&rsquo;s always <a href="http://www.vim.org/">vim</a> and <a href="http://tmux.sourceforge.net/">tmux</a>&hellip; which are tools you&rsquo;ll want to know anyhow.</p>
 
+
+
+
 <p>And which brings me to my next point&hellip;</p>
+
+
+
 
 <h3>Unix or GTFO</h3>
 
+
+
+
 <p>Yeah, code is more portable than it has ever been. You can develop Ruby or Clojure or Node.js on Linux, Solaris, OS X, Windows, probably even Haiku&hellip; but you need to understand your deployment environment, which is going to be some kind of *nix unless you&rsquo;re doing .NET (which you&rsquo;re clearly not, if you came to me for advice).</p>
+
+
+
 
 <p>In addition, the closer your dev environment is to your production environment, the less risk there is of weird heisenbug inconsistencies.</p>
 
+
+
+
 <p>So learn <em>some</em> kind of *nix, whether it&rsquo;s OS X, Linux, or Solaris, or whatever. And dig down; use the command line. Learn your tools, learn the <code>git</code> command line, don&rsquo;t just rely on the Github GUI apps etc. Learn <code>bash</code> or <code>zsh</code>. Learn how a combination of <code>find</code>, <code>grep</code>, and <code>xargs</code> can save your ass. It&rsquo;ll make your life easier as a developer, and it&rsquo;s vital when it comes to&hellip;</p>
+
+
+
 
 <h3>DevOps</h3>
 
+
+
+
 <p>Long ago, in a galaxy far, far, away, developers simply wrote application code and the systems that hosted and served that code were managed by a cabal of wizened neckbeards of the Sysadmin clan. Now, in our more enlightened (or is it benighted?) age, development and operations have blurred their lines and DevOps was born.</p>
+
+
+
 
 <p>In many cases, this is just an excuse for developers to be burdened with sysadmin duties; sometimes, it&rsquo;s perfectly sensible as many of the best deployment options are SaaS (Something-as-a-Service) thingamabobs. But it&rsquo;s important to get at least the basics.</p>
 
+
+
+
 <p>So when you&rsquo;re looking for someplace to put your pet project web apps, put them on <a href="http://heroku.com">Heroku</a>. It&rsquo;s free for a single web dyno and no workers, and many of the &ldquo;add-ons&rdquo; (like Postgres, Redis, ElasticSearch, etc.) that are technologies you might want to play with have free tiers as well.</p>
+
+
+
 
 <p><a href="http://aws.amazon.com/">Amazon Web Services</a> is Level 80 territory as far as I&rsquo;m concerned, but if you get into the DevOps thing, and want to experiment with tools like <a href="http://www.opscode.com/chef/">Chef</a>, they&rsquo;ll also give you some free time with EC2 instances to play around.</p>
 
+
+
+
 <h3>Summary</h3>
 
+
+
+
 <p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
+
 ]]></content>
   </entry>
   

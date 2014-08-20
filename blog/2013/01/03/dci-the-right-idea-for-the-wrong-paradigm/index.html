@@ -106,7 +106,7 @@
   
 
 
-<time datetime="2013-01-03T01:10:00-05:00" pubdate data-updated="true">2013-01-03</time>
+<time datetime="2013-01-03T01:10:00-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -125,7 +125,7 @@
 
 <p>Enter the macro. In Clojure, providing context to a function is straightforward using a macro, for instance, a database query (n.b., most of this is straight example code from <a href="http://en.wikibooks.org">wikibooks.org</a>).</p>
 
-<figure class='code'><figcaption><span>Set up JDBC connection</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Set up JDBC connection</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -151,22 +151,22 @@
 </span><span class='line'>           <span class="c1">; as driver-specific properties.</span>
 </span><span class='line'>           <span class="ss">:user</span> <span class="s">&quot;a_user&quot;</span>
 </span><span class='line'>           <span class="ss">:password</span> <span class="s">&quot;secret&quot;</span><span class="p">}))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>This provides the context for the <code>with-connection</code> macro:</p>
 
-<figure class='code'><figcaption><span>SELECT Statement</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>SELECT Statement</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">with-connection</span> <span class="nv">db</span>
 </span><span class='line'>   <span class="p">(</span><span class="nf">with-query-results</span> <span class="nv">rs</span> <span class="p">[</span><span class="s">&quot;select * from blogs&quot;</span><span class="p">]</span>
-</span><span class='line'>     <span class="c1">; rs will be a sequence of maps, </span>
-</span><span class='line'>     <span class="c1">; one for each record in the result set. </span>
+</span><span class='line'>     <span class="c1">; rs will be a sequence of maps,</span>
+</span><span class='line'>     <span class="c1">; one for each record in the result set.</span>
 </span><span class='line'>     <span class="p">(</span><span class="nb">dorun </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:title</span> <span class="nv">%</span><span class="p">))</span> <span class="nv">rs</span><span class="p">))))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>I&rsquo;m using the simplest of (admittedly cribbed) examples here for the sake of demonstration, but right away here, we&rsquo;ve got the D and C of DCI &ndash; Data and Context. As for interaction&hellip; we could easily conceive of a <code>with-role</code> macro which determines the interaction of the database connection and the actual application of the <code>with-connection</code> macro, whether it invokes a SELECT, CREATE, UPDATE, or DELETE statement.</p>
@@ -200,12 +200,12 @@
   
 
 
-<time datetime="2013-01-03T01:10:00-05:00" pubdate data-updated="true">2013-01-03</time>
+<time datetime="2013-01-03T01:10:00-05:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/clojure/'>Clojure</a>, <a class='category' href='/blog/categories/dci/'>DCI</a>, <a class='category' href='/blog/categories/design-patterns/'>Design Patterns</a>, <a class='category' href='/blog/categories/fp/'>FP</a>, <a class='category' href='/blog/categories/lisp/'>Lisp</a>, <a class='category' href='/blog/categories/oop/'>OOP</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+    <a class='category' href='/blog/categories/clojure/'>clojure</a>, <a class='category' href='/blog/categories/dci/'>dci</a>, <a class='category' href='/blog/categories/design-patterns/'>design patterns</a>, <a class='category' href='/blog/categories/fp/'>fp</a>, <a class='category' href='/blog/categories/lisp/'>lisp</a>, <a class='category' href='/blog/categories/oop/'>oop</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>
   
 </span>
 
@@ -257,6 +257,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -270,10 +274,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

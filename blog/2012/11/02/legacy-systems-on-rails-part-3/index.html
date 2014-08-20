@@ -106,7 +106,7 @@
   
 
 
-<time datetime="2012-11-02T13:25:00-04:00" pubdate data-updated="true">2012-11-02</time>
+<time datetime="2012-11-02T13:25:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -132,17 +132,17 @@
 
 <p>Reactive Resource (among other things) adds read support for associations, including generating nested paths for child associations. So, for instance, the <code>Customer</code> object I described in Part 1 <code>has_many :cards</code>. ReactiveResource allows you to build models like this:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="ss">ReactiveResource</span><span class="p">:</span><span class="ss">:Base</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="no">ReactiveResource</span><span class="o">::</span><span class="no">Base</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="n">has_many</span> <span class="ss">:cards</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Reactive Resource will know to generate the URI <code>/customers/42/cards/123456</code> from <code>Customer.find(42).cards.first</code>.</p>
@@ -161,7 +161,7 @@
 
 <p>Maintaining a custom application dependent on a database schema beyond your control&hellip; let&rsquo;s just say you&rsquo;re gonna have a bad time. But wait, what&rsquo;s that? Gang of Four to the rescue!</p>
 
-<blockquote><p>Program to an &#8216;interface&#8217;, not an &#8216;implementation&#8217;.</p><footer><strong>Gang of Four</strong> <cite>Design Patterns</cite></footer></blockquote>
+<blockquote><p>Program to an 'interface', not an 'implementation'.</p><footer><strong>Gang of Four</strong> <cite>Design Patterns</cite></footer></blockquote>
 
 
 <p>Wrapping the system in an API for which <em>you</em> control the public interface means you can account for schema changes in one place, rather than in multiple dependent applications, while keeping the public interface consistent. This also goes a long way in keeping your code DRY. And with a bit of metaprogramming magic like I described in part one, you can often spare yourself from having to push a new version if the schema changes are minor.</p>
@@ -193,7 +193,7 @@
   
 
 
-<time datetime="2012-11-02T13:25:00-04:00" pubdate data-updated="true">2012-11-02</time>
+<time datetime="2012-11-02T13:25:00-04:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
@@ -250,6 +250,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -263,10 +267,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

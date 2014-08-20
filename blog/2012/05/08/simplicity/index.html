@@ -106,7 +106,7 @@
   
 
 
-<time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true">2012-05-08</time>
+<time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -147,7 +147,7 @@
 
 <p>For instance, consider the following accumulator generator in C++:</p>
 
-<figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -179,7 +179,7 @@
 </span><span class='line'>
 </span><span class='line'>  <span class="n">T</span> <span class="n">n</span><span class="p">;</span>
 </span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Super clear, right? Readable? Oh, yeah.</p>
@@ -187,7 +187,7 @@
 <p>Hardly. But maybe it&rsquo;s not fair to pick on C++, simplicity was (sadly) never a design goal.
 Python is a more modern programming language, it&rsquo;s designed to be easy for new programmers to learn.</p>
 
-<figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -199,20 +199,20 @@ Python is a more modern programming language, it&rsquo;s designed to be easy for
 </span><span class='line'>  <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
 </span><span class='line'>    <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+=</span> <span class="n">i</span>
 </span><span class='line'>    <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Simpler than C++, sure. But you still have all these explicit calls to self, and a class definition that should be unnecessary in a functional construct like an accumulator generator. It&rsquo;s an improvement, but still ugly as hell.</p>
 
 <p>Now let&rsquo;s look at Ruby:</p>
 
-<figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Accumulator Generator</span><a href='http://www.paulgraham.com/accgen.html'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">foo</span> <span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </span><span class='line'>  <span class="nb">lambda</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">n</span> <span class="o">+=</span> <span class="n">i</span> <span class="p">}</span>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Wow. Three lines of code (although it could be written in one). If you understand lambdas, it&rsquo;s obvious what&rsquo;s going on here at a glance. You initalize <code>foo</code> with a value, and it returns a lambda that will accumulate any values passed to it.</p>
@@ -225,13 +225,14 @@ Python is a more modern programming language, it&rsquo;s designed to be easy for
 
 <p>The other language that has me in awe of its marriage of power and simplicity is <a href="http://clojure.org">Clojure</a>. Clojure is a Lisp dialect targeting the JVM, and I encourage anyone out there to explore it. Here&rsquo;s the above construct in Clojure:</p>
 
-<figure class='code'><figcaption><span>Accumulator Generator</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Accumulator Generator </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">accum</span> <span class="p">[</span><span class="nv">n</span><span class="p">]</span>
 </span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">acc</span> <span class="p">(</span><span class="nf">atom</span> <span class="nv">n</span><span class="p">)]</span>
 </span><span class='line'>    <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="p">(</span><span class="nf">swap!</span> <span class="nv">acc</span> <span class="nb">+ </span><span class="nv">m</span><span class="p">))))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Anyhow, it&rsquo;s a little less immediately obvious than in a language like Python or Ruby (or, for that matter, Lisps like Scheme or Common Lisp). Why is this? As I mentioned previously, Clojure, while technically an &ldquo;impure&rdquo; functional language (as in, side-effects are allowed), tries to treat side-effects as a special case; so, for instance, most data structures in Clojure are immutable. The <code>atom</code> construct in Clojure creates a reference type that can access shared, independent, mutable state. The <code>swap!</code> function allows the value of the atom to be updated.</p>
@@ -265,7 +266,7 @@ Python is a more modern programming language, it&rsquo;s designed to be easy for
   
 
 
-<time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true">2012-05-08</time>
+<time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
@@ -322,6 +323,10 @@ Python is a more modern programming language, it&rsquo;s designed to be easy for
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -335,10 +340,6 @@ Python is a more modern programming language, it&rsquo;s designed to be easy for
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: edtech | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/edtech/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-06-10T15:18:00-04:00</updated>
+  <updated>2014-08-19T21:54:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,40 +20,91 @@
     <id>http://decomplecting.org/blog/2014/03/11/scream-when-you-learn</id>
     <content type="html"><![CDATA[<p><em>Apologies to Charles Bukowski</em></p>
 
+
+
+
 <h4>1.</h4>
+
+
+
 
 <p>I fucking hate this school. All the teachers too. Well, there are a few exceptions, but few enough it doesn&rsquo;t really matter.</p>
 
+
+
+
 <p>There are a few saving graces. Molly, that redhead in fourth period I&rsquo;m dying to fuck. There&rsquo;s a party Friday, maybe that&rsquo;ll happen. At least I&rsquo;ll be drunk enough not to care about this shithole for a few hours.</p>
 
+
+
+
 <p>Had a test today. Fucking Mr. Blum walked over to my desk and watched me solve quadratic equations. Grabbed the calculator out of my hand when he saw me using the program I wrote to solve them. Old fucking moron doesn&rsquo;t even know what these piece of shit TI-83&rsquo;s are capable of. Thought I was cheating.</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <p>Writing that goddamn program while I was halfway into the Ballmer Peak was how I learned to <em>understand</em> this irrelevant cocksucking formula, how can he not get that? I don&rsquo;t get these ancient techno-illiterate cunts they put in charge of managing the prison sentence of our youths.</p>
+
+
+
 
 <h4>2.</h4>
 
+
+
+
 <p>They gave us all iPads today. It was exciting until we realized they locked the fuckers down so they could only access Pearson-supplied, school-board-blessed, castrated useless pointless fucking content that isn&rsquo;t going to help me get in Molly&rsquo;s pants, much less learn anything better than I could from an ancient goddamn textbook. Fuck this place. I need a drink.</p>
+
+
+
 
 <p>At least it&rsquo;s Friday. I can get drunk at Pete&rsquo;s place tonight and maybe cop a feel off Molly. At least I can look back on that since this shit school is never going to do a thing to get <em>me</em> into Harvard. Not that that degree would be worth wiping my ass with by the time I would graduate.</p>
 
+
+
+
 <p>Fuck, I might as well devote my time to whiskey and women and poetry, it worked out well enough for that old misogynist bastard Bukowski I read last semester.</p>
+
+
+
 
 <p>At least that fucker was honest, unlike the goddamn assholes handing us crippled iPads.</p>
 
+
+
+
 <h4>3.</h4>
+
+
+
 
 <p>The party was okay. Grabbed Molly&rsquo;s tit for a hot second, she smacked me. Okay.</p>
 
+
+
+
 <p>Pete and Jimmy and I bypassed the shit security on those iPads. Managed to at least get on Facebook and share that stupid quadratic equation solver I wrote for my calculator, not that the other asswipe math teachers like Blum will ever understand the value of writing shit like that. Pretty sure we&rsquo;re getting suspended if not expelled.</p>
+
+
+
 
 <p>I should give up now. What&rsquo;s the fucking point of even trying when the inmates are running the asylum? These fuckers couldn&rsquo;t teach a baby to shit and that&rsquo;s the truth. Why give us iPads when our damn teachers are like a million chimps banging on a million typewriters?</p>
 
+
+
+
 <p>Why didn&rsquo;t somebody teach the fucking teachers?</p>
 
+
+
+
 <p>I&rsquo;m going to fucking scream.</p>
+
 ]]></content>
   </entry>
   
@@ -64,53 +115,124 @@
     <id>http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction</id>
     <content type="html"><![CDATA[<p>Working in the EdTech sector, I&rsquo;m perpetually vexed as I try to determine what exactly &ldquo;EdTech&rdquo; is and, <em>a fortiori,</em> what <em>effective</em> EdTech should look like. Perhaps a little background might be in order.</p>
 
+
+
+
 <p>As I&rsquo;ve mentioned before, my academic training is in philosophy. Computer Science was more of an avocational intellectual pursuit because I enjoyed math and symbolic logic. Life is full of surprises, eh?</p>
+
+
+
 
 <p>One of the fundamental divisions in philosophy is between &ldquo;analytic&rdquo; and &ldquo;continental&rdquo; philosophy. These are vague and overlapping spheres, but the reduction comes down to whether philosophy is the handmaiden of science (analyitc school), or whether philosophy is something larger with a complex (sometimes supportive, sometimes critical) relationship with science.</p>
 
+
+
+
 <p>I fell firmly on the &ldquo;continental&rdquo; side, for the most part. It was always the critical power of philosophy that fascinated me. So, what does this have to do with EdTech?</p>
+
+
+
 
 <!--more-->
 
 
+
+
 <h3>Technology as the Handmaiden of Education</h3>
+
+
+
 
 <p>This is the problem. Our typical view of &ldquo;educational technology&rdquo; is that we can produce technological tools to support the same tried, tired pedagogical techniques that have (sort of) worked (for a minority of the population) for decades.</p>
 
+
+
+
 <p>This is wasteful. This is stupid, and also wrong.</p>
+
+
+
 
 <p>In business, where technology has succeeded it has done so because it has revolutionized practices, made redundant unnecessary labor, and increased efficiency by many orders of magnitude. I&rsquo;ll (graciously) bracket off my opinions about the unfair distribution of the gains in productivity, for the sake of brevity and focus.</p>
 
+
+
+
 <p>Likewise in science, our rate of accumulation of knowledge about the physical world has increased exponentially, not because we have expected technology to serve the same processes that we accepted as &ldquo;best practices&rdquo; back when we had only stone knives and bear skins to work with, but because the rate of technological progress has disrupted (improved) the very processes by which scientific discovery occurs.</p>
+
+
+
 
 <p>Now, as (to borrow from both Marcuse and Heidegger) technology is very specifically the <em>science</em> of <em>technics,</em>
 it might be argues that the sciences are the least &ldquo;disrupted&rdquo; by technological advancement; for the most part, they are themselves advanced. But paradigm shifts in technology have played a role in the Kuhnian paradigm shifts in scientific understanding as well.</p>
 
+
+
+
 <h3>And Education?</h3>
+
+
+
 
 <p>First, let us agree that education is no science, not even a &ldquo;soft science&rdquo; like sociology or psychology. to be sure, at its best it is informed heavily both by those soft sciences as well as slightly harder sciences like cognitive science, for example. But education itself is no science.</p>
 
+
+
+
 <p>In this regard, scientific and technolological advances should in and of themselves present a material critique of the process of pedagogy as it is practiced; technology is the ultimate tool for cultural transformation, if not (ultimately) the transformation of the meaning of what it is to be human.</p>
+
+
+
 
 <p>Fundamentally, when correctly utilized, technology is transformative. And that&rsquo;s not what we&rsquo;re seeing with EdTech.</p>
 
+
+
+
 <p>Smartboards, blended learning, flipped classrooms, Blackboard, Moodle, an iPad for every student, I would go on but you can get better buzzwords from the <a href="http://www.teacheripsum.com/">Teacher Ipsum</a> generator. It&rsquo;s pretty much all a bunch of overpriced junk that supports the Same Old Shit in the classroom, with the added benefit of shiny tech press for the school, the district, whatever.</p>
+
+
+
 
 <p>I&rsquo;m not playing down the role of technology in education. Quite the opposite, in fact. I&rsquo;m lamenting that billions of dollars are being spent on &ldquo;EdTech&rdquo; that isn&rsquo;t impactful, that isn&rsquo;t transformative, that simply lends the sheen of shiny tech to tired pedagogy that should have been retired decades ago.</p>
 
+
+
+
 <h3>What Is To Be Done?</h3>
 
-<p>Surround your pullquote like this {" text to be quoted "}</p>
+
+
+
+<p><span class='pullquote-right' data-pullquote='Basically, if your use of technology in the classroom isn&#8217;t transformative, you&#8217;re Doing It Wrong™.'>
+For me, it&rsquo;s fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. Basically, if your use of technology in the classroom isn&rsquo;t transformative, you&rsquo;re Doing It Wrong™. If the tech you use doesn&rsquo;t fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessary or misutilized.
+</span></p>
+
+
+
 
 <p>In the title, I suggested that &ldquo;EdTech&rdquo; is a &ldquo;leaky abstraction.&rdquo; The term comes from an article by <a href="http://www.joelonsoftware.com/AboutMe.html" title="Joel Spolsky">Joel Spolsky</a> entitled <a href="http://www.joelonsoftware.com/articles/LeakyAbstractions.html" title="Leaky Abstractions">&ldquo;The Law Of Leaky Abstractions&rdquo;</a>. The tl;dr is: all (non-trivial) abstractions are, to some degree, leaky; that is, they build on top of something concrete and messy while removing the messy details from the public interface. At least, that&rsquo;s how we&rsquo;d describe it in the software world. Grasping to define something like &ldquo;EdTech&rdquo;, I think the parallel I&rsquo;d like to draw is that the very term &ldquo;EdTech&rdquo; contains what it cannot possibly contain (bonus points if you catch that reference). &ldquo;Educational Technology&rdquo; refers to technology <em>designed for</em> education, technology <em>used in the serivce of</em> education, and also technology tangentially related to education. Unfortunately, this is a boolean <code>and</code>, leaving us with the union of >= 3 overlapping sets, wherein the intersections and complements are probably more interesting. The union of the sets contains many subsets that really aren&rsquo;t all that useful or interesting. But we don&rsquo;t seem to be doing much winnowing.</p>
 
+
+
+
 <p>Back to the philosophy lesson: technology is not there to be the handmaiden of tried and tired pedagogy. Technology is there to, in its very essence, provide an <em>explicit critique</em> of pedagogy in general.</p>
+
+
+
 
 <p>So how do we fix this?</p>
 
+
+
+
 <p>We need better ways of evaluating technology in education. We need professional development solutions to ensure that educators have the skills to properly exploit the tech they have available. We need to ditch our preconceptions about what it means to teach any given subject and look at how technology has changed that domain in the real world (technophobic math teachers, I&rsquo;m looking at you!).</p>
 
+
+
+
 <p>We need to forget everything we know about education, and reinvent everything with the new tools at hand.</p>
+
 ]]></content>
   </entry>
   
@@ -121,97 +243,231 @@ it might be argues that the sciences are the least &ldquo;disrupted&rdquo; by te
     <id>http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code</id>
     <content type="html"><![CDATA[<h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
 
+
+
+
 <p>I&rsquo;m really excited about the heavy emphasis I&rsquo;m seeing on <a href="http://gettingsmart.com/2013/05/teaching-kids-to-code-an-economic-social-justice-issue/">teaching kids to code</a>. Although I agree with just about everything <a href="http://codinghorror.com">Jeff Atwood</a> wrote in his controversial post, <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">&ldquo;Please Don&rsquo;t Learn to Code&rdquo;</a>, I also believe that in an age in which <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">software is eating the world</a>, understanding code is a basic literacy issue. This goes beyond the concept of digital literacy: as applied, this boils down to knowing how to use Google. What we&rsquo;re seeing in the movement to bring coding into the core curriculum is a new emphasis on what I&rsquo;d like to call <em>computational literacy.</em></p>
+
+
+
 
 <h3>Computational Literacy</h3>
 
+
+
+
 <p>Computational literacy is a concept that I wish had been &ldquo;a thing&rdquo; when I was in school. I&rsquo;ll start with an anecdote, and then delve into the gritty challenges that the &ldquo;teaching kids to code&rdquo; movement is failing to recognize.</p>
+
+
+
 
 <p>When I was a kid, I loved math&hellip; or, at least, I loved figuring out the algorithms behind the calculation. I learned BASIC when I was 5 or 6, so when got to middle school, and discovered that the Texas Instruments graphing calculators we were required to buy for class spoke just about the same dialect of BASIC I had learned as a kid (I first learned to code on a <a href="http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A">TI 99/4A</a>), I was so excited. Once I could derive the algorithm from a new concept we were being taught, I could express it in code and skip the boring parts. I&rsquo;ve never done well when bored.</p>
 
+
+
+
 <p>Alas, my youthful optimism was to be dashed on the rocks of pedagogical ignorance and stupidity. First, I was told that I wouldn&rsquo;t receive credit for my <strong>correct</strong> answers because I didn&rsquo;t &ldquo;show my work&rdquo;.</p>
+
+
+
 
 <p>On the next exam, I wrote out the source listing of each program I had used with a reference to the problems to which it had been applied (I&rsquo;m pretty sure the number of GOTOs I used in those days would have made Dijkstra cry).</p>
 
+
+
+
 <p>That&rsquo;s when they usually called my mom in for a conference.</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <h3>WTF Technophobes</h3>
+
+
+
 
 <p>I have to give my mother credit here. We went into those meetings facing an irate math teacher discussing how I was being insolent and writing a program instead of learning the math concepts I was supposed to learn in the class. My mother&rsquo;s response was a deadpan &ldquo;If he didn&rsquo;t understand the concepts, how could he write the program?&rdquo;</p>
 
+
+
+
 <p>Did I mention my mom is awesome?</p>
+
+
+
 
 <p>There was never a real resolution to this. I stopped taking math when I&rsquo;d gotten enough credits to graduate (thanks, all my math teachers, for teaching me to hate a subject I once loved because it was taught by ignorant technophobes). I tried again in college, but was greeted by the same attitude, so combined with that and a required CS 101 class on Visual Basic (as if I would even run Windows, much less write VB), I majored in Philosophy. Okay, that&rsquo;s enough spleen for this post (and I have no regrets majoring in Philosophy; you&rsquo;ll learn more critical thinking skills in a good philosophy program than in any Applied Math or CS program).</p>
 
+
+
+
 <h3>Teaching Kids to Code? Why?</h3>
+
+
+
 
 <p>We need a paradigm shift in education before we even <em>dream</em> of making coding part of the curriculum. Until we challenge our basic attitudes and assumptions, teaching kids to code in school will be an abject failure, for a number of reasons.</p>
 
+
+
+
 <p>The first is that abstract learning without application is meaningless. I&rsquo;m not the most emotive viewer, but Conrad Wolfram did a TED talk a while back that had me jumping out of my chair, clapping, and shouting &ldquo;#{expletives.sample} yeah!&rdquo; repeatedly at my computer. Here&rsquo;s the video (If you haven&rsquo;t watched &ldquo;Teaching kids real math with computers&rdquo;, do so NOW):</p>
+
+
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/60OVlfAUPJg" frameborder="0" allowfullscreen></iframe>
 
 
+
+
 <p>If our math curricula (the subject best suited to a programming solution!) are based around chidren doing rote, repetitive calculation, what&rsquo;s the point in teaching them to code? I had hoped that maybe the attitude toward programming in schools had changed in the nearly 15 years since I graduated high school, but a quick Google search showed that not much has changed, e.g. <a href="http://www.k12.wa.us/mathematics/CalculatorPolicy.aspx">Washington&rsquo;s state K-12 math calculator policy</a>.</p>
+
+
+
 
 <p>No programs. No code, dogs, or Irish need apply.</p>
 
+
+
+
 <p>How can we even <em>think</em> of teaching kids to code while code is a &ldquo;cheat,&rdquo; &ldquo;not showing your work&rdquo; (where&rsquo;s the harm in automating work that <em>should</em> be considered beneath human dignity?), et cetera.</p>
+
+
+
 
 <p>Most of the proposals I&rsquo;ve seen around the &ldquo;teaching kids to code&rdquo; thing center on getting practicing software engineeers to volunteer their time with kids to teach them basic (and more advanced, if they&rsquo;re into it) programming skills.</p>
 
+
+
+
 <p>We&rsquo;re totally into this idea! Particularly in the Ruby community, there&rsquo;s <a href="http://www.kidsruby.com/">KidsRuby</a> and <a href="http://hackety.com/">Hackety Hack!</a>, awesome projects centered around teaching kids basic programming skills in a fun and easy-to-learn dynamic language.</p>
+
+
+
 
 <p>But until teachers understand the tech enough to embrace (rather than fear) it, what&rsquo;s the point?</p>
 
+
+
+
 <p>If I wasn&rsquo;t already at least a hobbyist hacker, and I was taking my first programming course, and arrived in math class only to be told I couldn&rsquo;t apply my exciting and newly-learned skills to the problem at hand, because it was like cheating, how would I react? I&rsquo;d most likely lose interest in a subject I couldn&rsquo;t apply to anything.</p>
+
+
+
 
 <p>Okay, well, <em>I</em> would likely lose interest in my math class (or at least my math teacher) because code is <em>so frakking cool.</em> But I&rsquo;m trying to imagine myself as the student who isn&rsquo;t a huge nerd.</p>
 
+
+
+
 <h3>Quis docet ipsos doctores?</h3>
+
+
+
 
 <p>It might sound like I&rsquo;ve been a bit harsh toward the teachers here. Nothing could be further from my intent. As I&rsquo;ve gained time and distance, I&rsquo;ve realized that it&rsquo;s merely ignorance that built a wall between us; not stupidity, and certainly not malice. And it was an ignorance for which they were not responsible; it was the fault of the system that trained them, and the system that was later responsible for their professional development.</p>
 
+
+
+
 <p>No one ever taught my teachers about software; what went into building it, using it, etc.</p>
+
+
+
 
 <p>If (most of) the teachers are computational illiterates, how can we expect the kids to become computationally literate in any meaningful way?</p>
 
+
+
+
 <p>Technology has penetrated pedagogy to a significant degree but hasn&rsquo;t really changed the practice in a fundamental way; if your use of technology isn&rsquo;t transformative, it&rsquo;s a misuse, possibly an abuse.</p>
+
+
+
 
 <p>Where technology hasn&rsquo;t penetrated in a meaningful way is in professional development. Teachers are still &ldquo;improving&rdquo; their skills in more or less the same way they were decades ago. This has to change. If you&rsquo;re teaching in a STEM-related area and you cannot or will not understand variable assignment, iteration, recursion, and other basic concepts &mdash; the very basics of coding &mdash; you should find a new career. I&rsquo;m not saying you need to delve into pointers, concurrency, etc. Just the basics. If I were going into high school all over again (and this is what I intend for my daughter (if she&rsquo;s into it), so Math Teachers Beware!), I would go in with a mastery of <a href="http://mitpress.mit.edu/sicp/">SICP</a>, and a willingness to get myself expelled for refusing to do rote calculation when I could solve the problem with a 3-line recursive function in Scheme.</p>
 
+
+
+
 <h3>What&rsquo;s The Answer?</h3>
+
+
+
 
 <p>Good question. I think the reason we don&rsquo;t have a good answer yet is that we&rsquo;ve been asking the wrong question. Getting developers to mentor students is a fantastic idea; if my time wasn&rsquo;t 120% consumed between a startup and a six month old, I&rsquo;d be spending my free time (that&rsquo;s a thing?) volunteering to teach kids to program. But we run into a roadblock when the general population of educators need a class just to use Twitter. Which is why I ask, &ldquo;Quis docet ipsos doctores?&rdquo; &mdash; &ldquo;Who teaches the teachers themselves?&rdquo;</p>
 
+
+
+
 <p>This is also why I&rsquo;m so excited about working at <a href="http://anestuary.com">An Estuary</a>. The opportunity to bring technological solutions not just to education, but to professional development within education, is the opportunity to bridge the gap between what students need to learn and what teachers are capable of allowing them to learn in a meaningful way. Of bringing education into the 21st century (after dragging it kicking and screaming through the 20th, because it&rsquo;s currently stuck in the 19th, albeit with some toys from the future).</p>
+
+
+
 
 <p>I never want another child to look at her teacher and think (as I did) &ldquo;are you from the past?&rdquo; I never want another nerd to hate math because his teacher didn&rsquo;t understand that <em>the code is the work.</em> I never want another hacker to give up on education because her teachers, professors, peers, etc. appeared to be stupid or malicious when they were merely ignorant.</p>
 
+
+
+
 <p>I want to change the system. I want to make &ldquo;it gets better&rdquo; real for hackers and nerds.</p>
+
+
+
 
 <p>I want to make the subjugation of billions of children to the subhuman task of rote calculation a thing of the past.</p>
 
+
+
+
 <p>How far am I willing to go?</p>
+
+
+
 
 <p>Doctores docebo, si necesse est.</p>
 
+
+
+
 <p>We must teach the teachers, or teaching the children is so much tilting at windmills. There are no easy solutions, but I&rsquo;m proud to be part of a company that&rsquo;s addressing the hard problems.</p>
+
+
+
 
 <h3>Postscript</h3>
 
+
+
+
 <p>This post has been long in the making; shortly after I completed the first draft, <a href="https://www.edsurge.com">EdSurge</a> posted an opinion piece, <a href="https://www.edsurge.com/n/2013-05-28-opinion-learning-to-code-isn-t-enough">&ldquo;Learning To Code Isn&rsquo;t Enough&rdquo;</a>, which looked at this issue a little differently. It cited a wonderful article on <a href="http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf">&ldquo;Computational Thinking&rdquo;</a> (essentially what I describe as &ldquo;computational literacy&rdquo;) by Jeanette Wing, arguing for the equal status of CS fundamentals with reading, writing, and arithmetic in curriculum standards.</p>
+
+
+
 
 <p>The article also highlights a problem with the &ldquo;teach kids to code&rdquo; movement, which I see as complementary to my own objections; while I was arguing that it&rsquo;s pointless to teach kids to code when they won&rsquo;t be <em>allowed</em> to apply that skill, the EdSurge piece points out the absurdity of teaching kids to code without giving concrete opportunities to apply the ability.</p>
 
+
+
+
 <p>Essentially, it comes down to the same thing: coding is wonderful, but if it&rsquo;s not applied to a real-world problem, it&rsquo;s a waste of resources.</p>
+
+
+
 
 <p>I learned BASIC so I could make my screen draw pictures. That&rsquo;s great for a five year old. But I learned C so I could make my printer work with Linux; I learned Perl so I could type fewer commands into the shell; I learned PHP and SQL to build websites, and I learned Ruby because PHP sucks. I learned Scheme because I wanted to hack my way through SICP, and I learned Clojure because I wanted to do concurrent programming without mutexes. There was always a reason, a purpose, an application.</p>
 
+
+
+
 <p>If we want kids to code, we must not only allow them to apply that knowledge whenever and wherever the opportunity arises, we must also train teachers to always and everywhere encourage the application of computational thinking (as well as programming) to whatever problem set presents itself as a viable candidate.</p>
+
 ]]></content>
   </entry>
   

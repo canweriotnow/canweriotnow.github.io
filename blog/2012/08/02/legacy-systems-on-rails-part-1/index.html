@@ -106,7 +106,7 @@
   
 
 
-<time datetime="2012-08-02T14:48:00-04:00" pubdate data-updated="true">2012-08-02</time>
+<time datetime="2012-08-02T14:48:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -138,7 +138,7 @@
 
 <p>First I started with the definition table:</p>
 
-<figure class='code'><figcaption><span>FieldDef </span></figcaption>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>FieldDef </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -159,14 +159,14 @@
 </span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">parameterize</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_sym</span>
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Pretty straightforward. The only extra thing is that <code>symbol</code> method, which returns a snake cased version of the &lsquo;title&rsquo; attribute, suitable for using as a method name.</p>
 
 <p>Next comes the field value table:</p>
 
-<figure class='code'><figcaption><span>FieldValue </span></figcaption>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>FieldValue </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -181,14 +181,14 @@
 </span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:customer</span><span class="p">,</span> <span class="ss">:foreign_kay</span> <span class="o">=&gt;</span> <span class="ss">:cust_id</span>
 </span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:field_def</span><span class="p">,</span> <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="ss">:custom_field_def_id</span>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Nothing out of the ordinary here (although I&rsquo;d like to thank Dr. Nic and Charlie Savage for their work on <a href="https://github.com/drnic/composite_primary_keys">composite_primary_keys</a>, it&rsquo;s a lifesaver).</p>
 
 <p>Of course, the goal here is eliminating the 40-odd lines of has_many and accepts_nested_attributes_for in the Customer class. This is where Ruby really shines:</p>
 
-<figure class='code'><figcaption><span>Customer </span></figcaption>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Customer </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -229,12 +229,12 @@
 </span><span class='line'>  <span class="c1"># snip</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>This iterates over the rows of <code>custom_field_def</code>, generates an association for each entry, adds the <code>accepts_nested_attributes_for</code> declaration, and even delegates the getter and setters for the column we&rsquo;re really interested in (<code>"CUSTOM_FIELD_VALUE"."FIELD_VALUE"</code>).</p>
 
-<p>I don&rsquo;t claim it&rsquo;s <em>the</em> most elegant solution, but it&rsquo;s a lot better than in the previous iteration. It&rsquo;s important to remember that although Rails&#8217; opinionated nature makes it a little more awkward to deal with a legacy sytem than with a brand new project, Ruby gives you all the tools you could want to overcome whatever hurdles you might encounter.</p>
+<p>I don&rsquo;t claim it&rsquo;s <em>the</em> most elegant solution, but it&rsquo;s a lot better than in the previous iteration. It&rsquo;s important to remember that although Rails' opinionated nature makes it a little more awkward to deal with a legacy sytem than with a brand new project, Ruby gives you all the tools you could want to overcome whatever hurdles you might encounter.</p>
 
 <p> If you have any questions or suggestions for improvement, please let me know in the comments!</p>
 </div>
@@ -259,7 +259,7 @@
   
 
 
-<time datetime="2012-08-02T14:48:00-04:00" pubdate data-updated="true">2012-08-02</time>
+<time datetime="2012-08-02T14:48:00-04:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
@@ -316,6 +316,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -329,10 +333,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

@@ -106,7 +106,7 @@
   
 
 
-<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true">2012-05-30</time>
+<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -151,7 +151,7 @@
 
 <p>I really like the example Steve used of implementing a <code>links</code> array in the returned object:</p>
 
-<figure class='code'><figcaption><span>Sample response</span><a href='http://steveklabnik.github.com/hypermedia-presentation/#47'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sample response</span><a href='http://steveklabnik.github.com/hypermedia-presentation/#47'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -169,7 +169,7 @@
 </span><span class='line'>  <span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="s2">&quot;sitemap-form&quot;</span><span class="p">,</span> <span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
 </span><span class='line'>  <span class="p">]</span>
 </span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>What&rsquo;s especially interesting here is the Content-type: <code>application/vnd.w3clove.validation+json</code>. That was another big takeaway: I was unaware of the <code>vnd</code> prefix for defining your own content-types, rather than waiting (and waiting, and waiting&hellip;) for the W3C to define a standard.</p>
@@ -186,7 +186,8 @@
 
 <p>Let&rsquo;s say you have an <code>Article</code> class, which <code>has_many :comments</code> and <code>has_and_belongs_to_many :tags</code> You might think it&rsquo;s a good idea to do this:</p>
 
-<figure class='code'><figcaption><span>article.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>article.rb </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -199,7 +200,7 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
 </span><span class='line'>
 </span><span class='line'>  <span class="n">has_many</span> <span class="ss">:comments</span>
 </span><span class='line'>  <span class="n">has_and_belongs_to_many</span> <span class="ss">:tags</span>
@@ -212,12 +213,12 @@
 </span><span class='line'>  <span class="k">end</span>
 </span><span class='line'>
 </span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>It&rsquo;s not necessarily terrible, but it&rsquo;s not optimal. Normally you might get back:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -253,7 +254,7 @@
 </span><span class='line'>    <span class="err">]</span>
 </span><span class='line'>  <span class="err">}</span>
 </span><span class='line'><span class="err">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>This might be okay until you end up with hundreds of long-winded comments about where to find the best kefir in Portland. And what if your client wants to follow the tags to find similar articles? Sure, they can assume you&rsquo;re following rails conventions for URIs and try to get &ldquo;<a href="http://example.org/tags/3">http://example.org/tags/3</a>&rdquo;, but there&rsquo;s no guarantee that&rsquo;s what you&rsquo;re doing, and it&rsquo;s expecting too much of the client. What if you want to find more by the same author? you&rsquo;ve decided in advance your clients don&rsquo;t need to see the user_id.</p>
@@ -305,12 +306,12 @@
   
 
 
-<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true">2012-05-30</time>
+<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/api/'>API</a>, <a class='category' href='/blog/categories/coding/'>coding</a>, <a class='category' href='/blog/categories/web/'>web</a>
+    <a class='category' href='/blog/categories/api/'>api</a>, <a class='category' href='/blog/categories/coding/'>coding</a>, <a class='category' href='/blog/categories/web/'>web</a>
   
 </span>
 
@@ -362,6 +363,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -375,10 +380,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

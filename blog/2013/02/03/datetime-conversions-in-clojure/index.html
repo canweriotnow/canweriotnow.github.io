@@ -106,7 +106,7 @@
   
 
 
-<time datetime="2013-02-03T14:18:00-05:00" pubdate data-updated="true">2013-02-03</time>
+<time datetime="2013-02-03T14:18:00-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -119,7 +119,7 @@
 
 <p>I&rsquo;ll start off with the dependencies:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -135,7 +135,7 @@
 </span><span class='line'>  <span class="p">(</span><span class="ss">:use</span> <span class="nv">clj-time.coerce</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">(</span><span class="ss">:import</span> <span class="p">[</span><span class="nv">oracle.sql</span> <span class="nv">TIMESTAMP</span><span class="p">]</span>
 </span><span class='line'>           <span class="p">[</span><span class="nv">java.sql</span> <span class="nv">Timestamp</span><span class="p">]))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>I&rsquo;m using the fantastic <a href="https://github.com/seancorfield/clj-time">clj-time</a> library by Sean Corfield. It&rsquo;s basically a wrapper around the <a href="http://joda-time.sourceforge.net/">Joda Time</a> Java library, allowing us to use its powerful datetime handling in idiomatic Clojure.</p>
@@ -147,7 +147,7 @@
 
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -223,14 +223,14 @@
 </span><span class='line'>        <span class="nv">frac-part</span> <span class="p">(</span><span class="nb">- </span><span class="nv">bubbadt</span> <span class="nv">day-part</span><span class="p">)</span>
 </span><span class='line'>        <span class="nv">docr</span> <span class="nv">docr</span><span class="p">]</span>
 </span><span class='line'>    <span class="p">(</span><span class="nf">tm/plus</span> <span class="nv">docr</span> <span class="p">(</span><span class="nf">tm/days</span> <span class="nv">day-part</span><span class="p">)</span> <span class="p">(</span><span class="nf">tm/secs</span> <span class="p">(</span><span class="nf">math/round</span> <span class="p">(</span><span class="nb">* </span><span class="mi">86400</span> <span class="nv">frac-part</span><span class="p">))))))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Okay, that&rsquo;s probably a lot to take in, but basically it performs the calculations to convert the floating-point dates to Date objects and back again. But there&rsquo;s still a catch. In some of the views I&rsquo;ve built for reporting, I&rsquo;m pre-converting those dates to Oracle SQL TIMESTAMP types, and depending on the context, sometimes those floats come back as Doubles, and sometimes as BigDecimals.</p>
 
 <p>Clojure&rsquo;s got me covered, with multimethods.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -262,7 +262,7 @@
 </span><span class='line'>  <span class="p">(</span><span class="nb">identity </span><span class="nv">d</span><span class="p">))</span>
 </span><span class='line'>
 </span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p> Much like generics in Common Lisp (well, CLOS anyhow) <code>defmulti</code> takes a dispatch function as an argument, in this case <code>class</code>, which returns the class of the argument passed to the multimethod. Methods can then be defined to handle each type of possile argument, with a <code>:default</code> method for unmatched cases. Multimethods can be used with any dispatch function you like, but <code>class</code> is a common use case, and handy as hell here.</p>
@@ -273,7 +273,7 @@
 
 <p> Luckily, clj-time has awesome parsers:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p> <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -287,14 +287,13 @@
 </span><span class='line'>
 </span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">jdparse</span> <span class="p">[</span><span class="nv">date-string</span><span class="p">]</span>
 </span><span class='line'>  <span class="p">(</span><span class="nf">fmt/parse</span> <span class="nv">jd-parser</span> <span class="nv">date-string</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure>
-
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Easy as pie. Where it gets truly beautiful, however, is when mixed in with <a href="http://sqlkorma.com/">Korma</a> for SQL abstraction. Korma entities have two special macros for data conversion: <code>prepare</code>, which applies a function to data before storing it in the database, and <code>transform</code> which applies a function when reading from the database.</p>
 
 <p>Since Korma returns query results as a vector of hashmaps, it&rsquo;s as simple as updating a hashmap:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -304,14 +303,14 @@
 </span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">ent</span> <span class="nv">rec</span>
 </span><span class='line'>        <span class="nv">date-fields</span> <span class="p">[</span><span class="ss">:DOB</span> <span class="ss">:empstartdate</span> <span class="ss">:modifytimestamp</span> <span class="ss">:createtimestamp</span><span class="p">]]</span>
 </span><span class='line'>    <span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">jdparse</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">date-fields</span><span class="p">)))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>That&rsquo;s the first version of the transform fn I wrote for JD, but there&rsquo;s two problems. First, the fields to apply are hard-coded in the <code>let</code> form. More importantly, however, is the condition where I do a <code>select</code> and don&rsquo;t return those fields; <code>update-in</code> will add the field with a value of <code>nil</code>.</p>
 
 <p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -327,7 +326,7 @@
 </span><span class='line'>        <span class="nv">ent</span> <span class="nv">ent</span>
 </span><span class='line'>        <span class="nv">fields</span> <span class="p">(</span><span class="nf">vec</span> <span class="p">(</span><span class="nf">st/intersection</span> <span class="p">(</span><span class="nb">set </span><span class="p">(</span><span class="nb">keys </span><span class="nv">ent</span><span class="p">))</span> <span class="p">(</span><span class="nb">set </span><span class="nv">fields</span><span class="p">)))]</span>
 </span><span class='line'>    <span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%1</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">update-fn</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">)))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>Finding the set intersection of the fields we normally want to transform, and the fields returned, ensures we don&rsquo;t get extra fields with values of <code>nil</code>.</p>
@@ -336,7 +335,7 @@
 
 <p>Then it&rsquo;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -356,7 +355,7 @@
 </span><span class='line'>                                                       <span class="ss">:lastmod_datetime</span>
 </span><span class='line'>                                                       <span class="ss">:birthdate</span>
 </span><span class='line'>                                                       <span class="ss">:opendatetime</span><span class="p">])))</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 
 
 <p>So that&rsquo;s how I&rsquo;m normalizing datetimes in this particular project. I&rsquo;m really enjoying writing code like this: building short, composable functions and refactoring by decomplecting them into shorter, more composable functions.</p>
@@ -386,7 +385,7 @@
   
 
 
-<time datetime="2013-02-03T14:18:00-05:00" pubdate data-updated="true">2013-02-03</time>
+<time datetime="2013-02-03T14:18:00-05:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
@@ -443,6 +442,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -456,10 +459,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

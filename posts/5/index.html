@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="Two of the best presentations at RailsConf this year, Designing Hypermedia APIs by Steve Klabnik and Rails: The Next Five Years by Yehuda Katz were &hellip;">
+  <meta name="description" content="Every now and then someone comes to me for advice because they (or someone they know) wants to learn to code and has no idea where to start. Usually &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://decomplecting.org/blog/page/5/">
+  <link rel="canonical" href="http://decomplecting.org/posts/5/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -92,6 +92,53 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/06/01/try-ruby-seriously/">Try Ruby&#8230; Seriously.</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-01T20:05:00-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Every now and then someone comes to me for advice because they (or someone they know) wants to learn to code and has no idea where to start. Usually, the first thing I do is send them to <a href="http://tryruby.org">tryruby.org</a>, the awesome web-based REPL and tutorial the <a href="http://codeschool.com">Code School</a> folks put together, based on <a href="http://mislav.uniqpath.com/poignant-guide/">_why&rsquo;s (poignant) guide to ruby</a>.</p>
+
+<p>Lately, I&rsquo;ve been wondering if that&rsquo;s the best advice. Only because I constantly re-evaluate <em>everything</em> on the chance that it might be sub-optimal. Ruby is pretty easy to learn, but it&rsquo;s also easy to learn terrible, terrible habits. Maybe a more constraining language would be more suitable?</p>
+
+<p>I have to admit, as much as I generally <a href="http://decomplecting.org/blog/2012/05/18/un-pythonic-for-fun-and-profit/">dislike Python</a>, it probably <em>is</em> the easiest language to learn, and it rarely gives you enough rope to hang yourself. So am I just letting my own prejudices guide my recommendations to other people?</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/06/01/try-ruby-seriously/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
         <h1 class="entry-title"><a href="/blog/2012/05/30/hypermedia-apis-the-new-wild-west/">Hypermedia APIs: The New Wild West?</a></h1>
       
     
@@ -109,7 +156,7 @@
   
 
 
-<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true">2012-05-30</time>
+<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -171,7 +218,7 @@
   
 
 
-<time datetime="2012-05-29T20:56:00-04:00" pubdate data-updated="true">2012-05-29</time>
+<time datetime="2012-05-29T20:56:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -220,7 +267,7 @@
   
 
 
-<time datetime="2012-05-22T20:04:00-04:00" pubdate data-updated="true">2012-05-22</time>
+<time datetime="2012-05-22T20:04:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -273,7 +320,7 @@
   
 
 
-<time datetime="2012-05-18T15:01:00-04:00" pubdate data-updated="true">2012-05-18</time>
+<time datetime="2012-05-18T15:01:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -345,20 +392,29 @@ Namespaces are one honking great idea -- let's do more of those!
   
 
 
-<time datetime="2012-05-09T13:14:00-04:00" pubdate data-updated="true">2012-05-09</time>
+<time datetime="2012-05-09T13:14:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>So, I wanted to plug a little project that <a href="https://twitter.com/#!/micahjgates">Micah Gates</a> and I hacked together at <a href="http://railsconf.austinonrails.org/bohconf">BohConf</a>, the awesome un-conference and hackfest that runs parallel to <a href="http://railsconf2012.com">RailsConf</a> each year.</p>
+  <div class="entry-content"><p>So, I wanted to plug a little project that
+<a href="https://twitter.com/#!/micahjgates">Micah Gates</a> and I hacked together at
+<a href="http://railsconf.austinonrails.org/bohconf">BohConf</a>, the awesome un-conference
+ and hackfest that runs parallel to <a href="http://railsconf2012.com">RailsConf</a> each year.</p>
 
-<p>It&rsquo;s called <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, and it&rsquo;s a Ruby gem to automate some of the tedium of programmer job interviews.</p>
+<p>It&rsquo;s called <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, and
+it&rsquo;s a Ruby gem to automate some of the tedium of programmer job interviews.</p>
 
-<p>As an example, let&rsquo;s take <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">FizzBuzz</a>, a typical interview screening question intended to weed out the applicants who can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuzz like this:</p>
+<p>As an example, let&rsquo;s take
+<a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">FizzBuzz</a>,
+a typical interview screening question intended to weed out the applicants who
+can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuzz like
+ this:</p>
 
-<figure class='code'><figcaption><span>FizzBuzz</span><a href='https://github.com/ruby-jokes/job\_interview/blob/master/lib/job\_interview/fizz\_buzz.rb'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>FizzBuzz  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -379,13 +435,14 @@ Namespaces are one honking great idea -- let's do more of those!
 
 <p>But that&rsquo;s just tedious. With job_interview, it&rsquo;s dead simple:</p>
 
-<figure class='code'><figcaption><span>job_interview FizzBuzz</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>job_interview FizzBuzz </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;job_interview&#39;</span>
-</span><span class='line'><span class="vi">@answer</span> <span class="o">=</span> <span class="ss">JobInterview</span><span class="p">:</span><span class="ss">:Answer</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="vi">@answer</span> <span class="o">=</span> <span class="no">JobInterview</span><span class="o">::</span><span class="no">Answer</span><span class="o">.</span><span class="n">new</span>
 </span><span class='line'><span class="vi">@answer</span><span class="o">.</span><span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </span><span class='line'>
 </span><span class='line'> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Buzz&quot;</span><span class="o">]</span>
@@ -398,8 +455,8 @@ Namespaces are one honking great idea -- let's do more of those!
 
 <p>It will also answer the bullshit personal questions that everyone lies about anyway!</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">include</span> <span class="ss">JobInterview</span><span class="p">:</span><span class="ss">:Questions</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">include</span> <span class="no">JobInterview</span><span class="o">::</span><span class="no">Questions</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -408,7 +465,7 @@ Namespaces are one honking great idea -- let's do more of those!
 </ol>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">in_5_years</span>
@@ -422,7 +479,7 @@ Namespaces are one honking great idea -- let's do more of those!
 </ol>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">why_here</span>
@@ -436,7 +493,7 @@ Namespaces are one honking great idea -- let's do more of those!
 </ol>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">p_equals_np</span>
@@ -447,9 +504,11 @@ Namespaces are one honking great idea -- let's do more of those!
 
 <p>&hellip;and many more.</p>
 
-<p>We aim for 100% test coverage with RSpec, so we&rsquo;re confident that this is a robust solution for a range of job interview scenarios.</p>
+<p>We aim for 100% test coverage with RSpec, so we&rsquo;re confident that this is a
+robust solution for a range of job interview scenarios.</p>
 
-<p>We did a lightning talk at RailsConf 2012, and you can <a href="http://ruby-jokes.github.com/job_interview/pres.html">see the slides here</a>.</p>
+<p>We did a lightning talk at RailsConf 2012, and you can
+<a href="http://ruby-jokes.github.com/job_interview/pres.html">see the slides here</a>.</p>
 
 <p>Next time you face an interview for a programming job, work smarter, not harder.</p>
 
@@ -484,7 +543,7 @@ Namespaces are one honking great idea -- let's do more of those!
   
 
 
-<time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true">2012-05-08</time>
+<time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -541,7 +600,7 @@ Namespaces are one honking great idea -- let's do more of those!
   
 
 
-<time datetime="2012-05-08T09:46:00-04:00" pubdate data-updated="true">2012-05-08</time>
+<time datetime="2012-05-08T09:46:00-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -564,7 +623,7 @@ Namespaces are one honking great idea -- let's do more of those!
     
     <a href="/blog/archives">Blog Archives</a>
     
-    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    <a class="next" href="4">Newer &rarr;</a>
     
   </div>
 </div>
@@ -581,6 +640,10 @@ Namespaces are one honking great idea -- let's do more of those!
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -594,10 +657,6 @@ Namespaces are one honking great idea -- let's do more of those!
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>

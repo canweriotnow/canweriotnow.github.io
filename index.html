@@ -9,7 +9,9 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="I&rsquo;ve always taken a hands-off approach to moderating comments, feeling that it was a form of censorship to restrict discussion even on my own &hellip;">
+  <meta name="description" content="It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
+from the internet. ruby-jokes would hate to
+part with the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -92,6 +94,92 @@
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-08-19T21:26:36-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
+from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
+part with the Whyday tradition of hacking on something just for fun and releasing
+it into the wild.</p>
+
+<p>So it&rsquo;s with great ambivalence we announce <a href="https://github.com/ruby-jokes/whynot">whynot</a>,
+a gem that does irresponsible things because&hellip; why not?</p>
+
+<p>whynot is for when you really just don&rsquo;t care. It started as a single monkey-patch
+to <code>Kernel</code>, called <code>maybe</code>. <code>maybe</code> takes a block, and may or may not yield the
+result. So for instance:</p>
+
+<figure class='code'><figcaption><span>maybe </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">maybe</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+</span><span class='line'>  <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>About half the time, this will return <code>6</code>. The other half, <code>nil</code>.</p>
+
+<p>About three minutes after I pushed whynot to Github, <a href="https://twitter.com/mi_c_ah">Micah Gates</a>
+added some kernel methods that allowed for a little more specificity: <code>usually</code>,
+which will execute your code about 2/3 of the time, and <code>occasionally</code>, which
+has about a 1 in 5 chance of actually executing your code.</p>
+
+<h4>But wait, there&rsquo;s more!</h4>
+
+<p>Just in time for the 0.0.4 release this afternoon, I decided sometimes, the truth
+doesn&rsquo;t matter. Or, at least, you just don&rsquo;t care. So I added <code>meh</code>. Sometimes
+true, sometimes false, whatever. When you really don&rsquo;t care, just do this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">meh</span> <span class="p">?</span> <span class="s2">&quot;I guess&quot;</span> <span class="p">:</span> <span class="s2">&quot;Nah.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I really wanted to create a global value like <code>true</code> or <code>false</code> that was neither
+truthy nor falsey, but I&rsquo;m not sure whether that&rsquo;s possible, and I have a feeling
+it would require some C-extension hackery if it is.</p>
+
+<p>Perhaps for a future release?</p>
+
+<p>As always, pull requests are welcome, and use at your own risk.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
         <h1 class="entry-title"><a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a></h1>
       
     
@@ -109,7 +197,7 @@
   
 
 
-<time datetime="2014-06-10T15:01:23-04:00" pubdate data-updated="true">2014-06-10</time>
+<time datetime="2014-06-10T15:01:23-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -154,7 +242,7 @@
   
 
 
-<time datetime="2014-06-09T10:03:36-04:00" pubdate data-updated="true">2014-06-09</time>
+<time datetime="2014-06-09T10:03:36-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -205,7 +293,7 @@
   
 
 
-<time datetime="2014-03-11T22:39:38-04:00" pubdate data-updated="true">2014-03-11</time>
+<time datetime="2014-03-11T22:39:38-04:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -256,7 +344,7 @@
   
 
 
-<time datetime="2014-01-27T20:52:36-05:00" pubdate data-updated="true">2014-01-27</time>
+<time datetime="2014-01-27T20:52:36-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -305,7 +393,7 @@
   
 
 
-<time datetime="2014-01-23T20:08:13-05:00" pubdate data-updated="true">2014-01-23</time>
+<time datetime="2014-01-23T20:08:13-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -354,7 +442,7 @@
   
 
 
-<time datetime="2013-12-23T21:05:00-05:00" pubdate data-updated="true">2013-12-23</time>
+<time datetime="2013-12-23T21:05:00-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -401,7 +489,7 @@
   
 
 
-<time datetime="2013-12-11T20:20:00-05:00" pubdate data-updated="true">2013-12-11</time>
+<time datetime="2013-12-11T20:20:00-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -412,7 +500,8 @@
 
 <p>Okay, the PSAs keep it silly. Every time someone in those videos says &ldquo;I just did <em>n</em> lines of code&rdquo;, the following script runs through my head:</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>&#8220;Yeah, this&#8230;&#8221; </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;I just did </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> lines of code&quot;</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/code/</span><span class="p">,</span> <span class="s1">&#39;coke&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, and I can&#39;t feel my face!&quot;</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -453,7 +542,7 @@
   
 
 
-<time datetime="2013-12-09T22:32:00-05:00" pubdate data-updated="true">2013-12-09</time>
+<time datetime="2013-12-09T22:32:00-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -501,7 +590,7 @@
   
 
 
-<time datetime="2013-11-20T23:36:00-05:00" pubdate data-updated="true">2013-11-20</time>
+<time datetime="2013-11-20T23:36:00-05:00" pubdate data-updated="true"></time>
         
       </p>
     
@@ -525,73 +614,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/">So Github Is Not Your CV.  It Still Matters</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-19T21:22:00-05:00" pubdate data-updated="true">2013-11-19</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
-
-<p>There are good counterarguments to this. Github is not a portfolio, it&rsquo;s where your public code lives. <a href="https://github.com/canweriotnow">My Github</a> has a bunch of projects I should maybe delete; stalled or abandoned projects, one-off projects with poor test coverage, etc. It&rsquo;s not really a representative sample of my <em>production</em> code. But that&rsquo;s not why I think it matters.</p>
-
-<p>In her post, Ashe provides several excellent alternatives to OSS contributions as evaluation criteria; these include:</p>
-
-<ul>
-<li>Pair with the prospective hire</li>
-<li>Contract the prospective hire for a week or two</li>
-<li>Ask for samples</li>
-</ul>
-
-
-<p>When considering potential hires, Github is not everything. At <a href="http://anestuary.com">An Estuary</a>, we definitely request (and prefer) a Github profile with applicant CVs; but it&rsquo;s not about contributions to OSS projects (i.e., the &ldquo;unpaid labor&rdquo; critiqued in Ashe Dryden&rsquo;s post).</p>
-
-<p>The focus of our company is on professional development. We not only dogfood technically (i.e., using our own software), but also culturally. We want to hire people who are focused on their own professional development, and Github is a good place to document that.</p>
-
-<p>(Also&hellip; code samples? If you wrote something worth showing me, why isn&rsquo;t it on Github, in a gist, on JSFiddle, etc.?)</p>
-
-<p>Our main product is designed to help educators document their professional development. Hackers like us have Github, so if we&rsquo;re not using it&hellip; something might be amiss.</p>
-
-<p>So when I&rsquo;m looking at a Github profile evaluating a potential hire, I&rsquo;m not looking for accepted pull requests to <a href="https://github.com/rails/rails">Rails</a>. I mean, that would be a plus, but&hellip;</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+      <a class="prev" href="2">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -610,6 +635,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
@@ -623,10 +652,6 @@
     
       <li class="post">
         <a href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New from Ruby Jokes: taint_aliases</a>
       </li>
     
   </ul>
