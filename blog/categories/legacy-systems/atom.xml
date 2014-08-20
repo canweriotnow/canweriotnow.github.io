@@ -4,7 +4,7 @@
   <title><![CDATA[Category: legacy systems | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/legacy-systems/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-19T21:54:05-04:00</updated>
+  <updated>2014-08-20T10:21:39-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,126 +20,64 @@
     <id>http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
 
-
-
-
 <h3>Abstraction is your friend</h3>
-
-
-
 
 <p>I think if there&rsquo;s a common theme in these posts, it&rsquo;s abstraction. Primarily, using Ruby and Rails to abstract away the crazy implementation details of a system that&rsquo;s been accumulating cruft for over twenty years. I&rsquo;m going to start referring to this system as &ldquo;Bubba&rdquo; for the sake of convenience (and since I don&rsquo;t have permission from the vendor to say what it actually is).</p>
 
-
-
-
 <p>I mentioned in Part One that most of the access to the backend system going forward is occurring via a REST API wrapping the Oracle database that serve&rsquo;s as Bubba&rsquo;s back-end. Today I wanted to look at how the user-facing portions are constructed.</p>
-
-
-
 
 <!-- more -->
 
 
-
-
 <p>The customer-facing applications that integrate with Bubba via the API just send JSON back and forth at the model level. But our in-house developed applications are somewhat freed from tight integration with Bubba in that they handle persistence for their own data independently. So in addition to the Oracle DB, we also maintain a Postgres database that handles things like user sessions, application preferences, etc. I once complained about the inability to add tables to Bubba, but now I&rsquo;m glad we were &ldquo;forced&rdquo; to add a separate database, one which we control and can write proper unit tests for our models (I think Part 4 will probably be about testing against legacy systems. It won&rsquo;t be pretty).</p>
-
-
-
 
 <p>Bubba is quickly becoming one component of <em>our</em> systems, rather than <em>the</em> system that we&rsquo;re just extending in various ways.</p>
 
-
-
-
 <p>One thing you&rsquo;ll find really quickly if you&rsquo;re trying to use a JSON API as your persistence mechanism is that ActiveResource is pretty inadequate if you were expecting an ActiveRecord-like API to use. I highly recommend the <a href="https://github.com/justinweiss/reactive_resource">reactive_resource</a> gem by Justin Weiss as a substitute.</p>
-
-
-
 
 <p>Reactive Resource (among other things) adds read support for associations, including generating nested paths for child associations. So, for instance, the <code>Customer</code> object I described in Part 1 <code>has_many :cards</code>. ReactiveResource allows you to build models like this:</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="no">ReactiveResource</span><span class="o">::</span><span class="no">Base</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="no">ReactiveResource</span><span class="o">::</span><span class="no">Base</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:cards</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  has_many :cards&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Reactive Resource will know to generate the URI <code>/customers/42/cards/123456</code> from <code>Customer.find(42).cards.first</code>.</p>
 
-
-
-
 <h3>Encapsulation matters, too</h3>
-
-
-
 
 <p>Before I went this route, I tried the old &ldquo;Rails can handle multiple databases just fine&rdquo; theory. And while that&rsquo;s true in principle, in practice it often blows up in your face. First of all, you have to be very, very careful combining data from multiple sources &ndash; an ActiveRecord::Relation object when confronted with another object that quacks like a Relation will often try doing things like implicit joins &ndash; whcih obviously won&rsquo;t work across separate databases.</p>
 
-
-
-
 <p>The other reason this approach was full of fail is Oracle. Oracle syntax is incredibly nitpicky about its non-standard quirks. I often found that attempting to do something as simple as an inner join on the Postgres DB, using a class that <em>knew</em> to use the postgres adapter, syntax from the oracle_enhanced adapter would leak in. This <em>may</em> be an implementation bug due to some hack in the oracle_enhanced adapter (maybe one day I&rsquo;ll ask Raimonds about it), but just knowing that that was possible convinced me that was not the right path. Having an API for interaction with Bubba, whose sole responsibility is interaction with Bubba, is much cleaner and easier to maintain.</p>
-
-
-
 
 <h3>Don&rsquo;t be Lando</h3>
 
-
-
-
 <p>There&rsquo;s also one very, very good reason for quarantining vendor systems behind a REST interface. From time to time, the vendor is going to come along and <del>randomly change shit</del> release an upgrade.</p>
-
-
-
 
 <p><img src="http://i.imgur.com/qE6ko.png" alt="Imgur" /></p>
 
-
-
-
 <p>Maintaining a custom application dependent on a database schema beyond your control&hellip; let&rsquo;s just say you&rsquo;re gonna have a bad time. But wait, what&rsquo;s that? Gang of Four to the rescue!</p>
 
-
-
-
-<blockquote><p>Program to an &#8216;interface&#8217;, not an &#8216;implementation&#8217;.</p><footer><strong>Gang of Four</strong> <cite>Design Patterns</cite></footer></blockquote>
-
-
-
+<p><blockquote><p>Program to an &lsquo;interface&rsquo;, not an &lsquo;implementation&rsquo;.</p><footer><strong>Gang of Four</strong> <cite>Design Patterns</cite></footer></blockquote></p>
 
 <p>Wrapping the system in an API for which <em>you</em> control the public interface means you can account for schema changes in one place, rather than in multiple dependent applications, while keeping the public interface consistent. This also goes a long way in keeping your code DRY. And with a bit of metaprogramming magic like I described in part one, you can often spare yourself from having to push a new version if the schema changes are minor.</p>
 
-
-
-
 <p>So, this post was a little light on code, but I did want to explain some of the reasoning behind this approach to legacy systems integration using Rails.</p>
-
-
-
 
 <h4>Note</h4>
 
-
-
-
 <p>I&rsquo;d like to thank the folks at the <a href="http://ruby5.envylabs.com">Ruby5 podcast</a> for <a href="http://ruby5.envylabs.com/episodes/299-episode-295-august-7th-2012/stories/2616-legacy-systems-on-rails">covering this series in Episode #295</a>. If you missed that episode, please give it a listen&hellip; the commentary is pretty great, even if they did question my sanity a bit.</p>
-
 ]]></content>
   </entry>
   
@@ -150,45 +88,22 @@
     <id>http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
     <content type="html"><![CDATA[<p>This will be a quick one. I just wanted to give an example of how Ruby&rsquo;s open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
 
-
-
-
 <h3>Into the mouth of madness</h3>
-
-
-
 
 <p>So let&rsquo;s imagine you&rsquo;re a software engineer (actually, to make a decision this crazy, you&rsquo;d probably have to have a title like Señor Software Architect, or possibly VP of Development). You need to store precise date values for an OLTP system in the database. Although you know that Oracle&rsquo;s TIMESTAMP datatype will store a time right down to sub-millisecond precision, that&rsquo;s just too easy. Or, at least, too sane.</p>
 
-
-
-
 <p>Then you remember the <a href="http://en.wikipedia.org/wiki/Julian_day">Julian day</a> system. Perfect! You can just use floats to reperesent the time, with the Julian day number as the integral part, and the time of day represented as the fractional part! Even better, you decide to make up your own offset instead of using a standard Day of Calendar Reform, <em>and</em> to store the local time instead of UTC.</p>
 
-
-
-
 <p>If you have ever considered something like this, step away from the computer. I&rsquo;m revoking your programmer license. Leaving aside the general inaccuracy of floats (you wouldn&rsquo;t use a float to represent money, why the hell would it be a good idea for time?), there are <em>existing datatypes</em> for this! Moving on&hellip;</p>
-
-
-
 
 <!--more-->
 
 
-
-
 <h3>Monkey-patching to the rescue!</h3>
-
-
-
 
 <p>Since datetimes are represented as floating-point values internally, we&rsquo;ll need to have a way of converting between those and normal datetime types. So I&rsquo;ll start by introducing a few monkey-patches in an intializer, so they get loaded before anything else.</p>
 
-
-
-
-<figure class='code'><figcaption><span>date_fixes.rb </span></figcaption>
+<p><figure class='code'><figcaption><span>date_fixes.rb </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -230,58 +145,96 @@
 <span class='line-number'>39</span>
 <span class='line-number'>40</span>
 <span class='line-number'>41</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># We need two values because the offset is from midnight instead of noon, </span>
-</span><span class='line'><span class="c1"># so the standard methods for handling Julian day values get confused.</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="no">SG1</span> <span class="o">=</span> <span class="mi">2415019</span>
-</span><span class='line'><span class="no">SG2</span> <span class="o">=</span> <span class="mi">2415018</span><span class="o">.</span><span class="mi">5</span>
+</span><span class='line'><span class="sr">&lt;h1&gt;We need two values because the offset is from midnight instead of noon,&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="nb">Float</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">so</span> <span class="n">the</span> <span class="n">standard</span> <span class="nb">methods</span> <span class="k">for</span> <span class="n">handling</span> <span class="no">Julian</span> <span class="n">day</span> <span class="n">values</span> <span class="n">get</span> <span class="n">confused</span><span class="o">.</span><span class="n">&lt;</span><span class="sr">/h1&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">vendor_to_dt</span>
-</span><span class='line'>    <span class="n">date</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">jd</span><span class="p">(</span><span class="nb">self</span> <span class="o">+</span> <span class="no">SG1</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="sr">&lt;p&gt;SG1 = 2415019</span>
+</span><span class='line'><span class="sr">SG2 = 2415018.5&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">to_date</span>
-</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">to_date</span>
-</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="o">::</span><span class="nb">Float</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">to_time</span>
-</span><span class='line'>    <span class="n">t</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">in_time_zone</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  def vendor_to_dt&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">date</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">jd</span><span class="p">(</span><span class="nb">self</span> <span class="o">+</span> <span class="no">SG1</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="no">DateTime</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">to_vendor</span>
-</span><span class='line'>    <span class="c1"># This next one looks stupid but it&#39;s necessary</span>
-</span><span class='line'>    <span class="n">time</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="p">))</span>
-</span><span class='line'>    <span class="n">time</span><span class="o">.</span><span class="n">ajd</span><span class="o">.</span><span class="n">to_f</span> <span class="o">-</span> <span class="no">SG2</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="no">Time</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">to_vendor</span>
-</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  def to_date&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="o">::</span><span class="no">Date</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">to_vendor</span>
-</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">to_date</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def to_time&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">t</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">vendor_to_dt</span><span class="o">.</span><span class="n">in_time_zone</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;class ::DateTime</span>
+</span><span class='line'><span class="sr">  def to_vendor&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="c1"># This next one looks stupid but it&#39;s necessary</span>
+</span><span class='line'><span class="n">time</span> <span class="o">=</span> <span class="no">DateTime</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">self</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-%dT%H:%M:%S&#39;</span><span class="p">))</span>
+</span><span class='line'><span class="n">time</span><span class="o">.</span><span class="n">ajd</span><span class="o">.</span><span class="n">to_f</span> <span class="o">-</span> <span class="no">SG2</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;class ::Time</span>
+</span><span class='line'><span class="sr">  def to_vendor&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;class ::Date</span>
+</span><span class='line'><span class="sr">  def to_vendor&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nb">self</span><span class="o">.</span><span class="n">to_datetime</span><span class="o">.</span><span class="n">to_vendor</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>So now Float, Date, DateTime and Time can all convert happily (well, mayby not happily) back and forth and we can deal with something reasonable in our classes, like so:</p>
 
-
-
-
-<figure class='code'><figcaption><span>Customer </span></figcaption>
+<p><figure class='code'><figcaption><span>Customer </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -293,29 +246,38 @@
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 <span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">opendatetime</span>
-</span><span class='line'>    <span class="n">read_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">)</span><span class="o">.</span><span class="n">to_time</span>
-</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  def opendatetime&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">opendatetime</span><span class="o">=</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">write_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">to_vendor</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">read_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">)</span><span class="o">.</span><span class="n">to_time</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def opendatetime=(time)&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">write_attribute</span><span class="p">(</span><span class="ss">:opendatetime</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">to_vendor</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>I specifically didn&rsquo;t use <code>to_f</code> as the method on Time, Date, etc. because I wanted to be clear this wasn&rsquo;t just a Float, it was a vendor-specific implementation.</p>
 
-
-
-
 <p>Anyhow, that&rsquo;s it for this one. As usual, comments, etc.</p>
-
 ]]></content>
   </entry>
   
@@ -326,65 +288,30 @@
     <id>http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
     <content type="html"><![CDATA[<p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
 
-
-
-
 <p>Since I spend a lot of time on this, I figured it would be a good topic for a series of posts, hence the &ldquo;Part 1&rdquo; in the title. Hopefully I&rsquo;ll actually follow through on it.</p>
-
-
-
 
 <p>The first thing I did was to replace a few aging Perl CGI scripts with a Rails app, which was interesting. The notion that Rails is far easier to use for greenfield projects than for legacy systems is probably accurate, but it&rsquo;s not universally true.</p>
 
-
-
-
 <p>This back-end is an Oracle database with over 450 tables and a hodgepodge of different strategies for how relationships should be modeled. I&rsquo;m pretty sure it was my second or third day on the job that I was asked to implement a feature (in the old Perl codebase) that should have been straightforward given the relationships between two particular entities, but ended up requiring six inner joins and two left outer joins, IIRC. Just to give you an idea of what I&rsquo;m dealing with.</p>
-
-
-
 
 <p>Anyhow, the first time around, I wrote an ActiveRecord model for each table, did my <code>has_many</code>&rsquo;s and <code>belongs_to</code>&rsquo;s, et cetera. Some were easier than others. There were a <em>lot</em> of conditions hashes in some of those associations.</p>
 
-
-
-
 <p>When the project scope started to grow beyond a single web app, and I started designing a REST API for the system, I had the opportunity to scratch some of the itches that had been bugging me about the original implementation from the very beginning.</p>
-
-
-
 
 <!--more-->
 
 
-
-
 <h3>When Good Patterns Go Bad</h3>
-
-
-
 
 <p>The first thing I needed to do was to solve an issue with the EAV tables. EAV (Entity-Attribute-Value) is an okay model for sparse data. Somehow, the designers of this system decided to use it for custom fields where <strong>every</strong> entity has <strong>every</strong> attribute. When a custom field is added, a row is inserted in the definition table for the attribute. Then a row is inserted in the value table for <strong>every single customer.</strong> It&rsquo;s slow, to say the least. In the original (naive) implementation, this meant every time a new attribute definition was added, I added an association to the Customer class. And there are a <em>lot</em> of attributes.</p>
 
-
-
-
 <p>I wan&rsquo;t about to make that mistake again.</p>
-
-
-
 
 <h3>Metaprogramming to the rescue</h3>
 
-
-
-
 <p>First I started with the definition table:</p>
 
-
-
-
-<figure class='code'><figcaption><span>FieldDef </span></figcaption>
+<p><figure class='code'><figcaption><span>FieldDef </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -395,32 +322,29 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldDef</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="n">set_table_name</span> <span class="s1">&#39;custom_field_def&#39;</span>
-</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:custom_field_def_id</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldDef</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">set_table_name</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">custom_field_def</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:custom_field_def_id</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:field_values</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  has_many :field_values&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">symbol</span>
-</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">parameterize</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_sym</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">def</span> <span class="nf">symbol</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;self.title.parameterize(&#39;_&#39;).to_sym</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  end</span>
+</span><span class='line'><span class="sr">end</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Pretty straightforward. The only extra thing is that <code>symbol</code> method, which returns a snake cased version of the &lsquo;title&rsquo; attribute, suitable for using as a method name.</p>
 
-
-
-
 <p>Next comes the field value table:</p>
 
-
-
-
-<figure class='code'><figcaption><span>FieldValue </span></figcaption>
+<p><figure class='code'><figcaption><span>FieldValue </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -428,29 +352,20 @@
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldValue</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="n">set_table_name</span> <span class="s1">&#39;custom_field_value&#39;</span>
-</span><span class='line'>  <span class="n">set_primary_keys</span> <span class="ss">:cust_id</span><span class="p">,</span> <span class="ss">:custom_field_def_id</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">FieldValue</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">set_table_name</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">custom_field_value</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">set_primary_keys</span> <span class="ss">:cust_id</span><span class="p">,</span> <span class="ss">:custom_field_def_id</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:customer</span><span class="p">,</span> <span class="ss">:foreign_kay</span> <span class="o">=&gt;</span> <span class="ss">:cust_id</span>
-</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:field_def</span><span class="p">,</span> <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="ss">:custom_field_def_id</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="sr">&lt;p&gt;  belongs_to :customer, :foreign_kay =&gt; :cust_id</span>
+</span><span class='line'><span class="sr">  belongs_to :field_def, :foreign_key =&gt; :custom_field_def_id</span>
+</span><span class='line'><span class="sr">end</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Nothing out of the ordinary here (although I&rsquo;d like to thank Dr. Nic and Charlie Savage for their work on <a href="https://github.com/drnic/composite_primary_keys">composite_primary_keys</a>, it&rsquo;s a lifesaver).</p>
 
-
-
-
 <p>Of course, the goal here is eliminating the 40-odd lines of has_many and accepts_nested_attributes_for in the Customer class. This is where Ruby really shines:</p>
 
-
-
-
-<figure class='code'><figcaption><span>Customer </span></figcaption>
+<p><figure class='code'><figcaption><span>Customer </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -471,43 +386,37 @@
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&lt;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="n">set_table_name</span> <span class="s1">&#39;customer&#39;</span>
-</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:cust_id</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Customer</span> <span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span> <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">set_table_name</span> <span class="o">&amp;</span><span class="n">lsquo</span><span class="p">;</span><span class="n">customer</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">set_primary_key</span> <span class="ss">:cust_id</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="c1"># Here&#39;s where we dynamically generate associations at runtime</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  # Here&amp;rsquo;s where we dynamically generate associations at runtime&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="no">FieldDef</span><span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">field</span><span class="o">|</span>
-</span><span class='line'>    <span class="n">has_one</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="ss">:class_name</span> <span class="o">=&gt;</span> <span class="s1">&#39;FieldValue&#39;</span><span class="p">,</span>
-</span><span class='line'>                          <span class="ss">:foreign_key</span> <span class="o">=&gt;</span> <span class="ss">:cust_id</span><span class="p">,</span>
-</span><span class='line'>                          <span class="ss">:conditions</span> <span class="o">=&gt;</span> <span class="nb">proc</span> <span class="p">{</span><span class="s2">&quot;customer_def_field_def_id = </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="no">FieldDef</span><span class="o">.</span><span class="n">find_each</span> <span class="k">do</span> <span class="o">|</span><span class="n">field</span><span class="o">|&lt;</span><span class="sr">/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>    <span class="n">accepts_nested_attributes_for</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span>
-</span><span class='line'>    <span class="n">delegate</span> <span class="ss">:field_value</span><span class="p">,</span>  <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="kp">true</span>
-</span><span class='line'>    <span class="n">delegate</span> <span class="ss">:field_value</span><span class="o">=</span><span class="p">,</span> <span class="ss">:to</span> <span class="o">=&gt;</span> <span class="n">field</span><span class="o">.</span><span class="n">symbol</span><span class="p">,</span> <span class="ss">:prefix</span> <span class="o">=&gt;</span> <span class="kp">true</span>
+</span><span class='line'><span class="sr">&lt;pre&gt;&lt;code&gt;has_one field.symbol, :class_name =&amp;gt; &#39;FieldValue&#39;, </span>
+</span><span class='line'><span class="sr">                      :foreign_key =&amp;gt; :cust_id,</span>
+</span><span class='line'><span class="sr">                      :conditions =&amp;gt; proc {&quot;customer_def_field_def_id = </span><span class="si">#{</span><span class="n">field</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="sr">&quot;}</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="sr">accepts_nested_attributes_for field.symbol</span>
+</span><span class='line'><span class="sr">delegate :field_value,  :to =&amp;gt; field.symbol, :prefix =&amp;gt; true</span>
+</span><span class='line'><span class="sr">delegate :field_value=, :to =&amp;gt; field.symbol, :prefix =&amp;gt; true</span>
+</span><span class='line'><span class="sr">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="sr">/pre&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="c1"># snip</span>
+</span><span class='line'><span class="sr">&lt;p&gt;  end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="c1"># snip&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>This iterates over the rows of <code>custom_field_def</code>, generates an association for each entry, adds the <code>accepts_nested_attributes_for</code> declaration, and even delegates the getter and setters for the column we&rsquo;re really interested in (<code>"CUSTOM_FIELD_VALUE"."FIELD_VALUE"</code>).</p>
 
-
-
-
 <p>I don&rsquo;t claim it&rsquo;s <em>the</em> most elegant solution, but it&rsquo;s a lot better than in the previous iteration. It&rsquo;s important to remember that although Rails&#8217; opinionated nature makes it a little more awkward to deal with a legacy sytem than with a brand new project, Ruby gives you all the tools you could want to overcome whatever hurdles you might encounter.</p>
 
-
-
-
 <p> If you have any questions or suggestions for improvement, please let me know in the comments!</p>
-
 ]]></content>
   </entry>
   

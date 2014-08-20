@@ -4,7 +4,7 @@
   <title><![CDATA[Category: fp | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/fp/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-19T21:54:05-04:00</updated>
+  <updated>2014-08-20T10:21:39-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,35 +20,18 @@
     <id>http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&rsquo;ve seen, however, is Tony Arcieri&rsquo;s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">&ldquo;DCI&rdquo; in Ruby Is Compeltely Broken</a>.</p>
 
-
-
-
 <p>Reading his post, it ocurred to me that what Rubyists are trying to do with <code>object.extend(Module)</code> is precisely what Lisp hackers have been doing for years with macros, but it&rsquo;s an ugly hack when applied in the wrong paradigm (or, at least, the wrong language).</p>
-
-
-
 
 <p>Now, I was initially a big fan <em>conceptually</em> of DCI. It seemed intuitive, even familiar. And it helped that it was the brainchild of Trygve Reenskaug, the erstwhile inventor of MVC, possibly one of the most useful OOP patterns ever devised.</p>
 
-
-
-
 <p>But the more familiar it seemed, the more difficult it seemed to implement properly, much less efficiently, even in the purest of modern OO languages, i.e., Ruby.</p>
-
-
-
 
 <p>It wasn&rsquo;t until I tried to forget everything I knew about OOP that its familiarity became clear: this novel appropach to object-oriented design is embedded in the most natural thing in the world in the oldest of functional programming languages, Lisp.</p>
 
-
-
-
 <p>Enter the macro. In Clojure, providing context to a function is straightforward using a macro, for instance, a database query (n.b., most of this is straight example code from <a href="http://en.wikibooks.org">wikibooks.org</a>).</p>
 
-
-
-
-<figure class='code'><figcaption><span>Set up JDBC connection</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><figcaption><span>Set up JDBC connection <a href="http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL">http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#PostgreSQL</a> </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -61,66 +44,69 @@
 <span class='line-number'>11</span>
 <span class='line-number'>12</span>
 <span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="ss">&#39;clojure.java.jdbc</span><span class="p">)</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">use</span> <span class="o">&amp;</span><span class="nv">lsquo</span><span class="c1">;clojure.java.jdbc)&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">db-host</span> <span class="s">&quot;localhost&quot;</span>
-</span><span class='line'>      <span class="nv">db-port</span> <span class="mi">5432</span>
-</span><span class='line'>      <span class="nv">db-name</span> <span class="s">&quot;a_database&quot;</span><span class="p">]</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">db-host</span> <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;localhost&amp;rdquo;&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>  <span class="p">(</span><span class="k">def </span><span class="nv">db</span> <span class="p">{</span><span class="ss">:classname</span> <span class="s">&quot;org.postgresql.Driver&quot;</span> <span class="c1">; must be in classpath</span>
-</span><span class='line'>           <span class="ss">:subprotocol</span> <span class="s">&quot;postgresql&quot;</span>
-</span><span class='line'>           <span class="ss">:subname</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;//&quot;</span> <span class="nv">db-host</span> <span class="s">&quot;:&quot;</span> <span class="nv">db-port</span> <span class="s">&quot;/&quot;</span> <span class="nv">db-name</span><span class="p">)</span>
-</span><span class='line'>           <span class="c1">; Any additional keys are passed to the driver</span>
-</span><span class='line'>           <span class="c1">; as driver-specific properties.</span>
-</span><span class='line'>           <span class="ss">:user</span> <span class="s">&quot;a_user&quot;</span>
-</span><span class='line'>           <span class="ss">:password</span> <span class="s">&quot;secret&quot;</span><span class="p">}))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>  <span class="nv">db-port</span> <span class="mi">5432</span>
+</span><span class='line'>  <span class="nv">db-name</span> <span class="s">&quot;a_database&quot;</span><span class="p">]</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="k">def </span><span class="nv">db</span> <span class="p">{</span><span class="ss">:classname</span> <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;org.postgresql.Driver&amp;rdquo; ; must be in classpath&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>       <span class="ss">:subprotocol</span> <span class="s">&quot;postgresql&quot;</span>
+</span><span class='line'>       <span class="ss">:subname</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;//&quot;</span> <span class="nv">db-host</span> <span class="s">&quot;:&quot;</span> <span class="nv">db-port</span> <span class="s">&quot;/&quot;</span> <span class="nv">db-name</span><span class="p">)</span>
+</span><span class='line'>       <span class="c1">; Any additional keys are passed to the driver</span>
+</span><span class='line'>       <span class="c1">; as driver-specific properties.</span>
+</span><span class='line'>       <span class="ss">:user</span> <span class="s">&quot;a_user&quot;</span>
+</span><span class='line'>       <span class="ss">:password</span> <span class="s">&quot;secret&quot;</span><span class="p">}))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>This provides the context for the <code>with-connection</code> macro:</p>
 
-
-
-
-<figure class='code'><figcaption><span>SELECT Statement</span><a href='http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><figcaption><span>SELECT Statement <a href="http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT">http://en.wikibooks.org/wiki/Clojure_Programming/Examples/JDBC_Examples#SELECT</a> </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">with-connection</span> <span class="nv">db</span>
-</span><span class='line'>   <span class="p">(</span><span class="nf">with-query-results</span> <span class="nv">rs</span> <span class="p">[</span><span class="s">&quot;select * from blogs&quot;</span><span class="p">]</span>
-</span><span class='line'>     <span class="c1">; rs will be a sequence of maps,</span>
-</span><span class='line'>     <span class="c1">; one for each record in the result set.</span>
-</span><span class='line'>     <span class="p">(</span><span class="nb">dorun </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:title</span> <span class="nv">%</span><span class="p">))</span> <span class="nv">rs</span><span class="p">))))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">with-connection</span> <span class="nv">db</span>
+</span><span class='line'>   <span class="p">(</span><span class="nf">with-query-results</span> <span class="nv">rs</span> <span class="p">[</span><span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;select * from blogs&amp;rdquo;]&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span> <span class="c1">; rs will be a sequence of maps,</span>
+</span><span class='line'> <span class="c1">; one for each record in the result set.</span>
+</span><span class='line'> <span class="p">(</span><span class="nb">dorun </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:title</span> <span class="nv">%</span><span class="p">))</span> <span class="nv">rs</span><span class="p">))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>I&rsquo;m using the simplest of (admittedly cribbed) examples here for the sake of demonstration, but right away here, we&rsquo;ve got the D and C of DCI &ndash; Data and Context. As for interaction&hellip; we could easily conceive of a <code>with-role</code> macro which determines the interaction of the database connection and the actual application of the <code>with-connection</code> macro, whether it invokes a SELECT, CREATE, UPDATE, or DELETE statement.</p>
 
-
-
-
 <p>In a Lisp, this level of composition is completely <em>natural,</em> is my point. In a language like Ruby (which despite having much of the Lisp nature, is OO to its core), and especially in a framework like Rails, with its cargo-cult Design Pattern-worshipping user base (I&rsquo;m going to take some shit for that one, but accept that I&rsquo;m exaggerating and flame with that in mind), is it any surprise that a pattern that makes <em>total sense</em> in an FP context is going to be a hot controversy in an OOP context?</p>
-
-
-
 
 <p>I agree with Tony&rsquo;s post that &ldquo;DCI&rdquo; in Rails is totally broken. But that&rsquo;s because, IMHO, DCI isn&rsquo;t the best pattern for OOP. Yeah, Ruby has <em>lots</em> of functional features, but maybe we need to rethink how we&rsquo;re doing this DCI stuff (or Concerns, or whatever), on the basis that messing with inheritance and the class hierarchy is the <em>wrong thing,</em> and perhaps we should be creatively exploring the use of blocks and lambdas and Ruby&rsquo;s other functional constructs.</p>
 
-
-
-
 <p>I&rsquo;m not offering any solutions here, but I&rsquo;m hoping I can contribute to the conversation. Step away from the mixins, away from the class hierarchy, away from the object model. Maybe take another read of Design Patterns and see if DCI is another hot YAGNI thing. I don&rsquo;t know yet. I just know it reminds me of how things are AWESOME in a whole other paradigm that doesn&rsquo;t necessarily apply to your Rails app.</p>
 
-
-
-
 <p>As a caveat, I should say that I haven&rsquo;t really tried to use this DCI mojo in a production application, although I have played with different ideas about it Just For Fun&copy;. If you think I&rsquo;m wrong, or have the whole thing arse-about-face, I&rsquo;d be happy to discuss it in the comments.</p>
-
 ]]></content>
   </entry>
   

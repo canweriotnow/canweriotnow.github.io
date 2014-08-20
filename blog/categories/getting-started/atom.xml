@@ -4,7 +4,7 @@
   <title><![CDATA[Category: getting started | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/getting-started/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-19T21:54:05-04:00</updated>
+  <updated>2014-08-20T10:21:39-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,37 +20,17 @@
     <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
     <content type="html"><![CDATA[<h3>The Important Stuff</h3>
 
-
-
-
-<p>So <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
-
-
-
+<p>So <a href="/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
 
 <p>In this post, I want to look a little more closely at the skills that matter, and the specific areas that the &ldquo;best&rdquo; (IMHO) companies will focus on. I may be biased, but this is the stuff I care about when I&rsquo;m interviewing developers (beyond basic coding chops), and I think I&rsquo;m pretty smart.</p>
 
-
-
-
 <h3>Testing, Testing, Testing</h3>
-
-
-
 
 <p>So you&rsquo;re writing code that runs, runs correctly, and runs consistently. That&rsquo;s awesome. But when it comes to writing production code for a real company, you need to <em>know</em> it&rsquo;s correct, in advance. Especially with dynamic languages, when there&rsquo;s no compiler to refuse to build faulty code, testing is paramount.</p>
 
-
-
-
 <p>So when you&rsquo;re working on these little personal projects, and throwing them on <a href="https://github.com">Github</a>, do a few things:</p>
 
-
-
-
 <!-- more -->
-
-
 
 
 <ul>
@@ -61,85 +41,37 @@
 </ul>
 
 
-
-
 <p>Plus Travis, Code Climate, and Coveralls will give you little badges for your README.md on Github so you can see how your project is doing at any time.</p>
-
-
-
 
 <p>Read up on practices for <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a>, because it matters to the people you really want to work for, and as an aspiring software craftsman, it needs to matter to you.</p>
 
-
-
-
 <h3>Collaboration</h3>
-
-
-
 
 <p>I mentioned the importance of coding with others last post, but I can&rsquo;t emphasize it enough. Look for opportunities for pair programming, even if it&rsquo;s remote. There are cool apps you can use for that now, like <a href="https://koding.com/">Koding</a> (and others), but in a pinch there&rsquo;s always <a href="http://www.vim.org/">vim</a> and <a href="http://tmux.sourceforge.net/">tmux</a>&hellip; which are tools you&rsquo;ll want to know anyhow.</p>
 
-
-
-
 <p>And which brings me to my next point&hellip;</p>
-
-
-
 
 <h3>Unix or GTFO</h3>
 
-
-
-
 <p>Yeah, code is more portable than it has ever been. You can develop Ruby or Clojure or Node.js on Linux, Solaris, OS X, Windows, probably even Haiku&hellip; but you need to understand your deployment environment, which is going to be some kind of *nix unless you&rsquo;re doing .NET (which you&rsquo;re clearly not, if you came to me for advice).</p>
-
-
-
 
 <p>In addition, the closer your dev environment is to your production environment, the less risk there is of weird heisenbug inconsistencies.</p>
 
-
-
-
 <p>So learn <em>some</em> kind of *nix, whether it&rsquo;s OS X, Linux, or Solaris, or whatever. And dig down; use the command line. Learn your tools, learn the <code>git</code> command line, don&rsquo;t just rely on the Github GUI apps etc. Learn <code>bash</code> or <code>zsh</code>. Learn how a combination of <code>find</code>, <code>grep</code>, and <code>xargs</code> can save your ass. It&rsquo;ll make your life easier as a developer, and it&rsquo;s vital when it comes to&hellip;</p>
-
-
-
 
 <h3>DevOps</h3>
 
-
-
-
 <p>Long ago, in a galaxy far, far, away, developers simply wrote application code and the systems that hosted and served that code were managed by a cabal of wizened neckbeards of the Sysadmin clan. Now, in our more enlightened (or is it benighted?) age, development and operations have blurred their lines and DevOps was born.</p>
-
-
-
 
 <p>In many cases, this is just an excuse for developers to be burdened with sysadmin duties; sometimes, it&rsquo;s perfectly sensible as many of the best deployment options are SaaS (Something-as-a-Service) thingamabobs. But it&rsquo;s important to get at least the basics.</p>
 
-
-
-
 <p>So when you&rsquo;re looking for someplace to put your pet project web apps, put them on <a href="http://heroku.com">Heroku</a>. It&rsquo;s free for a single web dyno and no workers, and many of the &ldquo;add-ons&rdquo; (like Postgres, Redis, ElasticSearch, etc.) that are technologies you might want to play with have free tiers as well.</p>
-
-
-
 
 <p><a href="http://aws.amazon.com/">Amazon Web Services</a> is Level 80 territory as far as I&rsquo;m concerned, but if you get into the DevOps thing, and want to experiment with tools like <a href="http://www.opscode.com/chef/">Chef</a>, they&rsquo;ll also give you some free time with EC2 instances to play around.</p>
 
-
-
-
 <h3>Summary</h3>
 
-
-
-
 <p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
-
 ]]></content>
   </entry>
   
@@ -148,100 +80,44 @@
     <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
     <updated>2013-11-12T00:27:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
-    <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
-
-
-
+    <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
 
 <p>So you&rsquo;ve been working through some of those excellent online resources, like <a href="http://learncodethehardway.org/">Learn Code The Hard Way</a>, or <a href="http://codeschool.com">Code School</a>, or whatever. You think you can build something now, and you want to get out there in the world and hack things better, but there&rsquo;s this one little problem&hellip; you have a degree in Philosophy or Psychology or no degree at all, and no résumé-worthy coding experience.</p>
 
-
-
-
 <h4>Not. A. Problem.</h4>
-
-
-
 
 <p>Well, not necessarily a problem. There&rsquo;s an easy solution. Just. Get. Hacking.</p>
 
-
-
-
 <p>So you don&rsquo;t know about XP, Agile, Scrum, Kanban, Waterfall&hellip; there&rsquo;s always <a href="http://programming-motherfucker.com/">Programming, Motherfucker</a>.</p>
-
-
-
 
 <p>So you haven&rsquo;t built an Enterprise Expert System with the AbstractVisitorFactoryAntiPatternCringeGenerator pattern&hellip; I told you to make an account on <a href="https://github.com">Github</a>, didn&rsquo;t I? And I know you take my advice because you&rsquo;re building actual goddamn software.</p>
 
-
-
-
 <p>Put your stuff on Github. Ask for help on IRC.</p>
 
-
-
-
 <p>Find projects that interest you, fork &lsquo;em, submit pull requests. Lots of projects even have issues labeled as &ldquo;suitable for n00bs&rdquo;.</p>
-
-
-
 
 <!-- more -->
 
 
-
-
 <h4>The Enterprise Dilemma</h4>
 
-
-
-
-<p><span class='pullquote-right' data-pullquote='I can tell you something about those places. You don&#8217;t want to work there.'>
-Okay, sure. There are places out there that care more about your résumé and pedigree than your coding chops. I can tell you something about those places. You don&rsquo;t want to work there. I mean, getting your foot in the door is a good thing and all, but in the long run, you&rsquo;ll hate your life and maybe even learn to hate coding, and I don&rsquo;t want to see you go down that road. There are so many of us who narrowly escaped that kind of enviroment that we could form our own support group. Don&rsquo;t even worry about it.
-</span></p>
-
-
-
+<p>Surround your pullquote like this {&#8221; text to be quoted &#8220;}</p>
 
 <p>Any shop worth working at cares so much more about your coding chops, your potential, your intelligence than bullshit like résumés and academic credentials that if you can demonstrate your ability and still don&rsquo;t get the job, it&rsquo;s a blessing.</p>
 
-
-
-
 <p>On the other hand, you <em>do</em> need a first coding job. And if you&rsquo;re not getting it based on your Github activity, you&rsquo;re probably getting it based on nepotism.</p>
-
-
-
 
 <p>How does this happen? Still goes back to Github, IRC, meetups, etc. So go to some meetups. Talk to people, go to the pub nights, go to the open hack nights. Hack on open source projects, submit pull requests, get in on some projects that will get you recognized. Eventually, you&rsquo;ll have hacker friends who will hire you or recommend you to take over their shitty Enterprise jobs that you can use to build your résumé should you go down that route. It&rsquo;s not that hard. Hang out with nerds, learn the craft, make connections. Programming is one of the few fields where it really is <em>what you know,</em> but who you know can help too. But those connections are best made by being a badass hacker.</p>
 
-
-
-
 <h4>Open Source is the Key</h4>
-
-
-
 
 <p>At the end of the day, though, even if you do all sorts of networking at confs and meetups and the like, you need a strong presence in the Open Source community. I can&rsquo;t emphasize this enough: <strong>PUT YOUR CODE ON GITHUB.</strong></p>
 
-
-
-
 <p>Or Bitbucket or whatever if you prefer, but open source that shit, get other people involved, and get involved in other people&rsquo;s projects.</p>
-
-
-
 
 <p>I&rsquo;m in the position of having to evaluate and hire developers at <a href="http://anestuary.com">An Estuary</a>, and since I want to run the dev shop I wish existed, I&rsquo;m trying to hire that way. When we list positions, we require a Github URL because I want to see what you do, not what your former employers think of you. I assume they&rsquo;re &ldquo;former&rdquo; (or soon-to-be &ldquo;former&rdquo;) for good reason. When we interview you, I want to talk about your code, not your former supervisor&rsquo;s probable inferiority complex.</p>
 
-
-
-
 <p>In summary, just get hacking. Just keep hacking. Build cool shit. Show it to the world. Talk to other nerds. Maybe try some remote pairing (Tweeting with the hashtag #pairwithme is often productive). But just make stuff. Then show me what you can do when you want a job. If you start off with a great company, that should be all you need.</p>
-
 ]]></content>
   </entry>
   
@@ -252,73 +128,32 @@ Okay, sure. There are places out there that care more about your résumé and pe
     <id>http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer</id>
     <content type="html"><![CDATA[<p>I get it. You went to college, graduated, got a job, and it&rsquo;s not what you wanted, hoped for, or whatever. Or maybe you&rsquo;ve been in the same job for years, and it&rsquo;s just no fun anymore. And you look at your friends who are hackers. Yeah, we&rsquo;re anti-social, maybe kinda jerks, but we have <em>so much fun</em> at work, and get pretty well compensated for <em>playing.</em></p>
 
-
-
-
 <p>And maybe you think, &ldquo;I&rsquo;ll go back to school and get a second B.S. in Computer Science!&rdquo;</p>
 
-
-
-
 <p>Chill out.</p>
-
-
-
 
 <p>Maybe you&rsquo;re just guessing this whole software thing is for you and you can&rsquo;t wait to get started!</p>
 
-
-
-
 <p>Chill out.</p>
-
-
-
 
 <p>I&rsquo;m going to encourage you, don&rsquo;t get me wrong. But I&rsquo;m also going to encourage you to be realistic. Because I want you to be successful, not just to sprint down a blind alley. We&rsquo;ll get through this, together.</p>
 
-
-
-
 <h3>Lower your expectations</h3>
-
-
-
 
 <p>Look, it&rsquo;s not all rainbows, lollipops and gumdrops. It&rsquo;s not. For me, coding is a pleasure and a privilege, but it&rsquo;s not for everyone. There are <em>extremely shitty jobs</em> out there, doing what I do, and just because I&rsquo;m on cloud nine, doesn&rsquo;t mean you will be.</p>
 
-
-
-
 <p>Furthermore, even though it&rsquo;s a demand-side market (there are far more job openings than talented developers), the really great jobs are still competitive as hell.</p>
-
-
-
 
 <h3>Still here?</h3>
 
-
-
-
 <p>I haven&rsquo;t dissuaded you? Good. Good, young padawan.</p>
-
-
-
 
 <!-- more -->
 
 
-
-
 <p>Since (for the couple of people toward whom this post is targeted directly) I haven taken it upon myself to train you as your Jedi master, I&rsquo;m going to point you toward <a href="http://ruby-lang.org" title="Ruby">Ruby</a> as your first language. It&rsquo;s not a perfect language, but it is beautiful, and presents a useful paradigm (object-oriented programming) in the purest form possible. So let&rsquo;s start with some Ruby resources.</p>
 
-
-
-
 <p>Here&rsquo;s your pre-frosh curriculum:</p>
-
-
-
 
 <ul>
 <li><a href="http://tryruby.org" title="Try Ruby">Try Ruby</a> &ndash; Learn the basics, in your browser!</li>
@@ -327,87 +162,37 @@ Okay, sure. There are places out there that care more about your résumé and pe
 </ul>
 
 
-
-
 <h3>Really? <em>Still</em> Interested?</h3>
-
-
-
 
 <p>That&rsquo;s fuckin&#8217; awesome. I&rsquo;m really happy you&rsquo;re still into this.</p>
 
-
-
-
 <p>Now I get to knock you on your ass, grasshopper. Hopefully you&rsquo;ve read my blog (or know me) enough to know how I feel about learning to build &ldquo;apps&rdquo; without a firm grounding in the fundamentals of computer science. So we&rsquo;re going address this right the hell now.</p>
-
-
-
 
 <p>See, you didn&rsquo;t major in Computer Science. That&rsquo;s okay, niether did I. But that doesn&rsquo;t mean you get a pass on it. We&rsquo;re going to look at some resources to get you the grounding you need to really get up to snuff on the shit you&rsquo;d better know if you want to be a Real Programmer™.</p>
 
-
-
-
 <p>Let&rsquo;s get started.</p>
-
-
-
 
 <p>The first thing you need is math. I&rsquo;m not talking your standard college Calculus or Algebra stuff, but the Real Math you need as a real programmer. So here&rsquo;s the deal: read <a href="http://en.wikipedia.org/wiki/Concrete_Mathematics" title="Concrete Mathematics">Concrete Mathematics</a>.</p>
 
-
-
-
-<p><img class="[float-right]" src="http://ecx.images-amazon.com/images/I/518GBVWEBYL.jpg" title="Concrete Mathematics" ></p>
-
-
-
+<p><img class="[float-right] <a" src="href="http://ecx.images-amazon.com/images/I/518GBVWEBYL.jpg">http://ecx.images-amazon.com/images/I/518GBVWEBYL.jpg</a>&#8221; title=&#8221;Concrete Mathematics&#8221; ></p>
 
 <p>This book, let me tell you, it was co-written by <a href="http://en.wikipedia.org/wiki/Donald_Knuth" title="Donald Knuth">Knuth</a>, because, let me tell you, Knuth weighed all the extant math texts in the balance and found them lacking. And if Knuth finds you lacking&hellip; jsut go home. This book tricks you into learning both algorithmic estimation and recursion in chapter one and never looks back. It is indispensible.</p>
 
-
-
-
 <p>Next, you need to grok a few things: computability theory, Turing machines, syntax and semantics, etc. Once upon a time, I would have shoved a copy of <a href="http://mitpress.mit.edu/sicp/" title="SICP">The Structure and Interpretation of Computer Programs</a> in your face so fast, it would have made your head spin.</p>
 
-
-
-
-<p><img class="[float-right]" src="http://upload.wikimedia.org/wikipedia/en/9/9d/SICP_cover.jpg" title="SICP" ></p>
-
-
-
+<p><img class="[float-right] <a" src="href="http://upload.wikimedia.org/wikipedia/en/9/9d/SICP_cover.jpg">http://upload.wikimedia.org/wikipedia/en/9/9d/SICP_cover.jpg</a>&#8221; title=&#8221;SICP&#8221; ></p>
 
 <p>But, young padawan, I&rsquo;ve decided to ease you into your Jedi training, and we&rsquo;ve settled on Ruby as your focus of practice before you graduate to the full Lisp light saber, so let&rsquo;s consider an alternative.</p>
 
-
-
-
 <p><a href="http://oreilly.com/" title="O'Reilly">O&#8217;reilly</a> recently published an excellent intro to CS book called <a href="http://shop.oreilly.com/product/0636920025481.do" title="Understanding Computation">Understanding Computation</a>, which covers about half the material in SICP, but in Ruby, and probably more acessibly than SICP (aka The Wizard Book), especially since you (by now) have a passing familiarity with Ruby.</p>
-
-
-
 
 <p>So let&rsquo;s see&hellip; we&rsquo;ve got you started on Ruby, given you some good resources on the basics of CS, and you&rsquo;re on your way&hellip; what next?</p>
 
-
-
-
 <h3>Resources</h3>
-
-
-
 
 <p>Now we get into the areas where you&rsquo;re exploring on your own, and just coming back to me for help and guidance. Congratualtions! You&rsquo;re nearly ready to graduate to a full Jedi.</p>
 
-
-
-
 <p>Let&rsquo;s see what&rsquo;s available.</p>
-
-
-
 
 <ul>
 <li><a href="http://codeschool.com/" title="Code School">Code School</a> is really great, and completely worth the US$25 a month they charge for their entire course catalog.</li>
@@ -417,15 +202,9 @@ Okay, sure. There are places out there that care more about your résumé and pe
 </ul>
 
 
-
-
 <p>I&rsquo;ll try to update this in the future. And you know you can always get in touch and I&rsquo;m more than happy to give you a hand. There&rsquo;s nothing more exciting to me than smart folks falling in love with coding. Happy trails, bro, and remember to keep it fun.</p>
 
-
-
-
-<p><em>Update: I&rsquo;ve posted a follow-up at <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">&ldquo;Just Get Hacking&rdquo;</a></em></p>
-
+<p><em>Update: I&rsquo;ve posted a follow-up at <a href="/blog/2013/11/12/just-get-hacking/">&ldquo;Just Get Hacking&rdquo;</a></em></p>
 ]]></content>
   </entry>
   
