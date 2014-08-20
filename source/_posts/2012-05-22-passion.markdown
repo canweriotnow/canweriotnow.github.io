@@ -8,7 +8,7 @@ categories: coding, career
 
 I'm finally reading [Chad Fowler](http://www.chadfowler.com)'s excellent book, [The Passionate Programmer](http://pragprog.com/book/cfcar2/the-passionate-programmer), and in it he recounts an experience that was chillingly familiar.
 
-A music major, Chad fell into working at his university's IT department as if by accident. Initially, he was worried that his lack of professional experience or training would prove an embarrassment; after all, here he was working alongside people with advanced degrees in computer science. 
+A music major, Chad fell into working at his university's IT department as if by accident. Initially, he was worried that his lack of professional experience or training would prove an embarrassment; after all, here he was working alongside people with advanced degrees in computer science.
 
 
 > Within a few days of work, the truth started to sink in. These people don't know what the hell they're doing! In fact, some people were watching me work and taking notes! People with master's degrees in computer science!
@@ -28,14 +28,14 @@ Our director actually is pretty fantastic, but my naïve illusions about these o
 
 ## Meet the developers
 
-Shortly after the re-org, I started working a day a week at the campus where most of IT is centered rather than the main university campus where I usually work. At first it was okay; everyone I met seemed nice enough, and they had better coffee than the break room back at my usual location. 
+Shortly after the re-org, I started working a day a week at the campus where most of IT is centered rather than the main university campus where I usually work. At first it was okay; everyone I met seemed nice enough, and they had better coffee than the break room back at my usual location.
 
 I think it was maybe the second time I went up there, I was eating lunch with some of of the devs from our new sister team, some of whom I was meeting for the first time. The conversation went something like this:
 
 Let's call my interlocutor Al.
 
 ------
-__Me:__ Hi, I'm Jason. 
+__Me:__ Hi, I'm Jason.
 
 __Al:__ Hi Jason, I'm Al. So what do you do?
 
@@ -57,11 +57,11 @@ This was actually pretty typical of many other developers I met up there. Not al
 
 Suffice to say, I lost interest in being in that environment pretty quickly. So when I moved later that year, I wasn't too upset that the difficulty of commuting to that campus made it impractical to work from there on a regular basis.
 
-I'm not sure I realized it at the time, but I think the attitude toward coding I saw in those developers is _absolutely_ reflected in their product. 
+I'm not sure I realized it at the time, but I think the attitude toward coding I saw in those developers is _absolutely_ reflected in their product.
 
 It's a mission-critical enterprise system which, to be fair, does its job effectively. But certainly _not_ elegantly.
 
-Like many projects here (and I'm sure it's not atypical of higher ed in general), that team works on a legacy, vendor-supplied product that has been customized, extended, and tweaked beyond recognition. 
+Like many projects here (and I'm sure it's not atypical of higher ed in general), that team works on a legacy, vendor-supplied product that has been customized, extended, and tweaked beyond recognition.
 
 My job isn't that different.
 
@@ -69,21 +69,21 @@ Except they have a team of 25 or so working on a project with a clunky, it's-obv
 
 Actually, not just users... one of the first pieces of my predecessor's code I looked at had a number of comments about this system, because my team has to pull data from it. I'll call that system HORUS (not its real name) for the purposes of illustration.
 
-``` perl horus-interface.pl
+{% codeblock lang:perl horus-interface.pl %}
 
     my @data = horus_data();
-    
+
     # I'm going to stab HORUS in the face.
-    
+
     my $converter = Text::Iconv->new("LATIN1","UTF8");
     $converter->set_attr("transliterate");
-    
+
     foreach my $record (@data) {
       # HORUS lies about UTF-16. It's actually UTF-8 sprinkled with high-bit ASCII chars. Ffs.
       $converter->convert($record);
-    
+
     }
-```
+{% endcodeblock %}
 
 The Perl is probably all wrong, but the comments are basically verbatim (other than the name, of course).
 
@@ -99,11 +99,11 @@ Dealing with legacy systems is hard, and often thankless. But it's no excuse. I 
 
 Not that I don't have some skeletons in the closet. Or, at least, some crawling, eldritch horrors in the codebase. The first application I wrote, for administrative users, is something I've been begging to rewrite, because I can't stand maintaining it. Someday that'll happen. Then I'll have decent test coverage and all the other things I wish I'd done right the first time.
 
-But the fact that (by my standards) a sloppy, poorly tested monstrosity is in production, and _I'm_ responsible for it... I literally lose sleep over this. 
+But the fact that (by my standards) a sloppy, poorly tested monstrosity is in production, and _I'm_ responsible for it... I literally lose sleep over this.
 
 I don't think Al even thinks about how stable, orthogonal, or DRY his code is when he commits it, much less once it's been running in production for a year and only breaks down or corrupts data on edge cases.
 
-It's not just that, though. 
+It's not just that, though.
 
 I will never trust a developer who only codes from 9 to 5. _Especially_ one who works on an enterprise-y system. Enterprise-y systems are rarely fun. So if you don't get your programming jollies at work (or, if jollies are an occasional perk rather than a frequent occurrence), you've got to get them hacking on an open source project, or some prototype for this crazy start-up you might do one day, right?
 
@@ -117,7 +117,7 @@ I have a feeling that developer apathy is the root cause of a _lot_ of bad softw
 
 
 
-If you are truly passionate about building beautiful, reliable systems that solve real problems for real people, you don't work 9 to 5. You go home and hack on open source projects. Maybe just for fun, maybe to learn something new, maybe to scratch an itch. Perhaps it's a library you want to use at work, but it just needs one more feature to be a good fit. 
+If you are truly passionate about building beautiful, reliable systems that solve real problems for real people, you don't work 9 to 5. You go home and hack on open source projects. Maybe just for fun, maybe to learn something new, maybe to scratch an itch. Perhaps it's a library you want to use at work, but it just needs one more feature to be a good fit.
 
 You read blogs and mailing lists to stay on top of the latest developments in the languages and frameworks you use, so you can use them more effectively.
 
@@ -149,11 +149,11 @@ I used to do a lot of Perl coding. I taught myself Perl in high school, and it w
 
 {% img float-right http://imgs.xkcd.com/comics/11th_grade.png %}
 
-I used Perl a lot, and though I never did fully grasp the full depth of references in Perl ( although that may actually [be an indicator of sanity](https://sites.google.com/site/steveyegge2/ancient-languages-perl)), I loved certain things about the philosophy. Or, at least, the philosophy behind the philosophy. The idea that the chief virtues of a programmer were [laziness, impatience, and hubris](http://c2.com/cgi/wiki?LazinessImpatienceHubris) struck a chord with me. If you read [Programming Perl](http://www.oreilly.com/catalog/pperl3/), a clear distinction is made between _true_ laziness, impatience, and hubris, and a false, _shallow_ laziness, impatience, and hubris. I think the true versions of these virtues stem from an even deeper virtue: passion. 
+I used Perl a lot, and though I never did fully grasp the full depth of references in Perl ( although that may actually [be an indicator of sanity](https://sites.google.com/site/steveyegge2/ancient-languages-perl)), I loved certain things about the philosophy. Or, at least, the philosophy behind the philosophy. The idea that the chief virtues of a programmer were [laziness, impatience, and hubris](http://c2.com/cgi/wiki?LazinessImpatienceHubris) struck a chord with me. If you read [Programming Perl](http://www.oreilly.com/catalog/pperl3/), a clear distinction is made between _true_ laziness, impatience, and hubris, and a false, _shallow_ laziness, impatience, and hubris. I think the true versions of these virtues stem from an even deeper virtue: passion.
 
 <iframe width="560" height="315" src="http://www.youtube.com/embed/Bz2-49q6DOI" frameborder="0" allowfullscreen></iframe>
 
-Passion is such a hackneyed concept nowadays that it has become almost meaningless. Which is maybe part of the reason I procrastinated for so long before picking up _The Passionate Programmer_ (sorry, Chad!). But I think in a very real sense, what the best developers have in common is a true _passion_ for writing code and building systems. 
+Passion is such a hackneyed concept nowadays that it has become almost meaningless. Which is maybe part of the reason I procrastinated for so long before picking up _The Passionate Programmer_ (sorry, Chad!). But I think in a very real sense, what the best developers have in common is a true _passion_ for writing code and building systems.
 
 
 > **Passion** (from the Ancient Greek verb πάσχω (paskho) meaning to suffer) is a term applied to a very strong feeling about a person or thing. Passion is an intense emotion compelling feeling, enthusiasm, or desire for something.
@@ -164,7 +164,7 @@ I think those of us who truly care do _suffer_ for our software. We drive oursel
 
 ## Conclusion
 
-We have enough mediocre developers. If we ever don't have a local surplus, there are plenty waiting in the wings. That's what off-shoring is for. 
+We have enough mediocre developers. If we ever don't have a local surplus, there are plenty waiting in the wings. That's what off-shoring is for.
 
 If you're thinking of learning to code because it seems like a solid career choice, rather than out of an inner compulsion, [please don't](http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html).
 

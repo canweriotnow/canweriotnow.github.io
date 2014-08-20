@@ -10,7 +10,7 @@ Two of the best presentations at RailsConf this year, **Designing Hypermedia API
 
 <iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/UlMpIHH1K5s" frameborder="0" allowfullscreen></iframe>
 
-The two big takeaways from these talks (for me, at least): 
+The two big takeaways from these talks (for me, at least):
 
 1. We've come a long way in designing in implementing APIs. But now we're to the "hard part": Going from REST to true hypermedia.
 2. Rails is really, really good at creating de facto standards via "convention over configuration." But we don't go far enough, and that's where we shoot ourselves in the foot (think ActiveResource).
@@ -27,21 +27,21 @@ So what is to be done?
 
 ### HATEOAS
 
-Yeah, there it is. **Hypermedia As The Engine Of Application State.** That last layer of REST that we'd rather not think about, much less try to implement. 
+Yeah, there it is. **Hypermedia As The Engine Of Application State.** That last layer of REST that we'd rather not think about, much less try to implement.
 
-We know better, but we do all sorts of crazy things in order _not_ to do it right. One of the most common sins (I'm guilty myself) is embedding nested resources inside of the requested resource. 
+We know better, but we do all sorts of crazy things in order _not_ to do it right. One of the most common sins (I'm guilty myself) is embedding nested resources inside of the requested resource.
 
 What's wrong with embedding, for instance, comments in the JSON representation of an article?
 
 If nothing else, when I request an article, I'm requesting a specific representation of a specific resource. I don't necessarily *want* all of its child resources or other associations. I should *know* about them, but not forced to accept them.
 
-Furthermore, 
+Furthermore,
 
 I really like the example Steve used of implementing a `links` array in the returned object:
 
-```json Sample response http://steveklabnik.github.com/hypermedia-presentation/#47
+{% codeblock lang:json Sample response http://steveklabnik.github.com/hypermedia-presentation/#47 %}
 
-request("http://w3clove.com/api/", 
+request("http://w3clove.com/api/",
   "application/vnd.w3clove.validation+json")
 # =>
 {
@@ -51,9 +51,9 @@ request("http://w3clove.com/api/",
   ]
 }
 
-```
+{% endcodeblock %}
 
-What's especially interesting here is the Content-type: `application/vnd.w3clove.validation+json`. That was another big takeaway: I was unaware of the `vnd` prefix for defining your own content-types, rather than waiting (and waiting, and waiting...) for the W3C to define a standard. 
+What's especially interesting here is the Content-type: `application/vnd.w3clove.validation+json`. That was another big takeaway: I was unaware of the `vnd` prefix for defining your own content-types, rather than waiting (and waiting, and waiting...) for the W3C to define a standard.
 
 {% img float-right http://imgs.xkcd.com/comics/standards.png %}
 
@@ -67,14 +67,14 @@ I want to go a little further into why links > nested resources.
 
 Let's say you have an `Article` class, which `has_many :comments` and `has_and_belongs_to_many :tags` You might think it's a good idea to do this:
 
-```ruby article.rb
+{% codeblock lang:ruby article.rb %}
 
 class Article < ActiveRecord::Base
 
   has_many :comments
   has_and_belongs_to_many :tags
   belongs_to :user
-  
+
   def as_json(options={})
     options[:include] = {:comments => [], :tags => []}
     options[:except] = :user_id
@@ -83,11 +83,11 @@ class Article < ActiveRecord::Base
 
 end
 
-```
+{% endcodeblock %}
 
 It's not necessarily terrible, but it's not optimal. Normally you might get back:
 
-```json
+{% codeblock lang:json %}
 
 {
   article: {
@@ -108,7 +108,7 @@ It's not necessarily terrible, but it's not optimal. Normally you might get back
   }
 }
 
-```
+{% endcodeblock %}
 
 This might be okay until you end up with hundreds of long-winded comments about where to find the best kefir in Portland. And what if your client wants to follow the tags to find similar articles? Sure, they can assume you're following rails conventions for URIs and try to get "http://example.org/tags/3", but there's no guarantee that's what you're doing, and it's expecting too much of the client. What if you want to find more by the same author? you've decided in advance your clients don't need to see the user_id.
 
@@ -120,7 +120,7 @@ It occurred to me that there's an (imperfect) metaphor for this: pass-by-value v
 
 ### Tradeoffs
 
-There are definitely some potential latency-induced pitfalls here. By leaving the task of requesting the appropriate representations of the appropriate resources to the client, we're buying decoupling and a reduction in unnecessary database activity at the potential cost of *many* more HTTP requests. 
+There are definitely some potential latency-induced pitfalls here. By leaving the task of requesting the appropriate representations of the appropriate resources to the client, we're buying decoupling and a reduction in unnecessary database activity at the potential cost of *many* more HTTP requests.
 
 This might be true. But it just highlights a need that already existed: we really, really need to optimize HTTP. We need to use [keep-alive and pipelining](http://www.igvita.com/2011/10/04/optimizing-http-keep-alive-and-pipelining/), and we need to understand [TCP slow-start](http://www.igvita.com/2011/10/20/faster-web-vs-tcp-slow-start/). Among other things.
 
