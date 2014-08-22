@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gems | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/gems/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-20T10:21:39-04:00</updated>
+  <updated>2014-08-22T14:30:17-07:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Have A Happy #Whyday with whynot]]></title>
     <link href="http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/"/>
-    <updated>2014-08-19T21:26:36-04:00</updated>
+    <updated>2014-08-19T18:26:36-07:00</updated>
     <id>http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot</id>
     <content type="html"><![CDATA[<p>It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
 from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
@@ -87,7 +87,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[job_interview]]></title>
     <link href="http://decomplecting.org/blog/2012/05/09/job-interview/"/>
-    <updated>2012-05-09T13:14:00-04:00</updated>
+    <updated>2012-05-09T13:14:00-07:00</updated>
     <id>http://decomplecting.org/blog/2012/05/09/job-interview</id>
     <content type="html"><![CDATA[<p>So, I wanted to plug a little project that
 <a href="https://twitter.com/#!/micahjgates">Micah Gates</a> and I hacked together at

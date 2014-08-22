@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-20T10:21:39-04:00</updated>
+  <updated>2014-08-22T14:30:17-07:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Hour of Code: Voight-Kampff for Hackers?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/"/>
-    <updated>2013-12-11T20:20:00-05:00</updated>
+    <updated>2013-12-11T20:20:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
     <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
 
@@ -73,7 +73,7 @@
   <entry>
     <title type="html"><![CDATA[Apple: The Obstacle to America's Future?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future/"/>
-    <updated>2013-12-09T22:32:00-05:00</updated>
+    <updated>2013-12-09T22:32:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
     <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
@@ -119,7 +119,7 @@
   <entry>
     <title type="html"><![CDATA[Github Matters - Followup]]></title>
     <link href="http://decomplecting.org/blog/2013/11/20/github-matters-followup/"/>
-    <updated>2013-11-20T23:36:00-05:00</updated>
+    <updated>2013-11-20T23:36:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/11/20/github-matters-followup</id>
     <content type="html"><![CDATA[<h4>Mea Culpa</h4>
 
@@ -179,7 +179,7 @@
   <entry>
     <title type="html"><![CDATA[So Github Is Not Your CV.  It Still Matters]]></title>
     <link href="http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/"/>
-    <updated>2013-11-19T21:22:00-05:00</updated>
+    <updated>2013-11-19T21:22:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters</id>
     <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
 
@@ -252,7 +252,7 @@
   <entry>
     <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
     <link href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/"/>
-    <updated>2013-11-13T00:09:00-05:00</updated>
+    <updated>2013-11-13T00:09:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
     <content type="html"><![CDATA[<h3>The Important Stuff</h3>
 

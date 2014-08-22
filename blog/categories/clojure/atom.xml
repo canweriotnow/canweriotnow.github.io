@@ -4,7 +4,7 @@
   <title><![CDATA[Category: clojure | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-20T10:21:39-04:00</updated>
+  <updated>2014-08-22T14:30:17-07:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[PAM Authentication Beyond The Desktop]]></title>
     <link href="http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
-    <updated>2013-03-08T20:11:00-05:00</updated>
+    <updated>2013-03-08T20:11:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
     <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&rsquo;s useful for so much more.</p>
 
@@ -62,7 +62,7 @@
   <entry>
     <title type="html"><![CDATA[DateTime Conversions in Clojure]]></title>
     <link href="http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/"/>
-    <updated>2013-02-03T14:18:00-05:00</updated>
+    <updated>2013-02-03T14:18:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
     <content type="html"><![CDATA[<p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
 
@@ -396,7 +396,7 @@
   <entry>
     <title type="html"><![CDATA[DCI: The Right Idea for The Wrong Paradigm]]></title>
     <link href="http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/"/>
-    <updated>2013-01-03T01:10:00-05:00</updated>
+    <updated>2013-01-03T01:10:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I&rsquo;ve seen, however, is Tony Arcieri&rsquo;s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">&ldquo;DCI&rdquo; in Ruby Is Compeltely Broken</a>.</p>
 

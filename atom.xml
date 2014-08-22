@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-20T10:21:39-04:00</updated>
+  <updated>2014-08-22T14:30:17-07:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -14,9 +14,49 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Fear and Coding in Las Vegas]]></title>
+    <link href="http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas/"/>
+    <updated>2014-08-22T14:11:52-07:00</updated>
+    <id>http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m sitting in the first session of the <a href="http://code.org">Code.org</a> K-5 PD
+training workshop.</p>
+
+<p>It&rsquo;s my first time in Las Vegas. We went to In-N-Out Burger (required if I
+travel out west), and I hit a $2k jackpot on penny slots. Not bad. And now
+we&rsquo;re getting an overview of the K-5 Code.org curriculum. It&rsquo;s pretty exciting.</p>
+
+<p>I learned to code when I was 5. Learning BASIC on a TI 99/4A. This is pretty much
+my first computer:</p>
+
+<p><img src="http://www.digibarn.com/collections/systems/ti99-4a-beige/Image84.jpg"></p>
+
+<!-- more -->
+
+
+<p>I love this idea. I receive constant shit from friends, family, co-workers,
+whatever, that the fact that I started hacking at 5 is probably more scary and
+off-putting when I talk about promoting CS education in K-5 (which is why I&rsquo;m
+in Vegas, thanks to Code.org).</p>
+
+<p>But Real Soon Now™ everyone is going ot start coding at 5, and on somethimg way
+more sphisticated than a Texas Instruments 99/4A.</p>
+
+<p><a href="https://code.org/about/leadership/hadi_partovi">Hadi Partovi</a> is describing how
+much &ldquo;cooler&rdquo; coding is becoming as I type. I&rsquo;m glad. I can&rsquo;t wait to start
+teaching this Code.org curriculum. Coding isn&rsquo;t just for white boys in hoodies,
+It&rsquo;s not some thing for introverted nerds (well, we might have invented it, but
+  we&rsquo;re happy to share).</p>
+
+<p>So it&rsquo;s very exciting, and I&rsquo;m so happy to be a part of it.</p>
+
+<p>Hackers. Hackers everywhere.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Have A Happy #Whyday with whynot]]></title>
     <link href="http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/"/>
-    <updated>2014-08-19T21:26:36-04:00</updated>
+    <updated>2014-08-19T18:26:36-07:00</updated>
     <id>http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot</id>
     <content type="html"><![CDATA[<p>It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
 from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
@@ -73,7 +113,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[On Comments And Moderation]]></title>
     <link href="http://decomplecting.org/blog/2014/06/10/on-comments-and-moderation/"/>
-    <updated>2014-06-10T15:01:23-04:00</updated>
+    <updated>2014-06-10T12:01:23-07:00</updated>
     <id>http://decomplecting.org/blog/2014/06/10/on-comments-and-moderation</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve always taken a hands-off approach to moderating comments, feeling that it was a form of censorship to restrict discussion even on my own blog. It&rsquo;s worked pretty well; I feel like prior to yesterday, I&rsquo;ve deleted less than three comments in the three years I&rsquo;ve maintained this blog.</p>
 
@@ -127,7 +167,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[I'm Telling :: Employer-Tattling and The Decline of Agency]]></title>
     <link href="http://decomplecting.org/blog/2014/06/09/im-telling/"/>
-    <updated>2014-06-09T10:03:36-04:00</updated>
+    <updated>2014-06-09T07:03:36-07:00</updated>
     <id>http://decomplecting.org/blog/2014/06/09/im-telling</id>
     <content type="html"><![CDATA[<p>The other night Twitter was abuzz with controversy and drama, as per usual. One of those threads (which I&rsquo;ll get to momentarily) invovled what I&rsquo;ll refer to as &ldquo;employer-tattling,&rdquo; and <a href="https://twitter.com/soederpop">Jon Soeder</a> (laudably without drawing attention to the ongoing echo chamber), tweeted this:</p>
 
@@ -221,7 +261,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[Scream When You Learn]]></title>
     <link href="http://decomplecting.org/blog/2014/03/11/scream-when-you-learn/"/>
-    <updated>2014-03-11T22:39:38-04:00</updated>
+    <updated>2014-03-11T19:39:38-07:00</updated>
     <id>http://decomplecting.org/blog/2014/03/11/scream-when-you-learn</id>
     <content type="html"><![CDATA[<p><em>Apologies to Charles Bukowski</em></p>
 
@@ -265,7 +305,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[Discussing Privilege: EduCon Reflections #1]]></title>
     <link href="http://decomplecting.org/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/"/>
-    <updated>2014-01-27T20:52:36-05:00</updated>
+    <updated>2014-01-27T17:52:36-08:00</updated>
     <id>http://decomplecting.org/blog/2014/01/27/discussing-privilege-educon-reflections-number-1</id>
     <content type="html"><![CDATA[<p>While I&rsquo;m planning a full &ldquo;overview&rdquo; reflection on <a href="http://educonphilly.org">EduCon 2.6</a>, I was (pardon the pun) privileged to participate in a conversation entitled <a href="http://educonphilly.org/conversations/The_Privileged_Voices_in_Education">&ldquo;The Privileged Voices in Education&rdquo;</a>, facilitated by <a href="https://twitter.com/audreywatters">Audrey Watters</a> and <a href="https://twitter.com/TheJLV">Jose Vilson</a>. Audrey has written about the session on <a href="http://www.hackeducation.com/2014/01/26/the-privileged-voices-in-education-educon/?utm_content=buffer01abf&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">her blog</a>, and Jose has written about it on <a href="http://thejosevilson.com/educon-addressing-privilege-developing-learners-race/">his blog</a>, so you can refer to those for context. But I want to talk about my takeaways from that wonderful session and what came after while it&rsquo;s fresh in my mind, and then work on a more general EduCon post.</p>
 
@@ -371,7 +411,7 @@ This was the dialogue I want to have about privilege. We discussed and defined p
   <entry>
     <title type="html"><![CDATA[New from Ruby Jokes: taint_aliases]]></title>
     <link href="http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/"/>
-    <updated>2014-01-23T20:08:13-05:00</updated>
+    <updated>2014-01-23T17:08:13-08:00</updated>
     <id>http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases</id>
     <content type="html"><![CDATA[<p>The <a href="https://github.com/ruby-jokes">Ruby Jokes</a> team has a new gem for you that was designed, tested, and released in about an hour this afternoon: <a href="http://ruby-jokes.github.io/taint_aliases">taint_aliases</a>. You can get the full details <a href="https://github.com/ruby-jokes/taint_aliases">on GitHub</a>, but I thought a friendly introduction might make for an enlightening blog post.</p>
 
@@ -442,7 +482,7 @@ This was the dialogue I want to have about privilege. We discussed and defined p
   <entry>
     <title type="html"><![CDATA[Goodbye AT&amp;T, Hello T-Mobile?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/23/goodbye-at-and-t/"/>
-    <updated>2013-12-23T21:05:00-05:00</updated>
+    <updated>2013-12-23T21:05:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/12/23/goodbye-at-and-t</id>
     <content type="html"><![CDATA[<p>So I&rsquo;m curious about this <a href="http://guardianlv.com/2013/12/t-mobile-uncarrier-4-0-reportedly-will-buyout-contracts-when-switching/">Uncarrier 4.0</a> thing rumoured to be rolled out by <a href="http://www.t-mobile.com/">T-Mobile</a> in the near future&hellip; I&rsquo;ve considered ditching <a href="http://www.att.com/shop/wireless.html">AT&amp;T Wireless</a> many times, but keep getting dragged back in by upgrades, which seem to take longer and longer to happen.</p>
 
@@ -466,7 +506,7 @@ This was the dialogue I want to have about privilege. We discussed and defined p
   <entry>
     <title type="html"><![CDATA[Hour of Code: Voight-Kampff for Hackers?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/"/>
-    <updated>2013-12-11T20:20:00-05:00</updated>
+    <updated>2013-12-11T20:20:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
     <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
 
@@ -526,7 +566,7 @@ So this &ldquo;Hour of Code&rdquo; thing. I thought it was a cute idea at first,
   <entry>
     <title type="html"><![CDATA[Apple: The Obstacle to America's Future?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future/"/>
-    <updated>2013-12-09T22:32:00-05:00</updated>
+    <updated>2013-12-09T22:32:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
     <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
@@ -574,7 +614,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[Github Matters - Followup]]></title>
     <link href="http://decomplecting.org/blog/2013/11/20/github-matters-followup/"/>
-    <updated>2013-11-20T23:36:00-05:00</updated>
+    <updated>2013-11-20T23:36:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/11/20/github-matters-followup</id>
     <content type="html"><![CDATA[<h4>Mea Culpa</h4>
 
@@ -634,7 +674,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[So Github Is Not Your CV.  It Still Matters]]></title>
     <link href="http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/"/>
-    <updated>2013-11-19T21:22:00-05:00</updated>
+    <updated>2013-11-19T21:22:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters</id>
     <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
 
@@ -707,7 +747,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
     <link href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/"/>
-    <updated>2013-11-13T00:09:00-05:00</updated>
+    <updated>2013-11-13T00:09:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
     <content type="html"><![CDATA[<h3>The Important Stuff</h3>
 
@@ -769,7 +809,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[Just Get Hacking]]></title>
     <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
-    <updated>2013-11-12T00:27:00-05:00</updated>
+    <updated>2013-11-12T00:27:00-08:00</updated>
     <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
     <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
 
@@ -817,7 +857,7 @@ Okay, sure. There are places out there that care more about your résumé and pe
   <entry>
     <title type="html"><![CDATA[Maybe EdTech Is Another Leaky Abstraction]]></title>
     <link href="http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/"/>
-    <updated>2013-09-30T20:26:00-04:00</updated>
+    <updated>2013-09-30T20:26:00-07:00</updated>
     <id>http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction</id>
     <content type="html"><![CDATA[<p>Working in the EdTech sector, I&rsquo;m perpetually vexed as I try to determine what exactly &ldquo;EdTech&rdquo; is and, <em>a fortiori,</em> what <em>effective</em> EdTech should look like. Perhaps a little background might be in order.</p>
 
@@ -876,7 +916,7 @@ For me, it&rsquo;s fairly simple. Technology is successful where it both disrupt
   <entry>
     <title type="html"><![CDATA[Letter to a Young (Or New) Programmer]]></title>
     <link href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/"/>
-    <updated>2013-09-29T00:15:00-04:00</updated>
+    <updated>2013-09-29T00:15:00-07:00</updated>
     <id>http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer</id>
     <content type="html"><![CDATA[<p>I get it. You went to college, graduated, got a job, and it&rsquo;s not what you wanted, hoped for, or whatever. Or maybe you&rsquo;ve been in the same job for years, and it&rsquo;s just no fun anymore. And you look at your friends who are hackers. Yeah, we&rsquo;re anti-social, maybe kinda jerks, but we have <em>so much fun</em> at work, and get pretty well compensated for <em>playing.</em></p>
 
@@ -963,7 +1003,7 @@ For me, it&rsquo;s fairly simple. Technology is successful where it both disrupt
   <entry>
     <title type="html"><![CDATA[Return of the Job Destroyer]]></title>
     <link href="http://decomplecting.org/blog/2013/09/02/return-of-the-job-destroyer/"/>
-    <updated>2013-09-02T21:57:00-04:00</updated>
+    <updated>2013-09-02T21:57:00-07:00</updated>
     <id>http://decomplecting.org/blog/2013/09/02/return-of-the-job-destroyer</id>
     <content type="html"><![CDATA[<h3><em>Or, &ldquo;Human Contact as a Premium Service&rdquo;</em></h3>
 
@@ -1108,7 +1148,7 @@ And herein lies my central argument: If there can be described a finite-state ma
   <entry>
     <title type="html"><![CDATA[The Importance of "Aaron's Law"]]></title>
     <link href="http://decomplecting.org/blog/2013/06/21/the-importance-of-aarons-law/"/>
-    <updated>2013-06-21T11:42:00-04:00</updated>
+    <updated>2013-06-21T11:42:00-07:00</updated>
     <id>http://decomplecting.org/blog/2013/06/21/the-importance-of-aarons-law</id>
     <content type="html"><![CDATA[<p>Yesterday, Rep. Zoe Lofgren and Rep. Ron Wyden introduced a bill, known as &ldquo;Aaron&rsquo;s Law&rdquo;, which amends the <a href="http://en.wikipedia.org/wiki/Computer_Fraud_and_Abuse_Act">Computer Fraud and Abuse Act (CFAA)</a>, a 1986 bil which set most of the &ldquo;cybercrime&rdquo; statutes on the books today. This law, affectionately known as <a href="http://www.gpo.gov/fdsys/pkg/USCODE-2010-title18/html/USCODE-2010-title18-partI-chap47-sec1030.htm">U.S. Code Title 18, Part I, Chapter 47, §1030</a>, has been added to many times over the years (via the PATRIOT Act, and various bills related to issues of identity theft, etc.), but the substantial core of the bill has remained the same since 1986: vague, ominous, overly broad, and a rampant playground for prosecutorial misconduct.</p>
 
@@ -1150,7 +1190,7 @@ And herein lies my central argument: If there can be described a finite-state ma
   <entry>
     <title type="html"><![CDATA[We're Not Ready To Teach Kids To Code]]></title>
     <link href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/"/>
-    <updated>2013-06-02T23:22:00-04:00</updated>
+    <updated>2013-06-02T23:22:00-07:00</updated>
     <id>http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code</id>
     <content type="html"><![CDATA[<h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
 
@@ -1251,7 +1291,7 @@ And herein lies my central argument: If there can be described a finite-state ma
   <entry>
     <title type="html"><![CDATA[I'm An Estuarian!]]></title>
     <link href="http://decomplecting.org/blog/2013/05/14/im-an-estuarian/"/>
-    <updated>2013-05-14T23:40:00-04:00</updated>
+    <updated>2013-05-14T23:40:00-07:00</updated>
     <id>http://decomplecting.org/blog/2013/05/14/im-an-estuarian</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been a while since my last post, because the last few weeks have been just a little crazy.</p>
 
@@ -1262,63 +1302,6 @@ And herein lies my central argument: If there can be described a finite-state ma
 <p>So stay on the lookout for An Estuary&hellip; the sky&rsquo;s the limit, folks. I&rsquo;d forgotten what it was like to wake up in the morning and being excited to get to work. Now I remember. It&rsquo;s an amazing feel, and this is an amazing time. And I work with the <a href="http://anestuary.weebly.com/1/post/2013/05/a-great-team.html">best people I could hope to work with.</a></p>
 
 <p>Life is good.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Be Willing To Let Go; or, "The Big Rewrite"]]></title>
-    <link href="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/"/>
-    <updated>2013-04-05T02:10:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go</id>
-    <content type="html"><![CDATA[<blockquote><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p><footer><strong>Alan J. Perlis</strong></footer></blockquote>
-
-
-<p>One of the most nerve-wracking things you can tell a manager is that it&rsquo;s time to rewrite a major software component, system, or application. In fact, it&rsquo;s considered (in some circles) such a mortal sin that Joel Spolsky addresses &ldquo;The Big Rewrite&rdquo; in a post entitled <a href="http://www.joelonsoftware.com/articles/fog0000000069.html">Things You Should Never Do, Part I</a>.</p>
-
-<p>In many cases, he&rsquo;s absolutely right. If you have a working-ish production codebase, throwing it out the window can seem a bit like throwing out the baby with the bathwater. But from an engineering standpoint, software is weird. On the one hand, you have the engineering side: If a bridge is just working-ish, the assessment of a structural engineer might be that it must be torn down and a new bridge built in its place. Software is much more ethereal and abstract; of course, we can continue to patch the old application, and extend it, and patch it, and sacrifice virgins to Great Cthulhu, and keep it chugging along. For a while.</p>
-
-<p>Eventually, however, with a typical enormous, legacy codebase, you just end up mortgaging massive technical debt.</p>
-
-<!--more-->
-
-
-<h3>Refinancing and Bankruptcy</h3>
-
-<p>A large, enterprise-y system will usually be so entrenched in technical debt that we can (metaphorically) view it as being double- and triple-mortgaged. Test coverage is spotty (if it even exists), and more time is spent dealing with regressions than actually implementing new features in a sane manner.</p>
-
-<p>Eventually, technical debt piles to the point at which it&rsquo;s time to claim bankruptcy. And the problem is that the beancounters financing software projects (or IT managers who have no business managing software projects) see it as bankruptcy in the traditional sense.</p>
-
-<p>If the original project was poorly architected, rife with Demeter violations and cross-dependencies, coupled with lousy (or no) test coverage, this might be a somewhat accurate assessment. But sometimes a project with a sensible class hierarchy, composable elements, and a modular structure needs &ldquo;The Big Rewrite&rdquo;, and it becomes difficult to explain what this really entails.</p>
-
-<h3>Reusable code</h3>
-
-<p>I&rsquo;m thinking about this in terms of a Rails app that I built some time ago, which really should have been considered a &ldquo;throwaway prototype&rdquo;, except that the business needs dictated it went into production right away. It works, but&hellip; lousy test coverage, bizarre performance issues, and regression issues make each new deploy a new headache.</p>
-
-<p>It took me some time, but I&rsquo;ve finally made the argument for the &ldquo;big rewrite.&rdquo;</p>
-
-<p>Now, in the mean time, I&rsquo;ve created a REST API for the backend as part of an SOA for the systems involved. And I&rsquo;ve demonstrated that much of the model layer from the &ldquo;deprecated&rdquo; application was reused (or improved) for the API that I&rsquo;m using to abstract the intrface to the legacy system the inital application was designed to interface with.</p>
-
-<p>The &ldquo;big rewrite&rdquo; entails rebuilding the tools in the old application to work through the API instead of directly hitting the DB (an Oracle monstrosity with ~500 tables and an incomprehensible collection of package functions and stored procedures). But the code was reusable in a new context, and the &ldquo;rewrite&rdquo; is really a protracted refactoring and rebuilding of the data layer.</p>
-
-<h3>That Lisp Thing</h3>
-
-<p>The quote at the head of this article was taken from the preface to the second edition of <a href="http://mitpress.mit.edu/sicp/">The Structure and Interpretation of Computer Programs</a>, aka the &ldquo;Wizard Book.&rdquo; SICP uses the Scheme dialect of Lisp for its examples, and Lisp is a beautiful language for writing composable code, as well as disposable code. It simply <em>makes sense</em> to write small, composable functions, and to use those functions to build abstractions for higher-level programming. This is what Paul Graham calls <a href="http://www.paulgraham.com/progbot.html">Programming Bottom-Up</a>.</p>
-
-<p>I think when Rails programming is done well, it has a similar bottom-up aspect, in that one starts with the data model, then deals with the controllers, and the views are the final consideration. Certainly not everyone approaches Rails development from this perspective, but I think the best Rails apps exhibit this approach. The Windows development model of &ldquo;Visual Foo&rdquo; and &ldquo;Big Design Up Front&rdquo; are the anithesis, and I think this is why most Windows programs are terrible, and why Windows programmers are (in my experience) more likely to be okay with terrible code.</p>
-
-<h3>Lewis&rsquo;s First Rule</h3>
-
-<p><span class='pullquote-right' data-pullquote='All application code must be either composable or disposable.'></p>
-
-<p>I&rsquo;ve never even thought to come up with a &ldquo;rule&rdquo; of software design before, but this is the most important lesson I&rsquo;ve learned in my 26 or so years of hobbyist, amateur, and professional software development. I think it&rsquo;s more important than any single design pattern (although many of the patterns in the Gang of Four book embody this rule), architectural principle, or other aphorism (excpet, of course, for <a href="http://en.wikipedia.org/wiki/Hanlon's_razor">Hanlon&rsquo;s Razor</a>, but that extends beyond software). Lewis&rsquo;s First Rule is simply this: All application code must be either composable or disposable. By composable, I inherently imply &ldquo;reusable.&rdquo; This is at the heart of the Go4 directive to &ldquo;favor composition over inheritance.&rdquo; But I also want to insist that getting rid of code is okay. It&rsquo;s not only okay, it&rsquo;s downright <em>desirable.</em> There&rsquo;s no greater feeling than a git commit that reads <code>2 files changed, 4 insertions(+), 232 deletions(-)</code>. It&rsquo;s even better when entire files have been deleted.</p>
-
-<p></span></p>
-
-<h3>Don&rsquo;t Fear The Rewrite</h3>
-
-<p>A rewrite is only a scary proposition when you&rsquo;re working with a codebase that never had a guiding architectural principle to begin with, has no test coverage, and has never seen a refactoring; it&rsquo;s just years (maybe decades) of cruft, layered like a forest floor, with fresh leaves falling upon detritus, duff, finally decomposing into the humus that forms the core of the system, where only earthworms dare to tread.</p>
-
-<p>Building long-lasting software is an admirable goal, but it&rsquo;s foolhardy to think we can do this at the application level, especially as the rate of technological progress continues to exponentiate. When you do something really good, rip it out of the application, build a library, and include that. Wash, rinse, repeat. Software should be composable, or disposable. There is no in-between.</p>
 ]]></content>
   </entry>
   
