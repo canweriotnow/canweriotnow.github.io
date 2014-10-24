@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emacs | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-24T05:08:58-04:00</updated>
+  <updated>2014-10-24T05:32:19-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -44,6 +44,16 @@
 <p>Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your <code>.emacs.d</code> config directory in a way that makes it easy to configure without breaking shit.</p>
 
 <p>The install instructions are <a href="http://batsov.com/prelude/">here</a> and I highly recommend it.</p>
+
+<p><strong>UPDATE:</strong> I forgot something vitally important about prelude. Prelude comes with <code>guru-mode</code> enabled by default, which disables your arrow keys and prods you to use Emacs default navigation commands instead (i.e. <code>C-p</code> for up, <code>C-n</code> for down, <code>C-b</code> for left, <code>C-f</code> for right). These commands are <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html">worth knowing</a>, but I felt like I was being trolled when my arrow keys just told me what chord combination to use instead. (As an aside, <a href="http://thoughtbot.com">Thoughtbot&rsquo;s</a> <a href="https://github.com/thoughtbot/dotfiles">dotfiles</a> do the same thing with vim).</p>
+
+<p>So you have two options: one is to <code>M-x guru-mode</code> to toggle it every session. The more permanent solution is to add the following to your config (if you&rsquo;re using Prelude, it should go in <code>~/.emacs.d/personal/preload/user.el</code>):</p>
+
+<p><code>(setq guru-mode nil)</code></p>
+
+<p>Just my personal preference, but something I found really annoying when I got started.</p>
+
+<p>As far as all those useful navigation and editing commands, emacs (naturally) has a built-in tutorial accessible from <code>M-x help-with-tutorial</code> or just <code>C-h t</code>.</p>
 
 <h3>Emacs for Mac OS X</h3>
 
