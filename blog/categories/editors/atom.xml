@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: editors | Practical Elegance]]></title>
+  <link href="http://decomplecting.org/blog/categories/editors/atom.xml" rel="self"/>
+  <link href="http://decomplecting.org/"/>
+  <updated>2014-10-23T21:43:16-04:00</updated>
+  <id>http://decomplecting.org/</id>
+  <author>
+    <name><![CDATA[Jason Lewis]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Welcome to The Dark Side: Switching to Emacs]]></title>
+    <link href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/"/>
+    <updated>2014-10-23T20:42:40-04:00</updated>
+    <id>http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs</id>
+    <content type="html"><![CDATA[<p>I have to start this post by saying I&rsquo;ve been a dogmatic <a href="http://www.vim.org/">Vim</a> partisan since the 1990&rsquo;s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.</p>
+
+<p>I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)&hellip; I couldn&rsquo;t stand the chord keys and lack of modality.</p>
+
+<p>Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I&rsquo;m out there evangelizing Emacs (I&rsquo;m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I&rsquo;d offer some advice for those looking to convert to the Church of Emacs.</p>
+
+<p><img src="/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
+
+<!--more-->
+
+
+<p>Primarily, this post is inspired by a request I received on Twitter:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/canweriotnow">@canweriotnow</a> Got any links for switching to emacs? macvim isn&#39;t working in yosemite so I figure I might as well give emacs a real shot</p>&mdash; maɪk pətɛlə (@mikepatella) <a href="https://twitter.com/mikepatella/status/525439599276220416">October 24, 2014</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Instead of just compiling some links in a gist, I figured it was worthy of a blog post, so my seniors in the Church of Emacs can tell me where I&rsquo;m wrong in the comments. But this is based on my experience converting from Vim to Emacs, so I&rsquo;ll explain what worked for me.</p>
+
+<h3>Emacs Prelude</h3>
+
+<p>Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your <code>.emacs.d</code> config directory in a way that makes it easy to configure without breaking shit.</p>
+
+<p>The install instructions are <a href="http://batsov.com/prelude/">here</a> and I highly recommend it.</p>
+
+<h3>Emacs for Mac OS X</h3>
+
+<p>I really like using the packaged app version of Emacs available from <a href="http://emacsformacosx.com/">http://emacsformacosx.com/</a>. It works great with Prelude, and doesn&rsquo;t include the cruft that <a href="http://aquamacs.org/">Aquamacs</a> tacks on to make it more Mac-ish.</p>
+
+<p>You get a nice packaged Emacs.app that follows OS X conventions, but is really just straight GNU Emacs.</p>
+
+<h3>evil-mode</h3>
+
+<p>So, this is a touchy subject for me. When I first switched I used evil-mode to get my familiar Vim keybindings in emacs, but I actually found it made it more difficult to dive into emacs. Evil-mode is actually impressively complete when it comes to imposing vim functionality over top of emacs, but there are still times when you needto hit <code>C-x k</code> or <code>M-x something-mode</code> and the cognitive dissonance of switching between them was just overwhelming.</p>
+
+<p>So I&rsquo;d forego evil-mode and just keep <a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a> open in your browser for the first few days. It doesn&rsquo;t take that long to dive in head-first.</p>
+
+<h3>Projectile</h3>
+
+<p>It ships with Prelude, so not a major headline, but it does help to keep your projects organized and navigate files.</p>
+
+<h2>On Lisp</h2>
+
+<p>Since this is really about Clojure development environments, I might as well dive into the inherent Lispiness of emacs. The extension language is a Lisp dialect, and very easy to learn and use. Emacs is so extensible that one of the running jokes is that it&rsquo;s a great operating system in need of a decent text editor. I&rsquo;ll get to that later.</p>
+
+<h3>cider-mode</h3>
+
+<p>Interacting with Clojure is amazing with <a href="https://github.com/clojure-emacs/cider">cider</a>. You get an in-editor REPL, inline code evaluation, documentation lookup, a scratch buffer for arbitrary code evaluation, and a dozen other features. LightTable is nice with its InstaRepl but emacs/cider is the real deal. You cannot wish for a better Clojure dev environment&hellip; and the community agrees:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>It&#39;s great to see that <a href="https://twitter.com/hashtag/CIDER?src=hash">#CIDER</a> is still the most popular <a href="https://twitter.com/hashtag/Clojure?src=hash">#Clojure</a> dev environment <a href="https://t.co/inB8bnlyEl">https://t.co/inB8bnlyEl</a> Guess I should release 0.8 soon! :)</p>&mdash; Bozhidar Batsov (@bbatsov) <a href="https://twitter.com/bbatsov/status/525408420489613313">October 23, 2014</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p><code>cider-jack-in</code> connects to a <code>lein repl :headless</code> instance, and <code>cider-mode</code> gives you inline evaluation in any Clojure file. It&rsquo;s amazing.</p>
+
+<h3>paredit and smartparens</h3>
+
+<p>Ever have trouble keeping your parens balanced? You&rsquo;re covered. <a href="http://www.emacswiki.org/ParEdit">paredit</a> is the classic solution, but a lot of folks are using <a href="https://github.com/Fuco1/smartparens">smartparens</a> instead&hellip; I&rsquo;ve been using smartparens in strict mode and it&rsquo;s made me a lot more disciplined about how I place my forms.</p>
+
+<h2>Other Languages</h2>
+
+<p>I&rsquo;ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it&rsquo;s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio amke life so much easier. But Most of that is all the ridiculous build ceremony for Java, so that&rsquo;s neither here nor there.</p>
+
+<h2>EmacsOS</h2>
+
+<p>That joke about Emacs being an operating system? Not such a joke.</p>
+
+<p>My favorite Twitter client right now is Emacs <a href="http://www.emacswiki.org/TwitteringMode">twittering-mode</a>. There&rsquo;s Gnus for Usenet and Email, and Emacs 24.4 just came out with an improved in-editor web browser called <code>eww</code>.</p>
+
+<p>Emacs is a deep, deep rabbit hole. The only way in is head first. But there&rsquo;s so much you can do in here, and it&rsquo;s a staggeringly powerful environment.</p>
+
+<p>Welcome to the dark side. We have macros.</p>
+
+<p><img src="/images/post-img/vader-choke.jpg" alt="Dark Side" /></p>
+]]></content>
+  </entry>
+  
+</feed>

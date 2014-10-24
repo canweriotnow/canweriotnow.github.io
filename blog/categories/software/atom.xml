@@ -4,7 +4,7 @@
   <title><![CDATA[Category: software | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/software/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-22T14:30:17-07:00</updated>
+  <updated>2014-10-23T21:43:16-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Return of the Job Destroyer]]></title>
     <link href="http://decomplecting.org/blog/2013/09/02/return-of-the-job-destroyer/"/>
-    <updated>2013-09-02T21:57:00-07:00</updated>
+    <updated>2013-09-02T21:57:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/09/02/return-of-the-job-destroyer</id>
     <content type="html"><![CDATA[<h3><em>Or, &ldquo;Human Contact as a Premium Service&rdquo;</em></h3>
 
@@ -137,7 +137,7 @@
   <entry>
     <title type="html"><![CDATA[Be Willing To Let Go; or, "The Big Rewrite"]]></title>
     <link href="http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go/"/>
-    <updated>2013-04-05T02:10:00-07:00</updated>
+    <updated>2013-04-05T02:10:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/04/05/be-willing-to-let-go</id>
     <content type="html"><![CDATA[<p><blockquote><p></p></p><p><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p></p><p><p></p><footer><strong>Alan J. Perlis</strong></footer></blockquote></p>
 
@@ -189,7 +189,7 @@
   <entry>
     <title type="html"><![CDATA[Farewell, Reader; Or, The Problem with "Free as in Beer"]]></title>
     <link href="http://decomplecting.org/blog/2013/03/16/farewell/"/>
-    <updated>2013-03-16T00:45:00-07:00</updated>
+    <updated>2013-03-16T00:45:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/03/16/farewell</id>
     <content type="html"><![CDATA[<p>I&rsquo;m <a href="http://support.google.com/reader/answer/3028851">going to miss Google Reader</a>.
 I know a lot of people are going to. Hell, in a crazy inversion of Godwin&rsquo;s Law,
@@ -280,7 +280,7 @@ but it does play Tetris. So there&rsquo;s that.</p>
   <entry>
     <title type="html"><![CDATA[Confessions of A Job Destroyer]]></title>
     <link href="http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer/"/>
-    <updated>2013-03-11T15:57:00-07:00</updated>
+    <updated>2013-03-11T15:57:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer</id>
     <content type="html"><![CDATA[<p>One of the most unfunny ironies of the rhetoric surrounding &ldquo;job creators&rdquo; in
 contemporary American politics is that most of the jobs being created (or at
@@ -369,7 +369,7 @@ I recommend checking out those discussions as well.</p>
   <entry>
     <title type="html"><![CDATA[Hackers Need Our Own Everything]]></title>
     <link href="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/"/>
-    <updated>2012-06-06T11:29:00-07:00</updated>
+    <updated>2012-06-06T11:29:00-04:00</updated>
     <id>http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything</id>
     <content type="html"><![CDATA[<p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I&rsquo;m more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
 

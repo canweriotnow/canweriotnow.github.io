@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-22T14:30:17-07:00</updated>
+  <updated>2014-10-23T21:43:16-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -14,9 +14,95 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Welcome to The Dark Side: Switching to Emacs]]></title>
+    <link href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/"/>
+    <updated>2014-10-23T20:42:40-04:00</updated>
+    <id>http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs</id>
+    <content type="html"><![CDATA[<p>I have to start this post by saying I&rsquo;ve been a dogmatic <a href="http://www.vim.org/">Vim</a> partisan since the 1990&rsquo;s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.</p>
+
+<p>I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)&hellip; I couldn&rsquo;t stand the chord keys and lack of modality.</p>
+
+<p>Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I&rsquo;m out there evangelizing Emacs (I&rsquo;m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I&rsquo;d offer some advice for those looking to convert to the Church of Emacs.</p>
+
+<p><img src="/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
+
+<!--more-->
+
+
+<p>Primarily, this post is inspired by a request I received on Twitter:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/canweriotnow">@canweriotnow</a> Got any links for switching to emacs? macvim isn&#39;t working in yosemite so I figure I might as well give emacs a real shot</p>&mdash; maɪk pətɛlə (@mikepatella) <a href="https://twitter.com/mikepatella/status/525439599276220416">October 24, 2014</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Instead of just compiling some links in a gist, I figured it was worthy of a blog post, so my seniors in the Church of Emacs can tell me where I&rsquo;m wrong in the comments. But this is based on my experience converting from Vim to Emacs, so I&rsquo;ll explain what worked for me.</p>
+
+<h3>Emacs Prelude</h3>
+
+<p>Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your <code>.emacs.d</code> config directory in a way that makes it easy to configure without breaking shit.</p>
+
+<p>The install instructions are <a href="http://batsov.com/prelude/">here</a> and I highly recommend it.</p>
+
+<h3>Emacs for Mac OS X</h3>
+
+<p>I really like using the packaged app version of Emacs available from <a href="http://emacsformacosx.com/">http://emacsformacosx.com/</a>. It works great with Prelude, and doesn&rsquo;t include the cruft that <a href="http://aquamacs.org/">Aquamacs</a> tacks on to make it more Mac-ish.</p>
+
+<p>You get a nice packaged Emacs.app that follows OS X conventions, but is really just straight GNU Emacs.</p>
+
+<h3>evil-mode</h3>
+
+<p>So, this is a touchy subject for me. When I first switched I used evil-mode to get my familiar Vim keybindings in emacs, but I actually found it made it more difficult to dive into emacs. Evil-mode is actually impressively complete when it comes to imposing vim functionality over top of emacs, but there are still times when you needto hit <code>C-x k</code> or <code>M-x something-mode</code> and the cognitive dissonance of switching between them was just overwhelming.</p>
+
+<p>So I&rsquo;d forego evil-mode and just keep <a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a> open in your browser for the first few days. It doesn&rsquo;t take that long to dive in head-first.</p>
+
+<h3>Projectile</h3>
+
+<p>It ships with Prelude, so not a major headline, but it does help to keep your projects organized and navigate files.</p>
+
+<h2>On Lisp</h2>
+
+<p>Since this is really about Clojure development environments, I might as well dive into the inherent Lispiness of emacs. The extension language is a Lisp dialect, and very easy to learn and use. Emacs is so extensible that one of the running jokes is that it&rsquo;s a great operating system in need of a decent text editor. I&rsquo;ll get to that later.</p>
+
+<h3>cider-mode</h3>
+
+<p>Interacting with Clojure is amazing with <a href="https://github.com/clojure-emacs/cider">cider</a>. You get an in-editor REPL, inline code evaluation, documentation lookup, a scratch buffer for arbitrary code evaluation, and a dozen other features. LightTable is nice with its InstaRepl but emacs/cider is the real deal. You cannot wish for a better Clojure dev environment&hellip; and the community agrees:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>It&#39;s great to see that <a href="https://twitter.com/hashtag/CIDER?src=hash">#CIDER</a> is still the most popular <a href="https://twitter.com/hashtag/Clojure?src=hash">#Clojure</a> dev environment <a href="https://t.co/inB8bnlyEl">https://t.co/inB8bnlyEl</a> Guess I should release 0.8 soon! :)</p>&mdash; Bozhidar Batsov (@bbatsov) <a href="https://twitter.com/bbatsov/status/525408420489613313">October 23, 2014</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p><code>cider-jack-in</code> connects to a <code>lein repl :headless</code> instance, and <code>cider-mode</code> gives you inline evaluation in any Clojure file. It&rsquo;s amazing.</p>
+
+<h3>paredit and smartparens</h3>
+
+<p>Ever have trouble keeping your parens balanced? You&rsquo;re covered. <a href="http://www.emacswiki.org/ParEdit">paredit</a> is the classic solution, but a lot of folks are using <a href="https://github.com/Fuco1/smartparens">smartparens</a> instead&hellip; I&rsquo;ve been using smartparens in strict mode and it&rsquo;s made me a lot more disciplined about how I place my forms.</p>
+
+<h2>Other Languages</h2>
+
+<p>I&rsquo;ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it&rsquo;s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio amke life so much easier. But Most of that is all the ridiculous build ceremony for Java, so that&rsquo;s neither here nor there.</p>
+
+<h2>EmacsOS</h2>
+
+<p>That joke about Emacs being an operating system? Not such a joke.</p>
+
+<p>My favorite Twitter client right now is Emacs <a href="http://www.emacswiki.org/TwitteringMode">twittering-mode</a>. There&rsquo;s Gnus for Usenet and Email, and Emacs 24.4 just came out with an improved in-editor web browser called <code>eww</code>.</p>
+
+<p>Emacs is a deep, deep rabbit hole. The only way in is head first. But there&rsquo;s so much you can do in here, and it&rsquo;s a staggeringly powerful environment.</p>
+
+<p>Welcome to the dark side. We have macros.</p>
+
+<p><img src="/images/post-img/vader-choke.jpg" alt="Dark Side" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Hour of Code: Voight-Kampff for Hackers?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/"/>
-    <updated>2013-12-11T20:20:00-08:00</updated>
+    <updated>2013-12-11T20:20:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
     <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
 
@@ -73,7 +159,7 @@
   <entry>
     <title type="html"><![CDATA[Apple: The Obstacle to America's Future?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future/"/>
-    <updated>2013-12-09T22:32:00-08:00</updated>
+    <updated>2013-12-09T22:32:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
     <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
@@ -119,7 +205,7 @@
   <entry>
     <title type="html"><![CDATA[Github Matters - Followup]]></title>
     <link href="http://decomplecting.org/blog/2013/11/20/github-matters-followup/"/>
-    <updated>2013-11-20T23:36:00-08:00</updated>
+    <updated>2013-11-20T23:36:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/20/github-matters-followup</id>
     <content type="html"><![CDATA[<h4>Mea Culpa</h4>
 
@@ -179,7 +265,7 @@
   <entry>
     <title type="html"><![CDATA[So Github Is Not Your CV.  It Still Matters]]></title>
     <link href="http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/"/>
-    <updated>2013-11-19T21:22:00-08:00</updated>
+    <updated>2013-11-19T21:22:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters</id>
     <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
 
@@ -246,68 +332,6 @@
 <p>If Github is privilegey, than what is <a href="http://careers.stackoverflow.com/">Careers 2.0</a>? You either need an awesome Github rep or <a href="http://stackoverflow.com">StackOverflow</a> karma <em>just to get a profile.</em> And answering James Coglan&rsquo;s critique — Careers 2.0 actually <em>is</em> a portfolio; you feature your best Github repos, best blog posts, etc.</p>
 
 <p>Maybe another time I&rsquo;ll go into <a href="http://coderwall.com">Coderwall</a> or <a href="http://coderbits.com">Coderbits</a> as alternatives.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
-    <link href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/"/>
-    <updated>2013-11-13T00:09:00-08:00</updated>
-    <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
-    <content type="html"><![CDATA[<h3>The Important Stuff</h3>
-
-<p>So <a href="/blog/2013/11/12/just-get-hacking/">last post</a>, I pretty much said &ldquo;just do it,&rdquo; and explained that the companies you <em>want</em> to hire you will care less about your background than your demonstrable coding skills.</p>
-
-<p>In this post, I want to look a little more closely at the skills that matter, and the specific areas that the &ldquo;best&rdquo; (IMHO) companies will focus on. I may be biased, but this is the stuff I care about when I&rsquo;m interviewing developers (beyond basic coding chops), and I think I&rsquo;m pretty smart.</p>
-
-<h3>Testing, Testing, Testing</h3>
-
-<p>So you&rsquo;re writing code that runs, runs correctly, and runs consistently. That&rsquo;s awesome. But when it comes to writing production code for a real company, you need to <em>know</em> it&rsquo;s correct, in advance. Especially with dynamic languages, when there&rsquo;s no compiler to refuse to build faulty code, testing is paramount.</p>
-
-<p>So when you&rsquo;re working on these little personal projects, and throwing them on <a href="https://github.com">Github</a>, do a few things:</p>
-
-<!-- more -->
-
-
-<ul>
-<li>Write tests. If you&rsquo;re using Ruby, I recommend <a href="http://rspec.info/">RSpec</a>.</li>
-<li>Use <a href="https://travis-ci.org/">Travis CI</a>. You&rsquo;ll learn about <a href="http://martinfowler.com/articles/continuousIntegration.html">continuous integration</a>, and it&rsquo;s free for open source.</li>
-<li>Use <a href="https://codeclimate.com/">Code Climate</a>. It&rsquo;s like automated code review, and also free.</li>
-<li>Try <a href="https://coveralls.io/">Coveralls</a>. It&rsquo;ll help you make sure you actually are testing everything.</li>
-</ul>
-
-
-<p>Plus Travis, Code Climate, and Coveralls will give you little badges for your README.md on Github so you can see how your project is doing at any time.</p>
-
-<p>Read up on practices for <a href="http://en.wikipedia.org/wiki/Test-driven_development">Test-Driven Development</a>, because it matters to the people you really want to work for, and as an aspiring software craftsman, it needs to matter to you.</p>
-
-<h3>Collaboration</h3>
-
-<p>I mentioned the importance of coding with others last post, but I can&rsquo;t emphasize it enough. Look for opportunities for pair programming, even if it&rsquo;s remote. There are cool apps you can use for that now, like <a href="https://koding.com/">Koding</a> (and others), but in a pinch there&rsquo;s always <a href="http://www.vim.org/">vim</a> and <a href="http://tmux.sourceforge.net/">tmux</a>&hellip; which are tools you&rsquo;ll want to know anyhow.</p>
-
-<p>And which brings me to my next point&hellip;</p>
-
-<h3>Unix or GTFO</h3>
-
-<p>Yeah, code is more portable than it has ever been. You can develop Ruby or Clojure or Node.js on Linux, Solaris, OS X, Windows, probably even Haiku&hellip; but you need to understand your deployment environment, which is going to be some kind of *nix unless you&rsquo;re doing .NET (which you&rsquo;re clearly not, if you came to me for advice).</p>
-
-<p>In addition, the closer your dev environment is to your production environment, the less risk there is of weird heisenbug inconsistencies.</p>
-
-<p>So learn <em>some</em> kind of *nix, whether it&rsquo;s OS X, Linux, or Solaris, or whatever. And dig down; use the command line. Learn your tools, learn the <code>git</code> command line, don&rsquo;t just rely on the Github GUI apps etc. Learn <code>bash</code> or <code>zsh</code>. Learn how a combination of <code>find</code>, <code>grep</code>, and <code>xargs</code> can save your ass. It&rsquo;ll make your life easier as a developer, and it&rsquo;s vital when it comes to&hellip;</p>
-
-<h3>DevOps</h3>
-
-<p>Long ago, in a galaxy far, far, away, developers simply wrote application code and the systems that hosted and served that code were managed by a cabal of wizened neckbeards of the Sysadmin clan. Now, in our more enlightened (or is it benighted?) age, development and operations have blurred their lines and DevOps was born.</p>
-
-<p>In many cases, this is just an excuse for developers to be burdened with sysadmin duties; sometimes, it&rsquo;s perfectly sensible as many of the best deployment options are SaaS (Something-as-a-Service) thingamabobs. But it&rsquo;s important to get at least the basics.</p>
-
-<p>So when you&rsquo;re looking for someplace to put your pet project web apps, put them on <a href="http://heroku.com">Heroku</a>. It&rsquo;s free for a single web dyno and no workers, and many of the &ldquo;add-ons&rdquo; (like Postgres, Redis, ElasticSearch, etc.) that are technologies you might want to play with have free tiers as well.</p>
-
-<p><a href="http://aws.amazon.com/">Amazon Web Services</a> is Level 80 territory as far as I&rsquo;m concerned, but if you get into the DevOps thing, and want to experiment with tools like <a href="http://www.opscode.com/chef/">Chef</a>, they&rsquo;ll also give you some free time with EC2 instances to play around.</p>
-
-<h3>Summary</h3>
-
-<p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
 ]]></content>
   </entry>
   

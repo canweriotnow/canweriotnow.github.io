@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-22T14:30:17-07:00</updated>
+  <updated>2014-10-23T21:43:16-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -14,9 +14,95 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Welcome to The Dark Side: Switching to Emacs]]></title>
+    <link href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/"/>
+    <updated>2014-10-23T20:42:40-04:00</updated>
+    <id>http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs</id>
+    <content type="html"><![CDATA[<p>I have to start this post by saying I&rsquo;ve been a dogmatic <a href="http://www.vim.org/">Vim</a> partisan since the 1990&rsquo;s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.</p>
+
+<p>I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)&hellip; I couldn&rsquo;t stand the chord keys and lack of modality.</p>
+
+<p>Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I&rsquo;m out there evangelizing Emacs (I&rsquo;m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I&rsquo;d offer some advice for those looking to convert to the Church of Emacs.</p>
+
+<p><img src="http://decomplecting.org/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
+
+<!--more-->
+
+
+<p>Primarily, this post is inspired by a request I received on Twitter:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/canweriotnow">@canweriotnow</a> Got any links for switching to emacs? macvim isn&#39;t working in yosemite so I figure I might as well give emacs a real shot</p>&mdash; maɪk pətɛlə (@mikepatella) <a href="https://twitter.com/mikepatella/status/525439599276220416">October 24, 2014</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>Instead of just compiling some links in a gist, I figured it was worthy of a blog post, so my seniors in the Church of Emacs can tell me where I&rsquo;m wrong in the comments. But this is based on my experience converting from Vim to Emacs, so I&rsquo;ll explain what worked for me.</p>
+
+<h3>Emacs Prelude</h3>
+
+<p>Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your <code>.emacs.d</code> config directory in a way that makes it easy to configure without breaking shit.</p>
+
+<p>The install instructions are <a href="http://batsov.com/prelude/">here</a> and I highly recommend it.</p>
+
+<h3>Emacs for Mac OS X</h3>
+
+<p>I really like using the packaged app version of Emacs available from <a href="http://emacsformacosx.com/">http://emacsformacosx.com/</a>. It works great with Prelude, and doesn&rsquo;t include the cruft that <a href="http://aquamacs.org/">Aquamacs</a> tacks on to make it more Mac-ish.</p>
+
+<p>You get a nice packaged Emacs.app that follows OS X conventions, but is really just straight GNU Emacs.</p>
+
+<h3>evil-mode</h3>
+
+<p>So, this is a touchy subject for me. When I first switched I used evil-mode to get my familiar Vim keybindings in emacs, but I actually found it made it more difficult to dive into emacs. Evil-mode is actually impressively complete when it comes to imposing vim functionality over top of emacs, but there are still times when you needto hit <code>C-x k</code> or <code>M-x something-mode</code> and the cognitive dissonance of switching between them was just overwhelming.</p>
+
+<p>So I&rsquo;d forego evil-mode and just keep <a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a> open in your browser for the first few days. It doesn&rsquo;t take that long to dive in head-first.</p>
+
+<h3>Projectile</h3>
+
+<p>It ships with Prelude, so not a major headline, but it does help to keep your projects organized and navigate files.</p>
+
+<h2>On Lisp</h2>
+
+<p>Since this is really about Clojure development environments, I might as well dive into the inherent Lispiness of emacs. The extension language is a Lisp dialect, and very easy to learn and use. Emacs is so extensible that one of the running jokes is that it&rsquo;s a great operating system in need of a decent text editor. I&rsquo;ll get to that later.</p>
+
+<h3>cider-mode</h3>
+
+<p>Interacting with Clojure is amazing with <a href="https://github.com/clojure-emacs/cider">cider</a>. You get an in-editor REPL, inline code evaluation, documentation lookup, a scratch buffer for arbitrary code evaluation, and a dozen other features. LightTable is nice with its InstaRepl but emacs/cider is the real deal. You cannot wish for a better Clojure dev environment&hellip; and the community agrees:</p>
+
+<blockquote class="twitter-tweet" lang="en"><p>It&#39;s great to see that <a href="https://twitter.com/hashtag/CIDER?src=hash">#CIDER</a> is still the most popular <a href="https://twitter.com/hashtag/Clojure?src=hash">#Clojure</a> dev environment <a href="https://t.co/inB8bnlyEl">https://t.co/inB8bnlyEl</a> Guess I should release 0.8 soon! :)</p>&mdash; Bozhidar Batsov (@bbatsov) <a href="https://twitter.com/bbatsov/status/525408420489613313">October 23, 2014</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p><code>cider-jack-in</code> connects to a <code>lein repl :headless</code> instance, and <code>cider-mode</code> gives you inline evaluation in any Clojure file. It&rsquo;s amazing.</p>
+
+<h3>paredit and smartparens</h3>
+
+<p>Ever have trouble keeping your parens balanced? You&rsquo;re covered. <a href="http://www.emacswiki.org/ParEdit">paredit</a> is the classic solution, but a lot of folks are using <a href="https://github.com/Fuco1/smartparens">smartparens</a> instead&hellip; I&rsquo;ve been using smartparens in strict mode and it&rsquo;s made me a lot more disciplined about how I place my forms.</p>
+
+<h2>Other Languages</h2>
+
+<p>I&rsquo;ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it&rsquo;s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio amke life so much easier. But Most of that is all the ridiculous build ceremony for Java, so that&rsquo;s neither here nor there.</p>
+
+<h2>EmacsOS</h2>
+
+<p>That joke about Emacs being an operating system? Not such a joke.</p>
+
+<p>My favorite Twitter client right now is Emacs <a href="http://www.emacswiki.org/TwitteringMode">twittering-mode</a>. There&rsquo;s Gnus for Usenet and Email, and Emacs 24.4 just came out with an improved in-editor web browser called <code>eww</code>.</p>
+
+<p>Emacs is a deep, deep rabbit hole. The only way in is head first. But there&rsquo;s so much you can do in here, and it&rsquo;s a staggeringly powerful environment.</p>
+
+<p>Welcome to the dark side. We have macros.</p>
+
+<p><img src="http://decomplecting.org/images/post-img/vader-choke.jpg" alt="Dark Side" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Fear and Coding in Las Vegas]]></title>
     <link href="http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas/"/>
-    <updated>2014-08-22T14:11:52-07:00</updated>
+    <updated>2014-08-22T17:11:52-04:00</updated>
     <id>http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas</id>
     <content type="html"><![CDATA[<p>I&rsquo;m sitting in the first session of the <a href="http://code.org">Code.org</a> K-5 PD
 training workshop.</p>
@@ -56,7 +142,7 @@ It&rsquo;s not some thing for introverted nerds (well, we might have invented it
   <entry>
     <title type="html"><![CDATA[Have A Happy #Whyday with whynot]]></title>
     <link href="http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/"/>
-    <updated>2014-08-19T18:26:36-07:00</updated>
+    <updated>2014-08-19T21:26:36-04:00</updated>
     <id>http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot</id>
     <content type="html"><![CDATA[<p>It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
 from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
@@ -113,7 +199,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[On Comments And Moderation]]></title>
     <link href="http://decomplecting.org/blog/2014/06/10/on-comments-and-moderation/"/>
-    <updated>2014-06-10T12:01:23-07:00</updated>
+    <updated>2014-06-10T15:01:23-04:00</updated>
     <id>http://decomplecting.org/blog/2014/06/10/on-comments-and-moderation</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve always taken a hands-off approach to moderating comments, feeling that it was a form of censorship to restrict discussion even on my own blog. It&rsquo;s worked pretty well; I feel like prior to yesterday, I&rsquo;ve deleted less than three comments in the three years I&rsquo;ve maintained this blog.</p>
 
@@ -167,7 +253,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[I'm Telling :: Employer-Tattling and The Decline of Agency]]></title>
     <link href="http://decomplecting.org/blog/2014/06/09/im-telling/"/>
-    <updated>2014-06-09T07:03:36-07:00</updated>
+    <updated>2014-06-09T10:03:36-04:00</updated>
     <id>http://decomplecting.org/blog/2014/06/09/im-telling</id>
     <content type="html"><![CDATA[<p>The other night Twitter was abuzz with controversy and drama, as per usual. One of those threads (which I&rsquo;ll get to momentarily) invovled what I&rsquo;ll refer to as &ldquo;employer-tattling,&rdquo; and <a href="https://twitter.com/soederpop">Jon Soeder</a> (laudably without drawing attention to the ongoing echo chamber), tweeted this:</p>
 
@@ -261,7 +347,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[Scream When You Learn]]></title>
     <link href="http://decomplecting.org/blog/2014/03/11/scream-when-you-learn/"/>
-    <updated>2014-03-11T19:39:38-07:00</updated>
+    <updated>2014-03-11T22:39:38-04:00</updated>
     <id>http://decomplecting.org/blog/2014/03/11/scream-when-you-learn</id>
     <content type="html"><![CDATA[<p><em>Apologies to Charles Bukowski</em></p>
 
@@ -305,7 +391,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[Discussing Privilege: EduCon Reflections #1]]></title>
     <link href="http://decomplecting.org/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/"/>
-    <updated>2014-01-27T17:52:36-08:00</updated>
+    <updated>2014-01-27T20:52:36-05:00</updated>
     <id>http://decomplecting.org/blog/2014/01/27/discussing-privilege-educon-reflections-number-1</id>
     <content type="html"><![CDATA[<p>While I&rsquo;m planning a full &ldquo;overview&rdquo; reflection on <a href="http://educonphilly.org">EduCon 2.6</a>, I was (pardon the pun) privileged to participate in a conversation entitled <a href="http://educonphilly.org/conversations/The_Privileged_Voices_in_Education">&ldquo;The Privileged Voices in Education&rdquo;</a>, facilitated by <a href="https://twitter.com/audreywatters">Audrey Watters</a> and <a href="https://twitter.com/TheJLV">Jose Vilson</a>. Audrey has written about the session on <a href="http://www.hackeducation.com/2014/01/26/the-privileged-voices-in-education-educon/?utm_content=buffer01abf&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">her blog</a>, and Jose has written about it on <a href="http://thejosevilson.com/educon-addressing-privilege-developing-learners-race/">his blog</a>, so you can refer to those for context. But I want to talk about my takeaways from that wonderful session and what came after while it&rsquo;s fresh in my mind, and then work on a more general EduCon post.</p>
 
@@ -411,7 +497,7 @@ This was the dialogue I want to have about privilege. We discussed and defined p
   <entry>
     <title type="html"><![CDATA[New from Ruby Jokes: taint_aliases]]></title>
     <link href="http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/"/>
-    <updated>2014-01-23T17:08:13-08:00</updated>
+    <updated>2014-01-23T20:08:13-05:00</updated>
     <id>http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases</id>
     <content type="html"><![CDATA[<p>The <a href="https://github.com/ruby-jokes">Ruby Jokes</a> team has a new gem for you that was designed, tested, and released in about an hour this afternoon: <a href="http://ruby-jokes.github.io/taint_aliases">taint_aliases</a>. You can get the full details <a href="https://github.com/ruby-jokes/taint_aliases">on GitHub</a>, but I thought a friendly introduction might make for an enlightening blog post.</p>
 
@@ -482,7 +568,7 @@ This was the dialogue I want to have about privilege. We discussed and defined p
   <entry>
     <title type="html"><![CDATA[Goodbye AT&amp;T, Hello T-Mobile?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/23/goodbye-at-and-t/"/>
-    <updated>2013-12-23T21:05:00-08:00</updated>
+    <updated>2013-12-23T21:05:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/12/23/goodbye-at-and-t</id>
     <content type="html"><![CDATA[<p>So I&rsquo;m curious about this <a href="http://guardianlv.com/2013/12/t-mobile-uncarrier-4-0-reportedly-will-buyout-contracts-when-switching/">Uncarrier 4.0</a> thing rumoured to be rolled out by <a href="http://www.t-mobile.com/">T-Mobile</a> in the near future&hellip; I&rsquo;ve considered ditching <a href="http://www.att.com/shop/wireless.html">AT&amp;T Wireless</a> many times, but keep getting dragged back in by upgrades, which seem to take longer and longer to happen.</p>
 
@@ -506,7 +592,7 @@ This was the dialogue I want to have about privilege. We discussed and defined p
   <entry>
     <title type="html"><![CDATA[Hour of Code: Voight-Kampff for Hackers?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/"/>
-    <updated>2013-12-11T20:20:00-08:00</updated>
+    <updated>2013-12-11T20:20:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
     <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
 
@@ -566,7 +652,7 @@ So this &ldquo;Hour of Code&rdquo; thing. I thought it was a cute idea at first,
   <entry>
     <title type="html"><![CDATA[Apple: The Obstacle to America's Future?]]></title>
     <link href="http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future/"/>
-    <updated>2013-12-09T22:32:00-08:00</updated>
+    <updated>2013-12-09T22:32:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
     <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
@@ -614,7 +700,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[Github Matters - Followup]]></title>
     <link href="http://decomplecting.org/blog/2013/11/20/github-matters-followup/"/>
-    <updated>2013-11-20T23:36:00-08:00</updated>
+    <updated>2013-11-20T23:36:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/20/github-matters-followup</id>
     <content type="html"><![CDATA[<h4>Mea Culpa</h4>
 
@@ -674,7 +760,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[So Github Is Not Your CV.  It Still Matters]]></title>
     <link href="http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/"/>
-    <updated>2013-11-19T21:22:00-08:00</updated>
+    <updated>2013-11-19T21:22:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters</id>
     <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
 
@@ -747,7 +833,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[Just Get Hacking (Part 2)]]></title>
     <link href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/"/>
-    <updated>2013-11-13T00:09:00-08:00</updated>
+    <updated>2013-11-13T00:09:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2</id>
     <content type="html"><![CDATA[<h3>The Important Stuff</h3>
 
@@ -809,7 +895,7 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
   <entry>
     <title type="html"><![CDATA[Just Get Hacking]]></title>
     <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
-    <updated>2013-11-12T00:27:00-08:00</updated>
+    <updated>2013-11-12T00:27:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
     <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
 
@@ -857,7 +943,7 @@ Okay, sure. There are places out there that care more about your résumé and pe
   <entry>
     <title type="html"><![CDATA[Maybe EdTech Is Another Leaky Abstraction]]></title>
     <link href="http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/"/>
-    <updated>2013-09-30T20:26:00-07:00</updated>
+    <updated>2013-09-30T20:26:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction</id>
     <content type="html"><![CDATA[<p>Working in the EdTech sector, I&rsquo;m perpetually vexed as I try to determine what exactly &ldquo;EdTech&rdquo; is and, <em>a fortiori,</em> what <em>effective</em> EdTech should look like. Perhaps a little background might be in order.</p>
 
@@ -916,7 +1002,7 @@ For me, it&rsquo;s fairly simple. Technology is successful where it both disrupt
   <entry>
     <title type="html"><![CDATA[Letter to a Young (Or New) Programmer]]></title>
     <link href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/"/>
-    <updated>2013-09-29T00:15:00-07:00</updated>
+    <updated>2013-09-29T00:15:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer</id>
     <content type="html"><![CDATA[<p>I get it. You went to college, graduated, got a job, and it&rsquo;s not what you wanted, hoped for, or whatever. Or maybe you&rsquo;ve been in the same job for years, and it&rsquo;s just no fun anymore. And you look at your friends who are hackers. Yeah, we&rsquo;re anti-social, maybe kinda jerks, but we have <em>so much fun</em> at work, and get pretty well compensated for <em>playing.</em></p>
 
@@ -1003,7 +1089,7 @@ For me, it&rsquo;s fairly simple. Technology is successful where it both disrupt
   <entry>
     <title type="html"><![CDATA[Return of the Job Destroyer]]></title>
     <link href="http://decomplecting.org/blog/2013/09/02/return-of-the-job-destroyer/"/>
-    <updated>2013-09-02T21:57:00-07:00</updated>
+    <updated>2013-09-02T21:57:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/09/02/return-of-the-job-destroyer</id>
     <content type="html"><![CDATA[<h3><em>Or, &ldquo;Human Contact as a Premium Service&rdquo;</em></h3>
 
@@ -1148,7 +1234,7 @@ And herein lies my central argument: If there can be described a finite-state ma
   <entry>
     <title type="html"><![CDATA[The Importance of "Aaron's Law"]]></title>
     <link href="http://decomplecting.org/blog/2013/06/21/the-importance-of-aarons-law/"/>
-    <updated>2013-06-21T11:42:00-07:00</updated>
+    <updated>2013-06-21T11:42:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/06/21/the-importance-of-aarons-law</id>
     <content type="html"><![CDATA[<p>Yesterday, Rep. Zoe Lofgren and Rep. Ron Wyden introduced a bill, known as &ldquo;Aaron&rsquo;s Law&rdquo;, which amends the <a href="http://en.wikipedia.org/wiki/Computer_Fraud_and_Abuse_Act">Computer Fraud and Abuse Act (CFAA)</a>, a 1986 bil which set most of the &ldquo;cybercrime&rdquo; statutes on the books today. This law, affectionately known as <a href="http://www.gpo.gov/fdsys/pkg/USCODE-2010-title18/html/USCODE-2010-title18-partI-chap47-sec1030.htm">U.S. Code Title 18, Part I, Chapter 47, §1030</a>, has been added to many times over the years (via the PATRIOT Act, and various bills related to issues of identity theft, etc.), but the substantial core of the bill has remained the same since 1986: vague, ominous, overly broad, and a rampant playground for prosecutorial misconduct.</p>
 
@@ -1190,7 +1276,7 @@ And herein lies my central argument: If there can be described a finite-state ma
   <entry>
     <title type="html"><![CDATA[We're Not Ready To Teach Kids To Code]]></title>
     <link href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/"/>
-    <updated>2013-06-02T23:22:00-07:00</updated>
+    <updated>2013-06-02T23:22:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code</id>
     <content type="html"><![CDATA[<h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
 
@@ -1285,23 +1371,6 @@ And herein lies my central argument: If there can be described a finite-state ma
 <p>I learned BASIC so I could make my screen draw pictures. That&rsquo;s great for a five year old. But I learned C so I could make my printer work with Linux; I learned Perl so I could type fewer commands into the shell; I learned PHP and SQL to build websites, and I learned Ruby because PHP sucks. I learned Scheme because I wanted to hack my way through SICP, and I learned Clojure because I wanted to do concurrent programming without mutexes. There was always a reason, a purpose, an application.</p>
 
 <p>If we want kids to code, we must not only allow them to apply that knowledge whenever and wherever the opportunity arises, we must also train teachers to always and everywhere encourage the application of computational thinking (as well as programming) to whatever problem set presents itself as a viable candidate.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[I'm An Estuarian!]]></title>
-    <link href="http://decomplecting.org/blog/2013/05/14/im-an-estuarian/"/>
-    <updated>2013-05-14T23:40:00-07:00</updated>
-    <id>http://decomplecting.org/blog/2013/05/14/im-an-estuarian</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s been a while since my last post, because the last few weeks have been just a little crazy.</p>
-
-<p>I&rsquo;ve left <a href="http://www.jhu.edu">JHU</a>, and accepted the role of Chief Technology Officer at <a href="http://anestuary.com">An Estuary</a>, an amazing EdTech startup spun out from Baltimore&rsquo;s <a href="http://www.digitalharborfoundation.org/">Digital Harbor Foundation</a>.</p>
-
-<p>It&rsquo;s kinda crazy going from a massive institution with about 40k employees, to a startup. But we&rsquo;re building amazing things, iterating like crazy, and having an unbelievable amountof fun doing it.</p>
-
-<p>So stay on the lookout for An Estuary&hellip; the sky&rsquo;s the limit, folks. I&rsquo;d forgotten what it was like to wake up in the morning and being excited to get to work. Now I remember. It&rsquo;s an amazing feel, and this is an amazing time. And I work with the <a href="http://anestuary.weebly.com/1/post/2013/05/a-great-team.html">best people I could hope to work with.</a></p>
-
-<p>Life is good.</p>
 ]]></content>
   </entry>
   

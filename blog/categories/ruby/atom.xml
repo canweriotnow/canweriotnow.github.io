@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ruby | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-22T14:30:17-07:00</updated>
+  <updated>2014-10-23T21:43:16-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Have A Happy #Whyday with whynot]]></title>
     <link href="http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/"/>
-    <updated>2014-08-19T18:26:36-07:00</updated>
+    <updated>2014-08-19T21:26:36-04:00</updated>
     <id>http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot</id>
     <content type="html"><![CDATA[<p>It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
 from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
@@ -87,7 +87,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[New from Ruby Jokes: taint_aliases]]></title>
     <link href="http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/"/>
-    <updated>2014-01-23T17:08:13-08:00</updated>
+    <updated>2014-01-23T20:08:13-05:00</updated>
     <id>http://decomplecting.org/blog/2014/01/23/new-from-ruby-jokes-taint-aliases</id>
     <content type="html"><![CDATA[<p>The <a href="https://github.com/ruby-jokes">Ruby Jokes</a> team has a new gem for you that was designed, tested, and released in about an hour this afternoon: <a href="http://ruby-jokes.github.io/taint_aliases">taint_aliases</a>. You can get the full details <a href="https://github.com/ruby-jokes/taint_aliases">on GitHub</a>, but I thought a friendly introduction might make for an enlightening blog post.</p>
 
@@ -165,7 +165,7 @@ it would require some C-extension hackery if it is.</p>
   <entry>
     <title type="html"><![CDATA[The Social University That Could Have Been]]></title>
     <link href="http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been/"/>
-    <updated>2013-03-10T22:21:00-07:00</updated>
+    <updated>2013-03-10T22:21:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/03/10/the-social-university-that-could-have-been</id>
     <content type="html"><![CDATA[<p>This is a post I&rsquo;ve wanted to write for a while, but I&rsquo;ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
 
@@ -263,7 +263,7 @@ several decades.</p>
   <entry>
     <title type="html"><![CDATA[PAM Authentication Beyond The Desktop]]></title>
     <link href="http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop/"/>
-    <updated>2013-03-08T20:11:00-08:00</updated>
+    <updated>2013-03-08T20:11:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
     <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&rsquo;s useful for so much more.</p>
 
@@ -309,7 +309,7 @@ several decades.</p>
   <entry>
     <title type="html"><![CDATA[Code Typos Got You Down? Stop Worrying with close_enough]]></title>
     <link href="http://decomplecting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/"/>
-    <updated>2013-03-01T18:32:00-08:00</updated>
+    <updated>2013-03-01T18:32:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough</id>
     <content type="html"><![CDATA[<p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I&rsquo;m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
 

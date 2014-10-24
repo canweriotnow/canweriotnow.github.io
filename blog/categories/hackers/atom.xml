@@ -4,7 +4,7 @@
   <title><![CDATA[Category: hackers | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/hackers/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-22T14:30:17-07:00</updated>
+  <updated>2014-10-23T21:43:16-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Donglegate, Inclusionary Culture, Nerd Culture]]></title>
     <link href="http://decomplecting.org/blog/2013/03/23/donglegate/"/>
-    <updated>2013-03-23T21:33:00-07:00</updated>
+    <updated>2013-03-23T21:33:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/03/23/donglegate</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace conversations with friends and coworkers. I have strong feelings about what happened at PyCon (re: the donglegate scenario), and many of them are conflicting. So I&rsquo;ve waited to write about it until now.</p>
 
@@ -63,7 +63,7 @@
   <entry>
     <title type="html"><![CDATA[Hackers Need Our Own Everything]]></title>
     <link href="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/"/>
-    <updated>2012-06-06T11:29:00-07:00</updated>
+    <updated>2012-06-06T11:29:00-04:00</updated>
     <id>http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything</id>
     <content type="html"><![CDATA[<p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I&rsquo;m more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
 
@@ -119,7 +119,7 @@
   <entry>
     <title type="html"><![CDATA[Elegant Organizations]]></title>
     <link href="http://decomplecting.org/blog/2012/05/29/elegant-organizations/"/>
-    <updated>2012-05-29T20:56:00-07:00</updated>
+    <updated>2012-05-29T20:56:00-04:00</updated>
     <id>http://decomplecting.org/blog/2012/05/29/elegant-organizations</id>
     <content type="html"><![CDATA[<p>For a long time, Jason Fried&rsquo;s article <a href="http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html">Why I Run a Flat Company</a> has seemed like an unrealistic dream that only works in rarified pockets of hacker utopia.</p>
 

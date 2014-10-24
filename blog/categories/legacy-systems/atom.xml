@@ -4,7 +4,7 @@
   <title><![CDATA[Category: legacy systems | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/legacy-systems/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-08-22T14:30:17-07:00</updated>
+  <updated>2014-10-23T21:43:16-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 3)]]></title>
     <link href="http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3/"/>
-    <updated>2012-11-02T13:25:00-07:00</updated>
+    <updated>2012-11-02T13:25:00-04:00</updated>
     <id>http://decomplecting.org/blog/2012/11/02/legacy-systems-on-rails-part-3</id>
     <content type="html"><![CDATA[<p>It&rsquo;s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
 
@@ -84,7 +84,7 @@
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 2)]]></title>
     <link href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/"/>
-    <updated>2012-08-03T11:38:00-07:00</updated>
+    <updated>2012-08-03T11:38:00-04:00</updated>
     <id>http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2</id>
     <content type="html"><![CDATA[<p>This will be a quick one. I just wanted to give an example of how Ruby&rsquo;s open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
 
@@ -284,7 +284,7 @@
   <entry>
     <title type="html"><![CDATA[Legacy Systems on Rails (Part 1)]]></title>
     <link href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/"/>
-    <updated>2012-08-02T14:48:00-07:00</updated>
+    <updated>2012-08-02T14:48:00-04:00</updated>
     <id>http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1</id>
     <content type="html"><![CDATA[<p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
 
