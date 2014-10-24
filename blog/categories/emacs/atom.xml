@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emacs | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-23T21:43:16-04:00</updated>
+  <updated>2014-10-24T05:08:58-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -83,7 +83,7 @@
 
 <h2>Other Languages</h2>
 
-<p>I&rsquo;ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it&rsquo;s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio amke life so much easier. But Most of that is all the ridiculous build ceremony for Java, so that&rsquo;s neither here nor there.</p>
+<p>I&rsquo;ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it&rsquo;s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio make life so much easier. But Most of that is all the ridiculous build ceremony for Java, so that&rsquo;s neither here nor there.</p>
 
 <h2>EmacsOS</h2>
 
