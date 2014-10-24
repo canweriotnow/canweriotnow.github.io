@@ -4,7 +4,7 @@
   <title><![CDATA[Category: emacs | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/emacs/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-24T05:47:23-04:00</updated>
+  <updated>2014-10-24T10:21:50-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -54,6 +54,14 @@
 <p>Just my personal preference, but something I found really annoying when I got started.</p>
 
 <p>As far as all those useful navigation and editing commands, emacs (naturally) has a built-in tutorial accessible from <code>M-x help-with-tutorial</code> or just <code>C-h t</code>.</p>
+
+<p><strong>UPDATE TO THE UPDATE:</strong></p>
+
+<p>Bozhidar Batsov (the author of Prelude) pointed out in <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/#comment-1651596560">this comment</a> that the current default behavior is to warn when arrow keys are used, not to disable them.</p>
+
+<p>I hadn&rsquo;t noticed the change, which came in with <a href="https://github.com/bbatsov/prelude/commit/fda768992ef27f39f30178d4ebb8cbb559d5a3c6">this commit</a>.</p>
+
+<p>You can find the configuration options for <code>guru-mode</code> in the README <a href="https://github.com/bbatsov/prelude#warnings-on-arrow-navigation-in-editor-buffers">here</a>.</p>
 
 <h3>Emacs for Mac OS X</h3>
 
