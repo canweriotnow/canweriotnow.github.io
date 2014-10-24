@@ -29,6 +29,25 @@ Prelude is really a great way to hit the ground running. It provides a wealth of
 
 The install instructions are [here](http://batsov.com/prelude/) and I highly recommend it.
 
+**UPDATE:** I forgot something vitally important about prelude. Prelude comes with `guru-mode` enabled by default, which disables your arrow keys and prods you to use Emacs default navigation commands instead (i.e. `C-p` for up, `C-n` for down, `C-b` for left, `C-f` for right). These commands are [worth knowing](https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html), but I felt like I was being trolled when my arrow keys just told me what chord combination to use instead. (As an aside, [Thoughtbot's](http://thoughtbot.com) [dotfiles](https://github.com/thoughtbot/dotfiles) do the same thing with vim).
+
+So you have two options: one is to `M-x guru-mode` to toggle it every session. The more permanent solution is to add the following to your config (if you're using Prelude, it should go in `~/.emacs.d/personal/preload/user.el`):
+
+`(setq prelude-guru nil)`
+
+Just my personal preference, but something I found really annoying when I got started.
+
+As far as all those useful navigation and editing commands, emacs (naturally) has a built-in tutorial accessible from `M-x help-with-tutorial` or just `C-h t`.
+
+**UPDATE TO THE UPDATE:**
+
+Bozhidar Batsov (the author of Prelude) pointed out in [this comment](http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/#comment-1651596560) that the current default behavior is to warn when arrow keys are used, not to disable them.
+
+I hadn't noticed the change, which came in with [this commit](https://github.com/bbatsov/prelude/commit/fda768992ef27f39f30178d4ebb8cbb559d5a3c6).
+
+You can find the configuration options for `guru-mode` in the README [here](https://github.com/bbatsov/prelude#warnings-on-arrow-navigation-in-editor-buffers).
+
+
 ### Emacs for Mac OS X
 
 I really like using the packaged app version of Emacs available from [http://emacsformacosx.com/](http://emacsformacosx.com/). It works great with Prelude, and doesn't include the cruft that [Aquamacs](http://aquamacs.org/) tacks on to make it more Mac-ish.
@@ -65,7 +84,7 @@ Ever have trouble keeping your parens balanced? You're covered. [paredit](http:/
 
 ## Other Languages
 
-I've been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it's been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio make life so much easier. But Most of that is all the ridiculous build ceremony for Java, so that's neither here nor there.
+I've been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it's been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio make life so much easier. But most of that is all the ridiculous build ceremony for Java, so that's neither here nor there.
 
 ## EmacsOS
 
