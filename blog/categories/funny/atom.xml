@@ -4,7 +4,7 @@
   <title><![CDATA[Category: funny | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/funny/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:29:35-04:00</updated>
+  <updated>2014-10-29T02:36:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -32,61 +32,33 @@ a typical interview screening question intended to weed out the applicants who
 can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuzz like
  this:</p>
 
-<p><figure class='code'><figcaption><span>FizzBuzz  </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;def fizz_buzz(max)</span>
-</span><span class='line'><span class="sr">  Array.new(max) do |i|&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class='line'><span class="n">val</span>  <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Fizz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span>
-</span><span class='line'><span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Buzz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">val</span><span class="o">.</span><span class="n">empty?</span> <span class="p">?</span>  <span class="n">j</span><span class="o">.</span><span class="n">to_s</span>  <span class="p">:</span> <span class="n">val</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby FizzBuzz  %}</p>
+
+<p>def fizz_buzz(max)
+  Array.new(max) do |i|</p>
+
+<pre><code>j = i + 1
+val  = (j % 3 == 0 ? "Fizz" : "") +
+(j % 5 == 0 ? "Buzz" : "")
+val.empty? ?  j.to_s  : val
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>But that&rsquo;s just tedious. With job_interview, it&rsquo;s dead simple:</p>
 
-<p><figure class='code'><figcaption><span>job_interview FizzBuzz </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;require &amp;lsquo;job_interview&amp;rsquo;</span>
-</span><span class='line'><span class="sr">@answer = JobInterview::Answer.new</span>
-</span><span class='line'><span class="sr">@answer.fizz_buzz(5)&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Fizz</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Buzz</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">]&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby job_interview FizzBuzz %}</p>
+
+<p>require &lsquo;job_interview&rsquo;
+@answer = JobInterview::Answer.new
+@answer.fizz_buzz(5)</p>
+
+<p> => [1, 2, &ldquo;Fizz&rdquo;, 4, &ldquo;Buzz&rdquo;]</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>It also does Fibonacci sequences (recursive, iterative, and matrix strategies), a quine, the first <em>n</em> primes, and, of course, &ldquo;Hello, World!&rdquo;</p>
 
@@ -94,80 +66,50 @@ can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuz
 
 <p>It will also answer the bullshit personal questions that everyone lies about anyway!</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;include JobInterview::Questions&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}</p>
+
+<p>include JobInterview::Questions</p>
+
+<p>{% endcodeblock %}</p>
 
 <ol type="a">
 <li>Where do you see yourself in 5 years?</li>
 </ol>
 
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;in_5_years&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">I</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">d</span> <span class="n">like</span> <span class="n">to</span> <span class="n">have</span> <span class="n">made</span> <span class="n">someone</span> <span class="k">else</span> <span class="n">rich</span> <span class="n">with</span> <span class="n">my</span> <span class="n">re</span><span class="o">-</span><span class="n">contextualized</span> <span class="n">non</span><span class="o">-</span><span class="n">volatile</span> <span class="nb">open</span> <span class="n">architecture</span><span class="o">.</span><span class="n">&amp;rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}</p>
+
+<p>in_5_years</p>
+
+<p> => &ldquo;I&rsquo;d like to have made someone else rich with my re-contextualized non-volatile open architecture.&rdquo;</p>
+
+<p>{% endcodeblock %}</p>
 
 <ol type="a">
 <li>Why do you want to work here?</li>
 </ol>
 
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;why_here&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Your</span> <span class="n">company</span> <span class="n">has</span> <span class="n">revolutionized</span> <span class="n">seamless</span> <span class="k">next</span> <span class="n">generation</span> <span class="n">interface</span><span class="o">.</span><span class="n">&amp;rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}</p>
+
+<p>why_here</p>
+
+<p> => &ldquo;Your company has revolutionized seamless next generation interface.&rdquo;</p>
+
+<p>{% endcodeblock %}</p>
 
 <ol type="a">
 <li>Does P = NP?</li>
 </ol>
 
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;p_equals_np&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">I</span> <span class="n">doubt</span> <span class="n">it</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="n">would</span> <span class="n">make</span> <span class="n">life</span> <span class="n">easier</span> <span class="k">for</span> <span class="n">traveling</span> <span class="n">salesmen</span><span class="o">.</span><span class="n">&amp;rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby %}</p>
+
+<p>p_equals_np</p>
+
+<p> => &ldquo;I doubt it, but it would make life easier for traveling salesmen.&rdquo;</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>&hellip;and many more.</p>
 

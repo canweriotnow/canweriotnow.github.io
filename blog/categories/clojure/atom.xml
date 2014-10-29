@@ -4,7 +4,7 @@
   <title><![CDATA[Category: clojure | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:29:35-04:00</updated>
+  <updated>2014-10-29T02:35:46-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -129,7 +129,7 @@
 
 <p>In the times of mist, the original neckbeards established that this Common Lisp should have an object system, known as <a href="http://www.aiai.ed.ac.uk/~jeff/clos-guide.html">CLOS</a>, or the Common Lisp Object System.</p>
 
-<p>Clojure has an object system as well, except based on its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened the poeeibilities for alternate object models, maybe?</p>
+<p>Clojure has an object system as well; some of it seems ties to its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened up the possibilities for the object model, maybe?</p>
 
 <p>Not really. OOP models aren&rsquo;t all that creative. Ruby has quite a novel object model but other than that, OOP is pretty boring and let&rsquo;s just forget about that unhappy chapter in our past, shall we?</p>
 

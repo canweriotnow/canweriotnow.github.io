@@ -4,7 +4,7 @@
   <title><![CDATA[Category: internet | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/internet/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:29:35-04:00</updated>
+  <updated>2014-10-29T02:36:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -45,7 +45,7 @@
 
 <p>Okay, slight hyperbole. But it feels that way sometimes. I&rsquo;ve been using <a href="http://macromates.com/">TextMate</a> on OS X for Ruby (and Perl, and C, and Clojure, you get the picture&hellip;) for such a long time now, that I&rsquo;m <em>really</em> loathe to change my workflow. Even though, conceptually, I prefer the idea of using Linux on all the things. But since Apple is now <em>blatantly</em> <a href="http://www.apple.com/macosx/mountain-lion/features.html">trying to turn my worsktation into a tablet</a>, I&rsquo;m forcing myself to use the <a href="http://lubuntu.org/">Lubuntu</a> box sitting next to my iMac as much as possible.</p>
 
-<p><img class="float-right" src="/images/post-img/mtlion1.png" width="400"></p>
+<p>{% img float-right /images/post-img/mtlion1.png 400 %}</p>
 
 <p>It&rsquo;s not just the &ldquo;aesthetic&rdquo; changes that chafe. I can deal with <a href="http://unity.ubuntu.com/">annoying UI crap</a>, especially when it&rsquo;s optional. But Apple is also changing the developer ecosystem, first with the Mac App Store, then with Gatekeeper, which will warn against installation of software not signed with an Apple developer account by default. It has been pointed out that this behavior is fairly straightforward to alter, but I still find the whole process dubious and, for me at least, it&rsquo;s another straw on the OS X camel&rsquo;s back. I&rsquo;m not arguing that no one should use OS X, I&rsquo;m just saying it&rsquo;s less and less attractive to me as a development platform.</p>
 
@@ -53,7 +53,7 @@
 
 <p>Apple is not alone in its efforts to neuter the desktop. Not to be outdone in locking down the OS and polluting the developer ecosystem, Microsoft is scrambling to release Windows 8 so that Windows users can be as disoriented as possbile. Although there are <a href="http://mobileopportunity.blogspot.com/2012/05/fear-and-loathing-and-windows-8.html">good</a> <a href="http://pcunix.hubpages.com/hub/Why-Windows-8-might-Kill-Microsoft">arguments</a> that Windows 8 holds the threat of finally toppling the waning Microsoft hegemony, I&rsquo;m actually jealous of Windows 8 in one way: Windows 8 includes an almost-workalike Windows 7 compatibility mode. I <em>wish</em> Lion had a &ldquo;act like Snow Leopard&rdquo; mode. Although one of the articles I just cited laments the loss of the Start menu in Win7 mode, I don&rsquo;t think it&rsquo;s that much of a loss, if PowerShell is still included (or better yet, Cygwin).</p>
 
-<p><img class="float-left" src="/images/post-img/win8-1.jpg" width="400"></p>
+<p>{% img float-left /images/post-img/win8-1.jpg 400 %}</p>
 
 <p>I use Windows as little as possible, so I&rsquo;m less annoyed about Windows 8 than I am Lion. But the trend is disturbing, and is even being echoed to a degree (a greatly diminished degree) in <a href="http://www.gnome.org/gnome-3/">GNOME 3</a> and <a href="http://unity.ubuntu.com/">Ubuntu Unity</a>. But on Linux, at least, I have the option of using whatever window manager and desktop environment works best for me (or none at all).</p>
 

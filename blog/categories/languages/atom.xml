@@ -4,7 +4,7 @@
   <title><![CDATA[Category: languages, | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/languages/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:29:35-04:00</updated>
+  <updated>2014-10-29T02:36:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -56,7 +56,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 <p>I think this is the elephant in the room. Whereas Perl, Ruby, and (my god, to such a degree) Lisp are firmly in the <a href="http://catb.org/jargon/html/T/TMTOWTDI.html">TMTOWTDI</a> camp, Guido in his infinite wisdom has decreed that this principle (one vital to <em>programmer freedom</em>) should be abjured in favor of strict newb-safety, via the principle of having ONE way to do any given thing.</p>
 
-<p><img class="float-right" src="/images/helen-lovejoy.png"></p>
+<p>{% img float-right /images/helen-lovejoy.png %}</p>
 
 <p>This is a real design flaw with Python. Valuing newb-friendliness over developer productivity (and happiness?) is great if you&rsquo;re designing a strictly academic language.</p>
 

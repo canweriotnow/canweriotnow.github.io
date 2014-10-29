@@ -4,7 +4,7 @@
   <title><![CDATA[Category: life | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/life/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:29:35-04:00</updated>
+  <updated>2014-10-29T02:36:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -53,7 +53,9 @@
 
 <p>When you have a relatively flat organization, it&rsquo;s more important to hire smart people who can generally handle themselves, set the mat a task, and be ready to support them as necessary. That&rsquo;s how we work, and the result speaks for itself.</p>
 
-<p><blockquote><p>We&rsquo;ve experimented with promoting a few people to manager-level roles. In some cases, this has worked out; in others, it hasn&rsquo;t. But one thing we&rsquo;ve found is that groups that manage themselves are often better off than groups that are managed by a single person. So when groups do require structure, we get them to manage themselves.</p><footer><strong>Jason Fried</strong> <cite><a href="http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html">http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html</a></cite></footer></blockquote></p>
+<p>{% blockquote Jason Fried, <a href="http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html">http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html</a> %}
+We&rsquo;ve experimented with promoting a few people to manager-level roles. In some cases, this has worked out; in others, it hasn&rsquo;t. But one thing we&rsquo;ve found is that groups that manage themselves are often better off than groups that are managed by a single person. So when groups do require structure, we get them to manage themselves.
+{% endblockquote %}</p>
 
 <p>Of course, innovation isn&rsquo;t <em>always</em> the top priority. But I think whenever possible, it should be towards the very top of the list. Innovation is the key to competitiveness, and whether you&rsquo;re a university, a hospital, or a software company, ultimately it comes down to the bottom line: how do we increase revenues and decrease expenditures?</p>
 

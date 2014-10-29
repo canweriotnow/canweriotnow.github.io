@@ -4,7 +4,7 @@
   <title><![CDATA[Category: simplicity, | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/simplicity/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:29:35-04:00</updated>
+  <updated>2014-10-29T02:36:05-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,7 +20,7 @@
     <id>http://decomplecting.org/blog/2012/05/08/simplicity</id>
     <content type="html"><![CDATA[<h3>Machine Beauty</h3>
 
-<p><img class="float-left <a" src="href="http://photo.goodreads.com/books/1171573120l/107615.jpg">http://photo.goodreads.com/books/1171573120l/107615.jpg</a>&#8221; width=&#8221;250&#8221;></p>
+<p>{% img float-left <a href="http://photo.goodreads.com/books/1171573120l/107615.jpg">http://photo.goodreads.com/books/1171573120l/107615.jpg</a> 250 %}</p>
 
 <p>In his essay <a href="http://www.goodreads.com/book/show/107615.Machine_Beauty">Machine Beauty</a>, David Gelernter defines &ldquo;machine beauty&rdquo; as an inspired mating of simplicity and power. In software, I think this is also what we mean when we talk about &ldquo;elegance.&rdquo;</p>
 
@@ -52,113 +52,62 @@
 
 <p>For instance, consider the following accumulator generator in C++:</p>
 
-<p><figure class='code'><figcaption><span>Accumulator Generator <a href="http://www.paulgraham.com/accgen.html">http://www.paulgraham.com/accgen.html</a> </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
-</span><span class='line'><span class="k">struct</span> <span class="n">Acc</span> <span class="p">{</span>
-</span><span class='line'>  <span class="n">Acc</span><span class="p">(</span><span class="n">T</span> <span class="n">n</span><span class="p">)</span>
-</span><span class='line'>  <span class="o">:</span> <span class="n">n</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">{}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
-</span><span class='line'>  <span class="n">Acc</span><span class="p">(</span><span class="k">const</span> <span class="n">Acc</span><span class="o">&lt;</span><span class="n">U</span><span class="o">&gt;&amp;</span><span class="n">amp</span><span class="p">;</span> <span class="n">u</span><span class="p">)</span>
-</span><span class='line'>  <span class="o">:</span> <span class="n">n</span><span class="p">(</span><span class="n">u</span><span class="p">.</span><span class="n">n</span><span class="p">)</span> <span class="p">{}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">U</span><span class="o">&gt;</span>
-</span><span class='line'>  <span class="n">T</span> <span class="k">operator</span><span class="p">()(</span><span class="n">U</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">return</span> <span class="n">n</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="n">T</span> <span class="n">n</span><span class="p">;</span>
-</span><span class='line'><span class="p">};</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:c++ Accumulator Generator <a href="http://www.paulgraham.com/accgen.html">http://www.paulgraham.com/accgen.html</a> %}</p>
+
+<p>template<typename T>
+struct Acc {
+  Acc(T n)
+  : n(n) {}</p>
+
+<p>  template<typename U>
+  Acc(const Acc<U>&amp; u)
+  : n(u.n) {}</p>
+
+<p>  template<typename U>
+  T operator()(U i) {</p>
+
+<pre><code>return n += i;
+</code></pre>
+
+<p>  }</p>
+
+<p>  T n;
+};</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>Super clear, right? Readable? Oh, yeah.</p>
 
 <p>Hardly. But maybe it&rsquo;s not fair to pick on C++, simplicity was (sadly) never a design goal.
 Python is a more modern programming language, it&rsquo;s designed to be easy for new programmers to learn.</p>
 
-<p><figure class='code'><figcaption><span>Accumulator Generator <a href="http://www.paulgraham.com/accgen.html">http://www.paulgraham.com/accgen.html</a> </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">class</span> <span class="nc">foo</span><span class="p">:</span>
-</span><span class='line'>  <span class="k">def</span> <span class="err">&lt;</span><span class="nf">strong</span><span class="o">&gt;</span><span class="n">init</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="n">n</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="k">def</span> <span class="err">&lt;</span><span class="nf">strong</span><span class="o">&gt;</span><span class="n">call</span><span class="o">&lt;/</span><span class="n">strong</span><span class="o">&gt;</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+=</span> <span class="n">i</span>
-</span><span class='line'><span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:python Accumulator Generator <a href="http://www.paulgraham.com/accgen.html">http://www.paulgraham.com/accgen.html</a> %}</p>
+
+<p>class foo:
+  def <strong>init</strong>(self, n):</p>
+
+<pre><code>self.n = n
+</code></pre>
+
+<p>  def <strong>call</strong>(self, i):</p>
+
+<pre><code>self.n += i
+return self.n
+</code></pre>
+
+<p>{% endcodeblock %}</p>
 
 <p>Simpler than C++, sure. But you still have all these explicit calls to self, and a class definition that should be unnecessary in a functional construct like an accumulator generator. It&rsquo;s an improvement, but still ugly as hell.</p>
 
 <p>Now let&rsquo;s look at Ruby:</p>
 
-<p><figure class='code'><figcaption><span>Accumulator Generator <a href="http://www.paulgraham.com/accgen.html">http://www.paulgraham.com/accgen.html</a> </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;def foo (n)</span>
-</span><span class='line'><span class="sr">  lambda {|i| n += i }</span>
-</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:ruby Accumulator Generator <a href="http://www.paulgraham.com/accgen.html">http://www.paulgraham.com/accgen.html</a> %}</p>
+
+<p>def foo (n)
+  lambda {|i| n += i }
+end</p>
+
+<p>{% endcodeblock %}</p>
 
 <p>Wow. Three lines of code (although it could be written in one). If you understand lambdas, it&rsquo;s obvious what&rsquo;s going on here at a glance. You initalize <code>foo</code> with a value, and it returns a lambda that will accumulate any values passed to it.</p>
 
@@ -170,26 +119,15 @@ Python is a more modern programming language, it&rsquo;s designed to be easy for
 
 <p>The other language that has me in awe of its marriage of power and simplicity is <a href="http://clojure.org">Clojure</a>. Clojure is a Lisp dialect targeting the JVM, and I encourage anyone out there to explore it. Here&rsquo;s the above construct in Clojure:</p>
 
-<p><figure class='code'><figcaption><span>Accumulator Generator </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">accum</span> <span class="p">[</span><span class="nv">n</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">acc</span> <span class="p">(</span><span class="nf">atom</span> <span class="nv">n</span><span class="p">)]</span><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="p">(</span><span class="nf">swap!</span> <span class="nv">acc</span> <span class="nb">+ </span><span class="nv">m</span><span class="p">))))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+<p>{% codeblock lang:clojure Accumulator Generator %}</p>
+
+<p>(defn accum [n]
+  (let [acc (atom n)]</p>
+
+<pre><code>(fn [m] (swap! acc + m))))
+</code></pre>
+
+<p>{% endcodeblock %}</p>
 
 <p>Anyhow, it&rsquo;s a little less immediately obvious than in a language like Python or Ruby (or, for that matter, Lisps like Scheme or Common Lisp). Why is this? As I mentioned previously, Clojure, while technically an &ldquo;impure&rdquo; functional language (as in, side-effects are allowed), tries to treat side-effects as a special case; so, for instance, most data structures in Clojure are immutable. The <code>atom</code> construct in Clojure creates a reference type that can access shared, independent, mutable state. The <code>swap!</code> function allows the value of the atom to be updated.</p>
 
