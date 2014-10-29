@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-24T10:21:50-04:00</updated>
+  <updated>2014-10-29T02:27:50-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Reify This!]]></title>
+    <link href="http://decomplecting.org/blog/2014/10/29/reify-this/"/>
+    <updated>2014-10-29T01:22:41-04:00</updated>
+    <id>http://decomplecting.org/blog/2014/10/29/reify-this</id>
+    <content type="html"><![CDATA[<p>On the way home this afternoon I was asked to explain Clojure&rsquo;s <code>reify</code> macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment mightbe available to others.</p>
+
+<p>Reify derives from the Latin <em>res,</em> or &ldquo;thing.&rdquo; So <code>reify</code> fundamentally means &ldquo;make a <em>thing</em> out of&hellip;.</p>
+
+<h3>Protocols and Datatypes</h3>
+
+<p>Clojure <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/defprotocol/">protocols</a> are similar to Java interfaces: They define a set of methods/functions purely by their signatures without providing implementation details. Declaring that a class implements an interface (in Java) or that a record implements a protocol (in Clojure) is a contract that specifies that the given class or record, in order to be valid, will provide concrete implementations of those methods/functions.</p>
+
+<p>But sometimes we don&rsquo;t need a reusable entity with reusable implmentations that we can instantiate willy-nilly; sometiems we just need a <em>thing</em> that implements those methods.</p>
+
+<p>In Java, anonymous inner classes can fulfill this purpose. In Clojure, we have <code>reify.</code></p>
+
+<h3>That Nameless Thing</h3>
+
+<p>OK, it&rsquo;s not really going to be nameless&hellip; let&rsquo;s say we have a putative protocol as follows:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">])</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So if we were creating a new record, we might do:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defrecord </span><span class="nv">FooRecord</span>
+</span><span class='line'>    <span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="nv">st</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which is perfect if we need to repeatedly instantiate a FooRecord that implementes the Foo protocol. But sometimes we jus need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
+
+<h3>One-Off Things</h3>
+
+<p>Instead of creating a defrecord (I&rsquo;m going to leave the issue of runtime class generaton for another post), we have the option of creating an individual, unique object that implements the desired protocol via <code>reify</code>.</p>
+
+<p>Like so:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">athing</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">reify</span> <span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nf">str/replace</span> <span class="nv">this</span> <span class="p">(</span><span class="nb">re-pattern </span><span class="nv">st</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now I have <code>athing</code> that implements the Foo protocol in a manner appropriate to its context, I don&rsquo;t have to worry about declaring a general case (class, or defrecord), and I can use thsi object while it&rsquo;s handy and let it get GC&rsquo;d whe I&rsquo;m done with it.</p>
+
+<h3>Incomplete, and Mostly Wrong</h3>
+
+<p>This is a really brief description of the <code>reify</code> macro, and more details are available in the <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/reify/">Clojure Grimoire</a>. But it apparently clarified things for one person, so I thought I&rsquo;d share it here.</p>
+
+<p>But in the words of Steve Jobs&hellip;</p>
+
+<h3>And One More Thing&hellip;</h3>
+
+<p>We&rsquo;ve got a Lisp here in Clojure, right? We&rsquo;re doing functional programming, so why all of this larking about with objects?</p>
+
+<p>It&rsquo;s not just Clojure&rsquo;s Java heritage. Forms like <code>defrecord</code>, <code>defprotocol</code>, and <code>reify</code> aren&rsquo;t about Java interop.</p>
+
+<p>Let me take you back in time&hellip;</p>
+
+<p>Once upon a time, there was a common Lisp dialect, established by ANSI standard, called Common Lisp.</p>
+
+<p>In the times of mist, the original neckbeards established that this Common Lisp should have an object system, known as <a href="http://www.aiai.ed.ac.uk/~jeff/clos-guide.html">CLOS</a>, or the Common Lisp Object System.</p>
+
+<p>Clojure has an object system as well, except based on its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened the poeeibilities for alternate object models, maybe?</p>
+
+<p>Not really. OOP models aren&rsquo;t all that creative. Ruby has quite a novel object model but other than that, OOP is pretty boring and let&rsquo;s just forget about that unhappy chapter in our past, shall we?</p>
+
+<p>Let&rsquo;s.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Welcome to The Dark Side: Switching to Emacs]]></title>
@@ -1288,107 +1384,6 @@ And herein lies my central argument: If there can be described a finite-state ma
 <p>Open source works; sunlight is the best disinfectant; transparency is desirable. When our elected representatives legislate out of fear or confusion (CFAA, PATRIOT, etc.), we get bad laws that imprison our best and brightest, or worse, take them from us completely.</p>
 
 <p>Please go to the <a href="http://act.demandprogress.org/sign/aarons_law_intro/">Demand Progress site for Aaron&rsquo;s Law</a> to become a citizen co-sponsor of the bill &ndash; it might be a measure too late for Aaron, but it&rsquo;s necessary for the future.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[We're Not Ready To Teach Kids To Code]]></title>
-    <link href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/"/>
-    <updated>2013-06-02T23:22:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code</id>
-    <content type="html"><![CDATA[<h2>Think Kids Should Learn To Code? Teach The Teachers First</h2>
-
-<p>I&rsquo;m really excited about the heavy emphasis I&rsquo;m seeing on <a href="http://gettingsmart.com/2013/05/teaching-kids-to-code-an-economic-social-justice-issue/">teaching kids to code</a>. Although I agree with just about everything <a href="http://codinghorror.com">Jeff Atwood</a> wrote in his controversial post, <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">&ldquo;Please Don&rsquo;t Learn to Code&rdquo;</a>, I also believe that in an age in which <a href="http://online.wsj.com/article/SB10001424053111903480904576512250915629460.html">software is eating the world</a>, understanding code is a basic literacy issue. This goes beyond the concept of digital literacy: as applied, this boils down to knowing how to use Google. What we&rsquo;re seeing in the movement to bring coding into the core curriculum is a new emphasis on what I&rsquo;d like to call <em>computational literacy.</em></p>
-
-<h3>Computational Literacy</h3>
-
-<p>Computational literacy is a concept that I wish had been &ldquo;a thing&rdquo; when I was in school. I&rsquo;ll start with an anecdote, and then delve into the gritty challenges that the &ldquo;teaching kids to code&rdquo; movement is failing to recognize.</p>
-
-<p>When I was a kid, I loved math&hellip; or, at least, I loved figuring out the algorithms behind the calculation. I learned BASIC when I was 5 or 6, so when got to middle school, and discovered that the Texas Instruments graphing calculators we were required to buy for class spoke just about the same dialect of BASIC I had learned as a kid (I first learned to code on a <a href="http://en.wikipedia.org/wiki/Texas_Instruments_TI-99/4A">TI 99/4A</a>), I was so excited. Once I could derive the algorithm from a new concept we were being taught, I could express it in code and skip the boring parts. I&rsquo;ve never done well when bored.</p>
-
-<p>Alas, my youthful optimism was to be dashed on the rocks of pedagogical ignorance and stupidity. First, I was told that I wouldn&rsquo;t receive credit for my <strong>correct</strong> answers because I didn&rsquo;t &ldquo;show my work&rdquo;.</p>
-
-<p>On the next exam, I wrote out the source listing of each program I had used with a reference to the problems to which it had been applied (I&rsquo;m pretty sure the number of GOTOs I used in those days would have made Dijkstra cry).</p>
-
-<p>That&rsquo;s when they usually called my mom in for a conference.</p>
-
-<!-- more -->
-
-
-<h3>WTF Technophobes</h3>
-
-<p>I have to give my mother credit here. We went into those meetings facing an irate math teacher discussing how I was being insolent and writing a program instead of learning the math concepts I was supposed to learn in the class. My mother&rsquo;s response was a deadpan &ldquo;If he didn&rsquo;t understand the concepts, how could he write the program?&rdquo;</p>
-
-<p>Did I mention my mom is awesome?</p>
-
-<p>There was never a real resolution to this. I stopped taking math when I&rsquo;d gotten enough credits to graduate (thanks, all my math teachers, for teaching me to hate a subject I once loved because it was taught by ignorant technophobes). I tried again in college, but was greeted by the same attitude, so combined with that and a required CS 101 class on Visual Basic (as if I would even run Windows, much less write VB), I majored in Philosophy. Okay, that&rsquo;s enough spleen for this post (and I have no regrets majoring in Philosophy; you&rsquo;ll learn more critical thinking skills in a good philosophy program than in any Applied Math or CS program).</p>
-
-<h3>Teaching Kids to Code? Why?</h3>
-
-<p>We need a paradigm shift in education before we even <em>dream</em> of making coding part of the curriculum. Until we challenge our basic attitudes and assumptions, teaching kids to code in school will be an abject failure, for a number of reasons.</p>
-
-<p>The first is that abstract learning without application is meaningless. I&rsquo;m not the most emotive viewer, but Conrad Wolfram did a TED talk a while back that had me jumping out of my chair, clapping, and shouting &ldquo;#{expletives.sample} yeah!&rdquo; repeatedly at my computer. Here&rsquo;s the video (If you haven&rsquo;t watched &ldquo;Teaching kids real math with computers&rdquo;, do so NOW):</p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/60OVlfAUPJg" frameborder="0" allowfullscreen></iframe>
-
-
-<p>If our math curricula (the subject best suited to a programming solution!) are based around chidren doing rote, repetitive calculation, what&rsquo;s the point in teaching them to code? I had hoped that maybe the attitude toward programming in schools had changed in the nearly 15 years since I graduated high school, but a quick Google search showed that not much has changed, e.g. <a href="http://www.k12.wa.us/mathematics/CalculatorPolicy.aspx">Washington&rsquo;s state K-12 math calculator policy</a>.</p>
-
-<p>No programs. No code, dogs, or Irish need apply.</p>
-
-<p>How can we even <em>think</em> of teaching kids to code while code is a &ldquo;cheat,&rdquo; &ldquo;not showing your work&rdquo; (where&rsquo;s the harm in automating work that <em>should</em> be considered beneath human dignity?), et cetera.</p>
-
-<p>Most of the proposals I&rsquo;ve seen around the &ldquo;teaching kids to code&rdquo; thing center on getting practicing software engineeers to volunteer their time with kids to teach them basic (and more advanced, if they&rsquo;re into it) programming skills.</p>
-
-<p>We&rsquo;re totally into this idea! Particularly in the Ruby community, there&rsquo;s <a href="http://www.kidsruby.com/">KidsRuby</a> and <a href="http://hackety.com/">Hackety Hack!</a>, awesome projects centered around teaching kids basic programming skills in a fun and easy-to-learn dynamic language.</p>
-
-<p>But until teachers understand the tech enough to embrace (rather than fear) it, what&rsquo;s the point?</p>
-
-<p>If I wasn&rsquo;t already at least a hobbyist hacker, and I was taking my first programming course, and arrived in math class only to be told I couldn&rsquo;t apply my exciting and newly-learned skills to the problem at hand, because it was like cheating, how would I react? I&rsquo;d most likely lose interest in a subject I couldn&rsquo;t apply to anything.</p>
-
-<p>Okay, well, <em>I</em> would likely lose interest in my math class (or at least my math teacher) because code is <em>so frakking cool.</em> But I&rsquo;m trying to imagine myself as the student who isn&rsquo;t a huge nerd.</p>
-
-<h3>Quis docet ipsos doctores?</h3>
-
-<p>It might sound like I&rsquo;ve been a bit harsh toward the teachers here. Nothing could be further from my intent. As I&rsquo;ve gained time and distance, I&rsquo;ve realized that it&rsquo;s merely ignorance that built a wall between us; not stupidity, and certainly not malice. And it was an ignorance for which they were not responsible; it was the fault of the system that trained them, and the system that was later responsible for their professional development.</p>
-
-<p>No one ever taught my teachers about software; what went into building it, using it, etc.</p>
-
-<p>If (most of) the teachers are computational illiterates, how can we expect the kids to become computationally literate in any meaningful way?</p>
-
-<p>Technology has penetrated pedagogy to a significant degree but hasn&rsquo;t really changed the practice in a fundamental way; if your use of technology isn&rsquo;t transformative, it&rsquo;s a misuse, possibly an abuse.</p>
-
-<p>Where technology hasn&rsquo;t penetrated in a meaningful way is in professional development. Teachers are still &ldquo;improving&rdquo; their skills in more or less the same way they were decades ago. This has to change. If you&rsquo;re teaching in a STEM-related area and you cannot or will not understand variable assignment, iteration, recursion, and other basic concepts &mdash; the very basics of coding &mdash; you should find a new career. I&rsquo;m not saying you need to delve into pointers, concurrency, etc. Just the basics. If I were going into high school all over again (and this is what I intend for my daughter (if she&rsquo;s into it), so Math Teachers Beware!), I would go in with a mastery of <a href="http://mitpress.mit.edu/sicp/">SICP</a>, and a willingness to get myself expelled for refusing to do rote calculation when I could solve the problem with a 3-line recursive function in Scheme.</p>
-
-<h3>What&rsquo;s The Answer?</h3>
-
-<p>Good question. I think the reason we don&rsquo;t have a good answer yet is that we&rsquo;ve been asking the wrong question. Getting developers to mentor students is a fantastic idea; if my time wasn&rsquo;t 120% consumed between a startup and a six month old, I&rsquo;d be spending my free time (that&rsquo;s a thing?) volunteering to teach kids to program. But we run into a roadblock when the general population of educators need a class just to use Twitter. Which is why I ask, &ldquo;Quis docet ipsos doctores?&rdquo; &mdash; &ldquo;Who teaches the teachers themselves?&rdquo;</p>
-
-<p>This is also why I&rsquo;m so excited about working at <a href="http://anestuary.com">An Estuary</a>. The opportunity to bring technological solutions not just to education, but to professional development within education, is the opportunity to bridge the gap between what students need to learn and what teachers are capable of allowing them to learn in a meaningful way. Of bringing education into the 21st century (after dragging it kicking and screaming through the 20th, because it&rsquo;s currently stuck in the 19th, albeit with some toys from the future).</p>
-
-<p>I never want another child to look at her teacher and think (as I did) &ldquo;are you from the past?&rdquo; I never want another nerd to hate math because his teacher didn&rsquo;t understand that <em>the code is the work.</em> I never want another hacker to give up on education because her teachers, professors, peers, etc. appeared to be stupid or malicious when they were merely ignorant.</p>
-
-<p>I want to change the system. I want to make &ldquo;it gets better&rdquo; real for hackers and nerds.</p>
-
-<p>I want to make the subjugation of billions of children to the subhuman task of rote calculation a thing of the past.</p>
-
-<p>How far am I willing to go?</p>
-
-<p>Doctores docebo, si necesse est.</p>
-
-<p>We must teach the teachers, or teaching the children is so much tilting at windmills. There are no easy solutions, but I&rsquo;m proud to be part of a company that&rsquo;s addressing the hard problems.</p>
-
-<h3>Postscript</h3>
-
-<p>This post has been long in the making; shortly after I completed the first draft, <a href="https://www.edsurge.com">EdSurge</a> posted an opinion piece, <a href="https://www.edsurge.com/n/2013-05-28-opinion-learning-to-code-isn-t-enough">&ldquo;Learning To Code Isn&rsquo;t Enough&rdquo;</a>, which looked at this issue a little differently. It cited a wonderful article on <a href="http://www.cs.cmu.edu/afs/cs/usr/wing/www/publications/Wing06.pdf">&ldquo;Computational Thinking&rdquo;</a> (essentially what I describe as &ldquo;computational literacy&rdquo;) by Jeanette Wing, arguing for the equal status of CS fundamentals with reading, writing, and arithmetic in curriculum standards.</p>
-
-<p>The article also highlights a problem with the &ldquo;teach kids to code&rdquo; movement, which I see as complementary to my own objections; while I was arguing that it&rsquo;s pointless to teach kids to code when they won&rsquo;t be <em>allowed</em> to apply that skill, the EdSurge piece points out the absurdity of teaching kids to code without giving concrete opportunities to apply the ability.</p>
-
-<p>Essentially, it comes down to the same thing: coding is wonderful, but if it&rsquo;s not applied to a real-world problem, it&rsquo;s a waste of resources.</p>
-
-<p>I learned BASIC so I could make my screen draw pictures. That&rsquo;s great for a five year old. But I learned C so I could make my printer work with Linux; I learned Perl so I could type fewer commands into the shell; I learned PHP and SQL to build websites, and I learned Ruby because PHP sucks. I learned Scheme because I wanted to hack my way through SICP, and I learned Clojure because I wanted to do concurrent programming without mutexes. There was always a reason, a purpose, an application.</p>
-
-<p>If we want kids to code, we must not only allow them to apply that knowledge whenever and wherever the opportunity arises, we must also train teachers to always and everywhere encourage the application of computational thinking (as well as programming) to whatever problem set presents itself as a viable candidate.</p>
 ]]></content>
   </entry>
   

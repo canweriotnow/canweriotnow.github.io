@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="I have to start this post by saying I&rsquo;ve been a dogmatic Vim partisan since the 1990&rsquo;s, when I started using vi on the Solaris and Irix &hellip;">
+  <meta name="description" content="On the way home this afternoon I was asked to explain Clojure&rsquo;s reify macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,131 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2014/10/29/reify-this/">Reify This!</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-10-29T01:22:41-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On the way home this afternoon I was asked to explain Clojure&rsquo;s <code>reify</code> macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment mightbe available to others.</p>
+
+<p>Reify derives from the Latin <em>res,</em> or &ldquo;thing.&rdquo; So <code>reify</code> fundamentally means &ldquo;make a <em>thing</em> out of&hellip;.</p>
+
+<h3>Protocols and Datatypes</h3>
+
+<p>Clojure <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/defprotocol/">protocols</a> are similar to Java interfaces: They define a set of methods/functions purely by their signatures without providing implementation details. Declaring that a class implements an interface (in Java) or that a record implements a protocol (in Clojure) is a contract that specifies that the given class or record, in order to be valid, will provide concrete implementations of those methods/functions.</p>
+
+<p>But sometimes we don&rsquo;t need a reusable entity with reusable implmentations that we can instantiate willy-nilly; sometiems we just need a <em>thing</em> that implements those methods.</p>
+
+<p>In Java, anonymous inner classes can fulfill this purpose. In Clojure, we have <code>reify.</code></p>
+
+<h3>That Nameless Thing</h3>
+
+<p>OK, it&rsquo;s not really going to be nameless&hellip; let&rsquo;s say we have a putative protocol as follows:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">])</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So if we were creating a new record, we might do:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defrecord </span><span class="nv">FooRecord</span>
+</span><span class='line'>    <span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="nv">st</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Which is perfect if we need to repeatedly instantiate a FooRecord that implementes the Foo protocol. But sometimes we jus need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
+
+<h3>One-Off Things</h3>
+
+<p>Instead of creating a defrecord (I&rsquo;m going to leave the issue of runtime class generaton for another post), we have the option of creating an individual, unique object that implements the desired protocol via <code>reify</code>.</p>
+
+<p>Like so:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">athing</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">reify</span> <span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nf">str/replace</span> <span class="nv">this</span> <span class="p">(</span><span class="nb">re-pattern </span><span class="nv">st</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now I have <code>athing</code> that implements the Foo protocol in a manner appropriate to its context, I don&rsquo;t have to worry about declaring a general case (class, or defrecord), and I can use thsi object while it&rsquo;s handy and let it get GC&rsquo;d whe I&rsquo;m done with it.</p>
+
+<h3>Incomplete, and Mostly Wrong</h3>
+
+<p>This is a really brief description of the <code>reify</code> macro, and more details are available in the <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/reify/">Clojure Grimoire</a>. But it apparently clarified things for one person, so I thought I&rsquo;d share it here.</p>
+
+<p>But in the words of Steve Jobs&hellip;</p>
+
+<h3>And One More Thing&hellip;</h3>
+
+<p>We&rsquo;ve got a Lisp here in Clojure, right? We&rsquo;re doing functional programming, so why all of this larking about with objects?</p>
+
+<p>It&rsquo;s not just Clojure&rsquo;s Java heritage. Forms like <code>defrecord</code>, <code>defprotocol</code>, and <code>reify</code> aren&rsquo;t about Java interop.</p>
+
+<p>Let me take you back in time&hellip;</p>
+
+<p>Once upon a time, there was a common Lisp dialect, established by ANSI standard, called Common Lisp.</p>
+
+<p>In the times of mist, the original neckbeards established that this Common Lisp should have an object system, known as <a href="http://www.aiai.ed.ac.uk/~jeff/clos-guide.html">CLOS</a>, or the Common Lisp Object System.</p>
+
+<p>Clojure has an object system as well, except based on its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened the poeeibilities for alternate object models, maybe?</p>
+
+<p>Not really. OOP models aren&rsquo;t all that creative. Ruby has quite a novel object model but other than that, OOP is pretty boring and let&rsquo;s just forget about that unhappy chapter in our past, shall we?</p>
+
+<p>Let&rsquo;s.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -566,59 +691,6 @@ it would require some C-extension hackery if it is.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/">Hour of Code: Voight-Kampff for Hackers?</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-11T20:20:00-05:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
-
-<p>Okay, the PSAs keep it silly. Every time someone in those videos says &ldquo;I just did <em>n</em> lines of code&rdquo;, the following script runs through my head:</p>
-
-<figure class='code'><figcaption><span>&#8220;Yeah, this&#8230;&#8221; </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;I just did </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> lines of code&quot;</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/code/</span><span class="p">,</span> <span class="s1">&#39;coke&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, and I can&#39;t feel my face!&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Yeah, I&rsquo;m a terrible person. Also hilarious. Moving on&hellip;</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="2">&larr; Older</a>
@@ -640,6 +712,10 @@ it would require some C-extension hackery if it is.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/29/reify-this/">Reify This!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a>
       </li>
     
@@ -653,10 +729,6 @@ it would require some C-extension hackery if it is.</p>
     
       <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/09/im-telling/">I&#8217;m Telling :: Employer-Tattling and The Decline of Agency</a>
       </li>
     
   </ul>

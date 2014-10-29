@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent &hellip;">
+  <meta name="description" content="From the crack team (Micah Gates and myself) that brought you job_interview, I&rsquo;m proud to announce the availability of close_enough, a gem that &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/">Code Typos Got You Down? Stop Worrying with close_enough</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-01T18:32:00-05:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I&rsquo;m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
+
+<p>The concept is very simple, and based on an algorithm used in most spell checkers and autocorrect systems currently in use. Calculating the <a href="http://en.wikipedia.org/wiki/Damerau%E2%80%93Levenshtein_distance">Damerau-Levenshtein distance</a> between two words can reliably (within a certain margin of error) indicate whether a known word was inteded when an unknown term was encountered in user input.</p>
+
+<p>In Ruby, we have a wonderful metaprogramming facility in <code>method_missing</code>. What we&rsquo;ve done in close_enough is to monkey-patch <code>method_missing</code> on <code>Object</code> to calculate the Demerau-Levenshtein distance between existing methods and the non-existent called method, and invoke the nearest one if it&rsquo;s &ldquo;close enough&rdquo; (close enough currently being an edit distance of &lt; 3).</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -630,55 +677,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/07/18/higher-education-needs-a-revolution/">Higher Education Needs a Revolution</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-07-18T19:59:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Yesterday, <a href="http://coursera.com">Coursera</a> announced that 12 more universities had joined their program of creating massive open online courses, or MOOCs (one of them was <a href="http://www.jhu.edu">Johns Hopkins University</a>, where I work, so I was especially excited&hellip; we&rsquo;re not always &ldquo;early adopters&rdquo;).</p>
-
-<p>Coursera is extremely cool. I&rsquo;m currently taking UC Berkely&rsquo;s <a href="https://www.coursera.org/course/saas">Software Engineering for SaaS</a> class (nothing new for me so far, but it&rsquo;s enjoyable), and I took the <a href="https://www.coursera.org/course/ml">Machine Learning</a> class earlier this year. Well, most of it&hellip; I got a little too busy with work and family and didn&rsquo;t quite finish. But I still learned a lot, and used math I thought I&rsquo;d forgotten. So all in all, a win.</p>
-
-<p>Not quite finishing is a common thread in my life. I&rsquo;m just a few credits away from a Bachelor&rsquo;s in philosophy. Also, graphic design. Probably computer science as well. My Achilles&#8217; heel was always General Education courses. I want to learn almost everything I possibly can, but generally I either want to learn something so I can do something with it, or learn something because I have a compelling fascination with the topic. Most Gen Ed courses did neither for me, and when I&rsquo;m not interested, I&rsquo;m not motivated. This might be a character flaw. Two universities so far seemed to think so.</p>
-
-<p>It seems like the whole obsession with &ldquo;general education&rdquo; is dying. Johns Hopkins, for instance, has no general requirements, only departmental requirements for majors (and minors, natch). That&rsquo;s extremely cool. It also costs over US$50k a year to attend. That&rsquo;s not so cool.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/07/18/higher-education-needs-a-revolution/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="5">&larr; Older</a>
@@ -702,6 +700,10 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/29/reify-this/">Reify This!</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a>
       </li>
     
@@ -715,10 +717,6 @@ I definitely get the sentiment. But I think of this as the inner loop in the red
     
       <li class="post">
         <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/09/im-telling/">I&#8217;m Telling :: Employer-Tattling and The Decline of Agency</a>
       </li>
     
   </ul>
