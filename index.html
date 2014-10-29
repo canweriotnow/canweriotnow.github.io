@@ -160,52 +160,12 @@
 
 <p>Which is perfect if we need to repeatedly instantiate a FooRecord that implementes the Foo protocol. But sometimes we jus need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
 
-<h3>One-Off Things</h3>
-
-<p>Instead of creating a defrecord (I&rsquo;m going to leave the issue of runtime class generaton for another post), we have the option of creating an individual, unique object that implements the desired protocol via <code>reify</code>.</p>
-
-<p>Like so:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">athing</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">reify</span> <span class="nv">Foo</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nf">str/replace</span> <span class="nv">this</span> <span class="p">(</span><span class="nb">re-pattern </span><span class="nv">st</span><span class="p">)))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now I have <code>athing</code> that implements the Foo protocol in a manner appropriate to its context, I don&rsquo;t have to worry about declaring a general case (class, or defrecord), and I can use thsi object while it&rsquo;s handy and let it get GC&rsquo;d whe I&rsquo;m done with it.</p>
-
-<h3>Incomplete, and Mostly Wrong</h3>
-
-<p>This is a really brief description of the <code>reify</code> macro, and more details are available in the <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/reify/">Clojure Grimoire</a>. But it apparently clarified things for one person, so I thought I&rsquo;d share it here.</p>
-
-<p>But in the words of Steve Jobs&hellip;</p>
-
-<h3>And One More Thing&hellip;</h3>
-
-<p>We&rsquo;ve got a Lisp here in Clojure, right? We&rsquo;re doing functional programming, so why all of this larking about with objects?</p>
-
-<p>It&rsquo;s not just Clojure&rsquo;s Java heritage. Forms like <code>defrecord</code>, <code>defprotocol</code>, and <code>reify</code> aren&rsquo;t about Java interop.</p>
-
-<p>Let me take you back in time&hellip;</p>
-
-<p>Once upon a time, there was a common Lisp dialect, established by ANSI standard, called Common Lisp.</p>
-
-<p>In the times of mist, the original neckbeards established that this Common Lisp should have an object system, known as <a href="http://www.aiai.ed.ac.uk/~jeff/clos-guide.html">CLOS</a>, or the Common Lisp Object System.</p>
-
-<p>Clojure has an object system as well, except based on its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened the poeeibilities for alternate object models, maybe?</p>
-
-<p>Not really. OOP models aren&rsquo;t all that creative. Ruby has quite a novel object model but other than that, OOP is pretty boring and let&rsquo;s just forget about that unhappy chapter in our past, shall we?</p>
-
-<p>Let&rsquo;s.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/10/29/reify-this/">Read on &rarr;</a>
+    </footer>
   
 
 
