@@ -4,7 +4,7 @@
   <title><![CDATA[Category: web | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/web/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:36:05-04:00</updated>
+  <updated>2014-10-29T08:42:41-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -132,25 +132,42 @@
 
 <p>I really like the example Steve used of implementing a <code>links</code> array in the returned object:</p>
 
-<p>{% codeblock lang:json Sample response <a href="http://steveklabnik.github.com/hypermedia-presentation/#47">http://steveklabnik.github.com/hypermedia-presentation/#47</a> %}</p>
-
-<p>request(&ldquo;<a href="http://w3clove.com/api/">http://w3clove.com/api/</a>&rdquo;,
-  &ldquo;application/vnd.w3clove.validation+json&rdquo;)</p>
-
-<h1>=></h1>
-
-<p>{
-  &ldquo;links&rdquo;:[
-  {&ldquo;rel&rdquo;:&ldquo;website-form&rdquo;, &ldquo;href&rdquo;:&ldquo;&hellip;&rdquo;},
-  {&ldquo;rel&rdquo;:&ldquo;sitemap-form&rdquo;, &ldquo;href&rdquo;:&ldquo;&hellip;&rdquo;}
-  ]
-}</p>
-
-<p>{% endcodeblock %}</p>
+<p><figure class='code'><figcaption><span>Sample response <a href="http://steveklabnik.github.com/hypermedia-presentation/#47">http://steveklabnik.github.com/hypermedia-presentation/#47</a> </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="err">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;p&gt;request(&amp;ldquo;&lt;a</span> <span class="err">href=</span><span class="s2">&quot;http://w3clove.com/api/&quot;</span><span class="err">&gt;http://w</span><span class="mi">3</span><span class="err">clove.com/api/&lt;/a&gt;&amp;rdquo;,</span>
+</span><span class='line'>  <span class="err">&amp;ldquo;application/vnd.w</span><span class="mi">3</span><span class="err">clove.validation+json&amp;rdquo;)&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;h</span><span class="mi">1</span><span class="err">&gt;=&gt;&lt;/h</span><span class="mi">1</span><span class="err">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;p&gt;</span><span class="p">{</span>
+</span><span class='line'>  <span class="err">&amp;ldquo;links&amp;rdquo;:[</span>
+</span><span class='line'>  <span class="err">{&amp;ldquo;rel&amp;rdquo;:&amp;ldquo;website-form&amp;rdquo;,</span> <span class="err">&amp;ldquo;href&amp;rdquo;:&amp;ldquo;&amp;hellip;&amp;rdquo;</span><span class="p">}</span><span class="err">,</span>
+</span><span class='line'>  <span class="p">{</span><span class="err">&amp;ldquo;rel&amp;rdquo;:&amp;ldquo;sitemap-form&amp;rdquo;,</span> <span class="err">&amp;ldquo;href&amp;rdquo;:&amp;ldquo;&amp;hellip;&amp;rdquo;</span><span class="p">}</span>
+</span><span class='line'>  <span class="err">]</span>
+</span><span class='line'><span class="err">}&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>What&rsquo;s especially interesting here is the Content-type: <code>application/vnd.w3clove.validation+json</code>. That was another big takeaway: I was unaware of the <code>vnd</code> prefix for defining your own content-types, rather than waiting (and waiting, and waiting&hellip;) for the W3C to define a standard.</p>
 
-<p>{% img float-right <a href="http://imgs.xkcd.com/comics/standards.png">http://imgs.xkcd.com/comics/standards.png</a> %}</p>
+<p><img class="float-right <a" src="href="http://imgs.xkcd.com/comics/standards.png">http://imgs.xkcd.com/comics/standards.png</a>&#8221;></p>
 
 <p>Please don&rsquo;t take that as encouragement to go create 2<sup>10</sup> new content-types all willy nilly. Use something that exists, preferably an accepted standard, unless there <em>really, really</em> isn&rsquo;t an acceptable standard for your use case.</p>
 
@@ -162,54 +179,102 @@
 
 <p>Let&rsquo;s say you have an <code>Article</code> class, which <code>has_many :comments</code> and <code>has_and_belongs_to_many :tags</code> You might think it&rsquo;s a good idea to do this:</p>
 
-<p>{% codeblock lang:ruby article.rb %}</p>
-
-<p>class Article &lt; ActiveRecord::Base</p>
-
-<p>  has_many :comments
-  has_and_belongs_to_many :tags
-  belongs_to :user</p>
-
-<p>  def as_json(options={})</p>
-
-<pre><code>options[:include] = {:comments =&gt; [], :tags =&gt; []}
-options[:except] = :user_id
-return super(options)
-</code></pre>
-
-<p>  end</p>
-
-<p>end</p>
-
-<p>{% endcodeblock %}</p>
+<p><figure class='code'><figcaption><span>article.rb </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;class Article &amp;lt; ActiveRecord::Base&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="n">has_many</span> <span class="ss">:comments</span>
+</span><span class='line'>  <span class="n">has_and_belongs_to_many</span> <span class="ss">:tags</span>
+</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:user</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;  def as_json(options={})&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">options</span><span class="o">[</span><span class="ss">:include</span><span class="o">]</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:comments</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">[]</span><span class="p">,</span> <span class="ss">:tags</span> <span class="o">=&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="o">[]</span><span class="p">}</span>
+</span><span class='line'><span class="n">options</span><span class="o">[</span><span class="ss">:except</span><span class="o">]</span> <span class="o">=</span> <span class="ss">:user_id</span>
+</span><span class='line'><span class="k">return</span> <span class="k">super</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="sr">&lt;p&gt;end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>It&rsquo;s not necessarily terrible, but it&rsquo;s not optimal. Normally you might get back:</p>
 
-<p>{% codeblock lang:json %}</p>
-
-<p>{
-  article: {</p>
-
-<pre><code>title: "First Post!",
-body: "Chillwave fixie food truck vinyl. Squid cred +1, cardigan sustainable before they sold out wayfarers twee synth. Retro cliche 3 wolf moon banh mi, put a bird on it hella american apparel sriracha ennui artisan beard. Small batch four loko cardigan, umami stumptown keffiyeh cray street art etsy. Whatever high life synth godard 3 wolf moon, brunch PBR hella banh mi gluten-free vegan next level mustache stumptown lo-fi. Ethnic photo booth pork belly wayfarers, cardigan blog etsy portland mumblecore single-origin coffee post-ironic shoreditch. +1 typewriter sriracha authentic artisan master cleanse, bushwick freegan keytar."
-comments: [
-  {
-    id: 1,
-    body: "Dude!"
-  }
-],
-tags: [
-  {
-    id:3,
-    name: "hipster-crap"
-  }
-]
-</code></pre>
-
-<p>  }
-}</p>
-
-<p>{% endcodeblock %}</p>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="err">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;p&gt;</span><span class="p">{</span>
+</span><span class='line'>  <span class="err">article:</span> <span class="err">{&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;pre&gt;&lt;code&gt;title:</span> <span class="nt">&quot;First Post!&quot;</span><span class="p">,</span>
+</span><span class='line'><span class="err">body:</span> <span class="nt">&quot;Chillwave fixie food truck vinyl. Squid cred +1, cardigan sustainable before they sold out wayfarers twee synth. Retro cliche 3 wolf moon banh mi, put a bird on it hella american apparel sriracha ennui artisan beard. Small batch four loko cardigan, umami stumptown keffiyeh cray street art etsy. Whatever high life synth godard 3 wolf moon, brunch PBR hella banh mi gluten-free vegan next level mustache stumptown lo-fi. Ethnic photo booth pork belly wayfarers, cardigan blog etsy portland mumblecore single-origin coffee post-ironic shoreditch. +1 typewriter sriracha authentic artisan master cleanse, bushwick freegan keytar.&quot;</span>
+</span><span class='line'><span class="err">comments</span><span class="p">:</span> <span class="p">[</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="err">id:</span> <span class="err">1,</span>
+</span><span class='line'>    <span class="err">body:</span> <span class="nt">&quot;Dude!&quot;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">],</span>
+</span><span class='line'><span class="err">tags:</span> <span class="err">[</span>
+</span><span class='line'>  <span class="err">{</span>
+</span><span class='line'>    <span class="err">id:3,</span>
+</span><span class='line'>    <span class="err">name:</span> <span class="nt">&quot;hipster-crap&quot;</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="err">]</span>
+</span><span class='line'><span class="err">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;p&gt;</span>  <span class="err">}</span>
+</span><span class='line'><span class="err">}&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="err">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>This might be okay until you end up with hundreds of long-winded comments about where to find the best kefir in Portland. And what if your client wants to follow the tags to find similar articles? Sure, they can assume you&rsquo;re following rails conventions for URIs and try to get &ldquo;<a href="http://example.org/tags/3">http://example.org/tags/3</a>&rdquo;, but there&rsquo;s no guarantee that&rsquo;s what you&rsquo;re doing, and it&rsquo;s expecting too much of the client. What if you want to find more by the same author? you&rsquo;ve decided in advance your clients don&rsquo;t need to see the user_id.</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-29T02:35:46-04:00</updated>
+  <updated>2014-10-29T08:42:41-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -18,7 +18,7 @@
     <link href="http://decomplecting.org/blog/2014/10/29/reify-this/"/>
     <updated>2014-10-29T01:22:41-04:00</updated>
     <id>http://decomplecting.org/blog/2014/10/29/reify-this</id>
-    <content type="html"><![CDATA[<p>On the way home this afternoon I was asked to explain Clojure&rsquo;s <code>reify</code> macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment mightbe available to others.</p>
+    <content type="html"><![CDATA[<p>On the way home this afternoon I was asked to explain Clojure&rsquo;s <code>reify</code> macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment might be available to others.</p>
 
 <p>Reify derives from the Latin <em>res,</em> or &ldquo;thing.&rdquo; So <code>reify</code> fundamentally means &ldquo;make a <em>thing</em> out of&hellip;.</p>
 
@@ -26,7 +26,7 @@
 
 <p>Clojure <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/defprotocol/">protocols</a> are similar to Java interfaces: They define a set of methods/functions purely by their signatures without providing implementation details. Declaring that a class implements an interface (in Java) or that a record implements a protocol (in Clojure) is a contract that specifies that the given class or record, in order to be valid, will provide concrete implementations of those methods/functions.</p>
 
-<p>But sometimes we don&rsquo;t need a reusable entity with reusable implmentations that we can instantiate willy-nilly; sometiems we just need a <em>thing</em> that implements those methods.</p>
+<p>But sometimes we don&rsquo;t need a reusable entity with reusable implementations that we can instantiate willy-nilly; sometimes we just need a <em>thing</em> that implements those methods.</p>
 
 <p>In Java, anonymous inner classes can fulfill this purpose. In Clojure, we have <code>reify.</code></p>
 
@@ -60,14 +60,14 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Which is perfect if we need to repeatedly instantiate a FooRecord that implementes the Foo protocol. But sometimes we jus need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
+<p>Which is perfect if we need to repeatedly instantiate a FooRecord that implements the Foo protocol. But sometimes we just need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
 
 <!--more-->
 
 
 <h3>One-Off Things</h3>
 
-<p>Instead of creating a defrecord (I&rsquo;m going to leave the issue of runtime class generaton for another post), we have the option of creating an individual, unique object that implements the desired protocol via <code>reify</code>.</p>
+<p>Instead of creating a defrecord (I&rsquo;m going to leave the issue of runtime class generation for another post), we have the option of creating an individual, unique object that implements the desired protocol via <code>reify</code>.</p>
 
 <p>Like so:</p>
 
@@ -84,7 +84,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Now I have <code>athing</code> that implements the Foo protocol in a manner appropriate to its context, I don&rsquo;t have to worry about declaring a general case (class, or defrecord), and I can use thsi object while it&rsquo;s handy and let it get GC&rsquo;d whe I&rsquo;m done with it.</p>
+<p>Now I have <code>athing</code> that implements the Foo protocol in a manner appropriate to its context, I don&rsquo;t have to worry about declaring a general case (class, or defrecord), and I can use this object while it&rsquo;s handy and let it get GC&rsquo;d when I&rsquo;m done with it.</p>
 
 <h3>Incomplete, and Mostly Wrong</h3>
 
