@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-10-30T06:08:43-04:00</updated>
+  <updated>2014-10-30T06:11:01-04:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -23,9 +23,6 @@
 <p>I feel like a religious convert&hellip; I miss those simple, unadorned Vim services but I&rsquo;m floored by the majesty of the stained glass and altar dressings and ritual of the Church of Emacs.</p>
 
 <p>So before the jump, in the spirit of &ldquo;I&rsquo;ll show you mine if you show me yours,&rdquo; my <a href="https://github.com/canweriotnow/.emacs.d">.emacs.d</a>.</p>
-
-<!-- more -->
-
 
 <h2>An Unexpected Journey</h2>
 
