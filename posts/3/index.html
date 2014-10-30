@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="Think Kids Should Learn To Code? Teach The Teachers First I&rsquo;m really excited about the heavy emphasis I&rsquo;m seeing on teaching kids to code &hellip;">
+  <meta name="description" content="Yesterday, Rep. Zoe Lofgren and Rep. Ron Wyden introduced a bill, known as &ldquo;Aaron&rsquo;s Law&rdquo;, which amends the Computer Fraud and Abuse &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2013/06/21/the-importance-of-aarons-law/">The Importance of &#8220;Aaron&#8217;s Law&#8221;</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-21T11:42:00-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Yesterday, Rep. Zoe Lofgren and Rep. Ron Wyden introduced a bill, known as &ldquo;Aaron&rsquo;s Law&rdquo;, which amends the <a href="http://en.wikipedia.org/wiki/Computer_Fraud_and_Abuse_Act">Computer Fraud and Abuse Act (CFAA)</a>, a 1986 bil which set most of the &ldquo;cybercrime&rdquo; statutes on the books today. This law, affectionately known as <a href="http://www.gpo.gov/fdsys/pkg/USCODE-2010-title18/html/USCODE-2010-title18-partI-chap47-sec1030.htm">U.S. Code Title 18, Part I, Chapter 47, §1030</a>, has been added to many times over the years (via the PATRIOT Act, and various bills related to issues of identity theft, etc.), but the substantial core of the bill has remained the same since 1986: vague, ominous, overly broad, and a rampant playground for prosecutorial misconduct.</p>
+
+<p>A quick recap of the origins of Aaron&rsquo;s Law, just in case there are readers outside my usual demographic of nerds and hackers: Aaron Swartz was a brilliant programmer and activist who co-authored the RSS specification as a teenager, went on to co-found <a href="http://reddit.com">Reddit</a> and <a href="http://demandprogress.org">Demand Progress</a>, and so much more. Chagrined by the lack of public access to (especially taxpayer-funded) research, he went on to use MIT&rsquo;s computer network to (illegally) download millions of academic papers from JSTOR. MIT and JSTOR both declined to press charges, but federal prosecutors Carmen Ortiz and Stephen Haymann smelled blood in the water and attacked like frenzied piranha-sharks. okay, those don&rsquo;t exist, but I don&rsquo;t think there&rsquo;s a single creature vicious enough to describe this dastardly duo. Faced with 35 years in federal prison, Aaron, sadly, took his own life.</p>
+
+<p>I&rsquo;m not here to rehash the whole case or go over what should have happened differently. The hacker community mourns the loss of Aaron Swartz, each of us in our own way. But I do want to address the technical, economic, and even pedagogical consequences of the CFAA in its current state, and why its amendment is so vital.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/06/21/the-importance-of-aarons-law/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -625,62 +672,6 @@ software is also quietly eating its own tail.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2013/03/08/pam-authentication-beyond-the-desktop/">PAM Authentication Beyond The Desktop</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-08T20:11:00-05:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&rsquo;s useful for so much more.</p>
-
-<h3>Web Authentication</h3>
-
-<p>At work, we needed an authentication solution that allowed users to sign in with their ActiveDirectory credentials. Although the &ldquo;official&rdquo; solution was to use <a href="http://www.ca.com/us/secure-single-sign-on.aspx">SiteMinder</a> for web authentication against AD, we were working on a mobile application, and at the time the SiteMinder auth page was ugly, and had no mobile-optimized login page. The latter problem has since been rectified; now it has both an ugly desktop login and an ugly mobile login. In addition, we were using nginx, and SiteMinder was really only supported under IIS and Apache (and at the time, the latter was via Shibboleth. Ugh.), so without official SiteMinder support, or an nginx Shib plug-in, we were in a bit of a bind.</p>
-
-<p>Around the same time, I was playing with Likewise Open (now known as <a href="http://www.powerbrokeropen.org/">PowerBroker Identity Services &ndash; Open Edition</a>) to bind my Linux workstation into AD. So it occurred to me: if a normal Linux PAM login can be authenticated against ActiveDirectory, why not a PAM login from a web application?</p>
-
-<p>I know, I know, my first though should have been LDAP, right? For some unknown reason, LDAP was verboten at the time. The policy has since (apparently) been reversed, but such is the ebb and flow of corporate politics. And so, in the grand tradition of one of the mothers of modern computer science (and one of my daughter&rsquo;s namesakes):</p>
-
-<blockquote><p>If it&#8217;s a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote>
-
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/03/08/pam-authentication-beyond-the-desktop/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="4">&larr; Older</a>
@@ -704,6 +695,10 @@ software is also quietly eating its own tail.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/29/reify-this/">Reify This!</a>
       </li>
     
@@ -717,10 +712,6 @@ software is also quietly eating its own tail.</p>
     
       <li class="post">
         <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
   </ul>

@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="Yesterday, Coursera announced that 12 more universities had joined their program of creating massive open online courses, or MOOCs (one of them was &hellip;">
+  <meta name="description" content="Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,59 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/08/02/legacy-systems-on-rails-part-1/">Legacy Systems on Rails (Part 1)</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-02T14:48:00-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
+
+<p>Since I spend a lot of time on this, I figured it would be a good topic for a series of posts, hence the &ldquo;Part 1&rdquo; in the title. Hopefully I&rsquo;ll actually follow through on it.</p>
+
+<p>The first thing I did was to replace a few aging Perl CGI scripts with a Rails app, which was interesting. The notion that Rails is far easier to use for greenfield projects than for legacy systems is probably accurate, but it&rsquo;s not universally true.</p>
+
+<p>This back-end is an Oracle database with over 450 tables and a hodgepodge of different strategies for how relationships should be modeled. I&rsquo;m pretty sure it was my second or third day on the job that I was asked to implement a feature (in the old Perl codebase) that should have been straightforward given the relationships between two particular entities, but ended up requiring six inner joins and two left outer joins, IIRC. Just to give you an idea of what I&rsquo;m dealing with.</p>
+
+<p>Anyhow, the first time around, I wrote an ActiveRecord model for each table, did my <code>has_many</code>&rsquo;s and <code>belongs_to</code>&rsquo;s, et cetera. Some were easier than others. There were a <em>lot</em> of conditions hashes in some of those associations.</p>
+
+<p>When the project scope started to grow beyond a single web app, and I started designing a REST API for the system, I had the opportunity to scratch some of the itches that had been bugging me about the original implementation from the very beginning.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/02/legacy-systems-on-rails-part-1/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -669,63 +722,6 @@ robust solution for a range of job interview scenarios.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/05/08/simplicity/">Simplicity</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-08T10:15:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>Machine Beauty</h3>
-
-<p><img class="float-left" src="http://photo.goodreads.com/books/1171573120l/107615.jpg" width="250"></p>
-
-<p>In his essay <a href="http://www.goodreads.com/book/show/107615.Machine_Beauty">Machine Beauty</a>, David Gelernter defines &ldquo;machine beauty&rdquo; as an inspired mating of simplicity and power. In software, I think this is also what we mean when we talk about &ldquo;elegance.&rdquo;</p>
-
-<p>The Dijkstra quote that serves as a tagline for this blog is actually truncated; the full quote reads:</p>
-
-<blockquote><p>Elegance is not a dispensable luxury but a quality that decides between success and failure.</p></blockquote>
-
-<p>This is not (necessarily) an economic truth; few people would describe any product from Microsoft as elegant, but they have been economically successful. However, the painful experience of using Microsoft software, the unreliability of both systems and applications, the general clunkiness of Windows applications, indicates that the software here is indeed a failure.</p>
-
-<p>Software is a failure when it becomes an obstacle to productivity rather than an aid to it; when you must serve the compiler (or interpreter) rather than the compiler serving you (think Java boilerplate). From an end-user standpoint, the failure comes when the interface imposes unnatural workflows and ceremony that interrupts the natural flow of completing a task.</p>
-
-<p>Software is successful when you hardly notice it&rsquo;s there; when it becomes a natural extension of the self, an augmentation to human ability. In terms of systems, think of the Macintosh when it was introduced; nothing before had been so intuitive, and enabling. In terms of programming languages, Ruby leaps immediately to mind. It is so expressive that it no longer feels like &ldquo;coding&rdquo;; you are just expressing your thoughts in a syntax that feels almost immediately as natural as a spoken language.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/08/simplicity/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="6">&larr; Older</a>
@@ -749,6 +745,10 @@ robust solution for a range of job interview scenarios.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/29/reify-this/">Reify This!</a>
       </li>
     
@@ -762,10 +762,6 @@ robust solution for a range of job interview scenarios.</p>
     
       <li class="post">
         <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a>
       </li>
     
   </ul>
