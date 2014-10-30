@@ -22,7 +22,7 @@ One day, a wizard visted me.
 
 And that's when things began to get weird...
 
-
+<!-- more -->
 
 Okay, so maybe I didn't receive a visit from the revenant spirit of John McCarthy, ghost of programming past, present and future. Or maybe I did.
 
