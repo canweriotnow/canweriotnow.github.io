@@ -12,8 +12,6 @@ I feel like a religious convert... I miss those simple, unadorned Vim services b
 
 So before the jump, in the spirit of "I'll show you mine if you show me yours," my [.emacs.d](https://github.com/canweriotnow/.emacs.d).
 
-<!-- more -->
-
 ## An Unexpected Journey
 
 I lived in my happy little Vim hobbit hole, smoking my pipe and enjoying my brandy. It was not a dirty hole, or a sandy hole, but a hobbit hole, which means comfort.
@@ -23,6 +21,8 @@ One day, a wizard visted me.
 {% img /images/post-img/mccarthy1.jpg 'McCarthy at work at SAIL' %}
 
 And that's when things began to get weird...
+
+
 
 Okay, so maybe I didn't receive a visit from the revenant spirit of John McCarthy, ghost of programming past, present and future. Or maybe I did.
 
