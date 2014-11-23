@@ -4,7 +4,7 @@
   <title><![CDATA[Category: coding | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/coding/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-16T20:30:01-05:00</updated>
+  <updated>2014-11-23T02:20:34-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -14,156 +14,577 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Recovering from Clojure/conj]]></title>
+    <link href="http://decomplecting.org/blog/2014/11/22/recovering-from-clojure-slash-conj/"/>
+    <updated>2014-11-22T20:37:56-05:00</updated>
+    <id>http://decomplecting.org/blog/2014/11/22/recovering-from-clojure-slash-conj</id>
+    <content type="html"><![CDATA[<p>Whew. I just got back from <a href="http://clojure-conj.org">Clojure/conj</a> and boy, is my brain tired.</p>
+
+
+
+
+<p>I&#8217;l be doing a more detailed and code-oriented post with <a href="https://twitter.com/miltreder">Milt Reder</a> on the <a href="http://yetanalytics.com/blog">Yet Analytics blog</a> this week, but I need to do a brain dump beofre I brainsplode.</p>
+
+
+
+
+<p>So, getting the fanboy stuff out of the way: I got to shake Rich Hickey&rsquo;s hand and thank him for all the work that went into Clojure and Datomic, i.e., the stuff that made programming fun again for me. So that was fun. This was at the conference party at the <a href="http://www.crimemuseum.org/">Crime Museum</a>, which was a joy and a wonderful place for a party.</p>
+
+
+
+
+<p>But, the actual conj&hellip;</p>
+
+
+
+
+<!--more-->
+
+
+
+
+<h3>Brainsplosion: Stage 1</h3>
+
+
+
+
+<p>On day one of the conj, I was in awe of the presentations I was seeing. Amazing work in ClojureScript, generative testing, JVM experiments&hellip;</p>
+
+
+
+
+<p>I was especially excited to see <a href="https://twitter.com/bbatsov">Bozhidar Batsov</a> talk about the state of <a href="https://github.com/clojure-emacs/cider">CIDER</a>, since I use it every day in my development cycle with Emacs, and he&rsquo;s also the author of <a href="https://github.com/bbatsov/prelude">Prelude</a>, my baseline Emacs environment. CIDER has come a long way, and it&rsquo;s only getting better. I can&rsquo;t imagine going back to another development environment for Clojure. Although, the talk on <a href="https://cursiveclojure.com/">Cursive</a> was fascinating, and I&rsquo;ll certainly use it in <a href="https://www.jetbrains.com/idea/">IntelliJ</a> if I&rsquo;m writing Java with Clojure wrappers.</p>
+
+
+
+
+<p>Just when I thought I&rsquo;d had enough: the Rich Hickey keynote, Inside Transducers. This went way deeper than his <a href="https://www.youtube.com/watch?v=6mTbuzafcII">Strange Loop talk</a>.</p>
+
+
+
+
+<p>Rich uses <a href="http://aquamacs.org/">Aquamacs</a>, apparently. Who knew?</p>
+
+
+
+
+<p>Anyhow, I can&rsquo;t go into the meat of transducers here, but I can say they&rsquo;ll mean a massive refactoring of my main codebase, especially when dealing with transformations of data structures from core.async channels. Again, we&rsquo;ll do a more technical post soon. I&rsquo;m still processing this.</p>
+
+
+
+
+<h3>Brainsplosion: Stage 2</h3>
+
+
+
+
+<p>That night there were unsessions, and although there were a number of incredible topics, the one most relevant to our day-to-day (and the one we made it to) was the <a href="http://www.datomic.com/">Datomic</a> unsession with <a href="https://twitter.com/stuarthalloway">Stu Halloway</a>, one of the architects of Datomic. In less than an hour, the Q&amp;A (only one of the Q&rsquo;s being from me) helped me figure out my deployment strategy for Datomic on multiple peers on AWS behind an ELB instance. I&rsquo;d been pondering this for months, and it all became clear.</p>
+
+
+
+
+<p>On day 2, we learned some fascinating things about using async channels in ClojureScript, type systems, and Datomic superpowers. I took a break after lunch, and then that night was the party.</p>
+
+
+
+
+<h3>Brainsplosion: Final Meltdown</h3>
+
+
+
+
+<p>Today, there were great talks about data pipelines, more generative testing, and then&hellip;</p>
+
+
+
+
+<p>I don&rsquo;t even know how to start this.</p>
+
+
+
+
+<p>Let me explain: I came to CLojure with very little Java experience. I learned &ldquo;enough Java to get by&rdquo; so I could write simple Android apps. Then I saw this talk by Steve Yegge:</p>
+
+
+
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/tz-Bb-D6teE" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+<p>If you prefer, the <a href="http://steve-yegge.blogspot.com/2008/05/dynamic-languages-strike-back.html">transcript is here</a>.</p>
+
+
+
+
+<p>Did you notice this part?</p>
+
+
+
+
+<blockquote><p>So javac, the Java compiler: what does it do? Well, it generates bytecode, does some optimizations presumably, and maybe tells you some errors. And then you ship it off to the JVM. And what happens to that bytecode? First thing that happens is they build a tree out of it, because the bytecode verifier has to go in and make sure you&rsquo;re not doing anything [illegal]. And of course you can&rsquo;t do it from a stream of bytes: it has to build a usable representation. So it effectively rebuilds the source code that you went to all that effort to put into bytecode.</p></blockquote>
+
+
+
+
+<p>There&rsquo;s way more than that, but that&rsquo;s the first thing that got the JVM raising hairs on the back of my neck.</p>
+
+
+
+
+<p>So anyhow, I&rsquo;ve been increasingly interested in JVM internals.</p>
+
+
+
+
+<p>Like how when I first got into Clojure, I learned the main reason it lacked tail call optimization was the JVM&rsquo;s security model.</p>
+
+
+
+
+<p>Yeah. the security model prohibits the reuse of stack frames. I promise, I&rsquo;ll come back to this.</p>
+
+
+
+
+<p>So the closing keynote was by <a href="https://twitter.com/briangoetz">Brian Goetz</a>, Java Language Architect at Oracle. The things I learned about the JVM and where it&rsquo;s going broke my brain more than transducers.</p>
+
+
+
+
+<p>First: we all know (or should know) that Java 8 is getting lambda expressions.</p>
+
+
+
+
+<p>So what happened? Did they add a Function type to the JVM? Nope. Java 8 lambdas are syntactic sugar over interface implementations!</p>
+
+
+
+
+<p>I&rsquo;m not going to dive into code in this post, as it&rsquo;s my decompression post, but this was one mind-blowing concept.</p>
+
+
+
+
+<p>We also learned that while type erasure in generics isn&rsquo;t going anywhere, we will be able to use generics with primitives. Which is pretty damned cool. So instead of getting the autoboxed <code>ArrayList&lt;Integer&gt;</code>, you can get an unboxed <code>ArrayList&lt;int&gt;</code>.</p>
+
+
+
+
+<p>I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games inClojure and need unboxed floats and doubles in order so to do.</p>
+
+
+
+
+<p>But here&rsquo;s the jaw-dropper:</p>
+
+
+
+
+<p>Part of the JVM&rsquo;s security model, ever since the dark days of 1995, has been frame counting. I&rsquo;m going to get this wrong, so please correct me in the comments. But my understanding is this: If there are 64 frames on the stack, and a new instruction is called, the JVM is going to make sure there are 65 frames on the stack, to prevent frame injection.</p>
+
+
+
+
+<p>This is why we have this <code>loop</code> and <code>recur</code> bullshit in Clojure. I shouldn&rsquo;t call it bullshit, it&rsquo;s actually an elegant workaround for the limitations of the JVM. But it&rsquo;s still a smelly workaround for the lack of tail call optimization we get in, say, Scheme.</p>
+
+
+
+
+<p>Getting rid of this (in Brian&rsquo;s words, IIRC, <strong>stupid</strong> &ldquo;security&rdquo; implementation) means we can drop the prohibition against the reuse of stack frames and actually get tail recursion on the JVM without blowing the stack.</p>
+
+
+
+
+<p>Admittedly, TCO was stated tot be low-priority for the Java language team at Oracle, but if the JVM changes to support it, I don&rsquo;t see why we can&rsquo;t have it in Clojure before Java gets it.</p>
+
+
+
+
+<p>Whew. Brainmelt.</p>
+
+
+
+
+<p>Which also happens to be the least popular sandwich at Denny&rsquo;s.</p>
+
+
+
+
+<p>So there&rsquo;s my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But Damn was that a good conference.</p>
+
+
+
+
+<p>There were many times I felt like I had to be the stupidest person there.</p>
+
+
+
+
+<p>But most of the people I talked to felt the same, so I guess I&rsquo;m in good company, and in the right place.</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Emacs: Down The Rabbit Hole]]></title>
     <link href="http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole/"/>
     <updated>2014-10-30T06:05:25-04:00</updated>
     <id>http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole</id>
     <content type="html"><![CDATA[<p>So I wrote <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a> in response to a tweet, but as any of my co-workers will attest, it doesn&rsquo;t take much to get me started on my Emacs workflow.</p>
 
+
+
+
 <p>I feel like a religious convert&hellip; I miss those simple, unadorned Vim services but I&rsquo;m floored by the majesty of the stained glass and altar dressings and ritual of the Church of Emacs.</p>
+
+
+
 
 <p>So before the jump, in the spirit of &ldquo;I&rsquo;ll show you mine if you show me yours,&rdquo; my <a href="https://github.com/canweriotnow/.emacs.d">.emacs.d</a>.</p>
 
+
+
+
 <h2>An Unexpected Journey</h2>
+
+
+
 
 <p>I lived in my happy little Vim hobbit hole, smoking my pipe and enjoying my brandy. It was not a dirty hole, or a sandy hole, but a hobbit hole, which means comfort.</p>
 
+
+
+
 <p>One day, a wizard visted me.</p>
 
-<p><img src="/images/post-img/mccarthy1.jpg" title="&lsquo;McCarthy at work at SAIL&rsquo;" ></p>
+
+
+
+<p><img src="http://decomplecting.org/images/post-img/mccarthy1.jpg" title="'McCarthy at work at SAIL'" ></p>
+
+
+
 
 <p>And that&rsquo;s when things began to get weird&hellip;</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <p>Okay, so maybe I didn&rsquo;t receive a visit from the revenant spirit of John McCarthy, ghost of programming past, present and future. Or maybe I did.</p>
+
+
+
 
 <p>Maybe Paul Graham just convinced me I was <a href="http://www.paulgraham.com/avg.html">coding in Blub</a>, for whatever value of Blub I happened to be using.</p>
 
+
+
+
 <p>See, the thing about Blub is it&rsquo;s a mutable value. When you&rsquo;re using C++ and Java comes along, you realize C++ was actually Blub. When you&rsquo;re using Perl for your day-to-day and discover Python, and then Ruby, you realize that not only was Python Blub, but Perl was an even Blubbier Blub.</p>
+
+
+
 
 <p>Ruby&hellip; oh, Ruby. I still love Ruby. But then something happened.</p>
 
+
+
+
 <p>I need to backpedal a bit.</p>
+
+
+
 
 <p>There&rsquo;s <em>using</em> a language, and then there&rsquo;s <em>building</em> something in it. I&rsquo;d played with Scheme (<a href="http://mitpress.mit.edu/sicp/">SICP</a> is wonderful), and even Common Lisp, and I knew enough to appreciate the Lisp-nature of Ruby which, when combined with its Smalltalk-nature, I thought made for hte perfect productive language.</p>
 
+
+
+
 <p>But see, I was <em>building</em> things in Ruby while I was <em>playing</em> with Lisp.</p>
+
+
+
 
 <p>Along comes Clojure.</p>
 
+
+
+
 <p>I was working in a pretty isolated programming role that granted me a lot of de facto autonomy. So when I got a request for a new service, I thought &ldquo;why not Clojure?&rdquo;</p>
+
+
+
 
 <p>We&rsquo;re in late 2012 here, so bear with me.</p>
 
+
+
+
 <p>My first Clojure project ran like a champ, was hailed as an unqualified success. Eventually I even <a href="http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/">blogged about</a> a piece of that project that handled datetimes.</p>
+
+
+
 
 <p>Fast-forward to the present, I&rsquo;ve written Clojure in <a href="http://www.sublimetext.com/">Sublime Text</a>, <a href="https://atom.io/">Atom</a>, mostly <a href="http://www.vim.org/">Vim</a> with the help of some awesome plugins from <a href="https://github.com/tpope">Tim Pope</a>.</p>
 
+
+
+
 <p>Like I <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">mentioned before</a>, I&rsquo;ve had a religious hatred for Emacs since the mid-1990s when I entered the *nix world and got involved in USENET.</p>
+
+
+
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/freebsdgirl">@freebsdgirl</a> <a href="https://twitter.com/darkuncle">@darkuncle</a> &#8230;and on that day, war broke out, destroying the fragile peace that had been brokered so long ago.</p>&mdash; jason λewis (@canweriotnow) <a href="https://twitter.com/canweriotnow/status/527532324234489857">October 29, 2014</a></blockquote>
 
 
+
+
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 
 
 <p>The war is far from over&hellip;</p>
 
+
+
+
 <p>&hellip;but, I digress.</p>
+
+
+
 
 <p>I started the <a href="http://www.meetup.com/Baltimore-Clojure/">Baltimore Clojure Meetup</a> and met more Emacs users than I had in one place in a long time. Again, I dismissed Emacs.</p>
 
+
+
+
 <p>That is, until I found <a href="http://lighttable.com/">LightTable</a> completely b0rked again and threw up my hands.</p>
+
+
+
 
 <p>Perhaps I shouldn&rsquo;t have eaten my hands to begin with&hellip; sorry, equivocation humor. Can&rsquo;t resist.</p>
 
+
+
+
 <h2>Welcome to Emacs</h2>
+
+
+
 
 <p>So yeah, I went over my starter packages in the <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">earlier post</a>, but I didn&rsquo;t talk about the full experience of discovery I underwent when I fully committed to emacs.</p>
 
+
+
+
 <p>Sure, there&rsquo;s the whole <code>cider-mode</code> and <code>cider-jack-in</code> and <code>cider-nrepl</code> and even <code>cider-scratch</code> that make LightTable&rsquo;s inline evaluation modes look like child&rsquo;s play (no offense to Chris Granger, LightTable is beautiful, I love it, but&hellip; y&#8217;know, Emacs).</p>
+
+
+
 
 <p>So I did those things, started with <a href="http://batsov.com/prelude/">Prelude</a>, added all the Clojure fun I could find, and got to work.</p>
 
+
+
+
 <p>I also subscribed to <a href="http://www.reddit.com/r/emacs">/r/emacs</a>, and did a little reading on the <a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a>.</p>
+
+
+
 
 <p>Have you ever been comfortably reading (or coding) under a tree, and you see a white rabbit in a waistcoat with a pocket-watch run by complaining he&rsquo;s late?</p>
 
+
+
+
 <p>Thus such adventures begin.</p>
+
+
+
 
 <h2>EAT ME / DRINK ME</h2>
 
+
+
+
 <p>As I fell to the bottom (or so I thought) of the rabbit-hole, I found a bottle of <code>cider</code> labeled <em>Drink Me,</em> and so I drank the <code>cider</code>. Suddenly, I could eval Clojure inline, jump to docstrings, jump to source for a fn, and it was wonderful.</p>
+
+
+
 
 <p>The last time I tried Emacs, I always joked about how I was using Emacs but always edited my .emacs config with Vim.</p>
 
+
+
+
 <p>&ldquo;Not this time,&rdquo; I thought, and used <a href="http://www.emacswiki.org/emacs/Projectile">Projectile</a> to manage my <code>.emacs.d</code> and edited my <code>user.el</code> in Emacs. Oh, it was better! Then, thought I, I should put my <code>.emacs.d</code> in source control (actually, it was demanded:</p>
 
+
+
+
 <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/canweriotnow">@canweriotnow</a> <a href="https://twitter.com/willowdower">@willowdower</a> Now you must post your config on github so that we may critique it.</p>&mdash; Alex Redington (@holy_chao) <a href="https://twitter.com/holy_chao/status/511574770388041728">September 15, 2014</a></blockquote>
+
+
 
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
+
+
 <p>&hellip;yeah).</p>
+
+
+
 
 <p>But then I realized I was doing the <code>⌘-Tab</code> to iTerm to run <code>git ci -a</code> (I pity the fool that doesn&rsquo;t alias common git commoands) in&hellip; wait for it&hellip; <code>$EDITOR=/usr/bin/vim</code>.</p>
 
+
+
+
 <p>That&rsquo;s when I found a bit of fairy cake called <a href="http://www.emacswiki.org/Magit">magit</a>, and I ate a bit of that and my Git workflow was inside of Emacs. Now it was a simple <code>M-x magit-status</code> to view my working tree state, where I could hit <code>s</code> to stage files for commit, and <code>C-c C-c</code> to commit changes, and <code>P P</code> to push.</p>
+
+
+
 
 <p>Oh, it&rsquo;s beautiful.</p>
 
+
+
+
 <h2>Curiouser and Curiouser</h2>
+
+
+
 
 <p>Well, if Emacs can handle my Git workflow, what <em>can&rsquo;t</em> it do, I wondered?</p>
 
+
+
+
 <p>I went a bit mad playing with multiple buffer and frame layouts; on one occasion I opened a shell inside an emacs biffer and launched the command-line version of emacs in a shell inside the windowed version of emacs.</p>
+
+
+
 
 <p>Recursive rabbit holes.</p>
 
+
+
+
 <p>When you&rsquo;re running the Cocoa-nested version of Emacs (not Aquamacs, fuck that noise, but just GNU Emacs packaged as a .app), you get some suggestions from the menus. Gnus for USENET or email, various games, a calendar&hellip;</p>
+
+
+
 
 <p>Calendar?</p>
 
+
+
+
 <p>That&rsquo;s whan I discovered Org-Mode.</p>
+
+
+
 
 <h2>Org-Mode FTW</h2>
 
+
+
+
 <p><a href="http://orgmode.org/">Org Mode</a> is an Emacs major mode that lets you organize your life. All of it. I&rsquo;m not even going into detail here, it&rsquo;s a deep, deep well. You can use it for a TODO list, sync it with your phone, use it <a href="http://www.railsonmaui.com/blog/2014/03/05/octopress-setup-with-github-and-org-mode-v2/">to write</a> your <a href="http://octopress.org">Octopress blog</a>.</p>
+
+
+
 
 <p>(Confession: This blog is powered by octopress, and although it&rsquo;s now written in Emacs, I&rsquo;ve not gone full crazy and started composing it with Org-Mode)</p>
 
+
+
+
 <h2>Twittering-Mode WTF</h2>
+
+
+
 
 <p>That&rsquo;s when I started going down the tunnel of &ldquo;well, what <em>else</em> can it do?&rdquo;</p>
 
+
+
+
 <p>And I discovered <code>twittering-mode</code>.</p>
+
+
+
 
 <p>A quick <code>M-x package-install RET twittering-mode</code> puts a Twitter client in your text editor. Like you always needed. <code>M-x twit</code> will jump you right into your Twitter feed, <code>i</code> will enable user icons (yes, user avatars right in goddamn Emacs), and <code>u</code> will jump you to a buffer where you can compose a Tweet and hit <code>C-c C-c</code> to send it.</p>
 
+
+
+
 <h2>Playing Games</h2>
+
+
+
 
 <p>I&rsquo;d be remiss if I didn&rsquo;t mention that <code>M-x package-install RET 2048-mode</code> will install a game of 2048 in Emacs. Because that&rsquo;s really fucking important, you know?</p>
 
+
+
+
 <p><strong>Sigh</strong></p>
+
+
+
 
 <p>For good reason, Emacs comes standard with an AI psychotherapist named Eliza.</p>
 
+
+
+
 <p>A quick <code>M-x doctor</code> and you&rsquo;re in therapy.</p>
+
+
+
 
 <p>Which you&rsquo;ll probably need.</p>
 
+
+
+
 <h2>&hellip;and Much, Much More</h2>
+
+
+
 
 <p>I&rsquo;ve barely scratched the surface, but I feel like this post is long enough. There&rsquo;s so much down here, down the Emacs rabbit hole, that it will probably take me weeks to even catch up to whre I am right now; what I&rsquo;ve described so far is my first few days with this <del>operating system</del> text editor.</p>
 
+
+
+
 <p>But it&rsquo;s a fun ride.</p>
+
+
+
 
 <h3>Postscript</h3>
 
+
+
+
 <p>Sorry for the Tolkien digression when my dominant allusion was <em>Alice in Wonderland&hellip;</em> Emacs is a weird place.</p>
+
 ]]></content>
   </entry>
   
@@ -174,120 +595,179 @@
     <id>http://decomplecting.org/blog/2014/10/29/reify-this</id>
     <content type="html"><![CDATA[<p>On the way home this afternoon I was asked to explain Clojure&rsquo;s <code>reify</code> macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment might be available to others.</p>
 
+
+
+
 <p>Reify derives from the Latin <em>res,</em> or &ldquo;thing.&rdquo; So <code>reify</code> fundamentally means &ldquo;make a <em>thing</em> out of&hellip;.</p>
+
+
+
 
 <h3>Protocols and Datatypes</h3>
 
+
+
+
 <p>Clojure <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/defprotocol/">protocols</a> are similar to Java interfaces: They define a set of methods/functions purely by their signatures without providing implementation details. Declaring that a class implements an interface (in Java) or that a record implements a protocol (in Clojure) is a contract that specifies that the given class or record, in order to be valid, will provide concrete implementations of those methods/functions.</p>
+
+
+
 
 <p>But sometimes we don&rsquo;t need a reusable entity with reusable implementations that we can instantiate willy-nilly; sometimes we just need a <em>thing</em> that implements those methods.</p>
 
+
+
+
 <p>In Java, anonymous inner classes can fulfill this purpose. In Clojure, we have <code>reify.</code></p>
+
+
+
 
 <h3>That Nameless Thing</h3>
 
+
+
+
 <p>OK, it&rsquo;s not really going to be nameless&hellip; let&rsquo;s say we have a putative protocol as follows:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">Foo&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
-</span><span class='line'><span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">])</span>
-</span><span class='line'><span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">])</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>So if we were creating a new record, we might do:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defrecord </span><span class="nv">FooRecord&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;Foo</span>
-</span><span class='line'><span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
-</span><span class='line'><span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="nv">st</span><span class="p">))</span>
-</span><span class='line'><span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defrecord </span><span class="nv">FooRecord</span>
+</span><span class='line'>    <span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="nv">st</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>Which is perfect if we need to repeatedly instantiate a FooRecord that implements the Foo protocol. But sometimes we just need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
+
+
+
 
 <!--more-->
 
 
+
+
 <h3>One-Off Things</h3>
+
+
+
 
 <p>Instead of creating a defrecord (I&rsquo;m going to leave the issue of runtime class generation for another post), we have the option of creating an individual, unique object that implements the desired protocol via <code>reify</code>.</p>
 
+
+
+
 <p>Like so:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
 </pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">athing</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">reify</span> <span class="nv">Foo&lt;/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
-</span><span class='line'><span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nf">str/replace</span> <span class="nv">this</span> <span class="p">(</span><span class="nb">re-pattern </span><span class="nv">st</span><span class="p">)))</span>
-</span><span class='line'><span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))))</span>
-</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nv">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'>  <span class="p">(</span><span class="nf">reify</span> <span class="nv">Foo</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nf">str/replace</span> <span class="nv">this</span> <span class="p">(</span><span class="nb">re-pattern </span><span class="nv">st</span><span class="p">)))</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>Now I have <code>athing</code> that implements the Foo protocol in a manner appropriate to its context, I don&rsquo;t have to worry about declaring a general case (class, or defrecord), and I can use this object while it&rsquo;s handy and let it get GC&rsquo;d when I&rsquo;m done with it.</p>
 
+
+
+
 <h3>Incomplete, and Mostly Wrong</h3>
+
+
+
 
 <p>This is a really brief description of the <code>reify</code> macro, and more details are available in the <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/reify/">Clojure Grimoire</a>. But it apparently clarified things for one person, so I thought I&rsquo;d share it here.</p>
 
+
+
+
 <p>But in the words of Steve Jobs&hellip;</p>
+
+
+
 
 <h3>And One More Thing&hellip;</h3>
 
+
+
+
 <p>We&rsquo;ve got a Lisp here in Clojure, right? We&rsquo;re doing functional programming, so why all of this larking about with objects?</p>
+
+
+
 
 <p>It&rsquo;s not just Clojure&rsquo;s Java heritage. Forms like <code>defrecord</code>, <code>defprotocol</code>, and <code>reify</code> aren&rsquo;t about Java interop.</p>
 
+
+
+
 <p>Let me take you back in time&hellip;</p>
+
+
+
 
 <p>Once upon a time, there was a common Lisp dialect, established by ANSI standard, called Common Lisp.</p>
 
+
+
+
 <p>In the times of mist, the original neckbeards established that this Common Lisp should have an object system, known as <a href="http://www.aiai.ed.ac.uk/~jeff/clos-guide.html">CLOS</a>, or the Common Lisp Object System.</p>
+
+
+
 
 <p>Clojure has an object system as well; some of it seems ties to its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened up the possibilities for the object model, maybe?</p>
 
+
+
+
 <p>Not really. OOP models aren&rsquo;t all that creative. Ruby has quite a novel object model but other than that, OOP is pretty boring and let&rsquo;s just forget about that unhappy chapter in our past, shall we?</p>
 
+
+
+
 <p>Let&rsquo;s.</p>
+
 ]]></content>
   </entry>
   
@@ -298,100 +778,231 @@
     <id>http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs</id>
     <content type="html"><![CDATA[<p>I have to start this post by saying I&rsquo;ve been a dogmatic <a href="http://www.vim.org/">Vim</a> partisan since the 1990&rsquo;s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.</p>
 
+
+
+
 <p>I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)&hellip; I couldn&rsquo;t stand the chord keys and lack of modality.</p>
+
+
+
 
 <p>Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I&rsquo;m out there evangelizing Emacs (I&rsquo;m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I&rsquo;d offer some advice for those looking to convert to the Church of Emacs.</p>
 
-<p><img src="/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
+
+
+
+<p><img src="http://decomplecting.org/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
+
+
+
 
 <!--more-->
 
 
+
+
 <p>Primarily, this post is inspired by a request I received on Twitter:</p>
+
+
+
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/canweriotnow">@canweriotnow</a> Got any links for switching to emacs? macvim isn&#39;t working in yosemite so I figure I might as well give emacs a real shot</p>&mdash; maɪk pətɛlə (@mikepatella) <a href="https://twitter.com/mikepatella/status/525439599276220416">October 24, 2014</a></blockquote>
 
 
+
+
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 
 
 <p>Instead of just compiling some links in a gist, I figured it was worthy of a blog post, so my seniors in the Church of Emacs can tell me where I&rsquo;m wrong in the comments. But this is based on my experience converting from Vim to Emacs, so I&rsquo;ll explain what worked for me.</p>
 
+
+
+
 <h3>Emacs Prelude</h3>
+
+
+
 
 <p>Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your <code>.emacs.d</code> config directory in a way that makes it easy to configure without breaking shit.</p>
 
+
+
+
 <p>The install instructions are <a href="http://batsov.com/prelude/">here</a> and I highly recommend it.</p>
+
+
+
 
 <p><strong>UPDATE:</strong> I forgot something vitally important about prelude. Prelude comes with <code>guru-mode</code> enabled by default, which disables your arrow keys and prods you to use Emacs default navigation commands instead (i.e. <code>C-p</code> for up, <code>C-n</code> for down, <code>C-b</code> for left, <code>C-f</code> for right). These commands are <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html">worth knowing</a>, but I felt like I was being trolled when my arrow keys just told me what chord combination to use instead. (As an aside, <a href="http://thoughtbot.com">Thoughtbot&rsquo;s</a> <a href="https://github.com/thoughtbot/dotfiles">dotfiles</a> do the same thing with vim).</p>
 
+
+
+
 <p>So you have two options: one is to <code>M-x guru-mode</code> to toggle it every session. The more permanent solution is to add the following to your config (if you&rsquo;re using Prelude, it should go in <code>~/.emacs.d/personal/preload/user.el</code>):</p>
+
+
+
 
 <p><code>(setq prelude-guru nil)</code></p>
 
+
+
+
 <p>Just my personal preference, but something I found really annoying when I got started.</p>
+
+
+
 
 <p>As far as all those useful navigation and editing commands, emacs (naturally) has a built-in tutorial accessible from <code>M-x help-with-tutorial</code> or just <code>C-h t</code>.</p>
 
+
+
+
 <p><strong>UPDATE TO THE UPDATE:</strong></p>
+
+
+
 
 <p>Bozhidar Batsov (the author of Prelude) pointed out in <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/#comment-1651596560">this comment</a> that the current default behavior is to warn when arrow keys are used, not to disable them.</p>
 
+
+
+
 <p>I hadn&rsquo;t noticed the change, which came in with <a href="https://github.com/bbatsov/prelude/commit/fda768992ef27f39f30178d4ebb8cbb559d5a3c6">this commit</a>.</p>
+
+
+
 
 <p>You can find the configuration options for <code>guru-mode</code> in the README <a href="https://github.com/bbatsov/prelude#warnings-on-arrow-navigation-in-editor-buffers">here</a>.</p>
 
+
+
+
 <h3>Emacs for Mac OS X</h3>
+
+
+
 
 <p>I really like using the packaged app version of Emacs available from <a href="http://emacsformacosx.com/">http://emacsformacosx.com/</a>. It works great with Prelude, and doesn&rsquo;t include the cruft that <a href="http://aquamacs.org/">Aquamacs</a> tacks on to make it more Mac-ish.</p>
 
+
+
+
 <p>You get a nice packaged Emacs.app that follows OS X conventions, but is really just straight GNU Emacs.</p>
+
+
+
 
 <h3>evil-mode</h3>
 
+
+
+
 <p>So, this is a touchy subject for me. When I first switched I used evil-mode to get my familiar Vim keybindings in emacs, but I actually found it made it more difficult to dive into emacs. Evil-mode is actually impressively complete when it comes to imposing vim functionality over top of emacs, but there are still times when you needto hit <code>C-x k</code> or <code>M-x something-mode</code> and the cognitive dissonance of switching between them was just overwhelming.</p>
+
+
+
 
 <p>So I&rsquo;d forego evil-mode and just keep <a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a> open in your browser for the first few days. It doesn&rsquo;t take that long to dive in head-first.</p>
 
+
+
+
 <h3>Projectile</h3>
+
+
+
 
 <p>It ships with Prelude, so not a major headline, but it does help to keep your projects organized and navigate files.</p>
 
+
+
+
 <h2>On Lisp</h2>
+
+
+
 
 <p>Since this is really about Clojure development environments, I might as well dive into the inherent Lispiness of emacs. The extension language is a Lisp dialect, and very easy to learn and use. Emacs is so extensible that one of the running jokes is that it&rsquo;s a great operating system in need of a decent text editor. I&rsquo;ll get to that later.</p>
 
+
+
+
 <h3>cider-mode</h3>
+
+
+
 
 <p>Interacting with Clojure is amazing with <a href="https://github.com/clojure-emacs/cider">cider</a>. You get an in-editor REPL, inline code evaluation, documentation lookup, a scratch buffer for arbitrary code evaluation, and a dozen other features. LightTable is nice with its InstaRepl but emacs/cider is the real deal. You cannot wish for a better Clojure dev environment&hellip; and the community agrees:</p>
 
+
+
+
 <blockquote class="twitter-tweet" lang="en"><p>It&#39;s great to see that <a href="https://twitter.com/hashtag/CIDER?src=hash">#CIDER</a> is still the most popular <a href="https://twitter.com/hashtag/Clojure?src=hash">#Clojure</a> dev environment <a href="https://t.co/inB8bnlyEl">https://t.co/inB8bnlyEl</a> Guess I should release 0.8 soon! :)</p>&mdash; Bozhidar Batsov (@bbatsov) <a href="https://twitter.com/bbatsov/status/525408420489613313">October 23, 2014</a></blockquote>
+
+
 
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
+
+
 <p><code>cider-jack-in</code> connects to a <code>lein repl :headless</code> instance, and <code>cider-mode</code> gives you inline evaluation in any Clojure file. It&rsquo;s amazing.</p>
+
+
+
 
 <h3>paredit and smartparens</h3>
 
+
+
+
 <p>Ever have trouble keeping your parens balanced? You&rsquo;re covered. <a href="http://www.emacswiki.org/ParEdit">paredit</a> is the classic solution, but a lot of folks are using <a href="https://github.com/Fuco1/smartparens">smartparens</a> instead&hellip; I&rsquo;ve been using smartparens in strict mode and it&rsquo;s made me a lot more disciplined about how I place my forms.</p>
+
+
+
 
 <h2>Other Languages</h2>
 
+
+
+
 <p>I&rsquo;ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it&rsquo;s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio make life so much easier. But most of that is all the ridiculous build ceremony for Java, so that&rsquo;s neither here nor there.</p>
+
+
+
 
 <h2>EmacsOS</h2>
 
+
+
+
 <p>That joke about Emacs being an operating system? Not such a joke.</p>
+
+
+
 
 <p>My favorite Twitter client right now is Emacs <a href="http://www.emacswiki.org/TwitteringMode">twittering-mode</a>. There&rsquo;s Gnus for Usenet and Email, and Emacs 24.4 just came out with an improved in-editor web browser called <code>eww</code>.</p>
 
+
+
+
 <p>Emacs is a deep, deep rabbit hole. The only way in is head first. But there&rsquo;s so much you can do in here, and it&rsquo;s a staggeringly powerful environment.</p>
+
+
+
 
 <p>Welcome to the dark side. We have macros.</p>
 
-<p><img src="/images/post-img/vader-choke.jpg" alt="Dark Side" /></p>
+
+
+
+<p><img src="http://decomplecting.org/images/post-img/vader-choke.jpg" alt="Dark Side" /></p>
+
 ]]></content>
   </entry>
   
@@ -402,99 +1013,121 @@
     <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
     <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
 
+
+
+
 <p>Okay, the PSAs keep it silly. Every time someone in those videos says &ldquo;I just did <em>n</em> lines of code&rdquo;, the following script runs through my head:</p>
 
-<p><figure class='code'><figcaption><span>&ldquo;Yeah, this&hellip;&rdquo; </span></figcaption>
+
+
+
+<figure class='code'><figcaption><span>&#8220;Yeah, this&#8230;&#8221; </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">I</span> <span class="n">just</span> <span class="n">did</span> <span class="c1">#{n} lines of code&amp;rdquo;.gsub!(/code/, &amp;lsquo;coke&amp;rsquo;) &amp;lt;&amp;lt; &amp;ldquo;, and I can&amp;rsquo;t feel my face!&amp;rdquo;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;I just did </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> lines of code&quot;</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/code/</span><span class="p">,</span> <span class="s1">&#39;coke&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, and I can&#39;t feel my face!&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>Yeah, I&rsquo;m a terrible person. Also hilarious. Moving on&hellip;</p>
 
+
+
+
 <!-- more -->
+
+
 
 
 <h3>Hacker Exceptionalism</h3>
 
+
+
+
 <p>Usually, the term <a href="http://en.wikipedia.org/wiki/Exceptionalism">Exceptionalism</a> is used in a context of superiority, e.g., <a href="http://en.wikipedia.org/wiki/American_exceptionalism">American exceptionalism</a>. I do believe there is something like &ldquo;hacker exceptionalism&rdquo;, except the &ldquo;exception&rdquo; has nothing to do with superiority, but literally an exceptional case — a corner case for life, if you will.</p>
+
+
+
 
 <p>There&rsquo;s something weird about hackers. I&rsquo;m not lumping everyone who writes code for their day job into this category (frankly, that would be offensive to my sensibilities). I&rsquo;ve written <a href="http://decomplecting.org/blog/2012/05/22/passion/">before</a> about my encounters with people who just code 9 to 5 and then don&rsquo;t think about it and all I can say now is that I wish they would stop (actually, I&rsquo;m not sure many of them think about it at all).</p>
 
+
+
+
 <p>People who grok code have weird brains. That&rsquo;s the theory. It&rsquo;s not new; in <a href="http://www.nealstephenson.com/snowcrash/"><em>Snow Crash</em></a>, Neal Stephenson describes a neurolinguistic virus that can infect the brains of hackers via digital images because of the pathways coding has created in their brains.</p>
+
+
+
 
 <p>There&rsquo;s a chicken-and-egg problem here: are our brains weird because we&rsquo;re hackers, or are we hackers because our brains are weird?</p>
 
+
+
+
 <p>I&rsquo;m not sure there&rsquo;s any way to answer that scientifically until we have longitudinal studies complete with periodic fMRI scans of children as they develop into programmers (or not). So we&rsquo;ll leave the origin story aside for now.</p>
+
+
+
 
 <h3>Voight-Kampff</h3>
 
+
+
+
 <p>In the movie <a href="http://en.wikipedia.org/wiki/Blade_Runner"><em>Blade Runner</em></a> (apologies to Philip K. Dick fans for heading down this particular rabbit-hole), a test called <a href="http://bladerunner.wikia.com/wiki/Voight-Kampff_machine">Voight-Kampff</a> is administered to distinguish humans from replicants.</p>
+
+
+
 
 <p>The idea of a Voight-Kampff test to distinguish humans from hackers isn&rsquo;t new either; in 2006, researchers proposed an (apparently) effective test to separate <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">programming sheep from non-programming goats</a>.</p>
 
-<p>Surround your pullquote like this {&#8221; text to be quoted &#8220;}</p>
+
+
+
+<p><span class='pullquote-right' data-pullquote='Then I realized: this is like a Voight-Kampff test for hackers.'>
+So this &ldquo;Hour of Code&rdquo; thing. I thought it was a cute idea at first, became dubious, got annoyed at the marketing, and stopped paying attention until the new batch of PSAs were covered on Gizmodo (full confession: I was reading <a href="http://valleywag.gawker.com/">Valleywag</a> when I saw it. I can&rsquo;t help myself). Then I realized: this is like a Voight-Kampff test for hackers. My first &ldquo;hour of code&rdquo; was when I was five. that hour stretched into three. Then countless hours followed. For the rest of my life.
+</span></p>
+
+
+
 
 <p>The whole &ldquo;everyone should learn to code&rdquo; meme is great; I think everyone should understand the fundamentals of computer science. Not that &ldquo;learning to code&rdquo; is equivalent to &ldquo;understanding CS fundamentals,&rdquo; but it&rsquo;s a step in the right direction. But it&rsquo;s important to distinguish between &ldquo;learning to code&rdquo; and &ldquo;entering a career in software engineering.&rdquo;</p>
 
+
+
+
 <p>I wish the latter were left to true hackers. The ones who are outed by the &ldquo;hour of code&rdquo; when the hour turns into 10,000 hours; the ones who go from &ldquo;I did 5 lines of code!&rdquo; to &ldquo;I did 5k LOCs&rdquo; in about two weeks. That&rsquo;s not going to be everyone. It&rsquo;s going to be a distinct minority. We&rsquo;re corner cases.</p>
+
+
+
 
 <p>Code.org has some great goals, even if the motives seem questionable at times (does it feel to anyone else like &ldquo;everyone should learn to code&rdquo; is in some cases an attempt to rekindle the failed 1990&rsquo;s experiment of &ldquo;commodity programmers&rdquo;?). More than anything else, though, &ldquo;hour of code&rdquo; seems to intorduce a <code>catch</code> block for those of us who throw <code>HackerBrainException</code>. And that&rsquo;s great. Uncaught exceptions aren&rsquo;t good for anyone. This is why we need <a href="http://www.computinginthecore.org/">computing in the core</a> — it&rsquo;s like checked exceptions in the API for public education.</p>
 
+
+
+
 <h3>Computer Science in K-12</h3>
+
+
+
 
 <p>This is the real issue, isn&rsquo;t it? Getting computer science into the standards for K-12 education? Making an &ldquo;hour of code&rdquo; redundant?</p>
 
+
+
+
 <p>Sadly, things don&rsquo;t seem to have changed much since my own <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">negative experiences with coding at school</a>&hellip; but that was in the late 1990&rsquo;s. I would have expected progress since then&hellip; if I were a lot more naïve.</p>
+
+
+
 
 <p>So a message to current students: <strong>Fortuna audaces iuvat</strong> — Fortune favors the bold. Hack everything. Code your math homework. Shit, code your math homework, put hte source on <a href="https://github.com">Github</a>, and let your friends <em>copy</em> that shit. Refuse to do anything without a computer, whether that computer is your phone or a <a href="http://www.cray.com/Products/Computing/XE.aspx">Cray XE6</a>.</p>
 
+
+
+
 <p>If your school doesn&rsquo;t offer CS classes, start your own. <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">Just get hacking</a>. If you throw <code>HackerBrainException</code>, you&rsquo;ll never stop.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Apple: The Obstacle to America's Future?]]></title>
-    <link href="http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future/"/>
-    <updated>2013-12-09T22:32:00-05:00</updated>
-    <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
-    <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
-<iframe width="560" height="315" src="//www.youtube.com/embed/6XvmhE1J9PY" frameborder="0" allowfullscreen></iframe>
-
-
-<p>It&rsquo;s an understandable, if questionable, sentiment. I&rsquo;ve previously addressed the <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">questionable wisdom, and pitfalls</a>, of the &ldquo;teach every kid to code&rdquo; movement. At the same time, computational literacy is so paramount thate ven learning enough about coding to know whay you <em>don&rsquo;t</em> want to do it seems valuable. But I am a champion of CS education in K-12, so I like the overall tenor of that brief address. But it got me thinking about one of the most egregious roadblocks to progress in software within our economy: Apple.</p>
-
-<!-- more -->
-
-
-<p>Surround your pullquote like this {&#8221; text to be quoted &#8220;}</p>
-
-<p>If you&rsquo;re locked into Apple&rsquo;s totalitarian ecosystem, alas, it&rsquo;s not that easy. You&rsquo;ll need to pay US$99 per year for the privelege of running your own code on your own device. And should you want to publish that? Well, Apple&rsquo;s going to review and nitpick and make sure <em>they</em> want it in their store. And charge <em>you</em> for the privilege of having the opportunity to add value to their platform. And hell, if your friends are at all savvy and have Android phones, just send them the APK or (even better), open source your project and let them build it themselves. This all works great on Android. On iOS&hellip; not so much.</p>
-
-<p>I sometimes go overboard giving my friends with iOS devices a hard time. It&rsquo;s almost as bad as when Windows was still relevant and I was pushing Linux on everyone. It&rsquo;s about <em>freedom.</em> Just like with Windows back in the day, the constant reply is one of:</p>
-
-<ol>
-<li>I don&rsquo;t need to code for/have control over my device, this works fine for me.</li>
-<li>But I&rsquo;ve waaaasted so much money on aaaaaps!!!!</li>
-</ol>
-
-
-<p>Welcome to vendor lock-in. It&rsquo;s no excuse, and if we <em>really</em> care about the next generation becoming hackers and makers, not just consumers, we need to reject Apple&rsquo;s bullshit, reject Micorsoft&rsquo;s (decreasingly relevant) bullshit, and focus on open systems. This doesn&rsquo;t have to be Android. <a href="http://www.ubuntu.com/phone">Ubuntu Phone</a> looks promising, <a href="http://www.mozilla.org/en-US/firefox/os/">Firefox OS</a> <em>might</em> not be more Mozilla vaporware, and <a href="http://jolla.com/">Jolla</a> looks incredibly promising.</p>
-
-<p>But what Apple lacks in marketshare, it maintains in mindshare. You want irony?</p>
-
-<iframe width="420" height="315" src="//www.youtube.com/embed/VtvjbmoDx-I" frameborder="0" allowfullscreen></iframe>
-
-
-<p>In 1984, Big Brother was IBM. Now when I watch this, I see a WWDC keynote.</p>
-
-<p>I don&rsquo;t think iOS is compeltely ill-conceived. Almost, but not completely. But if Apple will not open their platform, and their ecosystem, they are not helping to encourage the next generation of makers, and they are encouraging precisely the opposite attitude toward software that <a href="http://code.org">Code.org</a> and <a href="http://csedweek.org/">Computer Science Education Week</a> were founded to promote.</p>
-
-<p>If I may be permitted to pay tribute to Marcus Cato, I will simply conclude by stating:</p>
-
-<h3>POMUM DELENDA EST</h3>
-
-<p><strong>Update:</strong> There&rsquo;s some lively discussion on <a href="https://news.ycombinator.com/item?id=6878922">Hacker News</a></p>
 ]]></content>
   </entry>
   

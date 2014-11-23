@@ -4,7 +4,7 @@
   <title><![CDATA[Category: gems | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/gems/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-16T20:30:01-05:00</updated>
+  <updated>2014-11-23T02:20:34-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -23,64 +23,82 @@ from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would 
 part with the <a href="http://whyday.org/">Whyday</a> tradition of hacking on something just for fun and releasing
 it into the wild.</p>
 
+
+
+
 <p>So it&rsquo;s with great ambivalence we announce <a href="https://github.com/ruby-jokes/whynot">whynot</a>,
 a gem that does irresponsible things because&hellip; why not?</p>
+
+
+
 
 <p>whynot is for when you really just don&rsquo;t care. It started as a single monkey-patch
 to <code>Kernel</code>, called <code>maybe</code>. <code>maybe</code> takes a block, and may or may not yield the
 result. So for instance:</p>
 
-<p><figure class='code'><figcaption><span>maybe </span></figcaption>
+
+
+
+<figure class='code'><figcaption><span>maybe </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;maybe do |x,y,z|</span>
-</span><span class='line'><span class="sr">  x,y,z = 1,2,3</span>
-</span><span class='line'><span class="sr">  x + y + z</span>
-</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">maybe</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+</span><span class='line'>  <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>About half the time, this will return <code>6</code>. The other half, <code>nil</code>.</p>
+
+
+
 
 <p>About three minutes after I pushed whynot to Github, <a href="https://twitter.com/mi_c_ah">Micah Gates</a>
 added some kernel methods that allowed for a little more specificity: <code>mostly</code>,
 which will execute your code about 2/3 of the time, and <code>occasionally</code>, which
 has about a 1 in 5 chance of actually executing your code.</p>
 
+
+
+
 <h4>But wait, there&rsquo;s more!</h4>
+
+
+
 
 <p>Just in time for the 0.0.4 release this afternoon, I decided sometimes, the truth
 doesn&rsquo;t matter. Or, at least, you just don&rsquo;t care. So I added <code>meh</code>. Sometimes
 true, sometimes false, whatever. When you really don&rsquo;t care, just do this:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;meh ? &amp;ldquo;I guess&amp;rdquo; : &amp;ldquo;Nah.&amp;rdquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">meh</span> <span class="p">?</span> <span class="s2">&quot;I guess&quot;</span> <span class="p">:</span> <span class="s2">&quot;Nah.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>I really wanted to create a global value like <code>true</code> or <code>false</code> that was neither
 truthy nor falsey, but I&rsquo;m not sure whether that&rsquo;s possible, and I have a feeling
 it would require some C-extension hackery if it is.</p>
 
+
+
+
 <p>Perhaps for a future release?</p>
 
+
+
+
 <p>As always, pull requests are welcome, and use at your own risk.</p>
+
 ]]></content>
   </entry>
   
@@ -94,8 +112,14 @@ it would require some C-extension hackery if it is.</p>
 <a href="http://railsconf.austinonrails.org/bohconf">BohConf</a>, the awesome un-conference
  and hackfest that runs parallel to <a href="http://railsconf2012.com">RailsConf</a> each year.</p>
 
+
+
+
 <p>It&rsquo;s called <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, and
 it&rsquo;s a Ruby gem to automate some of the tedium of programmer job interviews.</p>
+
+
+
 
 <p>As an example, let&rsquo;s take
 <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">FizzBuzz</a>,
@@ -103,7 +127,10 @@ a typical interview screening question intended to weed out the applicants who
 can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuzz like
  this:</p>
 
-<p><figure class='code'><figcaption><span>FizzBuzz  </span></figcaption>
+
+
+
+<figure class='code'><figcaption><span>FizzBuzz  </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -112,145 +139,140 @@ can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuz
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;def fizz_buzz(max)</span>
-</span><span class='line'><span class="sr">  Array.new(max) do |i|&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-</span><span class='line'><span class="n">val</span>  <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Fizz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span>
-</span><span class='line'><span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Buzz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-</span><span class='line'><span class="n">val</span><span class="o">.</span><span class="n">empty?</span> <span class="p">?</span>  <span class="n">j</span><span class="o">.</span><span class="n">to_s</span>  <span class="p">:</span> <span class="n">val</span>
-</span><span class='line'><span class="o">&lt;</span><span class="sr">/code&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>  <span class="k">end</span>
-</span><span class='line'><span class="k">end</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">max</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">Array</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">max</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">val</span>  <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Fizz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Buzz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">val</span><span class="o">.</span><span class="n">empty?</span> <span class="p">?</span>  <span class="n">j</span><span class="o">.</span><span class="n">to_s</span>  <span class="p">:</span> <span class="n">val</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>But that&rsquo;s just tedious. With job_interview, it&rsquo;s dead simple:</p>
 
-<p><figure class='code'><figcaption><span>job_interview FizzBuzz </span></figcaption>
+
+
+
+<figure class='code'><figcaption><span>job_interview FizzBuzz </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;job_interview&#39;</span>
+</span><span class='line'><span class="vi">@answer</span> <span class="o">=</span> <span class="no">JobInterview</span><span class="o">::</span><span class="no">Answer</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="vi">@answer</span><span class="o">.</span><span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;require &amp;lsquo;job_interview&amp;rsquo;</span>
-</span><span class='line'><span class="sr">@answer = JobInterview::Answer.new</span>
-</span><span class='line'><span class="sr">@answer.fizz_buzz(5)&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Fizz</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Buzz</span><span class="o">&amp;</span><span class="n">rdquo</span><span class="p">;</span><span class="o">]&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Buzz&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>It also does Fibonacci sequences (recursive, iterative, and matrix strategies), a quine, the first <em>n</em> primes, and, of course, &ldquo;Hello, World!&rdquo;</p>
 
+
+
+
 <p>That wasn&rsquo;t enough, though.</p>
+
+
+
 
 <p>It will also answer the bullshit personal questions that everyone lies about anyway!</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;include JobInterview::Questions&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">include</span> <span class="no">JobInterview</span><span class="o">::</span><span class="no">Questions</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <ol type="a">
 <li>Where do you see yourself in 5 years?</li>
 </ol>
 
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">in_5_years</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;in_5_years&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">I</span><span class="o">&amp;</span><span class="n">rsquo</span><span class="p">;</span><span class="n">d</span> <span class="n">like</span> <span class="n">to</span> <span class="n">have</span> <span class="n">made</span> <span class="n">someone</span> <span class="k">else</span> <span class="n">rich</span> <span class="n">with</span> <span class="n">my</span> <span class="n">re</span><span class="o">-</span><span class="n">contextualized</span> <span class="n">non</span><span class="o">-</span><span class="n">volatile</span> <span class="nb">open</span> <span class="n">architecture</span><span class="o">.</span><span class="n">&amp;rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;I&#39;d like to have made someone else rich with my re-contextualized non-volatile open architecture.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <ol type="a">
 <li>Why do you want to work here?</li>
 </ol>
 
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">why_here</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;why_here&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="no">Your</span> <span class="n">company</span> <span class="n">has</span> <span class="n">revolutionized</span> <span class="n">seamless</span> <span class="k">next</span> <span class="n">generation</span> <span class="n">interface</span><span class="o">.</span><span class="n">&amp;rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;Your company has revolutionized seamless next generation interface.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <ol type="a">
 <li>Does P = NP?</li>
 </ol>
 
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">p_equals_np</span>
 </span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;p_equals_np&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">I</span> <span class="n">doubt</span> <span class="n">it</span><span class="p">,</span> <span class="n">but</span> <span class="n">it</span> <span class="n">would</span> <span class="n">make</span> <span class="n">life</span> <span class="n">easier</span> <span class="k">for</span> <span class="n">traveling</span> <span class="n">salesmen</span><span class="o">.</span><span class="n">&amp;rdquo</span><span class="p">;</span><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;I doubt it, but it would make life easier for traveling salesmen.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>&hellip;and many more.</p>
+
+
+
 
 <p>We aim for 100% test coverage with RSpec, so we&rsquo;re confident that this is a
 robust solution for a range of job interview scenarios.</p>
 
+
+
+
 <p>We did a lightning talk at RailsConf 2012, and you can
 <a href="http://ruby-jokes.github.com/job_interview/pres.html">see the slides here</a>.</p>
 
+
+
+
 <p>Next time you face an interview for a programming job, work smarter, not harder.</p>
 
+
+
+
 <p><code>gem install job_interview</code></p>
+
 ]]></content>
   </entry>
   

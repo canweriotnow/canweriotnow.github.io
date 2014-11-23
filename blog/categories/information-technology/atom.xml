@@ -4,7 +4,7 @@
   <title><![CDATA[Category: information technology | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/information-technology/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-16T20:30:01-05:00</updated>
+  <updated>2014-11-23T02:20:34-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -18,7 +18,7 @@
     <link href="http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department/"/>
     <updated>2013-03-15T01:53:00-04:00</updated>
     <id>http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department</id>
-    <content type="html"><![CDATA[<p>So in the comments on my <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom
+    <content type="html"><![CDATA[<p>So in the comments on my <a href="http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom
 for what is, in my opinion, the most insightful and important blog currently
 published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>.
 His recent series of posts have been reviewing and analyzing the MacLeod theory
@@ -26,17 +26,29 @@ of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-con
 (link is to the latest post in the series, but if you haven&rsquo;t been following it,
 therein are links to the previous eight).</p>
 
+
+
+
 <p>I want to focus on the differential between concave (in which the difference
 between failure and middling is greatest) and convex (in which the difference
 between middling and superior is greatest) work.</p>
 
+
+
+
 <h3>The &ldquo;IT Department&rdquo;</h3>
+
+
+
 
 <p>I have to start by saying &ldquo;Information Technology&rdquo; is a leaky abstraction. It
 covers everything from internal software development to the help desk call
 center. I&rsquo;m not suggesting that either line of business is superior. Both are
 absolutely necessary, at least until developers start to become psychic or users
 stop being stupid, or (preferably) both.</p>
+
+
+
 
 <p>The real problem comes when the same management structure is imposed in the
 guise of an &ldquo;IT Department&rdquo; on such divergent areas as the help desk, desktop
@@ -48,30 +60,50 @@ organizations) an attempt to shoehorn concave and convex work into the same tiny
 box, and is going to fail at appropriately managing one or the other (or perhaps
 more likely, both).</p>
 
+
+
+
 <!--more-->
+
+
 
 
 <h3>Concave Work</h3>
 
+
+
+
 <p>Let&rsquo;s face it, help desk work is typically concave. I&rsquo;ve done it (briefly), and
 it&rsquo;s probably an acceptable use case for <a href="http://en.wikipedia.org/wiki/Theory_X_and_Theory_Y#Theory_X">Theory X</a>, since it&rsquo;s (in
 this writer&rsquo;s opinion) rote, unrewarding work that I would
-<a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">automate out of existence</a> if I had the time
+<a href="http://decomplecting.org/blog/2013/03/11/confessions-of-a-job-destroyer/">automate out of existence</a> if I had the time
 and resources. But, it&rsquo;s also necessary work, and a place where &ldquo;managing to the
 middle&rdquo; works because achieving the Socially Acceptable Middling Effort (SAME)
 is a decent departmental average.</p>
+
+
+
 
 <p>I&rsquo;d place much of the responsibility of the average sub-division of IT in the
 scope of &ldquo;concave work.&rdquo;  Desktop support, Windows administration, etc., are
 really about uniformity of outcome, and SAME is an acceptable goal.</p>
 
+
+
+
 <p>When it comes to efforts like software development, or big data, or even &ldquo;cloud
 services&rdquo;, SAME is the same as failure. We&rsquo;re now into the realm of convex work,
 and the standard has to be different.</p>
 
+
+
+
 <h3>Convex Work</h3>
 
-<p>I&rsquo;ve <a href="/blog/2012/10/31/feedback-loops/">written before</a> about how programmers
+
+
+
+<p>I&rsquo;ve <a href="http://decomplecting.org/blog/2012/10/31/feedback-loops/">written before</a> about how programmers
 are just <em>weird</em> from a standard, organizational point of view. Or any standard
 point of view. Programming is the ultimate convex work; from Joel Spolsky&rsquo;s
 warnings about
@@ -79,6 +111,9 @@ warnings about
 Jeff Atwood&rsquo;s plea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">not everyone learn to code</a>,
 it&rsquo;s clear that not only is programming a highly specialized thing to excel at,
 but also that there are <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">certain factors that determine capability in advance</a>.</p>
+
+
+
 
 <p>It&rsquo;s probably the epitome of convex work. The difference between the worst
 programmer and the middling programmer is a fraction of the difference between a
@@ -89,7 +124,13 @@ providing true &ldquo;cloud services&rdquo;, i.e., computing and storage in a mu
 environment with computation and storage as a metered service. I haven&rsquo;t seen
 any of these done well in an &ldquo;enterprise&rdquo; environment.</p>
 
+
+
+
 <h3>The Enterprise</h3>
+
+
+
 
 <p>The &ldquo;enterprise&rdquo; only works by &ldquo;managing to the middle.&rdquo; Which explains the
 self-defeating attitudes of vendor lock-in and risk aversion. When you&rsquo;re not
@@ -103,10 +144,16 @@ almost-suitable software from an established vendor, that doesn&rsquo;t really m
 the needs of the organization, but can be marginally tweaked to fit by middling
 engineers.</p>
 
+
+
+
 <p>It also means that internal innovation can&rsquo;t be acknowledged or rewarded too
 highly. When most of your &ldquo;software teams&rdquo; are doing maintenance on the last
 failed vendor purchase, how can you be seen to give accolades to the projects
 which have truly broken new ground?</p>
+
+
+
 
 <p>At the same time, do you <em>want</em> front line support innovating to that degree?
 Sure, if one of your help desk reps replaces some annoying customer interaction
@@ -114,7 +161,13 @@ with a Perl script, they&rsquo;ll either be promoted to convex work, or fired fr
 concave work, right? I think this only reinforces the difference between the two
 categories.</p>
 
+
+
+
 <h3>Programmer, Wat Do?</h3>
+
+
+
 
 <p>That&rsquo;s where the <a href="http://michaelochurch.wordpress.com/2013/02/19/gervais-principle-questioned-macleods-hierarchy-the-technocrat-and-vc-startups/">MacLeod Paradigm</a>
 really comes into play again&hellip; when most of your developers are 9-to-5ers who
@@ -124,6 +177,9 @@ you have a team of MacLeod &ldquo;losers,&rdquo; which fits perfectly well into 
 <a href="http://michaelochurch.wordpress.com/2012/11/25/programmer-autonomy-is-a-1-trillion-issue/">open allocation</a>
 when you manage business analysts in the same manner as developers.</p>
 
+
+
+
 <p>If you really care about good, clean, beautiful, (even) elegant code, well&hellip;
 you might luck out. I&rsquo;m on a small team which is probably considered &ldquo;rogue&rdquo; by
 most &ldquo;enterprise&rdquo; standards. I love my job, and it affords me significant
@@ -132,6 +188,7 @@ don&rsquo;t see how &ldquo;non-technical organizations&rdquo; (a future post wil
 such a thing exists anymore) can afford to treat developers&#8217; work the same as
 concave work without having the whole house of cards come tumbling down at some
 point.</p>
+
 ]]></content>
   </entry>
   

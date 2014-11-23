@@ -4,7 +4,7 @@
   <title><![CDATA[Category: csedweek | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/csedweek/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-16T20:30:01-05:00</updated>
+  <updated>2014-11-23T02:20:34-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,53 +20,121 @@
     <id>http://decomplecting.org/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers</id>
     <content type="html"><![CDATA[<p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">&ldquo;People Who Did Not Get Rich and/or Famous Coding Want You to Code&rdquo;</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole &ldquo;hour of code&rdquo; thing seemed slightly silly, until now.</p>
 
+
+
+
 <p>Okay, the PSAs keep it silly. Every time someone in those videos says &ldquo;I just did <em>n</em> lines of code&rdquo;, the following script runs through my head:</p>
 
-<p><figure class='code'><figcaption><span>&ldquo;Yeah, this&hellip;&rdquo; </span></figcaption>
+
+
+
+<figure class='code'><figcaption><span>&#8220;Yeah, this&#8230;&#8221; </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&amp;</span><span class="n">ldquo</span><span class="p">;</span><span class="n">I</span> <span class="n">just</span> <span class="n">did</span> <span class="c1">#{n} lines of code&amp;rdquo;.gsub!(/code/, &amp;lsquo;coke&amp;rsquo;) &amp;lt;&amp;lt; &amp;ldquo;, and I can&amp;rsquo;t feel my face!&amp;rdquo;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="s2">&quot;I just did </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2"> lines of code&quot;</span><span class="o">.</span><span class="n">gsub!</span><span class="p">(</span><span class="sr">/code/</span><span class="p">,</span> <span class="s1">&#39;coke&#39;</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;, and I can&#39;t feel my face!&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>Yeah, I&rsquo;m a terrible person. Also hilarious. Moving on&hellip;</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <h3>Hacker Exceptionalism</h3>
+
+
+
 
 <p>Usually, the term <a href="http://en.wikipedia.org/wiki/Exceptionalism">Exceptionalism</a> is used in a context of superiority, e.g., <a href="http://en.wikipedia.org/wiki/American_exceptionalism">American exceptionalism</a>. I do believe there is something like &ldquo;hacker exceptionalism&rdquo;, except the &ldquo;exception&rdquo; has nothing to do with superiority, but literally an exceptional case — a corner case for life, if you will.</p>
 
+
+
+
 <p>There&rsquo;s something weird about hackers. I&rsquo;m not lumping everyone who writes code for their day job into this category (frankly, that would be offensive to my sensibilities). I&rsquo;ve written <a href="http://decomplecting.org/blog/2012/05/22/passion/">before</a> about my encounters with people who just code 9 to 5 and then don&rsquo;t think about it and all I can say now is that I wish they would stop (actually, I&rsquo;m not sure many of them think about it at all).</p>
+
+
+
 
 <p>People who grok code have weird brains. That&rsquo;s the theory. It&rsquo;s not new; in <a href="http://www.nealstephenson.com/snowcrash/"><em>Snow Crash</em></a>, Neal Stephenson describes a neurolinguistic virus that can infect the brains of hackers via digital images because of the pathways coding has created in their brains.</p>
 
+
+
+
 <p>There&rsquo;s a chicken-and-egg problem here: are our brains weird because we&rsquo;re hackers, or are we hackers because our brains are weird?</p>
+
+
+
 
 <p>I&rsquo;m not sure there&rsquo;s any way to answer that scientifically until we have longitudinal studies complete with periodic fMRI scans of children as they develop into programmers (or not). So we&rsquo;ll leave the origin story aside for now.</p>
 
+
+
+
 <h3>Voight-Kampff</h3>
+
+
+
 
 <p>In the movie <a href="http://en.wikipedia.org/wiki/Blade_Runner"><em>Blade Runner</em></a> (apologies to Philip K. Dick fans for heading down this particular rabbit-hole), a test called <a href="http://bladerunner.wikia.com/wiki/Voight-Kampff_machine">Voight-Kampff</a> is administered to distinguish humans from replicants.</p>
 
+
+
+
 <p>The idea of a Voight-Kampff test to distinguish humans from hackers isn&rsquo;t new either; in 2006, researchers proposed an (apparently) effective test to separate <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">programming sheep from non-programming goats</a>.</p>
 
-<p>Surround your pullquote like this {&#8221; text to be quoted &#8220;}</p>
+
+
+
+<p><span class='pullquote-right' data-pullquote='Then I realized: this is like a Voight-Kampff test for hackers.'>
+So this &ldquo;Hour of Code&rdquo; thing. I thought it was a cute idea at first, became dubious, got annoyed at the marketing, and stopped paying attention until the new batch of PSAs were covered on Gizmodo (full confession: I was reading <a href="http://valleywag.gawker.com/">Valleywag</a> when I saw it. I can&rsquo;t help myself). Then I realized: this is like a Voight-Kampff test for hackers. My first &ldquo;hour of code&rdquo; was when I was five. that hour stretched into three. Then countless hours followed. For the rest of my life.
+</span></p>
+
+
+
 
 <p>The whole &ldquo;everyone should learn to code&rdquo; meme is great; I think everyone should understand the fundamentals of computer science. Not that &ldquo;learning to code&rdquo; is equivalent to &ldquo;understanding CS fundamentals,&rdquo; but it&rsquo;s a step in the right direction. But it&rsquo;s important to distinguish between &ldquo;learning to code&rdquo; and &ldquo;entering a career in software engineering.&rdquo;</p>
 
+
+
+
 <p>I wish the latter were left to true hackers. The ones who are outed by the &ldquo;hour of code&rdquo; when the hour turns into 10,000 hours; the ones who go from &ldquo;I did 5 lines of code!&rdquo; to &ldquo;I did 5k LOCs&rdquo; in about two weeks. That&rsquo;s not going to be everyone. It&rsquo;s going to be a distinct minority. We&rsquo;re corner cases.</p>
+
+
+
 
 <p>Code.org has some great goals, even if the motives seem questionable at times (does it feel to anyone else like &ldquo;everyone should learn to code&rdquo; is in some cases an attempt to rekindle the failed 1990&rsquo;s experiment of &ldquo;commodity programmers&rdquo;?). More than anything else, though, &ldquo;hour of code&rdquo; seems to intorduce a <code>catch</code> block for those of us who throw <code>HackerBrainException</code>. And that&rsquo;s great. Uncaught exceptions aren&rsquo;t good for anyone. This is why we need <a href="http://www.computinginthecore.org/">computing in the core</a> — it&rsquo;s like checked exceptions in the API for public education.</p>
 
+
+
+
 <h3>Computer Science in K-12</h3>
+
+
+
 
 <p>This is the real issue, isn&rsquo;t it? Getting computer science into the standards for K-12 education? Making an &ldquo;hour of code&rdquo; redundant?</p>
 
+
+
+
 <p>Sadly, things don&rsquo;t seem to have changed much since my own <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">negative experiences with coding at school</a>&hellip; but that was in the late 1990&rsquo;s. I would have expected progress since then&hellip; if I were a lot more naïve.</p>
+
+
+
 
 <p>So a message to current students: <strong>Fortuna audaces iuvat</strong> — Fortune favors the bold. Hack everything. Code your math homework. Shit, code your math homework, put hte source on <a href="https://github.com">Github</a>, and let your friends <em>copy</em> that shit. Refuse to do anything without a computer, whether that computer is your phone or a <a href="http://www.cray.com/Products/Computing/XE.aspx">Cray XE6</a>.</p>
 
+
+
+
 <p>If your school doesn&rsquo;t offer CS classes, start your own. <a href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/">Just get hacking</a>. If you throw <code>HackerBrainException</code>, you&rsquo;ll never stop.</p>
+
 ]]></content>
   </entry>
   
@@ -77,19 +145,40 @@
     <id>http://decomplecting.org/blog/2013/12/09/apple-the-obstacle-to-americas-future</id>
     <content type="html"><![CDATA[<p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation&rsquo;s youth to give coding a chance:</p>
 
+
+
+
 <iframe width="560" height="315" src="//www.youtube.com/embed/6XvmhE1J9PY" frameborder="0" allowfullscreen></iframe>
+
+
 
 
 <p>It&rsquo;s an understandable, if questionable, sentiment. I&rsquo;ve previously addressed the <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">questionable wisdom, and pitfalls</a>, of the &ldquo;teach every kid to code&rdquo; movement. At the same time, computational literacy is so paramount thate ven learning enough about coding to know whay you <em>don&rsquo;t</em> want to do it seems valuable. But I am a champion of CS education in K-12, so I like the overall tenor of that brief address. But it got me thinking about one of the most egregious roadblocks to progress in software within our economy: Apple.</p>
 
+
+
+
 <!-- more -->
 
 
-<p>Surround your pullquote like this {&#8221; text to be quoted &#8220;}</p>
+
+
+<p><span class='pullquote-right' data-pullquote='Don&#8217;t just download the latest app. Help design it. Don&#8217;t just play on your phone. Program it.'>
+The president&rsquo;s exhortation was especially interesting in one very specific regard: the spot at 0:32 where he encourages, Don&rsquo;t just download the latest app. Help design it. Don&rsquo;t just play on your phone. Program it. Well&hellip; I like where this is going, but&hellip; it&rsquo;s not that easy, Mr. President. I&rsquo;m all for anyone ,with the slightest interest, screwing around with code and learning new things. And if you&rsquo;ve got an Android phone (among others, but I&rsquo;m trying to keep this simple), that&rsquo;s great. You can download <a href="http://developer.android.com/sdk/installing/studio.html">Android Studio</a> from <a href="https://google.com">Google</a>, for free. You can put your phone in developer mode, and install whatever you want. Easy peasy. And hey, want to distribute that to your friends? Pay $25, one time, you&rsquo;re set.
+</span></p>
+
+
+
 
 <p>If you&rsquo;re locked into Apple&rsquo;s totalitarian ecosystem, alas, it&rsquo;s not that easy. You&rsquo;ll need to pay US$99 per year for the privelege of running your own code on your own device. And should you want to publish that? Well, Apple&rsquo;s going to review and nitpick and make sure <em>they</em> want it in their store. And charge <em>you</em> for the privilege of having the opportunity to add value to their platform. And hell, if your friends are at all savvy and have Android phones, just send them the APK or (even better), open source your project and let them build it themselves. This all works great on Android. On iOS&hellip; not so much.</p>
 
+
+
+
 <p>I sometimes go overboard giving my friends with iOS devices a hard time. It&rsquo;s almost as bad as when Windows was still relevant and I was pushing Linux on everyone. It&rsquo;s about <em>freedom.</em> Just like with Windows back in the day, the constant reply is one of:</p>
+
+
+
 
 <ol>
 <li>I don&rsquo;t need to code for/have control over my device, this works fine for me.</li>
@@ -97,22 +186,45 @@
 </ol>
 
 
+
+
 <p>Welcome to vendor lock-in. It&rsquo;s no excuse, and if we <em>really</em> care about the next generation becoming hackers and makers, not just consumers, we need to reject Apple&rsquo;s bullshit, reject Micorsoft&rsquo;s (decreasingly relevant) bullshit, and focus on open systems. This doesn&rsquo;t have to be Android. <a href="http://www.ubuntu.com/phone">Ubuntu Phone</a> looks promising, <a href="http://www.mozilla.org/en-US/firefox/os/">Firefox OS</a> <em>might</em> not be more Mozilla vaporware, and <a href="http://jolla.com/">Jolla</a> looks incredibly promising.</p>
 
+
+
+
 <p>But what Apple lacks in marketshare, it maintains in mindshare. You want irony?</p>
+
+
+
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/VtvjbmoDx-I" frameborder="0" allowfullscreen></iframe>
 
 
+
+
 <p>In 1984, Big Brother was IBM. Now when I watch this, I see a WWDC keynote.</p>
+
+
+
 
 <p>I don&rsquo;t think iOS is compeltely ill-conceived. Almost, but not completely. But if Apple will not open their platform, and their ecosystem, they are not helping to encourage the next generation of makers, and they are encouraging precisely the opposite attitude toward software that <a href="http://code.org">Code.org</a> and <a href="http://csedweek.org/">Computer Science Education Week</a> were founded to promote.</p>
 
+
+
+
 <p>If I may be permitted to pay tribute to Marcus Cato, I will simply conclude by stating:</p>
+
+
+
 
 <h3>POMUM DELENDA EST</h3>
 
+
+
+
 <p><strong>Update:</strong> There&rsquo;s some lively discussion on <a href="https://news.ycombinator.com/item?id=6878922">Hacker News</a></p>
+
 ]]></content>
   </entry>
   

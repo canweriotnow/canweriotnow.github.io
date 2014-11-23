@@ -3,6 +3,12 @@
   
   
   <url>
+    <loc>http://decomplecting.org/blog/2014/11/22/recovering-from-clojure-slash-conj/</loc>
+    <lastmod>2014-11-22T20:37:56-05:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
     <loc>http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole/</loc>
     <lastmod>2014-10-30T06:05:25-04:00</lastmod>
     <priority>0.8</priority>
@@ -317,21 +323,21 @@
   
   <url>
     <loc>http://decomplecting.org/blog/archives/</loc>
-    <lastmod>2014-11-16T20:30:01-05:00</lastmod>
+    <lastmod>2014-11-23T02:20:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://decomplecting.org/</loc>
-    <lastmod>2014-11-16T20:30:01-05:00</lastmod>
+    <lastmod>2014-11-23T02:20:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   
   <url>
     <loc>http://decomplecting.org/about/</loc>
-    <lastmod>2014-11-16T20:30:01-05:00</lastmod>
+    <lastmod>2014-11-23T02:20:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

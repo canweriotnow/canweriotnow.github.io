@@ -9,7 +9,9 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="Machine Beauty In his essay Machine Beauty, David Gelernter defines &ldquo;machine beauty&rdquo; as an inspired mating of simplicity and power. In &hellip;">
+  <meta name="description" content="So, I wanted to plug a little project that
+Micah Gates and I hacked together at
+BohConf, the awesome un-conference and hackfest that runs parallel to &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +87,157 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/05/09/job-interview/">job_interview</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-09T13:14:00-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>So, I wanted to plug a little project that
+<a href="https://twitter.com/#!/micahjgates">Micah Gates</a> and I hacked together at
+<a href="http://railsconf.austinonrails.org/bohconf">BohConf</a>, the awesome un-conference
+ and hackfest that runs parallel to <a href="http://railsconf2012.com">RailsConf</a> each year.</p>
+
+<p>It&rsquo;s called <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, and
+it&rsquo;s a Ruby gem to automate some of the tedium of programmer job interviews.</p>
+
+<p>As an example, let&rsquo;s take
+<a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-program.html">FizzBuzz</a>,
+a typical interview screening question intended to weed out the applicants who
+can&rsquo;t write code to save their lives. In Ruby, you might implement FizzBuzz like
+ this:</p>
+
+<figure class='code'><figcaption><span>FizzBuzz  </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">max</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">Array</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">max</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span class='line'>    <span class="n">val</span>  <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Fizz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span>
+</span><span class='line'>    <span class="p">(</span><span class="n">j</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">?</span> <span class="s2">&quot;Buzz&quot;</span> <span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">val</span><span class="o">.</span><span class="n">empty?</span> <span class="p">?</span>  <span class="n">j</span><span class="o">.</span><span class="n">to_s</span>  <span class="p">:</span> <span class="n">val</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But that&rsquo;s just tedious. With job_interview, it&rsquo;s dead simple:</p>
+
+<figure class='code'><figcaption><span>job_interview FizzBuzz </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;job_interview&#39;</span>
+</span><span class='line'><span class="vi">@answer</span> <span class="o">=</span> <span class="no">JobInterview</span><span class="o">::</span><span class="no">Answer</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="vi">@answer</span><span class="o">.</span><span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Fizz&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Buzz&quot;</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It also does Fibonacci sequences (recursive, iterative, and matrix strategies), a quine, the first <em>n</em> primes, and, of course, &ldquo;Hello, World!&rdquo;</p>
+
+<p>That wasn&rsquo;t enough, though.</p>
+
+<p>It will also answer the bullshit personal questions that everyone lies about anyway!</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="kp">include</span> <span class="no">JobInterview</span><span class="o">::</span><span class="no">Questions</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol type="a">
+<li>Where do you see yourself in 5 years?</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">in_5_years</span>
+</span><span class='line'>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;I&#39;d like to have made someone else rich with my re-contextualized non-volatile open architecture.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol type="a">
+<li>Why do you want to work here?</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">why_here</span>
+</span><span class='line'>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;Your company has revolutionized seamless next generation interface.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ol type="a">
+<li>Does P = NP?</li>
+</ol>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">p_equals_np</span>
+</span><span class='line'>
+</span><span class='line'> <span class="o">=&gt;</span> <span class="s2">&quot;I doubt it, but it would make life easier for traveling salesmen.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>&hellip;and many more.</p>
+
+<p>We aim for 100% test coverage with RSpec, so we&rsquo;re confident that this is a
+robust solution for a range of job interview scenarios.</p>
+
+<p>We did a lightning talk at RailsConf 2012, and you can
+<a href="http://ruby-jokes.github.com/job_interview/pres.html">see the slides here</a>.</p>
+
+<p>Next time you face an interview for a programming job, work smarter, not harder.</p>
+
+<p><code>gem install job_interview</code></p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -206,6 +359,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
       </li>
     
@@ -219,10 +376,6 @@
     
       <li class="post">
         <a href="/blog/2014/08/22/fear-and-coding-in-las-vegas/">Fear and Coding in Las Vegas</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a>
       </li>
     
   </ul>

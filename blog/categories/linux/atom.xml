@@ -4,7 +4,7 @@
   <title><![CDATA[Category: linux | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-16T20:30:01-05:00</updated>
+  <updated>2014-11-23T02:20:34-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,42 +20,96 @@
     <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
     <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&rsquo;s useful for so much more.</p>
 
+
+
+
 <h3>Web Authentication</h3>
+
+
+
 
 <p>At work, we needed an authentication solution that allowed users to sign in with their ActiveDirectory credentials. Although the &ldquo;official&rdquo; solution was to use <a href="http://www.ca.com/us/secure-single-sign-on.aspx">SiteMinder</a> for web authentication against AD, we were working on a mobile application, and at the time the SiteMinder auth page was ugly, and had no mobile-optimized login page. The latter problem has since been rectified; now it has both an ugly desktop login and an ugly mobile login. In addition, we were using nginx, and SiteMinder was really only supported under IIS and Apache (and at the time, the latter was via Shibboleth. Ugh.), so without official SiteMinder support, or an nginx Shib plug-in, we were in a bit of a bind.</p>
 
+
+
+
 <p>Around the same time, I was playing with Likewise Open (now known as <a href="http://www.powerbrokeropen.org/">PowerBroker Identity Services &ndash; Open Edition</a>) to bind my Linux workstation into AD. So it occurred to me: if a normal Linux PAM login can be authenticated against ActiveDirectory, why not a PAM login from a web application?</p>
+
+
+
 
 <p>I know, I know, my first though should have been LDAP, right? For some unknown reason, LDAP was verboten at the time. The policy has since (apparently) been reversed, but such is the ebb and flow of corporate politics. And so, in the grand tradition of one of the mothers of modern computer science (and one of my daughter&rsquo;s namesakes):</p>
 
-<p><blockquote><p>If it&rsquo;s a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote></p>
+
+
+
+<blockquote><p>If it&#8217;s a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote>
+
+
+
 
 <!--more-->
 
 
+
+
 <p>My first obstacle was to figure out how to do this from Ruby. <a href="https://github.com/binarylogic/authlogic">Authlogic</a> is a decent authentication framework (Sure, Devise is newer, but there&rsquo;s nothing wrong with Authlogic). There&rsquo;s an <a href="https://github.com/jhu-idcs/authlogic_pam">authlogic_pam</a> plugin (link is to my updated version, original seems to be abandoned), so the main issue was updating the long-abandoned rpam gem to tie into PAM. So I created <a href="https://github.com/canweriotnow/rpam-ruby19">rpam-ruby19</a> to have a C extension compatible with Ruby ~>1.9.2. Once the server (all of our production servers are <a href="http://www.debian.org/releases/stable/">Debian 6 &ldquo;Squeeze&rdquo;</a>) was tied into AD, it was relatively trivial to create a login that used Authlogic to hit PAM (and thusly ActiveDirectory) for user authentication.</p>
+
+
+
 
 <h3>But now everyone has a server login?</h3>
 
+
+
+
 <p>No, not at all. Likewise/PBIS has a setting to change the login shell for <em>only</em> AD users; we simply changed their shell to <code>/bin/true</code>. Problem solved.</p>
+
+
+
 
 <h3>And that forgiveness/permission thing?</h3>
 
+
+
+
 <p>While we were in beta, we informally ran the auth scheme by the people directly responsible for such things. They actually thought it was pretty cool and innovative. Which just reinforces my dedication to the timeless wisdom of Dr. Hopper.</p>
+
+
+
 
 <h3>And so&hellip;</h3>
 
+
+
+
 <p>Since we implemented this auth scheme for our mobile app, we&rsquo;ve continued to go with it; it&rsquo;s simple, elegant, and shields us from capturing (even hashed) credentials. We have two(-ish) new products launching this year using the same auth scheme. And we&rsquo;re still quite satisfied with the results.</p>
+
+
+
 
 <h3>Caveats</h3>
 
+
+
+
 <p>Over the past couple of months, I&rsquo;ve been researching an <a href="https://github.com/canweriotnow/rpam-ruby19/issues/5">issue submitted on Github</a> documenting a problem authenticating local users other than the euid running the process. You can get the details from the link, but this is how PAM (or at least shadow passwords) are supposed to work. This isn&rsquo;t for authenticating local system accounts (at least not if you&rsquo;re using shadow passwords properly); you should only auth external accounts (LDAP, ActiveDirectory, maybe NIS+) through PAM for non-system-login applications.</p>
+
+
+
 
 <h3>Future</h3>
 
+
+
+
 <p>Since this has worked out so well with our Rails apps, I&rsquo;m now working on a Clojure equivalent. There&rsquo;s a PAM integration library for Java called JPam, which I&rsquo;ve started wrapping in a library called <a href="https://clojars.org/clj-pam">clj-pam</a>, available from Clojars. If you&rsquo;d like to help, the source repo is located <a href="https://github.com/canweriotnow/clj-pam">here on Github</a>.</p>
 
+
+
+
 <p>PAM is wonderfully extensible. It&rsquo;s also very configurable, and is worth leveraging whenever possible. Dig deeper. Linux has so many great little pieces we tend to overlook.</p>
+
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: psychology | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/psychology/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-16T20:30:01-05:00</updated>
+  <updated>2014-11-23T02:20:34-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,30 +20,68 @@
     <id>http://decomplecting.org/blog/2012/10/31/feedback-loops</id>
     <content type="html"><![CDATA[<p>Sadly, I haven&rsquo;t added a blog post in roughly 2.5 months. I&rsquo;ve had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven&rsquo;t had it in me. I really enjoy writing this blog, too. I wasn&rsquo;t quite sure what was going on, until I read one of the most insightful blog posts I&rsquo;ve ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
 
+
+
+
 <p>The tl;dr is a dialogue between a programmer and a guy who wishes he had the chops because he thinks coding is the neatest job in the world. The programmer tells him he thinks coding is making him miserable because the the development/debug process is the ultimate negative feedback loop.</p>
 
-<p><blockquote><p>My workflow is something like this.</p></p><p><p>write some code<br/>run the code<br/>get an error message<br/>find the error and back to step 1<br/>Hour by hour, day after day, I do this. Always searching for what&rsquo;s wrong with what I&rsquo;m creating, rarely thinking about what&rsquo;s good about it. It&rsquo;s a negative reinforcement feedback loop.</p><footer><strong>[<a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">http://edu.mkrecny.com/thoughts/be-nice-to-programmers</a>]</strong></footer></blockquote></p>
 
-<p>Surround your pullquote like this {&#8221; text to be quoted &#8220;}</p>
+
+
+<blockquote><p>My workflow is something like this.</p><p>write some code<br/>run the code<br/>get an error message<br/>find the error and back to step 1<br/>Hour by hour, day after day, I do this. Always searching for what&#8217;s wrong with what I&#8217;m creating, rarely thinking about what&#8217;s good about it. It&#8217;s a negative reinforcement feedback loop.</p><footer><strong>[http://edu.mkrecny.com/thoughts/be-nice-to-programmers]</strong></footer></blockquote>
+
+
+
+
+<p><span class='pullquote-right' data-pullquote='The main reason to become a programmer is that the position of &#8216;God&#8217; is unavailable. Your _job_ is to create universes where the fundamental laws of nature, so to speak, are completely under your creative control.'>
+I definitely get the sentiment. But I think of this as the inner loop in the red-green-refactor cycle, so to speak. Yeah, coding (<em>especially</em> doing proper TDD) is going to make you hate the world (and possibly feel like an idiot) sometimes. But overall&hellip; I was in a job interview a few weeks ago, and was asked why I love being a programmer. I didn&rsquo;t even have to think about my response: The main reason to become a programmer is that the position of &lsquo;God&rsquo; is unavailable. Your <em>job</em> is to create universes where the fundamental laws of nature, so to speak, are completely under your creative control. Ultimately, that&rsquo;s the takeaway: programming is <em>awesome.</em> But a job is still a job, and I think that&rsquo;s where some of the negative feedback loop comes in.
+</span></p>
+
+
+
 
 <p>My last post was just before a huge project I&rsquo;d both originated and put a large amount of my time and effort into over the course of 15-18 months was shelved. It was ready to ship, but corporate politics being what it is (i.e., something I&rsquo;d schedule a root canal to avoid, <em>especially</em> where I work), I tried to just move on and not lose sleep over it. Still, it rankled.</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <p>I haven&rsquo;t pushed a single new commit to any of my projects on Github. I haven&rsquo;t written a blog post. I have an engineering pad with a bunch of scribbled, inchoate notes for things I want to do, but can&rsquo;t seem to move on anything.</p>
+
+
+
 
 <p>My own theory is that we (hackers) are especially sensitive to feedback loops. I could go <a href="http://decomplecting.org/blog/2012/05/22/passion/">on and on</a>, and even cite <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">more</a> <a href="http://www.bricklin.com/wontprogram.htm">notable</a> <a href="http://www.codinghorror.com/blog/2010/02/the-nonprogramming-programmer.html">bloggers</a> than myself, on my theory of what could be referred to as &ldquo;programmer exceptionalism.&rdquo; That&rsquo;s not to say we (programmers who can actually build working (and hopefully, elegant) systems) are in any way <em>better</em> than non-programmers (or the <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">Java Schools</a> crowd); it&rsquo;s just that the preponderance of anecdotal evidence (not to mention some <a href="http://www.eis.mdx.ac.uk/research/PhDArea/saeed/paper1.pdf">proper research</a>) suggests that <em>programmers are not normal.</em></p>
 
+
+
+
 <p>&ldquo;Sensitivity to feedback loops&rdquo; could also be a symptom of the intuition many of us experience when faced with an implementation that just <em>feels</em> wrong. We can, through due diligence, prove that this is the case eventually; but what is it that drives us to find exploits, or benchmark competing implementations? It&rsquo;s that little voice in the back of your head whispering, &ldquo;This is wrong. And also, stupid.&rdquo;</p>
+
+
+
 
 <p>My main focus in my day-to-day programming life right now is dealing with interfaces for yet another vendor product that is very wrong, and very, very stupid. So when I come home, I just want to play <a href="http://guildwars2.com">Guild Wars 2</a> and not really think about coding. Which makes me even sadder, because I love hacking on side projects.</p>
 
+
+
+
 <p>And it&rsquo;s not that I haven&rsquo;t had some fun and some successes in the meantime. I wrote a pretty cool framework in Clojure for generating and emailing reports from various datasources. The core of it is going to be open source, as soon as I get around to that. But the grind&hellip; the grind, man. The grind.</p>
+
+
+
 
 <p>I don&rsquo;t know what the solution is. We can&rsquo;t all be working on innovative, game-changing products all the time. And sometimes things will get shelved the day you expect them to ship. I do know there needs to be a way to <em>love</em> this shit without going crazy or making oneself miserable.</p>
 
+
+
+
 <p>So, interwebs&hellip; suggestions?</p>
+
 ]]></content>
   </entry>
   

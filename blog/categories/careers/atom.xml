@@ -4,7 +4,7 @@
   <title><![CDATA[Category: careers | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/careers/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-16T20:30:01-05:00</updated>
+  <updated>2014-11-23T02:20:34-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,42 +20,98 @@
     <id>http://decomplecting.org/blog/2013/11/20/github-matters-followup</id>
     <content type="html"><![CDATA[<h4>Mea Culpa</h4>
 
+
+
+
 <p>I made some mistakes in my last post. First off, I&rsquo;d like to apologize to <a href="http://ashedryden.com/">Ashe Dryden</a> for referring to her as Ms. Dryden while I referred to <a href="http://jcoglan.com/">James Coglan</a> by his full name. I had no intention of explicitly implying Ashe&rsquo;s gender; my usual writing style is to refer to people by their full name initially and to use an approrpiate title thereafter. But upon review I realized I referred to Ashe as &ldquo;Ms. Dryden&rdquo; in subsequent references, while I referred to James Coglan as &ldquo;James Coglan&rdquo; both times I mentioned him.</p>
 
+
+
+
 <p>I&rsquo;m sorry about that. It was an oversight, and if I had been paying better attention, the second reference to Mr. Coglan would have been &ldquo;Mr. Coglan&rdquo; for parity. But as I failed to achieve parity, and Ashe expressed that she preferred &ldquo;Ashe Dryden&rdquo; to &ldquo;Ms. Dryden&rdquo; in general, I decided to <code>s/Ms./Ashe/g</code> the post. It is now corrected.</p>
+
+
+
 
 <!-- more -->
 
 
+
+
 <h4>I missed some things</h4>
+
+
+
 
 <p>My post was mostly in response to the <a href="https://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/">Github Is Not Your CV</a> sentiment, as well as the <a href="https://news.ycombinator.com/item?id=6728417">Hacker News comments</a> related to Ashe&rsquo;s post, rather than the diversity/privilege statistics offered by Ashe&rsquo;s <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">original article</a>. I had no intention of discounting the privilege issues involved in having the time and resources to contribute to OSS or produce original experiments/libraries/applications on <a href="https://github.com">Github</a>.</p>
 
+
+
+
 <p>I didn&rsquo;t disagree with any of that. I still think it&rsquo;s a good idea to make projects public and make that part of your portfolio. I never suggested that hiring managers should use Github as the only criterion&hellip; but I do think it demonstrates a commitment to professional development, to honing your craft.</p>
+
+
+
 
 <p>I&rsquo;m curious if the cited statistics on OSS contributions refer to &ldquo;have commits to major OSS projects&rdquo; or &ldquo;have code samples online.&rdquo;</p>
 
+
+
+
 <p>My reference was to the latter. Not that I wouldn&rsquo;t love to hire people with commits to Rails or core.async; but for the most part, I want to see what you build in your spare time. Your production code is probably proprietary and covered by an NDA. So I want to see what I <em>can</em> see.</p>
+
+
+
 
 <p>If you don&rsquo;t have a Github profile, that&rsquo;s okay. We can still talk. Either way, I&rsquo;m probably going to want to pair with you or give you a take-home assignment before the next interview round. Those are great ideas that both Ashe and James proposed as alteratives to Github reviews.</p>
 
+
+
+
 <p>I see them more as complements than alternatives, but ideally seeing both would be wonderful.</p>
+
+
+
 
 <p>I still love Github as part of the screening process. Especially if your Github is messy. I can see the crappy Rails CMS you wrote two years ago as practice, and the Clojure OAuth library you comitted to last week, and see the growth you&rsquo;ve made in that time. That&rsquo;s the value of Github to me.</p>
 
+
+
+
 <p>I want to see professional development, not unpaid labor. I want to know you <em>don&rsquo;t consider hacking labor, but play.</em> Not because I want you to work 80 hours a week; I don&rsquo;t, because that&rsquo;s the road to burnout. But I want to know you love this shit and, in a socialist utopia, would do it for free.</p>
+
+
+
 
 <h4>Damn reality</h4>
 
+
+
+
 <p>Yeah, I know hacking on OSS is a privilege we don&rsquo;t all enjoy. Neither is going to college or learning to code. These are all things we need to improve access to as a community, but the nice thing about Github, pairing, and code challenges, is that they can balance out hte privilege issues of college and other factors. For me, as a hiring hacker, I care more about work than degrees. Github is one way to show that, but pairing etc. are equally valid.</p>
+
+
+
 
 <h4>Conclusion</h4>
 
+
+
+
 <p>OSS hacking is a privilege: I&rsquo;ve done a fuckton less since I had a kid; mostly work-related stuff. But it still matters, and it&rsquo;s accessible to anyone with a computer and an internet connection. That in and of itself is discriminatory, but I can&rsquo;t see how you&rsquo;re going to be a hacker to begin with sans those things.</p>
+
+
+
 
 <p>I think my main objection is the Harrison Bergeron argument: we&rsquo;re using statistics about privilege to say &ldquo;let&rsquo;s not use this (IMHO) valid metric because the privileged have access to this resource&rdquo; instead of &ldquo;how can we change society to improve access to this resource.&rdquo;</p>
 
+
+
+
 <p>Yeah, the second proposition is harder. And you can discount the utility of the metric like James Coglan, or reject the premise like Ashe Dryden, but in either case there is a realpolitik question:</p>
+
+
+
 
 <ol>
 <li>Hiring managers see value in this metric.</li>
@@ -65,11 +121,20 @@
 </ol>
 
 
+
+
 <p>The typical response is 4(a), for whatever reason. I&rsquo;d like to see 4(b), but I don&rsquo;t know how to make it happen. I&rsquo;d rather see theories on how this can be achieved than see strategies and arguments for 4(a).</p>
+
+
+
 
 <p>Anyhow, like I said&hellip; the statistics are damning, but I&rsquo;d rather see the statistics change. How do we get more women into open source? I think OSS contributions have value as one factor among many, but I also think it&rsquo;s a value for <em>the individual developer,</em> not just as a hiring criterion. The low contribution ratio of women and minorities to OSS is the problem, not the fact that it&rsquo;s a metric used for candidate evaluation. But that&rsquo;s a whole different issue, and I don&rsquo;t have an answer for fixing that&hellip; yet.</p>
 
+
+
+
 <p><strong>tl;dr apologies to Ashe; inequality and privilege are real; fix society, don&rsquo;t discount the value of OSS/Github contributions</strong></p>
+
 ]]></content>
   </entry>
   
@@ -78,11 +143,20 @@
     <link href="http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/"/>
     <updated>2013-11-19T21:22:00-05:00</updated>
     <id>http://decomplecting.org/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters</id>
-    <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
+    <content type="html"><![CDATA[<p>It&rsquo;s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="http://decomplecting.org/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
+
+
+
 
 <p>There are good counterarguments to this. Github is not a portfolio, it&rsquo;s where your public code lives. <a href="https://github.com/canweriotnow">My Github</a> has a bunch of projects I should maybe delete; stalled or abandoned projects, one-off projects with poor test coverage, etc. It&rsquo;s not really a representative sample of my <em>production</em> code. But that&rsquo;s not why I think it matters.</p>
 
+
+
+
 <p>In her post, Ashe provides several excellent alternatives to OSS contributions as evaluation criteria; these include:</p>
+
+
+
 
 <ul>
 <li>Pair with the prospective hire</li>
@@ -91,58 +165,130 @@
 </ul>
 
 
+
+
 <p>When considering potential hires, Github is not everything. At <a href="http://anestuary.com">An Estuary</a>, we definitely request (and prefer) a Github profile with applicant CVs; but it&rsquo;s not about contributions to OSS projects (i.e., the &ldquo;unpaid labor&rdquo; critiqued in Ashe Dryden&rsquo;s post).</p>
+
+
+
 
 <p>The focus of our company is on professional development. We not only dogfood technically (i.e., using our own software), but also culturally. We want to hire people who are focused on their own professional development, and Github is a good place to document that.</p>
 
+
+
+
 <p>(Also&hellip; code samples? If you wrote something worth showing me, why isn&rsquo;t it on Github, in a gist, on JSFiddle, etc.?)</p>
+
+
+
 
 <p>Our main product is designed to help educators document their professional development. Hackers like us have Github, so if we&rsquo;re not using it&hellip; something might be amiss.</p>
 
+
+
+
 <p>So when I&rsquo;m looking at a Github profile evaluating a potential hire, I&rsquo;m not looking for accepted pull requests to <a href="https://github.com/rails/rails">Rails</a>. I mean, that would be a plus, but&hellip;</p>
+
+
+
 
 <!--more-->
 
 
+
+
 <h3>A Commitment to Professional Development</h3>
+
+
+
 
 <p>That&rsquo;s what I want to see. Not a portfolio, as <a href="http://blog.jcoglan.com/2013/11/15/why-github-is-not-your-cv/">James Coglan suggests</a>. He&rsquo;s not wrong, but as a hiring hacker, at least from my perspective, he misjudges the value of Github profiles.</p>
 
+
+
+
 <p>For me, evaluating Github profiles for potential hires is about a commitment to a <em>profession.</em> And that&rsquo;s not something that&rsquo;s real in software at the moment, but it&rsquo;s something we need to develop.</p>
+
+
+
 
 <p>If building software is <em>just a paycheck,</em> I don&rsquo;t really want to work with you. No offense, I&rsquo;m sure there are plenty of organizations out there that are fine with that. You should work for them. I have, and I hated it, but find your own bliss. I don&rsquo;t want you to miss out on family and kids and friends; I don&rsquo;t want to miss out on those either. But in those couple of hours between the kids going to bed and sleep closing in&hellip; well, I&rsquo;m hacking away on some odd side project, and that&rsquo;s who I want by my side while we&rsquo;re trying to hack things better.</p>
 
+
+
+
 <p>There&rsquo;s a conflation of OSS contributions (i.e., unpaid labor contributing to free software your company or prospective company uses to make a profit) and having a Github (or Bitbucket or whatever) account that demonstrates a commitment to honing your craft over time. Both are admirable, but I want to hire smart people who are committed to always be learning. Github is a good way to demonstrate that quality, even if yours (like mine) is full of projects that went nowhere.</p>
+
+
+
 
 <p>Sorry, I need evidence of commitment. If you have patches in or Rails or clojure.core that&rsquo;s bonus points. But your commitment is what matters to me:</p>
 
+
+
+
 <blockquote class="twitter-tweet" lang="en"><p>Timeframes in which you cannot become a good programmer: 2 weeks; 2 months; 2 years. Sorry. 10,000 hours. Not my fault. Sorry.</p>&mdash; Gary Bernhardt (@garybernhardt) <a href="https://twitter.com/garybernhardt/statuses/397833212019232769">November 5, 2013</a></blockquote>
+
+
 
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
+
+
 <p>10,000 hours. That&rsquo;s what it takes. Not that you&rsquo;ve put that time in already, but I need to believe you&rsquo;re committed to putting the time in. Sorry if that&rsquo;s a hardship. There are other jobs.</p>
+
+
+
 
 <p>Now I&rsquo;m close to sounding like a jerk, but it&rsquo;s just the reality. If I was a flight instructor who certified a pilot who hadn&rsquo;t put in their hours, I&rsquo;d be criminally negligent. Software matters too. Just look at <a href="http://healthcare.gov">healthcare.gov</a></p>
 
+
+
+
 <h3>Privilege isn&rsquo;t just about OSS</h3>
+
+
+
 
 <p>One of the main points of Ashe Dryden&rsquo;s article is that OSS is dispropotionally authored by privileged groups, i.e. young white males. While this is clearly backed by the data, the reasons for this are not limited to the software industry; most professions (and yes, I am considering software engineering a profession) have similarly disproportionate distributions. <a href="http://www.nalp.org/minoritieswomen">Lawyers</a> and <a href="http://nces.ed.gov/fastfacts/display.asp?id=72">doctorates in general</a> skew in the same direction. Why? For the same reasons addressed in the argument against OSS as hiring criteria: young white males disproportionately have the free time and resources available to pursue advanced degrees, attend professional school, etc.</p>
 
+
+
+
 <p>Now, in software, we have an edge case in which a degree isn&rsquo;t necessarily required in the first place. But something has to stand in for that, doesn&rsquo;t it? Some demonstration of competency?</p>
+
+
+
 
 <p>I think this was one of the more salient points made in <a href="https://news.ycombinator.com/item?id=6728417">the Hacker News thread</a> on Ashe Dryden&rsquo;s post — all hiring criteria are discriminatory in one way or another, e.g. requiring a Master&rsquo;s degree discriminates against people with only a Bachelor&rsquo;s — and surprise, surprise, individuals privileged by race or gender are more likely to secure the higher degree.</p>
 
+
+
+
 <p>So I think the &ldquo;Github hiring criterion&rdquo; is a bit of a red herring. Privilege is an issue across the board, and it really has nothing to do with OSS or Github profiles. I&rsquo;m in my first hiring role as a developer, but I find reviewing applicants&#8217; Github profiles incredibly useful; not as in &ldquo;we will talk to this person but not this other one,&rdquo; but guiding what questions to ask and what paths to explore in the interview.</p>
+
+
+
 
 <p>tl;dr Hiring people is hard. Github provides <em>limited</em> data to drive those decisions. It&rsquo;s easier to make confident decisions with more data.</p>
 
+
+
+
 <h5><em>Postscript</em></h5>
+
+
+
 
 <p>If Github is privilegey, than what is <a href="http://careers.stackoverflow.com/">Careers 2.0</a>? You either need an awesome Github rep or <a href="http://stackoverflow.com">StackOverflow</a> karma <em>just to get a profile.</em> And answering James Coglan&rsquo;s critique — Careers 2.0 actually <em>is</em> a portfolio; you feature your best Github repos, best blog posts, etc.</p>
 
+
+
+
 <p>Maybe another time I&rsquo;ll go into <a href="http://coderwall.com">Coderwall</a> or <a href="http://coderbits.com">Coderbits</a> as alternatives.</p>
+
 ]]></content>
   </entry>
   
