@@ -4,7 +4,7 @@
   <title><![CDATA[Category: clojure | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/clojure/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-23T02:20:34-05:00</updated>
+  <updated>2014-11-23T13:21:02-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,211 +20,89 @@
     <id>http://decomplecting.org/blog/2014/11/22/recovering-from-clojure-slash-conj</id>
     <content type="html"><![CDATA[<p>Whew. I just got back from <a href="http://clojure-conj.org">Clojure/conj</a> and boy, is my brain tired.</p>
 
-
-
-
 <p>I&#8217;l be doing a more detailed and code-oriented post with <a href="https://twitter.com/miltreder">Milt Reder</a> on the <a href="http://yetanalytics.com/blog">Yet Analytics blog</a> this week, but I need to do a brain dump beofre I brainsplode.</p>
-
-
-
 
 <p>So, getting the fanboy stuff out of the way: I got to shake Rich Hickey&rsquo;s hand and thank him for all the work that went into Clojure and Datomic, i.e., the stuff that made programming fun again for me. So that was fun. This was at the conference party at the <a href="http://www.crimemuseum.org/">Crime Museum</a>, which was a joy and a wonderful place for a party.</p>
 
-
-
-
 <p>But, the actual conj&hellip;</p>
-
-
-
 
 <!--more-->
 
 
-
-
 <h3>Brainsplosion: Stage 1</h3>
-
-
-
 
 <p>On day one of the conj, I was in awe of the presentations I was seeing. Amazing work in ClojureScript, generative testing, JVM experiments&hellip;</p>
 
-
-
-
 <p>I was especially excited to see <a href="https://twitter.com/bbatsov">Bozhidar Batsov</a> talk about the state of <a href="https://github.com/clojure-emacs/cider">CIDER</a>, since I use it every day in my development cycle with Emacs, and he&rsquo;s also the author of <a href="https://github.com/bbatsov/prelude">Prelude</a>, my baseline Emacs environment. CIDER has come a long way, and it&rsquo;s only getting better. I can&rsquo;t imagine going back to another development environment for Clojure. Although, the talk on <a href="https://cursiveclojure.com/">Cursive</a> was fascinating, and I&rsquo;ll certainly use it in <a href="https://www.jetbrains.com/idea/">IntelliJ</a> if I&rsquo;m writing Java with Clojure wrappers.</p>
-
-
-
 
 <p>Just when I thought I&rsquo;d had enough: the Rich Hickey keynote, Inside Transducers. This went way deeper than his <a href="https://www.youtube.com/watch?v=6mTbuzafcII">Strange Loop talk</a>.</p>
 
-
-
-
 <p>Rich uses <a href="http://aquamacs.org/">Aquamacs</a>, apparently. Who knew?</p>
-
-
-
 
 <p>Anyhow, I can&rsquo;t go into the meat of transducers here, but I can say they&rsquo;ll mean a massive refactoring of my main codebase, especially when dealing with transformations of data structures from core.async channels. Again, we&rsquo;ll do a more technical post soon. I&rsquo;m still processing this.</p>
 
-
-
-
 <h3>Brainsplosion: Stage 2</h3>
-
-
-
 
 <p>That night there were unsessions, and although there were a number of incredible topics, the one most relevant to our day-to-day (and the one we made it to) was the <a href="http://www.datomic.com/">Datomic</a> unsession with <a href="https://twitter.com/stuarthalloway">Stu Halloway</a>, one of the architects of Datomic. In less than an hour, the Q&amp;A (only one of the Q&rsquo;s being from me) helped me figure out my deployment strategy for Datomic on multiple peers on AWS behind an ELB instance. I&rsquo;d been pondering this for months, and it all became clear.</p>
 
-
-
-
 <p>On day 2, we learned some fascinating things about using async channels in ClojureScript, type systems, and Datomic superpowers. I took a break after lunch, and then that night was the party.</p>
-
-
-
 
 <h3>Brainsplosion: Final Meltdown</h3>
 
-
-
-
 <p>Today, there were great talks about data pipelines, more generative testing, and then&hellip;</p>
-
-
-
 
 <p>I don&rsquo;t even know how to start this.</p>
 
-
-
-
-<p>Let me explain: I came to CLojure with very little Java experience. I learned &ldquo;enough Java to get by&rdquo; so I could write simple Android apps. Then I saw this talk by Steve Yegge:</p>
-
-
-
+<p>Let me explain: I came to Clojure with very little Java experience. I learned &ldquo;enough Java to get by&rdquo; so I could write simple Android apps. Then I saw this talk by Steve Yegge:</p>
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/tz-Bb-D6teE" frameborder="0" allowfullscreen></iframe>
 
 
-
-
 <p>If you prefer, the <a href="http://steve-yegge.blogspot.com/2008/05/dynamic-languages-strike-back.html">transcript is here</a>.</p>
-
-
-
 
 <p>Did you notice this part?</p>
 
-
-
-
 <blockquote><p>So javac, the Java compiler: what does it do? Well, it generates bytecode, does some optimizations presumably, and maybe tells you some errors. And then you ship it off to the JVM. And what happens to that bytecode? First thing that happens is they build a tree out of it, because the bytecode verifier has to go in and make sure you&rsquo;re not doing anything [illegal]. And of course you can&rsquo;t do it from a stream of bytes: it has to build a usable representation. So it effectively rebuilds the source code that you went to all that effort to put into bytecode.</p></blockquote>
-
-
-
 
 <p>There&rsquo;s way more than that, but that&rsquo;s the first thing that got the JVM raising hairs on the back of my neck.</p>
 
-
-
-
 <p>So anyhow, I&rsquo;ve been increasingly interested in JVM internals.</p>
-
-
-
 
 <p>Like how when I first got into Clojure, I learned the main reason it lacked tail call optimization was the JVM&rsquo;s security model.</p>
 
-
-
-
 <p>Yeah. the security model prohibits the reuse of stack frames. I promise, I&rsquo;ll come back to this.</p>
-
-
-
 
 <p>So the closing keynote was by <a href="https://twitter.com/briangoetz">Brian Goetz</a>, Java Language Architect at Oracle. The things I learned about the JVM and where it&rsquo;s going broke my brain more than transducers.</p>
 
-
-
-
 <p>First: we all know (or should know) that Java 8 is getting lambda expressions.</p>
-
-
-
 
 <p>So what happened? Did they add a Function type to the JVM? Nope. Java 8 lambdas are syntactic sugar over interface implementations!</p>
 
-
-
-
 <p>I&rsquo;m not going to dive into code in this post, as it&rsquo;s my decompression post, but this was one mind-blowing concept.</p>
-
-
-
 
 <p>We also learned that while type erasure in generics isn&rsquo;t going anywhere, we will be able to use generics with primitives. Which is pretty damned cool. So instead of getting the autoboxed <code>ArrayList&lt;Integer&gt;</code>, you can get an unboxed <code>ArrayList&lt;int&gt;</code>.</p>
 
-
-
-
-<p>I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games inClojure and need unboxed floats and doubles in order so to do.</p>
-
-
-
+<p>I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games in Clojure and need unboxed floats and doubles in order so to do.</p>
 
 <p>But here&rsquo;s the jaw-dropper:</p>
 
-
-
-
 <p>Part of the JVM&rsquo;s security model, ever since the dark days of 1995, has been frame counting. I&rsquo;m going to get this wrong, so please correct me in the comments. But my understanding is this: If there are 64 frames on the stack, and a new instruction is called, the JVM is going to make sure there are 65 frames on the stack, to prevent frame injection.</p>
-
-
-
 
 <p>This is why we have this <code>loop</code> and <code>recur</code> bullshit in Clojure. I shouldn&rsquo;t call it bullshit, it&rsquo;s actually an elegant workaround for the limitations of the JVM. But it&rsquo;s still a smelly workaround for the lack of tail call optimization we get in, say, Scheme.</p>
 
-
-
-
 <p>Getting rid of this (in Brian&rsquo;s words, IIRC, <strong>stupid</strong> &ldquo;security&rdquo; implementation) means we can drop the prohibition against the reuse of stack frames and actually get tail recursion on the JVM without blowing the stack.</p>
-
-
-
 
 <p>Admittedly, TCO was stated tot be low-priority for the Java language team at Oracle, but if the JVM changes to support it, I don&rsquo;t see why we can&rsquo;t have it in Clojure before Java gets it.</p>
 
-
-
-
 <p>Whew. Brainmelt.</p>
-
-
-
 
 <p>Which also happens to be the least popular sandwich at Denny&rsquo;s.</p>
 
-
-
-
-<p>So there&rsquo;s my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But Damn was that a good conference.</p>
-
-
-
+<p>So there&rsquo;s my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But damn was that a good conference.</p>
 
 <p>There were many times I felt like I had to be the stupidest person there.</p>
 
-
-
-
 <p>But most of the people I talked to felt the same, so I guess I&rsquo;m in good company, and in the right place.</p>
-
 ]]></content>
   </entry>
   
@@ -235,179 +113,120 @@
     <id>http://decomplecting.org/blog/2014/10/29/reify-this</id>
     <content type="html"><![CDATA[<p>On the way home this afternoon I was asked to explain Clojure&rsquo;s <code>reify</code> macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment might be available to others.</p>
 
-
-
-
 <p>Reify derives from the Latin <em>res,</em> or &ldquo;thing.&rdquo; So <code>reify</code> fundamentally means &ldquo;make a <em>thing</em> out of&hellip;.</p>
-
-
-
 
 <h3>Protocols and Datatypes</h3>
 
-
-
-
 <p>Clojure <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/defprotocol/">protocols</a> are similar to Java interfaces: They define a set of methods/functions purely by their signatures without providing implementation details. Declaring that a class implements an interface (in Java) or that a record implements a protocol (in Clojure) is a contract that specifies that the given class or record, in order to be valid, will provide concrete implementations of those methods/functions.</p>
-
-
-
 
 <p>But sometimes we don&rsquo;t need a reusable entity with reusable implementations that we can instantiate willy-nilly; sometimes we just need a <em>thing</em> that implements those methods.</p>
 
-
-
-
 <p>In Java, anonymous inner classes can fulfill this purpose. In Clojure, we have <code>reify.</code></p>
-
-
-
 
 <h3>That Nameless Thing</h3>
 
-
-
-
 <p>OK, it&rsquo;s not really going to be nameless&hellip; let&rsquo;s say we have a putative protocol as follows:</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">Foo</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">])</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<p>So if we were creating a new record, we might do:</p>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defrecord </span><span class="nv">FooRecord</span>
-</span><span class='line'>    <span class="nv">Foo</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="nv">st</span><span class="p">))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
-</span></code></pre></td></tr></table></div></figure>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">Foo&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
+</span><span class='line'><span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">])</span>
+</span><span class='line'><span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
+<p>So if we were creating a new record, we might do:</p>
 
-
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defrecord </span><span class="nv">FooRecord&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;Foo</span>
+</span><span class='line'><span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="nv">st</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Which is perfect if we need to repeatedly instantiate a FooRecord that implements the Foo protocol. But sometimes we just need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
-
-
-
 
 <!--more-->
 
 
-
-
 <h3>One-Off Things</h3>
-
-
-
 
 <p>Instead of creating a defrecord (I&rsquo;m going to leave the issue of runtime class generation for another post), we have the option of creating an individual, unique object that implements the desired protocol via <code>reify</code>.</p>
 
-
-
-
 <p>Like so:</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
 </pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">athing</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">reify</span> <span class="nv">Foo</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nf">str/replace</span> <span class="nv">this</span> <span class="p">(</span><span class="nb">re-pattern </span><span class="nv">st</span><span class="p">)))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'>  <span class="p">(</span><span class="nf">reify</span> <span class="nv">Foo&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nf">str/replace</span> <span class="nv">this</span> <span class="p">(</span><span class="nb">re-pattern </span><span class="nv">st</span><span class="p">)))</span>
+</span><span class='line'><span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">+ </span><span class="nv">x</span> <span class="nv">y</span><span class="p">)))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Now I have <code>athing</code> that implements the Foo protocol in a manner appropriate to its context, I don&rsquo;t have to worry about declaring a general case (class, or defrecord), and I can use this object while it&rsquo;s handy and let it get GC&rsquo;d when I&rsquo;m done with it.</p>
 
-
-
-
 <h3>Incomplete, and Mostly Wrong</h3>
-
-
-
 
 <p>This is a really brief description of the <code>reify</code> macro, and more details are available in the <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/reify/">Clojure Grimoire</a>. But it apparently clarified things for one person, so I thought I&rsquo;d share it here.</p>
 
-
-
-
 <p>But in the words of Steve Jobs&hellip;</p>
-
-
-
 
 <h3>And One More Thing&hellip;</h3>
 
-
-
-
 <p>We&rsquo;ve got a Lisp here in Clojure, right? We&rsquo;re doing functional programming, so why all of this larking about with objects?</p>
-
-
-
 
 <p>It&rsquo;s not just Clojure&rsquo;s Java heritage. Forms like <code>defrecord</code>, <code>defprotocol</code>, and <code>reify</code> aren&rsquo;t about Java interop.</p>
 
-
-
-
 <p>Let me take you back in time&hellip;</p>
-
-
-
 
 <p>Once upon a time, there was a common Lisp dialect, established by ANSI standard, called Common Lisp.</p>
 
-
-
-
 <p>In the times of mist, the original neckbeards established that this Common Lisp should have an object system, known as <a href="http://www.aiai.ed.ac.uk/~jeff/clos-guide.html">CLOS</a>, or the Common Lisp Object System.</p>
-
-
-
 
 <p>Clojure has an object system as well; some of it seems ties to its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened up the possibilities for the object model, maybe?</p>
 
-
-
-
 <p>Not really. OOP models aren&rsquo;t all that creative. Ruby has quite a novel object model but other than that, OOP is pretty boring and let&rsquo;s just forget about that unhappy chapter in our past, shall we?</p>
 
-
-
-
 <p>Let&rsquo;s.</p>
-
 ]]></content>
   </entry>
   
@@ -418,231 +237,100 @@
     <id>http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs</id>
     <content type="html"><![CDATA[<p>I have to start this post by saying I&rsquo;ve been a dogmatic <a href="http://www.vim.org/">Vim</a> partisan since the 1990&rsquo;s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.</p>
 
-
-
-
 <p>I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)&hellip; I couldn&rsquo;t stand the chord keys and lack of modality.</p>
-
-
-
 
 <p>Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I&rsquo;m out there evangelizing Emacs (I&rsquo;m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I&rsquo;d offer some advice for those looking to convert to the Church of Emacs.</p>
 
-
-
-
-<p><img src="http://decomplecting.org/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
-
-
-
+<p><img src="/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
 
 <!--more-->
 
 
-
-
 <p>Primarily, this post is inspired by a request I received on Twitter:</p>
-
-
-
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/canweriotnow">@canweriotnow</a> Got any links for switching to emacs? macvim isn&#39;t working in yosemite so I figure I might as well give emacs a real shot</p>&mdash; maɪk pətɛlə (@mikepatella) <a href="https://twitter.com/mikepatella/status/525439599276220416">October 24, 2014</a></blockquote>
 
 
-
-
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
 
 
 <p>Instead of just compiling some links in a gist, I figured it was worthy of a blog post, so my seniors in the Church of Emacs can tell me where I&rsquo;m wrong in the comments. But this is based on my experience converting from Vim to Emacs, so I&rsquo;ll explain what worked for me.</p>
 
-
-
-
 <h3>Emacs Prelude</h3>
-
-
-
 
 <p>Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your <code>.emacs.d</code> config directory in a way that makes it easy to configure without breaking shit.</p>
 
-
-
-
 <p>The install instructions are <a href="http://batsov.com/prelude/">here</a> and I highly recommend it.</p>
-
-
-
 
 <p><strong>UPDATE:</strong> I forgot something vitally important about prelude. Prelude comes with <code>guru-mode</code> enabled by default, which disables your arrow keys and prods you to use Emacs default navigation commands instead (i.e. <code>C-p</code> for up, <code>C-n</code> for down, <code>C-b</code> for left, <code>C-f</code> for right). These commands are <a href="https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html">worth knowing</a>, but I felt like I was being trolled when my arrow keys just told me what chord combination to use instead. (As an aside, <a href="http://thoughtbot.com">Thoughtbot&rsquo;s</a> <a href="https://github.com/thoughtbot/dotfiles">dotfiles</a> do the same thing with vim).</p>
 
-
-
-
 <p>So you have two options: one is to <code>M-x guru-mode</code> to toggle it every session. The more permanent solution is to add the following to your config (if you&rsquo;re using Prelude, it should go in <code>~/.emacs.d/personal/preload/user.el</code>):</p>
-
-
-
 
 <p><code>(setq prelude-guru nil)</code></p>
 
-
-
-
 <p>Just my personal preference, but something I found really annoying when I got started.</p>
-
-
-
 
 <p>As far as all those useful navigation and editing commands, emacs (naturally) has a built-in tutorial accessible from <code>M-x help-with-tutorial</code> or just <code>C-h t</code>.</p>
 
-
-
-
 <p><strong>UPDATE TO THE UPDATE:</strong></p>
-
-
-
 
 <p>Bozhidar Batsov (the author of Prelude) pointed out in <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/#comment-1651596560">this comment</a> that the current default behavior is to warn when arrow keys are used, not to disable them.</p>
 
-
-
-
 <p>I hadn&rsquo;t noticed the change, which came in with <a href="https://github.com/bbatsov/prelude/commit/fda768992ef27f39f30178d4ebb8cbb559d5a3c6">this commit</a>.</p>
-
-
-
 
 <p>You can find the configuration options for <code>guru-mode</code> in the README <a href="https://github.com/bbatsov/prelude#warnings-on-arrow-navigation-in-editor-buffers">here</a>.</p>
 
-
-
-
 <h3>Emacs for Mac OS X</h3>
-
-
-
 
 <p>I really like using the packaged app version of Emacs available from <a href="http://emacsformacosx.com/">http://emacsformacosx.com/</a>. It works great with Prelude, and doesn&rsquo;t include the cruft that <a href="http://aquamacs.org/">Aquamacs</a> tacks on to make it more Mac-ish.</p>
 
-
-
-
 <p>You get a nice packaged Emacs.app that follows OS X conventions, but is really just straight GNU Emacs.</p>
-
-
-
 
 <h3>evil-mode</h3>
 
-
-
-
 <p>So, this is a touchy subject for me. When I first switched I used evil-mode to get my familiar Vim keybindings in emacs, but I actually found it made it more difficult to dive into emacs. Evil-mode is actually impressively complete when it comes to imposing vim functionality over top of emacs, but there are still times when you needto hit <code>C-x k</code> or <code>M-x something-mode</code> and the cognitive dissonance of switching between them was just overwhelming.</p>
-
-
-
 
 <p>So I&rsquo;d forego evil-mode and just keep <a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a> open in your browser for the first few days. It doesn&rsquo;t take that long to dive in head-first.</p>
 
-
-
-
 <h3>Projectile</h3>
-
-
-
 
 <p>It ships with Prelude, so not a major headline, but it does help to keep your projects organized and navigate files.</p>
 
-
-
-
 <h2>On Lisp</h2>
-
-
-
 
 <p>Since this is really about Clojure development environments, I might as well dive into the inherent Lispiness of emacs. The extension language is a Lisp dialect, and very easy to learn and use. Emacs is so extensible that one of the running jokes is that it&rsquo;s a great operating system in need of a decent text editor. I&rsquo;ll get to that later.</p>
 
-
-
-
 <h3>cider-mode</h3>
-
-
-
 
 <p>Interacting with Clojure is amazing with <a href="https://github.com/clojure-emacs/cider">cider</a>. You get an in-editor REPL, inline code evaluation, documentation lookup, a scratch buffer for arbitrary code evaluation, and a dozen other features. LightTable is nice with its InstaRepl but emacs/cider is the real deal. You cannot wish for a better Clojure dev environment&hellip; and the community agrees:</p>
 
-
-
-
 <blockquote class="twitter-tweet" lang="en"><p>It&#39;s great to see that <a href="https://twitter.com/hashtag/CIDER?src=hash">#CIDER</a> is still the most popular <a href="https://twitter.com/hashtag/Clojure?src=hash">#Clojure</a> dev environment <a href="https://t.co/inB8bnlyEl">https://t.co/inB8bnlyEl</a> Guess I should release 0.8 soon! :)</p>&mdash; Bozhidar Batsov (@bbatsov) <a href="https://twitter.com/bbatsov/status/525408420489613313">October 23, 2014</a></blockquote>
-
-
 
 
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
-
-
 <p><code>cider-jack-in</code> connects to a <code>lein repl :headless</code> instance, and <code>cider-mode</code> gives you inline evaluation in any Clojure file. It&rsquo;s amazing.</p>
-
-
-
 
 <h3>paredit and smartparens</h3>
 
-
-
-
 <p>Ever have trouble keeping your parens balanced? You&rsquo;re covered. <a href="http://www.emacswiki.org/ParEdit">paredit</a> is the classic solution, but a lot of folks are using <a href="https://github.com/Fuco1/smartparens">smartparens</a> instead&hellip; I&rsquo;ve been using smartparens in strict mode and it&rsquo;s made me a lot more disciplined about how I place my forms.</p>
-
-
-
 
 <h2>Other Languages</h2>
 
-
-
-
 <p>I&rsquo;ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it&rsquo;s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio make life so much easier. But most of that is all the ridiculous build ceremony for Java, so that&rsquo;s neither here nor there.</p>
-
-
-
 
 <h2>EmacsOS</h2>
 
-
-
-
 <p>That joke about Emacs being an operating system? Not such a joke.</p>
-
-
-
 
 <p>My favorite Twitter client right now is Emacs <a href="http://www.emacswiki.org/TwitteringMode">twittering-mode</a>. There&rsquo;s Gnus for Usenet and Email, and Emacs 24.4 just came out with an improved in-editor web browser called <code>eww</code>.</p>
 
-
-
-
 <p>Emacs is a deep, deep rabbit hole. The only way in is head first. But there&rsquo;s so much you can do in here, and it&rsquo;s a staggeringly powerful environment.</p>
-
-
-
 
 <p>Welcome to the dark side. We have macros.</p>
 
-
-
-
-<p><img src="http://decomplecting.org/images/post-img/vader-choke.jpg" alt="Dark Side" /></p>
-
+<p><img src="/images/post-img/vader-choke.jpg" alt="Dark Side" /></p>
 ]]></content>
   </entry>
   
@@ -653,96 +341,42 @@
     <id>http://decomplecting.org/blog/2013/03/08/pam-authentication-beyond-the-desktop</id>
     <content type="html"><![CDATA[<p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it&rsquo;s useful for so much more.</p>
 
-
-
-
 <h3>Web Authentication</h3>
-
-
-
 
 <p>At work, we needed an authentication solution that allowed users to sign in with their ActiveDirectory credentials. Although the &ldquo;official&rdquo; solution was to use <a href="http://www.ca.com/us/secure-single-sign-on.aspx">SiteMinder</a> for web authentication against AD, we were working on a mobile application, and at the time the SiteMinder auth page was ugly, and had no mobile-optimized login page. The latter problem has since been rectified; now it has both an ugly desktop login and an ugly mobile login. In addition, we were using nginx, and SiteMinder was really only supported under IIS and Apache (and at the time, the latter was via Shibboleth. Ugh.), so without official SiteMinder support, or an nginx Shib plug-in, we were in a bit of a bind.</p>
 
-
-
-
 <p>Around the same time, I was playing with Likewise Open (now known as <a href="http://www.powerbrokeropen.org/">PowerBroker Identity Services &ndash; Open Edition</a>) to bind my Linux workstation into AD. So it occurred to me: if a normal Linux PAM login can be authenticated against ActiveDirectory, why not a PAM login from a web application?</p>
-
-
-
 
 <p>I know, I know, my first though should have been LDAP, right? For some unknown reason, LDAP was verboten at the time. The policy has since (apparently) been reversed, but such is the ebb and flow of corporate politics. And so, in the grand tradition of one of the mothers of modern computer science (and one of my daughter&rsquo;s namesakes):</p>
 
-
-
-
-<blockquote><p>If it&#8217;s a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote>
-
-
-
+<p><blockquote><p>If it&rsquo;s a good idea, go ahead and do it. It is much easier to apologize than it is to get permission.</p><footer><strong>Rear Admiral Dr. Grace Murray Hopper</strong></footer></blockquote></p>
 
 <!--more-->
 
 
-
-
 <p>My first obstacle was to figure out how to do this from Ruby. <a href="https://github.com/binarylogic/authlogic">Authlogic</a> is a decent authentication framework (Sure, Devise is newer, but there&rsquo;s nothing wrong with Authlogic). There&rsquo;s an <a href="https://github.com/jhu-idcs/authlogic_pam">authlogic_pam</a> plugin (link is to my updated version, original seems to be abandoned), so the main issue was updating the long-abandoned rpam gem to tie into PAM. So I created <a href="https://github.com/canweriotnow/rpam-ruby19">rpam-ruby19</a> to have a C extension compatible with Ruby ~>1.9.2. Once the server (all of our production servers are <a href="http://www.debian.org/releases/stable/">Debian 6 &ldquo;Squeeze&rdquo;</a>) was tied into AD, it was relatively trivial to create a login that used Authlogic to hit PAM (and thusly ActiveDirectory) for user authentication.</p>
-
-
-
 
 <h3>But now everyone has a server login?</h3>
 
-
-
-
 <p>No, not at all. Likewise/PBIS has a setting to change the login shell for <em>only</em> AD users; we simply changed their shell to <code>/bin/true</code>. Problem solved.</p>
-
-
-
 
 <h3>And that forgiveness/permission thing?</h3>
 
-
-
-
 <p>While we were in beta, we informally ran the auth scheme by the people directly responsible for such things. They actually thought it was pretty cool and innovative. Which just reinforces my dedication to the timeless wisdom of Dr. Hopper.</p>
-
-
-
 
 <h3>And so&hellip;</h3>
 
-
-
-
 <p>Since we implemented this auth scheme for our mobile app, we&rsquo;ve continued to go with it; it&rsquo;s simple, elegant, and shields us from capturing (even hashed) credentials. We have two(-ish) new products launching this year using the same auth scheme. And we&rsquo;re still quite satisfied with the results.</p>
-
-
-
 
 <h3>Caveats</h3>
 
-
-
-
 <p>Over the past couple of months, I&rsquo;ve been researching an <a href="https://github.com/canweriotnow/rpam-ruby19/issues/5">issue submitted on Github</a> documenting a problem authenticating local users other than the euid running the process. You can get the details from the link, but this is how PAM (or at least shadow passwords) are supposed to work. This isn&rsquo;t for authenticating local system accounts (at least not if you&rsquo;re using shadow passwords properly); you should only auth external accounts (LDAP, ActiveDirectory, maybe NIS+) through PAM for non-system-login applications.</p>
-
-
-
 
 <h3>Future</h3>
 
-
-
-
 <p>Since this has worked out so well with our Rails apps, I&rsquo;m now working on a Clojure equivalent. There&rsquo;s a PAM integration library for Java called JPam, which I&rsquo;ve started wrapping in a library called <a href="https://clojars.org/clj-pam">clj-pam</a>, available from Clojars. If you&rsquo;d like to help, the source repo is located <a href="https://github.com/canweriotnow/clj-pam">here on Github</a>.</p>
 
-
-
-
 <p>PAM is wonderfully extensible. It&rsquo;s also very configurable, and is worth leveraging whenever possible. Dig deeper. Linux has so many great little pieces we tend to overlook.</p>
-
 ]]></content>
   </entry>
   
@@ -753,20 +387,11 @@
     <id>http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure</id>
     <content type="html"><![CDATA[<p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
 
-
-
-
 <p>A while ago, I <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">wrote a post about Bubba</a> (not its real name), a legacy/vendor-supplied system in which the original developers (may they suffer eternal torment) decided to store all datetimes as floating-point values using a bastardized form of the Julian Day system with fractional day part. In that post, I showed a solution used in a Ruby on Rails web app, but now I&rsquo;m writing data integration services for multiple systems, and needed something a bit more robust, so I&rsquo;m writing it in Clojure.</p>
-
-
-
 
 <p>I&rsquo;ll start off with the dependencies:</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -774,35 +399,42 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">ns </span><span class="nv">project.util.date</span>
-</span><span class='line'>  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clj-time.core</span> <span class="ss">:as</span> <span class="nv">tm</span><span class="p">]</span>
-</span><span class='line'>            <span class="p">[</span><span class="nv">clj-time.local</span> <span class="ss">:as</span> <span class="nv">loc</span><span class="p">]</span>
-</span><span class='line'>            <span class="p">[</span><span class="nv">clj-time.format</span> <span class="ss">:as</span> <span class="nv">fmt</span><span class="p">]</span>
-</span><span class='line'>            <span class="p">[</span><span class="nv">clojure.math.numeric-tower</span> <span class="ss">:as</span> <span class="nv">math</span><span class="p">])</span>
-</span><span class='line'>  <span class="p">(</span><span class="ss">:use</span> <span class="nv">clj-time.coerce</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">(</span><span class="ss">:import</span> <span class="p">[</span><span class="nv">oracle.sql</span> <span class="nv">TIMESTAMP</span><span class="p">]</span>
-</span><span class='line'>           <span class="p">[</span><span class="nv">java.sql</span> <span class="nv">Timestamp</span><span class="p">]))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">ns </span><span class="nv">project.util.date</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clj-time.core</span> <span class="ss">:as</span> <span class="nv">tm</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>        <span class="p">[</span><span class="nv">clj-time.local</span> <span class="ss">:as</span> <span class="nv">loc</span><span class="p">]</span>
+</span><span class='line'>        <span class="p">[</span><span class="nv">clj-time.format</span> <span class="ss">:as</span> <span class="nv">fmt</span><span class="p">]</span>
+</span><span class='line'>        <span class="p">[</span><span class="nv">clojure.math.numeric-tower</span> <span class="ss">:as</span> <span class="nv">math</span><span class="p">])</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>  <span class="p">(</span><span class="ss">:use</span> <span class="nv">clj-time.coerce</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">(</span><span class="ss">:import</span> <span class="p">[</span><span class="nv">oracle.sql</span> <span class="nv">TIMESTAMP</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>       <span class="p">[</span><span class="nv">java.sql</span> <span class="nv">Timestamp</span><span class="p">]))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>I&rsquo;m using the fantastic <a href="https://github.com/seancorfield/clj-time">clj-time</a> library by Sean Corfield. It&rsquo;s basically a wrapper around the <a href="http://joda-time.sourceforge.net/">Joda Time</a> Java library, allowing us to use its powerful datetime handling in idiomatic Clojure.</p>
 
-
-
-
 <p>So, for the actual code. First, the Bubba dates need to be converted to and from a floating point value to a normal Date object.</p>
-
-
-
 
 <!-- more -->
 
 
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -840,60 +472,69 @@
 <span class='line-number'>36</span>
 <span class='line-number'>37</span>
 <span class='line-number'>38</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="c1">;; Bubba DateTime conversions</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="c1">;; Set day of calendar reform for TS julian dates.</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Bubba DateTime conversions&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Set day of calendar reform for TS julian dates.</span>
 </span><span class='line'><span class="c1">;; And yes, it uses local time, not UTC. Because FML.</span>
 </span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">docr</span>
-</span><span class='line'>  <span class="s">&quot;It&#39;s the day of Calendar Reform for bubba&quot;</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">loc/to-local-date-time</span> <span class="p">(</span><span class="nf">tm/date-time</span> <span class="mi">1899</span> <span class="mi">12</span> <span class="mi">30</span><span class="p">)))</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;It&amp;rsquo;s the day of Calendar Reform for bubba&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">loc/to-local-date-time</span> <span class="p">(</span><span class="nf">tm/date-time</span> <span class="mi">1899</span> <span class="mi">12</span> <span class="mi">30</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">fractional-part</span>
-</span><span class='line'>  <span class="s">&quot;Get the fractional Julian day part from a DateTime&quot;</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">fractional-part</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Get the fractional Julian day part from a DateTime&amp;rdquo;</span>
 </span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span>
-</span><span class='line'>    <span class="nv">hour-part</span> <span class="p">(</span><span class="nf">tm/hour</span> <span class="nv">dt</span><span class="p">)</span>
-</span><span class='line'>    <span class="nv">min-part</span>  <span class="p">(</span><span class="nf">tm/minute</span> <span class="nv">dt</span><span class="p">)</span>
-</span><span class='line'>    <span class="nv">sec-part</span>  <span class="p">(</span><span class="nf">tm/sec</span> <span class="nv">dt</span><span class="p">)</span>
-</span><span class='line'>    <span class="nv">seconds</span> <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">hour-part</span> <span class="mi">60</span> <span class="mi">60</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">min-part</span> <span class="mi">60</span><span class="p">)</span> <span class="nv">sec-part</span><span class="p">)]</span>
-</span><span class='line'>    <span class="p">(</span><span class="nb">float </span><span class="p">(</span><span class="nb">/ </span><span class="nv">seconds</span> <span class="mi">86400</span><span class="p">))))</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">to-bubbadt</span>
-</span><span class='line'>  <span class="s">&quot;Converts a DateTime to a bubba Julian date&quot;</span>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;hour-part</span> <span class="p">(</span><span class="nf">tm/hour</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'><span class="nv">min-part</span>  <span class="p">(</span><span class="nf">tm/minute</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'><span class="nv">sec-part</span>  <span class="p">(</span><span class="nf">tm/sec</span> <span class="nv">dt</span><span class="p">)</span>
+</span><span class='line'><span class="nv">seconds</span> <span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">hour-part</span> <span class="mi">60</span> <span class="mi">60</span><span class="p">)</span> <span class="p">(</span><span class="nb">* </span><span class="nv">min-part</span> <span class="mi">60</span><span class="p">)</span> <span class="nv">sec-part</span><span class="p">)]</span>
+</span><span class='line'><span class="p">(</span><span class="nb">float </span><span class="p">(</span><span class="nb">/ </span><span class="nv">seconds</span> <span class="mi">86400</span><span class="p">))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">to-bubbadt</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Converts a DateTime to a bubba Julian date&amp;rdquo;</span>
 </span><span class='line'>  <span class="p">[</span><span class="nv">dt</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">offset</span> <span class="nv">docr</span><span class="p">]</span>
-</span><span class='line'>    <span class="p">(</span><span class="nb">+ </span>
-</span><span class='line'>      <span class="p">(</span><span class="nf">tm/in-days</span>
-</span><span class='line'>        <span class="p">(</span><span class="nf">tm/interval</span> <span class="nv">offset</span> <span class="nv">dt</span><span class="p">))</span>
-</span><span class='line'>      <span class="p">(</span><span class="nf">fractional-part</span> <span class="nv">dt</span><span class="p">))))</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">offset</span> <span class="nv">docr</span><span class="p">]</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">current-bubbadt</span>
-</span><span class='line'>  <span class="s">&quot;Get the current local time as a bubba Julian date&quot;</span>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span><span class="p">(</span><span class="nb">+ </span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">tm/in-days</span>
+</span><span class='line'>    <span class="p">(</span><span class="nf">tm/interval</span> <span class="nv">offset</span> <span class="nv">dt</span><span class="p">))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fractional-part</span> <span class="nv">dt</span><span class="p">))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">current-bubbadt</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Get the current local time as a bubba Julian date&amp;rdquo;</span>
 </span><span class='line'>  <span class="p">[]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">to-bubbadt</span> <span class="p">(</span><span class="nf">loc/local-now</span><span class="p">)))</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">to-bubbadt</span> <span class="p">(</span><span class="nf">loc/local-now</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">from-bubbadt</span> <span class="p">[</span><span class="nv">bubbadt</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">day-part</span> <span class="p">(</span><span class="nf">math/floor</span> <span class="nv">bubbadt</span><span class="p">)</span>
-</span><span class='line'>        <span class="nv">frac-part</span> <span class="p">(</span><span class="nb">- </span><span class="nv">bubbadt</span> <span class="nv">day-part</span><span class="p">)</span>
-</span><span class='line'>        <span class="nv">docr</span> <span class="nv">docr</span><span class="p">]</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">tm/plus</span> <span class="nv">docr</span> <span class="p">(</span><span class="nf">tm/days</span> <span class="nv">day-part</span><span class="p">)</span> <span class="p">(</span><span class="nf">tm/secs</span> <span class="p">(</span><span class="nf">math/round</span> <span class="p">(</span><span class="nb">* </span><span class="mi">86400</span> <span class="nv">frac-part</span><span class="p">))))))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">from-bubbadt</span> <span class="p">[</span><span class="nv">bubbadt</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">day-part</span> <span class="p">(</span><span class="nf">math/floor</span> <span class="nv">bubbadt</span><span class="p">)</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">frac-part</span> <span class="p">(</span><span class="nb">- </span><span class="nv">bubbadt</span> <span class="nv">day-part</span><span class="p">)</span>
+</span><span class='line'>    <span class="nv">docr</span> <span class="nv">docr</span><span class="p">]</span>
+</span><span class='line'><span class="p">(</span><span class="nf">tm/plus</span> <span class="nv">docr</span> <span class="p">(</span><span class="nf">tm/days</span> <span class="nv">day-part</span><span class="p">)</span> <span class="p">(</span><span class="nf">tm/secs</span> <span class="p">(</span><span class="nf">math/round</span> <span class="p">(</span><span class="nb">* </span><span class="mi">86400</span> <span class="nv">frac-part</span><span class="p">))))))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Okay, that&rsquo;s probably a lot to take in, but basically it performs the calculations to convert the floating-point dates to Date objects and back again. But there&rsquo;s still a catch. In some of the views I&rsquo;ve built for reporting, I&rsquo;m pre-converting those dates to Oracle SQL TIMESTAMP types, and depending on the context, sometimes those floats come back as Doubles, and sometimes as BigDecimals.</p>
 
-
-
-
 <p>Clojure&rsquo;s got me covered, with multimethods.</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -909,138 +550,37 @@
 <span class='line-number'>14</span>
 <span class='line-number'>15</span>
 <span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="c1">;; Use a multimethod for our date coercion b/c the input type might be variable.</span>
-</span><span class='line'><span class="p">(</span><span class="kd">defmulti </span><span class="nv">bubba-date-coerce</span> <span class="nv">class</span><span class="p">)</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">Double</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="c1">;; Use a multimethod for our date coercion b/c the input type might be variable.</span>
+</span><span class='line'><span class="p">(</span><span class="kd">defmulti </span><span class="nv">bubba-date-coerce</span> <span class="nv">class</span><span class="p">)</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">BigDecimal</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">Double</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">oracle.sql.TIMESTAMP</span> <span class="p">[</span><span class="nv">ts</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">from-date</span> <span class="p">(</span><span class="nf">.toDate</span> <span class="nv">ts</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">BigDecimal</span> <span class="p">[</span><span class="nv">f</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-bubbadt</span> <span class="nv">f</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="ss">:default</span> <span class="p">[</span><span class="nv">d</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nb">identity </span><span class="nv">d</span><span class="p">))</span>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="nv">oracle.sql.TIMESTAMP</span> <span class="p">[</span><span class="nv">ts</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">from-date</span> <span class="p">(</span><span class="nf">.toDate</span> <span class="nv">ts</span><span class="p">)))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defmethod </span><span class="nv">bubba-date-coerce</span> <span class="ss">:default</span> <span class="p">[</span><span class="nv">d</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nb">identity </span><span class="nv">d</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
 </span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p> Much like generics in Common Lisp (well, CLOS anyhow) <code>defmulti</code> takes a dispatch function as an argument, in this case <code>class</code>, which returns the class of the argument passed to the multimethod. Methods can then be defined to handle each type of possile argument, with a <code>:default</code> method for unmatched cases. Multimethods can be used with any dispatch function you like, but <code>class</code> is a common use case, and handy as hell here.</p>
 
-
-
-
 <p> As I mentioned, the point of this is to get data in and out of multiple systems, and they all have their own idiosyncracies.</p>
-
-
-
 
 <p> For instance, there&rsquo;s, uhh, let&rsquo;s call it Joe&rsquo;s Directory, or JD, which stores all of its dates and datetimes as strings, with inconsistant formatting across the board.</p>
 
-
-
-
 <p> Luckily, clj-time has awesome parsers:</p>
 
-
-
-
 <p> <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'> <span class="c1">;; General (jd DateTime conversions)</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="k">def </span><span class="nv">jd-parser</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/formatter</span> <span class="p">(</span><span class="nf">tm/default-time-zone</span><span class="p">)</span> <span class="s">&quot;MM/dd/YYYY&quot;</span> <span class="s">&quot;YYYYMMddHHmmssZ&quot;</span> <span class="s">&quot;YYYY-MM-dd HH:mm:ss&quot;</span><span class="p">))</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">jdparse</span> <span class="p">[</span><span class="nv">date-string</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/parse</span> <span class="nv">jd-parser</span> <span class="nv">date-string</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure></p>
-
-
-
-
-<p>Easy as pie. Where it gets truly beautiful, however, is when mixed in with <a href="http://sqlkorma.com/">Korma</a> for SQL abstraction. Korma entities have two special macros for data conversion: <code>prepare</code>, which applies a function to data before storing it in the database, and <code>transform</code> which applies a function when reading from the database.</p>
-
-
-
-
-<p>Since Korma returns query results as a vector of hashmaps, it&rsquo;s as simple as updating a hashmap:</p>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">jd-date-transform</span> <span class="p">[</span><span class="nv">rec</span><span class="p">]</span>
-</span><span class='line'>  <span class="s">&quot;Converts date strings to DateTime instances&quot;</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">ent</span> <span class="nv">rec</span>
-</span><span class='line'>        <span class="nv">date-fields</span> <span class="p">[</span><span class="ss">:DOB</span> <span class="ss">:empstartdate</span> <span class="ss">:modifytimestamp</span> <span class="ss">:createtimestamp</span><span class="p">]]</span>
-</span><span class='line'>    <span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">jdparse</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">date-fields</span><span class="p">)))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<p>That&rsquo;s the first version of the transform fn I wrote for JD, but there&rsquo;s two problems. First, the fields to apply are hard-coded in the <code>let</code> form. More importantly, however, is the condition where I do a <code>select</code> and don&rsquo;t return those fields; <code>update-in</code> will add the field with a value of <code>nil</code>.</p>
-
-
-
-
-<p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defn </span><span class="nv">generic-transform</span>
-</span><span class='line'>  <span class="s">&quot;Transform function for queries. Arguments are a function to apply (f),</span>
-</span><span class='line'><span class="s">   the entity to be transformed, and the fields on which to apply the transformation.&quot;</span>
-</span><span class='line'>  <span class="p">[</span><span class="nv">f</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">]</span>
-</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">update-fn</span> <span class="nv">f</span>
-</span><span class='line'>        <span class="nv">ent</span> <span class="nv">ent</span>
-</span><span class='line'>        <span class="nv">fields</span> <span class="p">(</span><span class="nf">vec</span> <span class="p">(</span><span class="nf">st/intersection</span> <span class="p">(</span><span class="nb">set </span><span class="p">(</span><span class="nb">keys </span><span class="nv">ent</span><span class="p">))</span> <span class="p">(</span><span class="nb">set </span><span class="nv">fields</span><span class="p">)))]</span>
-</span><span class='line'>    <span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%1</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">update-fn</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">)))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<p>Finding the set intersection of the fields we normally want to transform, and the fields returned, ensures we don&rsquo;t get extra fields with values of <code>nil</code>.</p>
-
-
-
-
-<p>And look, I resisted the temptation to use a macro where a function would suffice! Do I get points for good Lisp behavior?</p>
-
-
-
-
-<p>Then it&rsquo;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -1050,33 +590,127 @@
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nf">defentity</span> <span class="nv">customers</span>
-</span><span class='line'>  <span class="s">&quot;Korma entity for the CUSTOMER table. Transforms Bubba datetimes to DateTime objects.&quot;</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span> <span class="c1">;; General (jd DateTime conversions)&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="k">def </span><span class="nv">jd-parser</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/formatter</span> <span class="p">(</span><span class="nf">tm/default-time-zone</span><span class="p">)</span> <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;MM/dd/YYYY&amp;rdquo; &amp;ldquo;YYYYMMddHHmmssZ&amp;rdquo; &amp;ldquo;YYYY-MM-dd HH:mm:ss&amp;rdquo;))&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">jdparse</span> <span class="p">[</span><span class="nv">date-string</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="nf">fmt/parse</span> <span class="nv">jd-parser</span> <span class="nv">date-string</span><span class="p">))</span><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Easy as pie. Where it gets truly beautiful, however, is when mixed in with <a href="http://sqlkorma.com/">Korma</a> for SQL abstraction. Korma entities have two special macros for data conversion: <code>prepare</code>, which applies a function to data before storing it in the database, and <code>transform</code> which applies a function when reading from the database.</p>
+
+<p>Since Korma returns query results as a vector of hashmaps, it&rsquo;s as simple as updating a hashmap:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">jd-date-transform</span> <span class="p">[</span><span class="nv">rec</span><span class="p">]</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Converts date strings to DateTime instances&amp;rdquo;</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">ent</span> <span class="nv">rec&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">date-fields</span> <span class="p">[</span><span class="ss">:DOB</span> <span class="ss">:empstartdate</span> <span class="ss">:modifytimestamp</span> <span class="ss">:createtimestamp</span><span class="p">]]</span>
+</span><span class='line'><span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">jdparse</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">date-fields</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>That&rsquo;s the first version of the transform fn I wrote for JD, but there&rsquo;s two problems. First, the fields to apply are hard-coded in the <code>let</code> form. More importantly, however, is the condition where I do a <code>select</code> and don&rsquo;t return those fields; <code>update-in</code> will add the field with a value of <code>nil</code>.</p>
+
+<p>So we need a higher-order function, and a bit of help from <code>clojure.set</code></p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">generic-transform</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Transform function for queries. Arguments are a function to apply (f),</span>
+</span><span class='line'>   <span class="nv">the</span> <span class="nv">entity</span> <span class="nv">to</span> <span class="nv">be</span> <span class="nv">transformed</span>, <span class="nb">and </span><span class="nv">the</span> <span class="nv">fields</span> <span class="nv">on</span> <span class="nv">which</span> <span class="nv">to</span> <span class="nb">apply </span><span class="nv">the</span> <span class="nv">transformation.</span><span class="o">&amp;</span><span class="nv">rdquo</span><span class="c1">;</span>
+</span><span class='line'>  <span class="p">[</span><span class="nv">f</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">]</span>
+</span><span class='line'>  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">update-fn</span> <span class="nv">f&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;</span>    <span class="nv">ent</span> <span class="nv">ent</span>
+</span><span class='line'>    <span class="nv">fields</span> <span class="p">(</span><span class="nf">vec</span> <span class="p">(</span><span class="nf">st/intersection</span> <span class="p">(</span><span class="nb">set </span><span class="p">(</span><span class="nb">keys </span><span class="nv">ent</span><span class="p">))</span> <span class="p">(</span><span class="nb">set </span><span class="nv">fields</span><span class="p">)))]</span>
+</span><span class='line'><span class="p">(</span><span class="nb">reduce </span><span class="o">#</span><span class="p">(</span><span class="nf">update-in</span> <span class="nv">%1</span> <span class="p">[</span><span class="nv">%2</span><span class="p">]</span> <span class="nv">update-fn</span><span class="p">)</span> <span class="nv">ent</span> <span class="nv">fields</span><span class="p">)))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
+
+<p>Finding the set intersection of the fields we normally want to transform, and the fields returned, ensures we don&rsquo;t get extra fields with values of <code>nil</code>.</p>
+
+<p>And look, I resisted the temptation to use a macro where a function would suffice! Do I get points for good Lisp behavior?</p>
+
+<p>Then it&rsquo;s as simple of using a lambda that applies this function inside our korma entity declaration:</p>
+
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="nv">&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span><span class="p">(</span><span class="nf">defentity</span> <span class="nv">customers</span>
+</span><span class='line'>  <span class="o">&amp;</span><span class="nv">ldquo</span><span class="c1">;Korma entity for the CUSTOMER table. Transforms Bubba datetimes to DateTime objects.&amp;rdquo;</span>
 </span><span class='line'>  <span class="p">(</span><span class="nf">database</span> <span class="nv">envdb</span><span class="p">)</span>
 </span><span class='line'>  <span class="p">(</span><span class="nf">table</span> <span class="ss">:customer</span><span class="p">)</span>
-</span><span class='line'>  <span class="p">(</span><span class="nf">transform</span>
-</span><span class='line'>    <span class="o">#</span><span class="p">(</span><span class="nf">generic-transform</span> <span class="nv">dt/bubba-date-coerce</span> <span class="nv">%</span> <span class="p">[</span><span class="ss">:active_start_date</span>
-</span><span class='line'>                                                       <span class="ss">:active_end_date</span>
-</span><span class='line'>                                                       <span class="ss">:lastmod_datetime</span>
-</span><span class='line'>                                                       <span class="ss">:birthdate</span>
-</span><span class='line'>                                                       <span class="ss">:opendatetime</span><span class="p">])))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span><span class='line'>  <span class="p">(</span><span class="nf">transform&lt;/p&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;pre&gt;&lt;code&gt;#</span><span class="p">(</span><span class="nf">generic-transform</span> <span class="nv">dt/bubba-date-coerce</span> <span class="nv">%</span> <span class="p">[</span><span class="ss">:active_start_date</span>
+</span><span class='line'>                                                   <span class="ss">:active_end_date</span>
+</span><span class='line'>                                                   <span class="ss">:lastmod_datetime</span>
+</span><span class='line'>                                                   <span class="ss">:birthdate</span>
+</span><span class='line'>                                                   <span class="ss">:opendatetime</span><span class="p">])))</span>
+</span><span class='line'><span class="nv">&lt;/code&gt;&lt;/pre&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nv">&lt;p&gt;</span>
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>So that&rsquo;s how I&rsquo;m normalizing datetimes in this particular project. I&rsquo;m really enjoying writing code like this: building short, composable functions and refactoring by decomplecting them into shorter, more composable functions.</p>
 
-
-
-
 <p>I find refactoring easier to reason about in Clojure than any other language I&rsquo;ve worked in. Thinking in terms of simple, composable functions (particularly having the facility of higher-order functions and macros) also makes it very straightforward to decouple interface and implementation.</p>
 
-
-
-
 <p>I&rsquo;ll state for the record I&rsquo;m fairly new to Clojure, so it wouldn&rsquo;t surprise me if this code looks pretty amateurish to more experienced Clojurians. If anyone has any suggestions for improving it, I&rsquo;d welcome the advice.</p>
-
 ]]></content>
   </entry>
   

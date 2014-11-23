@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-23T02:20:34-05:00</updated>
+  <updated>2014-11-23T13:21:02-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -53,7 +53,7 @@
 
 <p>I don&rsquo;t even know how to start this.</p>
 
-<p>Let me explain: I came to CLojure with very little Java experience. I learned &ldquo;enough Java to get by&rdquo; so I could write simple Android apps. Then I saw this talk by Steve Yegge:</p>
+<p>Let me explain: I came to Clojure with very little Java experience. I learned &ldquo;enough Java to get by&rdquo; so I could write simple Android apps. Then I saw this talk by Steve Yegge:</p>
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/tz-Bb-D6teE" frameborder="0" allowfullscreen></iframe>
 
@@ -82,7 +82,7 @@
 
 <p>We also learned that while type erasure in generics isn&rsquo;t going anywhere, we will be able to use generics with primitives. Which is pretty damned cool. So instead of getting the autoboxed <code>ArrayList&lt;Integer&gt;</code>, you can get an unboxed <code>ArrayList&lt;int&gt;</code>.</p>
 
-<p>I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games inClojure and need unboxed floats and doubles in order so to do.</p>
+<p>I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games in Clojure and need unboxed floats and doubles in order so to do.</p>
 
 <p>But here&rsquo;s the jaw-dropper:</p>
 
@@ -98,7 +98,7 @@
 
 <p>Which also happens to be the least popular sandwich at Denny&rsquo;s.</p>
 
-<p>So there&rsquo;s my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But Damn was that a good conference.</p>
+<p>So there&rsquo;s my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But damn was that a good conference.</p>
 
 <p>There were many times I felt like I had to be the stupidest person there.</p>
 

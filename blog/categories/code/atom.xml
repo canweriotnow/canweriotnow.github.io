@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-23T02:20:34-05:00</updated>
+  <updated>2014-11-23T13:21:02-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -21,30 +21,16 @@
     <content type="html"><![CDATA[<p>I&rsquo;m sitting in the first session of the <a href="http://code.org">Code.org</a> K-5 PD
 training workshop.</p>
 
-
-
-
 <p>It&rsquo;s my first time in Las Vegas. We went to In-N-Out Burger (required if I
 travel out west), and I hit a $2k jackpot on penny slots. Not bad. And now
 we&rsquo;re getting an overview of the K-5 Code.org curriculum. It&rsquo;s pretty exciting.</p>
 
-
-
-
 <p>I learned to code when I was 5. Learning BASIC on a TI 99/4A. This is pretty much
 my first computer:</p>
 
-
-
-
-<p><img src="http://www.digibarn.com/collections/systems/ti99-4a-beige/Image84.jpg"></p>
-
-
-
+<p><img class="<a" src="href="http://www.digibarn.com/collections/systems/ti99-4a-beige/Image84.jpg">http://www.digibarn.com/collections/systems/ti99-4a-beige/Image84.jpg</a>&#8221;></p>
 
 <!-- more -->
-
-
 
 
 <p>I love this idea. I receive constant shit from friends, family, co-workers,
@@ -52,14 +38,8 @@ whatever, that the fact that I started hacking at 5 is probably more scary and
 off-putting when I talk about promoting CS education in K-5 (which is why I&rsquo;m
 in Vegas, thanks to Code.org).</p>
 
-
-
-
 <p>But Real Soon Now™ everyone is going ot start coding at 5, and on somethimg way
 more sphisticated than a Texas Instruments 99/4A.</p>
-
-
-
 
 <p><a href="https://code.org/about/leadership/hadi_partovi">Hadi Partovi</a> is describing how
 much &ldquo;cooler&rdquo; coding is becoming as I type. I&rsquo;m glad. I can&rsquo;t wait to start
@@ -67,16 +47,9 @@ teaching this Code.org curriculum. Coding isn&rsquo;t just for white boys in hoo
 It&rsquo;s not some thing for introverted nerds (well, we might have invented it, but
   we&rsquo;re happy to share).</p>
 
-
-
-
 <p>So it&rsquo;s very exciting, and I&rsquo;m so happy to be a part of it.</p>
 
-
-
-
 <p>Hackers. Hackers everywhere.</p>
-
 ]]></content>
   </entry>
   
@@ -87,86 +60,38 @@ It&rsquo;s not some thing for introverted nerds (well, we might have invented it
     <id>http://decomplecting.org/blog/2013/06/21/the-importance-of-aarons-law</id>
     <content type="html"><![CDATA[<p>Yesterday, Rep. Zoe Lofgren and Rep. Ron Wyden introduced a bill, known as &ldquo;Aaron&rsquo;s Law&rdquo;, which amends the <a href="http://en.wikipedia.org/wiki/Computer_Fraud_and_Abuse_Act">Computer Fraud and Abuse Act (CFAA)</a>, a 1986 bil which set most of the &ldquo;cybercrime&rdquo; statutes on the books today. This law, affectionately known as <a href="http://www.gpo.gov/fdsys/pkg/USCODE-2010-title18/html/USCODE-2010-title18-partI-chap47-sec1030.htm">U.S. Code Title 18, Part I, Chapter 47, §1030</a>, has been added to many times over the years (via the PATRIOT Act, and various bills related to issues of identity theft, etc.), but the substantial core of the bill has remained the same since 1986: vague, ominous, overly broad, and a rampant playground for prosecutorial misconduct.</p>
 
-
-
-
 <p>A quick recap of the origins of Aaron&rsquo;s Law, just in case there are readers outside my usual demographic of nerds and hackers: Aaron Swartz was a brilliant programmer and activist who co-authored the RSS specification as a teenager, went on to co-found <a href="http://reddit.com">Reddit</a> and <a href="http://demandprogress.org">Demand Progress</a>, and so much more. Chagrined by the lack of public access to (especially taxpayer-funded) research, he went on to use MIT&rsquo;s computer network to (illegally) download millions of academic papers from JSTOR. MIT and JSTOR both declined to press charges, but federal prosecutors Carmen Ortiz and Stephen Haymann smelled blood in the water and attacked like frenzied piranha-sharks. okay, those don&rsquo;t exist, but I don&rsquo;t think there&rsquo;s a single creature vicious enough to describe this dastardly duo. Faced with 35 years in federal prison, Aaron, sadly, took his own life.</p>
 
-
-
-
 <p>I&rsquo;m not here to rehash the whole case or go over what should have happened differently. The hacker community mourns the loss of Aaron Swartz, each of us in our own way. But I do want to address the technical, economic, and even pedagogical consequences of the CFAA in its current state, and why its amendment is so vital.</p>
-
-
-
 
 <!--more-->
 
 
-
-
 <h3>A history of abuse</h3>
-
-
-
 
 <p>Aaron Swartz was not the first victim of the CFAA, but may be its first public fatality. In <em>The Hacker Crackdown,</em> Bruce Sterling desccribes the rampant excesses of &ldquo;Operation Sundevil,&rdquo; an all-out raid on &ldquo;hackers&rdquo; that occurred in the late 1980&rsquo;s. There&rsquo;s a good <a href="http://gawker.com/5975889/the-death-of-aaron-swartz-and-the-new-hacker-crackdown">piece on Gawker</a> that describes that incident and how it relates to Aaron&rsquo;s case.</p>
 
-
-
-
 <p>A funny thing happens when someone begins to deeply <a href="http://www.catb.org/jargon/html/G/grok.html">grok</a> computer systems, especially at the level of code. It opens a new world of possibilities, and ignites an insatiable curiosity. A curiosity which is often &ldquo;criminal&rdquo; when exploration takes one beyond one&rsquo;s own sandbox.</p>
-
-
-
 
 <p>I got my first modem at the age of ten or eleven, and quickly left the BBS world when I got my first real (UNIX shell) internet account. I won&rsquo;t go into details (not sure what the statute of limitations is!), but I&rsquo;m <em>certain</em> some of what I got up to ran afoul of the CFAA, to put it mildly. I was a burgeoning hacker, not a cracker; I was never malicious, tried to follow the &ldquo;Boy Scout rule&rdquo; (always leave the campground better than you found it), and even left anonymous tips for the administrators of systems that I, uh, accessed, telling them how I got in and pointing them to a patch if I knew of one.</p>
 
-
-
-
 <p>I&rsquo;d like to think that, in the process of learning volumes about programming, systems, networks, etc., I actually helped to improve security.</p>
-
-
-
 
 <h3>The next generation of hackers</h3>
 
-
-
-
 <p>As I mentioned in my <a href="http://decomplecting.org/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">last post</a>, I&rsquo;m really interested in the push to teach kids real programming skills. But what happens when we&rsquo;re giving kids the tools to send themselves to federal prison because of some outdated, vague laws that prosecutors love to abuse in order to &lsquo;make examples&rsquo; of individuals whose only real crime is curiosity and a desire for open access to information?</p>
-
-
-
 
 <p>When we open the world of programming to kids, we&rsquo;re really creating the next generation of hackers. Not in the media-hyped, perjorative sense, but in the standard meaning, established by <a href="http://tools.ietf.org/html/rfc1392">RFC1392</a>: &ldquo;A person who delights in having an intimate understanding of the internal workings of a system, computers and computer networks in particular.&rdquo;</p>
 
-
-
-
 <h3>A legislative pull request</h3>
-
-
-
 
 <p>In a way, the body of laws forms the source code for our democracy; sadly, the compilers (lawyers and judges) are buggy as all hell and don&rsquo;t raise warnings until it&rsquo;s too late.</p>
 
-
-
-
 <p>In Aaron Swartz&rsquo;s case, we had a prosecutorial buffer overrun that caused the target process (Aaron) to segfault. It&rsquo;s time to patch this piece of source code with the amendments contained in Aaron&rsquo;s Law. It&rsquo;s just a patch, and I&rsquo;d say we need better code review (in this case, public code review actually occured via Reddit, setting an interesting precedent) in general, until we have perfect compilers &mdash; and I don&rsquo;t see perfect lawyers or judges arriving any time soon.</p>
-
-
-
 
 <p>Open source works; sunlight is the best disinfectant; transparency is desirable. When our elected representatives legislate out of fear or confusion (CFAA, PATRIOT, etc.), we get bad laws that imprison our best and brightest, or worse, take them from us completely.</p>
 
-
-
-
 <p>Please go to the <a href="http://act.demandprogress.org/sign/aarons_law_intro/">Demand Progress site for Aaron&rsquo;s Law</a> to become a citizen co-sponsor of the bill &ndash; it might be a measure too late for Aaron, but it&rsquo;s necessary for the future.</p>
-
 ]]></content>
   </entry>
   
