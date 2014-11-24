@@ -34,7 +34,6 @@ That night there were unsessions, and although there were a number of incredible
 
 On day 2, we learned some fascinating things about using async channels in ClojureScript, type systems, and Datomic superpowers. I took a break after lunch, and then that night was the party.
 
-I got to shake Rich's hand, and thank him for making me love programming again.
 
 ### Brainsplosion: Final Meltdown
 
@@ -71,7 +70,7 @@ I'm not going to dive into code in this post, as it's my decompression post, but
 
 We also learned that while type erasure in generics isn't going anywhere, we will be able to use generics with primitives. Which is pretty damned cool. So instead of getting the autoboxed `ArrayList<Integer>`, you can get an unboxed `ArrayList<int>`.
 
-I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games inClojure and need unboxed floats and doubles in order so to do.
+I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games in Clojure and need unboxed floats and doubles in order so to do.
 
 But here's the jaw-dropper:
 
@@ -87,7 +86,7 @@ Whew. Brainmelt.
 
 Which also happens to be the least popular sandwich at Denny's.
 
-So there's my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But Damn was that a good conference.
+So there's my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But damn was that a good conference.
 
 There were many times I felt like I had to be the stupidest person there.
 
