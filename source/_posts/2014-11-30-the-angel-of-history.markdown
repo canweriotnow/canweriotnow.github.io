@@ -32,7 +32,7 @@ For those of us who do not feel hurtled forward by the piling on of catastrophe,
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/-E4fm4Wqego" frameborder="0" allowfullscreen></iframe>
 
-Benjamin wrote of this desire for the past, as well. In ["The Work of Art in the Age of Mechanical Reproduction"](https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm) Benjamin spoke of the loss of the "aura", that experience of seeing something human in a made thing. But as is often misunderstood in this piece, Benjamin writes an _elegy_ for the aura. He does not demand that wereclaim the aura, but rather warns against it.
+Benjamin wrote of this desire for the past, as well. In ["The Work of Art in the Age of Mechanical Reproduction"](https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm) Benjamin spoke of the loss of the "aura", that experience of seeing something human in a made thing. But as is often misunderstood in this piece, Benjamin writes an _elegy_ for the aura. He does not demand that we reclaim the aura, but rather warns against it.
 
 The acceptance of loss is one of the marks of adulthood. The attempt to reclaim the aura is the adolescent revolt against the inevitability of technological society. And like most adolescent revolt, it is both fruitless and deleterious. Acceptance is the final stage of grief, as no rage will resurrect a dead parent, and the revenant will never be that which we once buried.
 
@@ -57,7 +57,7 @@ Always. That's how it feels.
 
 Trying to build the future always feels like beating against the current. I think this is why the "Angel of History" metaphor feels like such a beautiful paradox to me; Blown inevitably forward, yet still having to row against a current pushng backward.
 
-Institutional IT policies, privacy laws, less-than-progressive standards bodies... The fact that people are shocked at the pace of innovation is shocking when you stop to consider the _possible_ pace of innovation.
+Institutional IT policies, privacy laws, standards bodies... The fact that people are shocked at the pace of innovation is shocking when you stop to consider the _possible_ pace of innovation.
 
 {% blockquote William Gibson %}
 The future is already here — it's just not very evenly distributed.
@@ -65,7 +65,7 @@ The future is already here — it's just not very evenly distributed.
 
 Yeah, there was some point to this when I started.
 
-Mostly I was annoyed at what seemed like reactionary elements on a mailing list. But I think that's pretty much sorted.
+Mostly I was annoyed at what seemed like reactionary elements in my inbox. But I think that's pretty much sorted.
 
 And yet...
 
