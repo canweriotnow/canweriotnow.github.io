@@ -38,7 +38,7 @@ The acceptance of loss is one of the marks of adulthood. The attempt to reclaim 
 
 ### And Technology
 
-It's not so different. I'm working on a couple of standards groups with members who seem to be mourning a fallen comrade, lamenting a moribund spouse. The only way is forward; we have no choice. That which existed before was of its time, and now we move forward, face turned toward the piling catastrophe of the past. For as much as we might once have loved it, we are driven forward by the wind of its piling wreckage, and can retrieve nothing,
+It's not so different. I've been discussing a few emerging standards with folks who seem to be mourning a fallen comrade, lamenting a moribund spouse. The only way is forward; we have no choice. That which existed before was of its time, and now we move forward, face turned toward the piling catastrophe of the past. For as much as we might once have loved it, we are driven forward by the wind of its piling wreckage, and can retrieve nothing,
 
 ### Paradox
 
