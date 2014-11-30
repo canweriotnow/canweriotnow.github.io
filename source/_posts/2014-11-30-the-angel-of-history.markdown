@@ -51,6 +51,8 @@ Gatsby believed in the green light, the orgastic future that year by year recede
 So we beat on, boats against the current, borne back ceaselessly into the past.
 {% endblockquote %}
 
+The uncanny thing about a paradox &mdash; it tends to be true.
+
 ### Borne back ceaselessly into the past
 
 Always. That's how it feels.
