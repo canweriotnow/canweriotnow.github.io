@@ -9,7 +9,7 @@
   <meta name="author" content="Jason Lewis">
 
   
-  <meta name="description" content="This will be a quick one. I just wanted to give an example of how Ruby&rsquo;s open classes can be a lifesaver when a vendor makes bizarre choices, &hellip;">
+  <meta name="description" content="One thing I&rsquo;ve come to observe working in higher ed is that you can run into a lot of issues with what I want to term &ldquo;generational &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +85,57 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/08/03/generational-impedance-mismatch/">Generational Impedance Mismatch</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-03T15:48:00-04:00" pubdate data-updated="true"></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>One thing I&rsquo;ve come to observe working in higher ed is that you can run into a lot of issues with what I want to term &ldquo;generational impedance mismatch.&rdquo; It&rsquo;s what happens when your ostensible customers are about 40 years older than your target demographic.</p>
+
+<p>When I started on an internal administrative application about two years ago, I threw in some error pages with lolcats on them because&hellip; well, error pages are boring. Those got yanked because the customer thought they were &ldquo;unprofessional.&rdquo; Okay, sure. It&rsquo;s an administrative app, so maybe this isn&rsquo;t the best thing to throw up after a catastrophic failure:</p>
+
+<p><img class="center" src="/images/post-img/im-in-ur-serverz.jpeg"></p>
+
+<p>But the new crop of apps I&rsquo;m writing don&rsquo;t target middle-aged administrators; they target students. Specifically, in addition to doing mundane things like reporting your a lost ID card or checking balances, there&rsquo;s a whole social gaming component. So far, I&rsquo;ve been pretty successful at keeping things amusing (between the student focus group we assembled and the <a href="http://reddit.com/r/jhu">JHU subreddit</a>, my sense of humor is quickly vindicated), but the text is&hellip; kinda stodgy.</p>
+
+<p>I was discussing this with a co-worker, and we hit on what I think is a brilliant way of balancing conflicting stakeholder needs. The customer wants rather formal, business-like text that drily describes various functions of the application. On the other hand, students are going to be bored, and love easter eggs and humor. But we know how to deal with target demographics who speak different languages, don&rsquo;t we? Localization to the rescue!</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/03/generational-impedance-mismatch/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -550,78 +601,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/05/18/un-pythonic-for-fun-and-profit/">Un-Pythonic for Fun and Profit</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-18T15:01:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This post isn&rsquo;t meant to play into some hacker holy war, nor is it intended to denigrate the usefulness of Python for various tasks. Steve Yegge has done <a href="https://sites.google.com/site/steveyegge2/tour-de-babel">a much better job than I can</a> of explicating some of the issues other programmers have with Python, both the language and the community around it; I still agree with his remarks there.</p>
-
-<p>But there <em>are</em> some (major, IMHO) issues with the &ldquo;Pythonic&rdquo; attitude toward programming. And they start with &ldquo;The Zen of Python.&rdquo;</p>
-
-<h2>The Zen of Python</h2>
-
-<p>There&rsquo;s a lot to like about <a href="http://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>. On the first face of it, it&rsquo;s a pretty good set of principles:</p>
-
-<pre><code>Beautiful is better than ugly.
-Explicit is better than implicit.
-Simple is better than complex.
-Complex is better than complicated.
-Flat is better than nested.
-Sparse is better than dense.
-Readability counts.
-Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!
-</code></pre>
-
-<p>There&rsquo;s a lot here that would be attractive, if not obvious, to any given Rubyist or Clojurian. I think the problem is that Pythonistas tend to get hung up on the <em>bad</em> elements of the &ldquo;Zen of Python&rdquo;, to the detriment of the positive ones. So I&rsquo;ll just go through some of the ones that cause the most friction with non-Pythonistas.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/05/18/un-pythonic-for-fun-and-profit/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="6">&larr; Older</a>
@@ -645,6 +624,10 @@ Namespaces are one honking great idea -- let's do more of those!
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
       </li>
     
@@ -658,10 +641,6 @@ Namespaces are one honking great idea -- let's do more of those!
     
       <li class="post">
         <a href="/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/08/22/fear-and-coding-in-las-vegas/">Fear and Coding in Las Vegas</a>
       </li>
     
   </ul>
