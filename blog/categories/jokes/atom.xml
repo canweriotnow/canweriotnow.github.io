@@ -4,7 +4,7 @@
   <title><![CDATA[Category: jokes | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/jokes/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-30T06:56:37-05:00</updated>
+  <updated>2014-12-11T19:18:52-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -23,64 +23,82 @@ from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would 
 part with the <a href="http://whyday.org/">Whyday</a> tradition of hacking on something just for fun and releasing
 it into the wild.</p>
 
+
+
+
 <p>So it&rsquo;s with great ambivalence we announce <a href="https://github.com/ruby-jokes/whynot">whynot</a>,
 a gem that does irresponsible things because&hellip; why not?</p>
+
+
+
 
 <p>whynot is for when you really just don&rsquo;t care. It started as a single monkey-patch
 to <code>Kernel</code>, called <code>maybe</code>. <code>maybe</code> takes a block, and may or may not yield the
 result. So for instance:</p>
 
-<p><figure class='code'><figcaption><span>maybe </span></figcaption>
+
+
+
+<figure class='code'><figcaption><span>maybe </span></figcaption>
 <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;maybe do |x,y,z|</span>
-</span><span class='line'><span class="sr">  x,y,z = 1,2,3</span>
-</span><span class='line'><span class="sr">  x + y + z</span>
-</span><span class='line'><span class="sr">end&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">maybe</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">|</span>
+</span><span class='line'>  <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
+</span><span class='line'>  <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>About half the time, this will return <code>6</code>. The other half, <code>nil</code>.</p>
+
+
+
 
 <p>About three minutes after I pushed whynot to Github, <a href="https://twitter.com/mi_c_ah">Micah Gates</a>
 added some kernel methods that allowed for a little more specificity: <code>mostly</code>,
 which will execute your code about 2/3 of the time, and <code>occasionally</code>, which
 has about a 1 in 5 chance of actually executing your code.</p>
 
+
+
+
 <h4>But wait, there&rsquo;s more!</h4>
+
+
+
 
 <p>Just in time for the 0.0.4 release this afternoon, I decided sometimes, the truth
 doesn&rsquo;t matter. Or, at least, you just don&rsquo;t care. So I added <code>meh</code>. Sometimes
 true, sometimes false, whatever. When you really don&rsquo;t care, just do this:</p>
 
-<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sr">/p&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="sr">&lt;p&gt;meh ? &amp;ldquo;I guess&amp;rdquo; : &amp;ldquo;Nah.&amp;rdquo;&lt;/</span><span class="nb">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="nb">p</span><span class="o">&gt;</span>
-</span></code></pre></td></tr></table></div></figure></p>
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">meh</span> <span class="p">?</span> <span class="s2">&quot;I guess&quot;</span> <span class="p">:</span> <span class="s2">&quot;Nah.&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <p>I really wanted to create a global value like <code>true</code> or <code>false</code> that was neither
 truthy nor falsey, but I&rsquo;m not sure whether that&rsquo;s possible, and I have a feeling
 it would require some C-extension hackery if it is.</p>
 
+
+
+
 <p>Perhaps for a future release?</p>
 
+
+
+
 <p>As always, pull requests are welcome, and use at your own risk.</p>
+
 ]]></content>
   </entry>
   

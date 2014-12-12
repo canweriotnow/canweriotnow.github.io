@@ -4,7 +4,7 @@
   <title><![CDATA[Category: history | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/history/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-30T06:56:37-05:00</updated>
+  <updated>2014-12-11T19:18:52-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,69 +20,161 @@
     <id>http://decomplecting.org/blog/2014/11/30/the-angel-of-history</id>
     <content type="html"><![CDATA[<p>It all started with a Paul Klee print, or perhaps that&rsquo;s where it ended:</p>
 
-<p><img class="center" src="/images/post-img/angelus_novus.jpg" title="Angelus Novus" ></p>
+
+
+
+<p><img class="center" src="http://decomplecting.org/images/post-img/angelus_novus.jpg" title="Angelus Novus" ></p>
+
+
+
 
 <p>The <a href="http://en.wikipedia.org/wiki/Frankfurt_School">Frankfurt School</a> philosopher <a href="http://en.wikipedia.org/wiki/Walter_Benjamin">Walter Benjamin</a> owned this print for many years, and one of his most well-know quotations from <a href="https://www.marxists.org/reference/archive/benjamin/1940/history.htm">&ldquo;On The Concept of History&rdquo;</a> (also known as &ldquo;Theses on The Philosophy of History&rdquo;) is inspired by this painting.</p>
+
+
+
 
 <!--more-->
 
 
+
+
 <p>From Thesis IX:</p>
 
-<p><blockquote><p></p></p><p><p>There is a painting by Klee called Angelus Novus. An angel is depicted there who looks as though he were about to distance himself from something which he is staring at. His eyes are opened wide, his mouth stands open and his wings are outstretched. The Angel of History must look just so. His face is turned towards the past. Where we see the appearance of a chain of events, he sees one single catastrophe, which unceasingly piles rubble on top of rubble and hurls it before his feet. He would like to pause for a moment so fair [verweilen: a reference to Goethe’s Faust], to awaken the dead and to piece together what has been smashed. But a storm is blowing from Paradise, it has caught itself up in his wings and is so strong that the Angel can no longer close them. The storm drives him irresistibly into the future, to which his back is turned, while the rubble-heap before him grows sky-high. That which we call progress, is this storm.</p></p><p><p></p><footer><strong>Walter Benjamin</strong> <cite>&ldquo;On the Concept of History&rdquo; <a href="https://www.marxists.org/reference/archive/benjamin/1940/history.htm">https://www.marxists.org/reference/archive/benjamin/1940/history.htm</a></cite></footer></blockquote></p>
+
+
+
+<blockquote><p>There is a painting by Klee called Angelus Novus. An angel is depicted there who looks as though he were about to distance himself from something which he is staring at. His eyes are opened wide, his mouth stands open and his wings are outstretched. The Angel of History must look just so. His face is turned towards the past. Where we see the appearance of a chain of events, he sees one single catastrophe, which unceasingly piles rubble on top of rubble and hurls it before his feet. He would like to pause for a moment so fair [verweilen: a reference to Goethe’s Faust], to awaken the dead and to piece together what has been smashed. But a storm is blowing from Paradise, it has caught itself up in his wings and is so strong that the Angel can no longer close them. The storm drives him irresistibly into the future, to which his back is turned, while the rubble-heap before him grows sky-high. That which we call progress, is this storm.</p><footer><strong>Walter Benjamin, &#8220;On The Concept of History&#8221;</strong> <cite><a href='https://www.marxists.org/reference/archive/benjamin/1940/history.htm'>www.marxists.org/reference/1940/&hellip;</a></cite></footer></blockquote>
+
+
+
 
 <p>This is often how it feels to be a developer, especially when encountering non-developers, and <em>a fortiori</em> when doing so developing standards for the future. Where others see a chain of events which is only logical to maintain, we see the piling catastrophe which we cannot truly flee but only ride ahead of in terror.</p>
 
+
+
+
 <h3>We&rsquo;re No Angels</h3>
+
+
+
 
 <p>If you&rsquo;ve ever heard a technologist use the word &ldquo;legacy&rdquo; like it&rsquo;s the dirtiest, most offensive slur in any human language, this is why. &ldquo;Legacy&rdquo; is the piling catastrophe behind us. But this storm is blowing from no Paradise, or at least so it seems; it seems to blow from the very gates of Hell.</p>
 
+
+
+
 <p>For those of us who do not feel hurtled forward by the piling on of catastrophe, the past holds a certain allure. We call this <em>nostalgia</em> if we are feeling generous; less generously, &ldquo;Are you from the past?&rdquo;  (please watch the whole clip)&hellip;</p>
+
+
+
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/-E4fm4Wqego" frameborder="0" allowfullscreen></iframe>
 
 
+
+
 <p>Benjamin wrote of this desire for the past, as well. In <a href="https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm">&ldquo;The Work of Art in the Age of Mechanical Reproduction&rdquo;</a> Benjamin spoke of the loss of the &ldquo;aura&rdquo;, that experience of seeing something human in a made thing. But as is often misunderstood in this piece, Benjamin writes an <em>elegy</em> for the aura. He does not demand that we reclaim the aura, but rather warns against it.</p>
+
+
+
 
 <p>The acceptance of loss is one of the marks of adulthood. The attempt to reclaim the aura is the adolescent revolt against the inevitability of technological society. And like most adolescent revolt, it is both fruitless and deleterious. Acceptance is the final stage of grief, as no rage will resurrect a dead parent, and the revenant will never be that which we once buried.</p>
 
+
+
+
 <h3>And Technology</h3>
+
+
+
 
 <p>It&rsquo;s not so different. I&rsquo;ve been discussing a few emerging standards with folks who seem to be mourning a fallen comrade, lamenting a moribund spouse. The only way is forward; we have no choice. That which existed before was of its time, and now we move forward, face turned toward the piling catastrophe of the past. For as much as we might once have loved it, we are driven forward by the wind of its piling wreckage, and can retrieve nothing,</p>
 
+
+
+
 <h3>Paradox</h3>
+
+
+
 
 <p>As I write this essay on technology and Benjamin, I am reminded of another quote, the technologist&rsquo;s paradox and curse.</p>
 
+
+
+
 <p>For there was another, more cynical visionary, of about the same time, F. Scott Fitzgerald, and I am reminded of the ending lines of <em>The Great Gatsby</em></p>
 
-<p><blockquote><p>Gatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us then, but that’s no matter—tomorrow we will run faster, stretch out our arms farther&hellip; . And then one fine morning—<br/>So we beat on, boats against the current, borne back ceaselessly into the past.</p><footer><strong>F. Scott Fitzgerald</strong> <cite>&ldquo;The Great Gatsby&rdquo;</cite></footer></blockquote></p>
+
+
+
+<blockquote><p>Gatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us then, but that’s no matter—tomorrow we will run faster, stretch out our arms farther&#8230; . And then one fine morning—<br/>So we beat on, boats against the current, borne back ceaselessly into the past.</p><footer><strong>F. Scott Fitzgerald</strong> <cite>&#8220;The Great Gatsby&#8221;</cite></footer></blockquote>
+
+
+
 
 <p>The uncanny thing about a paradox &mdash; it tends to be true.</p>
 
+
+
+
 <h3>Borne back ceaselessly into the past</h3>
+
+
+
 
 <p>Always. That&rsquo;s how it feels.</p>
 
+
+
+
 <p>Trying to build the future always feels like beating against the current. I think this is why the &ldquo;Angel of History&rdquo; metaphor feels like such a beautiful paradox to me; Blown inevitably forward, yet still having to row against a current pushng backward.</p>
+
+
+
 
 <p>Institutional IT policies, privacy laws, standards bodies&hellip; The fact that people are shocked at the pace of innovation is shocking when you stop to consider the <em>possible</em> pace of innovation.</p>
 
-<p><blockquote><p>The future is already here — it&rsquo;s just not very evenly distributed.</p><footer><strong>William Gibson</strong></footer></blockquote></p>
+
+
+
+<blockquote><p>The future is already here — it&#8217;s just not very evenly distributed.</p><footer><strong>William Gibson</strong></footer></blockquote>
+
+
+
 
 <p>Yeah, there was some point to this when I started.</p>
 
+
+
+
 <p>Mostly I was annoyed at what seemed like reactionary elements in my inbox. But I think that&rsquo;s pretty much sorted.</p>
+
+
+
 
 <p>And yet&hellip;</p>
 
+
+
+
 <p>If you are still from the past, know this: there will come a time when your presence is unnecessary. I&rsquo;m still agitating for a Basic Income Guarantee, but I still feel like we&rsquo;re headed toward a tipping point: either some significant percentage of human labor (I&rsquo;d put my money between 70 and 80) will become surplus, or apocalypse.</p>
+
+
+
 
 <p>If we decide traditional free market capitalism is the Best Thing Ever, it&rsquo;ll amount to the same thing, because the 70-80 percent of us rendered redundant will eat one another.</p>
 
+
+
+
 <p>Maybe that&rsquo;s why we have institutionalized incompetent management in the enterprise world (God, please save me from ever returning there). Stifling innovation has a payoff?</p>
 
+
+
+
 <p>Ugh, that&rsquo;s enough weird speculation for tonight.</p>
+
 ]]></content>
   </entry>
   

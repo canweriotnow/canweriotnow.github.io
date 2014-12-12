@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-11-30T06:56:37-05:00</updated>
+  <updated>2014-12-11T19:18:52-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,148 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[The Polyglot's Dilemma]]></title>
+    <link href="http://decomplecting.org/blog/2014/12/11/the-polyglots-dilemma/"/>
+    <updated>2014-12-11T20:58:13-05:00</updated>
+    <id>http://decomplecting.org/blog/2014/12/11/the-polyglots-dilemma</id>
+    <content type="html"><![CDATA[<p>If it hasn&rsquo;t been clear up to now, I love <a href="http://clojure.org">Clojure</a>. I wish I could write Clojure all day, every day. But Clojure isn&rsquo;t my first language, and possibly not even the language I grok most completely.</p>
+
+<p>I jump between programming languages all the time, and end up having to do the most jumping at work because I probably have at least a passing familiarity with the most languages for anyone on our team. And that&rsquo;s fine.</p>
+
+<p>What I want to ponder on here is the challenges of &ldquo;speaking&rdquo; multiple programming languages, learning new ones, and moving between them.</p>
+
+<p>I started programming BASIC when I was about five years old. By the time I hit high school, I was running Linux and writing Perl, C, and Bash scripts (throw some sed and awk in there for good measure, though one wouldn&rsquo;t call them &ldquo;languages&rdquo; as such).</p>
+
+<p>Full disclosure: I have written some PHP. But as the illusory Bertolt Brecht in <a href="http://en.wikipedia.org/wiki/Cradle_Will_Rock"><em>Cradle Will rock</em></a> tells the playwright Marc Blitzstein, &ldquo;Capitalism makes prostitutes of us all.&rdquo;</p>
+
+<p>Okay, back to programming&hellip;</p>
+
+<!-- more -->
+
+
+<h3>The Learning Curve</h3>
+
+<p>This is probably the biggest factor in bringing developers on to a new language. &ldquo;I already know Java, it&rsquo;s enterprisey, and it works, why should I change?&rdquo; or, &ldquo;I&rsquo;m a .NET programmer, who needs anything but C#?&rdquo;</p>
+
+<p>This is at least 40% of what&rsquo;s wrong with programming today.</p>
+
+<p>I&rsquo;m not a fan of Java, but I&rsquo;ve been writing a good deal of Android code in Java for the past month or so. I&rsquo;ll come back to this, but I want to go down some personal prehistory first.</p>
+
+<p>Several years ago now, I got my first position in which I was the lead developer (well, at first <em>only</em> developer) on a critical OLTP system for a university. I inherited a collection of Perl CGI scripts which, while effective, I viewed as a nightmare to maintain. Luckily, the management at that time (it didn&rsquo;t last) took an attitude of &ldquo;use the tools you need, just make it work.&rdquo;</p>
+
+<p>So I wrote a comprehensive management toolkit in Ruby on Rails, since Ruby was the next language I learned after Perl (production language; I was playing with Scheme and such as well).</p>
+
+<p>It worked like a charm; I wrote a beloved management interface in Ruby, and then a RESTful API for a legacy system, consumers of that API, and then&hellip; an Android app.</p>
+
+<p>Oh, Java. I mean, at least my colleague was stuck writing the Obj-C version for iOS, but still&hellip; this was my first encounter with Java since Java 1.1 or whatever in 1999. We made it work. But I was intimidated by the process. Should this be public? static? final? Should I have a public constructor?</p>
+
+<h3>Lrn 2 Polyglot</h3>
+
+<p>Yesterday I did a video call with a bunch of students and teachers; third grade, fifth grade, and high school classes.</p>
+
+<p>One of the questions they had was &ldquo;Is programming simple or complicated?&rdquo;</p>
+
+<p>My answer was that it&rsquo;s simple to write complicated programs, and complicated to write simple programs.</p>
+
+<p>Languages also present their own challenges re simplicity vs. complexity.</p>
+
+<p>Clojure provides an interesting case as it&rsquo;s intention is &ldquo;Simple Made Easy&rdquo;, as described in this <a href="http://www.infoq.com/presentations/Simple-Made-Easy">talk by Rich Hickey</a>.</p>
+
+<p>But since it&rsquo;s a hosted language, you end up depending on a lot of Java stdlib packages as well as jars from Maven, etc., and if there isn&rsquo;t an existing Clojure wrapper, you need to know (at least) the public API for the lib and how to handle Java interop.</p>
+
+<p>Understanding Java helps.</p>
+
+<p>Okay, so that&rsquo;s a very specific polyglot use case. But there are more reasons to learn all the things.</p>
+
+<p>So, let&rsquo;s examine Ruby. Ruby has deep roots in Perl, but takes its object model from Smalltalk and incorporates functional constructs from Lisp.</p>
+
+<p>So let&rsquo;s say you have an array of integers:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We can deal with this just like a Perl array:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">ary</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="o">]</span>
+</span><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">push</span> <span class="mi">6</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="o">]</span>
+</span><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">pop</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="mi">6</span>
+</span><span class='line'><span class="n">ary</span>
+</span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And if you notice, we used message-passing to do that, so we&rsquo;ve fulfilled the Smalltalk model already; we don&rsquo;t call a <code>pop</code> procedure, we send the object a <code>pop</code> message.</p>
+
+<p>As for the functional aspects&hellip;</p>
+
+<p>In Ruby, we would say</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:odd?</span><span class="p">)</span>
+</span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Whereas in a Lisp like Clojure, the equivalent would be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">])</span>
+</span><span class='line'><span class="nv">=&gt;</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Get to the damn point</h3>
+
+<p>Okay, that was some fun code examples. Or maybe not.</p>
+
+<p>There&rsquo;s a certain essential need to be polyglot in today&rsquo;s coding milieu. It&rsquo;s not just mobile, where we have to use Java for Android, Objective-C for iOS, and whatever the hell Windows Phone requires (not that anybody has those).</p>
+
+<p>There are plenty of frameworks like <a href="http://www.sencha.com/products/touch/">SenchaTouch</a>, <a href="http://www.appgyver.com/steroids">Steroids</a>, and so on, for building cross-platform mobile apps with HTML5 and JavaScript.</p>
+
+<p>But when you&rsquo;re building n-tier architectures and also building multiple clients, it&rsquo;s necessary to grok the underlying languages for each piece of the system.</p>
+
+<p>Sometimes that&rsquo;s Java, sometimes it&rsquo;s C or C++, sometimes it&rsquo;s C#. Maybe it&rsquo;s Ada or Forth or Smalltalk or Scheme.</p>
+
+<p>Knowing all the things is important. Today I managed to make a Clojure app segfault and being ableto read the log file (JVM SIGSEGV output) was a necessity.</p>
+
+<h3>No, really, get to the point</h3>
+
+<p>Paul Graham has an article that (IMHO) you can&rsquo;t call yourself a &ldquo;real programmer&rdquo; unless you&rsquo;ve read. Actually, there are several, but especially this one: <a href="http://www.paulgraham.com/avg.html">Beating The Averages</a></p>
+
+<p>You learn many languages so you can figure out which one is the most powerful, and which one makes you the best and most effective programmer.</p>
+
+<p>As Graham (correctly) suggests, the most powerful option out there is Lisp. And Clojure is the easiest Lisp to get started with (and offers many advantages over Common Lisp or Scheme) at the moment.</p>
+
+<p>But to really understand why Clojure (or Lisp in general) is worthwhile, you need to understand the pain points of C, C++, Obj-C, Java, Python, Ruby, JavaScript, etc.</p>
+
+<p>Not necessarily all of them, but the moment of enlightenment is so much more explicit when you see what you&rsquo;re being freed from.</p>
+
+<h3>So, the polyglot&rsquo;s dilemma?</h3>
+
+<p>You can&rsquo;t run Clojure everywhere&hellip; yet.</p>
+
+<p>The <a href="http://clojure-android.info/">clojure-android</a> project is almost there. There are efforts to use ClojureScript to make prtable applications, and there&rsquo;s even an effort out there somewhere to use Clojure to generate code for iOS. But even with these efforts, one needs to understand the underlying runtime, whether that&rsquo;s Java, Obj-C, or JS.</p>
+
+<p>The truly universal developer has to be a polyglot, and choose the correct implementation for the target. For now, that mostly means &ldquo;native&rdquo; to the target, e.g. JAva for Android and Obj-C for iOS. On the server side, we have a bit more leeway.</p>
+
+<p>Eventually, I believe we&rsquo;ll be able to Lisp everywhere, anywhere. Until then, we must be polyglots and willing to write the annoying ocde we wish we could avoid.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Angel of History]]></title>
@@ -1377,65 +1519,6 @@ Okay, sure. There are places out there that care more about your résumé and pe
 <p>I&rsquo;m in the position of having to evaluate and hire developers at <a href="http://anestuary.com">An Estuary</a>, and since I want to run the dev shop I wish existed, I&rsquo;m trying to hire that way. When we list positions, we require a Github URL because I want to see what you do, not what your former employers think of you. I assume they&rsquo;re &ldquo;former&rdquo; (or soon-to-be &ldquo;former&rdquo;) for good reason. When we interview you, I want to talk about your code, not your former supervisor&rsquo;s probable inferiority complex.</p>
 
 <p>In summary, just get hacking. Just keep hacking. Build cool shit. Show it to the world. Talk to other nerds. Maybe try some remote pairing (Tweeting with the hashtag #pairwithme is often productive). But just make stuff. Then show me what you can do when you want a job. If you start off with a great company, that should be all you need.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Maybe EdTech Is Another Leaky Abstraction]]></title>
-    <link href="http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/"/>
-    <updated>2013-09-30T20:26:00-04:00</updated>
-    <id>http://decomplecting.org/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction</id>
-    <content type="html"><![CDATA[<p>Working in the EdTech sector, I&rsquo;m perpetually vexed as I try to determine what exactly &ldquo;EdTech&rdquo; is and, <em>a fortiori,</em> what <em>effective</em> EdTech should look like. Perhaps a little background might be in order.</p>
-
-<p>As I&rsquo;ve mentioned before, my academic training is in philosophy. Computer Science was more of an avocational intellectual pursuit because I enjoyed math and symbolic logic. Life is full of surprises, eh?</p>
-
-<p>One of the fundamental divisions in philosophy is between &ldquo;analytic&rdquo; and &ldquo;continental&rdquo; philosophy. These are vague and overlapping spheres, but the reduction comes down to whether philosophy is the handmaiden of science (analyitc school), or whether philosophy is something larger with a complex (sometimes supportive, sometimes critical) relationship with science.</p>
-
-<p>I fell firmly on the &ldquo;continental&rdquo; side, for the most part. It was always the critical power of philosophy that fascinated me. So, what does this have to do with EdTech?</p>
-
-<!--more-->
-
-
-<h3>Technology as the Handmaiden of Education</h3>
-
-<p>This is the problem. Our typical view of &ldquo;educational technology&rdquo; is that we can produce technological tools to support the same tried, tired pedagogical techniques that have (sort of) worked (for a minority of the population) for decades.</p>
-
-<p>This is wasteful. This is stupid, and also wrong.</p>
-
-<p>In business, where technology has succeeded it has done so because it has revolutionized practices, made redundant unnecessary labor, and increased efficiency by many orders of magnitude. I&rsquo;ll (graciously) bracket off my opinions about the unfair distribution of the gains in productivity, for the sake of brevity and focus.</p>
-
-<p>Likewise in science, our rate of accumulation of knowledge about the physical world has increased exponentially, not because we have expected technology to serve the same processes that we accepted as &ldquo;best practices&rdquo; back when we had only stone knives and bear skins to work with, but because the rate of technological progress has disrupted (improved) the very processes by which scientific discovery occurs.</p>
-
-<p>Now, as (to borrow from both Marcuse and Heidegger) technology is very specifically the <em>science</em> of <em>technics,</em>
-it might be argues that the sciences are the least &ldquo;disrupted&rdquo; by technological advancement; for the most part, they are themselves advanced. But paradigm shifts in technology have played a role in the Kuhnian paradigm shifts in scientific understanding as well.</p>
-
-<h3>And Education?</h3>
-
-<p>First, let us agree that education is no science, not even a &ldquo;soft science&rdquo; like sociology or psychology. to be sure, at its best it is informed heavily both by those soft sciences as well as slightly harder sciences like cognitive science, for example. But education itself is no science.</p>
-
-<p>In this regard, scientific and technolological advances should in and of themselves present a material critique of the process of pedagogy as it is practiced; technology is the ultimate tool for cultural transformation, if not (ultimately) the transformation of the meaning of what it is to be human.</p>
-
-<p>Fundamentally, when correctly utilized, technology is transformative. And that&rsquo;s not what we&rsquo;re seeing with EdTech.</p>
-
-<p>Smartboards, blended learning, flipped classrooms, Blackboard, Moodle, an iPad for every student, I would go on but you can get better buzzwords from the <a href="http://www.teacheripsum.com/">Teacher Ipsum</a> generator. It&rsquo;s pretty much all a bunch of overpriced junk that supports the Same Old Shit in the classroom, with the added benefit of shiny tech press for the school, the district, whatever.</p>
-
-<p>I&rsquo;m not playing down the role of technology in education. Quite the opposite, in fact. I&rsquo;m lamenting that billions of dollars are being spent on &ldquo;EdTech&rdquo; that isn&rsquo;t impactful, that isn&rsquo;t transformative, that simply lends the sheen of shiny tech to tired pedagogy that should have been retired decades ago.</p>
-
-<h3>What Is To Be Done?</h3>
-
-<p><span class='pullquote-right' data-pullquote='Basically, if your use of technology in the classroom isn&#8217;t transformative, you&#8217;re Doing It Wrong™.'>
-For me, it&rsquo;s fairly simple. Technology is successful where it both disrupts and transforms (for the better) the domain to which it is applied. When applied badly (and the examples are too numerous to mention), it becomes one more learning curve, one more obstacle, to doing the Same Old Shit the Same Old Way. Applied effectively, however, technology fundamentally transforms the problem domain and, necessarily, the effective approaches to the domain. Basically, if your use of technology in the classroom isn&rsquo;t transformative, you&rsquo;re Doing It Wrong™. If the tech you use doesn&rsquo;t fundamentally alter the way you think about teaching, learning, etc., the tech is probably either unnecessary or misutilized.
-</span></p>
-
-<p>In the title, I suggested that &ldquo;EdTech&rdquo; is a &ldquo;leaky abstraction.&rdquo; The term comes from an article by <a href="http://www.joelonsoftware.com/AboutMe.html" title="Joel Spolsky">Joel Spolsky</a> entitled <a href="http://www.joelonsoftware.com/articles/LeakyAbstractions.html" title="Leaky Abstractions">&ldquo;The Law Of Leaky Abstractions&rdquo;</a>. The tl;dr is: all (non-trivial) abstractions are, to some degree, leaky; that is, they build on top of something concrete and messy while removing the messy details from the public interface. At least, that&rsquo;s how we&rsquo;d describe it in the software world. Grasping to define something like &ldquo;EdTech&rdquo;, I think the parallel I&rsquo;d like to draw is that the very term &ldquo;EdTech&rdquo; contains what it cannot possibly contain (bonus points if you catch that reference). &ldquo;Educational Technology&rdquo; refers to technology <em>designed for</em> education, technology <em>used in the serivce of</em> education, and also technology tangentially related to education. Unfortunately, this is a boolean <code>and</code>, leaving us with the union of >= 3 overlapping sets, wherein the intersections and complements are probably more interesting. The union of the sets contains many subsets that really aren&rsquo;t all that useful or interesting. But we don&rsquo;t seem to be doing much winnowing.</p>
-
-<p>Back to the philosophy lesson: technology is not there to be the handmaiden of tried and tired pedagogy. Technology is there to, in its very essence, provide an <em>explicit critique</em> of pedagogy in general.</p>
-
-<p>So how do we fix this?</p>
-
-<p>We need better ways of evaluating technology in education. We need professional development solutions to ensure that educators have the skills to properly exploit the tech they have available. We need to ditch our preconceptions about what it means to teach any given subject and look at how technology has changed that domain in the real world (technophobic math teachers, I&rsquo;m looking at you!).</p>
-
-<p>We need to forget everything we know about education, and reinvent everything with the new tools at hand.</p>
 ]]></content>
   </entry>
   
