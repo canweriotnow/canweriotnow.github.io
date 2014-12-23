@@ -4,7 +4,7 @@
   <title><![CDATA[Practical Elegance]]></title>
   <link href="http://decomplecting.org/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-12-11T19:18:52-05:00</updated>
+  <updated>2014-12-22T23:11:08-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -12,6 +12,70 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[In Memoriam: Wolfgang Walter Fuchs]]></title>
+    <link href="http://decomplecting.org/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/"/>
+    <updated>2014-12-22T22:05:52-05:00</updated>
+    <id>http://decomplecting.org/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs</id>
+    <content type="html"><![CDATA[<p>I was recently corresponding with a professor of mine about Wittgenstein, planning to set up a meeting to have a chat and catch up. Oh, and talk about Wittgenstein, as I found another place where philosophy is relevant to programming. In my last email to him, I happened to ask after one of his colleagues, who was my advisor, mentor, and one of the most influential people in my life.</p>
+
+<p>Then I remembered Google, and the first result was <a href="http://articles.baltimoresun.com/2014-03-01/news/bs-md-ob-walt-fuchs-20140228_1_towson-university-philosophy-liberal-arts-building">an obituary</a>.</p>
+
+<p>I was devastated. Indescribably so. Biblicallly devastated; I literally rent my garments in grief. I really liked that shirt, too.</p>
+
+<!-- more -->
+
+
+<p>This is Dr. Fuchs:</p>
+
+<p><img src="http://decomplecting.org/images/post-img/walt-fuchs.jpg" title="Walter Fuchs" ></p>
+
+<p>Dr. Fuchs helped lay the groundwork for my life in more ways than he probably ever knew, and I am eternally grateful for the privilege of knowing him. In the same conversation, I think he convinced me that I would make an excellent professor of philosophy and proceeded to convince me not to pursue that path.</p>
+
+<p>He was such an odd bird. He was never seen without a black leather vest, and practiced Tae Kwon Do in the hallway between classes.</p>
+
+<p>One interesting thing, from this weekend while I was in the darkest part of mourning. I happened to post an aphorism from Nietzsche which (reasonably) concerned my friends and family:</p>
+
+<blockquote><p>“The thought of suicide is a powerful solace: by means of it one gets through many a bad night”</p><footer><strong>Friedrich Nietzsche</strong> <cite>Beyond Good and Evil</cite></footer></blockquote>
+
+
+<p>I later explained the context, I&rsquo;ll just repost the comment:</p>
+
+<blockquote><p>I think I chose that aphorism because Dr. Fuchs helped me to understand it; Nietzsche&#8217;s philosophy was about embracing life, and the thought that it could be easily ended, by one&#8217;s own hand, should serve to remind us that however bad things were, if one hadn&#8217;t done so, one had already chosen to plough through and endure.</p></blockquote>
+
+
+<p>What else can I say about the man&hellip;</p>
+
+<p>Unlike some professors, he would never use his own (expensive, thanks to academic publishers) texts to teach his classes. His own essay (based on his Ph.D. thesis) <a href="http://www.amazon.com/Phenomenology-Metaphysics-Presence-Philosophy-Phaenomenologica/dp/9024718228"><em>Phenomenology and The Metaphysics of Presence</em></a> would never be required (or even suggested) for his courses, although that book is how I really came to understand Husserl and the thread connecting him to Derrida.</p>
+
+<p>It was kind of a blow and kind of a breath of fresh air that after all the classes where I had to buy the professor&rsquo;s shite book, the one book that was really helpful wasn&rsquo;t on the reading list on ethical grounds.</p>
+
+<p>I think much of my sorrow comes from the fact that I did such a shite job of staying in touch over the years. It&rsquo;s been over a decade since we spoke. I have a lot of regret to get over due to this.</p>
+
+<p>I had a fucked up weekend, drinking and crying and listening to The Smiths.</p>
+
+<p>Someone asked me, &ldquo;would he want you to mourn like this?&rdquo;</p>
+
+<p>And it reminded me of a conversation we had.</p>
+
+<p>I expressed some reservations one time over Sartre&rsquo;s adopted daughter publishing <a href="http://www.amazon.com/Truth-Existence-Jean-Paul-Sartre/dp/0226735230/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1419305694&amp;sr=1-1&amp;keywords=truth+and+existence"><em>Truth and Existence</em></a> after his death and against his wishes.</p>
+
+<p>And Dr. Fuchs pointed out that Sartre would likely have considered it ungenerous to have designs beyond one&rsquo;s own death. Certainly Heidegger, asserting the finality of death as the <em>sine qua non</em> for a meaningful existence, would not attempt to subvert that finality.</p>
+
+<p>Death is good. Death is what makes us mortal, makes us human, gives us meaning. Without death, life would have no size.</p>
+
+<p>And we know this, yet we sigh, and weep, and allow our sorrow to drive us.</p>
+
+<p>But human life is finite, and perhaps the Stoics teach us the best lesson: how to die well.</p>
+
+<p>I hope Dr. Fuchs had a good death. I&rsquo;m certain he had a full and vibrant life.</p>
+
+<p>Let us celebrate his life, and mourn our loss, but not his death, for he has completed his journey. He has achieved that end which ensures the meaning of his life.</p>
+
+<p>Good journey, Dr. Fuchs. I will always love and miss you. Thank you for the light you shone into my life, and may you pass well into whatever lies beyond this fragile existence.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Polyglot's Dilemma]]></title>
@@ -26,7 +90,7 @@
 
 <p>I started programming BASIC when I was about five years old. By the time I hit high school, I was running Linux and writing Perl, C, and Bash scripts (throw some sed and awk in there for good measure, though one wouldn&rsquo;t call them &ldquo;languages&rdquo; as such).</p>
 
-<p>Full disclosure: I have written some PHP. But as the illusory Bertolt Brecht in <a href="http://en.wikipedia.org/wiki/Cradle_Will_Rock"><em>Cradle Will rock</em></a> tells the playwright Marc Blitzstein, &ldquo;Capitalism makes prostitutes of us all.&rdquo;</p>
+<p>Full disclosure: I have written some PHP. But as the illusory Bertolt Brecht in <a href="http://en.wikipedia.org/wiki/Cradle_Will_Rock"><em>Cradle Will Rock</em></a> tells the playwright Marc Blitzstein, &ldquo;Capitalism makes prostitutes of us all.&rdquo;</p>
 
 <p>Okay, back to programming&hellip;</p>
 
@@ -1471,54 +1535,6 @@ The president&rsquo;s exhortation was especially interesting in one very specifi
 <h3>Summary</h3>
 
 <p>It all comes down to &ldquo;Just Get Hacking&rdquo;. But there are some specifics prereqs for modern software engineering, and if you can make yourself pick those up along the way, all the better. Keep it fun, and keep learning. That&rsquo;s what matters most.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Just Get Hacking]]></title>
-    <link href="http://decomplecting.org/blog/2013/11/12/just-get-hacking/"/>
-    <updated>2013-11-12T00:27:00-05:00</updated>
-    <id>http://decomplecting.org/blog/2013/11/12/just-get-hacking</id>
-    <content type="html"><![CDATA[<p><em>This post is a follow up to a previous entry, <a href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/">&ldquo;Letter to a Young (Or New) Programmer&rdquo;</a>.</em></p>
-
-<p>So you&rsquo;ve been working through some of those excellent online resources, like <a href="http://learncodethehardway.org/">Learn Code The Hard Way</a>, or <a href="http://codeschool.com">Code School</a>, or whatever. You think you can build something now, and you want to get out there in the world and hack things better, but there&rsquo;s this one little problem&hellip; you have a degree in Philosophy or Psychology or no degree at all, and no résumé-worthy coding experience.</p>
-
-<h4>Not. A. Problem.</h4>
-
-<p>Well, not necessarily a problem. There&rsquo;s an easy solution. Just. Get. Hacking.</p>
-
-<p>So you don&rsquo;t know about XP, Agile, Scrum, Kanban, Waterfall&hellip; there&rsquo;s always <a href="http://programming-motherfucker.com/">Programming, Motherfucker</a>.</p>
-
-<p>So you haven&rsquo;t built an Enterprise Expert System with the AbstractVisitorFactoryAntiPatternCringeGenerator pattern&hellip; I told you to make an account on <a href="https://github.com">Github</a>, didn&rsquo;t I? And I know you take my advice because you&rsquo;re building actual goddamn software.</p>
-
-<p>Put your stuff on Github. Ask for help on IRC.</p>
-
-<p>Find projects that interest you, fork &lsquo;em, submit pull requests. Lots of projects even have issues labeled as &ldquo;suitable for n00bs&rdquo;.</p>
-
-<!-- more -->
-
-
-<h4>The Enterprise Dilemma</h4>
-
-<p><span class='pullquote-right' data-pullquote='I can tell you something about those places. You don&#8217;t want to work there.'>
-Okay, sure. There are places out there that care more about your résumé and pedigree than your coding chops. I can tell you something about those places. You don&rsquo;t want to work there. I mean, getting your foot in the door is a good thing and all, but in the long run, you&rsquo;ll hate your life and maybe even learn to hate coding, and I don&rsquo;t want to see you go down that road. There are so many of us who narrowly escaped that kind of enviroment that we could form our own support group. Don&rsquo;t even worry about it.
-</span></p>
-
-<p>Any shop worth working at cares so much more about your coding chops, your potential, your intelligence than bullshit like résumés and academic credentials that if you can demonstrate your ability and still don&rsquo;t get the job, it&rsquo;s a blessing.</p>
-
-<p>On the other hand, you <em>do</em> need a first coding job. And if you&rsquo;re not getting it based on your Github activity, you&rsquo;re probably getting it based on nepotism.</p>
-
-<p>How does this happen? Still goes back to Github, IRC, meetups, etc. So go to some meetups. Talk to people, go to the pub nights, go to the open hack nights. Hack on open source projects, submit pull requests, get in on some projects that will get you recognized. Eventually, you&rsquo;ll have hacker friends who will hire you or recommend you to take over their shitty Enterprise jobs that you can use to build your résumé should you go down that route. It&rsquo;s not that hard. Hang out with nerds, learn the craft, make connections. Programming is one of the few fields where it really is <em>what you know,</em> but who you know can help too. But those connections are best made by being a badass hacker.</p>
-
-<h4>Open Source is the Key</h4>
-
-<p>At the end of the day, though, even if you do all sorts of networking at confs and meetups and the like, you need a strong presence in the Open Source community. I can&rsquo;t emphasize this enough: <strong>PUT YOUR CODE ON GITHUB.</strong></p>
-
-<p>Or Bitbucket or whatever if you prefer, but open source that shit, get other people involved, and get involved in other people&rsquo;s projects.</p>
-
-<p>I&rsquo;m in the position of having to evaluate and hire developers at <a href="http://anestuary.com">An Estuary</a>, and since I want to run the dev shop I wish existed, I&rsquo;m trying to hire that way. When we list positions, we require a Github URL because I want to see what you do, not what your former employers think of you. I assume they&rsquo;re &ldquo;former&rdquo; (or soon-to-be &ldquo;former&rdquo;) for good reason. When we interview you, I want to talk about your code, not your former supervisor&rsquo;s probable inferiority complex.</p>
-
-<p>In summary, just get hacking. Just keep hacking. Build cool shit. Show it to the world. Talk to other nerds. Maybe try some remote pairing (Tweeting with the hashtag #pairwithme is often productive). But just make stuff. Then show me what you can do when you want a job. If you start off with a great company, that should be all you need.</p>
 ]]></content>
   </entry>
   

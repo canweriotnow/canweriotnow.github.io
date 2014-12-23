@@ -4,7 +4,7 @@
   <title><![CDATA[Category: programming languages | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/programming-languages/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-12-11T19:18:52-05:00</updated>
+  <updated>2014-12-22T23:11:08-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,147 +20,64 @@
     <id>http://decomplecting.org/blog/2014/12/11/the-polyglots-dilemma</id>
     <content type="html"><![CDATA[<p>If it hasn&rsquo;t been clear up to now, I love <a href="http://clojure.org">Clojure</a>. I wish I could write Clojure all day, every day. But Clojure isn&rsquo;t my first language, and possibly not even the language I grok most completely.</p>
 
-
-
-
 <p>I jump between programming languages all the time, and end up having to do the most jumping at work because I probably have at least a passing familiarity with the most languages for anyone on our team. And that&rsquo;s fine.</p>
-
-
-
 
 <p>What I want to ponder on here is the challenges of &ldquo;speaking&rdquo; multiple programming languages, learning new ones, and moving between them.</p>
 
-
-
-
 <p>I started programming BASIC when I was about five years old. By the time I hit high school, I was running Linux and writing Perl, C, and Bash scripts (throw some sed and awk in there for good measure, though one wouldn&rsquo;t call them &ldquo;languages&rdquo; as such).</p>
 
-
-
-
-<p>Full disclosure: I have written some PHP. But as the illusory Bertolt Brecht in <a href="http://en.wikipedia.org/wiki/Cradle_Will_Rock"><em>Cradle Will rock</em></a> tells the playwright Marc Blitzstein, &ldquo;Capitalism makes prostitutes of us all.&rdquo;</p>
-
-
-
+<p>Full disclosure: I have written some PHP. But as the illusory Bertolt Brecht in <a href="http://en.wikipedia.org/wiki/Cradle_Will_Rock"><em>Cradle Will Rock</em></a> tells the playwright Marc Blitzstein, &ldquo;Capitalism makes prostitutes of us all.&rdquo;</p>
 
 <p>Okay, back to programming&hellip;</p>
-
-
-
 
 <!-- more -->
 
 
-
-
 <h3>The Learning Curve</h3>
-
-
-
 
 <p>This is probably the biggest factor in bringing developers on to a new language. &ldquo;I already know Java, it&rsquo;s enterprisey, and it works, why should I change?&rdquo; or, &ldquo;I&rsquo;m a .NET programmer, who needs anything but C#?&rdquo;</p>
 
-
-
-
 <p>This is at least 40% of what&rsquo;s wrong with programming today.</p>
-
-
-
 
 <p>I&rsquo;m not a fan of Java, but I&rsquo;ve been writing a good deal of Android code in Java for the past month or so. I&rsquo;ll come back to this, but I want to go down some personal prehistory first.</p>
 
-
-
-
 <p>Several years ago now, I got my first position in which I was the lead developer (well, at first <em>only</em> developer) on a critical OLTP system for a university. I inherited a collection of Perl CGI scripts which, while effective, I viewed as a nightmare to maintain. Luckily, the management at that time (it didn&rsquo;t last) took an attitude of &ldquo;use the tools you need, just make it work.&rdquo;</p>
-
-
-
 
 <p>So I wrote a comprehensive management toolkit in Ruby on Rails, since Ruby was the next language I learned after Perl (production language; I was playing with Scheme and such as well).</p>
 
-
-
-
 <p>It worked like a charm; I wrote a beloved management interface in Ruby, and then a RESTful API for a legacy system, consumers of that API, and then&hellip; an Android app.</p>
-
-
-
 
 <p>Oh, Java. I mean, at least my colleague was stuck writing the Obj-C version for iOS, but still&hellip; this was my first encounter with Java since Java 1.1 or whatever in 1999. We made it work. But I was intimidated by the process. Should this be public? static? final? Should I have a public constructor?</p>
 
-
-
-
 <h3>Lrn 2 Polyglot</h3>
-
-
-
 
 <p>Yesterday I did a video call with a bunch of students and teachers; third grade, fifth grade, and high school classes.</p>
 
-
-
-
 <p>One of the questions they had was &ldquo;Is programming simple or complicated?&rdquo;</p>
-
-
-
 
 <p>My answer was that it&rsquo;s simple to write complicated programs, and complicated to write simple programs.</p>
 
-
-
-
 <p>Languages also present their own challenges re simplicity vs. complexity.</p>
-
-
-
 
 <p>Clojure provides an interesting case as it&rsquo;s intention is &ldquo;Simple Made Easy&rdquo;, as described in this <a href="http://www.infoq.com/presentations/Simple-Made-Easy">talk by Rich Hickey</a>.</p>
 
-
-
-
 <p>But since it&rsquo;s a hosted language, you end up depending on a lot of Java stdlib packages as well as jars from Maven, etc., and if there isn&rsquo;t an existing Clojure wrapper, you need to know (at least) the public API for the lib and how to handle Java interop.</p>
-
-
-
 
 <p>Understanding Java helps.</p>
 
-
-
-
 <p>Okay, so that&rsquo;s a very specific polyglot use case. But there are more reasons to learn all the things.</p>
-
-
-
 
 <p>So, let&rsquo;s examine Ruby. Ruby has deep roots in Perl, but takes its object model from Smalltalk and incorporates functional constructs from Lisp.</p>
 
-
-
-
 <p>So let&rsquo;s say you have an array of integers:</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>We can deal with this just like a Perl array:</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -174,136 +91,63 @@
 </span><span class='line'><span class="o">=&gt;</span> <span class="mi">6</span>
 </span><span class='line'><span class="n">ary</span>
 </span><span class='line'><span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>And if you notice, we used message-passing to do that, so we&rsquo;ve fulfilled the Smalltalk model already; we don&rsquo;t call a <code>pop</code> procedure, we send the object a <code>pop</code> message.</p>
 
-
-
-
 <p>As for the functional aspects&hellip;</p>
-
-
-
 
 <p>In Ruby, we would say</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:odd?</span><span class="p">)</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">ary</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="ss">:odd?</span><span class="p">)</span>
 </span><span class='line'><span class="o">=&gt;</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="o">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span></code></pre></td></tr></table></div></figure></p>
 
 <p>Whereas in a Lisp like Clojure, the equivalent would be:</p>
 
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5</span><span class="p">])</span>
 </span><span class='line'><span class="nv">=&gt;</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
+</span></code></pre></td></tr></table></div></figure></p>
 
 <h3>Get to the damn point</h3>
 
-
-
-
 <p>Okay, that was some fun code examples. Or maybe not.</p>
-
-
-
 
 <p>There&rsquo;s a certain essential need to be polyglot in today&rsquo;s coding milieu. It&rsquo;s not just mobile, where we have to use Java for Android, Objective-C for iOS, and whatever the hell Windows Phone requires (not that anybody has those).</p>
 
-
-
-
 <p>There are plenty of frameworks like <a href="http://www.sencha.com/products/touch/">SenchaTouch</a>, <a href="http://www.appgyver.com/steroids">Steroids</a>, and so on, for building cross-platform mobile apps with HTML5 and JavaScript.</p>
-
-
-
 
 <p>But when you&rsquo;re building n-tier architectures and also building multiple clients, it&rsquo;s necessary to grok the underlying languages for each piece of the system.</p>
 
-
-
-
 <p>Sometimes that&rsquo;s Java, sometimes it&rsquo;s C or C++, sometimes it&rsquo;s C#. Maybe it&rsquo;s Ada or Forth or Smalltalk or Scheme.</p>
-
-
-
 
 <p>Knowing all the things is important. Today I managed to make a Clojure app segfault and being ableto read the log file (JVM SIGSEGV output) was a necessity.</p>
 
-
-
-
 <h3>No, really, get to the point</h3>
-
-
-
 
 <p>Paul Graham has an article that (IMHO) you can&rsquo;t call yourself a &ldquo;real programmer&rdquo; unless you&rsquo;ve read. Actually, there are several, but especially this one: <a href="http://www.paulgraham.com/avg.html">Beating The Averages</a></p>
 
-
-
-
 <p>You learn many languages so you can figure out which one is the most powerful, and which one makes you the best and most effective programmer.</p>
-
-
-
 
 <p>As Graham (correctly) suggests, the most powerful option out there is Lisp. And Clojure is the easiest Lisp to get started with (and offers many advantages over Common Lisp or Scheme) at the moment.</p>
 
-
-
-
 <p>But to really understand why Clojure (or Lisp in general) is worthwhile, you need to understand the pain points of C, C++, Obj-C, Java, Python, Ruby, JavaScript, etc.</p>
-
-
-
 
 <p>Not necessarily all of them, but the moment of enlightenment is so much more explicit when you see what you&rsquo;re being freed from.</p>
 
-
-
-
 <h3>So, the polyglot&rsquo;s dilemma?</h3>
-
-
-
 
 <p>You can&rsquo;t run Clojure everywhere&hellip; yet.</p>
 
-
-
-
 <p>The <a href="http://clojure-android.info/">clojure-android</a> project is almost there. There are efforts to use ClojureScript to make prtable applications, and there&rsquo;s even an effort out there somewhere to use Clojure to generate code for iOS. But even with these efforts, one needs to understand the underlying runtime, whether that&rsquo;s Java, Obj-C, or JS.</p>
-
-
-
 
 <p>The truly universal developer has to be a polyglot, and choose the correct implementation for the target. For now, that mostly means &ldquo;native&rdquo; to the target, e.g. JAva for Android and Obj-C for iOS. On the server side, we have a bit more leeway.</p>
 
-
-
-
 <p>Eventually, I believe we&rsquo;ll be able to Lisp everywhere, anywhere. Until then, we must be polyglots and willing to write the annoying ocde we wish we could avoid.</p>
-
 ]]></content>
   </entry>
   

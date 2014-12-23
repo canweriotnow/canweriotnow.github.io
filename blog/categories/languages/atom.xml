@@ -4,7 +4,7 @@
   <title><![CDATA[Category: languages, | Practical Elegance]]></title>
   <link href="http://decomplecting.org/blog/categories/languages/atom.xml" rel="self"/>
   <link href="http://decomplecting.org/"/>
-  <updated>2014-12-11T19:18:52-05:00</updated>
+  <updated>2014-12-22T23:11:08-05:00</updated>
   <id>http://decomplecting.org/</id>
   <author>
     <name><![CDATA[Jason Lewis]]></name>
@@ -20,23 +20,11 @@
     <id>http://decomplecting.org/blog/2012/05/18/un-pythonic-for-fun-and-profit</id>
     <content type="html"><![CDATA[<p>This post isn&rsquo;t meant to play into some hacker holy war, nor is it intended to denigrate the usefulness of Python for various tasks. Steve Yegge has done <a href="https://sites.google.com/site/steveyegge2/tour-de-babel">a much better job than I can</a> of explicating some of the issues other programmers have with Python, both the language and the community around it; I still agree with his remarks there.</p>
 
-
-
-
 <p>But there <em>are</em> some (major, IMHO) issues with the &ldquo;Pythonic&rdquo; attitude toward programming. And they start with &ldquo;The Zen of Python.&rdquo;</p>
-
-
-
 
 <h2>The Zen of Python</h2>
 
-
-
-
 <p>There&rsquo;s a lot to like about <a href="http://www.python.org/dev/peps/pep-0020/">The Zen of Python</a>. On the first face of it, it&rsquo;s a pretty good set of principles:</p>
-
-
-
 
 <pre><code>Beautiful is better than ugly.
 Explicit is better than implicit.
@@ -59,88 +47,38 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 </code></pre>
 
-
-
-
 <p>There&rsquo;s a lot here that would be attractive, if not obvious, to any given Rubyist or Clojurian. I think the problem is that Pythonistas tend to get hung up on the <em>bad</em> elements of the &ldquo;Zen of Python&rdquo;, to the detriment of the positive ones. So I&rsquo;ll just go through some of the ones that cause the most friction with non-Pythonistas.</p>
-
-
-
 
 <!-- more -->
 
 
-
-
 <h3>1. There should be one&mdash; and preferably only one &mdash;obvious way to do it.</h3>
-
-
-
 
 <p>I think this is the elephant in the room. Whereas Perl, Ruby, and (my god, to such a degree) Lisp are firmly in the <a href="http://catb.org/jargon/html/T/TMTOWTDI.html">TMTOWTDI</a> camp, Guido in his infinite wisdom has decreed that this principle (one vital to <em>programmer freedom</em>) should be abjured in favor of strict newb-safety, via the principle of having ONE way to do any given thing.</p>
 
-
-
-
-<p><img class="float-right" src="http://decomplecting.org/images/helen-lovejoy.png"></p>
-
-
-
+<p><img class="float-right" src="/images/helen-lovejoy.png"></p>
 
 <p>This is a real design flaw with Python. Valuing newb-friendliness over developer productivity (and happiness?) is great if you&rsquo;re designing a strictly academic language.</p>
 
-
-
-
 <p>Actually, I take that back. It&rsquo;s still a bad idea. Python shouldn&rsquo;t even be used as a teaching language, because it confuses students. I&rsquo;ve had first-year CS majors try to convince me that Python is as object-oriented as Ruby. This simply isn&rsquo;t true; Python combines a hodgepodge of paradigms (granted, Ruby does as well), but at its core, Python is a procedural language with some OO tacked on as an afterthought, and you can still see the bolts. It has more in common with C++ than Smalltalk, in this respect. But if you&rsquo;re learning your entire concept of object-orientation from Python, and you have a teacher or professor telling you it&rsquo;s OO, how are you to know better.</p>
-
-
-
 
 <p>Getting back to the TOOWTDI principle, this is a more egregious violation of programmer freedom than significant whitespace (how I format my code is a personal, or team decision; I don&rsquo;t need a language designer telling me how to indent). It&rsquo;s so severe with Python that Guido originally planned to <a href="http://www.artima.com/weblogs/viewpost.jsp?thread=98196">remove map(), reduce(), and lambda</a> from Python 3000.</p>
 
-
-
-
 <p>The argument from Python&rsquo;s BDFL was that <code>map()</code> and <code>reduce()</code> were confusing and only existed in Python because some <a href="http://c2.com/cgi/wiki?SmugLispWeenie">Smug Lisp Weenie</a> had submitted them 12 years previously, and that list comprehensions were the Pythonical-Canonical way of dealing with lists. Okay, list comprehensions are okay and all (I&rsquo;ll leave aside the debate over whether they are in any way more readable than functional constructs), but <em>who is it hurting to offer alternatives?</em></p>
-
-
-
 
 <p>Ruby has <code>#map</code> and <code>#reduce</code>, as well as <code>#collect</code> and <code>#inject</code>, which are aliases for the previous two methods (respectively). This doesn&rsquo;t stop you from iterating over lists instead, using generators, or anything else you&rsquo;d like to do. It just seems like a combination of &ldquo;I don&rsquo;t like the functional style, so nobody else can have it either,&rdquo; along with &ldquo;this might confuse a newb, and we&rsquo;ll lose another convert!&rdquo;, or something.</p>
 
-
-
-
 <h3>2. Beautiful is better than ugly.</h3>
-
-
-
 
 <p>Can&rsquo;t argue with this one. Beautiful is <em>most certainly</em> better than ugly. When it comes to the Zen of Python, however, beauty is most definitely in the eye of the beholder.</p>
 
-
-
-
-<p>In a <a href="http://decomplecting.org/blog/2012/05/08/simplicity/">previous post</a> I used David Gelerntner&rsquo;s definition of &ldquo;machine beauty,&rdquo; i.e., &ldquo;an inspired mating of simplicity and power.&rdquo; I think this holds true, and is at the core of what we recognize as elegance in software.</p>
-
-
-
+<p>In a <a href="/blog/2012/05/08/simplicity/">previous post</a> I used David Gelerntner&rsquo;s definition of &ldquo;machine beauty,&rdquo; i.e., &ldquo;an inspired mating of simplicity and power.&rdquo; I think this holds true, and is at the core of what we recognize as elegance in software.</p>
 
 <p>Sadly, I think it is quite clear that this is <em>not</em> what the Python community means by &ldquo;beauty.&rdquo; Python is always only too eager to sacrifice power (and even expressiveness) on the altar of a shallow view of &ldquo;simplicity.&rdquo;</p>
 
-
-
-
 <p>I can think of no better example than <code>lambda</code> in Python. Not only are Python lambdas a neutered shadow of lambdas in Ruby or Lisp, their mere existence irritated Python&rsquo;s BDFL to the point that he wanted to excise them from the language altogether. (For more on lambas (and other syntax) in Ruby and Python, read <a href="http://peepcode.com/blog/2010/what-pythonistas-think-of-ruby">this</a> and then go watch <a href="http://vimeo.com/9471538">this</a>.)</p>
 
-
-
-
 <p>Now, I won&rsquo;t go into lambdas and why they matter here, I&rsquo;m sure you know how to Google. The point is that the Pythonic tendency, when confronted with a &ldquo;distasteful&rdquo; construct, seems fall into three categories (with possible overlap):</p>
-
-
-
 
 <ul>
 <li>Ban it from the language before implementation</li>
@@ -149,55 +87,25 @@ Namespaces are one honking great idea -- let's do more of those!
 </ul>
 
 
-
-
 <p>Pythonistas are typically horrified by the fact that in Ruby, you can monkey-patch <code>Object</code> and extend the language in novel ways. I&rsquo;m not sure how most Python aficionados feel about Lisp (<a href="http://norvig.com/python-lisp.html">Peter Norvig</a> notwithstanding), but I can&rsquo;t imagine them being too friendly toward macros.</p>
-
-
-
 
 <h3>3. Simple is better than complex.</h3>
 
-
-
-
 <p>The reason I called Python&rsquo;s concept of simplicity &ldquo;shallow&rdquo; is that it conflates &ldquo;simple&rdquo; with &ldquo;easy.&rdquo;</p>
-
-
-
 
 <p>Having multiple ways of doing something does not complect a programming language. Arbitrarily jumping between multiple possible implementations within the implementation of a single program <em>does</em> complect that codebase, but that&rsquo;s why self-discipline is an important programmer trait.</p>
 
-
-
-
 <p>Self-discipline is important. I don&rsquo;t need a programming language to impose this from without, and I <em>especially</em> don&rsquo;t want Guido making these decisions for me. I don&rsquo;t use <a href="http://c2.com/cgi/wiki?BondageAndDisciplineLanguage">bondage-and-discipline languages</a>, and neither should you.</p>
-
-
-
 
 <p>Seriously, guise.</p>
 
-
-
-
 <h3>4. Explicit is better than implicit.</h3>
-
-
-
 
 <p>I don&rsquo;t care what your philosophy is, passing <code>self</code> as an explicit parameter is just evil.</p>
 
-
-
-
 <h3>Finally&hellip;</h3>
 
-
-
-
 <p>Well, there was more I was planning to cover, but this post is long enough as it is. I&rsquo;ll probably do a follow-up at some point in the future. If you think I&rsquo;m completely wrong, or just wrong on any of the points here, tell me why (preferably civilly) in the comments.</p>
-
 ]]></content>
   </entry>
   
