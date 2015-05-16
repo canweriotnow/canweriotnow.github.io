@@ -1,456 +1,231 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
+<html>
+
+  <head>
   <meta charset="utf-8">
-  <title>Emacs: Down The Rabbit Hole - Practical Elegance</title>
-  <meta name="author" content="Jason Lewis">
-
-  
-  <meta name="description" content="So I wrote Welcome to The Dark Side: Switching to Emacs in response to a tweet, but as any of my co-workers will attest, it doesn&rsquo;t take much &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+  <title>Emacs: Down the Rabbit Hole</title>
+  <meta name="description" content="So I wrote Welcome to The Dark Side: Switching to Emacs in response to a tweet, but as any of my co-workers will attest, it doesn’t take much to get me start...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  <link rel="alternate" type="application/rss+xml" title="(λ) Practical Elegance" href="http://decomplecting.org/feed.xml" />
+  <link href='/stylesheets/all-634c4d42931b17a729110c0d3879e4ef.css' media='all' rel='stylesheet' type='text/css'>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22978638-1']);
-    _gaq.push(['_trackPageview']);
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  ga('create', 'UA-22978638-1', 'auto');
+  ga('send', 'pageview');
 
-
+</script>
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">(</div>
-  	<div id="logoText">&#955;</div>
-  	<div id="logoRight">)</div>
-  	<div class="clear"></div>
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">(λ) Practical Elegance</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/">Posts</a>
+          
+        
+          
+          <a class="page-link" href="/archive/">Archive</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/feed/">Subscribe</a>
+          
+        
+      </div>
+    </nav>
+
   </div>
-  <h1><a href="/">Practical Elegance</a></h1>
-  
-    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
-  
-  <div class="clear"></div>
-</hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:decomplecting.org" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      
-        <h1 class="entry-title">Emacs: Down The Rabbit Hole</h1>
-      
-    
-    
-      <p class="meta">
-        
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-30T06:05:25-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
+  <header class="post-header">
+    <h1 class="post-title">Emacs: Down the Rabbit Hole</h1>
+    <p class="post-meta">Oct 30, 2014</p>
   </header>
 
+  <article class="post-content">
+    <p>So I wrote <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a> in response to a tweet, but as any of my co-workers will attest, it doesn’t take much to get me started on my Emacs workflow.</p>
 
-<div class="entry-content"><p>So I wrote <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a> in response to a tweet, but as any of my co-workers will attest, it doesn&rsquo;t take much to get me started on my Emacs workflow.</p>
+<p>I feel like a religious convert… I miss those simple, unadorned Vim services but I’m floored by the majesty of the stained glass and altar dressings and ritual of the Church of Emacs.</p>
 
-<p>I feel like a religious convert&hellip; I miss those simple, unadorned Vim services but I&rsquo;m floored by the majesty of the stained glass and altar dressings and ritual of the Church of Emacs.</p>
+<p>So before the jump, in the spirit of “I’ll show you mine if you show me yours,” my <a href="https://github.com/canweriotnow/.emacs.d">.emacs.d</a>.</p>
 
-<p>So before the jump, in the spirit of &ldquo;I&rsquo;ll show you mine if you show me yours,&rdquo; my <a href="https://github.com/canweriotnow/.emacs.d">.emacs.d</a>.</p>
-
-<h2>An Unexpected Journey</h2>
+<h2 id="an-unexpected-journey">An Unexpected Journey</h2>
 
 <p>I lived in my happy little Vim hobbit hole, smoking my pipe and enjoying my brandy. It was not a dirty hole, or a sandy hole, but a hobbit hole, which means comfort.</p>
 
 <p>One day, a wizard visted me.</p>
 
-<p><img src="/images/post-img/mccarthy1.jpg" title="'McCarthy at work at SAIL'" ></p>
+<p><img src="/images/post-img/mccarthy1.jpg" alt="'McCarthy at work at SAIL'" /></p>
 
-<p>And that&rsquo;s when things began to get weird&hellip;</p>
+<p>And that’s when things began to get weird…</p>
 
 <!-- more -->
 
-
-<p>Okay, so maybe I didn&rsquo;t receive a visit from the revenant spirit of John McCarthy, ghost of programming past, present and future. Or maybe I did.</p>
+<p>Okay, so maybe I didn’t receive a visit from the revenant spirit of John McCarthy, ghost of programming past, present and future. Or maybe I did.</p>
 
 <p>Maybe Paul Graham just convinced me I was <a href="http://www.paulgraham.com/avg.html">coding in Blub</a>, for whatever value of Blub I happened to be using.</p>
 
-<p>See, the thing about Blub is it&rsquo;s a mutable value. When you&rsquo;re using C++ and Java comes along, you realize C++ was actually Blub. When you&rsquo;re using Perl for your day-to-day and discover Python, and then Ruby, you realize that not only was Python Blub, but Perl was an even Blubbier Blub.</p>
+<p>See, the thing about Blub is it’s a mutable value. When you’re using C++ and Java comes along, you realize C++ was actually Blub. When you’re using Perl for your day-to-day and discover Python, and then Ruby, you realize that not only was Python Blub, but Perl was an even Blubbier Blub.</p>
 
-<p>Ruby&hellip; oh, Ruby. I still love Ruby. But then something happened.</p>
+<p>Ruby… oh, Ruby. I still love Ruby. But then something happened.</p>
 
 <p>I need to backpedal a bit.</p>
 
-<p>There&rsquo;s <em>using</em> a language, and then there&rsquo;s <em>building</em> something in it. I&rsquo;d played with Scheme (<a href="http://mitpress.mit.edu/sicp/">SICP</a> is wonderful), and even Common Lisp, and I knew enough to appreciate the Lisp-nature of Ruby which, when combined with its Smalltalk-nature, I thought made for hte perfect productive language.</p>
+<p>There’s <em>using</em> a language, and then there’s <em>building</em> something in it. I’d played with Scheme (<a href="http://mitpress.mit.edu/sicp/">SICP</a> is wonderful), and even Common Lisp, and I knew enough to appreciate the Lisp-nature of Ruby which, when combined with its Smalltalk-nature, I thought made for hte perfect productive language.</p>
 
 <p>But see, I was <em>building</em> things in Ruby while I was <em>playing</em> with Lisp.</p>
 
 <p>Along comes Clojure.</p>
 
-<p>I was working in a pretty isolated programming role that granted me a lot of de facto autonomy. So when I got a request for a new service, I thought &ldquo;why not Clojure?&rdquo;</p>
+<p>I was working in a pretty isolated programming role that granted me a lot of de facto autonomy. So when I got a request for a new service, I thought “why not Clojure?”</p>
 
-<p>We&rsquo;re in late 2012 here, so bear with me.</p>
+<p>We’re in late 2012 here, so bear with me.</p>
 
 <p>My first Clojure project ran like a champ, was hailed as an unqualified success. Eventually I even <a href="http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/">blogged about</a> a piece of that project that handled datetimes.</p>
 
-<p>Fast-forward to the present, I&rsquo;ve written Clojure in <a href="http://www.sublimetext.com/">Sublime Text</a>, <a href="https://atom.io/">Atom</a>, mostly <a href="http://www.vim.org/">Vim</a> with the help of some awesome plugins from <a href="https://github.com/tpope">Tim Pope</a>.</p>
+<p>Fast-forward to the present, I’ve written Clojure in <a href="http://www.sublimetext.com/">Sublime Text</a>, <a href="https://atom.io/">Atom</a>, mostly <a href="http://www.vim.org/">Vim</a> with the help of some awesome plugins from <a href="https://github.com/tpope">Tim Pope</a>.</p>
 
-<p>Like I <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">mentioned before</a>, I&rsquo;ve had a religious hatred for Emacs since the mid-1990s when I entered the *nix world and got involved in USENET.</p>
+<p>Like I <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">mentioned before</a>, I’ve had a religious hatred for Emacs since the mid-1990s when I entered the *nix world and got involved in USENET.</p>
 
 <blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/freebsdgirl">@freebsdgirl</a> <a href="https://twitter.com/darkuncle">@darkuncle</a> ...and on that day, war broke out, destroying the fragile peace that had been brokered so long ago.</p>&mdash; jason λewis (@canweriotnow) <a href="https://twitter.com/canweriotnow/status/527532324234489857">October 29, 2014</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p>The war is far from over…</p>
 
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-<p>The war is far from over&hellip;</p>
-
-<p>&hellip;but, I digress.</p>
+<p>…but, I digress.</p>
 
 <p>I started the <a href="http://www.meetup.com/Baltimore-Clojure/">Baltimore Clojure Meetup</a> and met more Emacs users than I had in one place in a long time. Again, I dismissed Emacs.</p>
 
 <p>That is, until I found <a href="http://lighttable.com/">LightTable</a> completely b0rked again and threw up my hands.</p>
 
-<p>Perhaps I shouldn&rsquo;t have eaten my hands to begin with&hellip; sorry, equivocation humor. Can&rsquo;t resist.</p>
+<p>Perhaps I shouldn’t have eaten my hands to begin with… sorry, equivocation humor. Can’t resist.</p>
 
-<h2>Welcome to Emacs</h2>
+<h2 id="welcome-to-emacs">Welcome to Emacs</h2>
 
-<p>So yeah, I went over my starter packages in the <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">earlier post</a>, but I didn&rsquo;t talk about the full experience of discovery I underwent when I fully committed to emacs.</p>
+<p>So yeah, I went over my starter packages in the <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">earlier post</a>, but I didn’t talk about the full experience of discovery I underwent when I fully committed to emacs.</p>
 
-<p>Sure, there&rsquo;s the whole <code>cider-mode</code> and <code>cider-jack-in</code> and <code>cider-nrepl</code> and even <code>cider-scratch</code> that make LightTable&rsquo;s inline evaluation modes look like child&rsquo;s play (no offense to Chris Granger, LightTable is beautiful, I love it, but&hellip; y'know, Emacs).</p>
+<p>Sure, there’s the whole <code>cider-mode</code> and <code>cider-jack-in</code> and <code>cider-nrepl</code> and even <code>cider-scratch</code> that make LightTable’s inline evaluation modes look like child’s play (no offense to Chris Granger, LightTable is beautiful, I love it, but… y’know, Emacs).</p>
 
 <p>So I did those things, started with <a href="http://batsov.com/prelude/">Prelude</a>, added all the Clojure fun I could find, and got to work.</p>
 
 <p>I also subscribed to <a href="http://www.reddit.com/r/emacs">/r/emacs</a>, and did a little reading on the <a href="http://www.emacswiki.org/emacs/">Emacs Wiki</a>.</p>
 
-<p>Have you ever been comfortably reading (or coding) under a tree, and you see a white rabbit in a waistcoat with a pocket-watch run by complaining he&rsquo;s late?</p>
+<p>Have you ever been comfortably reading (or coding) under a tree, and you see a white rabbit in a waistcoat with a pocket-watch run by complaining he’s late?</p>
 
 <p>Thus such adventures begin.</p>
 
-<h2>EAT ME / DRINK ME</h2>
+<h2 id="eat-me--drink-me">EAT ME / DRINK ME</h2>
 
 <p>As I fell to the bottom (or so I thought) of the rabbit-hole, I found a bottle of <code>cider</code> labeled <em>Drink Me,</em> and so I drank the <code>cider</code>. Suddenly, I could eval Clojure inline, jump to docstrings, jump to source for a fn, and it was wonderful.</p>
 
 <p>The last time I tried Emacs, I always joked about how I was using Emacs but always edited my .emacs config with Vim.</p>
 
-<p>&ldquo;Not this time,&rdquo; I thought, and used <a href="http://www.emacswiki.org/emacs/Projectile">Projectile</a> to manage my <code>.emacs.d</code> and edited my <code>user.el</code> in Emacs. Oh, it was better! Then, thought I, I should put my <code>.emacs.d</code> in source control (actually, it was demanded:</p>
+<p>“Not this time,” I thought, and used <a href="http://www.emacswiki.org/emacs/Projectile">Projectile</a> to manage my <code>.emacs.d</code> and edited my <code>user.el</code> in Emacs. Oh, it was better! Then, thought I, I should put my <code>.emacs.d</code> in source control (actually, it was demanded:</p>
 
 <blockquote class="twitter-tweet" data-conversation="none" lang="en"><p><a href="https://twitter.com/canweriotnow">@canweriotnow</a> <a href="https://twitter.com/willowdower">@willowdower</a> Now you must post your config on github so that we may critique it.</p>&mdash; Alex Redington (@holy_chao) <a href="https://twitter.com/holy_chao/status/511574770388041728">September 15, 2014</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<p>…yeah).</p>
 
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<p>But then I realized I was doing the <code>⌘-Tab</code> to iTerm to run <code>git ci -a</code> (I pity the fool that doesn’t alias common git commoands) in… wait for it… <code>$EDITOR=/usr/bin/vim</code>.</p>
 
+<p>That’s when I found a bit of fairy cake called <a href="http://www.emacswiki.org/Magit">magit</a>, and I ate a bit of that and my Git workflow was inside of Emacs. Now it was a simple <code>M-x magit-status</code> to view my working tree state, where I could hit <code>s</code> to stage files for commit, and <code>C-c C-c</code> to commit changes, and <code>P P</code> to push.</p>
 
-<p>&hellip;yeah).</p>
+<p>Oh, it’s beautiful.</p>
 
-<p>But then I realized I was doing the <code>⌘-Tab</code> to iTerm to run <code>git ci -a</code> (I pity the fool that doesn&rsquo;t alias common git commoands) in&hellip; wait for it&hellip; <code>$EDITOR=/usr/bin/vim</code>.</p>
+<h2 id="curiouser-and-curiouser">Curiouser and Curiouser</h2>
 
-<p>That&rsquo;s when I found a bit of fairy cake called <a href="http://www.emacswiki.org/Magit">magit</a>, and I ate a bit of that and my Git workflow was inside of Emacs. Now it was a simple <code>M-x magit-status</code> to view my working tree state, where I could hit <code>s</code> to stage files for commit, and <code>C-c C-c</code> to commit changes, and <code>P P</code> to push.</p>
-
-<p>Oh, it&rsquo;s beautiful.</p>
-
-<h2>Curiouser and Curiouser</h2>
-
-<p>Well, if Emacs can handle my Git workflow, what <em>can&rsquo;t</em> it do, I wondered?</p>
+<p>Well, if Emacs can handle my Git workflow, what <em>can’t</em> it do, I wondered?</p>
 
 <p>I went a bit mad playing with multiple buffer and frame layouts; on one occasion I opened a shell inside an emacs biffer and launched the command-line version of emacs in a shell inside the windowed version of emacs.</p>
 
 <p>Recursive rabbit holes.</p>
 
-<p>When you&rsquo;re running the Cocoa-nested version of Emacs (not Aquamacs, fuck that noise, but just GNU Emacs packaged as a .app), you get some suggestions from the menus. Gnus for USENET or email, various games, a calendar&hellip;</p>
+<p>When you’re running the Cocoa-nested version of Emacs (not Aquamacs, fuck that noise, but just GNU Emacs packaged as a .app), you get some suggestions from the menus. Gnus for USENET or email, various games, a calendar…</p>
 
 <p>Calendar?</p>
 
-<p>That&rsquo;s whan I discovered Org-Mode.</p>
+<p>That’s whan I discovered Org-Mode.</p>
 
-<h2>Org-Mode FTW</h2>
+<h2 id="org-mode-ftw">Org-Mode FTW</h2>
 
-<p><a href="http://orgmode.org/">Org Mode</a> is an Emacs major mode that lets you organize your life. All of it. I&rsquo;m not even going into detail here, it&rsquo;s a deep, deep well. You can use it for a TODO list, sync it with your phone, use it <a href="http://www.railsonmaui.com/blog/2014/03/05/octopress-setup-with-github-and-org-mode-v2/">to write</a> your <a href="http://octopress.org">Octopress blog</a>.</p>
+<p><a href="http://orgmode.org/">Org Mode</a> is an Emacs major mode that lets you organize your life. All of it. I’m not even going into detail here, it’s a deep, deep well. You can use it for a TODO list, sync it with your phone, use it <a href="http://www.railsonmaui.com/blog/2014/03/05/octopress-setup-with-github-and-org-mode-v2/">to write</a> your <a href="http://octopress.org">Octopress blog</a>.</p>
 
-<p>(Confession: This blog is powered by octopress, and although it&rsquo;s now written in Emacs, I&rsquo;ve not gone full crazy and started composing it with Org-Mode)</p>
+<p>(Confession: This blog is powered by octopress, and although it’s now written in Emacs, I’ve not gone full crazy and started composing it with Org-Mode)</p>
 
-<h2>Twittering-Mode WTF</h2>
+<h2 id="twittering-mode-wtf">Twittering-Mode WTF</h2>
 
-<p>That&rsquo;s when I started going down the tunnel of &ldquo;well, what <em>else</em> can it do?&rdquo;</p>
+<p>That’s when I started going down the tunnel of “well, what <em>else</em> can it do?”</p>
 
 <p>And I discovered <code>twittering-mode</code>.</p>
 
 <p>A quick <code>M-x package-install RET twittering-mode</code> puts a Twitter client in your text editor. Like you always needed. <code>M-x twit</code> will jump you right into your Twitter feed, <code>i</code> will enable user icons (yes, user avatars right in goddamn Emacs), and <code>u</code> will jump you to a buffer where you can compose a Tweet and hit <code>C-c C-c</code> to send it.</p>
 
-<h2>Playing Games</h2>
+<h2 id="playing-games">Playing Games</h2>
 
-<p>I&rsquo;d be remiss if I didn&rsquo;t mention that <code>M-x package-install RET 2048-mode</code> will install a game of 2048 in Emacs. Because that&rsquo;s really fucking important, you know?</p>
+<p>I’d be remiss if I didn’t mention that <code>M-x package-install RET 2048-mode</code> will install a game of 2048 in Emacs. Because that’s really fucking important, you know?</p>
 
 <p><strong>Sigh</strong></p>
 
 <p>For good reason, Emacs comes standard with an AI psychotherapist named Eliza.</p>
 
-<p>A quick <code>M-x doctor</code> and you&rsquo;re in therapy.</p>
+<p>A quick <code>M-x doctor</code> and you’re in therapy.</p>
 
-<p>Which you&rsquo;ll probably need.</p>
+<p>Which you’ll probably need.</p>
 
-<h2>&hellip;and Much, Much More</h2>
+<h2 id="and-much-much-more">…and Much, Much More</h2>
 
-<p>I&rsquo;ve barely scratched the surface, but I feel like this post is long enough. There&rsquo;s so much down here, down the Emacs rabbit hole, that it will probably take me weeks to even catch up to whre I am right now; what I&rsquo;ve described so far is my first few days with this <del>operating system</del> text editor.</p>
+<p>I’ve barely scratched the surface, but I feel like this post is long enough. There’s so much down here, down the Emacs rabbit hole, that it will probably take me weeks to even catch up to whre I am right now; what I’ve described so far is my first few days with this ~~operating system~~ text editor.</p>
 
-<p>But it&rsquo;s a fun ride.</p>
+<p>But it’s a fun ride.</p>
 
-<h3>Postscript</h3>
+<h3 id="postscript">Postscript</h3>
 
-<p>Sorry for the Tolkien digression when my dominant allusion was <em>Alice in Wonderland&hellip;</em> Emacs is a weird place.</p>
-</div>
+<p>Sorry for the Tolkien digression when my dominant allusion was <em>Alice in Wonderland…</em> Emacs is a weird place.</p>
 
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
-
-      
-
-
-
-
-
-
-
+  </article>
 
   
-
-
-<time datetime="2014-10-30T06:05:25-04:00" pubdate data-updated="true"></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/coding/'>coding</a>, <a class='category' href='/blog/categories/editors/'>editors</a>, <a class='category' href='/blog/categories/emacs/'>emacs</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole/" data-via="" data-counturl="http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left articlenav" href="/blog/2014/10/29/reify-this/" title="Previous Post: Reify This!">&laquo; Reify This!</a>
-      
-      
-        <a class="basic-alignment right articlenav" href="/blog/2014/11/22/recovering-from-clojure-slash-conj/" title="Next Post: Recovering from Clojure/conj">Recovering from Clojure/conj &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <a href="http://internetdefenseleague.org">
-    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
-  </a>
-</section>
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot's Dilemma</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'canweriotnow',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-<a class="twitter-timeline" height="300" data-dnt="true" href="https://twitter.com/canweriotnow" data-widget-id="365195555808358401">Tweets by @canweriotnow</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
-  
-</section>
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/110736810583208350607?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
+    <div id="disqus_thread" aria-live="polite">
+        <script type="text/javascript">
       var disqus_shortname = 'canweriotnow';
       
         
@@ -465,43 +240,71 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+    </div>
+  </section>
+  
+</div>
 
+      </div>
+    </div>
 
+    <footer class="site-footer">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <div class="wrapper">
 
+    <h2 class="footer-heading">(λ) Practical Elegance</h2>
 
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>(λ) Practical Elegance</li>
+          <li><a href="mailto:jason@decomplecting.org">jason@decomplecting.org</a></li>
+        </ul>
+      </div>
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/canweriotnow">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
 
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
 
+          
+          <li>
+            <a href="https://twitter.com/canweriotnow">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
 
+      <div class="footer-col  footer-col-3">
+        <p class="text">code, ire, and song
+</p>
+      </div>
+    </div>
 
+  </div>
 
+</footer>
 
+  </body>
 
-</body>
 </html>

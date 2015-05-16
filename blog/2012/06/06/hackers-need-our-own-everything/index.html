@@ -1,358 +1,139 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
+<html>
+
+  <head>
   <meta charset="utf-8">
-  <title>Hackers Need Our Own Everything - Practical Elegance</title>
-  <meta name="author" content="Jason Lewis">
-
-  
-  <meta name="description" content="When I conceived of this post, it was going to be about how damn awesome Octopress is. And it certainly is awesome; it powers this blog, and makes &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+  <title>Hackers Need Our Own Everything</title>
+  <meta name="description" content="When I conceived of this post, it was going to be about how damn awesome Octopress is. And it certainly is awesome; it powers this blog, and makes writing it...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  <link rel="alternate" type="application/rss+xml" title="(λ) Practical Elegance" href="http://decomplecting.org/feed.xml" />
+  <link href='/stylesheets/all-634c4d42931b17a729110c0d3879e4ef.css' media='all' rel='stylesheet' type='text/css'>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22978638-1']);
-    _gaq.push(['_trackPageview']);
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  ga('create', 'UA-22978638-1', 'auto');
+  ga('send', 'pageview');
 
-
+</script>
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">(</div>
-  	<div id="logoText">&#955;</div>
-  	<div id="logoRight">)</div>
-  	<div class="clear"></div>
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">(λ) Practical Elegance</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/">Posts</a>
+          
+        
+          
+          <a class="page-link" href="/archive/">Archive</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/feed/">Subscribe</a>
+          
+        
+      </div>
+    </nav>
+
   </div>
-  <h1><a href="/">Practical Elegance</a></h1>
-  
-    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
-  
-  <div class="clear"></div>
-</hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:decomplecting.org" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      
-        <h1 class="entry-title">Hackers Need Our Own Everything</h1>
-      
-    
-    
-      <p class="meta">
-        
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-06T11:29:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
+  <header class="post-header">
+    <h1 class="post-title">Hackers Need Our Own Everything</h1>
+    <p class="post-meta">Jun 6, 2012</p>
   </header>
 
+  <article class="post-content">
+    <p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I’m more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
 
-<div class="entry-content"><p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I&rsquo;m more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
+<h3 id="the-tragedy-of-google">The Tragedy of Google</h3>
 
-<h3>The Tragedy of Google</h3>
+<p>For such a long time, Google did search better than many of us ever dreamt <em>possible</em> in the pre-Google days. But it wasn’t just the intelligence of the search algorithms, or the massive cache and index behind Google search. Google made it possible to craft a finely-honed query from the front page, with excellent support for literal strings, boolean operators, required inclusion/exclusion, etc. And then came Google+.</p>
 
-<p>For such a long time, Google did search better than many of us ever dreamt <em>possible</em> in the pre-Google days. But it wasn&rsquo;t just the intelligence of the search algorithms, or the massive cache and index behind Google search. Google made it possible to craft a finely-honed query from the front page, with excellent support for literal strings, boolean operators, required inclusion/exclusion, etc. And then came Google+.</p>
+<p>Google’s commitment to search had been on the decline for a while, it seems… the only new features search had acquired in years were fairly useless things like page previews and, briefly, Twitter integration. Because that’s integral to search.</p>
 
-<p>Google&rsquo;s commitment to search had been on the decline for a while, it seems&hellip; the only new features search had acquired in years were fairly useless things like page previews and, briefly, Twitter integration. Because that&rsquo;s integral to search.</p>
-
-<p>But when Google launched its abortion of a social network, usable search had to go. Not only did they kill one of the <a href="http://productforums.google.com/forum/#!topic/websearch/3oIWbew9xdE">most useful search operators</a> (Boolean +), but they also started filtering search results based on social connections in Google+. While this doesn&rsquo;t <em>always</em> end in having to re-search without &ldquo;personal&rdquo; results, I have a feeling that&rsquo;s only because I&rsquo;m connected to so many developers on Google+. But if Google+ hadn&rsquo;t been such an abject failure, my mom might be on there, and we typically search about very different kinds of &ldquo;cookies.&rdquo;  The situation with Google is so bad at this point, that I often get better results from <a href="http://duckduckgo.com/">Duck Duck Go</a>, which wraps a ton of different search engines and websites, and attempts to break the &ldquo;filter bubble&rdquo; by presenting hte same results to everyone. I like this in principle, but I miss Google&rsquo;s synchronized search history and habit of learning what results are relevant to me to (usually) provide better results.</p>
+<p>But when Google launched its abortion of a social network, usable search had to go. Not only did they kill one of the <a href="http://productforums.google.com/forum/#!topic/websearch/3oIWbew9xdE">most useful search operators</a> (Boolean +), but they also started filtering search results based on social connections in Google+. While this doesn’t <em>always</em> end in having to re-search without “personal” results, I have a feeling that’s only because I’m connected to so many developers on Google+. But if Google+ hadn’t been such an abject failure, my mom might be on there, and we typically search about very different kinds of “cookies.”  The situation with Google is so bad at this point, that I often get better results from <a href="http://duckduckgo.com/">Duck Duck Go</a>, which wraps a ton of different search engines and websites, and attempts to break the “filter bubble” by presenting hte same results to everyone. I like this in principle, but I miss Google’s synchronized search history and habit of learning what results are relevant to me to (usually) provide better results.</p>
 
 <!--more-->
 
+<h3 id="blogging-for-hackers">Blogging for Hackers</h3>
 
-<h3>Blogging for Hackers</h3>
+<p>So, let’s face it: unless you wanted to host your own blog, and either write your own engine, or tweak one into submission, keeping an attractive, maintainable, and useful blog was either an expensive or losing proposition. Sadly, this isn’t a recent change like the other phenomena addressed in this post, but it’s still an issue.</p>
 
-<p>So, let&rsquo;s face it: unless you wanted to host your own blog, and either write your own engine, or tweak one into submission, keeping an attractive, maintainable, and useful blog was either an expensive or losing proposition. Sadly, this isn&rsquo;t a recent change like the other phenomena addressed in this post, but it&rsquo;s still an issue.</p>
+<p>What’s slightly alarming is the trend away from traditional blogging engines like Wordpress and Blogger, which, while not exactly hacker-friendly, were oriented toward content creation. The newer generation of blogging services are much more oriented toward the re-posting of content. While I’m okay in principle with re-posting (and I think “remix culture” is awesome), when your priority is saturation with “viral content” rather than the creation of OC, it makes it easy to ignore the creation of tools which lend themselves to the creation of content.</p>
 
-<p>What&rsquo;s slightly alarming is the trend away from traditional blogging engines like Wordpress and Blogger, which, while not exactly hacker-friendly, were oriented toward content creation. The newer generation of blogging services are much more oriented toward the re-posting of content. While I&rsquo;m okay in principle with re-posting (and I think &ldquo;remix culture&rdquo; is awesome), when your priority is saturation with &ldquo;viral content&rdquo; rather than the creation of OC, it makes it easy to ignore the creation of tools which lend themselves to the creation of content.</p>
-
-<p>Octopress is awesome because it doesn&rsquo;t try to be everything to everybody. Billed as &ldquo;A blogging framework for hackers,&rdquo; Octopress is basically a set of <code>rake</code> tasks and plugins for <a href="https://github.com/Shopify/liquid">Liquid</a> and <a href="http://compass-style.org/">Compass</a>, all wrapped up with the tasty goodness of <a href="https://github.com/mojombo/jekyll">Jekyll</a>, the static site generator that powers <a href="http://pages.github.com">Github Pages</a>.</p>
+<p>Octopress is awesome because it doesn’t try to be everything to everybody. Billed as “A blogging framework for hackers,” Octopress is basically a set of <code>rake</code> tasks and plugins for <a href="https://github.com/Shopify/liquid">Liquid</a> and <a href="http://compass-style.org/">Compass</a>, all wrapped up with the tasty goodness of <a href="https://github.com/mojombo/jekyll">Jekyll</a>, the static site generator that powers <a href="http://pages.github.com">Github Pages</a>.</p>
 
 <p>In a nutshell, this means I can use my favorite text editor (lately, either <a href="http://www.vim.org/">Vim</a> or <a href="http://www.sublimetext.com/2">Sublime Text 2</a>, depending on my mood) to create my posts in Markdown, Textile, or Haml, and have Octopress generate pretty-styled HTML, CSS and JS, and deploy my blog to Github Pages (or Heroku) with a rake task. Even for non-programming power users, or anyone frustrated with Wordpress, really, Octopress is worth checking out.</p>
 
-<h3>Apple to Developers: &ldquo;Go Fuck Yourselves&rdquo;</h3>
+<h3 id="apple-to-developers-go-fuck-yourselves">Apple to Developers: “Go Fuck Yourselves”</h3>
 
-<p>Okay, slight hyperbole. But it feels that way sometimes. I&rsquo;ve been using <a href="http://macromates.com/">TextMate</a> on OS X for Ruby (and Perl, and C, and Clojure, you get the picture&hellip;) for such a long time now, that I&rsquo;m <em>really</em> loathe to change my workflow. Even though, conceptually, I prefer the idea of using Linux on all the things. But since Apple is now <em>blatantly</em> <a href="http://www.apple.com/macosx/mountain-lion/features.html">trying to turn my worsktation into a tablet</a>, I&rsquo;m forcing myself to use the <a href="http://lubuntu.org/">Lubuntu</a> box sitting next to my iMac as much as possible.</p>
+<p>Okay, slight hyperbole. But it feels that way sometimes. I’ve been using <a href="http://macromates.com/">TextMate</a> on OS X for Ruby (and Perl, and C, and Clojure, you get the picture…) for such a long time now, that I’m <em>really</em> loathe to change my workflow. Even though, conceptually, I prefer the idea of using Linux on all the things. But since Apple is now <em>blatantly</em> <a href="http://www.apple.com/macosx/mountain-lion/features.html">trying to turn my worsktation into a tablet</a>, I’m forcing myself to use the <a href="http://lubuntu.org/">Lubuntu</a> box sitting next to my iMac as much as possible.</p>
 
-<p><img class="float-right" src="/images/post-img/mtlion1.png" width="400"></p>
+<p><img class="float-right" src="/images/post-img/mtlion1.png" width="400" /></p>
 
-<p>It&rsquo;s not just the &ldquo;aesthetic&rdquo; changes that chafe. I can deal with <a href="http://unity.ubuntu.com/">annoying UI crap</a>, especially when it&rsquo;s optional. But Apple is also changing the developer ecosystem, first with the Mac App Store, then with Gatekeeper, which will warn against installation of software not signed with an Apple developer account by default. It has been pointed out that this behavior is fairly straightforward to alter, but I still find the whole process dubious and, for me at least, it&rsquo;s another straw on the OS X camel&rsquo;s back. I&rsquo;m not arguing that no one should use OS X, I&rsquo;m just saying it&rsquo;s less and less attractive to me as a development platform.</p>
+<p>It’s not just the “aesthetic” changes that chafe. I can deal with <a href="http://unity.ubuntu.com/">annoying UI crap</a>, especially when it’s optional. But Apple is also changing the developer ecosystem, first with the Mac App Store, then with Gatekeeper, which will warn against installation of software not signed with an Apple developer account by default. It has been pointed out that this behavior is fairly straightforward to alter, but I still find the whole process dubious and, for me at least, it’s another straw on the OS X camel’s back. I’m not arguing that no one should use OS X, I’m just saying it’s less and less attractive to me as a development platform.</p>
 
 <p>The whole allure of OS X was that it was a stable, supported, POSIX-compliant operating system that was enjoyable to use but afforded the user all of the power and flexibility of Unix. It looks like those days are over, and the days of creating powerful tools for developers and designers to create whatever they could imagine are over. The Mac is turning into an overpowered tablet, suited for content consumption rather than creation.</p>
 
-<p>Apple is not alone in its efforts to neuter the desktop. Not to be outdone in locking down the OS and polluting the developer ecosystem, Microsoft is scrambling to release Windows 8 so that Windows users can be as disoriented as possbile. Although there are <a href="http://mobileopportunity.blogspot.com/2012/05/fear-and-loathing-and-windows-8.html">good</a> <a href="http://pcunix.hubpages.com/hub/Why-Windows-8-might-Kill-Microsoft">arguments</a> that Windows 8 holds the threat of finally toppling the waning Microsoft hegemony, I&rsquo;m actually jealous of Windows 8 in one way: Windows 8 includes an almost-workalike Windows 7 compatibility mode. I <em>wish</em> Lion had a &ldquo;act like Snow Leopard&rdquo; mode. Although one of the articles I just cited laments the loss of the Start menu in Win7 mode, I don&rsquo;t think it&rsquo;s that much of a loss, if PowerShell is still included (or better yet, Cygwin).</p>
+<p>Apple is not alone in its efforts to neuter the desktop. Not to be outdone in locking down the OS and polluting the developer ecosystem, Microsoft is scrambling to release Windows 8 so that Windows users can be as disoriented as possbile. Although there are <a href="http://mobileopportunity.blogspot.com/2012/05/fear-and-loathing-and-windows-8.html">good</a> <a href="http://pcunix.hubpages.com/hub/Why-Windows-8-might-Kill-Microsoft">arguments</a> that Windows 8 holds the threat of finally toppling the waning Microsoft hegemony, I’m actually jealous of Windows 8 in one way: Windows 8 includes an almost-workalike Windows 7 compatibility mode. I <em>wish</em> Lion had a “act like Snow Leopard” mode. Although one of the articles I just cited laments the loss of the Start menu in Win7 mode, I don’t think it’s that much of a loss, if PowerShell is still included (or better yet, Cygwin).</p>
 
-<p><img class="float-left" src="/images/post-img/win8-1.jpg" width="400"></p>
+<p><img class="float-left" src="/images/post-img/win8-1.jpg" width="400" /></p>
 
-<p>I use Windows as little as possible, so I&rsquo;m less annoyed about Windows 8 than I am Lion. But the trend is disturbing, and is even being echoed to a degree (a greatly diminished degree) in <a href="http://www.gnome.org/gnome-3/">GNOME 3</a> and <a href="http://unity.ubuntu.com/">Ubuntu Unity</a>. But on Linux, at least, I have the option of using whatever window manager and desktop environment works best for me (or none at all).</p>
+<p>I use Windows as little as possible, so I’m less annoyed about Windows 8 than I am Lion. But the trend is disturbing, and is even being echoed to a degree (a greatly diminished degree) in <a href="http://www.gnome.org/gnome-3/">GNOME 3</a> and <a href="http://unity.ubuntu.com/">Ubuntu Unity</a>. But on Linux, at least, I have the option of using whatever window manager and desktop environment works best for me (or none at all).</p>
 
-<p>I realize that commercial operating system vendors need to target the widest possible user base. But the much-ballyhooed rise of the <a href="http://www.forbes.com/sites/venkateshrao/2011/12/05/the-rise-of-developeronomics/">developer-centric economy</a> would <em>seem</em> to suggest that pissing off developers is a <em>bad</em> idea. Apple and Microsoft spent the better part of the 1980&rsquo;s and 1990&rsquo;s competing not only for market-share, but for developer mind-share. The movement toward locking us into proprietary toolchains and ecosystems (XCode for Apple, VisualStudio for Microsoft) looks like little more than a cynical attempt to chain down developers in a walled garden. Hopefully, we don&rsquo;t fall for it.</p>
+<p>I realize that commercial operating system vendors need to target the widest possible user base. But the much-ballyhooed rise of the <a href="http://www.forbes.com/sites/venkateshrao/2011/12/05/the-rise-of-developeronomics/">developer-centric economy</a> would <em>seem</em> to suggest that pissing off developers is a <em>bad</em> idea. Apple and Microsoft spent the better part of the 1980’s and 1990’s competing not only for market-share, but for developer mind-share. The movement toward locking us into proprietary toolchains and ecosystems (XCode for Apple, VisualStudio for Microsoft) looks like little more than a cynical attempt to chain down developers in a walled garden. Hopefully, we don’t fall for it.</p>
 
-<h3>For Us, By Us</h3>
+<h3 id="for-us-by-us">For Us, By Us</h3>
 
-<p>It&rsquo;s been <a href="http://en.wikipedia.org/wiki/Desktop_Linux#Year_of_Desktop_Linux">The Year Of Linux On The Desktop</a> since at <em>least</em> 2000. I&rsquo;m not going to be the next one to make grand proclamations (other than &ldquo;total world domination <em>soon</em>&rdquo;). But for me&hellip; right now, my primary development machines are a 27" iMac running Snow Leopard, and a 15" MacBook Pro, also running Snow Leopard. I won&rsquo;t be upgrading to Lion, and I&rsquo;ll miss the pretty Apple hardware. But when these are ready for replacement&hellip; let&rsquo;s just say I really hope <a href="http://www.theverge.com/2012/5/7/3006266/dell-project-sputnik-ubuntu-xps-13-developers">Project Sputnik</a> is a huge success for Dell.</p>
+<p>It’s been <a href="http://en.wikipedia.org/wiki/Desktop_Linux#Year_of_Desktop_Linux">The Year Of Linux On The Desktop</a> since at <em>least</em> 2000. I’m not going to be the next one to make grand proclamations (other than “total world domination <em>soon</em>”). But for me… right now, my primary development machines are a 27” iMac running Snow Leopard, and a 15” MacBook Pro, also running Snow Leopard. I won’t be upgrading to Lion, and I’ll miss the pretty Apple hardware. But when these are ready for replacement… let’s just say I really hope <a href="http://www.theverge.com/2012/5/7/3006266/dell-project-sputnik-ubuntu-xps-13-developers">Project Sputnik</a> is a huge success for Dell.</p>
 
-<p>Although it&rsquo;s commercial software, targeted toward business users (and consumers) that pays the bills for most of us, I think it&rsquo;s important to remember that the people who make those tools are an important audience, too. I want to see more software of all kinds (web, desktop, and CLI) created by developers, for developers. Preferably open-source tools we can tweak and extend and continue to make better. I think that&rsquo;s my goal for this year, anyhow. I&rsquo;m going to focus my efforts on projects that make it more fun to be a hacker, whether that&rsquo;s something like making blogging easier, creating build tools, or Linux desktop enhancements that are friendly to those of us who spend most of the day switching between an editor, a shell, and a web browser. I hope others have the same itch, and see the same need, and push back against the disturbing trend of hostility toward open systems and (by extension) the developers who use them.</p>
+<p>Although it’s commercial software, targeted toward business users (and consumers) that pays the bills for most of us, I think it’s important to remember that the people who make those tools are an important audience, too. I want to see more software of all kinds (web, desktop, and CLI) created by developers, for developers. Preferably open-source tools we can tweak and extend and continue to make better. I think that’s my goal for this year, anyhow. I’m going to focus my efforts on projects that make it more fun to be a hacker, whether that’s something like making blogging easier, creating build tools, or Linux desktop enhancements that are friendly to those of us who spend most of the day switching between an editor, a shell, and a web browser. I hope others have the same itch, and see the same need, and push back against the disturbing trend of hostility toward open systems and (by extension) the developers who use them.</p>
 
 <p><strong>Update:</strong> Thanks to the discussion on <a href="http://www.reddit.com/r/programming/comments/uo2sk/hackers_need_our_own_everything/">this reddit thread</a>, as well as the comments, I made a couple of corrections, particularly re: Duck Duck Go and Gatekeeper. Thanks to everyone who commented.</p>
-</div>
 
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
-
-      
-
-
-
-
-
-
-
+  </article>
 
   
-
-
-<time datetime="2012-06-06T11:29:00-04:00" pubdate data-updated="true"></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/apps/'>apps</a>, <a class='category' href='/blog/categories/hackers/'>hackers</a>, <a class='category' href='/blog/categories/internet/'>internet</a>, <a class='category' href='/blog/categories/software/'>software</a>, <a class='category' href='/blog/categories/trends/'>trends</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/" data-via="" data-counturl="http://decomplecting.org/blog/2012/06/06/hackers-need-our-own-everything/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left articlenav" href="/blog/2012/06/01/try-ruby-seriously/" title="Previous Post: Try Ruby... Seriously.">&laquo; Try Ruby... Seriously.</a>
-      
-      
-        <a class="basic-alignment right articlenav" href="/blog/2012/07/04/static-is-beautiful/" title="Next Post: Static Is Beautiful">Static Is Beautiful &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <a href="http://internetdefenseleague.org">
-    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
-  </a>
-</section>
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot's Dilemma</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'canweriotnow',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-<a class="twitter-timeline" height="300" data-dnt="true" href="https://twitter.com/canweriotnow" data-widget-id="365195555808358401">Tweets by @canweriotnow</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
-  
-</section>
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/110736810583208350607?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
+    <div id="disqus_thread" aria-live="polite">
+        <script type="text/javascript">
       var disqus_shortname = 'canweriotnow';
       
         
@@ -367,43 +148,71 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+    </div>
+  </section>
+  
+</div>
 
+      </div>
+    </div>
 
+    <footer class="site-footer">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <div class="wrapper">
 
+    <h2 class="footer-heading">(λ) Practical Elegance</h2>
 
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>(λ) Practical Elegance</li>
+          <li><a href="mailto:jason@decomplecting.org">jason@decomplecting.org</a></li>
+        </ul>
+      </div>
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/canweriotnow">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
 
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
 
+          
+          <li>
+            <a href="https://twitter.com/canweriotnow">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
 
+      <div class="footer-col  footer-col-3">
+        <p class="text">code, ire, and song
+</p>
+      </div>
+    </div>
 
+  </div>
 
+</footer>
 
+  </body>
 
-</body>
 </html>

@@ -1,145 +1,109 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
+<html>
+
+  <head>
   <meta charset="utf-8">
-  <title>The Myth of The "IT Department" - Practical Elegance</title>
-  <meta name="author" content="Jason Lewis">
-
-  
-  <meta name="description" content="So in the comments on my last post I mentioned my fandom
-for what is, in my opinion, the most insightful and important blog currently
-published, that &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+  <title>The Myth of the "IT Department"</title>
+  <meta name="description" content="So in the comments on my last post I mentioned my fandomfor what is, in my opinion, the most insightful and important blog currentlypublished, that of Michae...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  <link rel="alternate" type="application/rss+xml" title="(λ) Practical Elegance" href="http://decomplecting.org/feed.xml" />
+  <link href='/stylesheets/all-634c4d42931b17a729110c0d3879e4ef.css' media='all' rel='stylesheet' type='text/css'>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22978638-1']);
-    _gaq.push(['_trackPageview']);
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  ga('create', 'UA-22978638-1', 'auto');
+  ga('send', 'pageview');
 
-
+</script>
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">(</div>
-  	<div id="logoText">&#955;</div>
-  	<div id="logoRight">)</div>
-  	<div class="clear"></div>
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">(λ) Practical Elegance</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/">Posts</a>
+          
+        
+          
+          <a class="page-link" href="/archive/">Archive</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/feed/">Subscribe</a>
+          
+        
+      </div>
+    </nav>
+
   </div>
-  <h1><a href="/">Practical Elegance</a></h1>
-  
-    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
-  
-  <div class="clear"></div>
-</hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:decomplecting.org" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      
-        <h1 class="entry-title">The Myth of The "IT Department"</h1>
-      
-    
-    
-      <p class="meta">
-        
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-15T01:53:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
+  <header class="post-header">
+    <h1 class="post-title">The Myth of the "IT Department"</h1>
+    <p class="post-meta">Mar 15, 2013</p>
   </header>
 
-
-<div class="entry-content"><p>So in the comments on my <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom
+  <article class="post-content">
+    <p>So in the comments on my <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom
 for what is, in my opinion, the most insightful and important blog currently
 published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>.
 His recent series of posts have been reviewing and analyzing the MacLeod theory
 of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-convexity/">organizational structure</a>
-(link is to the latest post in the series, but if you haven&rsquo;t been following it,
+(link is to the latest post in the series, but if you haven’t been following it,
 therein are links to the previous eight).</p>
 
 <p>I want to focus on the differential between concave (in which the difference
 between failure and middling is greatest) and convex (in which the difference
 between middling and superior is greatest) work.</p>
 
-<h3>The &ldquo;IT Department&rdquo;</h3>
+<h3 id="the-it-department">The “IT Department”</h3>
 
-<p>I have to start by saying &ldquo;Information Technology&rdquo; is a leaky abstraction. It
+<p>I have to start by saying “Information Technology” is a leaky abstraction. It
 covers everything from internal software development to the help desk call
-center. I&rsquo;m not suggesting that either line of business is superior. Both are
+center. I’m not suggesting that either line of business is superior. Both are
 absolutely necessary, at least until developers start to become psychic or users
 stop being stupid, or (preferably) both.</p>
 
 <p>The real problem comes when the same management structure is imposed in the
-guise of an &ldquo;IT Department&rdquo; on such divergent areas as the help desk, desktop
+guise of an “IT Department” on such divergent areas as the help desk, desktop
 support, network engineers, developers, and hardware techs. Going beyond
 theories <a href="http://michaelochurch.wordpress.com/2013/03/12/gervais-macleod-8-human-nature-theories-x-y-z-and-a/">X, Y, Z, or A</a>
-of management, having a &ldquo;Central IT&rdquo; department is (without a revolutionary
+of management, having a “Central IT” department is (without a revolutionary
 management strategy that will probably raise HR issues for most entrenched
 organizations) an attempt to shoehorn concave and convex work into the same tiny
 box, and is going to fail at appropriately managing one or the other (or perhaps
@@ -147,280 +111,95 @@ more likely, both).</p>
 
 <!--more-->
 
+<h3 id="concave-work">Concave Work</h3>
 
-<h3>Concave Work</h3>
-
-<p>Let&rsquo;s face it, help desk work is typically concave. I&rsquo;ve done it (briefly), and
-it&rsquo;s probably an acceptable use case for <a href="http://en.wikipedia.org/wiki/Theory_X_and_Theory_Y#Theory_X">Theory X</a>, since it&rsquo;s (in
-this writer&rsquo;s opinion) rote, unrewarding work that I would
+<p>Let’s face it, help desk work is typically concave. I’ve done it (briefly), and
+it’s probably an acceptable use case for <a href="http://en.wikipedia.org/wiki/Theory_X_and_Theory_Y#Theory_X">Theory X</a>, since it’s (in
+this writer’s opinion) rote, unrewarding work that I would
 <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">automate out of existence</a> if I had the time
-and resources. But, it&rsquo;s also necessary work, and a place where &ldquo;managing to the
-middle&rdquo; works because achieving the Socially Acceptable Middling Effort (SAME)
+and resources. But, it’s also necessary work, and a place where “managing to the
+middle” works because achieving the Socially Acceptable Middling Effort (SAME)
 is a decent departmental average.</p>
 
-<p>I&rsquo;d place much of the responsibility of the average sub-division of IT in the
-scope of &ldquo;concave work.&rdquo;  Desktop support, Windows administration, etc., are
+<p>I’d place much of the responsibility of the average sub-division of IT in the
+scope of “concave work.”  Desktop support, Windows administration, etc., are
 really about uniformity of outcome, and SAME is an acceptable goal.</p>
 
-<p>When it comes to efforts like software development, or big data, or even &ldquo;cloud
-services&rdquo;, SAME is the same as failure. We&rsquo;re now into the realm of convex work,
+<p>When it comes to efforts like software development, or big data, or even “cloud
+services”, SAME is the same as failure. We’re now into the realm of convex work,
 and the standard has to be different.</p>
 
-<h3>Convex Work</h3>
+<h3 id="convex-work">Convex Work</h3>
 
-<p>I&rsquo;ve <a href="/blog/2012/10/31/feedback-loops/">written before</a> about how programmers
+<p>I’ve <a href="/blog/2012/10/31/feedback-loops/">written before</a> about how programmers
 are just <em>weird</em> from a standard, organizational point of view. Or any standard
-point of view. Programming is the ultimate convex work; from Joel Spolsky&rsquo;s
+point of view. Programming is the ultimate convex work; from Joel Spolsky’s
 warnings about
 <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html">The Perils of Java Schools</a>, to
-Jeff Atwood&rsquo;s plea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">not everyone learn to code</a>,
-it&rsquo;s clear that not only is programming a highly specialized thing to excel at,
+Jeff Atwood’s plea that <a href="http://www.codinghorror.com/blog/2012/05/please-dont-learn-to-code.html">not everyone learn to code</a>,
+it’s clear that not only is programming a highly specialized thing to excel at,
 but also that there are <a href="http://www.codinghorror.com/blog/2006/07/separating-programming-sheep-from-non-programming-goats.html">certain factors that determine capability in advance</a>.</p>
 
-<p>It&rsquo;s probably the epitome of convex work. The difference between the worst
+<p>It’s probably the epitome of convex work. The difference between the worst
 programmer and the middling programmer is a fraction of the difference between a
 middling programmer and (even) a 90th percentile-or-above programmer. And there
-are probably other areas in IT where this is true; from my experience I&rsquo;d say
-they&rsquo;re in software-heavy areas like managing large datasets properly, or
-providing true &ldquo;cloud services&rdquo;, i.e., computing and storage in a multi-tenancy
-environment with computation and storage as a metered service. I haven&rsquo;t seen
-any of these done well in an &ldquo;enterprise&rdquo; environment.</p>
+are probably other areas in IT where this is true; from my experience I’d say
+they’re in software-heavy areas like managing large datasets properly, or
+providing true “cloud services”, i.e., computing and storage in a multi-tenancy
+environment with computation and storage as a metered service. I haven’t seen
+any of these done well in an “enterprise” environment.</p>
 
-<h3>The Enterprise</h3>
+<h3 id="the-enterprise">The Enterprise</h3>
 
-<p>The &ldquo;enterprise&rdquo; only works by &ldquo;managing to the middle.&rdquo; Which explains the
-self-defeating attitudes of vendor lock-in and risk aversion. When you&rsquo;re not
-in a &ldquo;tech company,&rdquo; IT is invariably a &ldquo;cost center,&rdquo; which a) is why
-<a href="http://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/">you shouldn&rsquo;t call yourself a programmer</a>
+<p>The “enterprise” only works by “managing to the middle.” Which explains the
+self-defeating attitudes of vendor lock-in and risk aversion. When you’re not
+in a “tech company,” IT is invariably a “cost center,” which a) is why
+<a href="http://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/">you shouldn’t call yourself a programmer</a>
 (obligatory reference), and b) why it needs to maintain a low-risk profile. When
-you work for a large organization, &ldquo;low-risk&rdquo; means &ldquo;the buck stops elsewhere
-than my desk.&rdquo;  So there needs to be a vendor to blame. So much of the
+you work for a large organization, “low-risk” means “the buck stops elsewhere
+than my desk.”  So there needs to be a vendor to blame. So much of the
 acknowledged efforts will be in contract negotiations for the purchase of
-almost-suitable software from an established vendor, that doesn&rsquo;t really meet
+almost-suitable software from an established vendor, that doesn’t really meet
 the needs of the organization, but can be marginally tweaked to fit by middling
 engineers.</p>
 
-<p>It also means that internal innovation can&rsquo;t be acknowledged or rewarded too
-highly. When most of your &ldquo;software teams&rdquo; are doing maintenance on the last
+<p>It also means that internal innovation can’t be acknowledged or rewarded too
+highly. When most of your “software teams” are doing maintenance on the last
 failed vendor purchase, how can you be seen to give accolades to the projects
 which have truly broken new ground?</p>
 
 <p>At the same time, do you <em>want</em> front line support innovating to that degree?
 Sure, if one of your help desk reps replaces some annoying customer interaction
-with a Perl script, they&rsquo;ll either be promoted to convex work, or fired from
+with a Perl script, they’ll either be promoted to convex work, or fired from
 concave work, right? I think this only reinforces the difference between the two
 categories.</p>
 
-<h3>Programmer, Wat Do?</h3>
+<h3 id="programmer-wat-do">Programmer, Wat Do?</h3>
 
-<p>That&rsquo;s where the <a href="http://michaelochurch.wordpress.com/2013/02/19/gervais-principle-questioned-macleods-hierarchy-the-technocrat-and-vc-startups/">MacLeod Paradigm</a>
-really comes into play again&hellip; when most of your developers are 9-to-5ers who
+<p>That’s where the <a href="http://michaelochurch.wordpress.com/2013/02/19/gervais-principle-questioned-macleods-hierarchy-the-technocrat-and-vc-startups/">MacLeod Paradigm</a>
+really comes into play again… when most of your developers are 9-to-5ers who
 <a href="http://decomplecting.org/blog/2012/05/22/passion/">take no joy in their craft</a>,
-you have a team of MacLeod &ldquo;losers,&rdquo; which fits perfectly well into the
-&ldquo;enterprise&rdquo; IT paradigm. It&rsquo;s hard to practice something sensible like
+you have a team of MacLeod “losers,” which fits perfectly well into the
+“enterprise” IT paradigm. It’s hard to practice something sensible like
 <a href="http://michaelochurch.wordpress.com/2012/11/25/programmer-autonomy-is-a-1-trillion-issue/">open allocation</a>
 when you manage business analysts in the same manner as developers.</p>
 
-<p>If you really care about good, clean, beautiful, (even) elegant code, well&hellip;
-you might luck out. I&rsquo;m on a small team which is probably considered &ldquo;rogue&rdquo; by
-most &ldquo;enterprise&rdquo; standards. I love my job, and it affords me significant
+<p>If you really care about good, clean, beautiful, (even) elegant code, well…
+you might luck out. I’m on a small team which is probably considered “rogue” by
+most “enterprise” standards. I love my job, and it affords me significant
 autonomy and creative freedom, but I also know how bizarre and rare that is. I
-don&rsquo;t see how &ldquo;non-technical organizations&rdquo; (a future post will debate whether
-such a thing exists anymore) can afford to treat developers' work the same as
+don’t see how “non-technical organizations” (a future post will debate whether
+such a thing exists anymore) can afford to treat developers’ work the same as
 concave work without having the whole house of cards come tumbling down at some
 point.</p>
-</div>
 
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
-
-      
-
-
-
-
-
-
-
+  </article>
 
   
-
-
-<time datetime="2013-03-15T01:53:00-04:00" pubdate data-updated="true"></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/information-technology/'>information technology</a>, <a class='category' href='/blog/categories/management/'>management</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department/" data-via="" data-counturl="http://decomplecting.org/blog/2013/03/15/the-myth-of-the-it-department/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left articlenav" href="/blog/2013/03/11/confessions-of-a-job-destroyer/" title="Previous Post: Confessions of A Job Destroyer">&laquo; Confessions of A Job Destroyer</a>
-      
-      
-        <a class="basic-alignment right articlenav" href="/blog/2013/03/16/farewell/" title="Next Post: Farewell, Reader; Or, The Problem with "Free as in Beer"">Farewell, Reader; Or, The Problem with "Free as in Beer" &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <a href="http://internetdefenseleague.org">
-    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
-  </a>
-</section>
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot's Dilemma</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'canweriotnow',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-<a class="twitter-timeline" height="300" data-dnt="true" href="https://twitter.com/canweriotnow" data-widget-id="365195555808358401">Tweets by @canweriotnow</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
-  
-</section>
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/110736810583208350607?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
+    <div id="disqus_thread" aria-live="polite">
+        <script type="text/javascript">
       var disqus_shortname = 'canweriotnow';
       
         
@@ -435,43 +214,71 @@ point.</p>
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+    </div>
+  </section>
+  
+</div>
 
+      </div>
+    </div>
 
+    <footer class="site-footer">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <div class="wrapper">
 
+    <h2 class="footer-heading">(λ) Practical Elegance</h2>
 
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>(λ) Practical Elegance</li>
+          <li><a href="mailto:jason@decomplecting.org">jason@decomplecting.org</a></li>
+        </ul>
+      </div>
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/canweriotnow">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
 
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
 
+          
+          <li>
+            <a href="https://twitter.com/canweriotnow">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
 
+      <div class="footer-col  footer-col-3">
+        <p class="text">code, ire, and song
+</p>
+      </div>
+    </div>
 
+  </div>
 
+</footer>
 
+  </body>
 
-</body>
 </html>

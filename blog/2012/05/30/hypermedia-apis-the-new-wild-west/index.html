@@ -1,481 +1,210 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
+<html>
+
+  <head>
   <meta charset="utf-8">
-  <title>Hypermedia APIs: The New Wild West? - Practical Elegance</title>
-  <meta name="author" content="Jason Lewis">
-
-  
-  <meta name="description" content="Two of the best presentations at RailsConf this year, Designing Hypermedia APIs by Steve Klabnik and Rails: The Next Five Years by Yehuda Katz were &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+  <title>Hypermedia APIs: The New Wild West?</title>
+  <meta name="description" content="Two of the best presentations at RailsConf this year, Designing Hypermedia APIs by Steve Klabnik and Rails: The Next Five Years by Yehuda Katz were related t...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  <link rel="alternate" type="application/rss+xml" title="(λ) Practical Elegance" href="http://decomplecting.org/feed.xml" />
+  <link href='/stylesheets/all-634c4d42931b17a729110c0d3879e4ef.css' media='all' rel='stylesheet' type='text/css'>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22978638-1']);
-    _gaq.push(['_trackPageview']);
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  ga('create', 'UA-22978638-1', 'auto');
+  ga('send', 'pageview');
 
-
+</script>
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">(</div>
-  	<div id="logoText">&#955;</div>
-  	<div id="logoRight">)</div>
-  	<div class="clear"></div>
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">(λ) Practical Elegance</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/">Posts</a>
+          
+        
+          
+          <a class="page-link" href="/archive/">Archive</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/feed/">Subscribe</a>
+          
+        
+      </div>
+    </nav>
+
   </div>
-  <h1><a href="/">Practical Elegance</a></h1>
-  
-    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
-  
-  <div class="clear"></div>
-</hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:decomplecting.org" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      
-        <h1 class="entry-title">Hypermedia APIs: The New Wild West?</h1>
-      
-    
-    
-      <p class="meta">
-        
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
+  <header class="post-header">
+    <h1 class="post-title">Hypermedia APIs: The New Wild West?</h1>
+    <p class="post-meta">May 30, 2012</p>
   </header>
 
+  <article class="post-content">
+    <p>Two of the best presentations at RailsConf this year, <strong>Designing Hypermedia APIs</strong> by <a href="http://steveklabnik.com/">Steve Klabnik</a> and <strong>Rails: The Next Five Years</strong> by <a href="http://yehudakatz.com/">Yehuda Katz</a> were related to the topic of hypermedia APIs. The video of Steve’s talk isn’t up on Confreaks yet, but the slides are <a href="http://steveklabnik.github.com/hypermedia-presentation/#1">here</a>. I’ll embed Yehuda’s talk right here:</p>
 
-<div class="entry-content"><p>Two of the best presentations at RailsConf this year, <strong>Designing Hypermedia APIs</strong> by <a href="http://steveklabnik.com/">Steve Klabnik</a> and <strong>Rails: The Next Five Years</strong> by <a href="http://yehudakatz.com/">Yehuda Katz</a> were related to the topic of hypermedia APIs. The video of Steve&rsquo;s talk isn&rsquo;t up on Confreaks yet, but the slides are <a href="http://steveklabnik.github.com/hypermedia-presentation/#1">here</a>. I&rsquo;ll embed Yehuda&rsquo;s talk right here:</p>
-
-<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/UlMpIHH1K5s" frameborder="0" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="http://www.youtube-nocookie.com/embed/UlMpIHH1K5s" frameborder="0" allowfullscreen=""></iframe>
 
 <p>The two big takeaways from these talks (for me, at least):</p>
 
 <ol>
-<li>We&rsquo;ve come a long way in designing in implementing APIs. But now we&rsquo;re to the &ldquo;hard part&rdquo;: Going from REST to true hypermedia.</li>
-<li>Rails is really, really good at creating de facto standards via &ldquo;convention over configuration.&rdquo; But we don&rsquo;t go far enough, and that&rsquo;s where we shoot ourselves in the foot (think ActiveResource).</li>
+  <li>We’ve come a long way in designing in implementing APIs. But now we’re to the “hard part”: Going from REST to true hypermedia.</li>
+  <li>Rails is really, really good at creating de facto standards via “convention over configuration.” But we don’t go far enough, and that’s where we shoot ourselves in the foot (think ActiveResource).</li>
 </ol>
 
+<h3 id="why-dont-you-rest-for-a-while">Why don’t you REST for a while?</h3>
 
-<h3>Why don&rsquo;t you REST for a while?</h3>
+<p>I know, it’s stressful figuring this stuff out.  Rails going all RESTful was a big help when it came to creating uniform interfaces for our applications. HTML, XML, JSON… you could have it your way, right away. But going from RESTful resources to true hypermedia APIs is an even bigger leap forward than the move to REST, and that transition also needs to be planned and implemented carefully and correctly.</p>
 
-<p>I know, it&rsquo;s stressful figuring this stuff out.  Rails going all RESTful was a big help when it came to creating uniform interfaces for our applications. HTML, XML, JSON&hellip; you could have it your way, right away. But going from RESTful resources to true hypermedia APIs is an even bigger leap forward than the move to REST, and that transition also needs to be planned and implemented carefully and correctly.</p>
-
-<p><code>as_json</code> will only get you so far. Yes, it will represent the resource in a way that is eminently consumable by a client application, whether that&rsquo;s Javascript in the browser, a mobile app, or curl. But your client still needs to know <em>far</em> too much about the structure of the resources on your server. That&rsquo;s tight coupling, which we all know is evil. It&rsquo;s even evilly-tight from a REST standpoint; if the client has to know <em>anything</em> about server-side resources, you&rsquo;re breaking the encapsulation layer between resources and the representation of those resources, which is what REST is all about, right?</p>
+<p><code>as_json</code> will only get you so far. Yes, it will represent the resource in a way that is eminently consumable by a client application, whether that’s Javascript in the browser, a mobile app, or curl. But your client still needs to know <em>far</em> too much about the structure of the resources on your server. That’s tight coupling, which we all know is evil. It’s even evilly-tight from a REST standpoint; if the client has to know <em>anything</em> about server-side resources, you’re breaking the encapsulation layer between resources and the representation of those resources, which is what REST is all about, right?</p>
 
 <p>So what is to be done?</p>
 
 <!-- more -->
 
+<h3 id="hateoas">HATEOAS</h3>
 
-<h3>HATEOAS</h3>
+<p>Yeah, there it is. <strong>Hypermedia As The Engine Of Application State.</strong> That last layer of REST that we’d rather not think about, much less try to implement.</p>
 
-<p>Yeah, there it is. <strong>Hypermedia As The Engine Of Application State.</strong> That last layer of REST that we&rsquo;d rather not think about, much less try to implement.</p>
+<p>We know better, but we do all sorts of crazy things in order <em>not</em> to do it right. One of the most common sins (I’m guilty myself) is embedding nested resources inside of the requested resource.</p>
 
-<p>We know better, but we do all sorts of crazy things in order <em>not</em> to do it right. One of the most common sins (I&rsquo;m guilty myself) is embedding nested resources inside of the requested resource.</p>
+<p>What’s wrong with embedding, for instance, comments in the JSON representation of an article?</p>
 
-<p>What&rsquo;s wrong with embedding, for instance, comments in the JSON representation of an article?</p>
-
-<p>If nothing else, when I request an article, I&rsquo;m requesting a specific representation of a specific resource. I don&rsquo;t necessarily <em>want</em> all of its child resources or other associations. I should <em>know</em> about them, but not forced to accept them.</p>
+<p>If nothing else, when I request an article, I’m requesting a specific representation of a specific resource. I don’t necessarily <em>want</em> all of its child resources or other associations. I should <em>know</em> about them, but not forced to accept them.</p>
 
 <p>Furthermore,</p>
 
 <p>I really like the example Steve used of implementing a <code>links</code> array in the returned object:</p>
 
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sample response</span><a href='http://steveklabnik.github.com/hypermedia-presentation/#47'>link</a></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="err">request(</span><span class="s2">&quot;http://w3clove.com/api/&quot;</span><span class="err">,</span>
-</span><span class='line'>  <span class="s2">&quot;application/vnd.w3clove.validation+json&quot;</span><span class="err">)</span>
-</span><span class='line'><span class="err">#</span> <span class="err">=&gt;</span>
-</span><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="nt">&quot;links&quot;</span><span class="p">:[</span>
-</span><span class='line'>  <span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="s2">&quot;website-form&quot;</span><span class="p">,</span> <span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="s2">&quot;...&quot;</span><span class="p">},</span>
-</span><span class='line'>  <span class="p">{</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="s2">&quot;sitemap-form&quot;</span><span class="p">,</span> <span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="s2">&quot;...&quot;</span><span class="p">}</span>
-</span><span class='line'>  <span class="p">]</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">http://steveklabnik.github.com/hypermedia-presentation/#47</span><a class="code-highlight-caption-link" href="http://steveklabnik.github.com/hypermedia-presentation/#47">link</a></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="err">request(</span><span class="s2">&quot;http://w3clove.com/api/&quot;</span><span class="err">,</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="s2">&quot;application/vnd.w3clove.validation+json&quot;</span><span class="err">)</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="err">#</span> <span class="err">=&gt;</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">&#x7b;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="nt">&quot;links&quot;</span><span class="p">:[</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="p">&#x7b;</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="s2">&quot;website-form&quot;</span><span class="p">,</span> <span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="s2">&quot;...&quot;</span><span class="p">&#x7d;,</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="p">&#x7b;</span><span class="nt">&quot;rel&quot;</span><span class="p">:</span><span class="s2">&quot;sitemap-form&quot;</span><span class="p">,</span> <span class="nt">&quot;href&quot;</span><span class="p">:</span><span class="s2">&quot;...&quot;</span><span class="p">&#x7d;</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="p">]</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">&#x7d;</span></div></div></pre></div></figure>
 
+<p>What’s especially interesting here is the Content-type: <code>application/vnd.w3clove.validation+json</code>. That was another big takeaway: I was unaware of the <code>vnd</code> prefix for defining your own content-types, rather than waiting (and waiting, and waiting…) for the W3C to define a standard.</p>
 
-<p>What&rsquo;s especially interesting here is the Content-type: <code>application/vnd.w3clove.validation+json</code>. That was another big takeaway: I was unaware of the <code>vnd</code> prefix for defining your own content-types, rather than waiting (and waiting, and waiting&hellip;) for the W3C to define a standard.</p>
+<p><img class="float-right" src="http://imgs.xkcd.com/comics/standards.png" /></p>
 
-<p><img class="float-right" src="http://imgs.xkcd.com/comics/standards.png"></p>
+<p>Please don’t take that as encouragement to go create 2^10 new content-types all willy nilly. Use something that exists, preferably an accepted standard, unless there <em>really, really</em> isn’t an acceptable standard for your use case.</p>
 
-<p>Please don&rsquo;t take that as encouragement to go create 2<sup>10</sup> new content-types all willy nilly. Use something that exists, preferably an accepted standard, unless there <em>really, really</em> isn&rsquo;t an acceptable standard for your use case.</p>
+<p>In that scenario, there’s nothing wrong with defining a content-type that meets your needs, provided you thoroughly spec it and adhere to the spec.</p>
 
-<p>In that scenario, there&rsquo;s nothing wrong with defining a content-type that meets your needs, provided you thoroughly spec it and adhere to the spec.</p>
+<h3 id="asjson-is-not-the-answer">as_json is not the answer</h3>
 
-<h3>as_json is not the answer</h3>
+<p>I want to go a little further into why links &gt; nested resources.</p>
 
-<p>I want to go a little further into why links > nested resources.</p>
+<p>Let’s say you have an <code>Article</code> class, which <code>has_many :comments</code> and <code>has_and_belongs_to_many :tags</code> You might think it’s a good idea to do this:</p>
 
-<p>Let&rsquo;s say you have an <code>Article</code> class, which <code>has_many :comments</code> and <code>has_and_belongs_to_many :tags</code> You might think it&rsquo;s a good idea to do this:</p>
+<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">article.rb</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">has_many</span> <span class="ss">:comments</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">has_and_belongs_to_many</span> <span class="ss">:tags</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">belongs_to</span> <span class="ss">:user</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">def</span> <span class="nf">as_json</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">&#x7b;&#x7d;)</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">options</span><span class="o">[</span><span class="ss">:include</span><span class="o">]</span> <span class="o">=</span> <span class="p">&#x7b;</span><span class="ss">:comments</span> <span class="o">=&gt;</span> <span class="o">[]</span><span class="p">,</span> <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="o">[]</span><span class="p">&#x7d;</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="n">options</span><span class="o">[</span><span class="ss">:except</span><span class="o">]</span> <span class="o">=</span> <span class="ss">:user_id</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="k">return</span> <span class="k">super</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="k">end</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line"> </div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span></div></div></pre></div></figure>
 
-<div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>article.rb </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Article</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">has_many</span> <span class="ss">:comments</span>
-</span><span class='line'>  <span class="n">has_and_belongs_to_many</span> <span class="ss">:tags</span>
-</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:user</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">as_json</span><span class="p">(</span><span class="n">options</span><span class="o">=</span><span class="p">{})</span>
-</span><span class='line'>    <span class="n">options</span><span class="o">[</span><span class="ss">:include</span><span class="o">]</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:comments</span> <span class="o">=&gt;</span> <span class="o">[]</span><span class="p">,</span> <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="o">[]</span><span class="p">}</span>
-</span><span class='line'>    <span class="n">options</span><span class="o">[</span><span class="ss">:except</span><span class="o">]</span> <span class="o">=</span> <span class="ss">:user_id</span>
-</span><span class='line'>    <span class="k">return</span> <span class="k">super</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>It’s not necessarily terrible, but it’s not optimal. Normally you might get back:</p>
 
+<figure class="code-highlight-figure"><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="p">&#x7b;</span>
+</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="err">article:</span> <span class="err">&#x7b;</span>
+</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="err">title:</span> <span class="nt">&quot;First Post!&quot;</span><span class="p">,</span>
+</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="err">body:</span> <span class="nt">&quot;Chillwave fixie food truck vinyl. Squid cred +1, cardigan sustainable before they sold out wayfarers twee synth. Retro cliche 3 wolf moon banh mi, put a bird on it hella american apparel sriracha ennui artisan beard. Small batch four loko cardigan, umami stumptown keffiyeh cray street art etsy. Whatever high life synth godard 3 wolf moon, brunch PBR hella banh mi gluten-free vegan next level mustache stumptown lo-fi. Ethnic photo booth pork belly wayfarers, cardigan blog etsy portland mumblecore single-origin coffee post-ironic shoreditch. +1 typewriter sriracha authentic artisan master cleanse, bushwick freegan keytar.&quot;</span>
+</div></div><div data-line="5" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="err">comments</span><span class="p">:</span> <span class="p">[</span>
+</div></div><div data-line="6" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="p">&#x7b;</span>
+</div></div><div data-line="7" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="err">id:</span> <span class="err">1,</span>
+</div></div><div data-line="8" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="err">body:</span> <span class="nt">&quot;Dude!&quot;</span>
+</div></div><div data-line="9" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="p">&#x7d;</span>
+</div></div><div data-line="10" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="p">],</span>
+</div></div><div data-line="11" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="err">tags:</span> <span class="err">[</span>
+</div></div><div data-line="12" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="err">&#x7b;</span>
+</div></div><div data-line="13" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="err">id:3,</span>
+</div></div><div data-line="14" class="code-highlight-row numbered"><div class="code-highlight-line">        <span class="err">name:</span> <span class="nt">&quot;hipster-crap&quot;</span>
+</div></div><div data-line="15" class="code-highlight-row numbered"><div class="code-highlight-line">      <span class="p">&#x7d;</span>
+</div></div><div data-line="16" class="code-highlight-row numbered"><div class="code-highlight-line">    <span class="err">]</span>
+</div></div><div data-line="17" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="err">&#x7d;</span>
+</div></div><div data-line="18" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="err">&#x7d;</span></div></div></pre></div></figure>
 
-<p>It&rsquo;s not necessarily terrible, but it&rsquo;s not optimal. Normally you might get back:</p>
+<p>This might be okay until you end up with hundreds of long-winded comments about where to find the best kefir in Portland. And what if your client wants to follow the tags to find similar articles? Sure, they can assume you’re following rails conventions for URIs and try to get “http://example.org/tags/3”, but there’s no guarantee that’s what you’re doing, and it’s expecting too much of the client. What if you want to find more by the same author? you’ve decided in advance your clients don’t need to see the user_id.</p>
 
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class='json'><span class='line'><span class="p">{</span>
-</span><span class='line'>  <span class="err">article:</span> <span class="err">{</span>
-</span><span class='line'>    <span class="err">title:</span> <span class="nt">&quot;First Post!&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="err">body:</span> <span class="nt">&quot;Chillwave fixie food truck vinyl. Squid cred +1, cardigan sustainable before they sold out wayfarers twee synth. Retro cliche 3 wolf moon banh mi, put a bird on it hella american apparel sriracha ennui artisan beard. Small batch four loko cardigan, umami stumptown keffiyeh cray street art etsy. Whatever high life synth godard 3 wolf moon, brunch PBR hella banh mi gluten-free vegan next level mustache stumptown lo-fi. Ethnic photo booth pork belly wayfarers, cardigan blog etsy portland mumblecore single-origin coffee post-ironic shoreditch. +1 typewriter sriracha authentic artisan master cleanse, bushwick freegan keytar.&quot;</span>
-</span><span class='line'>    <span class="err">comments</span><span class="p">:</span> <span class="p">[</span>
-</span><span class='line'>      <span class="p">{</span>
-</span><span class='line'>        <span class="err">id:</span> <span class="err">1,</span>
-</span><span class='line'>        <span class="err">body:</span> <span class="nt">&quot;Dude!&quot;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="p">],</span>
-</span><span class='line'>    <span class="err">tags:</span> <span class="err">[</span>
-</span><span class='line'>      <span class="err">{</span>
-</span><span class='line'>        <span class="err">id:3,</span>
-</span><span class='line'>        <span class="err">name:</span> <span class="nt">&quot;hipster-crap&quot;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="err">]</span>
-</span><span class='line'>  <span class="err">}</span>
-</span><span class='line'><span class="err">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Worse, you’re now eager-loading all of your associations, which, while preferable to a risk of n+1 queries, does mean you’re banging on your database harder.</p>
 
+<p>There’s another added benefit: if <em>all</em> a resource needs to know about its associations is where to find them, you’ve just loosened the coupling between those classes. It’s a Good Thing.</p>
 
-<p>This might be okay until you end up with hundreds of long-winded comments about where to find the best kefir in Portland. And what if your client wants to follow the tags to find similar articles? Sure, they can assume you&rsquo;re following rails conventions for URIs and try to get &ldquo;<a href="http://example.org/tags/3">http://example.org/tags/3</a>&rdquo;, but there&rsquo;s no guarantee that&rsquo;s what you&rsquo;re doing, and it&rsquo;s expecting too much of the client. What if you want to find more by the same author? you&rsquo;ve decided in advance your clients don&rsquo;t need to see the user_id.</p>
+<p>It occurred to me that there’s an (imperfect) metaphor for this: pass-by-value vs. pass-by-reference. Rather than copying the value from the server to the client, you pass a reference where the value can be retrieved. Yes, I know this is closer to C pointers (“pass-by-value where the value is a reference”) than than true pass-by-reference. Anyhow.</p>
 
-<p>Worse, you&rsquo;re now eager-loading all of your associations, which, while preferable to a risk of n+1 queries, does mean you&rsquo;re banging on your database harder.</p>
+<h3 id="tradeoffs">Tradeoffs</h3>
 
-<p>There&rsquo;s another added benefit: if <em>all</em> a resource needs to know about its associations is where to find them, you&rsquo;ve just loosened the coupling between those classes. It&rsquo;s a Good Thing.</p>
-
-<p>It occurred to me that there&rsquo;s an (imperfect) metaphor for this: pass-by-value vs. pass-by-reference. Rather than copying the value from the server to the client, you pass a reference where the value can be retrieved. Yes, I know this is closer to C pointers (&ldquo;pass-by-value where the value is a reference&rdquo;) than than true pass-by-reference. Anyhow.</p>
-
-<h3>Tradeoffs</h3>
-
-<p>There are definitely some potential latency-induced pitfalls here. By leaving the task of requesting the appropriate representations of the appropriate resources to the client, we&rsquo;re buying decoupling and a reduction in unnecessary database activity at the potential cost of <em>many</em> more HTTP requests.</p>
+<p>There are definitely some potential latency-induced pitfalls here. By leaving the task of requesting the appropriate representations of the appropriate resources to the client, we’re buying decoupling and a reduction in unnecessary database activity at the potential cost of <em>many</em> more HTTP requests.</p>
 
 <p>This might be true. But it just highlights a need that already existed: we really, really need to optimize HTTP. We need to use <a href="http://www.igvita.com/2011/10/04/optimizing-http-keep-alive-and-pipelining/">keep-alive and pipelining</a>, and we need to understand <a href="http://www.igvita.com/2011/10/20/faster-web-vs-tcp-slow-start/">TCP slow-start</a>. Among other things.</p>
 
-<h3>The Wild West</h3>
+<h3 id="the-wild-west">The Wild West</h3>
 
 <p>Now, back to the title line. Hypermedia API design is kinda chaotic right now, with all sorts of possible solutions, from the clever and innovative to the completely brain-damaged.</p>
 
-<p>One thing Rails has been pretty good at is pushing the envelope, gaining wide adoption of good ideas, and giving the other web frameworks something to aspire to/catch up with. We&rsquo;ve seen this with MVC, REST, and now the asset pipeline. It is, to a large degree, the convention-over-configuration principle that drives this phenomenon, and in Yehuda&rsquo;s talk, he laments the state of ActiveResource, which is pretty useless for the most part, and (correctly, I think) blames the fact that we don&rsquo;t have a good convention for resource serialization, which ActiveResource could consume intelligently.</p>
+<p>One thing Rails has been pretty good at is pushing the envelope, gaining wide adoption of good ideas, and giving the other web frameworks something to aspire to/catch up with. We’ve seen this with MVC, REST, and now the asset pipeline. It is, to a large degree, the convention-over-configuration principle that drives this phenomenon, and in Yehuda’s talk, he laments the state of ActiveResource, which is pretty useless for the most part, and (correctly, I think) blames the fact that we don’t have a good convention for resource serialization, which ActiveResource could consume intelligently.</p>
 
 <p>There are plenty of good options out there already; the <a href="https://github.com/apotonick/roar">roar</a> gem recently got support for the <a href="http://stateless.co/hal_specification.html">JSON-HAL</a> content-type, which I think is a great approach to HATEOAS, although not perfect.</p>
 
-<p>The <a href="https://github.com/jcasimir/draper">draper</a> has HATEOAS helpers listed as a TODO, and that&rsquo;ll be great. If you need decorators, you should definitely be using draper. If you don&rsquo;t think you need decorators, you&rsquo;re probably wrong.</p>
+<p>The <a href="https://github.com/jcasimir/draper">draper</a> has HATEOAS helpers listed as a TODO, and that’ll be great. If you need decorators, you should definitely be using draper. If you don’t think you need decorators, you’re probably wrong.</p>
 
-<p>Ultimately, however, I think for Rails applications to implement true hypermedia APIs in a consistent fashion, something needs to make it into Rails core that&rsquo;s better than the current serialization methods in <code>ActiveRecord::Base</code>. So I&rsquo;m <strong>really, really</strong> happy about <code>ActiveModel::Serializers</code>. I think it points to the Right Thing. Please try it out, and use it in your apps. It&rsquo;s not in Rails core yet, but if we all start using it, there&rsquo;s a better chance of it being included in Rails 4. And that would be really, really cool. Better yet, you can fork and contribute to it (yeah, it&rsquo;s on my list to do&hellip; someday).</p>
+<p>Ultimately, however, I think for Rails applications to implement true hypermedia APIs in a consistent fashion, something needs to make it into Rails core that’s better than the current serialization methods in <code>ActiveRecord::Base</code>. So I’m <strong>really, really</strong> happy about <code>ActiveModel::Serializers</code>. I think it points to the Right Thing. Please try it out, and use it in your apps. It’s not in Rails core yet, but if we all start using it, there’s a better chance of it being included in Rails 4. And that would be really, really cool. Better yet, you can fork and contribute to it (yeah, it’s on my list to do… someday).</p>
 
-<p>The &ldquo;wild west&rdquo; can be exciting, but it&rsquo;s not where most of us want to live. Building sane infrastructure allows us to work at higher levels of abstraction, and that&rsquo;s where the <em>real</em> fun and excitement lives, right?</p>
-</div>
+<p>The “wild west” can be exciting, but it’s not where most of us want to live. Building sane infrastructure allows us to work at higher levels of abstraction, and that’s where the <em>real</em> fun and excitement lives, right?</p>
 
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
-
-      
-
-
-
-
-
-
-
+  </article>
 
   
-
-
-<time datetime="2012-05-30T13:26:00-04:00" pubdate data-updated="true"></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/api/'>api</a>, <a class='category' href='/blog/categories/coding/'>coding</a>, <a class='category' href='/blog/categories/web/'>web</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/" data-via="" data-counturl="http://decomplecting.org/blog/2012/05/30/hypermedia-apis-the-new-wild-west/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left articlenav" href="/blog/2012/05/29/elegant-organizations/" title="Previous Post: Elegant Organizations">&laquo; Elegant Organizations</a>
-      
-      
-        <a class="basic-alignment right articlenav" href="/blog/2012/06/01/try-ruby-seriously/" title="Next Post: Try Ruby... Seriously.">Try Ruby... Seriously. &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <a href="http://internetdefenseleague.org">
-    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
-  </a>
-</section>
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot's Dilemma</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'canweriotnow',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-<a class="twitter-timeline" height="300" data-dnt="true" href="https://twitter.com/canweriotnow" data-widget-id="365195555808358401">Tweets by @canweriotnow</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
-  
-</section>
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/110736810583208350607?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
+    <div id="disqus_thread" aria-live="polite">
+        <script type="text/javascript">
       var disqus_shortname = 'canweriotnow';
       
         
@@ -490,43 +219,71 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+    </div>
+  </section>
+  
+</div>
 
+      </div>
+    </div>
 
+    <footer class="site-footer">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <div class="wrapper">
 
+    <h2 class="footer-heading">(λ) Practical Elegance</h2>
 
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>(λ) Practical Elegance</li>
+          <li><a href="mailto:jason@decomplecting.org">jason@decomplecting.org</a></li>
+        </ul>
+      </div>
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/canweriotnow">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
 
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
 
+          
+          <li>
+            <a href="https://twitter.com/canweriotnow">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
 
+      <div class="footer-col  footer-col-3">
+        <p class="text">code, ire, and song
+</p>
+      </div>
+    </div>
 
+  </div>
 
+</footer>
 
+  </body>
 
-</body>
 </html>

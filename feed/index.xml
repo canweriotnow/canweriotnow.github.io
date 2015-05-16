@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>(λ) Practical Elegance</title>
+    <description>code, ire, and song
+</description>
+    <link>http://decomplecting.org/</link>
+    <atom:link href="http://decomplecting.org/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 16 May 2015 04:17:49 -0400</pubDate>
+    <lastBuildDate>Sat, 16 May 2015 04:17:49 -0400</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Hello, Octopress 3.0!</title>
+        <description>&lt;p&gt;If you’ve been here before, my blog probably either looks much cleaner
+and less busy, or it looks like git decided to lose all of my layout and
+CSS files in some industrial accident. Well, it’s no accident, and it’s
+not (exactly) a redesign.&lt;/p&gt;
+
+&lt;p&gt;I was really excited when I the coming of Octopress 3.0 was
+&lt;a href=&quot;http://octopress.org/2015/01/15/octopress-3.0-is-coming/&quot;&gt;foretold on the Octopress blog&lt;/a&gt;. New CLI replacing the old
+Rake tasks, less obfuscation of the underlying &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt; tooling,
+and a new gem-based structure for themes, plugins, et cetera. When I saw
+&lt;a href=&quot;https://www.youtube.com/watch?v=KS6e4XxY2H4&quot;&gt;Brandon Mathis’ talk at JekyllConf&lt;/a&gt;, I decided to ready myself
+for migration.&lt;/p&gt;
+
+&lt;p&gt;This won’t be a step-by-step migration guide, but I will go over the
+general process that worked (more or less) in my case for migrating to
+the new Octopress.&lt;/p&gt;
+
+&lt;h2 id=&quot;out-with-the-new&quot;&gt;Out with the new&lt;/h2&gt;
+
+&lt;p&gt;Starting from scratch with Octopress is dead simple: install the octopress gem,
+and then &lt;code&gt;octopress new my_awesome_blag&lt;/code&gt; and you’re ready to go. Like I said,
+this isn’t a guide, you’ll want to &lt;a href=&quot;https://github.com/octopress/octopress&quot;&gt;RTFM&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The next step (for me) was adding a Gemfile so I could get in on the plugin
+goodness, and octopress creates a scaffold for a static Jekyll site &lt;em&gt;sans&lt;/em&gt;
+Gemfile, by default. My Gemfile is pretty simple though; thus far:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;figcaption class=&quot;code-highlight-caption&quot;&gt;&lt;span class=&quot;code-highlight-caption-title&quot;&gt;Gemfile&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;https://rubygems.org&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;~&amp;gt; 3.0.0&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:jekyll_plugins&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-codeblock&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;8&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-codefence&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;9&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-image-tag&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;10&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-quote-tag&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;11&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-solarized&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;12&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-social&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;13&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-linkblog&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;14&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-filter-tag&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;15&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-filters&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;16&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;octopress-comment-tag&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;17&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;jekyll-sitemap&amp;#39;&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;18&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;Pretty much just plugins.&lt;/p&gt;
+
+&lt;p&gt;Once I also added them to the &lt;code&gt;gems&lt;/code&gt; array in my &lt;code&gt;_config.yml&lt;/code&gt; I was ready
+to use them in the blog. Now, how did I know I needed all of those?&lt;/p&gt;
+
+&lt;h2 id=&quot;in-with-the-old&quot;&gt;In with the old&lt;/h2&gt;
+
+&lt;p&gt;Of course, I didn’t want to throw away my old blog, I wanted to migrate it.
+So for the most part, I just copied the old &lt;code&gt;blag/source/_posts&lt;/code&gt; folder to
+the new &lt;code&gt;blag/_posts&lt;/code&gt; and my posts were visible to octopress. But of course
+I was already using all the old Octopress codeblock, image tag, Disqus, etc.
+plugins, I was prepared to have a bad time. Or, at least, go through three
+years of blog, post by post. It a lot easier than that, actually. The bulk
+of the issues were picked up by running &lt;code&gt;jekyll serve&lt;/code&gt;, getting an error
+message (like ‘unknown tag codeblock’) and grabbing the right gem to fix it.&lt;/p&gt;
+
+&lt;p&gt;That solved most of the problems; codeblocks, blockquotes, and the like were
+easy enough to fix. A little fiddling with the templates gave me excerpts on
+the index and so on. The default theme isn’t perfect, and I kind of miss my
+sidebar widgets, but I can live without them. But I was using Disqus for
+comments, and the old octopress pull quote plugin, so there was more to do.&lt;/p&gt;
+
+&lt;h2 id=&quot;hand-hacking&quot;&gt;Hand hacking&lt;/h2&gt;
+
+&lt;p&gt;That subhead is really an exaggeration. Adding the comments back in was as
+easy as copying the includes from my old octopress blog, configuring the
+appropriate &lt;code&gt;site.disqus_short_name&lt;/code&gt; and &lt;code&gt;site.disqus_show_comment_count&lt;/code&gt; vars
+in &lt;code&gt;_config.yml&lt;/code&gt;, and adding the includes to the post template.&lt;/p&gt;
+
+&lt;p&gt;The process actually made me really glad I chose to use Disqus for comments;
+since I made sure my permalinks were unaltered from my original blog, the
+comments were preserved and just popped into place.&lt;/p&gt;
+
+&lt;p&gt;Pullquotes were easy as well; I just copied &lt;code&gt;pullquote.rb&lt;/code&gt; from the old
+octopress on Github, popped it in my &lt;code&gt;_plugins&lt;/code&gt; directory, and Jekyll picked
+it right up. If you’re using other plugins that haven’t made it to the new
+octorpess ink gem format, this should work for those as well.&lt;/p&gt;
+
+&lt;h2 id=&quot;moving-forward&quot;&gt;Moving forward&lt;/h2&gt;
+
+&lt;p&gt;I’ll probably spend a good bit of time tinkering with theming; there’s
+currently one theme, &lt;a href=&quot;https://github.com/octopress/genesis-theme&quot;&gt;genesis&lt;/a&gt;, on the octopress github, but
+it’s very alpha and not what I was looking for. So hopefully I’ll build
+something I like, and extract it into a gem if other people seem to like
+it too.&lt;/p&gt;
+
+&lt;p&gt;Brandon mentioned on Twitter that one big need for 3.0 is documentation.
+One of the great things about Octopress in the past was that although it’s
+a blogging framework for hackers, it was exhaustively documented, making it
+really easy to get started. This isn’t a migration guide but there needs to be
+one. Not sure when I’ll have time to help with that, but I probably should.&lt;/p&gt;
+
+&lt;p&gt;In the mean time, if you’re looking to migrate to Octopress 3.0, I’m happy to
+help troubleshoot if I can. Just tweet at me or post in the comments.&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 16 May 2015 02:52:43 -0400</pubDate>
+        <link>http://decomplecting.org/blog/2015/05/16/hello-octopress-3-0/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2015/05/16/hello-octopress-3-0/</guid>
+        
+        
+        <category>blog,</category>
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>In Memoriam: Wolfgang Walter Fuchs</title>
+        <description>&lt;p&gt;I was recently corresponding with a professor of mine about Wittgenstein, planning to set up a meeting to have a chat and catch up. Oh, and talk about Wittgenstein, as I found another place where philosophy is relevant to programming. In my last email to him, I happened to ask after one of his colleagues, who was my advisor, mentor, and one of the most influential people in my life.&lt;/p&gt;
+
+&lt;p&gt;Then I remembered Google, and the first result was &lt;a href=&quot;http://articles.baltimoresun.com/2014-03-01/news/bs-md-ob-walt-fuchs-20140228_1_towson-university-philosophy-liberal-arts-building&quot;&gt;an obituary&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I was devastated. Indescribably so. Biblicallly devastated; I literally rent my garments in grief. I really liked that shirt, too.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;This is Dr. Fuchs:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/post-img/walt-fuchs.jpg&quot; alt=&quot;Walter Fuchs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dr. Fuchs helped lay the groundwork for my life in more ways than he probably ever knew, and I am eternally grateful for the privilege of knowing him. In the same conversation, I think he convinced me that I would make an excellent professor of philosophy and proceeded to convince me not to pursue that path.&lt;/p&gt;
+
+&lt;p&gt;He was such an odd bird. He was never seen without a black leather vest, and practiced Tae Kwon Do in the hallway between classes.&lt;/p&gt;
+
+&lt;p&gt;One interesting thing, from this weekend while I was in the darkest part of mourning. I happened to post an aphorism from Nietzsche which (reasonably) concerned my friends and family:&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;“The thought of suicide is a powerful solace: by means of it one gets through many a bad night”&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;Friedrich Nietzsche&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;Beyond Good and Evil&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;I later explained the context, I’ll just repost the comment:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;I think I chose that aphorism because Dr. Fuchs helped me to understand it; Nietzsche’s philosophy was about embracing life, and the thought that it could be easily ended, by one’s own hand, should serve to remind us that however bad things were, if one hadn’t done so, one had already chosen to plough through and endure.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;What else can I say about the man…&lt;/p&gt;
+
+&lt;p&gt;Unlike some professors, he would never use his own (expensive, thanks to academic publishers) texts to teach his classes. His own essay (based on his Ph.D. thesis) &lt;a href=&quot;http://www.amazon.com/Phenomenology-Metaphysics-Presence-Philosophy-Phaenomenologica/dp/9024718228&quot;&gt;&lt;em&gt;Phenomenology and The Metaphysics of Presence&lt;/em&gt;&lt;/a&gt; would never be required (or even suggested) for his courses, although that book is how I really came to understand Husserl and the thread connecting him to Derrida.&lt;/p&gt;
+
+&lt;p&gt;It was kind of a blow and kind of a breath of fresh air that after all the classes where I had to buy the professor’s shite book, the one book that was really helpful wasn’t on the reading list on ethical grounds.&lt;/p&gt;
+
+&lt;p&gt;I think much of my sorrow comes from the fact that I did such a shite job of staying in touch over the years. It’s been over a decade since we spoke. I have a lot of regret to get over due to this.&lt;/p&gt;
+
+&lt;p&gt;I had a fucked up weekend, drinking and crying and listening to The Smiths.&lt;/p&gt;
+
+&lt;p&gt;Someone asked me, “would he want you to mourn like this?”&lt;/p&gt;
+
+&lt;p&gt;And it reminded me of a conversation we had.&lt;/p&gt;
+
+&lt;p&gt;I expressed some reservations one time over Sartre’s adopted daughter publishing &lt;a href=&quot;http://www.amazon.com/Truth-Existence-Jean-Paul-Sartre/dp/0226735230/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1419305694&amp;amp;sr=1-1&amp;amp;keywords=truth+and+existence&quot;&gt;&lt;em&gt;Truth and Existence&lt;/em&gt;&lt;/a&gt; after his death and against his wishes.&lt;/p&gt;
+
+&lt;p&gt;And Dr. Fuchs pointed out that Sartre would likely have considered it ungenerous to have designs beyond one’s own death. Certainly Heidegger, asserting the finality of death as the &lt;em&gt;sine qua non&lt;/em&gt; for a meaningful existence, would not attempt to subvert that finality.&lt;/p&gt;
+
+&lt;p&gt;Death is good. Death is what makes us mortal, makes us human, gives us meaning. Without death, life would have no size.&lt;/p&gt;
+
+&lt;p&gt;And we know this, yet we sigh, and weep, and allow our sorrow to drive us.&lt;/p&gt;
+
+&lt;p&gt;But human life is finite, and perhaps the Stoics teach us the best lesson: how to die well.&lt;/p&gt;
+
+&lt;p&gt;I hope Dr. Fuchs had a good death. I’m certain he had a full and vibrant life.&lt;/p&gt;
+
+&lt;p&gt;Let us celebrate his life, and mourn our loss, but not his death, for he has completed his journey. He has achieved that end which ensures the meaning of his life.&lt;/p&gt;
+
+&lt;p&gt;Good journey, Dr. Fuchs. I will always love and miss you. Thank you for the light you shone into my life, and may you pass well into whatever lies beyond this fragile existence.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 22 Dec 2014 22:05:52 -0500</pubDate>
+        <link>http://decomplecting.org/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/</guid>
+        
+        
+        <category>life</category>
+        
+        <category>death</category>
+        
+        <category>philosophy</category>
+        
+        <category>mourning</category>
+        
+      </item>
+    
+      <item>
+        <title>The Polyglot&#39;s Dilemma</title>
+        <description>&lt;p&gt;If it hasn’t been clear up to now, I love &lt;a href=&quot;http://clojure.org&quot;&gt;Clojure&lt;/a&gt;. I wish I could write Clojure all day, every day. But Clojure isn’t my first language, and possibly not even the language I grok most completely.&lt;/p&gt;
+
+&lt;p&gt;I jump between programming languages all the time, and end up having to do the most jumping at work because I probably have at least a passing familiarity with the most languages for anyone on our team. And that’s fine.&lt;/p&gt;
+
+&lt;p&gt;What I want to ponder on here is the challenges of “speaking” multiple programming languages, learning new ones, and moving between them.&lt;/p&gt;
+
+&lt;p&gt;I started programming BASIC when I was about five years old. By the time I hit high school, I was running Linux and writing Perl, C, and Bash scripts (throw some sed and awk in there for good measure, though one wouldn’t call them “languages” as such).&lt;/p&gt;
+
+&lt;p&gt;Full disclosure: I have written some PHP. But as the illusory Bertolt Brecht in &lt;a href=&quot;http://en.wikipedia.org/wiki/Cradle_Will_Rock&quot;&gt;&lt;em&gt;Cradle Will Rock&lt;/em&gt;&lt;/a&gt; tells the playwright Marc Blitzstein, “Capitalism makes prostitutes of us all.”&lt;/p&gt;
+
+&lt;p&gt;Okay, back to programming…&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;h3 id=&quot;the-learning-curve&quot;&gt;The Learning Curve&lt;/h3&gt;
+
+&lt;p&gt;This is probably the biggest factor in bringing developers on to a new language. “I already know Java, it’s enterprisey, and it works, why should I change?” or, “I’m a .NET programmer, who needs anything but C#?”&lt;/p&gt;
+
+&lt;p&gt;This is at least 40% of what’s wrong with programming today.&lt;/p&gt;
+
+&lt;p&gt;I’m not a fan of Java, but I’ve been writing a good deal of Android code in Java for the past month or so. I’ll come back to this, but I want to go down some personal prehistory first.&lt;/p&gt;
+
+&lt;p&gt;Several years ago now, I got my first position in which I was the lead developer (well, at first &lt;em&gt;only&lt;/em&gt; developer) on a critical OLTP system for a university. I inherited a collection of Perl CGI scripts which, while effective, I viewed as a nightmare to maintain. Luckily, the management at that time (it didn’t last) took an attitude of “use the tools you need, just make it work.”&lt;/p&gt;
+
+&lt;p&gt;So I wrote a comprehensive management toolkit in Ruby on Rails, since Ruby was the next language I learned after Perl (production language; I was playing with Scheme and such as well).&lt;/p&gt;
+
+&lt;p&gt;It worked like a charm; I wrote a beloved management interface in Ruby, and then a RESTful API for a legacy system, consumers of that API, and then… an Android app.&lt;/p&gt;
+
+&lt;p&gt;Oh, Java. I mean, at least my colleague was stuck writing the Obj-C version for iOS, but still… this was my first encounter with Java since Java 1.1 or whatever in 1999. We made it work. But I was intimidated by the process. Should this be public? static? final? Should I have a public constructor?&lt;/p&gt;
+
+&lt;h3 id=&quot;lrn-2-polyglot&quot;&gt;Lrn 2 Polyglot&lt;/h3&gt;
+
+&lt;p&gt;Yesterday I did a video call with a bunch of students and teachers; third grade, fifth grade, and high school classes.&lt;/p&gt;
+
+&lt;p&gt;One of the questions they had was “Is programming simple or complicated?”&lt;/p&gt;
+
+&lt;p&gt;My answer was that it’s simple to write complicated programs, and complicated to write simple programs.&lt;/p&gt;
+
+&lt;p&gt;Languages also present their own challenges re simplicity vs. complexity.&lt;/p&gt;
+
+&lt;p&gt;Clojure provides an interesting case as it’s intention is “Simple Made Easy”, as described in this &lt;a href=&quot;http://www.infoq.com/presentations/Simple-Made-Easy&quot;&gt;talk by Rich Hickey&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;But since it’s a hosted language, you end up depending on a lot of Java stdlib packages as well as jars from Maven, etc., and if there isn’t an existing Clojure wrapper, you need to know (at least) the public API for the lib and how to handle Java interop.&lt;/p&gt;
+
+&lt;p&gt;Understanding Java helps.&lt;/p&gt;
+
+&lt;p&gt;Okay, so that’s a very specific polyglot use case. But there are more reasons to learn all the things.&lt;/p&gt;
+
+&lt;p&gt;So, let’s examine Ruby. Ruby has deep roots in Perl, but takes its object model from Smalltalk and incorporates functional constructs from Lisp.&lt;/p&gt;
+
+&lt;p&gt;So let’s say you have an array of integers:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;We can deal with this just like a Perl array:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;And if you notice, we used message-passing to do that, so we’ve fulfilled the Smalltalk model already; we don’t call a &lt;code&gt;pop&lt;/code&gt; procedure, we send the object a &lt;code&gt;pop&lt;/code&gt; message.&lt;/p&gt;
+
+&lt;p&gt;As for the functional aspects…&lt;/p&gt;
+
+&lt;p&gt;In Ruby, we would say&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;ary&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;ss&quot;&gt;:odd?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;Whereas in a Lisp like Clojure, the equivalent would be:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;filter &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;odd?&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;get-to-the-damn-point&quot;&gt;Get to the damn point&lt;/h3&gt;
+
+&lt;p&gt;Okay, that was some fun code examples. Or maybe not.&lt;/p&gt;
+
+&lt;p&gt;There’s a certain essential need to be polyglot in today’s coding milieu. It’s not just mobile, where we have to use Java for Android, Objective-C for iOS, and whatever the hell Windows Phone requires (not that anybody has those).&lt;/p&gt;
+
+&lt;p&gt;There are plenty of frameworks like &lt;a href=&quot;http://www.sencha.com/products/touch/&quot;&gt;SenchaTouch&lt;/a&gt;, &lt;a href=&quot;http://www.appgyver.com/steroids&quot;&gt;Steroids&lt;/a&gt;, and so on, for building cross-platform mobile apps with HTML5 and JavaScript.&lt;/p&gt;
+
+&lt;p&gt;But when you’re building n-tier architectures and also building multiple clients, it’s necessary to grok the underlying languages for each piece of the system.&lt;/p&gt;
+
+&lt;p&gt;Sometimes that’s Java, sometimes it’s C or C++, sometimes it’s C#. Maybe it’s Ada or Forth or Smalltalk or Scheme.&lt;/p&gt;
+
+&lt;p&gt;Knowing all the things is important. Today I managed to make a Clojure app segfault and being ableto read the log file (JVM SIGSEGV output) was a necessity.&lt;/p&gt;
+
+&lt;h3 id=&quot;no-really-get-to-the-point&quot;&gt;No, really, get to the point&lt;/h3&gt;
+
+&lt;p&gt;Paul Graham has an article that (IMHO) you can’t call yourself a “real programmer” unless you’ve read. Actually, there are several, but especially this one: &lt;a href=&quot;http://www.paulgraham.com/avg.html&quot;&gt;Beating The Averages&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You learn many languages so you can figure out which one is the most powerful, and which one makes you the best and most effective programmer.&lt;/p&gt;
+
+&lt;p&gt;As Graham (correctly) suggests, the most powerful option out there is Lisp. And Clojure is the easiest Lisp to get started with (and offers many advantages over Common Lisp or Scheme) at the moment.&lt;/p&gt;
+
+&lt;p&gt;But to really understand why Clojure (or Lisp in general) is worthwhile, you need to understand the pain points of C, C++, Obj-C, Java, Python, Ruby, JavaScript, etc.&lt;/p&gt;
+
+&lt;p&gt;Not necessarily all of them, but the moment of enlightenment is so much more explicit when you see what you’re being freed from.&lt;/p&gt;
+
+&lt;h3 id=&quot;so-the-polyglots-dilemma&quot;&gt;So, the polyglot’s dilemma?&lt;/h3&gt;
+
+&lt;p&gt;You can’t run Clojure everywhere… yet.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://clojure-android.info/&quot;&gt;clojure-android&lt;/a&gt; project is almost there. There are efforts to use ClojureScript to make prtable applications, and there’s even an effort out there somewhere to use Clojure to generate code for iOS. But even with these efforts, one needs to understand the underlying runtime, whether that’s Java, Obj-C, or JS.&lt;/p&gt;
+
+&lt;p&gt;The truly universal developer has to be a polyglot, and choose the correct implementation for the target. For now, that mostly means “native” to the target, e.g. JAva for Android and Obj-C for iOS. On the server side, we have a bit more leeway.&lt;/p&gt;
+
+&lt;p&gt;Eventually, I believe we’ll be able to Lisp everywhere, anywhere. Until then, we must be polyglots and willing to write the annoying ocde we wish we could avoid.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 11 Dec 2014 20:58:13 -0500</pubDate>
+        <link>http://decomplecting.org/blog/2014/12/11/the-polyglots-dilemma/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/12/11/the-polyglots-dilemma/</guid>
+        
+        
+        <category>coding</category>
+        
+        <category>programming languages</category>
+        
+        <category>software</category>
+        
+      </item>
+    
+      <item>
+        <title>The Angel of History</title>
+        <description>&lt;p&gt;It all started with a Paul Klee print, or perhaps that’s where it ended:&lt;/p&gt;
+
+&lt;p&gt;&lt;img class=&quot;center&quot; src=&quot;/images/post-img/angelus_novus.jpg&quot; alt=&quot;Angelus Novus&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://en.wikipedia.org/wiki/Frankfurt_School&quot;&gt;Frankfurt School&lt;/a&gt; philosopher &lt;a href=&quot;http://en.wikipedia.org/wiki/Walter_Benjamin&quot;&gt;Walter Benjamin&lt;/a&gt; owned this print for many years, and one of his most well-know quotations from &lt;a href=&quot;https://www.marxists.org/reference/archive/benjamin/1940/history.htm&quot;&gt;“On The Concept of History”&lt;/a&gt; (also known as “Theses on The Philosophy of History”) is inspired by this painting.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;From Thesis IX:&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;There is a painting by Klee called Angelus Novus. An angel is depicted there who looks as though he were about to distance himself from something which he is staring at. His eyes are opened wide, his mouth stands open and his wings are outstretched. The Angel of History must look just so. His face is turned towards the past. Where we see the appearance of a chain of events, he sees one single catastrophe, which unceasingly piles rubble on top of rubble and hurls it before his feet. He would like to pause for a moment so fair [verweilen: a reference to Goethe’s Faust], to awaken the dead and to piece together what has been smashed. But a storm is blowing from Paradise, it has caught itself up in his wings and is so strong that the Angel can no longer close them. The storm drives him irresistibly into the future, to which his back is turned, while the rubble-heap before him grows sky-high. That which we call progress, is this storm.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;&lt;a class=&quot;quote-link&quot; href=&quot;https://www.marxists.org/reference/archive/benjamin/1940/history.htm&quot;&gt;Walter Benjamin, &quot;On The Concept of History&quot;&lt;/a&gt;&lt;/span&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;This is often how it feels to be a developer, especially when encountering non-developers, and &lt;em&gt;a fortiori&lt;/em&gt; when doing so developing standards for the future. Where others see a chain of events which is only logical to maintain, we see the piling catastrophe which we cannot truly flee but only ride ahead of in terror.&lt;/p&gt;
+
+&lt;h3 id=&quot;were-no-angels&quot;&gt;We’re No Angels&lt;/h3&gt;
+
+&lt;p&gt;If you’ve ever heard a technologist use the word “legacy” like it’s the dirtiest, most offensive slur in any human language, this is why. “Legacy” is the piling catastrophe behind us. But this storm is blowing from no Paradise, or at least so it seems; it seems to blow from the very gates of Hell.&lt;/p&gt;
+
+&lt;p&gt;For those of us who do not feel hurtled forward by the piling on of catastrophe, the past holds a certain allure. We call this &lt;em&gt;nostalgia&lt;/em&gt; if we are feeling generous; less generously, “Are you from the past?”  (please watch the whole clip)…&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/-E4fm4Wqego&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Benjamin wrote of this desire for the past, as well. In &lt;a href=&quot;https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm&quot;&gt;“The Work of Art in the Age of Mechanical Reproduction”&lt;/a&gt; Benjamin spoke of the loss of the “aura”, that experience of seeing something human in a made thing. But as is often misunderstood in this piece, Benjamin writes an &lt;em&gt;elegy&lt;/em&gt; for the aura. He does not demand that we reclaim the aura, but rather warns against it.&lt;/p&gt;
+
+&lt;p&gt;The acceptance of loss is one of the marks of adulthood. The attempt to reclaim the aura is the adolescent revolt against the inevitability of technological society. And like most adolescent revolt, it is both fruitless and deleterious. Acceptance is the final stage of grief, as no rage will resurrect a dead parent, and the revenant will never be that which we once buried.&lt;/p&gt;
+
+&lt;h3 id=&quot;and-technology&quot;&gt;And Technology&lt;/h3&gt;
+
+&lt;p&gt;It’s not so different. I’ve been discussing a few emerging standards with folks who seem to be mourning a fallen comrade, lamenting a moribund spouse. The only way is forward; we have no choice. That which existed before was of its time, and now we move forward, face turned toward the piling catastrophe of the past. For as much as we might once have loved it, we are driven forward by the wind of its piling wreckage, and can retrieve nothing,&lt;/p&gt;
+
+&lt;h3 id=&quot;paradox&quot;&gt;Paradox&lt;/h3&gt;
+
+&lt;p&gt;As I write this essay on technology and Benjamin, I am reminded of another quote, the technologist’s paradox and curse.&lt;/p&gt;
+
+&lt;p&gt;For there was another, more cynical visionary, of about the same time, F. Scott Fitzgerald, and I am reminded of the ending lines of &lt;em&gt;The Great Gatsby&lt;/em&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;Gatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us then, but that’s no matter—tomorrow we will run faster, stretch out our arms farther. . . . And then one fine morning—
+So we beat on, boats against the current, borne back ceaselessly into the past.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;F. Scott Fitzgerald&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;&quot;The Great Gatsby&quot;&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;The uncanny thing about a paradox — it tends to be true.&lt;/p&gt;
+
+&lt;h3 id=&quot;borne-back-ceaselessly-into-the-past&quot;&gt;Borne back ceaselessly into the past&lt;/h3&gt;
+
+&lt;p&gt;Always. That’s how it feels.&lt;/p&gt;
+
+&lt;p&gt;Trying to build the future always feels like beating against the current. I think this is why the “Angel of History” metaphor feels like such a beautiful paradox to me; Blown inevitably forward, yet still having to row against a current pushng backward.&lt;/p&gt;
+
+&lt;p&gt;Institutional IT policies, privacy laws, standards bodies… The fact that people are shocked at the pace of innovation is shocking when you stop to consider the &lt;em&gt;possible&lt;/em&gt; pace of innovation.&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;The future is already here — it’s just not very evenly distributed.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;William Gibson &lt;/span&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;Yeah, there was some point to this when I started.&lt;/p&gt;
+
+&lt;p&gt;Mostly I was annoyed at what seemed like reactionary elements in my inbox. But I think that’s pretty much sorted.&lt;/p&gt;
+
+&lt;p&gt;And yet…&lt;/p&gt;
+
+&lt;p&gt;If you are still from the past, know this: there will come a time when your presence is unnecessary. I’m still agitating for a Basic Income Guarantee, but I still feel like we’re headed toward a tipping point: either some significant percentage of human labor (I’d put my money between 70 and 80) will become surplus, or apocalypse.&lt;/p&gt;
+
+&lt;p&gt;If we decide traditional free market capitalism is the Best Thing Ever, it’ll amount to the same thing, because the 70-80 percent of us rendered redundant will eat one another.&lt;/p&gt;
+
+&lt;p&gt;Maybe that’s why we have institutionalized incompetent management in the enterprise world (God, please save me from ever returning there). Stifling innovation has a payoff?&lt;/p&gt;
+
+&lt;p&gt;Ugh, that’s enough weird speculation for tonight.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 30 Nov 2014 00:17:00 -0500</pubDate>
+        <link>http://decomplecting.org/blog/2014/11/30/the-angel-of-history/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/11/30/the-angel-of-history/</guid>
+        
+        
+        <category>technology</category>
+        
+        <category>philosophy</category>
+        
+        <category>history</category>
+        
+      </item>
+    
+      <item>
+        <title>Recovering From Clojure/conj</title>
+        <description>&lt;p&gt;Whew. I just got back from &lt;a href=&quot;http://clojure-conj.org&quot;&gt;Clojure/conj&lt;/a&gt; and boy, is my brain tired.&lt;/p&gt;
+
+&lt;p&gt;I’l be doing a more detailed and code-oriented post with &lt;a href=&quot;https://twitter.com/miltreder&quot;&gt;Milt Reder&lt;/a&gt; on the &lt;a href=&quot;http://yetanalytics.com/blog&quot;&gt;Yet Analytics blog&lt;/a&gt; this week, but I need to do a brain dump beofre I brainsplode.&lt;/p&gt;
+
+&lt;p&gt;So, getting the fanboy stuff out of the way: I got to shake Rich Hickey’s hand and thank him for all the work that went into Clojure and Datomic, i.e., the stuff that made programming fun again for me. So that was fun. This was at the conference party at the &lt;a href=&quot;http://www.crimemuseum.org/&quot;&gt;Crime Museum&lt;/a&gt;, which was a joy and a wonderful place for a party.&lt;/p&gt;
+
+&lt;p&gt;But, the actual conj…&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;brainsplosion-stage-1&quot;&gt;Brainsplosion: Stage 1&lt;/h3&gt;
+
+&lt;p&gt;On day one of the conj, I was in awe of the presentations I was seeing. Amazing work in ClojureScript, generative testing, JVM experiments…&lt;/p&gt;
+
+&lt;p&gt;I was especially excited to see &lt;a href=&quot;https://twitter.com/bbatsov&quot;&gt;Bozhidar Batsov&lt;/a&gt; talk about the state of &lt;a href=&quot;https://github.com/clojure-emacs/cider&quot;&gt;CIDER&lt;/a&gt;, since I use it every day in my development cycle with Emacs, and he’s also the author of &lt;a href=&quot;https://github.com/bbatsov/prelude&quot;&gt;Prelude&lt;/a&gt;, my baseline Emacs environment. CIDER has come a long way, and it’s only getting better. I can’t imagine going back to another development environment for Clojure. Although, the talk on &lt;a href=&quot;https://cursiveclojure.com/&quot;&gt;Cursive&lt;/a&gt; was fascinating, and I’ll certainly use it in &lt;a href=&quot;https://www.jetbrains.com/idea/&quot;&gt;IntelliJ&lt;/a&gt; if I’m writing Java with Clojure wrappers.&lt;/p&gt;
+
+&lt;p&gt;Just when I thought I’d had enough: the Rich Hickey keynote, Inside Transducers. This went way deeper than his &lt;a href=&quot;https://www.youtube.com/watch?v=6mTbuzafcII&quot;&gt;Strange Loop talk&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Rich uses &lt;a href=&quot;http://aquamacs.org/&quot;&gt;Aquamacs&lt;/a&gt;, apparently. Who knew?&lt;/p&gt;
+
+&lt;p&gt;Anyhow, I can’t go into the meat of transducers here, but I can say they’ll mean a massive refactoring of my main codebase, especially when dealing with transformations of data structures from core.async channels. Again, we’ll do a more technical post soon. I’m still processing this.&lt;/p&gt;
+
+&lt;h3 id=&quot;brainsplosion-stage-2&quot;&gt;Brainsplosion: Stage 2&lt;/h3&gt;
+
+&lt;p&gt;That night there were unsessions, and although there were a number of incredible topics, the one most relevant to our day-to-day (and the one we made it to) was the &lt;a href=&quot;http://www.datomic.com/&quot;&gt;Datomic&lt;/a&gt; unsession with &lt;a href=&quot;https://twitter.com/stuarthalloway&quot;&gt;Stu Halloway&lt;/a&gt;, one of the architects of Datomic. In less than an hour, the Q&amp;amp;A (only one of the Q’s being from me) helped me figure out my deployment strategy for Datomic on multiple peers on AWS behind an ELB instance. I’d been pondering this for months, and it all became clear.&lt;/p&gt;
+
+&lt;p&gt;On day 2, we learned some fascinating things about using async channels in ClojureScript, type systems, and Datomic superpowers. I took a break after lunch, and then that night was the party.&lt;/p&gt;
+
+&lt;h3 id=&quot;brainsplosion-final-meltdown&quot;&gt;Brainsplosion: Final Meltdown&lt;/h3&gt;
+
+&lt;p&gt;Today, there were great talks about data pipelines, more generative testing, and then…&lt;/p&gt;
+
+&lt;p&gt;I don’t even know how to start this.&lt;/p&gt;
+
+&lt;p&gt;Let me explain: I came to Clojure with very little Java experience. I learned “enough Java to get by” so I could write simple Android apps. Then I saw this talk by Steve Yegge:&lt;/p&gt;
+
+&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;//www.youtube.com/embed/tz-Bb-D6teE&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;If you prefer, the &lt;a href=&quot;http://steve-yegge.blogspot.com/2008/05/dynamic-languages-strike-back.html&quot;&gt;transcript is here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Did you notice this part?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;So javac, the Java compiler: what does it do? Well, it generates bytecode, does some optimizations presumably, and maybe tells you some errors. And then you ship it off to the JVM. And what happens to that bytecode? First thing that happens is they build a tree out of it, because the bytecode verifier has to go in and make sure you’re not doing anything [illegal]. And of course you can’t do it from a stream of bytes: it has to build a usable representation. So it effectively rebuilds the source code that you went to all that effort to put into bytecode.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There’s way more than that, but that’s the first thing that got the JVM raising hairs on the back of my neck.&lt;/p&gt;
+
+&lt;p&gt;So anyhow, I’ve been increasingly interested in JVM internals.&lt;/p&gt;
+
+&lt;p&gt;Like how when I first got into Clojure, I learned the main reason it lacked tail call optimization was the JVM’s security model.&lt;/p&gt;
+
+&lt;p&gt;Yeah. the security model prohibits the reuse of stack frames. I promise, I’ll come back to this.&lt;/p&gt;
+
+&lt;p&gt;So the closing keynote was by &lt;a href=&quot;https://twitter.com/briangoetz&quot;&gt;Brian Goetz&lt;/a&gt;, Java Language Architect at Oracle. The things I learned about the JVM and where it’s going broke my brain more than transducers.&lt;/p&gt;
+
+&lt;p&gt;First: we all know (or should know) that Java 8 is getting lambda expressions.&lt;/p&gt;
+
+&lt;p&gt;So what happened? Did they add a Function type to the JVM? Nope. Java 8 lambdas are syntactic sugar over interface implementations!&lt;/p&gt;
+
+&lt;p&gt;I’m not going to dive into code in this post, as it’s my decompression post, but this was one mind-blowing concept.&lt;/p&gt;
+
+&lt;p&gt;We also learned that while type erasure in generics isn’t going anywhere, we will be able to use generics with primitives. Which is pretty damned cool. So instead of getting the autoboxed &lt;code&gt;ArrayList&amp;lt;Integer&amp;gt;&lt;/code&gt;, you can get an unboxed &lt;code&gt;ArrayList&amp;lt;int&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I could be wrong, but the move away from autoboxing might allow for more direct access to unboxed primitives from Clojure, which would be a huge win for people who want to, for instance, program OpenGL games in Clojure and need unboxed floats and doubles in order so to do.&lt;/p&gt;
+
+&lt;p&gt;But here’s the jaw-dropper:&lt;/p&gt;
+
+&lt;p&gt;Part of the JVM’s security model, ever since the dark days of 1995, has been frame counting. I’m going to get this wrong, so please correct me in the comments. But my understanding is this: If there are 64 frames on the stack, and a new instruction is called, the JVM is going to make sure there are 65 frames on the stack, to prevent frame injection.&lt;/p&gt;
+
+&lt;p&gt;This is why we have this &lt;code&gt;loop&lt;/code&gt; and &lt;code&gt;recur&lt;/code&gt; bullshit in Clojure. I shouldn’t call it bullshit, it’s actually an elegant workaround for the limitations of the JVM. But it’s still a smelly workaround for the lack of tail call optimization we get in, say, Scheme.&lt;/p&gt;
+
+&lt;p&gt;Getting rid of this (in Brian’s words, IIRC, &lt;strong&gt;stupid&lt;/strong&gt; “security” implementation) means we can drop the prohibition against the reuse of stack frames and actually get tail recursion on the JVM without blowing the stack.&lt;/p&gt;
+
+&lt;p&gt;Admittedly, TCO was stated tot be low-priority for the Java language team at Oracle, but if the JVM changes to support it, I don’t see why we can’t have it in Clojure before Java gets it.&lt;/p&gt;
+
+&lt;p&gt;Whew. Brainmelt.&lt;/p&gt;
+
+&lt;p&gt;Which also happens to be the least popular sandwich at Denny’s.&lt;/p&gt;
+
+&lt;p&gt;So there’s my immediate Clojure/conj braindump. More will be explicated in posts here and on the Yet blog. But damn was that a good conference.&lt;/p&gt;
+
+&lt;p&gt;There were many times I felt like I had to be the stupidest person there.&lt;/p&gt;
+
+&lt;p&gt;But most of the people I talked to felt the same, so I guess I’m in good company, and in the right place.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 22 Nov 2014 20:37:56 -0500</pubDate>
+        <link>http://decomplecting.org/blog/2014/11/22/recovering-from-clojure-slash-conj/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/11/22/recovering-from-clojure-slash-conj/</guid>
+        
+        
+        <category>clojure</category>
+        
+        <category>clojure/conj</category>
+        
+        <category>coding</category>
+        
+        <category>mindblown</category>
+        
+      </item>
+    
+      <item>
+        <title>Emacs: Down the Rabbit Hole</title>
+        <description>&lt;p&gt;So I wrote &lt;a href=&quot;http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/&quot;&gt;Welcome to The Dark Side: Switching to Emacs&lt;/a&gt; in response to a tweet, but as any of my co-workers will attest, it doesn’t take much to get me started on my Emacs workflow.&lt;/p&gt;
+
+&lt;p&gt;I feel like a religious convert… I miss those simple, unadorned Vim services but I’m floored by the majesty of the stained glass and altar dressings and ritual of the Church of Emacs.&lt;/p&gt;
+
+&lt;p&gt;So before the jump, in the spirit of “I’ll show you mine if you show me yours,” my &lt;a href=&quot;https://github.com/canweriotnow/.emacs.d&quot;&gt;.emacs.d&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;an-unexpected-journey&quot;&gt;An Unexpected Journey&lt;/h2&gt;
+
+&lt;p&gt;I lived in my happy little Vim hobbit hole, smoking my pipe and enjoying my brandy. It was not a dirty hole, or a sandy hole, but a hobbit hole, which means comfort.&lt;/p&gt;
+
+&lt;p&gt;One day, a wizard visted me.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/post-img/mccarthy1.jpg&quot; alt=&quot;&#39;McCarthy at work at SAIL&#39;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And that’s when things began to get weird…&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;Okay, so maybe I didn’t receive a visit from the revenant spirit of John McCarthy, ghost of programming past, present and future. Or maybe I did.&lt;/p&gt;
+
+&lt;p&gt;Maybe Paul Graham just convinced me I was &lt;a href=&quot;http://www.paulgraham.com/avg.html&quot;&gt;coding in Blub&lt;/a&gt;, for whatever value of Blub I happened to be using.&lt;/p&gt;
+
+&lt;p&gt;See, the thing about Blub is it’s a mutable value. When you’re using C++ and Java comes along, you realize C++ was actually Blub. When you’re using Perl for your day-to-day and discover Python, and then Ruby, you realize that not only was Python Blub, but Perl was an even Blubbier Blub.&lt;/p&gt;
+
+&lt;p&gt;Ruby… oh, Ruby. I still love Ruby. But then something happened.&lt;/p&gt;
+
+&lt;p&gt;I need to backpedal a bit.&lt;/p&gt;
+
+&lt;p&gt;There’s &lt;em&gt;using&lt;/em&gt; a language, and then there’s &lt;em&gt;building&lt;/em&gt; something in it. I’d played with Scheme (&lt;a href=&quot;http://mitpress.mit.edu/sicp/&quot;&gt;SICP&lt;/a&gt; is wonderful), and even Common Lisp, and I knew enough to appreciate the Lisp-nature of Ruby which, when combined with its Smalltalk-nature, I thought made for hte perfect productive language.&lt;/p&gt;
+
+&lt;p&gt;But see, I was &lt;em&gt;building&lt;/em&gt; things in Ruby while I was &lt;em&gt;playing&lt;/em&gt; with Lisp.&lt;/p&gt;
+
+&lt;p&gt;Along comes Clojure.&lt;/p&gt;
+
+&lt;p&gt;I was working in a pretty isolated programming role that granted me a lot of de facto autonomy. So when I got a request for a new service, I thought “why not Clojure?”&lt;/p&gt;
+
+&lt;p&gt;We’re in late 2012 here, so bear with me.&lt;/p&gt;
+
+&lt;p&gt;My first Clojure project ran like a champ, was hailed as an unqualified success. Eventually I even &lt;a href=&quot;http://decomplecting.org/blog/2013/02/03/datetime-conversions-in-clojure/&quot;&gt;blogged about&lt;/a&gt; a piece of that project that handled datetimes.&lt;/p&gt;
+
+&lt;p&gt;Fast-forward to the present, I’ve written Clojure in &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime Text&lt;/a&gt;, &lt;a href=&quot;https://atom.io/&quot;&gt;Atom&lt;/a&gt;, mostly &lt;a href=&quot;http://www.vim.org/&quot;&gt;Vim&lt;/a&gt; with the help of some awesome plugins from &lt;a href=&quot;https://github.com/tpope&quot;&gt;Tim Pope&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Like I &lt;a href=&quot;http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/&quot;&gt;mentioned before&lt;/a&gt;, I’ve had a religious hatred for Emacs since the mid-1990s when I entered the *nix world and got involved in USENET.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/freebsdgirl&quot;&gt;@freebsdgirl&lt;/a&gt; &lt;a href=&quot;https://twitter.com/darkuncle&quot;&gt;@darkuncle&lt;/a&gt; ...and on that day, war broke out, destroying the fragile peace that had been brokered so long ago.&lt;/p&gt;&amp;mdash; jason λewis (@canweriotnow) &lt;a href=&quot;https://twitter.com/canweriotnow/status/527532324234489857&quot;&gt;October 29, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;The war is far from over…&lt;/p&gt;
+
+&lt;p&gt;…but, I digress.&lt;/p&gt;
+
+&lt;p&gt;I started the &lt;a href=&quot;http://www.meetup.com/Baltimore-Clojure/&quot;&gt;Baltimore Clojure Meetup&lt;/a&gt; and met more Emacs users than I had in one place in a long time. Again, I dismissed Emacs.&lt;/p&gt;
+
+&lt;p&gt;That is, until I found &lt;a href=&quot;http://lighttable.com/&quot;&gt;LightTable&lt;/a&gt; completely b0rked again and threw up my hands.&lt;/p&gt;
+
+&lt;p&gt;Perhaps I shouldn’t have eaten my hands to begin with… sorry, equivocation humor. Can’t resist.&lt;/p&gt;
+
+&lt;h2 id=&quot;welcome-to-emacs&quot;&gt;Welcome to Emacs&lt;/h2&gt;
+
+&lt;p&gt;So yeah, I went over my starter packages in the &lt;a href=&quot;http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/&quot;&gt;earlier post&lt;/a&gt;, but I didn’t talk about the full experience of discovery I underwent when I fully committed to emacs.&lt;/p&gt;
+
+&lt;p&gt;Sure, there’s the whole &lt;code&gt;cider-mode&lt;/code&gt; and &lt;code&gt;cider-jack-in&lt;/code&gt; and &lt;code&gt;cider-nrepl&lt;/code&gt; and even &lt;code&gt;cider-scratch&lt;/code&gt; that make LightTable’s inline evaluation modes look like child’s play (no offense to Chris Granger, LightTable is beautiful, I love it, but… y’know, Emacs).&lt;/p&gt;
+
+&lt;p&gt;So I did those things, started with &lt;a href=&quot;http://batsov.com/prelude/&quot;&gt;Prelude&lt;/a&gt;, added all the Clojure fun I could find, and got to work.&lt;/p&gt;
+
+&lt;p&gt;I also subscribed to &lt;a href=&quot;http://www.reddit.com/r/emacs&quot;&gt;/r/emacs&lt;/a&gt;, and did a little reading on the &lt;a href=&quot;http://www.emacswiki.org/emacs/&quot;&gt;Emacs Wiki&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Have you ever been comfortably reading (or coding) under a tree, and you see a white rabbit in a waistcoat with a pocket-watch run by complaining he’s late?&lt;/p&gt;
+
+&lt;p&gt;Thus such adventures begin.&lt;/p&gt;
+
+&lt;h2 id=&quot;eat-me--drink-me&quot;&gt;EAT ME / DRINK ME&lt;/h2&gt;
+
+&lt;p&gt;As I fell to the bottom (or so I thought) of the rabbit-hole, I found a bottle of &lt;code&gt;cider&lt;/code&gt; labeled &lt;em&gt;Drink Me,&lt;/em&gt; and so I drank the &lt;code&gt;cider&lt;/code&gt;. Suddenly, I could eval Clojure inline, jump to docstrings, jump to source for a fn, and it was wonderful.&lt;/p&gt;
+
+&lt;p&gt;The last time I tried Emacs, I always joked about how I was using Emacs but always edited my .emacs config with Vim.&lt;/p&gt;
+
+&lt;p&gt;“Not this time,” I thought, and used &lt;a href=&quot;http://www.emacswiki.org/emacs/Projectile&quot;&gt;Projectile&lt;/a&gt; to manage my &lt;code&gt;.emacs.d&lt;/code&gt; and edited my &lt;code&gt;user.el&lt;/code&gt; in Emacs. Oh, it was better! Then, thought I, I should put my &lt;code&gt;.emacs.d&lt;/code&gt; in source control (actually, it was demanded:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-conversation=&quot;none&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/canweriotnow&quot;&gt;@canweriotnow&lt;/a&gt; &lt;a href=&quot;https://twitter.com/willowdower&quot;&gt;@willowdower&lt;/a&gt; Now you must post your config on github so that we may critique it.&lt;/p&gt;&amp;mdash; Alex Redington (@holy_chao) &lt;a href=&quot;https://twitter.com/holy_chao/status/511574770388041728&quot;&gt;September 15, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;…yeah).&lt;/p&gt;
+
+&lt;p&gt;But then I realized I was doing the &lt;code&gt;⌘-Tab&lt;/code&gt; to iTerm to run &lt;code&gt;git ci -a&lt;/code&gt; (I pity the fool that doesn’t alias common git commoands) in… wait for it… &lt;code&gt;$EDITOR=/usr/bin/vim&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;That’s when I found a bit of fairy cake called &lt;a href=&quot;http://www.emacswiki.org/Magit&quot;&gt;magit&lt;/a&gt;, and I ate a bit of that and my Git workflow was inside of Emacs. Now it was a simple &lt;code&gt;M-x magit-status&lt;/code&gt; to view my working tree state, where I could hit &lt;code&gt;s&lt;/code&gt; to stage files for commit, and &lt;code&gt;C-c C-c&lt;/code&gt; to commit changes, and &lt;code&gt;P P&lt;/code&gt; to push.&lt;/p&gt;
+
+&lt;p&gt;Oh, it’s beautiful.&lt;/p&gt;
+
+&lt;h2 id=&quot;curiouser-and-curiouser&quot;&gt;Curiouser and Curiouser&lt;/h2&gt;
+
+&lt;p&gt;Well, if Emacs can handle my Git workflow, what &lt;em&gt;can’t&lt;/em&gt; it do, I wondered?&lt;/p&gt;
+
+&lt;p&gt;I went a bit mad playing with multiple buffer and frame layouts; on one occasion I opened a shell inside an emacs biffer and launched the command-line version of emacs in a shell inside the windowed version of emacs.&lt;/p&gt;
+
+&lt;p&gt;Recursive rabbit holes.&lt;/p&gt;
+
+&lt;p&gt;When you’re running the Cocoa-nested version of Emacs (not Aquamacs, fuck that noise, but just GNU Emacs packaged as a .app), you get some suggestions from the menus. Gnus for USENET or email, various games, a calendar…&lt;/p&gt;
+
+&lt;p&gt;Calendar?&lt;/p&gt;
+
+&lt;p&gt;That’s whan I discovered Org-Mode.&lt;/p&gt;
+
+&lt;h2 id=&quot;org-mode-ftw&quot;&gt;Org-Mode FTW&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://orgmode.org/&quot;&gt;Org Mode&lt;/a&gt; is an Emacs major mode that lets you organize your life. All of it. I’m not even going into detail here, it’s a deep, deep well. You can use it for a TODO list, sync it with your phone, use it &lt;a href=&quot;http://www.railsonmaui.com/blog/2014/03/05/octopress-setup-with-github-and-org-mode-v2/&quot;&gt;to write&lt;/a&gt; your &lt;a href=&quot;http://octopress.org&quot;&gt;Octopress blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;(Confession: This blog is powered by octopress, and although it’s now written in Emacs, I’ve not gone full crazy and started composing it with Org-Mode)&lt;/p&gt;
+
+&lt;h2 id=&quot;twittering-mode-wtf&quot;&gt;Twittering-Mode WTF&lt;/h2&gt;
+
+&lt;p&gt;That’s when I started going down the tunnel of “well, what &lt;em&gt;else&lt;/em&gt; can it do?”&lt;/p&gt;
+
+&lt;p&gt;And I discovered &lt;code&gt;twittering-mode&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;A quick &lt;code&gt;M-x package-install RET twittering-mode&lt;/code&gt; puts a Twitter client in your text editor. Like you always needed. &lt;code&gt;M-x twit&lt;/code&gt; will jump you right into your Twitter feed, &lt;code&gt;i&lt;/code&gt; will enable user icons (yes, user avatars right in goddamn Emacs), and &lt;code&gt;u&lt;/code&gt; will jump you to a buffer where you can compose a Tweet and hit &lt;code&gt;C-c C-c&lt;/code&gt; to send it.&lt;/p&gt;
+
+&lt;h2 id=&quot;playing-games&quot;&gt;Playing Games&lt;/h2&gt;
+
+&lt;p&gt;I’d be remiss if I didn’t mention that &lt;code&gt;M-x package-install RET 2048-mode&lt;/code&gt; will install a game of 2048 in Emacs. Because that’s really fucking important, you know?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Sigh&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;For good reason, Emacs comes standard with an AI psychotherapist named Eliza.&lt;/p&gt;
+
+&lt;p&gt;A quick &lt;code&gt;M-x doctor&lt;/code&gt; and you’re in therapy.&lt;/p&gt;
+
+&lt;p&gt;Which you’ll probably need.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-much-much-more&quot;&gt;…and Much, Much More&lt;/h2&gt;
+
+&lt;p&gt;I’ve barely scratched the surface, but I feel like this post is long enough. There’s so much down here, down the Emacs rabbit hole, that it will probably take me weeks to even catch up to whre I am right now; what I’ve described so far is my first few days with this ~~operating system~~ text editor.&lt;/p&gt;
+
+&lt;p&gt;But it’s a fun ride.&lt;/p&gt;
+
+&lt;h3 id=&quot;postscript&quot;&gt;Postscript&lt;/h3&gt;
+
+&lt;p&gt;Sorry for the Tolkien digression when my dominant allusion was &lt;em&gt;Alice in Wonderland…&lt;/em&gt; Emacs is a weird place.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 30 Oct 2014 06:05:25 -0400</pubDate>
+        <link>http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/10/30/emacs-down-the-rabbit-hole/</guid>
+        
+        
+        <category>emacs</category>
+        
+        <category>editors</category>
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Reify This!</title>
+        <description>&lt;p&gt;On the way home this afternoon I was asked to explain Clojure’s &lt;code&gt;reify&lt;/code&gt; macro, and apparently I did quite well, as an “Aha!” moment resulted. So I shall endeavour to explain &lt;code&gt;reify&lt;/code&gt; here in the hope that such a moment might be available to others.&lt;/p&gt;
+
+&lt;p&gt;Reify derives from the Latin &lt;em&gt;res,&lt;/em&gt; or “thing.” So &lt;code&gt;reify&lt;/code&gt; fundamentally means “make a &lt;em&gt;thing&lt;/em&gt; out of….&lt;/p&gt;
+
+&lt;h3 id=&quot;protocols-and-datatypes&quot;&gt;Protocols and Datatypes&lt;/h3&gt;
+
+&lt;p&gt;Clojure &lt;a href=&quot;http://grimoire.arrdem.com/1.6.0/clojure.core/defprotocol/&quot;&gt;protocols&lt;/a&gt; are similar to Java interfaces: They define a set of methods/functions purely by their signatures without providing implementation details. Declaring that a class implements an interface (in Java) or that a record implements a protocol (in Clojure) is a contract that specifies that the given class or record, in order to be valid, will provide concrete implementations of those methods/functions.&lt;/p&gt;
+
+&lt;p&gt;But sometimes we don’t need a reusable entity with reusable implementations that we can instantiate willy-nilly; sometimes we just need a &lt;em&gt;thing&lt;/em&gt; that implements those methods.&lt;/p&gt;
+
+&lt;p&gt;In Java, anonymous inner classes can fulfill this purpose. In Clojure, we have &lt;code&gt;reify.&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;that-nameless-thing&quot;&gt;That Nameless Thing&lt;/h3&gt;
+
+&lt;p&gt;OK, it’s not really going to be nameless… let’s say we have a putative protocol as follows:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;defprotocol &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;Foo&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baz&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;quux&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;So if we were creating a new record, we might do:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;defrecord &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;FooRecord&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;nv&quot;&gt;Foo&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;println &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baz&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;quux&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;* &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;Which is perfect if we need to repeatedly instantiate a FooRecord that implements the Foo protocol. But sometimes we just need a Foo and be done with it. And so, Clojure gives us &lt;code&gt;reify&lt;/code&gt;.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h3 id=&quot;one-off-things&quot;&gt;One-Off Things&lt;/h3&gt;
+
+&lt;p&gt;Instead of creating a defrecord (I’m going to leave the issue of runtime class generation for another post), we have the option of creating an individual, unique object that implements the desired protocol via &lt;code&gt;reify&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Like so:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;athing&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;reify&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Foo&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;bar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;println &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;baz&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;str/replace&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;re-pattern &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;st&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;    &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;quux&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;this&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;+ &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))))&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now I have &lt;code&gt;athing&lt;/code&gt; that implements the Foo protocol in a manner appropriate to its context, I don’t have to worry about declaring a general case (class, or defrecord), and I can use this object while it’s handy and let it get GC’d when I’m done with it.&lt;/p&gt;
+
+&lt;h3 id=&quot;incomplete-and-mostly-wrong&quot;&gt;Incomplete, and Mostly Wrong&lt;/h3&gt;
+
+&lt;p&gt;This is a really brief description of the &lt;code&gt;reify&lt;/code&gt; macro, and more details are available in the &lt;a href=&quot;http://grimoire.arrdem.com/1.6.0/clojure.core/reify/&quot;&gt;Clojure Grimoire&lt;/a&gt;. But it apparently clarified things for one person, so I thought I’d share it here.&lt;/p&gt;
+
+&lt;p&gt;But in the words of Steve Jobs…&lt;/p&gt;
+
+&lt;h3 id=&quot;and-one-more-thing&quot;&gt;And One More Thing…&lt;/h3&gt;
+
+&lt;p&gt;We’ve got a Lisp here in Clojure, right? We’re doing functional programming, so why all of this larking about with objects?&lt;/p&gt;
+
+&lt;p&gt;It’s not just Clojure’s Java heritage. Forms like &lt;code&gt;defrecord&lt;/code&gt;, &lt;code&gt;defprotocol&lt;/code&gt;, and &lt;code&gt;reify&lt;/code&gt; aren’t about Java interop.&lt;/p&gt;
+
+&lt;p&gt;Let me take you back in time…&lt;/p&gt;
+
+&lt;p&gt;Once upon a time, there was a common Lisp dialect, established by ANSI standard, called Common Lisp.&lt;/p&gt;
+
+&lt;p&gt;In the times of mist, the original neckbeards established that this Common Lisp should have an object system, known as &lt;a href=&quot;http://www.aiai.ed.ac.uk/~jeff/clos-guide.html&quot;&gt;CLOS&lt;/a&gt;, or the Common Lisp Object System.&lt;/p&gt;
+
+&lt;p&gt;Clojure has an object system as well; some of it seems ties to its underlying Java architecture (at the moment); the emergence of Clojure-CLR and cljs have opened up the possibilities for the object model, maybe?&lt;/p&gt;
+
+&lt;p&gt;Not really. OOP models aren’t all that creative. Ruby has quite a novel object model but other than that, OOP is pretty boring and let’s just forget about that unhappy chapter in our past, shall we?&lt;/p&gt;
+
+&lt;p&gt;Let’s.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 29 Oct 2014 01:22:41 -0400</pubDate>
+        <link>http://decomplecting.org/blog/2014/10/29/reify-this/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/10/29/reify-this/</guid>
+        
+        
+        <category>clojure</category>
+        
+        <category>coding</category>
+        
+      </item>
+    
+      <item>
+        <title>Welcome to the Dark Side: Switching to Emacs</title>
+        <description>&lt;p&gt;I have to start this post by saying I’ve been a dogmatic &lt;a href=&quot;http://www.vim.org/&quot;&gt;Vim&lt;/a&gt; partisan since the 1990’s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.&lt;/p&gt;
+
+&lt;p&gt;I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)… I couldn’t stand the chord keys and lack of modality.&lt;/p&gt;
+
+&lt;p&gt;Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I’m out there evangelizing Emacs (I’m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I’d offer some advice for those looking to convert to the Church of Emacs.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/post-img/ignucius.png&quot; alt=&quot;St. Ignucius&quot; /&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;p&gt;Primarily, this post is inspired by a request I received on Twitter:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/canweriotnow&quot;&gt;@canweriotnow&lt;/a&gt; Got any links for switching to emacs? macvim isn&amp;#39;t working in yosemite so I figure I might as well give emacs a real shot&lt;/p&gt;&amp;mdash; maɪk pətɛlə (@mikepatella) &lt;a href=&quot;https://twitter.com/mikepatella/status/525439599276220416&quot;&gt;October 24, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Instead of just compiling some links in a gist, I figured it was worthy of a blog post, so my seniors in the Church of Emacs can tell me where I’m wrong in the comments. But this is based on my experience converting from Vim to Emacs, so I’ll explain what worked for me.&lt;/p&gt;
+
+&lt;h3 id=&quot;emacs-prelude&quot;&gt;Emacs Prelude&lt;/h3&gt;
+
+&lt;p&gt;Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your &lt;code&gt;.emacs.d&lt;/code&gt; config directory in a way that makes it easy to configure without breaking shit.&lt;/p&gt;
+
+&lt;p&gt;The install instructions are &lt;a href=&quot;http://batsov.com/prelude/&quot;&gt;here&lt;/a&gt; and I highly recommend it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; I forgot something vitally important about prelude. Prelude comes with &lt;code&gt;guru-mode&lt;/code&gt; enabled by default, which disables your arrow keys and prods you to use Emacs default navigation commands instead (i.e. &lt;code&gt;C-p&lt;/code&gt; for up, &lt;code&gt;C-n&lt;/code&gt; for down, &lt;code&gt;C-b&lt;/code&gt; for left, &lt;code&gt;C-f&lt;/code&gt; for right). These commands are &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html&quot;&gt;worth knowing&lt;/a&gt;, but I felt like I was being trolled when my arrow keys just told me what chord combination to use instead. (As an aside, &lt;a href=&quot;http://thoughtbot.com&quot;&gt;Thoughtbot’s&lt;/a&gt; &lt;a href=&quot;https://github.com/thoughtbot/dotfiles&quot;&gt;dotfiles&lt;/a&gt; do the same thing with vim).&lt;/p&gt;
+
+&lt;p&gt;So you have two options: one is to &lt;code&gt;M-x guru-mode&lt;/code&gt; to toggle it every session. The more permanent solution is to add the following to your config (if you’re using Prelude, it should go in &lt;code&gt;~/.emacs.d/personal/preload/user.el&lt;/code&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;(setq prelude-guru nil)&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Just my personal preference, but something I found really annoying when I got started.&lt;/p&gt;
+
+&lt;p&gt;As far as all those useful navigation and editing commands, emacs (naturally) has a built-in tutorial accessible from &lt;code&gt;M-x help-with-tutorial&lt;/code&gt; or just &lt;code&gt;C-h t&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;UPDATE TO THE UPDATE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Bozhidar Batsov (the author of Prelude) pointed out in &lt;a href=&quot;http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/#comment-1651596560&quot;&gt;this comment&lt;/a&gt; that the current default behavior is to warn when arrow keys are used, not to disable them.&lt;/p&gt;
+
+&lt;p&gt;I hadn’t noticed the change, which came in with &lt;a href=&quot;https://github.com/bbatsov/prelude/commit/fda768992ef27f39f30178d4ebb8cbb559d5a3c6&quot;&gt;this commit&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find the configuration options for &lt;code&gt;guru-mode&lt;/code&gt; in the README &lt;a href=&quot;https://github.com/bbatsov/prelude#warnings-on-arrow-navigation-in-editor-buffers&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;emacs-for-mac-os-x&quot;&gt;Emacs for Mac OS X&lt;/h3&gt;
+
+&lt;p&gt;I really like using the packaged app version of Emacs available from &lt;a href=&quot;http://emacsformacosx.com/&quot;&gt;http://emacsformacosx.com/&lt;/a&gt;. It works great with Prelude, and doesn’t include the cruft that &lt;a href=&quot;http://aquamacs.org/&quot;&gt;Aquamacs&lt;/a&gt; tacks on to make it more Mac-ish.&lt;/p&gt;
+
+&lt;p&gt;You get a nice packaged Emacs.app that follows OS X conventions, but is really just straight GNU Emacs.&lt;/p&gt;
+
+&lt;h3 id=&quot;evil-mode&quot;&gt;evil-mode&lt;/h3&gt;
+
+&lt;p&gt;So, this is a touchy subject for me. When I first switched I used evil-mode to get my familiar Vim keybindings in emacs, but I actually found it made it more difficult to dive into emacs. Evil-mode is actually impressively complete when it comes to imposing vim functionality over top of emacs, but there are still times when you needto hit &lt;code&gt;C-x k&lt;/code&gt; or &lt;code&gt;M-x something-mode&lt;/code&gt; and the cognitive dissonance of switching between them was just overwhelming.&lt;/p&gt;
+
+&lt;p&gt;So I’d forego evil-mode and just keep &lt;a href=&quot;http://www.emacswiki.org/emacs/&quot;&gt;Emacs Wiki&lt;/a&gt; open in your browser for the first few days. It doesn’t take that long to dive in head-first.&lt;/p&gt;
+
+&lt;h3 id=&quot;projectile&quot;&gt;Projectile&lt;/h3&gt;
+
+&lt;p&gt;It ships with Prelude, so not a major headline, but it does help to keep your projects organized and navigate files.&lt;/p&gt;
+
+&lt;h2 id=&quot;on-lisp&quot;&gt;On Lisp&lt;/h2&gt;
+
+&lt;p&gt;Since this is really about Clojure development environments, I might as well dive into the inherent Lispiness of emacs. The extension language is a Lisp dialect, and very easy to learn and use. Emacs is so extensible that one of the running jokes is that it’s a great operating system in need of a decent text editor. I’ll get to that later.&lt;/p&gt;
+
+&lt;h3 id=&quot;cider-mode&quot;&gt;cider-mode&lt;/h3&gt;
+
+&lt;p&gt;Interacting with Clojure is amazing with &lt;a href=&quot;https://github.com/clojure-emacs/cider&quot;&gt;cider&lt;/a&gt;. You get an in-editor REPL, inline code evaluation, documentation lookup, a scratch buffer for arbitrary code evaluation, and a dozen other features. LightTable is nice with its InstaRepl but emacs/cider is the real deal. You cannot wish for a better Clojure dev environment… and the community agrees:&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;It&amp;#39;s great to see that &lt;a href=&quot;https://twitter.com/hashtag/CIDER?src=hash&quot;&gt;#CIDER&lt;/a&gt; is still the most popular &lt;a href=&quot;https://twitter.com/hashtag/Clojure?src=hash&quot;&gt;#Clojure&lt;/a&gt; dev environment &lt;a href=&quot;https://t.co/inB8bnlyEl&quot;&gt;https://t.co/inB8bnlyEl&lt;/a&gt; Guess I should release 0.8 soon! :)&lt;/p&gt;&amp;mdash; Bozhidar Batsov (@bbatsov) &lt;a href=&quot;https://twitter.com/bbatsov/status/525408420489613313&quot;&gt;October 23, 2014&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;code&gt;cider-jack-in&lt;/code&gt; connects to a &lt;code&gt;lein repl :headless&lt;/code&gt; instance, and &lt;code&gt;cider-mode&lt;/code&gt; gives you inline evaluation in any Clojure file. It’s amazing.&lt;/p&gt;
+
+&lt;h3 id=&quot;paredit-and-smartparens&quot;&gt;paredit and smartparens&lt;/h3&gt;
+
+&lt;p&gt;Ever have trouble keeping your parens balanced? You’re covered. &lt;a href=&quot;http://www.emacswiki.org/ParEdit&quot;&gt;paredit&lt;/a&gt; is the classic solution, but a lot of folks are using &lt;a href=&quot;https://github.com/Fuco1/smartparens&quot;&gt;smartparens&lt;/a&gt; instead… I’ve been using smartparens in strict mode and it’s made me a lot more disciplined about how I place my forms.&lt;/p&gt;
+
+&lt;h2 id=&quot;other-languages&quot;&gt;Other Languages&lt;/h2&gt;
+
+&lt;p&gt;I’ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it’s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio make life so much easier. But most of that is all the ridiculous build ceremony for Java, so that’s neither here nor there.&lt;/p&gt;
+
+&lt;h2 id=&quot;emacsos&quot;&gt;EmacsOS&lt;/h2&gt;
+
+&lt;p&gt;That joke about Emacs being an operating system? Not such a joke.&lt;/p&gt;
+
+&lt;p&gt;My favorite Twitter client right now is Emacs &lt;a href=&quot;http://www.emacswiki.org/TwitteringMode&quot;&gt;twittering-mode&lt;/a&gt;. There’s Gnus for Usenet and Email, and Emacs 24.4 just came out with an improved in-editor web browser called &lt;code&gt;eww&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Emacs is a deep, deep rabbit hole. The only way in is head first. But there’s so much you can do in here, and it’s a staggeringly powerful environment.&lt;/p&gt;
+
+&lt;p&gt;Welcome to the dark side. We have macros.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/post-img/vader-choke.jpg&quot; alt=&quot;Dark Side&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 23 Oct 2014 20:42:40 -0400</pubDate>
+        <link>http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/</guid>
+        
+        
+        <category>coding</category>
+        
+        <category>clojure</category>
+        
+        <category>emacs</category>
+        
+        <category>editors</category>
+        
+      </item>
+    
+      <item>
+        <title>Fear and Coding in Las Vegas</title>
+        <description>&lt;p&gt;I’m sitting in the first session of the &lt;a href=&quot;http://code.org&quot;&gt;Code.org&lt;/a&gt; K-5 PD
+training workshop.&lt;/p&gt;
+
+&lt;p&gt;It’s my first time in Las Vegas. We went to In-N-Out Burger (required if I
+travel out west), and I hit a $2k jackpot on penny slots. Not bad. And now
+we’re getting an overview of the K-5 Code.org curriculum. It’s pretty exciting.&lt;/p&gt;
+
+&lt;p&gt;I learned to code when I was 5. Learning BASIC on a TI 99/4A. This is pretty much
+my first computer:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://www.digibarn.com/collections/systems/ti99-4a-beige/Image84.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;!-- more --&gt;
+
+&lt;p&gt;I love this idea. I receive constant shit from friends, family, co-workers,
+whatever, that the fact that I started hacking at 5 is probably more scary and
+off-putting when I talk about promoting CS education in K-5 (which is why I’m
+in Vegas, thanks to Code.org).&lt;/p&gt;
+
+&lt;p&gt;But Real Soon Now™ everyone is going ot start coding at 5, and on somethimg way
+more sphisticated than a Texas Instruments 99/4A.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.org/about/leadership/hadi_partovi&quot;&gt;Hadi Partovi&lt;/a&gt; is describing how
+much “cooler” coding is becoming as I type. I’m glad. I can’t wait to start
+teaching this Code.org curriculum. Coding isn’t just for white boys in hoodies,
+It’s not some thing for introverted nerds (well, we might have invented it, but
+  we’re happy to share).&lt;/p&gt;
+
+&lt;p&gt;So it’s very exciting, and I’m so happy to be a part of it.&lt;/p&gt;
+
+&lt;p&gt;Hackers. Hackers everywhere.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 22 Aug 2014 17:11:52 -0400</pubDate>
+        <link>http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas/</guid>
+        
+        
+        <category>code</category>
+        
+        <category>k12</category>
+        
+        <category>education</category>
+        
+        <category>computer science</category>
+        
+      </item>
+    
+      <item>
+        <title>Have a Happy #Whyday With Whynot</title>
+        <description>&lt;p&gt;It’s August 19th, the day we remember why the lucky stiff’s poignant departure
+from the internet. &lt;a href=&quot;https://github.com/ruby-jokes&quot;&gt;ruby-jokes&lt;/a&gt; would hate to
+part with the &lt;a href=&quot;http://whyday.org/&quot;&gt;Whyday&lt;/a&gt; tradition of hacking on something just for fun and releasing
+it into the wild.&lt;/p&gt;
+
+&lt;p&gt;So it’s with great ambivalence we announce &lt;a href=&quot;https://github.com/ruby-jokes/whynot&quot;&gt;whynot&lt;/a&gt;,
+a gem that does irresponsible things because… why not?&lt;/p&gt;
+
+&lt;p&gt;whynot is for when you really just don’t care. It started as a single monkey-patch
+to &lt;code&gt;Kernel&lt;/code&gt;, called &lt;code&gt;maybe&lt;/code&gt;. &lt;code&gt;maybe&lt;/code&gt; takes a block, and may or may not yield the
+result. So for instance:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;figcaption class=&quot;code-highlight-caption&quot;&gt;&lt;span class=&quot;code-highlight-caption-title&quot;&gt;maybe&lt;/span&gt;&lt;/figcaption&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;maybe&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;z&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;  &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;z&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;About half the time, this will return &lt;code&gt;6&lt;/code&gt;. The other half, &lt;code&gt;nil&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;About three minutes after I pushed whynot to Github, &lt;a href=&quot;https://twitter.com/mi_c_ah&quot;&gt;Micah Gates&lt;/a&gt;
+added some kernel methods that allowed for a little more specificity: &lt;code&gt;mostly&lt;/code&gt;,
+which will execute your code about 2/3 of the time, and &lt;code&gt;occasionally&lt;/code&gt;, which
+has about a 1 in 5 chance of actually executing your code.&lt;/p&gt;
+
+&lt;h4 id=&quot;but-wait-theres-more&quot;&gt;But wait, there’s more!&lt;/h4&gt;
+
+&lt;p&gt;Just in time for the 0.0.4 release this afternoon, I decided sometimes, the truth
+doesn’t matter. Or, at least, you just don’t care. So I added &lt;code&gt;meh&lt;/code&gt;. Sometimes
+true, sometimes false, whatever. When you really don’t care, just do this:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;meh&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;I guess&amp;quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Nah.&amp;quot;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;I really wanted to create a global value like &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt; that was neither
+truthy nor falsey, but I’m not sure whether that’s possible, and I have a feeling
+it would require some C-extension hackery if it is.&lt;/p&gt;
+
+&lt;p&gt;Perhaps for a future release?&lt;/p&gt;
+
+&lt;p&gt;As always, pull requests are welcome, and use at your own risk.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 Aug 2014 21:26:36 -0400</pubDate>
+        <link>http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/</guid>
+        
+        
+        <category>ruby</category>
+        
+        <category>jokes</category>
+        
+        <category>gems</category>
+        
+      </item>
+    
+  </channel>
+</rss>

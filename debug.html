@@ -6,12 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Have a Happy #Whyday With Whynot</title>
-  <meta name="description" content="It’s August 19th, the day we remember why the lucky stiff’s poignant departurefrom the internet. ruby-jokes would hate topart with the Whyday tradition of ha...">
+  <title>(λ) Practical Elegance</title>
+  <meta name="description" content="code, ire, and song
+">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="canonical" href="http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/">
+  <link rel="canonical" href="http://decomplecting.org/debug.html">
   <link rel="alternate" type="application/rss+xml" title="(λ) Practical Elegance" href="http://decomplecting.org/feed.xml" />
   <link href='/stylesheets/all-634c4d42931b17a729110c0d3879e4ef.css' media='all' rel='stylesheet' type='text/css'>
   
@@ -74,75 +75,14 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Have a Happy #Whyday With Whynot</h1>
-    <p class="post-meta">Aug 19, 2014</p>
+    <h1 class="post-title"></h1>
   </header>
 
   <article class="post-content">
-    <p>It’s August 19th, the day we remember why the lucky stiff’s poignant departure
-from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
-part with the <a href="http://whyday.org/">Whyday</a> tradition of hacking on something just for fun and releasing
-it into the wild.</p>
-
-<p>So it’s with great ambivalence we announce <a href="https://github.com/ruby-jokes/whynot">whynot</a>,
-a gem that does irresponsible things because… why not?</p>
-
-<p>whynot is for when you really just don’t care. It started as a single monkey-patch
-to <code>Kernel</code>, called <code>maybe</code>. <code>maybe</code> takes a block, and may or may not yield the
-result. So for instance:</p>
-
-<figure class="code-highlight-figure"><figcaption class="code-highlight-caption"><span class="code-highlight-caption-title">maybe</span></figcaption><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">maybe</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">|</span>
-</div></div><div data-line="2" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
-</div></div><div data-line="3" class="code-highlight-row numbered"><div class="code-highlight-line">  <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
-</div></div><div data-line="4" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="k">end</span></div></div></pre></div></figure>
-
-<p>About half the time, this will return <code>6</code>. The other half, <code>nil</code>.</p>
-
-<p>About three minutes after I pushed whynot to Github, <a href="https://twitter.com/mi_c_ah">Micah Gates</a>
-added some kernel methods that allowed for a little more specificity: <code>mostly</code>,
-which will execute your code about 2/3 of the time, and <code>occasionally</code>, which
-has about a 1 in 5 chance of actually executing your code.</p>
-
-<h4 id="but-wait-theres-more">But wait, there’s more!</h4>
-
-<p>Just in time for the 0.0.4 release this afternoon, I decided sometimes, the truth
-doesn’t matter. Or, at least, you just don’t care. So I added <code>meh</code>. Sometimes
-true, sometimes false, whatever. When you really don’t care, just do this:</p>
-
-<figure class="code-highlight-figure"><div class="code-highlight"><pre class="code-highlight-pre"><div data-line="1" class="code-highlight-row numbered"><div class="code-highlight-line"><span class="n">meh</span> <span class="p">?</span> <span class="s2">&quot;I guess&quot;</span> <span class="p">:</span> <span class="s2">&quot;Nah.&quot;</span></div></div></pre></div></figure>
-
-<p>I really wanted to create a global value like <code>true</code> or <code>false</code> that was neither
-truthy nor falsey, but I’m not sure whether that’s possible, and I have a feeling
-it would require some C-extension hackery if it is.</p>
-
-<p>Perhaps for a future release?</p>
-
-<p>As always, pull requests are welcome, and use at your own risk.</p>
+    <p>foo</p>
 
   </article>
 
-  
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite">
-        <script type="text/javascript">
-      var disqus_shortname = 'canweriotnow';
-      
-        
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/';
-        var disqus_url = 'http://decomplecting.org/blog/2014/08/19/have-a-happy-why-day-with-whynot/';
-        var disqus_script = 'embed.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-    </div>
-  </section>
-  
 </div>
 
       </div>

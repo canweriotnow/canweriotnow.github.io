@@ -1,389 +1,169 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
+<html>
+
+  <head>
   <meta charset="utf-8">
-  <title>Letter to a Young (Or New) Programmer - Practical Elegance</title>
-  <meta name="author" content="Jason Lewis">
-
-  
-  <meta name="description" content="I get it. You went to college, graduated, got a job, and it&rsquo;s not what you wanted, hoped for, or whatever. Or maybe you&rsquo;ve been in the &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+  <title>Letter to a Young (or New) Programmer</title>
+  <meta name="description" content="I get it. You went to college, graduated, got a job, and it’s not what you wanted, hoped for, or whatever. Or maybe you’ve been in the same job for years, an...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  <link rel="alternate" type="application/rss+xml" title="(λ) Practical Elegance" href="http://decomplecting.org/feed.xml" />
+  <link href='/stylesheets/all-634c4d42931b17a729110c0d3879e4ef.css' media='all' rel='stylesheet' type='text/css'>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22978638-1']);
-    _gaq.push(['_trackPageview']);
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  ga('create', 'UA-22978638-1', 'auto');
+  ga('send', 'pageview');
 
-
+</script>
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">(</div>
-  	<div id="logoText">&#955;</div>
-  	<div id="logoRight">)</div>
-  	<div class="clear"></div>
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">(λ) Practical Elegance</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/">Posts</a>
+          
+        
+          
+          <a class="page-link" href="/archive/">Archive</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/feed/">Subscribe</a>
+          
+        
+      </div>
+    </nav>
+
   </div>
-  <h1><a href="/">Practical Elegance</a></h1>
-  
-    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
-  
-  <div class="clear"></div>
-</hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:decomplecting.org" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      
-        <h1 class="entry-title">Letter to a Young (Or New) Programmer</h1>
-      
-    
-    
-      <p class="meta">
-        
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-29T00:15:00-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
+  <header class="post-header">
+    <h1 class="post-title">Letter to a Young (or New) Programmer</h1>
+    <p class="post-meta">Sep 29, 2013</p>
   </header>
 
+  <article class="post-content">
+    <p>I get it. You went to college, graduated, got a job, and it’s not what you wanted, hoped for, or whatever. Or maybe you’ve been in the same job for years, and it’s just no fun anymore. And you look at your friends who are hackers. Yeah, we’re anti-social, maybe kinda jerks, but we have <em>so much fun</em> at work, and get pretty well compensated for <em>playing.</em></p>
 
-<div class="entry-content"><p>I get it. You went to college, graduated, got a job, and it&rsquo;s not what you wanted, hoped for, or whatever. Or maybe you&rsquo;ve been in the same job for years, and it&rsquo;s just no fun anymore. And you look at your friends who are hackers. Yeah, we&rsquo;re anti-social, maybe kinda jerks, but we have <em>so much fun</em> at work, and get pretty well compensated for <em>playing.</em></p>
-
-<p>And maybe you think, &ldquo;I&rsquo;ll go back to school and get a second B.S. in Computer Science!&rdquo;</p>
-
-<p>Chill out.</p>
-
-<p>Maybe you&rsquo;re just guessing this whole software thing is for you and you can&rsquo;t wait to get started!</p>
+<p>And maybe you think, “I’ll go back to school and get a second B.S. in Computer Science!”</p>
 
 <p>Chill out.</p>
 
-<p>I&rsquo;m going to encourage you, don&rsquo;t get me wrong. But I&rsquo;m also going to encourage you to be realistic. Because I want you to be successful, not just to sprint down a blind alley. We&rsquo;ll get through this, together.</p>
+<p>Maybe you’re just guessing this whole software thing is for you and you can’t wait to get started!</p>
 
-<h3>Lower your expectations</h3>
+<p>Chill out.</p>
 
-<p>Look, it&rsquo;s not all rainbows, lollipops and gumdrops. It&rsquo;s not. For me, coding is a pleasure and a privilege, but it&rsquo;s not for everyone. There are <em>extremely shitty jobs</em> out there, doing what I do, and just because I&rsquo;m on cloud nine, doesn&rsquo;t mean you will be.</p>
+<p>I’m going to encourage you, don’t get me wrong. But I’m also going to encourage you to be realistic. Because I want you to be successful, not just to sprint down a blind alley. We’ll get through this, together.</p>
 
-<p>Furthermore, even though it&rsquo;s a demand-side market (there are far more job openings than talented developers), the really great jobs are still competitive as hell.</p>
+<h3 id="lower-your-expectations">Lower your expectations</h3>
 
-<h3>Still here?</h3>
+<p>Look, it’s not all rainbows, lollipops and gumdrops. It’s not. For me, coding is a pleasure and a privilege, but it’s not for everyone. There are <em>extremely shitty jobs</em> out there, doing what I do, and just because I’m on cloud nine, doesn’t mean you will be.</p>
 
-<p>I haven&rsquo;t dissuaded you? Good. Good, young padawan.</p>
+<p>Furthermore, even though it’s a demand-side market (there are far more job openings than talented developers), the really great jobs are still competitive as hell.</p>
+
+<h3 id="still-here">Still here?</h3>
+
+<p>I haven’t dissuaded you? Good. Good, young padawan.</p>
 
 <!-- more -->
 
+<p>Since (for the couple of people toward whom this post is targeted directly) I haven taken it upon myself to train you as your Jedi master, I’m going to point you toward <a href="http://ruby-lang.org" title="Ruby">Ruby</a> as your first language. It’s not a perfect language, but it is beautiful, and presents a useful paradigm (object-oriented programming) in the purest form possible. So let’s start with some Ruby resources.</p>
 
-<p>Since (for the couple of people toward whom this post is targeted directly) I haven taken it upon myself to train you as your Jedi master, I&rsquo;m going to point you toward <a href="http://ruby-lang.org" title="Ruby">Ruby</a> as your first language. It&rsquo;s not a perfect language, but it is beautiful, and presents a useful paradigm (object-oriented programming) in the purest form possible. So let&rsquo;s start with some Ruby resources.</p>
-
-<p>Here&rsquo;s your pre-frosh curriculum:</p>
+<p>Here’s your pre-frosh curriculum:</p>
 
 <ul>
-<li><a href="http://tryruby.org" title="Try Ruby">Try Ruby</a> &ndash; Learn the basics, in your browser!</li>
-<li><a href="http://ruby.learncodethehardway.org/" title="Learn Ruby The Hard Way">Learn Ruby The Hard Way</a> &ndash; Zed Shaw is (maybe) a jerk, but his books are good. This is a good (free) place to start.</li>
-<li><a href="http://rubykoans.com/" title="Ruby Koans">Ruby Koans</a> &ndash; Once you&rsquo;ve got a little under your belt, <a href="http://rubykoans.com/" title="Ruby Koans">Ruby Koans</a> is your next step to make sure you&rsquo;ve got the basics under your belt.</li>
+  <li><a href="http://tryruby.org" title="Try Ruby">Try Ruby</a> - Learn the basics, in your browser!</li>
+  <li><a href="http://ruby.learncodethehardway.org/" title="Learn Ruby The Hard Way">Learn Ruby The Hard Way</a> - Zed Shaw is (maybe) a jerk, but his books are good. This is a good (free) place to start.</li>
+  <li><a href="http://rubykoans.com/" title="Ruby Koans">Ruby Koans</a> - Once you’ve got a little under your belt, <a href="http://rubykoans.com/" title="Ruby Koans">Ruby Koans</a> is your next step to make sure you’ve got the basics under your belt.</li>
 </ul>
 
+<h3 id="really-still-interested">Really? <em>Still</em> Interested?</h3>
 
-<h3>Really? <em>Still</em> Interested?</h3>
+<p>That’s fuckin’ awesome. I’m really happy you’re still into this.</p>
 
-<p>That&rsquo;s fuckin' awesome. I&rsquo;m really happy you&rsquo;re still into this.</p>
+<p>Now I get to knock you on your ass, grasshopper. Hopefully you’ve read my blog (or know me) enough to know how I feel about learning to build “apps” without a firm grounding in the fundamentals of computer science. So we’re going address this right the hell now.</p>
 
-<p>Now I get to knock you on your ass, grasshopper. Hopefully you&rsquo;ve read my blog (or know me) enough to know how I feel about learning to build &ldquo;apps&rdquo; without a firm grounding in the fundamentals of computer science. So we&rsquo;re going address this right the hell now.</p>
+<p>See, you didn’t major in Computer Science. That’s okay, niether did I. But that doesn’t mean you get a pass on it. We’re going to look at some resources to get you the grounding you need to really get up to snuff on the shit you’d better know if you want to be a Real Programmer™.</p>
 
-<p>See, you didn&rsquo;t major in Computer Science. That&rsquo;s okay, niether did I. But that doesn&rsquo;t mean you get a pass on it. We&rsquo;re going to look at some resources to get you the grounding you need to really get up to snuff on the shit you&rsquo;d better know if you want to be a Real Programmer™.</p>
+<p>Let’s get started.</p>
 
-<p>Let&rsquo;s get started.</p>
+<p>The first thing you need is math. I’m not talking your standard college Calculus or Algebra stuff, but the Real Math you need as a real programmer. So here’s the deal: read <a href="http://en.wikipedia.org/wiki/Concrete_Mathematics" title="Concrete Mathematics">Concrete Mathematics</a>.</p>
 
-<p>The first thing you need is math. I&rsquo;m not talking your standard college Calculus or Algebra stuff, but the Real Math you need as a real programmer. So here&rsquo;s the deal: read <a href="http://en.wikipedia.org/wiki/Concrete_Mathematics" title="Concrete Mathematics">Concrete Mathematics</a>.</p>
+<p><img class="[float-right]" src="http://ecx.images-amazon.com/images/I/518GBVWEBYL.jpg" alt="Concrete Mathematics" /></p>
 
-<p><img class="[float-right]" src="http://ecx.images-amazon.com/images/I/518GBVWEBYL.jpg" title="Concrete Mathematics" ></p>
-
-<p>This book, let me tell you, it was co-written by <a href="http://en.wikipedia.org/wiki/Donald_Knuth" title="Donald Knuth">Knuth</a>, because, let me tell you, Knuth weighed all the extant math texts in the balance and found them lacking. And if Knuth finds you lacking&hellip; jsut go home. This book tricks you into learning both algorithmic estimation and recursion in chapter one and never looks back. It is indispensible.</p>
+<p>This book, let me tell you, it was co-written by <a href="http://en.wikipedia.org/wiki/Donald_Knuth" title="Donald Knuth">Knuth</a>, because, let me tell you, Knuth weighed all the extant math texts in the balance and found them lacking. And if Knuth finds you lacking… jsut go home. This book tricks you into learning both algorithmic estimation and recursion in chapter one and never looks back. It is indispensible.</p>
 
 <p>Next, you need to grok a few things: computability theory, Turing machines, syntax and semantics, etc. Once upon a time, I would have shoved a copy of <a href="http://mitpress.mit.edu/sicp/" title="SICP">The Structure and Interpretation of Computer Programs</a> in your face so fast, it would have made your head spin.</p>
 
-<p><img class="[float-right]" src="http://upload.wikimedia.org/wikipedia/en/9/9d/SICP_cover.jpg" title="SICP" ></p>
+<p><img class="[float-right]" src="http://upload.wikimedia.org/wikipedia/en/9/9d/SICP_cover.jpg" alt="SICP" /></p>
 
-<p>But, young padawan, I&rsquo;ve decided to ease you into your Jedi training, and we&rsquo;ve settled on Ruby as your focus of practice before you graduate to the full Lisp light saber, so let&rsquo;s consider an alternative.</p>
+<p>But, young padawan, I’ve decided to ease you into your Jedi training, and we’ve settled on Ruby as your focus of practice before you graduate to the full Lisp light saber, so let’s consider an alternative.</p>
 
-<p><a href="http://oreilly.com/" title="O'Reilly">O'reilly</a> recently published an excellent intro to CS book called <a href="http://shop.oreilly.com/product/0636920025481.do" title="Understanding Computation">Understanding Computation</a>, which covers about half the material in SICP, but in Ruby, and probably more acessibly than SICP (aka The Wizard Book), especially since you (by now) have a passing familiarity with Ruby.</p>
+<p><a href="http://oreilly.com/" title="O'Reilly">O’reilly</a> recently published an excellent intro to CS book called <a href="http://shop.oreilly.com/product/0636920025481.do" title="Understanding Computation">Understanding Computation</a>, which covers about half the material in SICP, but in Ruby, and probably more acessibly than SICP (aka The Wizard Book), especially since you (by now) have a passing familiarity with Ruby.</p>
 
-<p>So let&rsquo;s see&hellip; we&rsquo;ve got you started on Ruby, given you some good resources on the basics of CS, and you&rsquo;re on your way&hellip; what next?</p>
+<p>So let’s see… we’ve got you started on Ruby, given you some good resources on the basics of CS, and you’re on your way… what next?</p>
 
-<h3>Resources</h3>
+<h3 id="resources">Resources</h3>
 
-<p>Now we get into the areas where you&rsquo;re exploring on your own, and just coming back to me for help and guidance. Congratualtions! You&rsquo;re nearly ready to graduate to a full Jedi.</p>
+<p>Now we get into the areas where you’re exploring on your own, and just coming back to me for help and guidance. Congratualtions! You’re nearly ready to graduate to a full Jedi.</p>
 
-<p>Let&rsquo;s see what&rsquo;s available.</p>
+<p>Let’s see what’s available.</p>
 
 <ul>
-<li><a href="http://codeschool.com/" title="Code School">Code School</a> is really great, and completely worth the US$25 a month they charge for their entire course catalog.</li>
-<li><a href="http://coursera.com/" title="Coursera">Coursera</a> has great CS classes, not typically Ruby based, but you&rsquo;ll learn some core concepts that will be extensively useful.</li>
-<li><a href="http://codecademy.com/" title="Codecademy">Codecademy</a> has free courses, of varying quality.</li>
-<li><a href="http://betamore.com/academy/" title="Betamore Academy">Betamore Academy</a> has 10-week courses here in Baltimore that will bootstrap you pretty well as a developer, as well as providing networking opportunities to find internships and jobs.</li>
+  <li><a href="http://codeschool.com/" title="Code School">Code School</a> is really great, and completely worth the US$25 a month they charge for their entire course catalog.</li>
+  <li><a href="http://coursera.com/" title="Coursera">Coursera</a> has great CS classes, not typically Ruby based, but you’ll learn some core concepts that will be extensively useful.</li>
+  <li><a href="http://codecademy.com/" title="Codecademy">Codecademy</a> has free courses, of varying quality.</li>
+  <li><a href="http://betamore.com/academy/" title="Betamore Academy">Betamore Academy</a> has 10-week courses here in Baltimore that will bootstrap you pretty well as a developer, as well as providing networking opportunities to find internships and jobs.</li>
 </ul>
 
+<p>I’ll try to update this in the future. And you know you can always get in touch and I’m more than happy to give you a hand. There’s nothing more exciting to me than smart folks falling in love with coding. Happy trails, bro, and remember to keep it fun.</p>
 
-<p>I&rsquo;ll try to update this in the future. And you know you can always get in touch and I&rsquo;m more than happy to give you a hand. There&rsquo;s nothing more exciting to me than smart folks falling in love with coding. Happy trails, bro, and remember to keep it fun.</p>
-
-<p><em>Update: I&rsquo;ve posted a follow-up at <a href="/blog/2013/11/12/just-get-hacking/">&ldquo;Just Get Hacking&rdquo;</a></em></p>
-</div>
+<p><em>Update: I’ve posted a follow-up at <a href="/blog/2013/11/12/just-get-hacking/">“Just Get Hacking”</a></em></p>
 
 
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">Jason Lewis</span></span>
-
-      
-
-
-
-
-
-
-
+  </article>
 
   
-
-
-<time datetime="2013-09-29T00:15:00-04:00" pubdate data-updated="true"></time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/coding/'>coding</a>, <a class='category' href='/blog/categories/getting-started/'>getting started</a>, <a class='category' href='/blog/categories/learning/'>learning</a>, <a class='category' href='/blog/categories/new-hackers/'>new hackers</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/" data-via="" data-counturl="http://decomplecting.org/blog/2013/09/29/letter-to-a-young-or-new-programmer/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left articlenav" href="/blog/2013/09/02/return-of-the-job-destroyer/" title="Previous Post: Return of the Job Destroyer">&laquo; Return of the Job Destroyer</a>
-      
-      
-        <a class="basic-alignment right articlenav" href="/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/" title="Next Post: Maybe EdTech Is Another Leaky Abstraction">Maybe EdTech Is Another Leaky Abstraction &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <a href="http://internetdefenseleague.org">
-    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
-  </a>
-</section>
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot's Dilemma</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'canweriotnow',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-<a class="twitter-timeline" height="300" data-dnt="true" href="https://twitter.com/canweriotnow" data-widget-id="365195555808358401">Tweets by @canweriotnow</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
-  
-</section>
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/110736810583208350607?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
+    <div id="disqus_thread" aria-live="polite">
+        <script type="text/javascript">
       var disqus_shortname = 'canweriotnow';
       
         
@@ -398,43 +178,71 @@
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
+    </div>
+  </section>
+  
+</div>
 
+      </div>
+    </div>
 
+    <footer class="site-footer">
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+  <div class="wrapper">
 
+    <h2 class="footer-heading">(λ) Practical Elegance</h2>
 
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>(λ) Practical Elegance</li>
+          <li><a href="mailto:jason@decomplecting.org">jason@decomplecting.org</a></li>
+        </ul>
+      </div>
 
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/canweriotnow">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
 
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
 
+          
+          <li>
+            <a href="https://twitter.com/canweriotnow">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
 
+      <div class="footer-col  footer-col-3">
+        <p class="text">code, ire, and song
+</p>
+      </div>
+    </div>
 
+  </div>
 
+</footer>
 
+  </body>
 
-</body>
 </html>

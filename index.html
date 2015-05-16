@@ -1,843 +1,915 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
+<html>
+
+  <head>
   <meta charset="utf-8">
-  <title>Practical Elegance</title>
-  <meta name="author" content="Jason Lewis">
-
-  
-  <meta name="description" content="I was recently corresponding with a professor of mine about Wittgenstein, planning to set up a meeting to have a chat and catch up. Oh, and talk &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+  <title>(λ) Practical Elegance</title>
+  <meta name="description" content="code, ire, and song
+">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="canonical" href="http://decomplecting.org/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="http://feeds.feedburner.com/PracticalElegance" rel="alternate" title="Practical Elegance" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
+  <link rel="alternate" type="application/rss+xml" title="(λ) Practical Elegance" href="http://decomplecting.org/feed.xml" />
+  <link href='/stylesheets/all-634c4d42931b17a729110c0d3879e4ef.css' media='all' rel='stylesheet' type='text/css'>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22978638-1']);
-    _gaq.push(['_trackPageview']);
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  ga('create', 'UA-22978638-1', 'auto');
+  ga('send', 'pageview');
 
-
+</script>
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">(</div>
-  	<div id="logoText">&#955;</div>
-  	<div id="logoRight">)</div>
-  	<div class="clear"></div>
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">(λ) Practical Elegance</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/">Posts</a>
+          
+        
+          
+          <a class="page-link" href="/archive/">Archive</a>
+          
+        
+          
+          <a class="page-link" href="/about/">About</a>
+          
+        
+          
+          <a class="page-link" href="/feed/">Subscribe</a>
+          
+        
+      </div>
+    </nav>
+
   </div>
-  <h1><a href="/">Practical Elegance</a></h1>
-  
-    <h2>"Elegance is not a dispensable luxury." - Edsgar Dijkstra</h2>
-  
-  <div class="clear"></div>
-</hgroup>
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="http://feeds.feedburner.com/PracticalElegance" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:decomplecting.org" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="home">
+
+    <h1 class="page-heading">
+        <em>Elegance is not a dispensable luxury</em>
+    </h1>
+
+  <ul class="post-list">
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a></h1>
-      
+      <li>
+        <span class="post-meta">May 16, 2015</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2015/05/16/hello-octopress-3-0/">Hello, Octopress 3.0!</a>
+        </h2>
+        <p>
+            <p>If you’ve been here before, my blog probably either looks much cleaner
+and less busy, or it looks like git decided to lose all of my layout and
+CSS files in some industrial accident. Well, it’s no accident, and it’s
+not (exactly) a redesign.</p>
+
+
+        </p>
+      </li>
     
+      <li>
+        <span class="post-meta">Dec 22, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a>
+        </h2>
+        <p>
+            <p>I was recently corresponding with a professor of mine about Wittgenstein, planning to set up a meeting to have a chat and catch up. Oh, and talk about Wittgenstein, as I found another place where philosophy is relevant to programming. In my last email to him, I happened to ask after one of his colleagues, who was my advisor, mentor, and one of the most influential people in my life.</p>
+
+
+        </p>
+      </li>
     
-      <p class="meta">
-        
+      <li>
+        <span class="post-meta">Dec 11, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot's Dilemma</a>
+        </h2>
+        <p>
+            <p>If it hasn’t been clear up to now, I love <a href="http://clojure.org">Clojure</a>. I wish I could write Clojure all day, every day. But Clojure isn’t my first language, and possibly not even the language I grok most completely.</p>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-12-22T22:05:52-05:00" pubdate data-updated="true"></time>
-        
-      </p>
+        </p>
+      </li>
     
-  </header>
+      <li>
+        <span class="post-meta">Nov 30, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
+        </h2>
+        <p>
+            <p>It all started with a Paul Klee print, or perhaps that’s where it ended:</p>
 
 
-  <div class="entry-content"><p>I was recently corresponding with a professor of mine about Wittgenstein, planning to set up a meeting to have a chat and catch up. Oh, and talk about Wittgenstein, as I found another place where philosophy is relevant to programming. In my last email to him, I happened to ask after one of his colleagues, who was my advisor, mentor, and one of the most influential people in my life.</p>
-
-<p>Then I remembered Google, and the first result was <a href="http://articles.baltimoresun.com/2014-03-01/news/bs-md-ob-walt-fuchs-20140228_1_towson-university-philosophy-liberal-arts-building">an obituary</a>.</p>
-
-<p>I was devastated. Indescribably so. Biblicallly devastated; I literally rent my garments in grief. I really liked that shirt, too.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
+        </p>
+      </li>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot&#8217;s Dilemma</a></h1>
-      
+      <li>
+        <span class="post-meta">Nov 22, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering From Clojure/conj</a>
+        </h2>
+        <p>
+            <p>Whew. I just got back from <a href="http://clojure-conj.org">Clojure/conj</a> and boy, is my brain tired.</p>
+
+
+        </p>
+      </li>
     
+      <li>
+        <span class="post-meta">Oct 30, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down the Rabbit Hole</a>
+        </h2>
+        <p>
+            <p>So I wrote <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a> in response to a tweet, but as any of my co-workers will attest, it doesn’t take much to get me started on my Emacs workflow.</p>
+
+
+        </p>
+      </li>
     
-      <p class="meta">
-        
+      <li>
+        <span class="post-meta">Oct 29, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/10/29/reify-this/">Reify This!</a>
+        </h2>
+        <p>
+            <p>On the way home this afternoon I was asked to explain Clojure’s <code>reify</code> macro, and apparently I did quite well, as an “Aha!” moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment might be available to others.</p>
 
 
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-12-11T20:58:13-05:00" pubdate data-updated="true"></time>
-        
-      </p>
+        </p>
+      </li>
     
-  </header>
+      <li>
+        <span class="post-meta">Oct 23, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to the Dark Side: Switching to Emacs</a>
+        </h2>
+        <p>
+            <p>I have to start this post by saying I’ve been a dogmatic <a href="http://www.vim.org/">Vim</a> partisan since the 1990’s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.</p>
 
 
-  <div class="entry-content"><p>If it hasn&rsquo;t been clear up to now, I love <a href="http://clojure.org">Clojure</a>. I wish I could write Clojure all day, every day. But Clojure isn&rsquo;t my first language, and possibly not even the language I grok most completely.</p>
-
-<p>I jump between programming languages all the time, and end up having to do the most jumping at work because I probably have at least a passing familiarity with the most languages for anyone on our team. And that&rsquo;s fine.</p>
-
-<p>What I want to ponder on here is the challenges of &ldquo;speaking&rdquo; multiple programming languages, learning new ones, and moving between them.</p>
-
-<p>I started programming BASIC when I was about five years old. By the time I hit high school, I was running Linux and writing Perl, C, and Bash scripts (throw some sed and awk in there for good measure, though one wouldn&rsquo;t call them &ldquo;languages&rdquo; as such).</p>
-
-<p>Full disclosure: I have written some PHP. But as the illusory Bertolt Brecht in <a href="http://en.wikipedia.org/wiki/Cradle_Will_Rock"><em>Cradle Will Rock</em></a> tells the playwright Marc Blitzstein, &ldquo;Capitalism makes prostitutes of us all.&rdquo;</p>
-
-<p>Okay, back to programming&hellip;</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/12/11/the-polyglots-dilemma/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
+        </p>
+      </li>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-11-30T00:17:00-05:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It all started with a Paul Klee print, or perhaps that&rsquo;s where it ended:</p>
-
-<p><img class="center" src="/images/post-img/angelus_novus.jpg" title="Angelus Novus" ></p>
-
-<p>The <a href="http://en.wikipedia.org/wiki/Frankfurt_School">Frankfurt School</a> philosopher <a href="http://en.wikipedia.org/wiki/Walter_Benjamin">Walter Benjamin</a> owned this print for many years, and one of his most well-know quotations from <a href="https://www.marxists.org/reference/archive/benjamin/1940/history.htm">&ldquo;On The Concept of History&rdquo;</a> (also known as &ldquo;Theses on The Philosophy of History&rdquo;) is inspired by this painting.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/11/30/the-angel-of-history/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-11-22T20:37:56-05:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Whew. I just got back from <a href="http://clojure-conj.org">Clojure/conj</a> and boy, is my brain tired.</p>
-
-<p>I&#8217;l be doing a more detailed and code-oriented post with <a href="https://twitter.com/miltreder">Milt Reder</a> on the <a href="http://yetanalytics.com/blog">Yet Analytics blog</a> this week, but I need to do a brain dump beofre I brainsplode.</p>
-
-<p>So, getting the fanboy stuff out of the way: I got to shake Rich Hickey&rsquo;s hand and thank him for all the work that went into Clojure and Datomic, i.e., the stuff that made programming fun again for me. So that was fun. This was at the conference party at the <a href="http://www.crimemuseum.org/">Crime Museum</a>, which was a joy and a wonderful place for a party.</p>
-
-<p>But, the actual conj&hellip;</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-30T06:05:25-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>So I wrote <a href="http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a> in response to a tweet, but as any of my co-workers will attest, it doesn&rsquo;t take much to get me started on my Emacs workflow.</p>
-
-<p>I feel like a religious convert&hellip; I miss those simple, unadorned Vim services but I&rsquo;m floored by the majesty of the stained glass and altar dressings and ritual of the Church of Emacs.</p>
-
-<p>So before the jump, in the spirit of &ldquo;I&rsquo;ll show you mine if you show me yours,&rdquo; my <a href="https://github.com/canweriotnow/.emacs.d">.emacs.d</a>.</p>
-
-<h2>An Unexpected Journey</h2>
-
-<p>I lived in my happy little Vim hobbit hole, smoking my pipe and enjoying my brandy. It was not a dirty hole, or a sandy hole, but a hobbit hole, which means comfort.</p>
-
-<p>One day, a wizard visted me.</p>
-
-<p><img src="/images/post-img/mccarthy1.jpg" title="'McCarthy at work at SAIL'" ></p>
-
-<p>And that&rsquo;s when things began to get weird&hellip;</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/10/29/reify-this/">Reify This!</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-29T01:22:41-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>On the way home this afternoon I was asked to explain Clojure&rsquo;s <code>reify</code> macro, and apparently I did quite well, as an &ldquo;Aha!&rdquo; moment resulted. So I shall endeavour to explain <code>reify</code> here in the hope that such a moment might be available to others.</p>
-
-<p>Reify derives from the Latin <em>res,</em> or &ldquo;thing.&rdquo; So <code>reify</code> fundamentally means &ldquo;make a <em>thing</em> out of&hellip;.</p>
-
-<h3>Protocols and Datatypes</h3>
-
-<p>Clojure <a href="http://grimoire.arrdem.com/1.6.0/clojure.core/defprotocol/">protocols</a> are similar to Java interfaces: They define a set of methods/functions purely by their signatures without providing implementation details. Declaring that a class implements an interface (in Java) or that a record implements a protocol (in Clojure) is a contract that specifies that the given class or record, in order to be valid, will provide concrete implementations of those methods/functions.</p>
-
-<p>But sometimes we don&rsquo;t need a reusable entity with reusable implementations that we can instantiate willy-nilly; sometimes we just need a <em>thing</em> that implements those methods.</p>
-
-<p>In Java, anonymous inner classes can fulfill this purpose. In Clojure, we have <code>reify.</code></p>
-
-<h3>That Nameless Thing</h3>
-
-<p>OK, it&rsquo;s not really going to be nameless&hellip; let&rsquo;s say we have a putative protocol as follows:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defprotocol </span><span class="nv">Foo</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">])</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">])</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So if we were creating a new record, we might do:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='clojure'><span class='line'><span class="p">(</span><span class="kd">defrecord </span><span class="nv">FooRecord</span>
-</span><span class='line'>    <span class="nv">Foo</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">bar</span> <span class="p">[</span><span class="nv">this</span><span class="p">]</span> <span class="p">(</span><span class="nb">println </span><span class="nv">this</span><span class="p">))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">baz</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">st</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="nv">st</span><span class="p">))</span>
-</span><span class='line'>    <span class="p">(</span><span class="nf">quux</span> <span class="p">[</span><span class="nv">this</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="nv">this</span> <span class="p">(</span><span class="nb">* </span><span class="nv">x</span> <span class="nv">y</span><span class="p">))))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Which is perfect if we need to repeatedly instantiate a FooRecord that implements the Foo protocol. But sometimes we just need a Foo and be done with it. And so, Clojure gives us <code>reify</code>.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/10/29/reify-this/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Welcome to The Dark Side: Switching to Emacs</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-10-23T20:42:40-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I have to start this post by saying I&rsquo;ve been a dogmatic <a href="http://www.vim.org/">Vim</a> partisan since the 1990&rsquo;s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.</p>
-
-<p>I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)&hellip; I couldn&rsquo;t stand the chord keys and lack of modality.</p>
-
-<p>Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I&rsquo;m out there evangelizing Emacs (I&rsquo;m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I&rsquo;d offer some advice for those looking to convert to the Church of Emacs.</p>
-
-<p><img src="/images/post-img/ignucius.png" alt="St. Ignucius" /></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/08/22/fear-and-coding-in-las-vegas/">Fear and Coding in Las Vegas</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-22T17:11:52-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;m sitting in the first session of the <a href="http://code.org">Code.org</a> K-5 PD
+      <li>
+        <span class="post-meta">Aug 22, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/08/22/fear-and-coding-in-las-vegas/">Fear and Coding in Las Vegas</a>
+        </h2>
+        <p>
+            <p>I’m sitting in the first session of the <a href="http://code.org">Code.org</a> K-5 PD
 training workshop.</p>
 
-<p>It&rsquo;s my first time in Las Vegas. We went to In-N-Out Burger (required if I
-travel out west), and I hit a $2k jackpot on penny slots. Not bad. And now
-we&rsquo;re getting an overview of the K-5 Code.org curriculum. It&rsquo;s pretty exciting.</p>
 
-<p>I learned to code when I was 5. Learning BASIC on a TI 99/4A. This is pretty much
-my first computer:</p>
-
-<p><img src="http://www.digibarn.com/collections/systems/ti99-4a-beige/Image84.jpg"></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/08/22/fear-and-coding-in-las-vegas/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
+        </p>
+      </li>
     
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have A Happy #Whyday with whynot</a></h1>
-      
-    
-    
-      <p class="meta">
-        
+      <li>
+        <span class="post-meta">Aug 19, 2014</span>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-08-19T21:26:36-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It&rsquo;s August 19th, the day we remember why the lucky stiff&rsquo;s poignant departure
+        <h2>
+          <a class="post-link" href="/blog/2014/08/19/have-a-happy-why-day-with-whynot/">Have a Happy #Whyday With Whynot</a>
+        </h2>
+        <p>
+            <p>It’s August 19th, the day we remember why the lucky stiff’s poignant departure
 from the internet. <a href="https://github.com/ruby-jokes">ruby-jokes</a> would hate to
 part with the <a href="http://whyday.org/">Whyday</a> tradition of hacking on something just for fun and releasing
 it into the wild.</p>
 
-<p>So it&rsquo;s with great ambivalence we announce <a href="https://github.com/ruby-jokes/whynot">whynot</a>,
-a gem that does irresponsible things because&hellip; why not?</p>
 
-<p>whynot is for when you really just don&rsquo;t care. It started as a single monkey-patch
-to <code>Kernel</code>, called <code>maybe</code>. <code>maybe</code> takes a block, and may or may not yield the
-result. So for instance:</p>
-
-<figure class='code'><figcaption><span>maybe </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">maybe</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">|</span>
-</span><span class='line'>  <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span>
-</span><span class='line'>  <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">z</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>About half the time, this will return <code>6</code>. The other half, <code>nil</code>.</p>
-
-<p>About three minutes after I pushed whynot to Github, <a href="https://twitter.com/mi_c_ah">Micah Gates</a>
-added some kernel methods that allowed for a little more specificity: <code>mostly</code>,
-which will execute your code about 2/3 of the time, and <code>occasionally</code>, which
-has about a 1 in 5 chance of actually executing your code.</p>
-
-<h4>But wait, there&rsquo;s more!</h4>
-
-<p>Just in time for the 0.0.4 release this afternoon, I decided sometimes, the truth
-doesn&rsquo;t matter. Or, at least, you just don&rsquo;t care. So I added <code>meh</code>. Sometimes
-true, sometimes false, whatever. When you really don&rsquo;t care, just do this:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">meh</span> <span class="p">?</span> <span class="s2">&quot;I guess&quot;</span> <span class="p">:</span> <span class="s2">&quot;Nah.&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I really wanted to create a global value like <code>true</code> or <code>false</code> that was neither
-truthy nor falsey, but I&rsquo;m not sure whether that&rsquo;s possible, and I have a feeling
-it would require some C-extension hackery if it is.</p>
-
-<p>Perhaps for a future release?</p>
-
-<p>As always, pull requests are welcome, and use at your own risk.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2014/06/10/on-comments-and-moderation/">On Comments And Moderation</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-10T15:01:23-04:00" pubdate data-updated="true"></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve always taken a hands-off approach to moderating comments, feeling that it was a form of censorship to restrict discussion even on my own blog. It&rsquo;s worked pretty well; I feel like prior to yesterday, I&rsquo;ve deleted less than three comments in the three years I&rsquo;ve maintained this blog.</p>
-
-<p>But yesterday&rsquo;s post, <a href="http://decomplecting.org/blog/2014/06/09/im-telling/">I&rsquo;m Telling :: Employer-Tattling and The Decline of Agency</a>, brought in some of the nastiest of trolls, and I had to re-evaluate that policy. The post also got so many comments I was going crazy trying to weigh my anti-censorship views against comments that bordered on hate speech.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2014/06/10/on-comments-and-moderation/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="2">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <a href="http://internetdefenseleague.org">
-    <img src="http://internetdefenseleague.org/images/badges/final/super_badge.png" alt="Member of The Internet Defense League" />
-  </a>
-</section>
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/12/22/in-memoriam-wolfgang-walter-fuchs/">In Memoriam: Wolfgang Walter Fuchs</a>
+        </p>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/11/the-polyglots-dilemma/">The Polyglot&#8217;s Dilemma</a>
+      <li>
+        <span class="post-meta">Jun 10, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/06/10/on-comments-and-moderation/">On Comments and Moderation</a>
+        </h2>
+        <p>
+            <p>I’ve always taken a hands-off approach to moderating comments, feeling that it was a form of censorship to restrict discussion even on my own blog. It’s worked pretty well; I feel like prior to yesterday, I’ve deleted less than three comments in the three years I’ve maintained this blog.</p>
+
+
+        </p>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/11/30/the-angel-of-history/">The Angel of History</a>
+      <li>
+        <span class="post-meta">Jun 9, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/06/09/im-telling/">I'm Telling :: Employer-Tattling and the Decline of Agency</a>
+        </h2>
+        <p>
+            <p>The other night Twitter was abuzz with controversy and drama, as per usual. One of those threads (which I’ll get to momentarily) invovled what I’ll refer to as “employer-tattling,” and <a href="https://twitter.com/soederpop">Jon Soeder</a> (laudably without drawing attention to the ongoing echo chamber), tweeted this:</p>
+
+
+        </p>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/11/22/recovering-from-clojure-slash-conj/">Recovering from Clojure/conj</a>
+      <li>
+        <span class="post-meta">Mar 11, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/03/11/scream-when-you-learn/">Scream When You Learn</a>
+        </h2>
+        <p>
+            <p><em>Apologies to Charles Bukowski</em></p>
+
+
+        </p>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/10/30/emacs-down-the-rabbit-hole/">Emacs: Down The Rabbit Hole</a>
+      <li>
+        <span class="post-meta">Jan 27, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/01/27/discussing-privilege-educon-reflections-number-1/">Discussing Privilege: EduCon Reflections #1</a>
+        </h2>
+        <p>
+            <p>While I’m planning a full “overview” reflection on <a href="http://educonphilly.org">EduCon 2.6</a>, I was (pardon the pun) privileged to participate in a conversation entitled <a href="http://educonphilly.org/conversations/The_Privileged_Voices_in_Education">“The Privileged Voices in Education”</a>, facilitated by <a href="https://twitter.com/audreywatters">Audrey Watters</a> and <a href="https://twitter.com/TheJLV">Jose Vilson</a>. Audrey has written about the session on <a href="http://www.hackeducation.com/2014/01/26/the-privileged-voices-in-education-educon/?utm_content=buffer01abf&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">her blog</a>, and Jose has written about it on <a href="http://thejosevilson.com/educon-addressing-privilege-developing-learners-race/">his blog</a>, so you can refer to those for context. But I want to talk about my takeaways from that wonderful session and what came after while it’s fresh in my mind, and then work on a more general EduCon post.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jan 23, 2014</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2014/01/23/new-from-ruby-jokes-taint-aliases/">New From Ruby Jokes: Taint_aliases</a>
+        </h2>
+        <p>
+            <p>The <a href="https://github.com/ruby-jokes">Ruby Jokes</a> team has a new gem for you that was designed, tested, and released in about an hour this afternoon: <a href="http://ruby-jokes.github.io/taint_aliases">taint_aliases</a>. You can get the full details <a href="https://github.com/ruby-jokes/taint_aliases">on GitHub</a>, but I thought a friendly introduction might make for an enlightening blog post.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Dec 23, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/12/23/goodbye-at-and-t/">Goodbye AT&amp;T, Hello T-Mobile?</a>
+        </h2>
+        <p>
+            <p>So I’m curious about this <a href="http://guardianlv.com/2013/12/t-mobile-uncarrier-4-0-reportedly-will-buyout-contracts-when-switching/">Uncarrier 4.0</a> thing rumoured to be rolled out by <a href="http://www.t-mobile.com/">T-Mobile</a> in the near future… I’ve considered ditching <a href="http://www.att.com/shop/wireless.html">AT&amp;T Wireless</a> many times, but keep getting dragged back in by upgrades, which seem to take longer and longer to happen.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Dec 11, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/12/11/hour-of-code-voight-kampff-for-hackers/">Hour of Code: Voight-Kampff for Hackers?</a>
+        </h2>
+        <p>
+            <p>So, <a href="http://gizmodo.com">Gizmodo</a> has a great post on the new series of <a href="http://code.org">Code.org</a> PSAs, <a href="http://gizmodo.com/people-who-did-not-get-rich-and-or-famous-coding-want-y-1479863703">“People Who Did Not Get Rich and/or Famous Coding Want You to Code”</a>. I think <a href="http://csedweek.org/">Computer Science Education Week</a> is a fantastic idea (although IMHO every week should be CSEdWeek), but the whole “hour of code” thing seemed slightly silly, until now.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Dec 9, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/12/09/apple-the-obstacle-to-americas-future/">Apple: The Obstacle to America's Future?</a>
+        </h2>
+        <p>
+            <p>In a brief address to kick off Computer Science Education Week (In conjunction with <a href="http://code.org">Code.org</a>), President Obama called on the nation’s youth to give coding a chance:</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 20, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/11/20/github-matters-followup/">Github Matters - Followup</a>
+        </h2>
+        <p>
+            <h4 id="mea-culpa">Mea Culpa</h4>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 19, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/11/19/so-github-is-not-your-cv-it-still-matters/">So Github Is Not Your CV. It Still Matters</a>
+        </h2>
+        <p>
+            <p>It’s funny, a few days before the OSS-as-hiring-criteria debate emerged on Twitter and HN — mostly stemming from <a href="http://david.heinemeierhansson.com/2013/the-perils-of-mixing-open-source-and-money.html">this post</a> by <a href="https://twitter.com/dhh">DHH</a> and <a href="http://ashedryden.com/blog/the-ethics-of-unpaid-labor-and-the-oss-community">this post</a> by <a href="https://twitter.com/ashedryden">Ashe Dryden</a> — I had just posted <a href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>, encouraging prospective developers lacking a CS background who wanted to get hired to <strong>put lots of code on Github.</strong></p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 13, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/11/13/just-get-hacking-part-2/">Just Get Hacking (Part 2)</a>
+        </h2>
+        <p>
+            <h3 id="the-important-stuff">The Important Stuff</h3>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 12, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/11/12/just-get-hacking/">Just Get Hacking</a>
+        </h2>
+        <p>
+            <p><em>This post is a follow up to a previous entry, <a href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">“Letter to a Young (Or New) Programmer”</a>.</em></p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Sep 30, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/09/30/maybe-edtech-is-another-leaky-abstraction/">Maybe EdTech Is Another Leaky Abstraction</a>
+        </h2>
+        <p>
+            <p>Working in the EdTech sector, I’m perpetually vexed as I try to determine what exactly “EdTech” is and, <em>a fortiori,</em> what <em>effective</em> EdTech should look like. Perhaps a little background might be in order.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Sep 29, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/09/29/letter-to-a-young-or-new-programmer/">Letter to a Young (or New) Programmer</a>
+        </h2>
+        <p>
+            <p>I get it. You went to college, graduated, got a job, and it’s not what you wanted, hoped for, or whatever. Or maybe you’ve been in the same job for years, and it’s just no fun anymore. And you look at your friends who are hackers. Yeah, we’re anti-social, maybe kinda jerks, but we have <em>so much fun</em> at work, and get pretty well compensated for <em>playing.</em></p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Sep 2, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/09/02/return-of-the-job-destroyer/">Return of the Job Destroyer</a>
+        </h2>
+        <p>
+            <h3 id="or-human-contact-as-a-premium-service"><em>Or, “Human Contact as a Premium Service”</em></h3>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jun 21, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/06/21/the-importance-of-aarons-law/">The Importance of "Aaron's Law"</a>
+        </h2>
+        <p>
+            <p>Yesterday, Rep. Zoe Lofgren and Rep. Ron Wyden introduced a bill, known as “Aaron’s Law”, which amends the <a href="http://en.wikipedia.org/wiki/Computer_Fraud_and_Abuse_Act">Computer Fraud and Abuse Act (CFAA)</a>, a 1986 bil which set most of the “cybercrime” statutes on the books today. This law, affectionately known as <a href="http://www.gpo.gov/fdsys/pkg/USCODE-2010-title18/html/USCODE-2010-title18-partI-chap47-sec1030.htm">U.S. Code Title 18, Part I, Chapter 47, §1030</a>, has been added to many times over the years (via the PATRIOT Act, and various bills related to issues of identity theft, etc.), but the substantial core of the bill has remained the same since 1986: vague, ominous, overly broad, and a rampant playground for prosecutorial misconduct.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jun 2, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/06/02/were-not-ready-to-teach-kids-to-code/">We're Not Ready to Teach Kids to Code</a>
+        </h2>
+        <p>
+            <h2 id="think-kids-should-learn-to-code-teach-the-teachers-first">Think Kids Should Learn To Code? Teach The Teachers First</h2>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 14, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/05/14/im-an-estuarian/">I'm an Estuarian!</a>
+        </h2>
+        <p>
+            <p>It’s been a while since my last post, because the last few weeks have been just a little crazy.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 5, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/04/05/be-willing-to-let-go/">Be Willing to Let Go; or, "the Big Rewrite"</a>
+        </h2>
+        <p>
+            <blockquote><p>Is it possible that software is not like anything else, that it is meant to be discarded: that the whole point is to always see it as a soap bubble?</p></blockquote>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Apr 2, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/04/02/the-difficulty-of-chaotic-good/">The Difficulty of Chaotic Good</a>
+        </h2>
+        <p>
+            <p>So in a delightful twist, Michael O. Church has brought in the concept of D&amp;D <a href="http://michaelochurch.wordpress.com/2013/03/18/gervais-macleod-11-alignment-and-careers/">ethical alignments</a> to the corporate hierarchy/career discussion.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 23, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/03/23/donglegate/">Donglegate, Inclusionary Culture, Nerd Culture</a>
+        </h2>
+        <p>
+            <p>I’ve taken my time in writing about this. I had some debates (for better or worse) on Twitter, and some rather thoughtful meatspace conversations with friends and coworkers. I have strong feelings about what happened at PyCon (re: the donglegate scenario), and many of them are conflicting. So I’ve waited to write about it until now.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 16, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/03/16/farewell/">Farewell, Reader; or, the Problem With "Free as in Beer"</a>
+        </h2>
+        <p>
+            <p>I’m <a href="http://support.google.com/reader/answer/3028851">going to miss Google Reader</a>.
+I know a lot of people are going to. Hell, in a crazy inversion of Godwin’s Law,
+even <a href="http://www.youtube.com/watch?v=A25VgNZDQ08">Hitler is upset</a>.
+There’s a <a href="https://www.change.org/en-GB/petitions/google-do-not-remove-google-reader-on-july-1-2013">petition on Change.org</a>,
+and Bender is pissed:</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 15, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/03/15/the-myth-of-the-it-department/">The Myth of the "IT Department"</a>
+        </h2>
+        <p>
+            <p>So in the comments on my <a href="/blog/2013/03/11/confessions-of-a-job-destroyer/">last post</a> I mentioned my fandom
+for what is, in my opinion, the most insightful and important blog currently
+published, that of <a href="http://michaelochurch.wordpress.com/">Michael O. Church</a>.
+His recent series of posts have been reviewing and analyzing the MacLeod theory
+of <a href="http://michaelochurch.wordpress.com/2013/03/14/gervais-macleod-9-convexity/">organizational structure</a>
+(link is to the latest post in the series, but if you haven’t been following it,
+therein are links to the previous eight).</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 11, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/03/11/confessions-of-a-job-destroyer/">Confessions of a Job Destroyer</a>
+        </h2>
+        <p>
+            <p>One of the most unfunny ironies of the rhetoric surrounding “job creators” in
+contemporary American politics is that most of the jobs being created (or at
+least, those with the greatest demand) are in the tech sector. Jobs like mine.
+Jobs that automate processes that used to be performed by people.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 10, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/03/10/the-social-university-that-could-have-been/">The Social University That Could Have Been</a>
+        </h2>
+        <p>
+            <p>This is a post I’ve wanted to write for a while, but I’ve needed time and distance to do it justice. This is a post about (from my perspective) the greatest failure of my professional career.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 8, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/03/08/pam-authentication-beyond-the-desktop/">PAM Authentication Beyond the Desktop</a>
+        </h2>
+        <p>
+            <p>The Linux <a href="http://www.linux-pam.org/">PAM</a> (Pluggable Authentication Modules) architecture is one of the most wonderful (and most overlooked) features of the OS. Typically we only consider PAM as handling our console (or xdm/gdm etc. logins) on Linux, but it’s useful for so much more.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Mar 1, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/03/01/code-typos-got-you-down-stop-worrying-with-close-enough/">Code Typos Got You Down? Stop Worrying With Close_enough</a>
+        </h2>
+        <p>
+            <p>From the crack team (<a href="https://twitter.com/micahjgates">Micah Gates</a> and <a href="https://twitter.com/canweriotnow">myself</a>) that brought you <a href="https://github.com/ruby-jokes/job_interview">job_interview</a>, I’m proud to announce the availability of <a href="https://github.com/ruby-jokes/close_enough">close_enough</a>, a gem that will save you from all of those niggling <code>NoMethodError</code>s that occur when you mis-type a method name.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Feb 3, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/02/03/datetime-conversions-in-clojure/">DateTime Conversions in Clojure</a>
+        </h2>
+        <p>
+            <p>In dealing with integrating data from disparate incomaptible systems (which I do to a degree that would drive some men mad), one of the most frequent irritations is dealing with datetime conversions.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jan 22, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/01/22/ingress-crowdsourcing-solutions-to-np-hard-problems/">Ingress - Crowdsourcing Solutions to NP-Hard Problems?</a>
+        </h2>
+        <p>
+            <p>So I don’t blog much about my gaming habit, but I recently got my invite to <a href="http://www.ingress.com">Ingress</a>, Google’s new location-based MMORPG. Much has been written about the extensive (one might even say brilliant) <a href="http://www.nianticproject.com">viral marketing campaign</a> that launched the game, and there has been some interesting speculation as to Google’s motivation in producing such a game, ranging from the <a href="http://www.reddit.com/r/Android/comments/138res/google_launches_ingress_a_worldwide_mobile/c71v7yv?context=2">begrudgingly admiring</a> to the <a href="http://pandodaily.com/2012/11/19/googles-ingress-is-more-than-a-game-its-a-potential-data-exploitation-disaster/">borderline paranoid</a>.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jan 3, 2013</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2013/01/03/dci-the-right-idea-for-the-wrong-paradigm/">DCI: The Right Idea for the Wrong Paradigm</a>
+        </h2>
+        <p>
+            <p>I’ve been following with great interest the recent debate over DCI vs. Concerns vs. Whatever in Ruby. The best take I’ve seen, however, is Tony Arcieri’s recent post, <a href="http://tonyarcieri.com/dci-in-ruby-is-completely-broken">“DCI” in Ruby Is Compeltely Broken</a>.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Nov 2, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/11/02/legacy-systems-on-rails-part-3/">Legacy Systems on Rails (Part 3)</a>
+        </h2>
+        <p>
+            <p>It’s been a while since my last post in this series (if you missed them, here are parts <a href="http://decomplecting.org/blog/2012/08/02/legacy-systems-on-rails-part-1/">one</a> and <a href="http://decomplecting.org/blog/2012/08/03/legacy-systems-on-rails-part-2/">two</a>) but I wanted to return to the topic of building out Rails applications on top of legacy systems.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Oct 31, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/10/31/feedback-loops/">Feedback Loops</a>
+        </h2>
+        <p>
+            <p>Sadly, I haven’t added a blog post in roughly 2.5 months. I’ve had ideas for posts, but when it came time to set pen to page (or fingers to keyboard, as teh case may be) I just haven’t had it in me. I really enjoy writing this blog, too. I wasn’t quite sure what was going on, until I read one of the most insightful blog posts I’ve ever seen: <a href="http://edu.mkrecny.com/thoughts/be-nice-to-programmers">Be Nice To Programmers</a>.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Aug 13, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/08/13/ladycoders/">LadyCoders, Twitroversy, and You</a>
+        </h2>
+        <p>
+            <p>So, I had intended my next post to address some of the (valid) criticism of Github that’s been making the rounds lately, but a much more disturbing Twitroversy has emerged today.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Aug 3, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/08/03/generational-impedance-mismatch/">Generational Impedance Mismatch</a>
+        </h2>
+        <p>
+            <p>One thing I’ve come to observe working in higher ed is that you can run into a lot of issues with what I want to term “generational impedance mismatch.” It’s what happens when your ostensible customers are about 40 years older than your target demographic.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Aug 3, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/08/03/legacy-systems-on-rails-part-2/">Legacy Systems on Rails (Part 2)</a>
+        </h2>
+        <p>
+            <p>This will be a quick one. I just wanted to give an example of how Ruby’s open classes can be a lifesaver when a vendor makes bizarre choices, which you then have to deal with.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Aug 2, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/08/02/legacy-systems-on-rails-part-1/">Legacy Systems on Rails (Part 1)</a>
+        </h2>
+        <p>
+            <p>Much of my job consists of providing customized or novel interfaces for a complex legacy system which, although still maintained by the vendor (who shall remain nameless), does not currently (nor do I ever expect it to) meet many of our institutional needs.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jul 18, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/07/18/higher-education-needs-a-revolution/">Higher Education Needs a Revolution</a>
+        </h2>
+        <p>
+            <p>Yesterday, <a href="http://coursera.com">Coursera</a> announced that 12 more universities had joined their program of creating massive open online courses, or MOOCs (one of them was <a href="http://www.jhu.edu">Johns Hopkins University</a>, where I work, so I was especially excited… we’re not always “early adopters”).</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jul 4, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/07/04/static-is-beautiful/">Static Is Beautiful</a>
+        </h2>
+        <p>
+            <p>I want to return to the core sfocus of this blog, elegance and simplicity in technology, but in kind of a meta way.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jun 6, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/06/06/hackers-need-our-own-everything/">Hackers Need Our Own Everything</a>
+        </h2>
+        <p>
+            <p>When I conceived of this post, it was going to be about how damn awesome <a href="http://octopress.org">Octopress</a> is. And it certainly is awesome; it powers this blog, and makes writing it a joy, whereas trying to use <a href="http://wordpress.com">Wordpress</a>, <a href="http://blogger.com">Blogger</a>, or even newer alternatives like <a href="http://tumblr.com">Tumblr</a> or <a href="http://postero.us">Posterous</a> was downright painful. But what I’m more interested in is the growing trend among apps, services, and even operating systems that has made projects like Octopress necessary.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">Jun 1, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/06/01/try-ruby-seriously/">Try Ruby... Seriously.</a>
+        </h2>
+        <p>
+            <p>Every now and then someone comes to me for advice because they (or someone they know) wants to learn to code and has no idea where to start. Usually, the first thing I do is send them to <a href="http://tryruby.org">tryruby.org</a>, the awesome web-based REPL and tutorial the <a href="http://codeschool.com">Code School</a> folks put together, based on <a href="http://mislav.uniqpath.com/poignant-guide/">_why’s (poignant) guide to ruby</a>.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 30, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/05/30/hypermedia-apis-the-new-wild-west/">Hypermedia APIs: The New Wild West?</a>
+        </h2>
+        <p>
+            <p>Two of the best presentations at RailsConf this year, <strong>Designing Hypermedia APIs</strong> by <a href="http://steveklabnik.com/">Steve Klabnik</a> and <strong>Rails: The Next Five Years</strong> by <a href="http://yehudakatz.com/">Yehuda Katz</a> were related to the topic of hypermedia APIs. The video of Steve’s talk isn’t up on Confreaks yet, but the slides are <a href="http://steveklabnik.github.com/hypermedia-presentation/#1">here</a>. I’ll embed Yehuda’s talk right here:</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 29, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/05/29/elegant-organizations/">Elegant Organizations</a>
+        </h2>
+        <p>
+            <p>For a long time, Jason Fried’s article <a href="http://www.inc.com/magazine/20110401/jason-fried-why-i-run-a-flat-company.html">Why I Run a Flat Company</a> has seemed like an unrealistic dream that only works in rarified pockets of hacker utopia.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 22, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/05/22/passion/">Passion, the Ultimate Virtue</a>
+        </h2>
+        <p>
+            <p>I’m finally reading <a href="http://www.chadfowler.com">Chad Fowler</a>’s excellent book, <a href="http://pragprog.com/book/cfcar2/the-passionate-programmer">The Passionate Programmer</a>, and in it he recounts an experience that was chillingly familiar.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 18, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/05/18/un-pythonic-for-fun-and-profit/">Un-Pythonic for Fun and Profit</a>
+        </h2>
+        <p>
+            <p>This post isn’t meant to play into some hacker holy war, nor is it intended to denigrate the usefulness of Python for various tasks. Steve Yegge has done <a href="https://sites.google.com/site/steveyegge2/tour-de-babel">a much better job than I can</a> of explicating some of the issues other programmers have with Python, both the language and the community around it; I still agree with his remarks there.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 9, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/05/09/job-interview/">Job_interview</a>
+        </h2>
+        <p>
+            <p>So, I wanted to plug a little project that
+<a href="https://twitter.com/#!/micahjgates">Micah Gates</a> and I hacked together at
+<a href="http://railsconf.austinonrails.org/bohconf">BohConf</a>, the awesome un-conference
+ and hackfest that runs parallel to <a href="http://railsconf2012.com">RailsConf</a> each year.</p>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 8, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/05/08/simplicity/">Simplicity</a>
+        </h2>
+        <p>
+            <h3 id="machine-beauty">Machine Beauty</h3>
+
+
+        </p>
+      </li>
+    
+      <li>
+        <span class="post-meta">May 8, 2012</span>
+
+        <h2>
+          <a class="post-link" href="/blog/2012/05/08/starting-over/">Starting Over</a>
+        </h2>
+        <p>
+            <p>I decided to retire my old blog, which had devolved into a platform for rants rather than anything truly worthwhile… to me, anyhow. Sure, my rants were amusing at times, and people seemed to enjoy them, but that’s not the point of blogging for me.</p>
+
+
+        </p>
       </li>
     
   </ul>
-</section>
 
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/canweriotnow">@canweriotnow</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
+  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
 
-        github.showRepos({
-            user: 'canweriotnow',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
+</div>
 
-<a class="twitter-timeline" height="300" data-dnt="true" href="https://twitter.com/canweriotnow" data-widget-id="365195555808358401">Tweets by @canweriotnow</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/canweriotnow?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/canweriotnow">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/canweriotnow/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/canweriotnow.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/canweriotnow"><img src="http://api.coderwall.com/canweriotnow/endorsecount.png" /></a></p>
-  
-</section>
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/110736810583208350607?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-  
-</aside>
-
+      </div>
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jason Lewis -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">(λ) Practical Elegance</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col  footer-col-1">
+        <ul class="contact-list">
+          <li>(λ) Practical Elegance</li>
+          <li><a href="mailto:jason@decomplecting.org">jason@decomplecting.org</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/canweriotnow">
+              <span class="icon  icon--github">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+                </svg>
+              </span>
+
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
+
+          
+          <li>
+            <a href="https://twitter.com/canweriotnow">
+              <span class="icon  icon--twitter">
+                <svg viewBox="0 0 16 16">
+                  <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                  c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+                </svg>
+              </span>
+
+              <span class="username">canweriotnow</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col  footer-col-3">
+        <p class="text">code, ire, and song
 </p>
+      </div>
+    </div>
+
+  </div>
 
 </footer>
-  
 
-<script type="text/javascript">
-      var disqus_shortname = 'canweriotnow';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
+  </body>
 
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
 </html>
