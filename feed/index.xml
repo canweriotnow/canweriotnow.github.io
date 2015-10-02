@@ -6,9 +6,138 @@
 </description>
     <link>http://decomplecting.org/</link>
     <atom:link href="http://decomplecting.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 12 Sep 2015 20:59:46 -0400</pubDate>
-    <lastBuildDate>Sat, 12 Sep 2015 20:59:46 -0400</lastBuildDate>
+    <pubDate>Fri, 02 Oct 2015 18:56:47 -0400</pubDate>
+    <lastBuildDate>Fri, 02 Oct 2015 18:56:47 -0400</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Time and Concurrency</title>
+        <description>&lt;p&gt;Last Wednesday, I gave a short talk at &lt;a href=&quot;http://2015.baltimoreinnovationweek.com/&quot;&gt;Baltimore Innovation Week&lt;/a&gt;
+&lt;a href=&quot;http://2015.baltimoreinnovationweek.com/events/dev_day_talks&quot;&gt;DevDay&lt;/a&gt;, entitled “Time and Concurrency”. The slides are hosted
+&lt;a href=&quot;http://decomplecting.org/time-and-concurrency&quot;&gt;here&lt;/a&gt;, but I’ll try embedding them:&lt;/p&gt;
+
+&lt;iframe src=&quot;http://decomplecting.org/time-and-concurrency&quot; width=&quot;800&quot; height=&quot;600&quot;&gt;
+&lt;/iframe&gt;
+
+&lt;p&gt;Okay, that seems to work.&lt;/p&gt;
+
+&lt;p&gt;I won’t recap the entire talk here, as I’m sure I’ll be presenting (a revised
+version of) it again in the future, but I’ll summarize.&lt;/p&gt;
+
+&lt;h3 id=&quot;time&quot;&gt;Time&lt;/h3&gt;
+
+&lt;p&gt;Programmers, especially in the established object-oriented (and imperative)
+paradigms, have a problem with time. This isn’t a new argument; Rich Hickey
+spends most of his talk &lt;a href=&quot;http://www.infoq.com/presentations/Are-We-There-Yet-Rich-Hickey&quot;&gt;Are We There Yet?&lt;/a&gt; problematizing time in
+object-oriented programming; even Uncle Bob (Robert C Martin) addresses this in
+&lt;a href=&quot;https://www.youtube.com/watch?v=7Zlp9rKHGD4&quot;&gt;Functional Programming; What? Why? When?&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I wanted to present the problems with time and concurrency, which are really
+problems with state, value, and identity, and how functional programming,
+specifically using &lt;a href=&quot;http://clojure.org/&quot;&gt;Clojure&lt;/a&gt; and &lt;a href=&quot;http://www.datomic.com/&quot;&gt;Datomic&lt;/a&gt;, allowed us to either
+negate or embrace these problems.&lt;/p&gt;
+
+&lt;p&gt;Put simply, mutable state is evil. Sometimes a necessary evil, but evil
+nonetheless. Even something as simple as assignment:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt; &lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;code&gt;foo&lt;/code&gt; is not the foo I started with! We create an identity, &lt;code&gt;foo&lt;/code&gt;, assign it a
+value, and then willy-nilly assign it a new value. Consider:&lt;/p&gt;
+
+&lt;figure class=&quot;code-highlight-figure&quot;&gt;&lt;div class=&quot;code-highlight&quot;&gt;&lt;pre class=&quot;code-highlight-pre&quot;&gt;&lt;div data-line=&quot;1&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;foo&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;2&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;println &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;3&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;4&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;println &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;inc &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;5&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;6&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;println &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/div&gt;&lt;/div&gt;&lt;div data-line=&quot;7&quot; class=&quot;code-highlight-row numbered&quot;&gt;&lt;div class=&quot;code-highlight-line&quot;&gt;&lt;span class=&quot;nv&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/figure&gt;
+
+&lt;p&gt;The function &lt;code&gt;inc&lt;/code&gt; (increment) doesn’t alter &lt;code&gt;foo&lt;/code&gt;, it simply takes a value, and
+returns a new value. This is because &lt;code&gt;inc&lt;/code&gt; is a &lt;strong&gt;pure&lt;/strong&gt; function; it has no
+side-effects and cannot alter state.&lt;/p&gt;
+
+&lt;p&gt;The problem is that, as Rich Hickey puts it, “object-oriented languages have
+no reified notion of time”. Objects &lt;em&gt;change&lt;/em&gt; over time, but we allow them a
+constant identity and have no guarantees (beyond mutexes and locks, which are
+the gateway to madness) to ensure that &lt;code&gt;foo&lt;/code&gt; has the value I expect when I
+dereference it.&lt;/p&gt;
+
+&lt;p&gt;Pure functions have &lt;em&gt;no&lt;/em&gt; concept of time, because having no state, time is
+not an issue; they take values and return values, always the same, every time.&lt;/p&gt;
+
+&lt;h3 id=&quot;concurrency&quot;&gt;Concurrency&lt;/h3&gt;
+
+&lt;p&gt;Way back when we only had to consider single-threaded, single-process programs,
+time did seem very linear. But in a world of multiple threads in multiple
+processes spread across multiple cores, and often multiple machines, running
+in parallel, shared mutable state is a huge problem. Pure functions return the
+same result, given the same inputs, anywhere they are run, and don’t alter
+anything. Clojure’s emphasis on immutable state, persistent data structures,
+and pure functions&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;. In Clojure, mutable state is &lt;a href=&quot;http://blog.jayfields.com/2011/04/clojure-state-management.html&quot;&gt;managed&lt;/a&gt;,
+thread-safe, and mutations are always explicit, usually within a transaction.&lt;/p&gt;
+
+&lt;h3 id=&quot;datomic&quot;&gt;Datomic&lt;/h3&gt;
+
+&lt;p&gt;Datomic takes the ideas of time and immutability and applies them to the
+database. Datomic is an EAVT tuple-store, supporting both ACID transactions
+and unlimited horizontal read scalability. I highly recommend watching
+Rich Hickey’s talk &lt;a href=&quot;https://www.youtube.com/watch?v=spMU2tECscM&quot;&gt;Deconstructing the Database&lt;/a&gt; for a deep look at
+the theory and practice behind Datomic. But in borad strokes, instead of
+storing tables of mutable rows and columns (SQL style), or mutable
+documents&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;, Datomic stores &lt;em&gt;facts.&lt;/em&gt; These facts are immutable; if
+something changes, a new fact is inserted, or a previous fact is retracted.
+That insertion or retraction is stored as a new fact.&lt;/p&gt;
+
+&lt;p&gt;This allows Datomic to apply the concept of &lt;em&gt;time&lt;/em&gt; to the database; the
+previous state of the db as-of any point in time can be queried, and since
+the database functionally uses the same persistent data structures as Clojure,
+external data can be queried alongside Datomic data as if it were in the
+database. This concept of time allows us not only to examine any past state,
+but to virtually query the future by adding hypothetical data to our queries.&lt;/p&gt;
+
+&lt;p&gt;I won’t go into the mechanism of how this all of this is achieved, rather I’ll
+direct you to the videos on &lt;a href=&quot;http://www.datomic.com/&quot;&gt;datomic.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;devday&quot;&gt;DevDay&lt;/h3&gt;
+
+&lt;p&gt;DevDay Talks was a really great experience. You can see the full speaker lineup
+on the BIW site (linked above). I especially enjoyed &lt;a href=&quot;https://twitter.com/ericoestrich&quot;&gt;Eric Oestrich&lt;/a&gt;’s
+talk on Kubernetes, and Richard McCluskey’s dive into DevOps at
+&lt;a href=&quot;http://www.millennialmedia.com/&quot;&gt;Millenial Media&lt;/a&gt;. So many great talks, and the after party was a lot of
+fun too. Thanks to &lt;a href=&quot;http://2015.baltimoreinnovationweek.com/&quot;&gt;Baltimore Innovation Week&lt;/a&gt; and
+&lt;a href=&quot;http://technical.ly/baltimore/&quot;&gt;Technical.ly Baltimore&lt;/a&gt; for throwing such a great event!&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;“Impure” functions, i.e. those having side-effects, are allowed in Clojure (unlike, say, Haskell), but are the exception rather than the rule &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;Like, e.g., MongoDB or CouchDB &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Fri, 02 Oct 2015 17:18:16 -0400</pubDate>
+        <link>http://decomplecting.org/blog/2015/10/02/time-and-concurrency/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2015/10/02/time-and-concurrency/</guid>
+        
+        
+        <category>clojure</category>
+        
+        <category>programming</category>
+        
+        <category>talks</category>
+        
+        <category>datomic</category>
+        
+      </item>
     
       <item>
         <title>&quot;Thought Leadership&quot; Delenda Est</title>
@@ -908,55 +1037,6 @@ So we beat on, boats against the current, borne back ceaselessly into the past.&
         <category>emacs</category>
         
         <category>editors</category>
-        
-      </item>
-    
-      <item>
-        <title>Fear and Coding in Las Vegas</title>
-        <description>&lt;p&gt;I’m sitting in the first session of the &lt;a href=&quot;http://code.org&quot;&gt;Code.org&lt;/a&gt; K-5 PD
-training workshop.&lt;/p&gt;
-
-&lt;p&gt;It’s my first time in Las Vegas. We went to In-N-Out Burger (required if I
-travel out west), and I hit a $2k jackpot on penny slots. Not bad. And now
-we’re getting an overview of the K-5 Code.org curriculum. It’s pretty exciting.&lt;/p&gt;
-
-&lt;p&gt;I learned to code when I was 5. Learning BASIC on a TI 99/4A. This is pretty much
-my first computer:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://www.digibarn.com/collections/systems/ti99-4a-beige/Image84.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;!-- more --&gt;
-
-&lt;p&gt;I love this idea. I receive constant shit from friends, family, co-workers,
-whatever, that the fact that I started hacking at 5 is probably more scary and
-off-putting when I talk about promoting CS education in K-5 (which is why I’m
-in Vegas, thanks to Code.org).&lt;/p&gt;
-
-&lt;p&gt;But Real Soon Now™ everyone is going ot start coding at 5, and on somethimg way
-more sphisticated than a Texas Instruments 99/4A.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://code.org/about/leadership/hadi_partovi&quot;&gt;Hadi Partovi&lt;/a&gt; is describing how
-much “cooler” coding is becoming as I type. I’m glad. I can’t wait to start
-teaching this Code.org curriculum. Coding isn’t just for white boys in hoodies,
-It’s not some thing for introverted nerds (well, we might have invented it, but
-  we’re happy to share).&lt;/p&gt;
-
-&lt;p&gt;So it’s very exciting, and I’m so happy to be a part of it.&lt;/p&gt;
-
-&lt;p&gt;Hackers. Hackers everywhere.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 22 Aug 2014 17:11:52 -0400</pubDate>
-        <link>http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas/</link>
-        <guid isPermaLink="true">http://decomplecting.org/blog/2014/08/22/fear-and-coding-in-las-vegas/</guid>
-        
-        
-        <category>code</category>
-        
-        <category>k12</category>
-        
-        <category>education</category>
-        
-        <category>computer science</category>
         
       </item>
     
