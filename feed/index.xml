@@ -6,9 +6,48 @@
 </description>
     <link>http://decomplecting.org/</link>
     <atom:link href="http://decomplecting.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Oct 2015 18:56:47 -0400</pubDate>
-    <lastBuildDate>Fri, 02 Oct 2015 18:56:47 -0400</lastBuildDate>
+    <pubDate>Tue, 08 Dec 2015 01:36:46 -0500</pubDate>
+    <lastBuildDate>Tue, 08 Dec 2015 01:36:46 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>On Hiring Programmers</title>
+        <description>&lt;p&gt;Lately I’ve been focusing on the management aspects of my role at
+&lt;a href=&quot;http://www.yetanalytics.com&quot;&gt;Yet Analytics&lt;/a&gt; because I’m the first to admit I’m generally better
+at dealing with machines than people. But I’ve found some sound guidance along
+the way, whether it’s Chad Fowler’s personal career advice in
+&lt;em&gt;&lt;a href=&quot;https://pragprog.com/book/cfcar2/the-passionate-programmer&quot;&gt;The Passionate Programmer&lt;/a&gt;,&lt;/em&gt; or the managerial advice on building
+software teams in &lt;em&gt;&lt;a href=&quot;http://www.managingtheunmanageable.net/&quot;&gt;Managing The Unmanageable&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And although there’s been a lot of whinging about the emphasis on “passion”
+as a cipher for “unpaid overtime” or Github contributions as unpaid labor
+cum job requirement…&lt;/p&gt;
+
+&lt;p&gt;I was reading all these books and this line from Kerouac’s &lt;em&gt;On The Road&lt;/em&gt;
+lept out at me as describing exactly the developers I want to work with.
+Not just hire, mind you, but the developers I want to recruit because
+I want to surround myself with people who will challenge me to be better as
+well:&lt;/p&gt;
+
+&lt;figure class=&quot;quote&quot;&gt;&lt;blockquote&gt;&lt;p&gt;They danced down the streets like dingledodies, and I shambled after as I’ve
+been doing all my life after people who interest me, because the only people for
+me are the mad ones, the ones who are mad to live, mad to talk, mad to be saved,
+desirous of everything at the same time, the ones that never yawn or say a
+commonplace thing, but burn, burn, burn like fabulous yellow roman candles
+exploding like spiders across the stars and in the middle you see the blue
+centerlight pop and everybody goes “Awww!”&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption class=&quot;quote-source&quot;&gt;&lt;span class=&quot;quote-author&quot;&gt;Jack Kerouac&lt;/span&gt; &lt;cite class=&quot;quote-title&quot;&gt;On The Road&lt;/cite&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;p&gt;I don’t know, maybe that’s absurd, maybe it’s expecting too much.&lt;/p&gt;
+
+&lt;p&gt;But if I wasn’t after that fire, I wouldn’t be doing what I am.&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 08 Dec 2015 01:23:32 -0500</pubDate>
+        <link>http://decomplecting.org/blog/2015/12/08/on-hiring-programmers/</link>
+        <guid isPermaLink="true">http://decomplecting.org/blog/2015/12/08/on-hiring-programmers/</guid>
+        
+        
+      </item>
     
       <item>
         <title>Time and Concurrency</title>
@@ -930,113 +969,6 @@ So we beat on, boats against the current, borne back ceaselessly into the past.&
         <category>clojure</category>
         
         <category>coding</category>
-        
-      </item>
-    
-      <item>
-        <title>Welcome to the Dark Side: Switching to Emacs</title>
-        <description>&lt;p&gt;I have to start this post by saying I’ve been a dogmatic &lt;a href=&quot;http://www.vim.org/&quot;&gt;Vim&lt;/a&gt; partisan since the 1990’s, when I started using vi on the Solaris and Irix boxen I had access to, and then on my own machines when I got started with Linux in 1994.&lt;/p&gt;
-
-&lt;p&gt;I flamed against Emacs on Usenet, called it all the epithets (Escape Meta Alt Ctrl Delete, Eight Megs And Constantly Swapping (8 megs was a lot then), Eventually Mangles All Computer Storage)… I couldn’t stand the chord keys and lack of modality.&lt;/p&gt;
-
-&lt;p&gt;Even once I got heavily into Lisp I still tried to stick with Vim, or tried LightTable, or Atom, or SublimeText. But then one day I hit a wall and Emacs (plus cider-mode and slime and a few other packages) was the obvious solution. Now I’m out there evangelizing Emacs (I’m writing this post in the Markdown major mode plus some helpful minor modes) and I figure I’d offer some advice for those looking to convert to the Church of Emacs.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/post-img/ignucius.png&quot; alt=&quot;St. Ignucius&quot; /&gt;&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;p&gt;Primarily, this post is inspired by a request I received on Twitter:&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;&lt;a href=&quot;https://twitter.com/canweriotnow&quot;&gt;@canweriotnow&lt;/a&gt; Got any links for switching to emacs? macvim isn&amp;#39;t working in yosemite so I figure I might as well give emacs a real shot&lt;/p&gt;&amp;mdash; maɪk pətɛlə (@mikepatella) &lt;a href=&quot;https://twitter.com/mikepatella/status/525439599276220416&quot;&gt;October 24, 2014&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;Instead of just compiling some links in a gist, I figured it was worthy of a blog post, so my seniors in the Church of Emacs can tell me where I’m wrong in the comments. But this is based on my experience converting from Vim to Emacs, so I’ll explain what worked for me.&lt;/p&gt;
-
-&lt;h3 id=&quot;emacs-prelude&quot;&gt;Emacs Prelude&lt;/h3&gt;
-
-&lt;p&gt;Prelude is really a great way to hit the ground running. It provides a wealth of sensible default packages, fixes the color scheme, and configures your &lt;code&gt;.emacs.d&lt;/code&gt; config directory in a way that makes it easy to configure without breaking shit.&lt;/p&gt;
-
-&lt;p&gt;The install instructions are &lt;a href=&quot;http://batsov.com/prelude/&quot;&gt;here&lt;/a&gt; and I highly recommend it.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE:&lt;/strong&gt; I forgot something vitally important about prelude. Prelude comes with &lt;code&gt;guru-mode&lt;/code&gt; enabled by default, which disables your arrow keys and prods you to use Emacs default navigation commands instead (i.e. &lt;code&gt;C-p&lt;/code&gt; for up, &lt;code&gt;C-n&lt;/code&gt; for down, &lt;code&gt;C-b&lt;/code&gt; for left, &lt;code&gt;C-f&lt;/code&gt; for right). These commands are &lt;a href=&quot;https://www.gnu.org/software/emacs/manual/html_node/emacs/Moving-Point.html&quot;&gt;worth knowing&lt;/a&gt;, but I felt like I was being trolled when my arrow keys just told me what chord combination to use instead. (As an aside, &lt;a href=&quot;http://thoughtbot.com&quot;&gt;Thoughtbot’s&lt;/a&gt; &lt;a href=&quot;https://github.com/thoughtbot/dotfiles&quot;&gt;dotfiles&lt;/a&gt; do the same thing with vim).&lt;/p&gt;
-
-&lt;p&gt;So you have two options: one is to &lt;code&gt;M-x guru-mode&lt;/code&gt; to toggle it every session. The more permanent solution is to add the following to your config (if you’re using Prelude, it should go in &lt;code&gt;~/.emacs.d/personal/preload/user.el&lt;/code&gt;):&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;(setq prelude-guru nil)&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Just my personal preference, but something I found really annoying when I got started.&lt;/p&gt;
-
-&lt;p&gt;As far as all those useful navigation and editing commands, emacs (naturally) has a built-in tutorial accessible from &lt;code&gt;M-x help-with-tutorial&lt;/code&gt; or just &lt;code&gt;C-h t&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;UPDATE TO THE UPDATE:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Bozhidar Batsov (the author of Prelude) pointed out in &lt;a href=&quot;http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/#comment-1651596560&quot;&gt;this comment&lt;/a&gt; that the current default behavior is to warn when arrow keys are used, not to disable them.&lt;/p&gt;
-
-&lt;p&gt;I hadn’t noticed the change, which came in with &lt;a href=&quot;https://github.com/bbatsov/prelude/commit/fda768992ef27f39f30178d4ebb8cbb559d5a3c6&quot;&gt;this commit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;You can find the configuration options for &lt;code&gt;guru-mode&lt;/code&gt; in the README &lt;a href=&quot;https://github.com/bbatsov/prelude#warnings-on-arrow-navigation-in-editor-buffers&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;emacs-for-mac-os-x&quot;&gt;Emacs for Mac OS X&lt;/h3&gt;
-
-&lt;p&gt;I really like using the packaged app version of Emacs available from &lt;a href=&quot;http://emacsformacosx.com/&quot;&gt;http://emacsformacosx.com/&lt;/a&gt;. It works great with Prelude, and doesn’t include the cruft that &lt;a href=&quot;http://aquamacs.org/&quot;&gt;Aquamacs&lt;/a&gt; tacks on to make it more Mac-ish.&lt;/p&gt;
-
-&lt;p&gt;You get a nice packaged Emacs.app that follows OS X conventions, but is really just straight GNU Emacs.&lt;/p&gt;
-
-&lt;h3 id=&quot;evil-mode&quot;&gt;evil-mode&lt;/h3&gt;
-
-&lt;p&gt;So, this is a touchy subject for me. When I first switched I used evil-mode to get my familiar Vim keybindings in emacs, but I actually found it made it more difficult to dive into emacs. Evil-mode is actually impressively complete when it comes to imposing vim functionality over top of emacs, but there are still times when you needto hit &lt;code&gt;C-x k&lt;/code&gt; or &lt;code&gt;M-x something-mode&lt;/code&gt; and the cognitive dissonance of switching between them was just overwhelming.&lt;/p&gt;
-
-&lt;p&gt;So I’d forego evil-mode and just keep &lt;a href=&quot;http://www.emacswiki.org/emacs/&quot;&gt;Emacs Wiki&lt;/a&gt; open in your browser for the first few days. It doesn’t take that long to dive in head-first.&lt;/p&gt;
-
-&lt;h3 id=&quot;projectile&quot;&gt;Projectile&lt;/h3&gt;
-
-&lt;p&gt;It ships with Prelude, so not a major headline, but it does help to keep your projects organized and navigate files.&lt;/p&gt;
-
-&lt;h2 id=&quot;on-lisp&quot;&gt;On Lisp&lt;/h2&gt;
-
-&lt;p&gt;Since this is really about Clojure development environments, I might as well dive into the inherent Lispiness of emacs. The extension language is a Lisp dialect, and very easy to learn and use. Emacs is so extensible that one of the running jokes is that it’s a great operating system in need of a decent text editor. I’ll get to that later.&lt;/p&gt;
-
-&lt;h3 id=&quot;cider-mode&quot;&gt;cider-mode&lt;/h3&gt;
-
-&lt;p&gt;Interacting with Clojure is amazing with &lt;a href=&quot;https://github.com/clojure-emacs/cider&quot;&gt;cider&lt;/a&gt;. You get an in-editor REPL, inline code evaluation, documentation lookup, a scratch buffer for arbitrary code evaluation, and a dozen other features. LightTable is nice with its InstaRepl but emacs/cider is the real deal. You cannot wish for a better Clojure dev environment… and the community agrees:&lt;/p&gt;
-
-&lt;blockquote class=&quot;twitter-tweet&quot; lang=&quot;en&quot;&gt;&lt;p&gt;It&amp;#39;s great to see that &lt;a href=&quot;https://twitter.com/hashtag/CIDER?src=hash&quot;&gt;#CIDER&lt;/a&gt; is still the most popular &lt;a href=&quot;https://twitter.com/hashtag/Clojure?src=hash&quot;&gt;#Clojure&lt;/a&gt; dev environment &lt;a href=&quot;https://t.co/inB8bnlyEl&quot;&gt;https://t.co/inB8bnlyEl&lt;/a&gt; Guess I should release 0.8 soon! :)&lt;/p&gt;&amp;mdash; Bozhidar Batsov (@bbatsov) &lt;a href=&quot;https://twitter.com/bbatsov/status/525408420489613313&quot;&gt;October 23, 2014&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;code&gt;cider-jack-in&lt;/code&gt; connects to a &lt;code&gt;lein repl :headless&lt;/code&gt; instance, and &lt;code&gt;cider-mode&lt;/code&gt; gives you inline evaluation in any Clojure file. It’s amazing.&lt;/p&gt;
-
-&lt;h3 id=&quot;paredit-and-smartparens&quot;&gt;paredit and smartparens&lt;/h3&gt;
-
-&lt;p&gt;Ever have trouble keeping your parens balanced? You’re covered. &lt;a href=&quot;http://www.emacswiki.org/ParEdit&quot;&gt;paredit&lt;/a&gt; is the classic solution, but a lot of folks are using &lt;a href=&quot;https://github.com/Fuco1/smartparens&quot;&gt;smartparens&lt;/a&gt; instead… I’ve been using smartparens in strict mode and it’s made me a lot more disciplined about how I place my forms.&lt;/p&gt;
-
-&lt;h2 id=&quot;other-languages&quot;&gt;Other Languages&lt;/h2&gt;
-
-&lt;p&gt;I’ve been using Emacs for Ruby, Javascript, Haskell, C++, and so on, and it’s been great. The only time I launch another app is when I have to deal with Java, because IntelliJ/Android Studio make life so much easier. But most of that is all the ridiculous build ceremony for Java, so that’s neither here nor there.&lt;/p&gt;
-
-&lt;h2 id=&quot;emacsos&quot;&gt;EmacsOS&lt;/h2&gt;
-
-&lt;p&gt;That joke about Emacs being an operating system? Not such a joke.&lt;/p&gt;
-
-&lt;p&gt;My favorite Twitter client right now is Emacs &lt;a href=&quot;http://www.emacswiki.org/TwitteringMode&quot;&gt;twittering-mode&lt;/a&gt;. There’s Gnus for Usenet and Email, and Emacs 24.4 just came out with an improved in-editor web browser called &lt;code&gt;eww&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Emacs is a deep, deep rabbit hole. The only way in is head first. But there’s so much you can do in here, and it’s a staggeringly powerful environment.&lt;/p&gt;
-
-&lt;p&gt;Welcome to the dark side. We have macros.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/post-img/vader-choke.jpg&quot; alt=&quot;Dark Side&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Thu, 23 Oct 2014 20:42:40 -0400</pubDate>
-        <link>http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/</link>
-        <guid isPermaLink="true">http://decomplecting.org/blog/2014/10/23/welcome-to-the-dark-side-switching-to-emacs/</guid>
-        
-        
-        <category>coding</category>
-        
-        <category>clojure</category>
-        
-        <category>emacs</category>
-        
-        <category>editors</category>
         
       </item>
     
